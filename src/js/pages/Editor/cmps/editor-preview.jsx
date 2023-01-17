@@ -1,8 +1,11 @@
 import DynamicCmp from './dynamic-cmp'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 export function EditorPreview({ template }) {
+    
+    
     const [templateOrder, setTemplateOrder] = useState(template)
 
     function handleOnDragEnd(result) {
@@ -12,6 +15,7 @@ export function EditorPreview({ template }) {
 
         setTemplateOrder(items)
     }
+
     return (
         <DragDropContext onDragEnd={handleOnDragEnd}>
             <Droppable droppableId='template'>
@@ -28,7 +32,7 @@ export function EditorPreview({ template }) {
                                                     {...provided.draggableProps}
                                                     {...provided.dragHandleProps}
                                                 >
-                                                    <DynamicCmp cmp={fraction}></DynamicCmp>
+                                                    <DynamicCmp cmp={fraction} />
                                                 </div>
                                             )
                                         }}

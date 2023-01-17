@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux'
+import { setClickedElem } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
@@ -9,14 +11,16 @@ import { H5Cmp } from './dynamic-cmps/h5-cmp'
 import { H6Cmp } from './dynamic-cmps/h6-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import { PCmp } from './dynamic-cmps/p-cmp'
+import SpanCmp from './dynamic-cmps/span-cmp'
 
 import './style1.scss'
-// import './style2.scss'
+import './style2.scss'
 
 export default function DynamicCmp(props) {
     function handleClick(e, cmp) {
         e.stopPropagation()
-        e.target.classList.add('clicked')
+        e.preventDefault()
+        setClickedElem(e.target)
     }
     switch (props.cmp.type) {
         case 'div':
@@ -37,6 +41,8 @@ export default function DynamicCmp(props) {
             return <ImgCmp cmp={props.cmp} handleClick={handleClick} />
         case 'p':
             return <PCmp cmp={props.cmp} handleClick={handleClick} />
+        case 'span':
+            return <SpanCmp cmp={props.cmp} handleClick={handleClick} />
         case 'a':
             return <ACmp cmp={props.cmp} handleClick={handleClick} />
         case 'button':

@@ -60,7 +60,8 @@ body {
     padding-right: 10%;
     overflow: hidden;
     color: white;
-    background: url(hero.webp) no-repeat center center/cover;
+    background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/hero_oitt1x.webp) no-repeat center
+        center/cover;
     // .hero-image {
     //     width: 100%;
     //     z-index: -1;
@@ -165,7 +166,8 @@ body {
 
 .wap-2-cards {
     padding: 5rem 10%;
-    background: url(dragon.jpg) no-repeat center/cover;
+    background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988466/dragon_fhucnp.jpg) no-repeat
+        center/cover;
     color: white;
     h2 {
         text-align: center;
@@ -199,13 +201,16 @@ body {
                 flex-direction: column;
 
                 &-1 {
-                    background: url(icon1.webp) no-repeat center/cover;
+                    background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/icon1_fwg7cx.webp)
+                        no-repeat center/cover;
                 }
                 &-2 {
-                    background: url(icon2.webp) no-repeat center/cover;
+                    background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/icon2_i8o1qe.webp)
+                        no-repeat center/cover;
                 }
                 &-3 {
-                    background: url(icon3.webp) no-repeat center/cover;
+                    background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/icon3_xdmbbb.webp)
+                        no-repeat center/cover;
                 }
                 img {
                     width: 40%;
@@ -260,7 +265,8 @@ body {
     padding: 5rem 10%;
     background: #0b1321;
     .content {
-        background: url(section-1.webp) no-repeat center/cover;
+        background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/section-1_qnc6f1.webp) no-repeat
+            center/cover;
         padding: 10rem;
         border-radius: 20px;
         // background-attachment: fixed;
