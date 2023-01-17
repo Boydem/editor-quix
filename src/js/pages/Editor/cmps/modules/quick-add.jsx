@@ -11,7 +11,7 @@ export function QuickAdd() {
                         <div {...provided.droppableProps} ref={provided.innerRef} className='full'>
                             {assets.map((asset, idx) => {
                                 return (
-                                    <Draggable draggableId={(idx + 10).toString()} index={idx + 10} key={idx + 10}>
+                                    <Draggable draggableId={asset.id.toString()} index={idx} key={asset.id}>
                                         {provided => {
                                             return (
                                                 <img
@@ -26,6 +26,7 @@ export function QuickAdd() {
                                     </Draggable>
                                 )
                             })}
+                            {provided.placeholder}
                         </div>
                     )
                 }}
