@@ -9,6 +9,7 @@
     box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
     display: grid;
     grid-template-columns: auto 1fr;
+    z-index: 9999;
     .modules {
         border-right: 1px solid $editor-lightgray;
         .modules-list {

@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin: auto;
-    z-index: 99;
+    z-index: 9999;
     border-bottom: 1px solid $editor-lightgray;
     padding: 0 $spacing-m;
     position: sticky;
