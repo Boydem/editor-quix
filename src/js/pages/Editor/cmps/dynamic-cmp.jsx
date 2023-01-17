@@ -10,7 +10,8 @@ import { H6Cmp } from './dynamic-cmps/h6-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import { PCmp } from './dynamic-cmps/p-cmp'
 
-import './style.scss'
+import './style1.scss'
+import './style2.scss'
 
 export default function DynamicCmp(props) {
     function handleClick(e, cmp) {
