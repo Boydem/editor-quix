@@ -12,7 +12,7 @@ export const wap1Section2 = {
             id: makeId(),
             type: 'img',
             content: {
-                imgUrl: '',
+                imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/section-3_xbltzv.svg',
             },
         },
         {
@@ -50,7 +50,7 @@ export const wap1Section2 = {
                                     id: makeId(),
                                     type: 'img',
                                     content: {
-                                        imgUrl: '',
+                                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/speed-security_n3cafu.svg',
                                     },
                                 },
                                 {
@@ -71,7 +71,7 @@ export const wap1Section2 = {
                                     id: makeId(),
                                     type: 'img',
                                     content: {
-                                        imgUrl: '',
+                                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/flex-scale_zxqcyf.svg',
                                     },
                                 },
                                 {
@@ -92,7 +92,7 @@ export const wap1Section2 = {
                                     id: makeId(),
                                     type: 'img',
                                     content: {
-                                        imgUrl: '',
+                                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/better-collab_kzdfno.svg',
                                     },
                                 },
                                 {

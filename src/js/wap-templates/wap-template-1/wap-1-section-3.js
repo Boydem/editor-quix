@@ -26,7 +26,7 @@ export const wap1Section3 = {
             id: makeId(),
             type: 'img',
             content: {
-                imgUrl: '',
+                imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/section-4_dgefar.svg',
             },
         },
     ],

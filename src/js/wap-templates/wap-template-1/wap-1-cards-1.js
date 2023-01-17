@@ -44,7 +44,7 @@ export const wap1Cards1 = {
                             id: makeId(),
                             type: 'img',
                             content: {
-                                imgUrl: '',
+                                imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983830/img1_xrpsr8.webp',
                             },
                         },
                         {
@@ -73,7 +73,7 @@ export const wap1Cards1 = {
                             id: makeId(),
                             type: 'img',
                             content: {
-                                imgUrl: '',
+                                imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img2_jkmwc4.webp',
                             },
                         },
                         {
@@ -102,7 +102,7 @@ export const wap1Cards1 = {
                             id: makeId(),
                             type: 'img',
                             content: {
-                                imgUrl: '',
+                                imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img3_zpvzbd.webp',
                             },
                         },
                         {
@@ -131,7 +131,7 @@ export const wap1Cards1 = {
                             id: makeId(),
                             type: 'img',
                             content: {
-                                imgUrl: '',
+                                imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img4_cr6btz.webp',
                             },
                         },
                         {

@@ -9,6 +9,7 @@ export const wap1Nav = {
     thumbnail: '',
     cmps: [
         {
+            id: makeId(),
             name: 'logo-container',
             type: 'div',
             cmps: [
@@ -17,7 +18,7 @@ export const wap1Nav = {
                     name: 'logo.png',
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/logo_gbu6tf.svg',
                     },
                 },
                 {

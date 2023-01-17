@@ -39,56 +39,56 @@ export const wap1Cards2 = {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/comp1_frdkd1.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/comp2_a763bi.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp3_beuj1j.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp4_iwfnzj.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp5_hdasey.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp8_pi6adk.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp6_b4keda.webp',
                     },
                 },
                 {
                     id: makeId(),
                     type: 'img',
                     content: {
-                        imgUrl: '',
+                        imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp7_rajd2g.webp',
                     },
                 },
             ],
