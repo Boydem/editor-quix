@@ -12,32 +12,32 @@ import { PCmp } from './dynamic-cmps/p-cmp'
 
 import './style.scss'
 
-export default function DynamicCmp({ cmp }) {
-    switch (cmp.type) {
+export default function DynamicCmp(props) {
+    switch (props.cmp.type) {
         case 'div':
-            return <DivCmp cmp={cmp} />
+            return <DivCmp cmp={props.cmp} />
         case 'h1':
-            return <H1Cmp cmp={cmp} />
+            return <H1Cmp cmp={props.cmp} />
         case 'h2':
-            return <H2Cmp cmp={cmp} />
+            return <H2Cmp cmp={props.cmp} />
         case 'h3':
-            return <H3Cmp cmp={cmp} />
+            return <H3Cmp cmp={props.cmp} />
         case 'h4':
-            return <H4Cmp cmp={cmp} />
+            return <H4Cmp cmp={props.cmp} />
         case 'h5':
-            return <H5Cmp cmp={cmp} />
+            return <H5Cmp cmp={props.cmp} />
         case 'h6':
-            return <H6Cmp cmp={cmp} />
+            return <H6Cmp cmp={props.cmp} />
         case 'img':
-            return <ImgCmp cmp={cmp} />
+            return <ImgCmp cmp={props.cmp} />
         case 'p':
-            return <PCmp cmp={cmp} />
+            return <PCmp cmp={props.cmp} />
         case 'a':
-            return <ACmp cmp={cmp} />
+            return <ACmp cmp={props.cmp} />
         case 'button':
-            return <ButtonCmp cmp={cmp} />
+            return <ButtonCmp cmp={props.cmp} />
         default:
-            console.log('Went into default switch case in dynamic cmp with type of', cmp.type)
+            console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
             break
     }
     return <div>DynamicCmp</div>
