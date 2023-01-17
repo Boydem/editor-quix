@@ -1,13 +1,12 @@
 .home {
-
-    & .top-bar {
+    .top-bar {
         width: 100%;
         position: relative;
         text-align: center;
 
         grid-template-areas: 'a';
 
-        & .ukraine-txt {
+        .ukraine-txt {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -17,8 +16,7 @@
             position: absolute;
         }
 
-        & img {
-
+        img {
             width: 100%;
             filter: brightness(150%);
             height: 55px;
@@ -28,7 +26,7 @@
 
     // HOME-MAIN-LAYOUT
     @media (min-width: $break-wide) {
-        &>* {
+        & > * {
             display: grid;
             // grid-template-columns: 1fr minmax(50%, max-content);
             grid-auto-rows: max-content;
@@ -42,21 +40,21 @@
     color: white;
     overflow: hidden;
 
-    & .wrapper {
+    .wrapper {
         margin-top: $header-height * 2;
         display: grid;
         grid-template-columns: 1fr;
         gap: $spacing-l;
     }
 
-    & .hero-cta {
+    .hero-cta {
         margin-bottom: $spacing-xl;
         display: grid;
         place-items: start;
     }
 
-    @media (min-width : $break-wide) {
-        & .wrapper {
+    @media (min-width: $break-wide) {
+        .wrapper {
             // gap: 4em;
             min-height: 85vh;
             grid-template-columns: minmax(30%, max-content) auto;
@@ -68,13 +66,12 @@
 .hero-imgs {
     width: 100%;
 
-    &>img:not(img[alt="heroImg"]) {
+    & > img:not(img[alt='heroImg']) {
         display: none;
     }
 
-
-    @media (min-width:$break-wide) {
-        &>img:not(img[alt="heroImg"]) {
+    @media (min-width: $break-wide) {
+        & > img:not(img[alt='heroImg']) {
             display: block;
         }
 
@@ -99,13 +96,12 @@
             justify-self: end;
         }
     }
-
 }
 
 .hero-bottom {
     @include dotsImgBg('../../imgs/home-assets/hero-bottom.webp');
 
-    & a {
+    a {
         @include linkUnderline($clr1);
         font-weight: 600;
     }
@@ -113,8 +109,7 @@
     color: white;
     overflow: hidden;
 
-    & .main-wrapper {
-
+    .main-wrapper {
         display: flex;
         align-items: center;
 
@@ -123,53 +118,49 @@
         padding-bottom: $spacing-xl;
     }
 
-    & .text-container {
+    .text-container {
         margin-top: $spacing-xl;
         order: -1;
         width: 100%;
         margin-bottom: $spacing-xl;
 
-        & h2 {
+        h2 {
             margin-bottom: $spacing-m;
         }
 
-        & button {
+        button {
             margin: $spacing-m 0;
         }
     }
 
-
-    & a {}
-
-    & .brands-wrapper {
+    .brands-wrapper {
         padding-top: $spacing-l;
         min-height: 15vh;
         background: rgba($clr2, 0.015);
         backdrop-filter: blur(2px);
         place-content: center;
-        border-top: 1px solid rgba($clr1, .85);
+        border-top: 1px solid rgba($clr1, 0.85);
 
-        & h4 {
-
+        h4 {
             margin-top: $spacing-l;
         }
 
-        & .brands {
+        .brands {
             width: 100%;
             display: flex;
             gap: $spacing-l;
             padding: $spacing-l 0;
             justify-content: space-evenly;
 
-            &>* {
+            & > * {
                 flex-shrink: 1;
                 // max-width: 100%;
             }
         }
     }
 
-    @media (min-width : $break-wide) {
-        & .main-wrapper {
+    @media (min-width: $break-wide) {
+        .main-wrapper {
             min-height: 100vh;
             flex-direction: row;
             justify-content: center;
@@ -178,36 +169,36 @@
             padding-bottom: 6rem;
         }
 
-        & .text-container {
+        .text-container {
             order: 1;
             width: 40%;
         }
 
-        & .brands-wrapper h4 {
+        .brands-wrapper h4 {
             margin-bottom: $spacing-xl;
         }
     }
 }
 
 .templates-section {
-    @include dotsClrBg($clr12 , 0.25);
+    @include dotsClrBg($clr12, 0.25);
 
-    & .wrapper {
+    .wrapper {
         padding: $spacing-xl 0;
     }
 
-    & .title-container>* {
+    .title-container > * {
         margin-bottom: $spacing-m;
     }
 
-    & .cta-container {
+    .cta-container {
         & p {
             margin-bottom: $spacing-l;
         }
     }
 
-    @media (min-width : $break-wide) {
-        &>.wrapper {
+    @media (min-width: $break-wide) {
+        & > .wrapper {
             padding-top: $spacing-xxl;
             padding-bottom: 0;
             gap: $spacing-l;
@@ -218,7 +209,7 @@
             grid-auto-rows: max-content;
         }
 
-        & .cta-container {
+        .cta-container {
             margin: 0 $spacing-xl $spacing-l;
 
             & p {
@@ -236,15 +227,14 @@
         display: none;
     }
 
-    & .slider-item {
+    .slider-item {
         position: relative;
         min-width: max-content;
         box-shadow: 0px 30px 50px -30px rgba($clr2, 0.5);
         border-radius: $spacing-s;
         overflow: hidden;
 
-
-        & .actions {
+        .actions {
             position: absolute;
             inset: 0;
             margin: auto;
@@ -272,12 +262,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba($clr2 , 75%);
+            background-color: rgba($clr2, 75%);
             opacity: 0;
             transition: opacity 0.2s, backdrop-filter 0.2s 0.05s;
             min-width: 100%;
             pointer-events: none;
-
         }
 
         &:hover::after {
@@ -286,11 +275,7 @@
             backdrop-filter: blur(3px);
         }
     }
-
-
-
 }
-
 
 .discover-section {
     background-color: $clr2;
@@ -304,7 +289,7 @@
         margin-bottom: $spacing-xxxl;
         overflow: visible;
 
-        & img {
+        img {
             overflow: visible;
             margin-top: -$spacing-xxxl;
             object-fit: cover;
@@ -323,24 +308,23 @@
         padding: $spacing-m $spacing-s * 1.5;
         z-index: 1;
 
-        & h1 {
-
+        h1 {
             margin-bottom: $spacing-l;
         }
 
-        & a {
+        a {
             margin-inline-start: $spacing-m;
             @include linkUnderline($clr1);
             font-weight: 600;
         }
 
-        @media (min-width:$break-narrow) {
+        @media (min-width: $break-narrow) {
             & {
                 padding: $spacing-xl $spacing-m * 1.5;
             }
         }
 
-        @media (min-width:$break-wide) {
+        @media (min-width: $break-wide) {
             & {
                 padding: $spacing-xl $spacing-l * 1.5;
             }
@@ -360,19 +344,18 @@
     padding: $spacing-xxl 0;
     gap: $spacing-xl;
 
-    & .text,
-    & .bg {
+    .text,
+    .bg {
         flex: 1 1 1;
         text-align: center;
     }
 
-    & .sides-svg {
+    .sides-svg {
         flex: 1 5 1;
         pointer-events: none;
-
     }
 
-    & .bg {
+    .bg {
         z-index: -1;
         grid-area: a;
         pointer-events: none;
@@ -383,8 +366,7 @@
         width: 100%;
     }
 
-    & .text {
-
+    .text {
         grid-column: 1/-1;
         grid-row: 1/-1;
         height: max-content;
@@ -392,9 +374,8 @@
         align-self: center;
         justify-self: center;
 
-        &>*:not(:last-child) {
+        & > *:not(:last-child) {
             margin-bottom: $spacing-s;
         }
     }
-
 }
