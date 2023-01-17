@@ -41,7 +41,7 @@
     overflow: hidden;
 
     .wrapper {
-        margin-top: $header-height * 2;
+        margin-top: $home-header-height * 2;
         display: grid;
         grid-template-columns: 1fr;
         gap: $spacing-l;
@@ -303,7 +303,7 @@
     .scrolled-bar {
         min-height: 50vh;
         position: sticky;
-        top: $header-height;
+        top: $home-header-height;
         background-image: linear-gradient(180deg, rgba($clr21, 1) 33%, rgba($clr3, 0));
         padding: $spacing-m $spacing-s * 1.5;
         z-index: 1;

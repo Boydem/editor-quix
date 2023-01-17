@@ -16,7 +16,7 @@ export function AppHeader() {
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
                     <li>
-                        <a className='nav-link link-underline' to='/edit'>
+                        <a className='nav-link link-underline' href='#'>
                             <span>Site</span>
                         </a>
                     </li>
@@ -45,12 +45,12 @@ export function AppHeader() {
             <nav className={`nav-actions ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
                     <li>
-                        <Link className='nav-link link-underline' to='/edit'>
+                        <Link className='nav-link' to='/edit'>
                             <span>Invite +</span>
                         </Link>
                     </li>
                     <li>
-                        <a className='nav-link link-underline' href='#'>
+                        <a className='nav-link' href='#'>
                             <span>Preview</span>
                         </a>
                     </li>

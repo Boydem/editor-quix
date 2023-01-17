@@ -1,10 +1,12 @@
 import { AppHeader } from '../../cmps/app-header'
+import { ToolsBar } from './cmps/tools-bar'
 
 export function Editor() {
     return (
         <>
             <AppHeader />
-            <div>Editor</div>
+            <ToolsBar />
+            <div className='editor'>Editor</div>
         </>
     )
 }

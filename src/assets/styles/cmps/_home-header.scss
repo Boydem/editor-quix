@@ -15,8 +15,8 @@
 
     & .btn-mobile-menu {
         cursor: pointer;
-        height: $header-height;
-        line-height: $header-height;
+        height: $home-header-height;
+        line-height: $home-header-height;
         padding: 0 2em;
         background-color: $clr5;
         color: $clr1;
@@ -38,7 +38,7 @@
         right: 0;
         transform: translateX(100%);
         background-color: $clr1;
-        min-height: calc(100vh - $header-height);
+        min-height: calc(100vh - $home-header-height);
         min-width: 50%;
         padding: 2em 1.85em 0 2em;
         transition: transform 0.5s;
@@ -80,8 +80,8 @@
             }
 
             & .nav-link {
-                height: $header-height;
-                line-height: $header-height;
+                height: $home-header-height;
+                line-height: $home-header-height;
                 padding: 0 2em;
                 font-weight: 500;
                 margin-inline-start: 2em;

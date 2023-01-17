@@ -16,15 +16,16 @@ $clr14: #eef0f4;
 $clr15: #181818;
 $clr16: #1c2c49;
 $clr17: #384ad3;
-$clr18: #6F6F6F;
+$clr18: #6f6f6f;
 $clr19: #5f4172;
 $clr20: #181818;
-$clr21: #07168D;
+$clr21: #07168d;
+$editor-lightgray: #e2e3eaea;
 
 // font
 $font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;
 $font-family: 'Lato', Arial, Helvetica, sans-serif;
-$base-font-size: 16px;
+$base-font-size: 14px;
 $base-font-ratio: 1.5;
 
 // Define spacing variables
@@ -42,19 +43,19 @@ $spacing-xxxl: 11.391 * $spacing-unit;
 // Define breakpoints
 $break-narrow: 640px;
 $break-wide: 1024px;
-$break-xwide : 1920px;
+$break-xwide: 1920px;
 
 // fixed sizes
-$header-height: 72px;
+$home-header-height: 72px;
+$app-header-height: 52px + 1px; // 1px for border-bottom addition
+$toolbar-height: 42px + 1px; // 1px for border-bottom addition
 
 // LAYOUT
 $layoutPadding: $base-font-size * 5.063;
 
-
 $padded-break-narrow: $break-narrow + $layoutPadding * 0.667;
 $padded-break-normal: $break-wide + $layoutPadding * 1;
 $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
-
 
 // @media (min-width: $break-narrow) {
 //     $layoutPadding: $base-font-size * 3.375;

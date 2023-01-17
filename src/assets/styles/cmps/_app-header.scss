@@ -1,24 +1,27 @@
 .app-header {
-    $header-height: 50px;
     background-color: $clr1;
     width: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin: auto;
     z-index: 99;
-
+    border-bottom: 1px solid $editor-lightgray;
+    padding-inline-start: $spacing-m;
     .logo-container {
-        padding-inline-end: $spacing-xxs;
-        padding-inline-start: $spacing-s;
-
+        border-inline-end: 1px solid $editor-lightgray;
+        padding-inline-end: $spacing-m;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         .logo {
-            font-size: #{fluid(28px, 32px, $break-narrow, $break-wide)};
-            font-weight: 700;
+            font-size: px-to-rem(20px);
+            font-weight: 600;
+            letter-spacing: -0.02rem;
         }
     }
     // .nav-actions {
-    //     min-height: calc(100vh - $header-height);
+    //     min-height: calc(100vh - $app-header-height);
     // }
 
     .main-nav {
@@ -27,7 +30,7 @@
         right: 0;
         transform: translateX(100%);
         background-color: $clr1;
-        min-height: calc(100vh - $header-height);
+        min-height: calc(100vh - $app-header-height);
         transition: transform 0.5s;
 
         &.open {
@@ -60,20 +63,19 @@
                 gap: unset;
             }
 
-            & ul li {
-                display: flex;
-                height: 100%;
-            }
             .nav-link {
-                height: $header-height;
-                line-height: $header-height;
+                height: $app-header-height;
+                line-height: $app-header-height;
                 padding: 0 1em;
                 font-weight: 500;
             }
         }
         .nav-actions {
             .nav-link {
-                margin-inline-start: 0.25em;
+                margin-inline-end: $spacing-s;
+                background-color: $editor-lightgray;
+                border-radius: 0.25rem;
+                padding: $spacing-xxs $spacing-xs;
             }
         }
         .main-nav {
