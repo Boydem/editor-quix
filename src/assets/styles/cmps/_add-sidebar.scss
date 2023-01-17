@@ -6,15 +6,17 @@
     background-color: $clr1;
     min-height: calc(100vh - $app-header-height + $toolbar-height);
     min-width: 35%;
-    box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
+    // box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
     display: grid;
     grid-template-columns: auto 1fr;
     z-index: 9999;
     .modules {
+        z-index: 2;
+        box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
         border-right: 1px solid $editor-lightgray;
         .modules-list {
             padding: $spacing-s 0;
-            margin-bottom: $spacing-s;
+            // margin-bottom: $spacing-s;
             border-bottom: 1px solid $editor-lightgray;
             & > * {
                 cursor: pointer;
@@ -37,6 +39,7 @@
         // max-width: ;
     }
     .module-content {
+        box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;

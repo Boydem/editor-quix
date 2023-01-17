@@ -9,12 +9,12 @@
     border-bottom: 1px solid $editor-lightgray;
     padding-inline-start: $spacing-m - $spacing-s;
     position: sticky;
-    top: $app-header-height;
-    z-index: 9999;
+    top: $app-header-height + 1px;
+    z-index: 99999;
     .tools {
         .tool {
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             transition: background-color 0.2s;
             display: flex;
             justify-content: center;
