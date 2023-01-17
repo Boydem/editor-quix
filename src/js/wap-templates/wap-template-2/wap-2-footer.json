@@ -1,0 +1,16 @@
+{
+    "id": "ojMzoi",
+    "type": "div",
+    "name": "footer",
+    "cmps": [
+        {
+            "id": "ObOU7d",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© 2023 by Gigaplay. Created on Winx."
+            },
+            "cmps": []
+        }
+    ]
+}

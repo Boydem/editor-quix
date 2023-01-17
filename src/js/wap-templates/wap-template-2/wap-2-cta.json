@@ -1,0 +1,40 @@
+{
+    "id": "SLjtqR",
+    "type": "div",
+    "name": "wap-2-cta",
+    "cmps": [
+        {
+            "id": "828h0t",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "Subscribe"
+            },
+            "cmps": []
+        },
+        {
+            "id": "I9Skei",
+            "type": "p",
+            "name": "",
+            "content": {
+                "txt": "Be the first to know about new games, exclusive previews & special promotions"
+            },
+            "cmps": []
+        },
+        {
+            "id": "n7CkNR",
+            "type": "input",
+            "name": "",
+            "cmps": []
+        },
+        {
+            "id": "z1EOxc",
+            "type": "button",
+            "name": "",
+            "content": {
+                "txt": "Submit"
+            },
+            "cmps": []
+        }
+    ]
+}
