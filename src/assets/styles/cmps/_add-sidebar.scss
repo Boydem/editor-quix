@@ -5,7 +5,8 @@
     // padding: $spacing-m;
     background-color: $clr1;
     min-height: calc(100vh - $app-header-height + $toolbar-height);
-    min-width: 35%;
+    min-width: 45%;
+    max-width: 45%;
     // box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
     display: grid;
     grid-template-columns: auto 1fr;
