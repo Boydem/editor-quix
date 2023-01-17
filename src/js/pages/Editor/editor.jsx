@@ -17,10 +17,8 @@ export function Editor() {
 
     function handleOnDragEnd(result) {
         const items = Array.from(templateOrder)
-        console.log(result.source.droppableId)
         if (result.source.droppableId !== 'editor-preview') {
             const newCmp = wapService.getCmpById(result.draggableId)
-            console.log(newCmp)
             items.splice(result.destination.index, 0, newCmp)
             setTemplateOrder(items)
             return
@@ -30,9 +28,13 @@ export function Editor() {
         setTemplateOrder(items)
     }
 
+    function handleOnDragStart() {
+        setIsAdding(false)
+    }
+
     return (
         <>
-            <DragDropContext onDragEnd={handleOnDragEnd}>
+            <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
                 <AppHeader />
                 <ToolsBar isAdding={isAdding} setIsAdding={setIsAdding} />
                 <EditorPreview templateOrder={templateOrder} />
