@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Home } from './js/pages/Home/home'
 import { TemplateIndex } from './js/pages/Template/template-index'
 import { Editor } from './js/pages/Editor/editor'
+import { EditorPreview } from './js/pages/Editor/cmps/editor-preview'
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<TemplateIndex />} />
                     <Route path='/edit' element={<Editor />} />
+                    <Route path='/edit/preview' element={<EditorPreview />} />
                 </Routes>
             </main>
         </div>

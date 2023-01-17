@@ -1,0 +1,114 @@
+{
+    "id": "tOHq2B",
+    "type": "div",
+    "name": "wap-1-nav",
+    "cmps": [{
+        "id": "RQDHtv",
+        "type": "div",
+        "name": "logo-container",
+        "cmps": [{
+            "id": "KW4ROx",
+            "type": "img",
+            "name": "",
+            "content": {
+                "imgUrl": "logo.png"
+            },
+            "cmps": []
+        }, {
+            "id": "PhRnXm",
+            "type": "div",
+            "name": "about-logo",
+            "cmps": [{
+                "id": "4E9e46",
+                "type": "h2",
+                "name": "",
+                "content": {
+                    "txt": "WeDu"
+                },
+                "cmps": []
+            }, {
+                "id": "WpzHIR",
+                "type": "p",
+                "name": "",
+                "content": {
+                    "txt": "Communicate. Collaborate. Create."
+                },
+                "cmps": []
+            }]
+        }]
+    }, {
+        "id": "wQesyh",
+        "type": "div",
+        "name": "links",
+        "cmps": [{
+            "id": "HsRKDr",
+            "type": "div",
+            "name": "",
+            "cmps": [{
+                "id": "yNNur1",
+                "type": "a",
+                "name": "",
+                "content": {
+                    "txt": "Home",
+                    "href": ""
+                },
+                "cmps": []
+            }]
+        }, {
+            "id": "b0XPUW",
+            "type": "div",
+            "name": "",
+            "cmps": [{
+                "id": "c6Pr8V",
+                "type": "a",
+                "name": "",
+                "content": {
+                    "txt": "Product",
+                    "href": ""
+                },
+                "cmps": []
+            }]
+        }, {
+            "id": "adZWVL",
+            "type": "div",
+            "name": "",
+            "cmps": [{
+                "id": "G3VEg9",
+                "type": "a",
+                "name": "",
+                "content": {
+                    "txt": "Pricing Plans",
+                    "href": ""
+                },
+                "cmps": []
+            }]
+        }, {
+            "id": "Gtgdku",
+            "type": "div",
+            "name": "",
+            "cmps": [{
+                "id": "H3wGdC",
+                "type": "a",
+                "name": "",
+                "content": {
+                    "txt": "Log In",
+                    "href": ""
+                },
+                "cmps": []
+            }]
+        }, {
+            "id": "GOtF8w",
+            "type": "div",
+            "name": "",
+            "cmps": [{
+                "id": "crgdTF",
+                "type": "button",
+                "name": "",
+                "content": {
+                    "txt": "Get Started"
+                },
+                "cmps": []
+            }]
+        }]
+    }]
+}
