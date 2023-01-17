@@ -6,7 +6,7 @@ export const wap1Hero = {
     type: 'div',
     category: 'hero',
     themePalette: 'primary',
-    thumbnail: '',
+    thumbnail: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673995017/wapHero1_nadu0l.png',
     cmps: [
         {
             id: makeId(),
