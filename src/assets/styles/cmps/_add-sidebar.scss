@@ -51,6 +51,10 @@
             grid-template-columns: auto 1fr;
             align-items: center;
             border-bottom: 1px solid $editor-lightgray;
+            .module-name {
+                font-weight: 600;
+                text-transform: uppercase;
+            }
             .actions {
                 padding-inline-start: $spacing-m;
                 place-self: end;

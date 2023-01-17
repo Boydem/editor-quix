@@ -33,7 +33,7 @@ export function AddSidebar({ setIsAdding }) {
             </div>
             <div className='module-content'>
                 <div className='module-header'>
-                    <h6>{activeModule}</h6>
+                    <span className='module-name'>{activeModule}</span>
                     <div className='actions'>
                         <span
                             onClick={() => {

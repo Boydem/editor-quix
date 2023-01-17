@@ -4,6 +4,9 @@ import { AiOutlineMore } from 'react-icons/ai'
 import { AiOutlineBars } from 'react-icons/ai'
 import { AiOutlineBold } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { FiLayers } from 'react-icons/fi'
+import { CgColorPicker } from 'react-icons/cg'
+import { IoColorFilterOutline } from 'react-icons/io5'
 
 export function ToolsBar({ isAdding, setIsAdding }) {
     return (
@@ -13,14 +16,13 @@ export function ToolsBar({ isAdding, setIsAdding }) {
                     <AiOutlinePlus />
                 </li>
                 <li className='tool'>
-                    <AiOutlineTeam />
+                    <FiLayers />
                 </li>
                 <li className='tool'>
-                    <AiOutlineLink />
+                    <CgColorPicker />
                 </li>
-
                 <li className='tool'>
-                    <AiOutlineBold />
+                    <IoColorFilterOutline />
                 </li>
 
                 <li className='tool'>
