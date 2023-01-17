@@ -11,7 +11,7 @@ import { ImgCmp } from './dynamic-cmps/img-cmp'
 import { PCmp } from './dynamic-cmps/p-cmp'
 
 import './style1.scss'
-import './style2.scss'
+// import './style2.scss'
 
 export default function DynamicCmp(props) {
     function handleClick(e, cmp) {
