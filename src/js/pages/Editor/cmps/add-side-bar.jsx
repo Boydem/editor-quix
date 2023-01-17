@@ -26,7 +26,13 @@ export function AddSidebar({ setIsAdding }) {
                 {modulesMenuItems.map((moduleGroup, idx) => (
                     <ul key={idx} className='modules-list'>
                         {moduleGroup.map((module, idx) => (
-                            <li key={idx}>{module}</li>
+                            <li
+                                className={activeModule === module && 'active'}
+                                onClick={() => setActiveModule(module)}
+                                key={idx}
+                            >
+                                {module}
+                            </li>
                         ))}
                     </ul>
                 ))}
