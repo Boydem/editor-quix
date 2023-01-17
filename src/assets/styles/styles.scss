@@ -3,27 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,300;1,400&display=swap');
 /* Setup */
 
-@import 'setup/_vars.scss';
-@import 'setup/_functions.scss';
-@import 'setup/_mixins.scss';
-@import 'setup/_typography.scss';
-@import 'setup/_display-typography.scss';
+@import './setup/_vars.scss';
+@import './setup/_functions.scss';
+@import './setup/_mixins.scss';
+@import './setup/_typography.scss';
+@import './setup/_display-typography.scss';
 
 /* Base */
-@import 'base/_base.scss';
-@import 'base/_helpers.scss';
-@import 'base/_spacing.scss';
-@import 'base/_layout.scss';
-@import 'base/_forms.scss';
-@import 'base/_tags.scss';
-@import 'base/_buttons.scss';
+@import './base/_base.scss';
+@import './base/_helpers.scss';
+@import './base/_spacing.scss';
+@import './base/_layout.scss';
+@import './base/_forms.scss';
+@import './base/_tags.scss';
+@import './base/_buttons.scss';
 
 // Common cmps
-@import 'common/_app-header.scss';
-@import 'common/_app-footer.scss';
+@import './cmps/_app-header.scss';
+@import './cmps/_app-footer.scss';
 
-// VIEWS
-@import 'views/_home.scss';
+// PAGES
+@import './pages/_home.scss';
 
 // USER
-@import 'components/create-site.scss';
+@import './cmps/create-site.scss';
