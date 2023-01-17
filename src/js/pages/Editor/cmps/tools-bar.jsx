@@ -3,11 +3,15 @@ import { AiOutlineLink } from 'react-icons/ai'
 import { AiOutlineMore } from 'react-icons/ai'
 import { AiOutlineBars } from 'react-icons/ai'
 import { AiOutlineBold } from 'react-icons/ai'
+import { AiOutlinePlus } from 'react-icons/ai'
 
-export function ToolsBar() {
+export function ToolsBar({ isAdding, setIsAdding }) {
     return (
         <section className='tools-bar full'>
             <ul className='tools flex'>
+                <li onClick={() => setIsAdding(!isAdding)} className={`${isAdding && 'active'} tool`}>
+                    <AiOutlinePlus />
+                </li>
                 <li className='tool'>
                     <AiOutlineTeam />
                 </li>

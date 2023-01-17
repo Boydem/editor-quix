@@ -21,6 +21,8 @@ $clr19: #5f4172;
 $clr20: #181818;
 $clr21: #07168d;
 $editor-lightgray: #e2e3eaea;
+$editor-active-bg: #dce9ff;
+$editor-active-clr: #116dff;
 
 // font
 $font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -48,7 +50,7 @@ $break-xwide: 1920px;
 // fixed sizes
 $home-header-height: 72px;
 $app-header-height: 52px + 1px; // 1px for border-bottom addition
-$toolbar-height: 42px + 1px; // 1px for border-bottom addition
+$toolbar-height: 44px + 1px; // 1px for border-bottom addition
 
 // LAYOUT
 $layoutPadding: $base-font-size * 5.063;
