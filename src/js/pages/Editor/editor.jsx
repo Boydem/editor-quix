@@ -1,3 +1,10 @@
+import { AppHeader } from '../../cmps/app-header'
+
 export function Editor() {
-    return <div>Editor</div>
+    return (
+        <>
+            <AppHeader />
+            <div>Editor</div>
+        </>
+    )
 }

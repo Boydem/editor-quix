@@ -18,7 +18,9 @@
 @import './base/_tags.scss';
 @import './base/_buttons.scss';
 
-// Common cmps
+// App common
+
+@import './cmps/_home-header.scss';
 @import './cmps/_app-header.scss';
 @import './cmps/_app-footer.scss';
 

@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
-export function AppHeader() {
+import { Link } from 'react-router-dom'
+export function HomeHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState()
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className='app-header flex justify-between full'>
+        <header className='home-header flex justify-between full'>
             <span className='logo'>WinX</span>
             <div onClick={toggleMenu} className='btn-mobile-menu'>
                 <FaBars />
@@ -16,9 +17,9 @@ export function AppHeader() {
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
                     <li>
-                        <a className='nav-link link-underline' href='#'>
+                        <Link className='nav-link link-underline' to='/edit'>
                             <span>Home</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <a className='nav-link link-underline' href='#'>
@@ -26,9 +27,9 @@ export function AppHeader() {
                         </a>
                     </li>
                     <li>
-                        <a className='nav-link btn-start-now link-underline' href='#'>
+                        <Link className='nav-link btn-start-now link-underline' to='/create'>
                             <span>Start Now</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
