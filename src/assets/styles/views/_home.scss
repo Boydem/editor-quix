@@ -37,7 +37,7 @@
 }
 
 .hero-top {
-    @include dotsImgBg('../../imgs/Xeditor-assets/bg-hero.webp', 1);
+    @include dotsImgBg('../../imgs/home-assets/bg-hero.webp', 1);
     padding-bottom: $spacing-xl;
     color: white;
     overflow: hidden;
@@ -103,7 +103,7 @@
 }
 
 .hero-bottom {
-    @include dotsImgBg('../../imgs/Xeditor-assets/hero-bottom.webp');
+    @include dotsImgBg('../../imgs/home-assets/hero-bottom.webp');
 
     & a {
         @include linkUnderline($clr1);
