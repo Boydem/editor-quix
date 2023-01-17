@@ -1,0 +1,49 @@
+.app-footer {
+    border-top: 1px solid rgba($clr18, .25);
+    padding: 6rem 8rem;
+    max-width: 1345px;
+    margin: auto;
+    font-size: 14px;
+
+    & .logo {
+        font-size: #{fluid(28px, 32px, $break-narrow, $break-wide)};
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1;
+        display: block;
+    }
+
+    & .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        margin-bottom: 3rem;
+
+        & .footer-links-container {
+            display: flex;
+            justify-content: space-between;
+
+            & .footer-nav {
+                flex-basis: 33%;
+            }
+
+            & .nav-label {
+                text-transform: uppercase;
+                font-weight: 800;
+                margin-bottom: 1rem;
+            }
+        }
+
+
+        & .footer-links {
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        & .footer-winx {
+
+            justify-self: end;
+        }
+    }
+}

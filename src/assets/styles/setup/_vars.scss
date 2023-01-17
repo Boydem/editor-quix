@@ -1,0 +1,65 @@
+// COLOR PALETTE
+$clr1: #ffffff;
+$clr2: #000000;
+$clr3: #0000ee;
+$clr4: #0074ff;
+$clr5: #003dff;
+$clr6: #013965;
+$clr7: #787c95;
+$clr8: #0e131d;
+$clr9: #979aaa;
+$clr10: #116dff;
+$clr11: #141414;
+$clr12: #e8eaed;
+$clr13: #e900ff;
+$clr14: #eef0f4;
+$clr15: #181818;
+$clr16: #1c2c49;
+$clr17: #384ad3;
+$clr18: #6F6F6F;
+$clr19: #5f4172;
+$clr20: #181818;
+$clr21: #07168D;
+
+// font
+$font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;
+$font-family: 'Lato', Arial, Helvetica, sans-serif;
+$base-font-size: 16px;
+$base-font-ratio: 1.5;
+
+// Define spacing variables
+$spacing-unit: 1rem;
+$spacing-xxs: 0.296 * $spacing-unit;
+$spacing-xs: 0.444 * $spacing-unit;
+$spacing-s: 0.667 * $spacing-unit;
+$spacing-m: 1.5 * $spacing-unit;
+$spacing-l: 2.25 * $spacing-unit;
+$spacing-l: 3.375 * $spacing-unit;
+$spacing-xl: 5.063 * $spacing-unit;
+$spacing-xxl: 7.594 * $spacing-unit;
+$spacing-xxxl: 11.391 * $spacing-unit;
+
+// Define breakpoints
+$break-narrow: 640px;
+$break-wide: 1024px;
+$break-xwide : 1920px;
+
+// fixed sizes
+$header-height: 72px;
+
+// LAYOUT
+$layoutPadding: $base-font-size * 5.063;
+
+
+$padded-break-narrow: $break-narrow + $layoutPadding * 0.667;
+$padded-break-normal: $break-wide + $layoutPadding * 1;
+$padded-break-wide: $break-xwide + $layoutPadding * 1.5;
+
+
+// @media (min-width: $break-narrow) {
+//     $layoutPadding: $base-font-size * 3.375;
+// }
+
+// @media (min-width: $break-wide) {
+//     $layoutPadding: $base-font-size * 5.063;
+// }
