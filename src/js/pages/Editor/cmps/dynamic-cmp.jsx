@@ -10,32 +10,37 @@ import { H6Cmp } from './dynamic-cmps/h6-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import { PCmp } from './dynamic-cmps/p-cmp'
 
-import './style.scss'
+import './style1.scss'
+// import './style2.scss'
 
 export default function DynamicCmp(props) {
+    function handleClick(e, cmp) {
+        e.stopPropagation()
+        e.target.classList.add('clicked')
+    }
     switch (props.cmp.type) {
         case 'div':
-            return <DivCmp cmp={props.cmp} />
+            return <DivCmp cmp={props.cmp} handleClick={handleClick} />
         case 'h1':
-            return <H1Cmp cmp={props.cmp} />
+            return <H1Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h2':
-            return <H2Cmp cmp={props.cmp} />
+            return <H2Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h3':
-            return <H3Cmp cmp={props.cmp} />
+            return <H3Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h4':
-            return <H4Cmp cmp={props.cmp} />
+            return <H4Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h5':
-            return <H5Cmp cmp={props.cmp} />
+            return <H5Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h6':
-            return <H6Cmp cmp={props.cmp} />
+            return <H6Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'img':
-            return <ImgCmp cmp={props.cmp} />
+            return <ImgCmp cmp={props.cmp} handleClick={handleClick} />
         case 'p':
-            return <PCmp cmp={props.cmp} />
+            return <PCmp cmp={props.cmp} handleClick={handleClick} />
         case 'a':
-            return <ACmp cmp={props.cmp} />
+            return <ACmp cmp={props.cmp} handleClick={handleClick} />
         case 'button':
-            return <ButtonCmp cmp={props.cmp} />
+            return <ButtonCmp cmp={props.cmp} handleClick={handleClick} />
         default:
             console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
             break
