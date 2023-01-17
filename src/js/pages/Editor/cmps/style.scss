@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap');
+
+.templates-css-reset {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+    /*
+  1. Use a more-intuitive box-sizing model.
+*/
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    /*
+    2. Remove default margin
+  */
+    * {
+        margin: 0;
+    }
+    /*
+    3. Allow percentage-based heights in the application
+  */
+    html,
+    body {
+        height: 100%;
+    }
+    /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+    body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+    }
+    /*
+    6. Improve media defaults
+  */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+    /*
+    7. Remove built-in form typography styles
+  */
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+    /*
+    8. Avoid text overflows
+  */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+    /*
+    9. Create a root stacking context
+  */
+    #root,
+    #__next {
+        isolation: isolate;
+    }
+}
+
+.wap-1-nav {
+    background: #eef;
+    padding: 1.5rem 10%;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .about-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            padding-right: 1rem;
+            width: 55px;
+        }
+    }
+
+    .hamburger-menu {
+        display: none;
+        &-btn {
+            display: none;
+        }
+    }
+
+    .links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        a {
+            padding: 0 1rem;
+            text-decoration: none;
+            color: black;
+        }
+        button {
+            margin-left: 1rem;
+            background: #ffbf23;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid black;
+            padding: 0.5rem 1.4rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.wap-1-hero {
+    background: #eef;
+    padding: 0rem 15%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    .hero-image {
+        width: 90%;
+    }
+    .content {
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+        p {
+            font-size: 1.25rem;
+            margin: 2rem 0;
+        }
+        button {
+            background: #101010;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #101010;
+            padding: 0.5rem 1.4rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .icons {
+            padding-top: 4rem;
+            display: flex;
+
+            .icon {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-size: 1rem;
+                    padding-left: 1rem;
+                }
+            }
+            img {
+                width: 20%;
+            }
+        }
+    }
+}
+
+.wap-1-divider-1 {
+    height: 125px;
+    background: radial-gradient(180% 180% at right -65% top -65%, #eef 100%, #ffbf23);
+}
+
+.wap-1-section-1 {
+    background: #ffbf23;
+    padding: 6rem 15%;
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 2.5rem;
+        max-width: 400px;
+    }
+}
+
+.wap-1-cards-1 {
+    padding: 6rem 15%;
+    margin: 0;
+    background: #eef;
+    h2 {
+        padding-bottom: 1rem;
+        margin: 0;
+        font-weight: 400;
+        font-size: 2.5rem;
+    }
+    p {
+        max-width: 625px;
+        padding-bottom: 3rem;
+    }
+
+    .section-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6rem;
+        .item {
+            h4 {
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+            img {
+                width: 100%;
+                border-radius: 10px;
+                border: 3px solid #101010;
+            }
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+.wap-1-section-2 {
+    background: #eef;
+    padding: 6rem 15%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 15rem;
+    img {
+        width: 100%;
+    }
+    .content {
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+        .icons {
+            padding-top: 4rem;
+            display: flex;
+
+            .icon {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-size: 1rem;
+                    padding-left: 1rem;
+                }
+            }
+            img {
+                width: 20%;
+            }
+        }
+    }
+}
+
+.wap-1-divider-2 {
+    height: 125px;
+    background: radial-gradient(180% 180% at left -65% top -65%, #eef 100%, #ffd7ef);
+}
+
+.wap-1-cards-2 {
+    margin: 0;
+    background: #ffd7ef;
+    .content {
+        padding: 0rem 15%;
+        padding-top: 6rem;
+
+        h2 {
+            padding-bottom: 1rem;
+            margin: 0;
+            font-weight: 400;
+            font-size: 2.5rem;
+        }
+        p {
+            max-width: 625px;
+            padding-bottom: 3rem;
+        }
+    }
+
+    .gallery {
+        align-items: center;
+        justify-items: center;
+        padding: 2rem 15%;
+        padding-bottom: 4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+.wap-1-section-3 {
+    padding: 0rem 15%;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        max-width: 800px;
+        font-size: 2.5rem;
+        text-align: center;
+        font-weight: 400;
+    }
+    button {
+        background: #101010;
+        font-size: 1rem;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #101010;
+        padding: 0.5rem 1.4rem;
+        font-weight: 600;
+        color: white;
+    }
+    img {
+        width: 965px;
+        height: 500px;
+    }
+}
+.footer-1 {
+    background: #101010;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+@media screen and (max-width: 1350px) {
+    .wap-1-nav {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+    .wap-1-hero,
+    .wap-1-section-1,
+    .gallery-1,
+    .wap-1-section-2,
+    .gallery-2,
+    .wap-1-section-3 {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .wap-1-hero {
+        display: flex;
+        flex-direction: column;
+        img {
+            order: -1;
+            width: 100%;
+        }
+    }
+
+    .wap-1-section-1 .content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        h3 {
+            max-width: unset;
+        }
+    }
+
+    .gallery-1 {
+        .section-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            .item {
+                p {
+                    padding: 0;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .wap-1-section-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .gallery-2 {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+// FINISH HAMBURGER

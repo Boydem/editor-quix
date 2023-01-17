@@ -1,0 +1,114 @@
+{
+    "id": "4o5Ir8",
+    "type": "div",
+    "name": "wap-1-hero",
+
+
+    "cmps": [{
+        "id": "b14cax",
+        "type": "div",
+        "name": "content",
+        "cmps": [{
+            "id": "wWZCFh",
+            "type": "h1",
+            "name": "",
+            "content": {
+                "txt": "Communicate. Collaborate. Create."
+            },
+            "cmps": []
+        }, {
+            "id": "HNK91l",
+            "type": "p",
+            "name": "",
+            "content": {
+                "txt": "WeDu provides an effective and powerful way to manage your projects"
+            },
+            "cmps": []
+        }, {
+            "id": "gfdvPC",
+            "type": "button",
+            "name": "",
+            "content": {
+                "txt": "Get Started"
+            },
+            "cmps": []
+        }, {
+            "id": "6002e8",
+            "type": "div",
+            "name": "icons",
+            "cmps": [{
+                "id": "KJKS7K",
+                "type": "div",
+                "name": "icon",
+                "cmps": [{
+                    "id": "IgOjCn",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "speed-security.png"
+                    },
+                    "cmps": []
+                }, {
+                    "id": "Ag7zLD",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Speed & Security"
+                    },
+                    "cmps": []
+                }]
+            }, {
+                "id": "w5Uutc",
+                "type": "div",
+                "name": "icon",
+                "cmps": [{
+                    "id": "jxIGdi",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "flex-scale.png"
+                    },
+                    "cmps": []
+                }, {
+                    "id": "cK3YxE",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Flexibility & Scalability"
+                    },
+                    "cmps": []
+                }]
+            }, {
+                "id": "Roysxh",
+                "type": "div",
+                "name": "icon",
+                "cmps": [{
+                    "id": "4vB6qI",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "better-collab.png"
+                    },
+                    "cmps": []
+                }, {
+                    "id": "XRquUe",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Better Collaboration"
+                    },
+                    "cmps": []
+                }]
+            }]
+        }]
+    }, {
+        "id": "XgbxEX",
+        "type": "img",
+        "name": "hero-image",
+        "content": {
+            "imgUrl": "hero-image.svg"
+        },
+        "cmps": []
+    }]
+
+}
