@@ -4,7 +4,10 @@ $maxViewportSize: 750;
 @mixin display-text($class, $min-size, $max-size, $max-viewport: $maxViewportSize) {
     &.#{$class} {
         line-height: 1.5;
-        font-size: calc(#{$min-size}px + (#{$max-size} - #{$min-size}) * ((100vw - #{$minViewportSize} * 1px) / (#{$max-viewport} - #{$minViewportSize})));
+        font-size: calc(
+            #{$min-size}px + (#{$max-size} - #{$min-size}) *
+                ((100vw - #{$minViewportSize} * 1px) / (#{$max-viewport} - #{$minViewportSize}))
+        );
     }
 }
 
@@ -44,12 +47,9 @@ span {
         @include display-text('display-link', 13, 20, $maxViewportSize);
         @include display-text('display-p', 10, 24, $maxViewportSize);
     }
-
 }
 
-
 span {
-
     &.text-xxl,
     &.display-1,
     &.display-2,
@@ -69,7 +69,6 @@ span {
     &.display-3 {
         font-weight: 400;
         line-height: 1.25;
-
     }
 
     &.text-xxl {

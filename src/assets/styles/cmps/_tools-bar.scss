@@ -1,0 +1,28 @@
+.tools-bar {
+    min-height: $toolbar-height;
+    background-color: $clr1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    margin: auto;
+    z-index: 99;
+    border-bottom: 1px solid $editor-lightgray;
+    padding-inline-start: $spacing-m - $spacing-s;
+
+    .tools {
+        .tool {
+            cursor: pointer;
+            padding: $spacing-xxs $spacing-xs;
+            font-size: 1.25rem;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin: $spacing-xxs $spacing-xs $spacing-xxs 0;
+            border-radius: $spacing-xxs;
+            &:hover {
+                background-color: $editor-lightgray;
+            }
+        }
+    }
+}
