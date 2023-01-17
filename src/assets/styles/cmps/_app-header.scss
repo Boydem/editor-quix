@@ -6,7 +6,18 @@
     margin: auto;
     z-index: 99;
     border-bottom: 1px solid $editor-lightgray;
-    padding-inline-start: $spacing-m;
+    padding: 0 $spacing-m;
+    position: sticky;
+    top: 0;
+    min-height: $app-header-height;
+
+    &.dark-header {
+        background-color: $clr11;
+        & > *,
+        & a {
+            color: $clr1 !important;
+        }
+    }
     .logo-container {
         border-inline-end: 1px solid $editor-lightgray;
         padding-inline-end: $spacing-m;
@@ -72,10 +83,13 @@
         }
         .nav-actions {
             .nav-link {
-                margin-inline-end: $spacing-s;
+                margin-inline-start: $spacing-s;
                 background-color: $editor-lightgray;
                 border-radius: 0.25rem;
                 padding: $spacing-xxs $spacing-xs;
+                &:hover {
+                    background-color: lighten($editor-lightgray, 5%);
+                }
             }
         }
         .main-nav {

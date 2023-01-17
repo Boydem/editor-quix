@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react'
-import { BsFillMoonStarsFill } from 'react-icons/bs'
-import { FaBars } from 'react-icons/fa'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-export function AppHeader() {
+
+export function DarkHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState()
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className={`app-header full`}>
+        <header className='dark-header app-header full'>
             <div className='logo-container'>
                 <span className='logo'>WinX</span>
             </div>
@@ -39,25 +38,6 @@ export function AppHeader() {
                         <a className='nav-link link-underline' href='#'>
                             <span>Help</span>
                         </a>
-                    </li>
-                </ul>
-            </nav>
-            <nav className={`nav-actions ${isMenuOpen ? 'open' : ''}`}>
-                <ul className='flex align-center'>
-                    <li>
-                        <Link className='nav-link' to='/edit'>
-                            <span>Invite +</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <a className='nav-link' href='#'>
-                            <span>Preview</span>
-                        </a>
-                    </li>
-                    <li>
-                        <Link className='nav-link btn-publish' to='/create'>
-                            <span>Publish</span>
-                        </Link>
                     </li>
                 </ul>
             </nav>

@@ -1,7 +1,9 @@
 .editor {
+    border-radius: $spacing-s;
+    padding: $spacing-s;
     max-width: 100%;
-    height: 100%;
-    min-height: calc(100vh - $app-header-height - $toolbar-height);
+    margin-top: $spacing-l / 2;
+    min-height: calc(100vh - $app-header-height - $toolbar-height - $spacing-l);
     max-height: calc(100vh - $app-header-height - $toolbar-height);
-    background-color: $editor-lightgray;
+    background-color: lighten($editor-lightgray, 5%);
 }
