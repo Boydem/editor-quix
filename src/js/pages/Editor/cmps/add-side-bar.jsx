@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { DynamicModule } from './dynamic-module'
 import { AiOutlineClose } from 'react-icons/ai'
 
-export function AddSidebar() {
+export function AddSidebar({ setIsAdding }) {
     const [activeModule, setActiveModule] = useState('Quick add')
     const modulesMenuItems = [
         ['Quick add', 'Assets'],
@@ -35,7 +35,12 @@ export function AddSidebar() {
                 <div className='module-header'>
                     <h6>{activeModule}</h6>
                     <div className='actions'>
-                        <span className='btn'>
+                        <span
+                            onClick={() => {
+                                setIsAdding(prev => !prev)
+                            }}
+                            className='btn'
+                        >
                             <AiOutlineClose />
                         </span>
                     </div>

@@ -16,7 +16,7 @@ export function Editor() {
             <AppHeader />
             <ToolsBar isAdding={isAdding} setIsAdding={setIsAdding} />
             <EditorPreview template={template} />
-            {isAdding && <AddSidebar />}
+            {isAdding && <AddSidebar setIsAdding={setIsAdding} />}
         </>
     )
 }
