@@ -6,18 +6,19 @@
     background-color: $clr1;
     min-height: calc(100vh - $app-header-height + $toolbar-height);
     min-width: 35%;
-    box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
+    // box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
     display: grid;
     grid-template-columns: auto 1fr;
     z-index: 9999;
     .modules {
+        z-index: 2;
+        box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
         border-right: 1px solid $editor-lightgray;
         .modules-list {
             padding: $spacing-s 0;
-            margin-bottom: $spacing-s;
+            // margin-bottom: $spacing-s;
             border-bottom: 1px solid $editor-lightgray;
             & > * {
-                // background-color: #5555ee;
                 cursor: pointer;
                 text-transform: uppercase;
                 font-weight: 600;
@@ -36,5 +37,45 @@
             }
         }
         // max-width: ;
+    }
+    .module-content {
+        box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        .module-header {
+            padding: $spacing-s $spacing-m;
+            align-items: center;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            border-bottom: 1px solid $editor-lightgray;
+            .actions {
+                padding-inline-start: $spacing-m;
+                place-self: end;
+                & > * {
+                    cursor: pointer;
+                    font-size: 1rem;
+                    transition: background-color 0.2s;
+                    display: flex;
+                    justify-content: center;
+                    align-self: center;
+                    margin: $spacing-xxs $spacing-xs $spacing-xxs 0;
+                    padding: $spacing-xxs $spacing-xs;
+                    border-radius: $spacing-xxs;
+                    &:hover {
+                        background-color: $editor-lightgray;
+                    }
+                    &.active {
+                        color: $editor-active-clr;
+                        background-color: $editor-active-bg;
+                    }
+                }
+            }
+        }
+        .module-options {
+            padding: $spacing-s $spacing-m;
+        }
     }
 }

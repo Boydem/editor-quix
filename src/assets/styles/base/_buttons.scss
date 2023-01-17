@@ -1,61 +1,61 @@
 /* for all buttons */
 a,
 button {
-  transition: color 0.3s, background 0.3s, stroke 0.3s;
+    transition: color 0.3s, background 0.3s, stroke 0.3s;
 }
 
 button {
-  background-color: $clr1;
-  color: $clr2;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  padding: 0.22em 0.88em;
-  font-weight: 400;
+    background-color: $clr1;
+    color: $clr2;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0.22em 0.88em;
+    font-weight: 400;
 }
 
 .btn {
-  padding: .66em 1.33em;
-  font-weight: 600;
-  font-size: 1rem;
+    padding: $spacing-xxs $spacing-xs;
+    font-weight: 600;
+    font-size: 1rem;
 
-  &.primary {
-    background-color: $clr1;
-    color: $clr2;
-  }
-
-  &.secondary {
-    background-color: $clr2;
-    color: $clr1;
-  }
-
-  &.circled {
-    border-radius: 33em;
-  }
-
-  &.rounded {
-    border-radius: .33em;
-  }
-
-  &.btn-template {
-    background-color: transparent;
-    color: $clr1;
-
-    &:first-of-type {
-      border-bottom: 1px solid $clr1;
+    &.primary {
+        background-color: $clr1;
+        color: $clr2;
     }
-  }
 
-  @media (min-width: $break-narrow) {
-    & {
-      font-size: px-to-rem(20px);
-      padding: .66em 1.8em;
+    &.secondary {
+        background-color: $clr2;
+        color: $clr1;
     }
-  }
 
-  @media (min-width: $break-wide) {
-    & {
-      padding: .8em 3em;
+    &.circled {
+        border-radius: 33em;
     }
-  }
+
+    &.rounded {
+        border-radius: $spacing-xxs;
+    }
+
+    &.btn-template {
+        background-color: transparent;
+        color: $clr1;
+
+        &:first-of-type {
+            border-bottom: 1px solid $clr1;
+        }
+    }
+
+    @media (min-width: $break-narrow) {
+        & {
+            font-size: px-to-rem(20px);
+            padding: 0.66em 1.8em;
+        }
+    }
+
+    @media (min-width: $break-wide) {
+        & {
+            padding: 0.8em 3em;
+        }
+    }
 }
