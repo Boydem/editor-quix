@@ -11,13 +11,25 @@ import { getWap2Template } from '../../wap-templates/wap-template-2/wap-template
 export function Editor() {
     const [isAdding, setIsAdding] = useState(true)
     const [isEditing, setIsEditing] = useState(false)
-    const template = getWap2Template()
+    const template = getWap1Template()
+    const [templateOrder, setTemplateOrder] = useState(template)
+
+    function handleOnDragEnd(result) {
+        const items = Array.from(templateOrder)
+        const [reorderedItem] = items.splice(result.source.index, 1)
+        items.splice(result.destination.index, 0, reorderedItem)
+
+        setTemplateOrder(items)
+    }
+
     return (
         <>
-            <AppHeader />
-            <ToolsBar isAdding={isAdding} setIsAdding={setIsAdding} />
-            <EditorPreview template={template} />
-            {isAdding && <AddSidebar />}
+            <DragDropContext onDragEnd={handleOnDragEnd}>
+                <AppHeader />
+                <ToolsBar isAdding={isAdding} setIsAdding={setIsAdding} />
+                <EditorPreview templateOrder={templateOrder} />
+                {isAdding && <AddSidebar />}
+            </DragDropContext>
         </>
     )
 }
