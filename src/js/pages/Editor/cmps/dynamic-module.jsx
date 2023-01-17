@@ -5,9 +5,8 @@ export function DynamicModule({ activeModule }) {
     switch (activeModule) {
         case 'Quick add':
             return <QuickAdd />
-            break
 
         default:
-            break
+            return <QuickAdd />
     }
 }
