@@ -1,5 +1,6 @@
 .tools-bar {
     min-height: $toolbar-height;
+    max-height: $toolbar-height;
     background-color: $clr1;
     width: 100%;
     display: grid;
@@ -12,16 +13,20 @@
     .tools {
         .tool {
             cursor: pointer;
-            padding: $spacing-xxs $spacing-xs;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             transition: background-color 0.2s;
             display: flex;
             justify-content: center;
             align-self: center;
             margin: $spacing-xxs $spacing-xs $spacing-xxs 0;
+            padding: $spacing-xxs $spacing-xs;
             border-radius: $spacing-xxs;
             &:hover {
                 background-color: $editor-lightgray;
+            }
+            &.active {
+                color: $editor-active-clr;
+                background-color: $editor-active-bg;
             }
         }
     }

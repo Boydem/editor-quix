@@ -9,7 +9,7 @@ export function AppHeader() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className={`app-header full`}>
+        <header className='app-header full'>
             <div className='logo-container'>
                 <span className='logo'>WinX</span>
             </div>
