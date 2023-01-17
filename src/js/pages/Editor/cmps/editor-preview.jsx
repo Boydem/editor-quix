@@ -12,13 +12,6 @@ export function EditorPreview({ template }) {
 
         setTemplateOrder(items)
     }
-    // return (
-    //     <div className='full templates-css-reset'>
-    //         {templateOrder.map(c => {
-    //             return <DynamicCmp cmp={c} key={c.id} />
-    //         })}
-    //     </div>
-    // )
     return (
         <DragDropContext onDragEnd={handleOnDragEnd}>
             <Droppable droppableId='template'>
