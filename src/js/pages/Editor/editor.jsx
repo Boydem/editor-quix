@@ -9,7 +9,7 @@ import { getWap1Template } from '../../wap-templates/wap-template-1/wap-1-templa
 import { getWap2Template } from '../../wap-templates/wap-template-2/wap-template-2'
 
 export function Editor() {
-    const [isAdding, setIsAdding] = useState(true)
+    const [isAdding, setIsAdding] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
     const template = getWap1Template()
     const [templateOrder, setTemplateOrder] = useState(template)
@@ -28,7 +28,7 @@ export function Editor() {
                 <AppHeader />
                 <ToolsBar isAdding={isAdding} setIsAdding={setIsAdding} />
                 <EditorPreview templateOrder={templateOrder} />
-                {isAdding && <AddSidebar />}
+                {isAdding && <AddSidebar setIsAdding={setIsAdding} />}
             </DragDropContext>
         </>
     )

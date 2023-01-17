@@ -12,7 +12,7 @@ export function ToolsBar({ isAdding, setIsAdding }) {
     return (
         <section className='tools-bar full'>
             <ul className='tools flex'>
-                <li onClick={() => setIsAdding(!isAdding)} className={`${isAdding && 'active'} tool`}>
+                <li onClick={() => setIsAdding(prev => !prev)} className={`${isAdding ? 'active' : ''} tool`}>
                     <AiOutlinePlus />
                 </li>
                 <li className='tool'>

@@ -23,7 +23,7 @@
             padding: $spacing-xxs $spacing-xs;
             border-radius: $spacing-xxs;
             &:hover {
-                background-color: $editor-lightgray;
+                background-color: $editor-hover-bg;
             }
             &.active {
                 color: $editor-active-clr;

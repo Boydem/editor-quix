@@ -8,7 +8,7 @@ export function EditorPreview({ templateOrder }) {
         <Droppable droppableId='template'>
             {provided => {
                 return (
-                    <div {...provided.droppableProps} ref={provided.innerRef} className='full'>
+                    <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview'>
                         {templateOrder.map((fraction, idx) => {
                             return (
                                 <Draggable key={idx} draggableId={idx.toString()} index={idx}>

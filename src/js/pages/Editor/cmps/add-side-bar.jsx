@@ -27,7 +27,7 @@ export function AddSidebar({ setIsAdding }) {
                     <ul key={idx} className='modules-list'>
                         {moduleGroup.map((module, idx) => (
                             <li
-                                className={activeModule === module && 'active'}
+                                className={activeModule === module ? 'active' : ''}
                                 onClick={() => setActiveModule(module)}
                                 key={idx}
                             >
