@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 export function EditorPreview({ templateOrder }) {
     return (
-        <Droppable droppableId='template'>
+        <Droppable droppableId='editor-preview'>
             {provided => {
                 return (
                     <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview'>
