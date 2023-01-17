@@ -6,10 +6,11 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin: auto;
-    z-index: 99;
     border-bottom: 1px solid $editor-lightgray;
     padding-inline-start: $spacing-m - $spacing-s;
-
+    position: sticky;
+    top: $app-header-height;
+    z-index: 9999;
     .tools {
         .tool {
             cursor: pointer;
