@@ -9,6 +9,7 @@
     "axios": "^1.2.2",
     "modularscale-sass": "^3.0.10",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
