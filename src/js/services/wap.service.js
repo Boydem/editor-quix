@@ -12,6 +12,7 @@ export const wapService = {
     remove,
     save,
     getEditedWap,
+    getCategoryFractions,
 }
 let gCmpsMap
 
@@ -36,7 +37,10 @@ function _createMap() {
         }
         return acc
     }, {})
-    console.log(gCmpsMap)
+}
+
+function getCategoryFractions(category) {
+    return gCmpsMap[category]
 }
 _createWaps()
 

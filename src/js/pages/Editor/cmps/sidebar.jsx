@@ -52,7 +52,7 @@ export function Sidebar({ setSidebarOpen, isSidebarOpen }) {
                     </div>
                 </div>
                 <div className='module-options'>
-                    <DynamicModule activeModule={activeModule} />
+                    <DynamicModule activeModule={activeModule} modulesMenuItems={modulesMenuItems}/>
                 </div>
             </div>
         </section>
