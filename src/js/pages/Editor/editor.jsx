@@ -11,12 +11,11 @@ import { useSelector } from 'react-redux'
 import { saveWap, setIsEditing, setSidebarContext } from '../../store/wap/wap.action'
 
 export function Editor() {
-    const template = useSelector(storeState => storeState.wapModule.wap)
+    const wap = useSelector(storeState => storeState.wapModule.wap)
     const [isSidebarOpen, setSidebarOpen] = useState(false)
     const sidebarContext = useSelector(storeState => storeState.wapModule.sidebarContext)
-    console.log('sidebarContext:', sidebarContext)
-    // const currSide =
     const { wapId } = useParams()
+    
     useEffect(() => {
         loadWap()
         setIsEditing(true)
@@ -32,31 +31,35 @@ export function Editor() {
     }
 
     async function loadWap() {
-        let template = await wapService.get(wapId)
-        saveWap(template)
+        try {
+            let wap = await wapService.get(wapId)
+            saveWap(wap)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
-    function handleOnDragEnd(result) {
+    function handleOnDragEnd(res) {
         let changedCmp
-        if (result.source.droppableId !== 'editor-preview' && result.destination.droppableId === 'editor-preview') {
-            changedCmp = wapService.getCmpById(result.source.droppableId, result.draggableId)
+        if (res.source.droppableId !== 'editor-preview' && res.destination.droppableId === 'editor-preview') {
+            changedCmp = wapService.getCmpById(res.source.droppableId, res.draggableId)
         } else {
-            ;[changedCmp] = template.cmps.splice(result.source.index, 1)
+            ;[changedCmp] = wap.cmps.splice(res.source.index, 1)
         }
-        template.cmps.splice(result.destination.index, 0, changedCmp)
-        saveWap(template)
+        wap.cmps.splice(res.destination.index, 0, changedCmp)
+        saveWap(wap)
     }
 
     function handleOnDragStart() {
         // setSidebarOpen(false)
     }
-    if (Object.keys(template).length === 0) return
+    if (Object.keys(wap).length === 0) return
     return (
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
                 <AppHeader />
                 <ToolsBar isSidebarOpen={isSidebarOpen} onOpenSidebar={onOpenSidebar} />
-                <EditorPreview templateOrder={template.cmps} />
+                <EditorPreview wapCmps={wap.cmps} />
                 <Sidebar context={sidebarContext} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
             </DragDropContext>
         </>

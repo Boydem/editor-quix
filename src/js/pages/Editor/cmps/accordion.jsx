@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
+import { CirclePicker, CompactPicker, TwitterPicker } from 'react-color'
 
 const AccordionEdit = () => {
     const [openOption, setOpenOption] = useState()
@@ -84,7 +85,7 @@ const AccordionEdit = () => {
                 <AccordionTrigger>Adjust</AccordionTrigger>
                 <Accordion.Content className='AccordionContent'>
                     <div className='AccordionContentText'>
-                        Yes! You can animate the Accordion with CSS or JavaScript.
+                        <CompactPicker />
                     </div>
                 </Accordion.Content>
             </Accordion.Item>

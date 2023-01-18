@@ -1,23 +1,22 @@
 import DynamicCmp from './dynamic-cmp'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 import { useRef, useEffect } from 'react'
+import { utilService } from '../../../services/util.service'
 
-export function EditorPreview({ templateOrder }) {
+export function EditorPreview({ wapCmps }) {
     const editorResizerRef = [useRef(), useRef()]
     let resizingState = { isResizing: false, draggingResizer: null }
     const editorWrapper = useRef()
     useEffect(() => {
-        if (editorResizerRef) {
-            document.addEventListener('mousemove', handleResizeDrag)
-            document.addEventListener('mousemove', handleResizeDrag)
-
-            editorResizerRef[0].current.addEventListener('mousedown', () => handleMouseDown('left'))
-            editorResizerRef[1].current.addEventListener('mousedown', () => handleMouseDown('right'))
-
-            document.addEventListener('mouseup', handleMouseUp)
-            document.addEventListener('mouseup', handleMouseUp)
-        }
+        addResizerEventListeners()
     }, [])
+
+    function addResizerEventListeners() {
+        document.addEventListener('mousemove', handleResizeDrag)
+        editorResizerRef[0].current.addEventListener('mousedown', () => handleMouseDown('left'))
+        editorResizerRef[1].current.addEventListener('mousedown', () => handleMouseDown('right'))
+        document.addEventListener('mouseup', handleMouseUp)
+    }
 
     function handleMouseDown(dir) {
         resizingState.isResizing = true
@@ -32,25 +31,13 @@ export function EditorPreview({ templateOrder }) {
     }
     function handleResizeDrag(ev) {
         if (!resizingState.isResizing) return
-
-        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) - 25
-        let leftLeft
-        let rightLeft
-        if (resizingState.draggingResizer === 'left') {
-            leftLeft = ev.clientX + 5
-            rightLeft = vw - ev.clientX - 15
-        }
-        if (resizingState.draggingResizer === 'right') {
-            leftLeft = vw - ev.clientX + 5
-            rightLeft = ev.clientX - 15
-        }
-
-        // leftLeft = Math.max(leftLeft, 150)
-        leftLeft = Math.min(leftLeft, vw / 2 - 200)
-        rightLeft = Math.max(rightLeft, vw / 2 + 200)
-        editorResizerRef[1].current.style.left = `${rightLeft}px`
-        editorResizerRef[0].current.style.left = `${leftLeft}px`
-        editorWrapper.current.style.width = `${rightLeft - leftLeft - 30}px`
+        const [leftResizerLeftProperty, rightResizerLeftProperty] = utilService.getLeftRightPropertiesForDrag(
+            ev,
+            resizingState
+        )
+        editorResizerRef[1].current.style.left = `${rightResizerLeftProperty}px`
+        editorResizerRef[0].current.style.left = `${leftResizerLeftProperty}px`
+        editorWrapper.current.style.width = `${rightResizerLeftProperty - leftResizerLeftProperty - 30}px`
     }
 
     return (
@@ -60,7 +47,7 @@ export function EditorPreview({ templateOrder }) {
                     <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
                         <div ref={editorWrapper} className='wrapper'>
                             <div ref={editorResizerRef[0]} className='editor-resizer left'></div>
-                            {templateOrder.map((fraction, idx) => {
+                            {wapCmps.map((fraction, idx) => {
                                 return (
                                     <Draggable key={idx} draggableId={idx.toString()} index={idx}>
                                         {provided => {
