@@ -17,18 +17,13 @@ export const wapService = {
     findParentCmp,
 }
 let gCmpsMap
-
-// {"headers":["gfdsgfdsgds", "gfdsgfdsgds"],
-// "section":["gfdsgfdsgds", "gfdsgfdsgds"],
-// "nav":["gfdsgfdsgds", "gfdsgfdsgds"], }
-
 const STORAGE_KEY = 'wapDB'
 const EDITED_WAP_STORAGE_KEY = 'editedWap'
 
-const cmpsInList = [wap1Hero, wap2Hero]
-function getCmpById(id) {
-    return cmpsInList.find(cmp => cmp.id === id)
+function getCmpById(activeModule, cmpId) {
+    return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
 }
+
 function _createMap() {
     const allFractions = [...getWap1Template(), ...getWap2Template(), ...getWap3Template()]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
