@@ -1,3 +1,7 @@
 export function ImgCmp({ cmp, handleClick }) {
-    return <img src={cmp.content.imgUrl} alt='' className={cmp.name} onClick={e => handleClick(e, cmp)} />
+    let classes = cmp.name + ' '
+    if (cmp.class) {
+        classes += cmp.class?.join(' ')
+    }
+    return <img src={cmp.content.imgUrl} alt='' className={classes} onClick={e => handleClick(e, cmp)} />
 }
