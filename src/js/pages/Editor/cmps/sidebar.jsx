@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { DynamicModule } from './dynamic-module'
 import { AiOutlineClose } from 'react-icons/ai'
 
-export function AddSidebar({ setIsAdding }) {
+export function Sidebar({ setSidebarOpen, isSidebarOpen }) {
     const [activeModule, setActiveModule] = useState('Quick add')
     const modulesMenuItems = [
         ['Quick add', 'Assets'],
@@ -21,7 +21,7 @@ export function AddSidebar({ setIsAdding }) {
     ]
 
     return (
-        <section className='add-side-bar'>
+        <section className={`${isSidebarOpen ? 'open' : 'closed'} side-bar`}>
             <div className='modules'>
                 {modulesMenuItems.map((moduleGroup, idx) => (
                     <ul key={idx} className='modules-list'>
@@ -43,7 +43,7 @@ export function AddSidebar({ setIsAdding }) {
                     <div className='actions'>
                         <span
                             onClick={() => {
-                                setIsAdding(prev => !prev)
+                                setSidebarOpen(prev => !prev)
                             }}
                             className='btn'
                         >

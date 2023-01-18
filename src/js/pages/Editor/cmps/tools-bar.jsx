@@ -8,11 +8,11 @@ import { FiLayers } from 'react-icons/fi'
 import { CgColorPicker } from 'react-icons/cg'
 import { IoColorFilterOutline } from 'react-icons/io5'
 
-export function ToolsBar({ isAdding, setIsAdding }) {
+export function ToolsBar({ isSidebarOpen, setSidebarOpen }) {
     return (
         <section className='tools-bar full'>
             <ul className='tools flex'>
-                <li onClick={() => setIsAdding(prev => !prev)} className={`${isAdding ? 'active' : ''} tool`}>
+                <li onClick={() => setSidebarOpen(prev => !prev)} className={`${isSidebarOpen ? 'active' : ''} tool`}>
                     <AiOutlinePlus />
                 </li>
                 <li className='tool'>

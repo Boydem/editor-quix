@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AppHeader } from '../../cmps/app-header'
-import { AddSidebar } from './cmps/add-side-bar'
+import { Sidebar } from './cmps/sidebar'
 import { EditorPreview } from './cmps/editor-preview'
 import { ToolsBar } from './cmps/tools-bar'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
@@ -10,7 +10,7 @@ import { getWap2Template } from '../../wap-templates/wap-template-2/wap-template
 import { wapService } from '../../services/wap.service'
 
 export function Editor() {
-    const [isAdding, setIsAdding] = useState(false)
+    const [isSidebarOpen, setSidebarOpen] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
     const template = getWap1Template()
     const [templateOrder, setTemplateOrder] = useState(template)
@@ -29,16 +29,16 @@ export function Editor() {
     }
 
     function handleOnDragStart() {
-        setIsAdding(false)
+        setSidebarOpen(false)
     }
 
     return (
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
                 <AppHeader />
-                <ToolsBar isAdding={isAdding} setIsAdding={setIsAdding} />
+                <ToolsBar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
                 <EditorPreview templateOrder={templateOrder} />
-                {isAdding && <AddSidebar setIsAdding={setIsAdding} />}
+                <Sidebar isEditing={isEditing} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
             </DragDropContext>
         </>
     )

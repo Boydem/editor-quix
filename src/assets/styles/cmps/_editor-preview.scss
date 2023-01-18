@@ -1,0 +1,28 @@
+.editor-preview {
+    max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+    padding: $spacing-l $spacing-m;
+    background-color: $editor-bg;
+    border-radius: $spacing-s;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .wrapper {
+        max-width: 90%;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: $spacing-s;
+        overflow: hidden;
+    }
+    &::-webkit-scrollbar-thumb {
+        border: $spacing-xs solid transparent;
+        border-radius: 100px;
+        background-color: $clr9;
+        background-clip: content-box;
+    }
+    &::-webkit-scrollbar {
+        width: $spacing-m;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $clr12;
+    }
+}

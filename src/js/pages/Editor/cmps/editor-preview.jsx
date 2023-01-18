@@ -8,25 +8,27 @@ export function EditorPreview({ templateOrder }) {
         <Droppable droppableId='editor-preview'>
             {provided => {
                 return (
-                    <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview'>
-                        {templateOrder.map((fraction, idx) => {
-                            return (
-                                <Draggable key={idx} draggableId={idx.toString()} index={idx}>
-                                    {provided => {
-                                        return (
-                                            <div
-                                                ref={provided.innerRef}
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                            >
-                                                <DynamicCmp cmp={fraction} />
-                                            </div>
-                                        )
-                                    }}
-                                </Draggable>
-                            )
-                        })}
-                        {provided.placeholder}
+                    <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
+                        <div className='wrapper'>
+                            {templateOrder.map((fraction, idx) => {
+                                return (
+                                    <Draggable key={idx} draggableId={idx.toString()} index={idx}>
+                                        {provided => {
+                                            return (
+                                                <div
+                                                    ref={provided.innerRef}
+                                                    {...provided.draggableProps}
+                                                    {...provided.dragHandleProps}
+                                                >
+                                                    <DynamicCmp cmp={fraction} />
+                                                </div>
+                                            )
+                                        }}
+                                    </Draggable>
+                                )
+                            })}
+                            {provided.placeholder}
+                        </div>
                     </div>
                 )
             }}
