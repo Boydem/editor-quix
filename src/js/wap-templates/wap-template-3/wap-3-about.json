@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-3-about",
     "category": "about",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-about_knyfwg.jpg",
     "cmps": [
         {
             "id": "PIH355",

@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-3-team",
     "category": "section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-cards_ysw8nf.jpg",
     "cmps": [
         {
             "id": "AmtSyH",

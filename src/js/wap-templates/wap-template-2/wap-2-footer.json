@@ -3,6 +3,7 @@
     "type": "div",
     "name": "footer",
     "category": "footer",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-footer_utt0fj.jpg",
     "cmps": [
         {
             "id": "ObOU7d",

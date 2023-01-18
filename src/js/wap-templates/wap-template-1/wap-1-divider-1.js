@@ -6,5 +6,5 @@ export const wap1Divider1 = {
     type: 'div',
     category: 'divider',
     themePalette: 'primary',
-    thumbnail: '',
+    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap1-divider-1_j6s7ro.jpg',
 }

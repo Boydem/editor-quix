@@ -1,5 +1,6 @@
 import { getWap1Template } from '../wap-templates/wap-template-1/wap-1-template'
 import { getWap2Template } from '../wap-templates/wap-template-2/wap-2-template'
+import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
 import { storageService } from './async-storage.service'
 import { makeId, utilService } from './util.service'
 import { wap1Hero } from '../wap-templates/wap-template-1/wap-1-hero'
@@ -29,7 +30,7 @@ function getCmpById(id) {
     return cmpsInList.find(cmp => cmp.id === id)
 }
 function _createMap() {
-    const allFractions = [...getWap1Template(), ...getWap2Template()]
+    const allFractions = [...getWap1Template(), ...getWap2Template(), ...getWap3Template()]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
         if (acc[fraction.category]) {
             acc[fraction.category].push(fraction)

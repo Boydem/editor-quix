@@ -6,7 +6,7 @@ export const wap1Footer = {
     type: 'div',
     category: 'section',
     themePalette: 'primary',
-    thumbnail: '',
+    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-footer_zk7vka.jpg',
     content: {
         txt: '© 2035 by WeDu. Powered and secured by Winx',
     },

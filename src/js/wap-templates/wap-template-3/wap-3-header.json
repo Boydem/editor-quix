@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-3-header",
     "category": "header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053653/wap-3-header_px4jjq.jpg",
     "cmps": [
         {
             "id": "4f0kow",
