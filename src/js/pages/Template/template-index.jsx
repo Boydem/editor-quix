@@ -1,8 +1,28 @@
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router'
 import templateImg2 from '../../../assets/imgs/home-assets/templates2.webp'
 import { AppHeader } from '../../cmps/app-header'
+import { wapService } from '../../services/wap.service'
 import { DarkHeader } from './cmps/dark-header'
 
 export function TemplateIndex() {
+    const [waps, setWaps] = useState(null)
+    const navigate = useNavigate()
+    useEffect(() => {
+        getWaps()
+    }, [])
+    async function getWaps() {
+        const waps = await wapService.query()
+        setWaps(waps)
+    }
+
+    async function onEdit(wapId) {
+        const template = await wapService.get(wapId)
+        delete template._id
+        wapService.save(template)
+        navigate(`/edit`)
+    }
+    if (!waps) return <></>
     return (
         <>
             <DarkHeader />
@@ -16,12 +36,14 @@ export function TemplateIndex() {
                     </div>
                 </div>
                 <div className='templates'>
-                    {Array.apply(null, { length: 12 }).map(() => (
-                        <article className='template'>
+                    {waps.map(wap => (
+                        <article className='template' key={wap._id}>
                             <div className='img-container'>
                                 <img src={templateImg2} alt='templateImg2' />
                                 <div className='actions'>
-                                    <button className='btn btn-template'>Edit</button>
+                                    <button className='btn btn-template' onClick={() => onEdit(wap._id)}>
+                                        Edit
+                                    </button>
                                     <button className='btn btn-template'>View</button>
                                 </div>
                             </div>

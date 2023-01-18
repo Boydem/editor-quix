@@ -9,11 +9,12 @@ import { EditorPreview } from './js/pages/Editor/cmps/editor-preview'
 function App() {
     return (
         <div className='app'>
-            <main className=' main-layout'>
+            <main className='main-layout'>
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<TemplateIndex />} />
                     <Route path='/edit' element={<Editor />} />
+                    <Route path='/edit/:wapId' element={<Editor />} />
                     <Route path='/edit/preview' element={<EditorPreview />} />
                 </Routes>
             </main>

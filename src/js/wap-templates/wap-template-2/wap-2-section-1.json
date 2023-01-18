@@ -2,40 +2,38 @@
     "id": "nL9kEE",
     "type": "div",
     "name": "wap-2-section-1",
-    "cmps": [
-        {
-            "id": "BXjC8Z",
-            "type": "div",
-            "name": "content",
-            "cmps": [
-                {
-                    "id": "hjwtLa",
-                    "type": "h2",
-                    "name": "",
-                    "content": {
-                        "txt": "Work with us"
-                    },
-                    "cmps": []
+    "category": "section",
+    "cmps": [{
+        "id": "BXjC8Z",
+        "type": "div",
+        "name": "content",
+        "cmps": [{
+                "id": "hjwtLa",
+                "type": "h2",
+                "name": "",
+                "content": {
+                    "txt": "Work with us"
                 },
-                {
-                    "id": "1pa4LM",
-                    "type": "p",
-                    "name": "",
-                    "content": {
-                        "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
-                    },
-                    "cmps": []
+                "cmps": []
+            },
+            {
+                "id": "1pa4LM",
+                "type": "p",
+                "name": "",
+                "content": {
+                    "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
                 },
-                {
-                    "id": "CJKwkT",
-                    "type": "button",
-                    "name": "",
-                    "content": {
-                        "txt": "Open Positions"
-                    },
-                    "cmps": []
-                }
-            ]
-        }
-    ]
+                "cmps": []
+            },
+            {
+                "id": "CJKwkT",
+                "type": "button",
+                "name": "",
+                "content": {
+                    "txt": "Open Positions"
+                },
+                "cmps": []
+            }
+        ]
+    }]
 }

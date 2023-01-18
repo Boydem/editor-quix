@@ -2,6 +2,7 @@
     "id": "ojMzoi",
     "type": "div",
     "name": "footer",
+    "category": "footer",
     "cmps": [
         {
             "id": "ObOU7d",

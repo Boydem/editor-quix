@@ -23,6 +23,8 @@ export default function DynamicCmp(props) {
         setClickedElem(e.target)
     }
     switch (props.cmp.type) {
+// const basicProps = cmp={props.cmp} handleClick={handleClick}
+
         case 'div':
             return <DivCmp cmp={props.cmp} handleClick={handleClick} />
         case 'h1':
