@@ -15,7 +15,7 @@ function App() {
                     <Route path='/create' element={<TemplateIndex />} />
                     <Route path='/edit' element={<Editor />} />
                     <Route path='/edit/:wapId' element={<Editor />} />
-                    <Route path='/edit/preview' element={<EditorPreview />} />
+                    <Route path='/preview/:wapId' element={<EditorPreview />} />
                 </Routes>
             </main>
         </div>

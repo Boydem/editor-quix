@@ -57,8 +57,8 @@ function query() {
 
 _createMap()
 async function get(wapId) {
-    const template = await storageService.get(STORAGE_KEY, wapId)
-    return template
+    return await storageService.get(STORAGE_KEY, wapId)
+
 }
 function remove(wapId) {
     return storageService.remove(STORAGE_KEY, wapId)
