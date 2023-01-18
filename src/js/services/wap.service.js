@@ -14,7 +14,8 @@ export const wapService = {
     save,
     getEditedWap,
     getCategoryFractions,
-    findParentCmp,
+    updateCmp,
+    saveCmp,
 }
 let gCmpsMap
 
@@ -41,12 +42,20 @@ function _createMap() {
     }, {})
 }
 
-function findParentCmp(cmp, parentCmp, cb) {
-    const isFoundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
-    if (isFoundCmp) {
-        return cb()
+function saveCmp(cmp, index, parentCmp) {
+    console.log('NICE')
+    console.log('parentCmp', parentCmp)
+    console.log('index:', index)
+    console.log('cmp', cmp)
+    parentCmp.cmps[index] = cmp
+}
+
+function updateCmp(cmp, parentCmp, cb) {
+    const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
+    if (isFoundCmpIndex > -1) {
+        saveCmp(cmp, isFoundCmpIndex, parentCmp)
     } else {
-        return parentCmp?.cmps?.forEach(c => findParentCmp(cmp, c, cb))
+        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
     }
 }
 
