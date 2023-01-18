@@ -4,6 +4,7 @@ import { AiOutlineMore } from 'react-icons/ai'
 import { AiOutlineBars } from 'react-icons/ai'
 import { AiOutlineBold } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { BiDesktop } from 'react-icons/bi'
 import { FiLayers } from 'react-icons/fi'
 import { CgColorPicker } from 'react-icons/cg'
 import { IoColorFilterOutline } from 'react-icons/io5'
@@ -11,27 +12,37 @@ import { IoColorFilterOutline } from 'react-icons/io5'
 export function ToolsBar({ isSidebarOpen, setSidebarOpen }) {
     return (
         <section className='tools-bar full'>
-            <ul className='tools flex'>
-                <li onClick={() => setSidebarOpen(prev => !prev)} className={`${isSidebarOpen ? 'active' : ''} tool`}>
+            <div className='tools tools-cmps flex'>
+                <button
+                    onClick={() => setSidebarOpen(prev => !prev)}
+                    className={`${isSidebarOpen ? 'active' : ''} tool`}
+                >
                     <AiOutlinePlus />
-                </li>
-                <li className='tool'>
+                </button>
+                <button className='tool'>
                     <FiLayers />
-                </li>
-                <li className='tool'>
+                </button>
+                <button className='tool'>
                     <CgColorPicker />
-                </li>
-                <li className='tool'>
+                </button>
+                <button className='tool'>
                     <IoColorFilterOutline />
-                </li>
+                </button>
 
-                <li className='tool'>
+                <button className='tool'>
                     <AiOutlineBars />
-                </li>
-                <li className='tool'>
+                </button>
+                <button className='tool'>
                     <AiOutlineMore />
-                </li>
-            </ul>
+                </button>
+            </div>
+            <div className='tools tools-views'>
+                <div className='responsive-btns'>
+                    <button className='tool'>
+                        <BiDesktop />
+                    </button>
+                </div>
+            </div>
         </section>
     )
 }
