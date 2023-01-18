@@ -20,7 +20,7 @@ export function Editor() {
 
     // const currSide =
     const { wapId } = useParams()
-    console.log(template)
+
     useEffect(() => {
         loadWap()
     }, [])
