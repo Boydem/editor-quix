@@ -22,8 +22,8 @@ export function Editor() {
 
     function loadEditedWap() {}
 
-    async function loadWap() {
-        let template = await wapService.getEditedWap()
+    function loadWap() {
+        let template = wapService.getEditedWap()
         setTemplate(template)
     }
 

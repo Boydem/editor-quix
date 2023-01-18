@@ -10,7 +10,7 @@ export function EditorPreview({ templateOrder }) {
     useEffect(() => {
         if (editorResizerRef) {
             editorResizerRef.forEach(resizer => {
-                document.addEventListener('mousemove', handleResizeDrag)
+                resizer.current.addEventListener('mousemove', handleResizeDrag)
                 resizer.current.addEventListener('mousedown', handleMouseDown)
                 document.addEventListener('mouseup', handleMouseUp)
             })
