@@ -10,49 +10,48 @@ import { getWap2Template } from '../../wap-templates/wap-template-2/wap-2-templa
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { setSidebarContext } from '../../store/wap/wap.action'
+import { saveWap, setSidebarContext } from '../../store/wap/wap.action'
 
 export function Editor() {
+    const template = useSelector(storeState => storeState.wapModule.wap)
     const [isSidebarOpen, setSidebarOpen] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
-    const [template, setTemplate] = useState(null)
     const sidebarContext = useSelector(storeState => storeState.wapModule.sidebarContext)
 
     // const currSide =
     const { wapId } = useParams()
-
     useEffect(() => {
         loadWap()
     }, [])
 
-    function onOpenSidebar(context) {
+    function onOpenSidebar(context, isOpen = true) {
         setSidebarContext(context)
-        setSidebarOpen(true)
+        setSidebarOpen(isOpen)
     }
 
     async function loadWap() {
         let template = await wapService.get(wapId)
-        setTemplate(template)
+        saveWap(template)
     }
 
     function handleOnDragEnd(result) {
         if (result.source.droppableId !== 'editor-preview') {
             const newCmp = wapService.getCmpById(result.draggableId)
+            console.log(newCmp)
             template.cmps.splice(result.destination.index, 0, newCmp)
-            setTemplate(prev => ({ ...prev, cmps: template.cmps }))
-            wapService.save(template)
+            saveWap(template)
             return
         }
         const [reorderedItem] = template.cmps.splice(result.source.index, 1)
         template.cmps.splice(result.destination.index, 0, reorderedItem)
-        setTemplate(prev => ({ ...prev, cmps: template.cmps }))
-        wapService.save(template)
+        saveWap(template)
+        // wapService.save(template)
     }
 
     function handleOnDragStart() {
         // setSidebarOpen(false)
     }
-    if (!template) return
+    if (Object.keys(template).length === 0) return
     return (
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>

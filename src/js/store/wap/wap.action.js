@@ -1,8 +1,29 @@
+import { useSelector } from 'react-redux'
+import { wapService } from '../../services/wap.service'
 import { store } from '../store'
-import { SET_CLICKED_ELEM, SET_SIDEBAR_CONTEXT } from './wap.reducer'
+import { SET_CLICKED_ELEM, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
 
 export async function setClickedElem(elem) {
     store.dispatch({ type: SET_CLICKED_ELEM, elem })
+}
+export async function saveWap(wap) {
+    try {
+        console.log(wap)
+        wapService.save(wap)
+        store.dispatch({ type: SET_WAP, wap })
+    } catch (err) {
+        throw err
+    }
+}
+export async function saveCmp(newCmp) {
+    try {
+        const wap = store.getState().wapModule.wap
+        const cmpParent = wapService.findParentCmp(newCmp, wap)
+        // wapService.saveCmp(cmpParent, index, newCmp)
+        // store.dispatch({ type: SET_WAP, wap })
+    } catch (err) {
+        throw err
+    }
 }
 
 export async function setSidebarContext(context) {

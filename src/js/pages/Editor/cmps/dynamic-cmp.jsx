@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { setClickedElem } from '../../../store/wap/wap.action'
+import { saveCmp, setClickedElem } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
@@ -14,11 +14,36 @@ import { PCmp } from './dynamic-cmps/p-cmp'
 import SpanCmp from './dynamic-cmps/span-cmp'
 
 export default function DynamicCmp(props) {
+    const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
     function handleClick(e, cmp) {
         e.stopPropagation()
         e.preventDefault()
-        setClickedElem(e.target)
-        console.log('Clicked on',cmp)
+        if (!cmp.class) {
+            cmp.class = []
+        }
+
+        if (lastClickedElem) {
+            lastClickedElem.class = lastClickedElem?.class.filter(c => c !== 'clicked')
+        }
+
+        // console.log('lastClickedElem', lastClickedElem)
+        setClickedElem(cmp)
+        if (!cmp.class) {
+            cmp.class = [cmp.name]
+        }
+        cmp.class.push('clicked')
+        saveCmp(cmp)
+
+        // cmp.style = { color: 'red' }
+
+        // lastClickedElem.classList.remove('clicked')
+        // e.target.classList.add('clicked')
+        // setClickedElem(e.target)
+        // console.log('Clicked on', cmp)
+        // if (!cmp.style) {
+        //     cmp.style = {}
+        // }
+        // cmp.style = { ...cmp.style }
     }
     switch (props.cmp.type) {
         // const basicProps = cmp={props.cmp} handleClick={handleClick}
@@ -48,7 +73,7 @@ export default function DynamicCmp(props) {
         case 'button':
             return <ButtonCmp cmp={props.cmp} handleClick={handleClick} />
         default:
-            console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
+            // console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
             break
     }
     return <div>DynamicCmp</div>

@@ -14,6 +14,7 @@ export const wapService = {
     save,
     getEditedWap,
     getCategoryFractions,
+    findParentCmp,
 }
 let gCmpsMap
 
@@ -38,6 +39,10 @@ function _createMap() {
         }
         return acc
     }, {})
+}
+
+function findParentCmp(cmp, wap) {
+    console.log(cmp, wap)
 }
 
 function getCategoryFractions(category) {
