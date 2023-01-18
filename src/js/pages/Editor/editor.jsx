@@ -34,17 +34,14 @@ export function Editor() {
     }
 
     function handleOnDragEnd(result) {
-        if (result.source.droppableId !== 'editor-preview') {
-            const newCmp = wapService.getCmpById(result.draggableId)
-            console.log(newCmp)
-            template.cmps.splice(result.destination.index, 0, newCmp)
-            saveWap(template)
-            return
+        let changedCmp
+        if (result.source.droppableId !== 'editor-preview' && result.destination.droppableId === 'editor-preview') {
+            changedCmp = wapService.getCmpById(result.source.droppableId, result.draggableId)
+        } else {
+            ;[changedCmp] = template.cmps.splice(result.source.index, 1)
         }
-        const [reorderedItem] = template.cmps.splice(result.source.index, 1)
-        template.cmps.splice(result.destination.index, 0, reorderedItem)
+        template.cmps.splice(result.destination.index, 0, changedCmp)
         saveWap(template)
-        // wapService.save(template)
     }
 
     function handleOnDragStart() {

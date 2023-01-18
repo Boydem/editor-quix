@@ -14,21 +14,17 @@ export const wapService = {
     save,
     getEditedWap,
     getCategoryFractions,
-    findParentCmp,
+    updateCmp,
+    // saveCmp,
 }
 let gCmpsMap
-
-// {"headers":["gfdsgfdsgds", "gfdsgfdsgds"],
-// "section":["gfdsgfdsgds", "gfdsgfdsgds"],
-// "nav":["gfdsgfdsgds", "gfdsgfdsgds"], }
-
 const STORAGE_KEY = 'wapDB'
 const EDITED_WAP_STORAGE_KEY = 'editedWap'
 
-const cmpsInList = [wap1Hero, wap2Hero]
-function getCmpById(id) {
-    return cmpsInList.find(cmp => cmp.id === id)
+function getCmpById(activeModule, cmpId) {
+    return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
 }
+
 function _createMap() {
     const allFractions = [...getWap1Template(), ...getWap2Template(), ...getWap3Template()]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
@@ -41,8 +37,13 @@ function _createMap() {
     }, {})
 }
 
-function findParentCmp(cmp, wap) {
-    console.log(cmp, wap)
+function updateCmp(cmp, parentCmp) {
+    let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
+    if (foundCmp) {
+        foundCmp = cmp
+    } else {
+        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
+    }
 }
 
 function getCategoryFractions(category) {
@@ -93,15 +94,43 @@ function _createWaps() {
                 name: 'wap-1-template',
                 owner: 'admin',
                 cmps: getWap1Template(),
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
+                title: 'WeDu',
             },
             {
                 _id: makeId(),
                 name: 'wap-2-template',
                 owner: 'admin',
                 cmps: getWap2Template(),
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
+                title: 'Gigaplay',
+            },
+            {
+                _id: makeId(),
+                name: 'wap-3-template',
+                owner: 'admin',
+                cmps: getWap3Template(),
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
+                title: 'Finclvr',
             },
         ]
 
         localStorage.setItem(STORAGE_KEY, JSON.stringify(waps))
     }
 }
+
+// function saveCmp(cmp, index, parentCmp) {
+//     parentCmp[index] = cmp
+// }
+
+// function updateCmp(cmp, parentCmp, cb) {
+//     const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
+//     if (isFoundCmpIndex > -1) {
+//         saveCmp(cmp, isFoundCmpIndex, parentCmp)
+//     } else {
+//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
+//     }
+// }

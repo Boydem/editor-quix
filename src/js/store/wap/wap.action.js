@@ -15,12 +15,13 @@ export async function saveWap(wap) {
         throw err
     }
 }
+
 export async function saveCmp(newCmp) {
     try {
         const wap = store.getState().wapModule.wap
-        const cmpParent = wapService.findParentCmp(newCmp, wap)
-        // wapService.saveCmp(cmpParent, index, newCmp)
-        // store.dispatch({ type: SET_WAP, wap })
+        wapService.updateCmp(newCmp, wap)
+        wapService.save(wap)
+        store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
         throw err
     }
