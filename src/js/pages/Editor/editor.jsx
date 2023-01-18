@@ -29,7 +29,7 @@ export function Editor() {
     }
 
     function handleOnDragStart() {
-        setSidebarOpen(false)
+        // setSidebarOpen(false)
     }
 
     return (
