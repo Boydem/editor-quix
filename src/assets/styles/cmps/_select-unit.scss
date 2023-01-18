@@ -1,0 +1,103 @@
+/* reset */
+
+.SelectTrigger {
+    cursor: pointer;
+    z-index: 2;
+    background-color: $editor-lightgray;
+    color: $clr7;
+    padding: 0 $spacing-xxs;
+
+    border-radius: $spacing-xxs;
+    transition: background-color 0.3s, color 0.3s;
+    &:focus {
+    }
+
+    &[data-placeholder] {
+        color: $clr7;
+        &:hover {
+            background-color: $editor-active-clr;
+            color: $clr1;
+        }
+    }
+
+    // font-size: px-to-rem(12px);
+    // display: inline-flex;
+    // align-items: center;
+    // justify-content: center;
+    // border-radius: 4px;
+    // padding: 0 15px;
+    // font-size: 13px;
+    // line-height: 1;
+
+    // gap: 5px;
+    // background-color: white;
+    // color: var(--violet11);
+    // box-shadow: 0 2px 10px var(--blackA7);
+}
+
+.SelectContent {
+    overflow: hidden;
+    z-index: 9999;
+    pointer-events: all;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.SelectViewport {
+    padding: $spacing-s;
+}
+
+.SelectItem {
+    outline: none;
+    font-size: px-to-rem(12px);
+    line-height: 1;
+    color: $clr2;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    height: $spacing-m;
+    padding: 0 $spacing-s 0 $spacing-m;
+    position: relative;
+    user-select: none;
+    transition: 0.2s all;
+}
+.SelectItem[data-state='checked'] {
+    color: $editor-active-clr;
+    background-color: $editor-active-bg;
+    pointer-events: none;
+}
+.SelectItem[data-disabled] {
+    color: $clr7;
+    pointer-events: none;
+}
+.SelectItem[data-highlighted] {
+    outline: none;
+    background-color: $editor-hover-bg;
+}
+
+.SelectSeparator {
+    height: 1px;
+    background-color: $editor-active-bg;
+    // color: $editor-active-clr;
+    margin: $spacing-xxs;
+}
+
+.SelectItemIndicator {
+    position: absolute;
+    left: 0;
+    width: $spacing-m;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SelectScrollButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $spacing-m;
+    background-color: white;
+    color: $clr7;
+    cursor: default;
+}
