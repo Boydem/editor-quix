@@ -27,7 +27,15 @@ export default function DynamicCmp(props) {
         setClickedCmp(cmp)
         // saveCmp(cmp)
     }
-    const basicProps = { cmp: props.cmp, handleClick }
+
+    function onHover(ev) {
+        ev.stopPropagation()
+        ev.preventDefault()
+        if (!isEditing) return
+
+        ev.currentTarget.classList.add('hover')
+    }
+    const basicProps = { cmp: props.cmp, handleClick, onHover }
     switch (props.cmp.type) {
         case 'div':
             return <DivCmp {...basicProps} />
