@@ -178,11 +178,12 @@
     }
 }
 
-@mixin linkUnderline($color: $clr1, $lineHeight: 2px) {
+@mixin linkUnderline($color: $clr1, $lineHeight: 2px, $lineClr: $clr1) {
     display: flex;
     align-items: center;
     color: $color;
     display: inline-block;
+    transition: color 0.3s background-color 0.3s;
 
     & :first-child {
         position: relative;
@@ -194,7 +195,7 @@
         bottom: -26%;
         width: 0%;
         height: $lineHeight;
-        background-color: $color;
+        background-color: $lineClr;
         transition: width 0.5s;
     }
 

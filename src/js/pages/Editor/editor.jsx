@@ -15,9 +15,8 @@ import { saveWap, setSidebarContext } from '../../store/wap/wap.action'
 export function Editor() {
     const template = useSelector(storeState => storeState.wapModule.wap)
     const [isSidebarOpen, setSidebarOpen] = useState(false)
-    const [isEditing, setIsEditing] = useState(false)
     const sidebarContext = useSelector(storeState => storeState.wapModule.sidebarContext)
-
+    console.log('sidebarContext:', sidebarContext)
     // const currSide =
     const { wapId } = useParams()
     useEffect(() => {
@@ -58,12 +57,7 @@ export function Editor() {
                 <AppHeader />
                 <ToolsBar isSidebarOpen={isSidebarOpen} onOpenSidebar={onOpenSidebar} />
                 <EditorPreview templateOrder={template.cmps} />
-                <Sidebar
-                    context={sidebarContext}
-                    isEditing={isEditing}
-                    isSidebarOpen={isSidebarOpen}
-                    setSidebarOpen={setSidebarOpen}
-                />
+                <Sidebar context={sidebarContext} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
             </DragDropContext>
         </>
     )

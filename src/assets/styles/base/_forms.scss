@@ -1,32 +1,36 @@
 input {
     width: 100%;
-  }
-  
-  select {
+    background-color: $editor-hover-bg;
+    border: none;
+    outline: none;
+    border-radius: $spacing-xxs;
+    padding: $spacing-xs;
+}
+
+select {
     padding: 0.4em 1em;
-  
+
     border: 1px solid var(--clr-txt-m);
     outline: none;
     color: var(--clr-txt);
     /* background-color: var(--clrbg-light); */
     width: 100%;
-  }
-  
-  input[type='color'] {
+}
+
+input[type='color'] {
     cursor: pointer;
-  }
-  input[type='color']::-webkit-color-swatch-wrapper {
+}
+input[type='color']::-webkit-color-swatch-wrapper {
     padding: 0;
-  }
-  input[type='color']::-webkit-color-swatch {
+}
+input[type='color']::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
-  }
-  input[type='color' i] {
+}
+input[type='color' i] {
     padding: 0;
     border-radius: 50%;
     border: none;
     width: 30px;
     height: 30px;
-  }
-  
+}

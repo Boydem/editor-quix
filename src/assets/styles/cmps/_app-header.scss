@@ -31,71 +31,57 @@
             letter-spacing: -0.02rem;
         }
     }
-    // .nav-actions {
-    //     min-height: calc(100vh - $app-header-height);
-    // }
-
-    .main-nav {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        transform: translateX(100%);
-        background-color: $clr1;
-        min-height: calc(100vh - $app-header-height);
-        transition: transform 0.5s;
-
-        &.open {
-            transform: translateX(0%);
-        }
-
+    .main-nav,
+    .nav-actions {
+        position: static;
+        transform: unset;
+        background-color: unset;
+        min-height: unset;
+        min-width: unset;
+        padding: 0;
         & ul {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            gap: unset;
         }
-
-        & .nav-link:not(.btn-start-now) {
+        & .nav-link {
+            height: $app-header-height;
+            line-height: $app-header-height;
+            padding: 0 1em;
             font-weight: 400;
-            @include linkUnderline($clr2, 1px);
+            transition: 0.4s color, 0.4s background-color;
+            &:hover {
+                color: $clr5;
+            }
         }
     }
-
-    @media (min-width: $break-narrow) {
-        .main-nav,
-        .nav-actions {
-            position: static;
-            transform: unset;
-            background-color: unset;
-            min-height: unset;
-            min-width: unset;
-            padding: 0;
-            & ul {
-                display: flex;
-                flex-direction: row;
-                gap: unset;
-            }
-
-            .nav-link {
-                height: $app-header-height;
-                line-height: $app-header-height;
-                padding: 0 1em;
-                font-weight: 500;
-            }
-        }
-        .nav-actions {
-            .nav-link {
-                margin-inline-start: $spacing-s;
-                background-color: $editor-lightgray;
-                border-radius: 0.25rem;
-                padding: $spacing-xxs $spacing-xs;
+    .nav-actions {
+        .nav-link {
+            font-weight: 400;
+            margin-inline-start: $spacing-s;
+            border-radius: 0.25rem;
+            padding: $spacing-xxs $spacing-xs;
+            transition: color 0.3s background-color 0.2s;
+            &.publish {
+                background-color: $clr5;
+                color: $clr1;
                 &:hover {
-                    background-color: lighten($editor-lightgray, 5%);
+                    background-color: $clr5;
+                }
+            }
+            &.preview {
+                transition: background-color 0.3s color 0.3s;
+                color: $clr5;
+                &:hover {
+                    background-color: $editor-active-bg;
+                    // color: $clr1;
                 }
             }
         }
-        .main-nav {
-            .nav-link {
-                margin-inline-start: 1em;
-            }
+    }
+    .main-nav {
+        .nav-link {
+            margin-inline-start: 1em;
         }
     }
 }
