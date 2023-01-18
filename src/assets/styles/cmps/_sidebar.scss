@@ -17,16 +17,16 @@
     }
     & .add-modules {
         position: fixed;
-        min-width: 30%;
-        max-width: 30%;
+        min-width: px-to-rem(480px);
+        max-width: px-to-rem(480px);
         grid-template-columns: auto 1fr;
         transform: translateX(-100%);
         left: 0;
     }
     & .edit-modules {
         position: fixed;
-        min-width: 20%;
-        max-width: 20%;
+        min-width: px-to-rem(280px);
+        max-width: px-to-rem(280px);
         grid-template-columns: 1fr;
         transform: translateX(100%);
         right: 0;

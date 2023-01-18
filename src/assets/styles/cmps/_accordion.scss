@@ -1,9 +1,4 @@
-/* reset */
-button,
-h3 {
-    all: unset;
-}
-
+/* lib reset */
 .AccordionRoot {
     background-color: $clr1;
     transition: background-color 0.3s;
@@ -34,6 +29,7 @@ h3 {
 }
 
 .AccordionTrigger {
+    font-size: px-to-rem(13px);
     cursor: pointer;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -63,7 +59,7 @@ h3 {
 }
 
 .AccordionContentText {
-    padding: 15px 20px;
+    padding: $spacing-s $spacing-m;
 }
 
 .AccordionChevron {
@@ -72,6 +68,59 @@ h3 {
 }
 .AccordionTrigger[data-state='open'] > .AccordionChevron {
     transform: rotate(180deg);
+}
+
+// My styles
+
+.AccordionContent {
+    .option-body {
+        display: grid;
+        gap: $spacing-s;
+        // grid-template-columns: auto 1fr;
+        grid-template-columns: repeat(2, 1fr);
+
+        .param-box {
+            font-size: px-to-rem(11px);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            place-items: center;
+            label {
+                text-transform: capitalize;
+                padding-inline-end: $spacing-xs;
+            }
+            .input-wrapper {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-columns: auto 1fr;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                background-color: $editor-hover-bg;
+                border-radius: $spacing-xxs;
+                padding: $spacing-xxs $spacing-xxs;
+                input {
+                    padding: 0;
+                }
+                .unit {
+                    cursor: pointer;
+                    z-index: 2;
+                    background-color: $editor-lightgray;
+                    color: $clr7;
+                    border-radius: $spacing-xxs;
+                    // height: min-content;
+                    transition: background-color 0.3s, color 0.3s;
+                    &:hover {
+                        background-color: $editor-active-clr;
+                        color: $clr1;
+                    }
+                    &.active {
+                    }
+                }
+            }
+        }
+        &.open {
+        }
+    }
 }
 
 @keyframes slideDown {
