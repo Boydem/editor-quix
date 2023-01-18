@@ -41,26 +41,14 @@ function _createMap() {
     }, {})
 }
 
-function findParentCmp(cmp, wap) {
-    console.log(cmp, wap)
+function findParentCmp(cmp, parentCmp, cb) {
+    const isFoundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
+    if (isFoundCmp) {
+        return cb()
+    } else {
+        return parentCmp?.cmps?.forEach(c => findParentCmp(cmp, c, cb))
+    }
 }
-
-function _shallowEqual(object1, object2) {
-    const keys1 = Object.keys(object1);
-    const keys2 = Object.keys(object2);
-  
-    if (keys1.length !== keys2.length) {
-      return false;
-    }
-  
-    for (let key of keys1) {
-      if (object1[key] !== object2[key]) {
-        return false;
-      }
-    }
-  
-    return true;
-  }
 
 function getCategoryFractions(category) {
     return gCmpsMap[category]
