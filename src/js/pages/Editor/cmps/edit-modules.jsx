@@ -3,6 +3,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { RiArrowDropRightLine } from 'react-icons/ri'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
+import AccordionDemo from './accordion'
 
 export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
     const [openOption, setOpenOption] = useState()
@@ -43,6 +44,7 @@ export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
                         </span>
                     </div>
                 </div>
+                <AccordionDemo />
                 <div className='options-accordion'>
                     <div className='option'>
                         <div className='option-header'>
