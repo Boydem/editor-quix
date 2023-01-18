@@ -1,4 +1,4 @@
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 import { userService } from './user.service'
 
 export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
@@ -12,19 +12,17 @@ export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
-
-const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
-export const socketService = createSocketService()
+const baseUrl = process.env.NODE_ENV === 'production' ? '' : '//localhost:3030'
+// export const socketService = createSocketService()
 // export const socketService = createDummySocketService()
 
 // for debugging from console
-window.socketService = socketService
+// window.socketService = socketService
 
-socketService.setup()
-
+// socketService.setup()
 
 function createSocketService() {
-    var socket = null;
+    var socket = null
     const socketService = {
         setup() {
             socket = io(baseUrl)
@@ -37,7 +35,7 @@ function createSocketService() {
             socket.on(eventName, cb)
         },
         off(eventName, cb = null) {
-            if (!socket) return;
+            if (!socket) return
             if (!cb) socket.removeAllListeners(eventName)
             else socket.off(eventName, cb)
         },
@@ -53,7 +51,6 @@ function createSocketService() {
         terminate() {
             socket = null
         },
-
     }
     return socketService
 }
@@ -69,12 +66,10 @@ function createDummySocketService() {
         terminate() {
             this.setup()
         },
-        login() {
-        },
-        logout() {
-        },
+        login() {},
+        logout() {},
         on(eventName, cb) {
-            listenersMap[eventName] = [...(listenersMap[eventName]) || [], cb]
+            listenersMap[eventName] = [...(listenersMap[eventName] || []), cb]
         },
         off(eventName, cb) {
             if (!listenersMap[eventName]) return
@@ -93,12 +88,11 @@ function createDummySocketService() {
         },
         testUserUpdate() {
             this.emit(SOCKET_EVENT_USER_UPDATED, { ...userService.getLoggedinUser(), score: 555 })
-        }
+        },
     }
-    window.listenersMap = listenersMap;
+    window.listenersMap = listenersMap
     return socketService
 }
-
 
 // Basic Tests
 // function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
