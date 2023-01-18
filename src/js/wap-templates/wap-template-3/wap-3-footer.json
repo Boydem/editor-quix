@@ -1,0 +1,17 @@
+{
+    "id": "XR7JVo",
+    "type": "div",
+    "name": "wap-3-footer",
+    "category": "footer",
+    "cmps": [
+        {
+            "id": "noG4Vr",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© 2035 by Finclvr. Powered and secured by Wix"
+            },
+            "cmps": []
+        }
+    ]
+}
