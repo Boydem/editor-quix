@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { saveCmp, setClickedCmp, setClickedElemNode, setElClickedNode } from '../../../store/wap/wap.action'
+import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
@@ -13,8 +13,6 @@ export default function DynamicCmp(props) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
 
-    // add try and catch
-    // polish names
     function handleClick(ev, cmp) {
         ev.stopPropagation()
         ev.preventDefault()

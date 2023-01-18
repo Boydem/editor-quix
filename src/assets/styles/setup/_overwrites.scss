@@ -1,1 +1,19 @@
 // AccordionContentText
+
+.color-pick {
+    padding-bottom: 0.667rem;
+    position: relative;
+    .color-pick-label {
+        background: #eee;
+        border-radius: 5px;
+        display: block;
+    }
+    .palette {
+        padding-top: 0.667rem;
+        z-index: 3;
+        height: 0;
+    }
+}
+.color-pick:last-of-type {
+    padding-bottom: 0;
+}

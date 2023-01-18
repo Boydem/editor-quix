@@ -5,11 +5,15 @@ import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
-import { CirclePicker, CompactPicker, TwitterPicker } from 'react-color'
+import { BlockPicker, CirclePicker, CompactPicker, TwitterPicker } from 'react-color'
 
 const AccordionEdit = () => {
     const [openOption, setOpenOption] = useState()
+    const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
+    const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
+    const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
 
     const sizeOptions = [
         { name: 'width', title: 'width', unit: 'px' },
@@ -28,6 +32,37 @@ const AccordionEdit = () => {
             lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
         } else {
             lastClickedCmp.style = { [name]: `${value + unit}` }
+        }
+        saveCmp(lastClickedCmp)
+    }
+
+    function openTextColorPalette() {
+        setIsBorderPaletteOpen(false)
+        setIsBgPaletteOpen(false)
+        setIsTextPaletteOpen(prev => !prev)
+    }
+    function openBorderColorPalette() {
+        setIsTextPaletteOpen(false)
+        setIsBgPaletteOpen(false)
+        setIsBorderPaletteOpen(prev => !prev)
+    }
+    function openBgColorPalette() {
+        setIsTextPaletteOpen(false)
+        setIsBorderPaletteOpen(false)
+        setIsBgPaletteOpen(prev => !prev)
+    }
+
+    function handleColorChange(color, event) {
+        const hex = color.hex
+        if (isTextPaletteOpen) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
+            elClickedNode.style.color = hex
+        } else if (isBorderPaletteOpen) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, borderColor: hex }
+            elClickedNode.style.borderColor = hex
+        } else if (isBgPaletteOpen) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, backgroundColor: hex }
+            elClickedNode.style.backgroundColor = hex
         }
         saveCmp(lastClickedCmp)
     }
@@ -85,7 +120,45 @@ const AccordionEdit = () => {
                 <AccordionTrigger>Adjust</AccordionTrigger>
                 <Accordion.Content className='AccordionContent'>
                     <div className='AccordionContentText'>
-                        <CompactPicker />
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openTextColorPalette}>
+                                Text Color
+                            </button>
+                            {isTextPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.color}
+                                />
+                            )}
+                        </div>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openBgColorPalette}>
+                                Background Color
+                            </button>
+                            {isBgPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.backgroundColor}
+                                />
+                            )}
+                        </div>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openBorderColorPalette}>
+                                Border Color
+                            </button>
+                            {isBorderPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.borderColor}
+                                />
+                            )}
+                        </div>
                     </div>
                 </Accordion.Content>
             </Accordion.Item>

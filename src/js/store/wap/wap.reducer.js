@@ -10,7 +10,7 @@ const initialState = {
     wap: {},
     isEditing: false,
     clickedCmp: null,
-    clickedElemNode: null,
+    elClickedNode: null,
     sidebarContext: null,
 }
 
