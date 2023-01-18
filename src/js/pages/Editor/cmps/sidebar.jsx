@@ -12,7 +12,7 @@ export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
     ]
 
     return (
-        <section className={`${isSidebarOpen ? 'open' : 'closed'} ${context} side-bar`}>
+        <section className={`${isSidebarOpen ? 'open' : 'closed'} edit side-bar`}>
             <div className='modules'>
                 {addModulesMenuItems.map((moduleGroup, idx) => (
                     <ul key={idx} className='modules-list'>
