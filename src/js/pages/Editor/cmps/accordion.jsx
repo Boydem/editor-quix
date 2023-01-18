@@ -3,7 +3,7 @@ import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 
-const Accordion = () => (
+const AccordionDemo = () => (
     <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
         <Accordion.Item className='AccordionItem' value='item-1'>
             <AccordionTrigger>Size</AccordionTrigger>
@@ -41,4 +41,4 @@ const AccordionContent = React.forwardRef(({ children, className, ...props }, fo
     </Accordion.Content>
 ))
 
-export default Accordion
+export default AccordionDemo
