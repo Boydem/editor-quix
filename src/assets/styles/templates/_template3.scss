@@ -1,19 +1,5 @@
-@font-face {
-    font-family: syne;
-    src: url(./assets/typhography/Syne/static/Syne-Regular.ttf);
-}
-
-@font-face {
-    font-family: space-grotsek;
-    src: url(./assets/typhography/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
-}
-
-body {
-    margin: 0;
-    color: #303030;
-    font-weight: 700;
-    font-family: syne;
-}
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
 // Typography
 
@@ -35,6 +21,9 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 1.5em 4%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: #303030;
 
     .app-nav {
         display: flex;
@@ -51,7 +40,7 @@ a {
         margin: 0;
         list-style-type: none;
 
-        li {
+        div {
             padding: 0.5em;
         }
     }
@@ -64,8 +53,6 @@ a {
 
         button {
             background: none;
-            // height: 50px;
-            // width: 130px;
             padding: 0.8rem 2rem;
             border-radius: 100px;
             color: inherit;
@@ -73,8 +60,19 @@ a {
             color: inherit;
             font-weight: 700;
             cursor: pointer;
-            font-family: space-grotsek;
+            font-family: 'Space Grotesk', sans-serif;
 
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
             &:hover {
                 opacity: 0.7;
             }
@@ -90,6 +88,9 @@ a {
     justify-content: center;
     font-size: 24px;
     padding: 0 10%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: #303030;
 
     .teaser-container {
         display: grid;
@@ -120,7 +121,7 @@ a {
         font-weight: 700;
         cursor: pointer;
         display: block;
-        font-family: space-grotsek;
+        font-family: 'Space Grotesk', sans-serif;
         padding: 1rem 2.5rem;
         border-radius: 35px;
         font-size: 1.3rem;
@@ -129,15 +130,16 @@ a {
             opacity: 0.7;
         }
     }
-}
+    .hero-img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
 
-.hero-img-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-        width: 100%;
+        img {
+            width: 100%;
+        }
     }
 }
 
@@ -150,6 +152,9 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: #303030;
 
     h2 {
         font-size: 3.5rem;
@@ -216,6 +221,8 @@ a {
     margin: 0;
     background: #dcdcdc;
     text-align: center;
+    font-family: 'Syne', sans-serif;
+    color: #303030;
 
     h2 {
         padding-top: 15rem;
@@ -239,6 +246,13 @@ a {
 
         & a {
             text-decoration: underline;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
         }
     }
 }
@@ -258,6 +272,8 @@ a {
     background: #dcdcdc;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    font-family: 'Syne', sans-serif;
+    color: #303030;
 
     h2 {
         padding-top: 2em;
@@ -300,6 +316,7 @@ a {
     color: #5783de;
     padding-block: 1.2em;
     text-align: center;
+    font-family: 'Syne', sans-serif;
 }
 
 @media screen and (max-width: 1050px) {

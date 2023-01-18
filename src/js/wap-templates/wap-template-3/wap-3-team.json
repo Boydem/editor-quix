@@ -20,7 +20,7 @@
             "cmps": [
                 {
                     "id": "7HasVE",
-                    "type": "article",
+                    "type": "div",
                     "name": "team-card",
                     "cmps": [
                         {
@@ -71,7 +71,7 @@
                 },
                 {
                     "id": "tgtYad",
-                    "type": "article",
+                    "type": "div",
                     "name": "team-card",
                     "cmps": [
                         {
