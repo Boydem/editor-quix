@@ -14,7 +14,7 @@ export default function DynamicCmp(props) {
     function handleClick(e, cmp) {
         e.stopPropagation()
         e.preventDefault()
-        if (!props.isEditing) return
+        // if (!props.isEditing) return
         console.log('cmp', cmp)
 
         if (!cmp.class) {
