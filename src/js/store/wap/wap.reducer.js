@@ -21,7 +21,6 @@ export function wapReducer(state = initialState, action = {}) {
         case 'SET_CLICKED_CMP':
             return { ...state, clickedCmp: action.elem }
         case 'SET_CLICKED_ELEM_NODE':
-            console.log(action.elemNode)
             return { ...state, clickedElemNode: action.elemNode }
         case 'SET_SIDEBAR_CONTEXT':
             return { ...state, sidebarContext: action.context }
