@@ -12,6 +12,15 @@
     top: $app-header-height + 1px;
     z-index: 99999;
     .tools {
+        display: grid;
+        grid-auto-flow: column;
+
+        &.tools-views {
+            justify-self: center;
+            .responsive-btns {
+                // justify-self: center;
+            }
+        }
         .tool {
             cursor: pointer;
             font-size: 1.25rem;

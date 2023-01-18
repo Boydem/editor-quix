@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { DynamicModule } from './dynamic-module'
-import { AiOutlineClose } from 'react-icons/ai'
+
+import { AddModules } from './add-modules'
+import { EditModules } from './edit-modules'
 
 export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
     const [activeModule, setActiveModule] = useState('Quick add')
@@ -9,42 +10,19 @@ export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
         ['Header', 'Hero', 'Section', 'Card', 'Footer', 'Media', 'Decorative', 'Contact & Forms', 'Embed & Social'],
         ['Cards', 'Galleries', 'Members', 'Section'],
     ]
-
     return (
-        <section className={`${isSidebarOpen ? 'open' : 'closed'} edit side-bar`}>
-            <div className='modules'>
-                {addModulesMenuItems.map((moduleGroup, idx) => (
-                    <ul key={idx} className='modules-list'>
-                        {moduleGroup.map((module, idx) => (
-                            <li
-                                className={activeModule === module ? 'active' : ''}
-                                onClick={() => setActiveModule(module)}
-                                key={idx}
-                            >
-                                {module}
-                            </li>
-                        ))}
-                    </ul>
-                ))}
-            </div>
-            <div className='module-content'>
-                <div className='module-header'>
-                    <span className='module-name'>{activeModule}</span>
-                    <div className='actions'>
-                        <span
-                            onClick={() => {
-                                setSidebarOpen(prev => !prev)
-                            }}
-                            className='btn'
-                        >
-                            <AiOutlineClose />
-                        </span>
-                    </div>
-                </div>
-                <div className='module-options'>
-                    <DynamicModule activeModule={activeModule} addModulesMenuItems={addModulesMenuItems} />
-                </div>
-            </div>
+        <section className={`${isSidebarOpen ? 'open' : ''} ${context} side-bar`}>
+            <AddModules
+                setSidebarOpen={setSidebarOpen}
+                setActiveModule={setActiveModule}
+                activeModule={activeModule}
+                addModulesMenuItems={addModulesMenuItems}
+            />
+            <EditModules
+                setSidebarOpen={setSidebarOpen}
+                setActiveModule={setActiveModule}
+                activeModule={activeModule}
+            />
         </section>
     )
 }

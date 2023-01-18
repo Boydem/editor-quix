@@ -1,34 +1,43 @@
 .side-bar {
-    position: fixed;
-    top: $app-header-height + $toolbar-height;
-    // padding: $spacing-m;
-    background-color: $clr1;
-    min-height: calc(100vh - $app-header-height + $toolbar-height);
-    min-width: 30%;
-    max-width: 30%;
-    // box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    z-index: 9999;
-    transition: transform 0.35s;
     overflow: hidden;
-    &.add {
+    max-width: 100vw;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    max-height: calc(100vh - $app-header-height + $toolbar-height);
+    & > * {
+        min-height: calc(100vh - $app-header-height + $toolbar-height);
+        max-height: calc(100vh - $app-header-height + $toolbar-height);
+        background-color: $clr1;
+        display: grid;
+        z-index: 9999;
+        transition: transform 0.35s;
+        overflow: hidden;
+        top: $app-header-height + $toolbar-height;
+    }
+    & .add-modules {
+        position: fixed;
+        min-width: 30%;
+        max-width: 30%;
+        grid-template-columns: auto 1fr;
         transform: translateX(-100%);
         left: 0;
     }
-    &.edit {
+    & .edit-modules {
+        position: fixed;
+        min-width: 20%;
+        max-width: 20%;
+        grid-template-columns: 1fr;
         transform: translateX(100%);
         right: 0;
     }
-    &.open {
+    &.open.edit .edit-modules {
         transform: translateX(0%);
     }
-    &.open img {
-        position: static;
+    &.open.add .add-modules {
+        transform: translateX(0%);
     }
-    &.closed img {
-        position: absolute;
-    }
+
     .modules {
         z-index: 2;
         box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
