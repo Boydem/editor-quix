@@ -100,6 +100,12 @@ function _createWaps() {
                 owner: 'admin',
                 cmps: getWap2Template(),
             },
+            {
+                _id: makeId(),
+                name: 'wap-3-template',
+                owner: 'admin',
+                cmps: getWap3Template(),
+            },
         ]
 
         localStorage.setItem(STORAGE_KEY, JSON.stringify(waps))
