@@ -9,18 +9,26 @@ import { getWap1Template } from '../../wap-templates/wap-template-1/wap-1-templa
 import { getWap2Template } from '../../wap-templates/wap-template-2/wap-2-template'
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { setSidebarContext } from '../../store/wap/wap.action'
 
 export function Editor() {
     const [isSidebarOpen, setSidebarOpen] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
     const [template, setTemplate] = useState(null)
+    const sidebarContext = useSelector(storeState => storeState.wapModule.sidebarContext)
+
+    // const currSide =
     const { wapId } = useParams()
     console.log(template)
     useEffect(() => {
         loadWap()
     }, [])
 
-    function loadEditedWap() {}
+    function onOpenSidebar(context) {
+        setSidebarContext(context)
+        setSidebarOpen(true)
+    }
 
     async function loadWap() {
         let template = await wapService.get(wapId)
@@ -49,9 +57,14 @@ export function Editor() {
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
                 <AppHeader />
-                <ToolsBar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+                <ToolsBar isSidebarOpen={isSidebarOpen} onOpenSidebar={onOpenSidebar} />
                 <EditorPreview templateOrder={template.cmps} />
-                <Sidebar isEditing={isEditing} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+                <Sidebar
+                    context={sidebarContext}
+                    isEditing={isEditing}
+                    isSidebarOpen={isSidebarOpen}
+                    setSidebarOpen={setSidebarOpen}
+                />
             </DragDropContext>
         </>
     )

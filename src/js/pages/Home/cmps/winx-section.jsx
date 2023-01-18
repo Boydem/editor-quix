@@ -12,15 +12,15 @@ export function WinxSection() {
                     viewBox='0 0 344 57'
                     height='57'
                     width='344'
-                    data-type='ugc'
+                    datatype='ugc'
                     role='presentation'
                     aria-hidden='true'
                 >
-                    <g stroke='#FFFFFF' fill-rule='evenodd'>
-                        <path fill='none' d='M339.5 5v47' stroke-width='9' stroke-linecap='round'></path>
+                    <g stroke='#FFFFFF' fillRule='evenodd'>
+                        <path fill='none' d='M339.5 5v47' strokeWidth='9' strokeLinecap='round'></path>
                         <path
-                            stroke-dasharray='4,2'
-                            stroke-width='2.5'
+                            strokeDasharray='4,2'
+                            strokeWidth='2.5'
                             d='M333.39 27.56c9.663.333-100.93.333-331.78 0'
                             fill='none'
                         ></path>
@@ -44,15 +44,15 @@ export function WinxSection() {
                     viewBox='0 0 344 57'
                     height='57'
                     width='344'
-                    data-type='ugc'
+                    datatype='ugc'
                     role='presentation'
                     aria-hidden='true'
                 >
-                    <g stroke='#FFFFFF' fill-rule='evenodd'>
-                        <path fill='none' d='M4.5 5v47' stroke-width='9' stroke-linecap='round'></path>
+                    <g stroke='#FFFFFF' fillRule='evenodd'>
+                        <path fill='none' d='M4.5 5v47' strokeWidth='9' strokeLinecap='round'></path>
                         <path
-                            stroke-dasharray='4,2'
-                            stroke-width='2.5'
+                            strokeDasharray='4,2'
+                            strokeWidth='2.5'
                             d='M10.61 27.56c-9.663.333 100.93.333 331.78 0'
                             fill='none'
                         ></path>
