@@ -2,7 +2,6 @@ import React from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
-import './styles.css'
 
 const AccordionDemo = () => (
     <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
