@@ -50,9 +50,9 @@ export function AppHeader() {
                         </Link>
                     </li>
                     <li>
-                        <a className='nav-link preview' href='#'>
+                        <Link className='nav-link preview' href='#'>
                             <span>Preview</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <Link className='nav-link publish' to='/create'>

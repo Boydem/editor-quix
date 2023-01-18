@@ -16,11 +16,11 @@ export const wapService = {
     // saveCmp,
 }
 
-_createWaps()
 let gCmpsMap
 const STORAGE_KEY = 'wapDB'
 const EDITED_WAP_STORAGE_KEY = 'editedWap'
 
+_createWaps()
 function getCmpById(activeModule, cmpId) {
     return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
 }
@@ -61,7 +61,6 @@ async function get(wapId) {
 function remove(wapId) {
     return storageService.remove(STORAGE_KEY, wapId)
 }
-
 
 async function save(wap) {
     var savedWap
