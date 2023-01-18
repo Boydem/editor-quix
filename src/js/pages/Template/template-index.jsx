@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
-import templateImg2 from '../../../assets/imgs/home-assets/templates2.webp'
-import { AppHeader } from '../../cmps/app-header'
-import { utilService } from '../../services/util.service'
 import { wapService } from '../../services/wap.service'
 import { DarkHeader } from './cmps/dark-header'
 

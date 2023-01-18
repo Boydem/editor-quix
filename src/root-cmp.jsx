@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import { Home } from './js/pages/Home/home'
 import { TemplateIndex } from './js/pages/Template/template-index'
 import { Editor } from './js/pages/Editor/editor'
-import { EditorPreview } from './js/pages/Editor/cmps/editor-preview'
 import { Preview } from './js/pages/Preview/preview'
 
 function App() {

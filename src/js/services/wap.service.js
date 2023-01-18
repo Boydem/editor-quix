@@ -3,8 +3,6 @@ import { getWap2Template } from '../wap-templates/wap-template-2/wap-2-template'
 import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
 import { storageService } from './async-storage.service'
 import { makeId, utilService } from './util.service'
-import { wap1Hero } from '../wap-templates/wap-template-1/wap-1-hero'
-import wap2Hero from '../wap-templates/wap-template-2/wap-2-hero.json'
 
 export const wapService = {
     getCmpById,
@@ -17,10 +15,12 @@ export const wapService = {
     updateCmp,
     // saveCmp,
 }
+
 let gCmpsMap
 const STORAGE_KEY = 'wapDB'
 const EDITED_WAP_STORAGE_KEY = 'editedWap'
 
+_createWaps()
 function getCmpById(activeModule, cmpId) {
     return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
 }
@@ -49,7 +49,6 @@ function updateCmp(cmp, parentCmp) {
 function getCategoryFractions(category) {
     return gCmpsMap[category]
 }
-_createWaps()
 
 function query() {
     return storageService.query(STORAGE_KEY)
@@ -58,15 +57,11 @@ function query() {
 _createMap()
 async function get(wapId) {
     return await storageService.get(STORAGE_KEY, wapId)
-
 }
 function remove(wapId) {
     return storageService.remove(STORAGE_KEY, wapId)
 }
 
-// async function save(wap) {
-//     return utilService.saveToStorage(EDITED_WAP_STORAGE_KEY, wap)
-// }
 async function save(wap) {
     var savedWap
     if (wap._id) {

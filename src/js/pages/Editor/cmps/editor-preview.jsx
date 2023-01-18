@@ -1,11 +1,10 @@
 import DynamicCmp from './dynamic-cmp'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { useState, useRef, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { Droppable, Draggable } from 'react-beautiful-dnd'
+import { useRef, useEffect } from 'react'
 
 export function EditorPreview({ templateOrder }) {
     const editorResizerRef = [useRef(), useRef()]
-    let [resizingState, setResizingState] = useState({ isResizing: false, draggingResizer: null })
+    let resizingState = { isResizing: false, draggingResizer: null }
     const editorWrapper = useRef()
     useEffect(() => {
         if (editorResizerRef) {
@@ -17,12 +16,6 @@ export function EditorPreview({ templateOrder }) {
 
             document.addEventListener('mouseup', handleMouseUp)
             document.addEventListener('mouseup', handleMouseUp)
-
-            // editorResizerRef.forEach(resizer => {
-            //     document.addEventListener('mousemove', handleResizeDrag)
-            //     resizer.current.addEventListener('mousedown', handleMouseDown)
-            //     document.addEventListener('mouseup', handleMouseUp)
-            // })
         }
     }, [])
 
@@ -77,7 +70,7 @@ export function EditorPreview({ templateOrder }) {
                                                     {...provided.draggableProps}
                                                     {...provided.dragHandleProps}
                                                 >
-                                                    <DynamicCmp cmp={fraction} isEditing={true} />
+                                                    <DynamicCmp cmp={fraction} />
                                                 </div>
                                             )
                                         }}
