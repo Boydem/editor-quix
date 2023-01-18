@@ -18,16 +18,13 @@ export function EditorPreview({ templateOrder }) {
     }, [])
 
     function handleMouseDown() {
-        console.log('DOWN')
         isResizing = true
     }
     function handleMouseUp() {
-        console.log('UP')
         isResizing = false
     }
     function handleResizeDrag(ev) {
         if (!isResizing) return
-        console.log('DRAG')
         // console.log('ev:', ev)
         // console.log('ev.offsetX:', ev.offsetX)
         // console.log('ev.screenX:', ev.screenX)
@@ -37,12 +34,12 @@ export function EditorPreview({ templateOrder }) {
         const currRightFormatted = +currRight.substring(0, currRight.length - 2) + 3
         //  + editorResizerRef[1].current.offsetWidth / 2
         editorWrapper.current.style.width = `${currRightFormatted - currLeftFormatted - 30}px`
-        console.log('currLeftFormatted:', currLeftFormatted)
-        console.log('currRightFormatted:', currRightFormatted)
-        console.log('editorWrapper.current.style.width:', editorWrapper.current.style.width)
+        // console.log('currLeftFormatted:', currLeftFormatted)
+        // console.log('currRightFormatted:', currRightFormatted)
+        // console.log('editorWrapper.current.style.width:', editorWrapper.current.style.width)
         editorResizerRef[0].current.style.left = `${+currLeftFormatted + ev.offsetX}px`
         editorResizerRef[1].current.style.left = `${+currRightFormatted - ev.offsetX}px`
-        console.log(+editorResizerRef[1].current.offsetWidth / 2)
+        // console.log(+editorResizerRef[1].current.offsetWidth / 2)
         // console.log(ev.screenX)
         // console.log(editorResizerRef[0].current.style.left)
         // editorResizerRef[0].current.style.left = `${Math.abs(ev.offsetX)}px`

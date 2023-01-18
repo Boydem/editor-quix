@@ -3,7 +3,6 @@ import { DynamicModule } from './dynamic-module'
 import { AiOutlineClose } from 'react-icons/ai'
 
 export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
-    console.log('context:', context)
     const [activeModule, setActiveModule] = useState('Quick add')
     const addModulesMenuItems = [
         ['Quick add', 'Assets'],
