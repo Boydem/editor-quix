@@ -25,9 +25,9 @@ export function Editor() {
         loadWap()
     }, [])
 
-    function onOpenSidebar(context) {
+    function onOpenSidebar(context, isOpen = true) {
         setSidebarContext(context)
-        setSidebarOpen(true)
+        setSidebarOpen(isOpen)
     }
 
     async function loadWap() {
