@@ -21,6 +21,7 @@ export default function DynamicCmp(props) {
         e.stopPropagation()
         e.preventDefault()
         setClickedElem(e.target)
+        console.log('Clicked on',cmp)
     }
     switch (props.cmp.type) {
 // const basicProps = cmp={props.cmp} handleClick={handleClick}
