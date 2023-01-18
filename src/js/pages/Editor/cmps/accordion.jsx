@@ -8,7 +8,7 @@ import SelectUnit from './ui-cmps/select'
 
 const AccordionEdit = () => {
     const [openOption, setOpenOption] = useState()
-    const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
+    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
 
     const sizeOptions = [
         { name: 'width', title: 'width', unit: 'px' },
@@ -20,15 +20,15 @@ const AccordionEdit = () => {
     ]
     function handleChange(ev) {
         ev.preventDefault()
-        if (!lastClickedElem) return
+        if (!lastClickedCmp) return
         const { name, value } = ev.target
         const unit = ev.target.getAttribute('info')
-        if (lastClickedElem.style) {
-            lastClickedElem.style = { ...lastClickedElem.style, [name]: `${value + unit}` }
+        if (lastClickedCmp.style) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
         } else {
-            lastClickedElem.style = { [name]: `${value + unit}` }
+            lastClickedCmp.style = { [name]: `${value + unit}` }
         }
-        saveCmp(lastClickedElem)
+        saveCmp(lastClickedCmp)
     }
 
     const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
