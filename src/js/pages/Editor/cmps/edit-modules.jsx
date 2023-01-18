@@ -2,14 +2,30 @@ import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { RiArrowDropRightLine } from 'react-icons/ri'
 import { RiArrowDropDownLine } from 'react-icons/ri'
+import { useSelector } from 'react-redux'
+import AccordionDemo from './accordion'
 
 export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
-    const sizeOptions = ['width', 'height', 'min-W', 'min-h', 'max-w', 'max-h']
     const [openOption, setOpenOption] = useState()
+    const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
+
+    const sizeOptions = [
+        { name: 'width', title: 'width', unit: 'px' },
+        { name: 'height', title: 'height', unit: 'px' },
+        { name: 'min-width', title: 'min-W', unit: 'px' },
+        { name: 'min-height', title: 'min-h', unit: 'px' },
+        { name: 'max-width', title: 'max-w', unit: 'px' },
+        { name: 'max-height', title: 'max-h', unit: 'px' },
+    ]
 
     function handleChange(ev) {
         ev.preventDefault()
-        console.log('ev.value:', ev.value)
+        const { name, value } = ev.target
+        if (lastClickedElem.style) {
+            lastClickedElem.style = { ...lastClickedElem.style, [name]: `${value}px` }
+        } else {
+            lastClickedElem.style = { [name]: `${value}px` }
+        }
     }
 
     return (
@@ -28,6 +44,7 @@ export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
                         </span>
                     </div>
                 </div>
+                <AccordionDemo />
                 <div className='options-accordion'>
                     <div className='option'>
                         <div className='option-header'>
@@ -39,8 +56,8 @@ export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
                         <div className='option-body'>
                             {sizeOptions.map((option, idx) => (
                                 <div key={idx} className='param-box'>
-                                    <label htmlFor={option}>{option}</label>
-                                    <input type='number' name={option} id={option} onChange={handleChange} />
+                                    <label htmlFor={option.name}>{option.title}</label>
+                                    <input type='number' name={option.name} id={option.name} onChange={handleChange} />
                                 </div>
                             ))}
                         </div>
@@ -55,8 +72,8 @@ export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
                         <div className='option-body'>
                             {sizeOptions.map((option, idx) => (
                                 <div key={idx} className='param-box'>
-                                    <label htmlFor={option}>{option}</label>
-                                    <input type='number' name={option} id={option} onChange={handleChange} />
+                                    <label htmlFor={option.name}>{option.title}</label>
+                                    <input type='number' name={option.name} id={option.name} onChange={handleChange} />
                                 </div>
                             ))}
                         </div>
