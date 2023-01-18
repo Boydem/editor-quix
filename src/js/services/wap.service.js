@@ -15,7 +15,7 @@ export const wapService = {
     getEditedWap,
     getCategoryFractions,
     updateCmp,
-    saveCmp,
+    // saveCmp,
 }
 let gCmpsMap
 const STORAGE_KEY = 'wapDB'
@@ -37,20 +37,12 @@ function _createMap() {
     }, {})
 }
 
-function saveCmp(cmp, index, parentCmp) {
-    console.log('NICE')
-    console.log('parentCmp', parentCmp)
-    console.log('index:', index)
-    console.log('cmp', cmp)
-    parentCmp.cmps[index] = cmp
-}
-
-function updateCmp(cmp, parentCmp, cb) {
-    const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
-    if (isFoundCmpIndex > -1) {
-        saveCmp(cmp, isFoundCmpIndex, parentCmp)
+function updateCmp(cmp, parentCmp) {
+    let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
+    if (foundCmp) {
+        foundCmp = cmp
     } else {
-        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
+        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
     }
 }
 
@@ -120,3 +112,16 @@ function _createWaps() {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(waps))
     }
 }
+
+// function saveCmp(cmp, index, parentCmp) {
+//     parentCmp[index] = cmp
+// }
+
+// function updateCmp(cmp, parentCmp, cb) {
+//     const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
+//     if (isFoundCmpIndex > -1) {
+//         saveCmp(cmp, isFoundCmpIndex, parentCmp)
+//     } else {
+//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
+//     }
+// }

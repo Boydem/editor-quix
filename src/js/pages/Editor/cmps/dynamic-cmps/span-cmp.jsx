@@ -1,4 +1,4 @@
-export default function SpanCmp({ cmp, handleClick }) {
+export  function SpanCmp({ cmp, handleClick }) {
     let classes = cmp.name + ' '
     if (cmp.class) {
         classes += cmp.class?.join(' ')
