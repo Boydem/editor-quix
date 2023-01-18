@@ -1,19 +1,25 @@
 .side-bar {
     position: fixed;
     top: $app-header-height + $toolbar-height;
-    left: 0;
     // padding: $spacing-m;
     background-color: $clr1;
     min-height: calc(100vh - $app-header-height + $toolbar-height);
-    min-width: 35%;
-    max-width: 35%;
+    min-width: 30%;
+    max-width: 30%;
     // box-shadow: 20px 0px 30px -20px rgba($clr2, 20%);
     display: grid;
     grid-template-columns: auto 1fr;
     z-index: 9999;
-    transform: translateX(-100%);
     transition: transform 0.35s;
     overflow: hidden;
+    &.add {
+        transform: translateX(-100%);
+        left: 0;
+    }
+    &.edit {
+        transform: translateX(100%);
+        right: 0;
+    }
     &.open {
         transform: translateX(0%);
     }
