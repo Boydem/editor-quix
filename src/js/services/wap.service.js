@@ -41,8 +41,13 @@ function _createMap() {
     }, {})
 }
 
-function findParentCmp(cmp, wap) {
-    console.log(cmp, wap)
+function findParentCmp(cmp, parentCmp, cb) {
+    const isFoundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
+    if (isFoundCmp) {
+        return cb()
+    } else {
+        return parentCmp?.cmps?.forEach(c => findParentCmp(cmp, c, cb))
+    }
 }
 
 function getCategoryFractions(category) {

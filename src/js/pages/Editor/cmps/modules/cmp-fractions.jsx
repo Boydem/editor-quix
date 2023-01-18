@@ -5,7 +5,7 @@ export function CmpFractions({ activeModule }) {
     const assets = wapService.getCategoryFractions(activeModule.toLowerCase())
     return (
         <section className='quick-add'>
-            <Droppable droppableId='assets'>
+            <Droppable droppableId={activeModule.toLowerCase()}>
                 {provided => {
                     return (
                         <div {...provided.droppableProps} ref={provided.innerRef} className='full'>
