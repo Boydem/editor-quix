@@ -17,9 +17,6 @@ export default function DynamicCmp(props) {
         if (!cmp.class) {
             cmp.class = []
         }
-        if (lastClickedElem) {
-            lastClickedElem.style = { ...lastClickedElem.style, color: 'red' }
-        }
 
         if (lastClickedElem) {
             lastClickedElem.class = lastClickedElem?.class.filter(c => c !== 'clicked')
