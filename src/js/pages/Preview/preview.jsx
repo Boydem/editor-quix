@@ -21,7 +21,7 @@ export function Preview() {
         <div className='full'>
             {/* <DarkHeader /> */}
             {template.cmps.map(fraction => {
-                return <DynamicCmp cmp={fraction} previewOnly={true} />
+                return <DynamicCmp cmp={fraction} previewOnly={true} key={fraction.id} />
             })}
         </div>
     )

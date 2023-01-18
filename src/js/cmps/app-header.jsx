@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 export function AppHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState()
+    const { wapId } = useParams()
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
@@ -50,7 +51,7 @@ export function AppHeader() {
                         </Link>
                     </li>
                     <li>
-                        <Link className='nav-link preview' href='#'>
+                        <Link className='nav-link preview' to={`/preview/${wapId}`}>
                             <span>Preview</span>
                         </Link>
                     </li>
