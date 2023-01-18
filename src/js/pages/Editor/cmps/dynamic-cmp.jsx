@@ -12,6 +12,8 @@ import { SpanCmp } from './dynamic-cmps/span-cmp'
 export default function DynamicCmp(props) {
     const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
     function handleClick(e, cmp) {
+        if (!props.isEditing) return
+
         e.stopPropagation()
         e.preventDefault()
         if (!cmp.class) {

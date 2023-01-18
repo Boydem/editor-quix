@@ -5,48 +5,59 @@ import { useSelector } from 'react-redux'
 
 export function EditorPreview({ templateOrder }) {
     const editorResizerRef = [useRef(), useRef()]
-    let [isResizing, setIsResizing] = useState(false)
+    let [resizingState, setResizingState] = useState({ isResizing: false, draggingResizer: null })
     const editorWrapper = useRef()
     useEffect(() => {
         if (editorResizerRef) {
-            editorResizerRef.forEach(resizer => {
-                resizer.current.addEventListener('mousemove', handleResizeDrag)
-                resizer.current.addEventListener('mousedown', handleMouseDown)
-                document.addEventListener('mouseup', handleMouseUp)
-            })
+            document.addEventListener('mousemove', handleResizeDrag)
+            document.addEventListener('mousemove', handleResizeDrag)
+
+            editorResizerRef[0].current.addEventListener('mousedown', () => handleMouseDown('left'))
+            editorResizerRef[1].current.addEventListener('mousedown', () => handleMouseDown('right'))
+
+            document.addEventListener('mouseup', handleMouseUp)
+            document.addEventListener('mouseup', handleMouseUp)
+
+            // editorResizerRef.forEach(resizer => {
+            //     document.addEventListener('mousemove', handleResizeDrag)
+            //     resizer.current.addEventListener('mousedown', handleMouseDown)
+            //     document.addEventListener('mouseup', handleMouseUp)
+            // })
         }
     }, [])
 
-    function handleMouseDown() {
-        isResizing = true
+    function handleMouseDown(dir) {
+        resizingState.isResizing = true
+        if (dir === 'left') {
+            resizingState.draggingResizer = 'left'
+        } else {
+            resizingState.draggingResizer = 'right'
+        }
     }
     function handleMouseUp() {
-        isResizing = false
+        resizingState.isResizing = false
     }
     function handleResizeDrag(ev) {
-        if (!isResizing) return
-        // console.log('ev:', ev)
-        // console.log('ev.offsetX:', ev.offsetX)
-        // console.log('ev.screenX:', ev.screenX)
-        const currLeft = window.getComputedStyle(editorResizerRef[0].current).getPropertyValue('left')
-        const currLeftFormatted = +currLeft.substring(0, currLeft.length - 2) - 3
-        const currRight = window.getComputedStyle(editorResizerRef[1].current).getPropertyValue('left')
-        const currRightFormatted = +currRight.substring(0, currRight.length - 2) + 3
-        //  + editorResizerRef[1].current.offsetWidth / 2
-        editorWrapper.current.style.width = `${currRightFormatted - currLeftFormatted - 30}px`
-        // console.log('currLeftFormatted:', currLeftFormatted)
-        // console.log('currRightFormatted:', currRightFormatted)
-        // console.log('editorWrapper.current.style.width:', editorWrapper.current.style.width)
-        editorResizerRef[0].current.style.left = `${+currLeftFormatted + ev.offsetX}px`
-        editorResizerRef[1].current.style.left = `${+currRightFormatted - ev.offsetX}px`
-        // console.log(+editorResizerRef[1].current.offsetWidth / 2)
-        // console.log(ev.screenX)
-        // console.log(editorResizerRef[0].current.style.left)
-        // editorResizerRef[0].current.style.left = `${Math.abs(ev.offsetX)}px`
-        // console.log(editorResizerRef[0].current.style.left)
-        // console.log(editorWrapper.current.offsetWidth)
-        // console.log('Dragging:')
-        // console.log(window.getComputedStyle(editorResizerRef[0].current).getPropertyValue('left')) // border-radius can be replaced with any other style attributes;
+        if (!resizingState.isResizing) return
+
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) - 25
+        let leftLeft
+        let rightLeft
+        if (resizingState.draggingResizer === 'left') {
+            leftLeft = ev.clientX + 5
+            rightLeft = vw - ev.clientX - 15
+        }
+        if (resizingState.draggingResizer === 'right') {
+            leftLeft = vw - ev.clientX + 5
+            rightLeft = ev.clientX - 15
+        }
+
+        // leftLeft = Math.max(leftLeft, 150)
+        leftLeft = Math.min(leftLeft, vw / 2 - 200)
+        rightLeft = Math.max(rightLeft, vw / 2 + 200)
+        editorResizerRef[1].current.style.left = `${rightLeft}px`
+        editorResizerRef[0].current.style.left = `${leftLeft}px`
+        editorWrapper.current.style.width = `${rightLeft - leftLeft - 30}px`
     }
 
     return (
@@ -66,7 +77,7 @@ export function EditorPreview({ templateOrder }) {
                                                     {...provided.draggableProps}
                                                     {...provided.dragHandleProps}
                                                 >
-                                                    <DynamicCmp cmp={fraction} />
+                                                    <DynamicCmp cmp={fraction} isEditing={true} />
                                                 </div>
                                             )
                                         }}

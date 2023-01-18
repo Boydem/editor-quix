@@ -25,6 +25,9 @@ export function TemplateIndex() {
         template = await wapService.save(template)
         navigate(`/edit/${template._id}`)
     }
+    function onPreview(wapId) {
+        navigate(`/preview/${wapId}`)
+    }
     if (!waps) return <></>
     return (
         <>
@@ -47,7 +50,9 @@ export function TemplateIndex() {
                                     <button className='btn btn-template' onClick={() => onEdit(wap._id)}>
                                         Edit
                                     </button>
-                                    <button className='btn btn-template'>View</button>
+                                    <button className='btn btn-template' onClick={() => onPreview(wap._id)}>
+                                        View
+                                    </button>
                                 </div>
                             </div>
                             <div className='text-container'>
