@@ -8,11 +8,11 @@ export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
     const addModulesMenuItems = [
         ['Quick add', 'Assets'],
         [
-            'Compositions',
-            'Layout tools',
-            'Button',
-            'Text',
-            'Menu & Search',
+            'Header',
+            'Hero',
+            'Section',
+            'Card',
+            'Footer',
             'Media',
             'Decorative',
             'Contact & Forms',

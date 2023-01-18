@@ -1,7 +1,8 @@
 import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { wap1Hero } from '../../../../wap-templates/wap-template-1/wap-1-hero'
 import wap2Hero from '../../../../wap-templates/wap-template-2/wap-2-hero.json'
-export function QuickAdd() {
+export function QuickAdd({ activeModule }) {
+    console.log(activeModule)
     const assets = [wap1Hero, wap2Hero]
     return (
         <section className='quick-add'>

@@ -25,15 +25,13 @@ export function Editor() {
         loadWap()
     }, [])
 
-    function loadEditedWap() {}
-
     function onOpenSidebar(context) {
         setSidebarContext(context)
         setSidebarOpen(true)
     }
 
-    function loadWap() {
-        let template = wapService.getEditedWap()
+    async function loadWap() {
+        let template = await wapService.get(wapId)
         setTemplate(template)
     }
 
