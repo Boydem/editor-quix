@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { saveCmp, setClickedElem } from '../../../store/wap/wap.action'
+import { saveCmp, setClickedElem, setClickedElemNode } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
@@ -10,26 +11,33 @@ import { PCmp } from './dynamic-cmps/p-cmp'
 import { SpanCmp } from './dynamic-cmps/span-cmp'
 
 export default function DynamicCmp(props) {
+    const lastClickedElemNode = useSelector(storeState => storeState.wapModule.clickedElemNode)
     const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
     function handleClick(e, cmp) {
         e.stopPropagation()
         e.preventDefault()
+        console.log('lastClickedElemNode:', lastClickedElemNode)
+        if (lastClickedElemNode) {
+            lastClickedElemNode.classList.remove('clicked')
+        }
+        e.target.classList.add('clicked')
+        setClickedElemNode(e.target)
         // if (!props.isEditing) return
-        console.log('cmp', cmp)
+        // console.log('cmp', cmp)
 
-        if (!cmp.class) {
-            cmp.class = []
-        }
+        // if (!cmp.class) {
+        //     cmp.class = []
+        // }
 
-        if (lastClickedElem) {
-            lastClickedElem.class = lastClickedElem?.class.filter(c => c !== 'clicked')
-        }
+        // if (lastClickedElem) {
+        //     lastClickedElem.class = lastClickedElem?.class.filter(c => c !== 'clicked')
+        // }
 
         setClickedElem(cmp)
-        if (!cmp.class) {
-            cmp.class = [cmp.name]
-        }
-        cmp.class.push('clicked')
+        // if (!cmp.class) {
+        //     cmp.class = [cmp.name]
+        // }
+        // cmp.class.push('clicked')
 
         saveCmp(cmp)
     }

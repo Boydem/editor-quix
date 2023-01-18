@@ -1,10 +1,14 @@
 import { useSelector } from 'react-redux'
 import { wapService } from '../../services/wap.service'
 import { store } from '../store'
-import { SET_CLICKED_ELEM, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
+import { SET_CLICKED_ELEM, SET_CLICKED_ELEM_NODE, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
 
 export async function setClickedElem(elem) {
     store.dispatch({ type: SET_CLICKED_ELEM, elem })
+}
+export async function setClickedElemNode(elemNode) {
+    
+    store.dispatch({ type: SET_CLICKED_ELEM_NODE, elemNode })
 }
 export async function saveWap(wap) {
     try {
