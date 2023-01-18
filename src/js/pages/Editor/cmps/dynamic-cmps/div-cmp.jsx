@@ -5,6 +5,7 @@ export function DivCmp({ cmp, handleClick }) {
     if (cmp.class) {
         classes += cmp.class?.join(' ')
     }
+
     return (
         <div className={classes} style={cmp.style} onClick={e => handleClick(e, cmp)}>
             {cmp.cmps?.map(c => {

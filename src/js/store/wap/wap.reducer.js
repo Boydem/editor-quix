@@ -14,7 +14,7 @@ export function wapReducer(state = initialState, action = {}) {
     switch (action.type) {
         case 'SET_WAP':
             // console.log('action.wap:', action.wap)
-            return { ...state, wap: action.wap }
+            return { ...state, wap: { ...action.wap } }
         case 'SET_CLICKED_ELEM':
             return { ...state, clickedElem: action.elem }
         case 'SET_SIDEBAR_CONTEXT':
