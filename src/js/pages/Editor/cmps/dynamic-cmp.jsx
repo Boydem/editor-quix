@@ -13,9 +13,6 @@ import { ImgCmp } from './dynamic-cmps/img-cmp'
 import { PCmp } from './dynamic-cmps/p-cmp'
 import SpanCmp from './dynamic-cmps/span-cmp'
 
-import './style1.scss'
-import './style2.scss'
-
 export default function DynamicCmp(props) {
     function handleClick(e, cmp) {
         e.stopPropagation()
@@ -24,7 +21,7 @@ export default function DynamicCmp(props) {
         console.log('Clicked on',cmp)
     }
     switch (props.cmp.type) {
-// const basicProps = cmp={props.cmp} handleClick={handleClick}
+        // const basicProps = cmp={props.cmp} handleClick={handleClick}
 
         case 'div':
             return <DivCmp cmp={props.cmp} handleClick={handleClick} />
