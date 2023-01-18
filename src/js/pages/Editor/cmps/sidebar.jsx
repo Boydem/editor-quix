@@ -10,6 +10,7 @@ export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
         ['Header', 'Hero', 'Section', 'Card', 'Footer', 'Media', 'Decorative', 'Contact & Forms', 'Embed & Social'],
         ['Cards', 'Galleries', 'Members', 'Section'],
     ]
+    const editModules = ['Text', 'Image', 'Section']
     return (
         <section className={`${isSidebarOpen ? 'open' : ''} ${context} side-bar`}>
             <AddModules

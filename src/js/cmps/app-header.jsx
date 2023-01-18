@@ -50,12 +50,12 @@ export function AppHeader() {
                         </Link>
                     </li>
                     <li>
-                        <a className='nav-link' href='#'>
+                        <a className='nav-link preview' href='#'>
                             <span>Preview</span>
                         </a>
                     </li>
                     <li>
-                        <Link className='nav-link btn-publish' to='/create'>
+                        <Link className='nav-link publish' to='/create'>
                             <span>Publish</span>
                         </Link>
                     </li>
