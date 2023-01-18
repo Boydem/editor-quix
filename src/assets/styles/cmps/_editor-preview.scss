@@ -1,5 +1,7 @@
 .editor-preview {
-    max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+    $scroll-bar-width: $spacing-m;
+    $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+    max-height: $editor-max-height;
     padding: $spacing-l $spacing-m;
     background-color: $editor-hover-bg;
     border-radius: $spacing-s;
@@ -9,10 +11,28 @@
     .wrapper {
         max-width: 90%;
         margin: auto;
-        // border: 1px solid black;
         box-shadow: 0px -5px 32px 24px rgba($clr7, 0.125);
         border-radius: $spacing-s;
         overflow: hidden;
+        position: relative;
+        & .editor-resizer {
+            z-index: 3;
+            position: fixed;
+            top: 50%;
+            height: 3rem;
+            width: 10px;
+            border-radius: 10em;
+            cursor: e-resize;
+            background-color: $clr9;
+            &.left {
+                transform: translate(-100%, 100%);
+                left: 5%;
+            }
+            &.right {
+                transform: translate(100%, 100%);
+                right: calc(5% + $scroll-bar-width);
+            }
+        }
     }
     &::-webkit-scrollbar-thumb {
         border: $spacing-xs solid transparent;
@@ -21,7 +41,7 @@
         background-clip: content-box;
     }
     &::-webkit-scrollbar {
-        width: $spacing-m;
+        width: $scroll-bar-width;
     }
     &::-webkit-scrollbar-track {
         background-color: $clr12;
