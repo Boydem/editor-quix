@@ -1,18 +1,15 @@
-import { useSelector } from 'react-redux'
 import { wapService } from '../../services/wap.service'
 import { store } from '../store'
-import { SET_CLICKED_ELEM, SET_CLICKED_ELEM_NODE, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
+import { SET_CLICKED_CMP, SET_CLICKED_ELEM_NODE, SET_IS_EDITING, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
 
-export async function setClickedElem(elem) {
-    store.dispatch({ type: SET_CLICKED_ELEM, elem })
+export async function setClickedCmp(elem) {
+    store.dispatch({ type: SET_CLICKED_CMP, elem })
 }
 export async function setClickedElemNode(elemNode) {
-    
     store.dispatch({ type: SET_CLICKED_ELEM_NODE, elemNode })
 }
 export async function saveWap(wap) {
     try {
-        console.log(wap)
         wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
@@ -34,11 +31,6 @@ export async function saveCmp(newCmp) {
 export async function setSidebarContext(context) {
     store.dispatch({ type: SET_SIDEBAR_CONTEXT, context })
 }
-// export async function removeUser(userId) {
-//     try {
-//         await userService.remove(userId)
-//         store.dispatch({ type: 'REMOVE_USER', userId })
-//     } catch (err) {
-//         console.log('UserActions: err in removeUser', err)
-//     }
-// }
+export async function setIsEditing(mode) {
+    store.dispatch({ type: SET_IS_EDITING, mode })
+}

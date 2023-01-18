@@ -8,7 +8,7 @@ import { DragDropContext } from 'react-beautiful-dnd'
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { saveWap, setSidebarContext } from '../../store/wap/wap.action'
+import { saveWap, setIsEditing, setSidebarContext } from '../../store/wap/wap.action'
 
 export function Editor() {
     const template = useSelector(storeState => storeState.wapModule.wap)
@@ -19,6 +19,11 @@ export function Editor() {
     const { wapId } = useParams()
     useEffect(() => {
         loadWap()
+        setIsEditing(true)
+
+        return () => {
+            setIsEditing(false)
+        }
     }, [])
 
     function onOpenSidebar(context, isOpen = true) {

@@ -8,7 +8,7 @@ import AccordionDemo from './accordion'
 
 export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
     const [openOption, setOpenOption] = useState()
-    const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
+    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
 
     const sizeOptions = [
         { name: 'width', title: 'width', unit: 'px' },
@@ -21,15 +21,15 @@ export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
 
     function handleChange(ev) {
         ev.preventDefault()
-        if (!lastClickedElem) return
+        if (!lastClickedCmp) return
         const { name, value } = ev.target
         const unit = ev.target.getAttribute('info')
-        if (lastClickedElem.style) {
-            lastClickedElem.style = { ...lastClickedElem.style, [name]: `${value + unit}` }
+        if (lastClickedCmp.style) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
         } else {
-            lastClickedElem.style = { [name]: `${value + unit}` }
+            lastClickedCmp.style = { [name]: `${value + unit}` }
         }
-        saveCmp(lastClickedElem)
+        saveCmp(lastClickedCmp)
     }
 
     return (

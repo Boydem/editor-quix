@@ -55,9 +55,7 @@ function remove(entityType, entityId) {
 function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
-function _loadFromStorage(EDITED_WAP_STORAGE_KEY) {
-    JSON.parse(localStorage.getItem(EDITED_WAP_STORAGE_KEY))
-}
+
 
 function _makeId(length = 5) {
     var text = ''
