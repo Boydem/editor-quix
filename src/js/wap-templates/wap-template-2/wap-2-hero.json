@@ -2,6 +2,7 @@
     "id": "vIcG22",
     "type": "div",
     "name": "wap-2-hero",
+    "category": "hero",
     "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673995017/wapHero2_rq5wss.png",
     "cmps": [{
         "id": "snIfWz",

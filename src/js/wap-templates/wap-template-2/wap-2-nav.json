@@ -2,6 +2,7 @@
     "id": "aFDedz",
     "type": "div",
     "name": "wap-2-nav",
+    "category": "header",
     "cmps": [{
             "id": "ftPuy6",
             "type": "div",

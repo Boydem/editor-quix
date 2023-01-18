@@ -2,6 +2,7 @@
     "id": "9MSCHk",
     "type": "div",
     "name": "wap-2-cards",
+    "category": "card",
     "cmps": [
         {
             "id": "on9fek",

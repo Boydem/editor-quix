@@ -13,6 +13,11 @@ export const wapService = {
     save,
     getEditedWap,
 }
+let gCmpsMap
+
+// {"headers":["gfdsgfdsgds", "gfdsgfdsgds"],
+// "section":["gfdsgfdsgds", "gfdsgfdsgds"],
+// "nav":["gfdsgfdsgds", "gfdsgfdsgds"], }
 
 const STORAGE_KEY = 'wapDB'
 const EDITED_WAP_STORAGE_KEY = 'editedWap'
@@ -21,16 +26,26 @@ const cmpsInList = [wap1Hero, wap2Hero]
 function getCmpById(id) {
     return cmpsInList.find(cmp => cmp.id === id)
 }
-// function createMap([])
+function _createMap() {
+    const allFractions = [...getWap1Template(), ...getWap2Template()]
+    gCmpsMap = allFractions.reduce((acc, fraction) => {
+        if (acc[fraction.category]) {
+            acc[fraction.category].push(fraction)
+        } else {
+            acc[fraction.category] = [fraction]
+        }
+        return acc
+    }, {})
+}
 _createWaps()
 
 function query() {
     return storageService.query(STORAGE_KEY)
 }
 
+_createMap()
 async function get(wapId) {
     const template = await storageService.get(STORAGE_KEY, wapId)
-    // template._id = makeId()
     return template
 }
 function remove(wapId) {
