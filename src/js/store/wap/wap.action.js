@@ -15,6 +15,9 @@ export async function saveWap(wap) {
         throw err
     }
 }
+
+
+
 export async function saveCmp(newCmp) {
     try {
         const wap = store.getState().wapModule.wap
