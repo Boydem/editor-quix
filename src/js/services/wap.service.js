@@ -102,18 +102,27 @@ function _createWaps() {
                 name: 'wap-1-template',
                 owner: 'admin',
                 cmps: getWap1Template(),
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
+                title: 'WeDu',
             },
             {
                 _id: makeId(),
                 name: 'wap-2-template',
                 owner: 'admin',
                 cmps: getWap2Template(),
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
+                title: 'Gigaplay',
             },
             {
                 _id: makeId(),
                 name: 'wap-3-template',
                 owner: 'admin',
                 cmps: getWap3Template(),
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
+                title: 'Finclvr',
             },
         ]
 

@@ -42,7 +42,7 @@ export function TemplateIndex() {
                     {waps.map(wap => (
                         <article className='template' key={wap._id}>
                             <div className='img-container'>
-                                <img src={templateImg2} alt='templateImg2' />
+                                <img src={wap.thumbnail} alt='templateImg2' />
                                 <div className='actions'>
                                     <button className='btn btn-template' onClick={() => onEdit(wap._id)}>
                                         Edit
@@ -51,7 +51,7 @@ export function TemplateIndex() {
                                 </div>
                             </div>
                             <div className='text-container'>
-                                <div className='template-title text-bold'>SAAS Company</div>
+                                <div className='template-title text-bold'>{wap.title}</div>
                                 <p className='template-categories text-muted'>Sticky / Lightbox / Transparent Video</p>
                             </div>
                         </article>

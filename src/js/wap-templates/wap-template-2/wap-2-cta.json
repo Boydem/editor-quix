@@ -27,6 +27,9 @@
             "id": "n7CkNR",
             "type": "input",
             "name": "",
+            "content": {
+                "placeholder": "Email Address"
+            },
             "cmps": []
         },
         {
