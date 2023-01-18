@@ -24,7 +24,7 @@
         },
         {
             "id": "ZF2AIW",
-            "type": "nav",
+            "type": "div",
             "name": "app-nav",
             "cmps": [
                 {
