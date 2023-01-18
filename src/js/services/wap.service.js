@@ -36,6 +36,7 @@ function _createMap() {
         }
         return acc
     }, {})
+    console.log(gCmpsMap)
 }
 _createWaps()
 
@@ -52,8 +53,21 @@ function remove(wapId) {
     return storageService.remove(STORAGE_KEY, wapId)
 }
 
+// async function save(wap) {
+//     return utilService.saveToStorage(EDITED_WAP_STORAGE_KEY, wap)
+// }
 async function save(wap) {
-    return utilService.saveToStorage(EDITED_WAP_STORAGE_KEY, wap)
+    var savedWap
+    if (wap._id) {
+        savedWap = await storageService.put(STORAGE_KEY, wap)
+        // savedCar = await httpService.put(`car/${car._id}`, car)
+    } else {
+        // Later, owner is set by the backend
+        // car.owner = userService.getLoggedinUser()
+        savedWap = await storageService.post(STORAGE_KEY, wap)
+        // savedCar = await httpService.post('car', car)
+    }
+    return savedWap
 }
 
 function getEditedWap() {
@@ -67,11 +81,13 @@ function _createWaps() {
             {
                 _id: makeId(),
                 name: 'wap-1-template',
+                owner: 'admin',
                 cmps: getWap1Template(),
             },
             {
                 _id: makeId(),
                 name: 'wap-2-template',
+                owner: 'admin',
                 cmps: getWap2Template(),
             },
         ]

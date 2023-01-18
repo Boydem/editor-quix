@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import templateImg2 from '../../../assets/imgs/home-assets/templates2.webp'
 import { AppHeader } from '../../cmps/app-header'
+import { utilService } from '../../services/util.service'
 import { wapService } from '../../services/wap.service'
 import { DarkHeader } from './cmps/dark-header'
 
@@ -13,14 +14,16 @@ export function TemplateIndex() {
     }, [])
     async function getWaps() {
         const waps = await wapService.query()
-        setWaps(waps)
+        const templateWaps = waps.filter(wap => wap.owner === 'admin')
+        setWaps(templateWaps)
     }
 
     async function onEdit(wapId) {
-        const template = await wapService.get(wapId)
-        delete template._id
-        wapService.save(template)
-        navigate(`/edit`)
+        let template = await wapService.get(wapId)
+        template._id = null
+        template.owner = 'guest'
+        template = await wapService.save(template)
+        navigate(`/edit/${template._id}`)
     }
     if (!waps) return <></>
     return (
