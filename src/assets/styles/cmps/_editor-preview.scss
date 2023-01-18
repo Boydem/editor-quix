@@ -1,7 +1,7 @@
 .editor-preview {
     max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     padding: $spacing-l $spacing-m;
-    background-color: $editor-bg;
+    background-color: $editor-hover-bg;
     border-radius: $spacing-s;
     overflow-y: auto;
     overflow-x: hidden;
@@ -9,7 +9,8 @@
     .wrapper {
         max-width: 90%;
         margin: auto;
-        border: 1px solid black;
+        // border: 1px solid black;
+        box-shadow: 0px -5px 32px 24px rgba($clr7, 0.125);
         border-radius: $spacing-s;
         overflow: hidden;
     }
