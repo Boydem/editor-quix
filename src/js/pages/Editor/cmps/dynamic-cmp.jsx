@@ -3,15 +3,11 @@ import { saveCmp, setClickedElem } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
-import { H1Cmp } from './dynamic-cmps/h1.cmp'
-import { H2Cmp } from './dynamic-cmps/h2-cmp'
-import { H3Cmp } from './dynamic-cmps/h3-cmp'
-import { H4Cmp } from './dynamic-cmps/h4-cmp'
-import { H5Cmp } from './dynamic-cmps/h5-cmp'
-import { H6Cmp } from './dynamic-cmps/h6-cmp'
+import { HCmp } from './dynamic-cmps/h-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
+import { InputCmp } from './dynamic-cmps/input-cmp'
 import { PCmp } from './dynamic-cmps/p-cmp'
-import SpanCmp from './dynamic-cmps/span-cmp'
+import { SpanCmp } from './dynamic-cmps/span-cmp'
 
 export default function DynamicCmp(props) {
     const lastClickedElem = useSelector(storeState => storeState.wapModule.clickedElem)
@@ -21,60 +17,49 @@ export default function DynamicCmp(props) {
         if (!cmp.class) {
             cmp.class = []
         }
+        if (lastClickedElem) {
+            lastClickedElem.style = { ...lastClickedElem.style, color: 'red' }
+        }
 
         if (lastClickedElem) {
             lastClickedElem.class = lastClickedElem?.class.filter(c => c !== 'clicked')
         }
 
-        // console.log('lastClickedElem', lastClickedElem)
         setClickedElem(cmp)
         if (!cmp.class) {
             cmp.class = [cmp.name]
         }
         cmp.class.push('clicked')
+
         saveCmp(cmp)
-
-        // cmp.style = { color: 'red' }
-
-        // lastClickedElem.classList.remove('clicked')
-        // e.target.classList.add('clicked')
-        // setClickedElem(e.target)
-        // console.log('Clicked on', cmp)
-        // if (!cmp.style) {
-        //     cmp.style = {}
-        // }
-        // cmp.style = { ...cmp.style }
     }
+    const basicProps = { cmp: props.cmp, handleClick }
     switch (props.cmp.type) {
-        // const basicProps = cmp={props.cmp} handleClick={handleClick}
-
+        // add input
         case 'div':
-            return <DivCmp cmp={props.cmp} handleClick={handleClick} />
+            return <DivCmp {...basicProps} />
         case 'h1':
-            return <H1Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h2':
-            return <H2Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h3':
-            return <H3Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h4':
-            return <H4Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h5':
-            return <H5Cmp cmp={props.cmp} handleClick={handleClick} />
         case 'h6':
-            return <H6Cmp cmp={props.cmp} handleClick={handleClick} />
+            return <HCmp {...basicProps} hType={props.cmp.type} />
         case 'img':
-            return <ImgCmp cmp={props.cmp} handleClick={handleClick} />
+            return <ImgCmp {...basicProps} />
         case 'p':
-            return <PCmp cmp={props.cmp} handleClick={handleClick} />
+            return <PCmp {...basicProps} />
         case 'span':
-            return <SpanCmp cmp={props.cmp} handleClick={handleClick} />
+            return <SpanCmp {...basicProps} />
         case 'a':
-            return <ACmp cmp={props.cmp} handleClick={handleClick} />
+            return <ACmp {...basicProps} />
         case 'button':
-            return <ButtonCmp cmp={props.cmp} handleClick={handleClick} />
+            return <ButtonCmp {...basicProps} />
+        case 'input':
+            return <InputCmp {...basicProps} />
         default:
-            // console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
+            console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
             break
     }
-    return <div>DynamicCmp</div>
+    return <div>{props.cmp.type}</div>
 }
