@@ -10,7 +10,7 @@ export function EditorPreview({ templateOrder }) {
     useEffect(() => {
         if (editorResizerRef) {
             editorResizerRef.forEach(resizer => {
-                resizer.current.addEventListener('mousemove', handleResizeDrag)
+                document.addEventListener('mousemove', handleResizeDrag)
                 resizer.current.addEventListener('mousedown', handleMouseDown)
                 document.addEventListener('mouseup', handleMouseUp)
             })
@@ -43,6 +43,7 @@ export function EditorPreview({ templateOrder }) {
         editorResizerRef[0].current.style.left = `${+currLeftFormatted + ev.offsetX}px`
         editorResizerRef[1].current.style.left = `${+currRightFormatted - ev.offsetX}px`
         console.log(+editorResizerRef[1].current.offsetWidth / 2)
+        // console.log(ev.screenX)
         // console.log(editorResizerRef[0].current.style.left)
         // editorResizerRef[0].current.style.left = `${Math.abs(ev.offsetX)}px`
         // console.log(editorResizerRef[0].current.style.left)
