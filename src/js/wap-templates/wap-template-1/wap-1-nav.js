@@ -6,7 +6,7 @@ export const wap1Nav = {
     category: 'header',
     themePalette: 'primary',
     id: makeId(),
-    thumbnail: '',
+    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-header_p95k8i.jpg',
     cmps: [
         {
             id: makeId(),

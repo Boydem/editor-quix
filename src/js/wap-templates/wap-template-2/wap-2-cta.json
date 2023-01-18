@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-2-cta",
     "category": "cta",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-1_rkvur1.jpg",
     "cmps": [
         {
             "id": "828h0t",

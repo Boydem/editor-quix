@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-2-cards",
     "category": "card",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-cards_pwdxzl.jpg",
     "cmps": [
         {
             "id": "on9fek",

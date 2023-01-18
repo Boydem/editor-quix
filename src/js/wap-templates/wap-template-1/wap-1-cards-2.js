@@ -6,7 +6,7 @@ export const wap1Cards2 = {
     type: 'div',
     category: 'card',
     themePalette: 'primary',
-    thumbnail: '',
+    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053216/wap-1-section-2_fodj8k.jpg',
     cmps: [
         {
             id: makeId(),

@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-3-services",
     "category": "section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-section-2_dmoh3k.jpg",
     "cmps": [
         {
             "id": "56xF1H",

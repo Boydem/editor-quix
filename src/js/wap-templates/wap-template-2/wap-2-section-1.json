@@ -3,37 +3,41 @@
     "type": "div",
     "name": "wap-2-section-1",
     "category": "section",
-    "cmps": [{
-        "id": "BXjC8Z",
-        "type": "div",
-        "name": "content",
-        "cmps": [{
-                "id": "hjwtLa",
-                "type": "h2",
-                "name": "",
-                "content": {
-                    "txt": "Work with us"
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-2_zuvdtv.jpg",
+    "cmps": [
+        {
+            "id": "BXjC8Z",
+            "type": "div",
+            "name": "content",
+            "cmps": [
+                {
+                    "id": "hjwtLa",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Work with us"
+                    },
+                    "cmps": []
                 },
-                "cmps": []
-            },
-            {
-                "id": "1pa4LM",
-                "type": "p",
-                "name": "",
-                "content": {
-                    "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                {
+                    "id": "1pa4LM",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                    },
+                    "cmps": []
                 },
-                "cmps": []
-            },
-            {
-                "id": "CJKwkT",
-                "type": "button",
-                "name": "",
-                "content": {
-                    "txt": "Open Positions"
-                },
-                "cmps": []
-            }
-        ]
-    }]
+                {
+                    "id": "CJKwkT",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Open Positions"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
 }
