@@ -1,8 +1,10 @@
+import React from 'react'
 import { useRef, useState } from 'react'
+import * as Select from '@radix-ui/react-select'
+import classnames from 'classnames'
 import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
-import { saveCmp } from '../../../store/wap/wap.action'
 import {
     AiOutlineAlignLeft,
     AiOutlineAlignRight,
@@ -11,8 +13,13 @@ import {
     AiOutlineItalic,
     AiOutlineUnderline,
 } from 'react-icons/ai'
-import React from 'react'
+import { CheckIcon } from '@radix-ui/react-icons'
 import * as Slider from '@radix-ui/react-slider'
+
+import { saveCmp } from '../../../store/wap/wap.action'
+import { showErrorMsg } from '../../../services/event-bus.service'
+import { TextShadowSelect } from './text-shadow-select'
+import { FontFamilySelect } from './font-family-select'
 
 export function Edit() {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
@@ -24,6 +31,17 @@ export function Edit() {
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
     }
+
+    const SelectItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => {
+        return (
+            <Select.Item className={classnames('SelectItem', className)} {...props} ref={forwardedRef}>
+                <Select.ItemText>{children}</Select.ItemText>
+                <Select.ItemIndicator className='SelectItemIndicator'>
+                    <CheckIcon />
+                </Select.ItemIndicator>
+            </Select.Item>
+        )
+    })
 
     function openTextColorPalette() {
         setIsBorderPaletteOpen(false)
@@ -41,7 +59,27 @@ export function Edit() {
         setIsBgPaletteOpen(prev => !prev)
     }
 
-    function handleColorChange(color, event) {
+    async function handleFontFamilyChange(val) {
+        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
+        lastClickedCmp.style = { ...lastClickedCmp.style, fontFamily: val }
+        try {
+            saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log('Failed to save lastClickedCmp edit', err)
+        }
+    }
+
+    async function handleTextShadowChange(val) {
+        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
+        lastClickedCmp.style = { ...lastClickedCmp.style, filter: `drop-shadow(0 0 ${val}rem black)` }
+        try {
+            saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log('Failed to save lastClickedCmp at edit', err)
+        }
+    }
+
+    async function handleColorChange(color) {
         const hex = color.hex
         if (isTextPaletteOpen) {
             lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
@@ -53,23 +91,40 @@ export function Edit() {
             lastClickedCmp.style = { ...lastClickedCmp.style, backgroundColor: hex }
             elClickedNode.style.backgroundColor = hex
         }
-        saveCmp(lastClickedCmp)
+        try {
+            await saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleColorChange`, err)
+            // showErrorMsg('Failed to save changes, try again later')
+        }
     }
 
-    function handleTextStyleChange(styleToEdit, value) {
+    async function handleTextStyleChange(styleToEdit, value) {
         if (!lastClickedCmp?.style) lastClickedCmp.style = {}
         if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
         lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
-        return saveCmp(lastClickedCmp)
+        try {
+            await saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleTextStyleChange`, err)
+        }
     }
 
-    function handleFontSliderChange(ev) {
+    async function handleFontSliderChange(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
-        saveCmp(lastClickedCmp)
+        try {
+            await saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleChange`, err)
+        }
     }
-    function handleBorderSliderChange(ev) {
+    async function handleBorderSliderChange(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
-        saveCmp(lastClickedCmp)
+        try {
+            await saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleeBorderSliderChange`, err)
+        }
     }
 
     return (
@@ -165,6 +220,16 @@ export function Edit() {
                     >
                         <AiOutlineAlignRight />
                     </button>
+                </div>
+
+                <div className='font-family-select'>
+                    {/* <SelectFontFamily /> */}
+                    <FontFamilySelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
+                </div>
+
+                <div className='text-shadow-select'>
+                    {/* <SelectTextShadow /> */}
+                    <TextShadowSelect handleTextShadowChange={handleTextShadowChange} SelectItem={SelectItem} />
                 </div>
 
                 <form className='slider-form'>
