@@ -2,7 +2,7 @@ import { CmpFractions } from './modules/cmp-fractions'
 
 export function DynamicModule({ currModule, addMenuItems }) {
     if (!currModule) return
-    console.log(currModule)
+
     if (addMenuItems[1].includes(currModule)) {
         return <CmpFractions currModule={currModule} />
     }

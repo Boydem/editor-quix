@@ -10,7 +10,7 @@ export function Preview() {
     const { wapId, wapUrl } = useParams()
     useEffect(() => {
         loadWap()
-    }, [])
+    }, [wap])
 
     async function loadWap() {
         let wap
@@ -18,7 +18,7 @@ export function Preview() {
             if (wapId) {
                 wap = await wapService.get(wapId)
             } else {
-                wap = await wapService.getCmpByUrl(wapUrl)
+                wap = await wapService.getWapByUrl(wapUrl)
             }
             setWap(wap)
         } catch (err) {
@@ -27,7 +27,7 @@ export function Preview() {
         }
     }
 
-    if (!wap) return <></>
+    if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
         <div className='full'>
             {/* <DarkHeader /> */}

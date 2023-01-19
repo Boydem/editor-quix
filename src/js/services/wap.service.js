@@ -16,7 +16,7 @@ export const wapService = {
     getEditedWap,
     getCmpsByCategory,
     updateCmp,
-    getCmpByUrl,
+    getWapByUrl,
     // saveCmp,
 }
 
@@ -28,8 +28,14 @@ _createWaps()
 function getCmpById(activeModule, cmpId) {
     return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
 }
-function getCmpByUrl(activeModule, cmpUrl) {
-    return gCmpsMap[activeModule].find(cmp => cmp.url === cmpUrl)
+async function getWapByUrl(wapUrl) {
+    try {
+        let wap = await query({ url: wapUrl })
+        return wap[0]
+    } catch (err) {
+        throw err
+    }
+    // return gCmpsMap[activeModule].find(cmp => cmp.url === cmpUrl)
 }
 
 function _createMap() {
@@ -57,8 +63,18 @@ function getCmpsByCategory(category) {
     return gCmpsMap[category]
 }
 
-function query() {
-    return storageService.query(STORAGE_KEY)
+async function query(filterBy = { url: '' }) {
+    try {
+        const waps = await storageService.query(STORAGE_KEY)
+
+        let filteredWaps
+        if (filterBy.url !== undefined) {
+            filteredWaps = waps.filter(wap => wap.url === filterBy.url)
+        }
+        return filteredWaps
+    } catch (err) {
+        throw err
+    }
 }
 
 _createMap()

@@ -27,7 +27,6 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
     ]
     function onToolClick(side, stateChanges) {
         if (stateChanges.currModule === currActive) {
-            console.log('side:', side)
             handleSidebarsChanges(side, { isOpen: false, context: null, currModule: null })
             setCurrActive(null)
             return

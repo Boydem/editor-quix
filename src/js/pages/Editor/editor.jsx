@@ -27,13 +27,10 @@ export function Editor() {
         activeMenuItem: 'quick add',
         isSubMenuOpen: false,
     })
-    console.log('leftSidebarState:', leftSidebarState)
 
-    
     useEffect(() => {
         loadWap()
         setIsEditing(true)
-        
 
         return () => {
             setIsEditing(false)
