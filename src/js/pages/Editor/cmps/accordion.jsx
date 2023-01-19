@@ -5,9 +5,15 @@ import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
+import { BlockPicker } from 'react-color'
+import * as Slider from '@radix-ui/react-slider'
 
 const AccordionEdit = () => {
+    const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
+    const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
+    const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
 
     const sizeOptions = [
         { name: 'width', title: 'width', unit: 'px', value: 0 },
@@ -40,6 +46,37 @@ const AccordionEdit = () => {
         saveCmp(lastClickedCmp)
     }
 
+    function openTextColorPalette() {
+        setIsBorderPaletteOpen(false)
+        setIsBgPaletteOpen(false)
+        setIsTextPaletteOpen(prev => !prev)
+    }
+    function openBorderColorPalette() {
+        setIsTextPaletteOpen(false)
+        setIsBgPaletteOpen(false)
+        setIsBorderPaletteOpen(prev => !prev)
+    }
+    function openBgColorPalette() {
+        setIsTextPaletteOpen(false)
+        setIsBorderPaletteOpen(false)
+        setIsBgPaletteOpen(prev => !prev)
+    }
+
+    function handleColorChange(color, event) {
+        const hex = color.hex
+        if (isTextPaletteOpen) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
+            elClickedNode.style.color = hex
+        } else if (isBorderPaletteOpen) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, borderColor: hex }
+            elClickedNode.style.borderColor = hex
+        } else if (isBgPaletteOpen) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, backgroundColor: hex }
+            elClickedNode.style.backgroundColor = hex
+        }
+        saveCmp(lastClickedCmp)
+    }
+
     const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
         <Accordion.Header className='AccordionHeader'>
             <Accordion.Trigger className={classNames('AccordionTrigger', className)} {...props} ref={forwardedRef}>
@@ -54,6 +91,22 @@ const AccordionEdit = () => {
             <div className='AccordionContentText'>{children}</div>
         </Accordion.Content>
     ))
+    // const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+    //     <Accordion.Content className={classNames('AccordionContent', className)} {...props} ref={forwardedRef}>
+    //         <div className='AccordionContentText'>{children}</div>
+    //     </Accordion.Content>
+    // ))
+
+    function handleFontSliderChange(ev) {
+        lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
+        elClickedNode.style.fontSize = ev[0]
+        saveCmp(lastClickedCmp)
+    }
+    function handleBorderSliderChange(ev) {
+        lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
+        elClickedNode.style.borderRadius = ev[0]
+        saveCmp(lastClickedCmp)
+    }
 
     return (
         <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
@@ -94,8 +147,79 @@ const AccordionEdit = () => {
                 <AccordionTrigger>Adjust</AccordionTrigger>
                 <Accordion.Content className='AccordionContent'>
                     <div className='AccordionContentText'>
-                        Yes! You can animate the Accordion with CSS or JavaScript.
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openTextColorPalette}>
+                                Text Color
+                            </button>
+                            {isTextPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.color}
+                                />
+                            )}
+                        </div>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openBgColorPalette}>
+                                Background Color
+                            </button>
+                            {isBgPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.backgroundColor}
+                                />
+                            )}
+                        </div>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openBorderColorPalette}>
+                                Border Color
+                            </button>
+                            {isBorderPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.borderColor}
+                                />
+                            )}
+                        </div>
                     </div>
+
+                    <form className='slider-form'>
+                        <label htmlFor=''>Font Size</label>
+                        <Slider.Root
+                            className='SliderRoot'
+                            defaultValue={[1]}
+                            max={100}
+                            step={1}
+                            aria-label='Volume'
+                            onValueChange={handleFontSliderChange}
+                        >
+                            <Slider.Track className='SliderTrack'>
+                                <Slider.Range className='SliderRange' />
+                            </Slider.Track>
+                            <Slider.Thumb className='SliderThumb' />
+                        </Slider.Root>
+                    </form>
+                    <form className='slider-form'>
+                        <label htmlFor=''>Border Radius</label>
+                        <Slider.Root
+                            className='SliderRoot'
+                            defaultValue={[1]}
+                            max={50}
+                            step={1}
+                            aria-label='Volume'
+                            onValueChange={handleBorderSliderChange}
+                        >
+                            <Slider.Track className='SliderTrack'>
+                                <Slider.Range className='SliderRange' />
+                            </Slider.Track>
+                            <Slider.Thumb className='SliderThumb' />
+                        </Slider.Root>
+                    </form>
                 </Accordion.Content>
             </Accordion.Item>
         </Accordion.Root>

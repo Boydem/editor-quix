@@ -1,4 +1,4 @@
-export function InputCmp({ cmp, handleClick }) {
+export function InputCmp({ cmp, handleClick, onHover }) {
     let classes = cmp.name + ' '
     if (cmp.class) {
         classes += cmp.class?.join(' ')
@@ -9,6 +9,8 @@ export function InputCmp({ cmp, handleClick }) {
             style={cmp.style}
             onClick={e => handleClick(e, cmp)}
             placeholder={cmp.content?.placeholder}
+            onMouseOver={onHover}
+            onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
         ></input>
     )
 }

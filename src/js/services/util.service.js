@@ -5,7 +5,8 @@ export const utilService = {
     debounce,
     randomPastTime,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    getLeftRightPropertiesForDrag
 }
 
 export function makeId(length = 6) {
@@ -60,4 +61,23 @@ function saveToStorage(key, value) {
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
+}
+
+function getLeftRightPropertiesForDrag(ev,resizingState){
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) - 25
+    let leftLeft
+        let rightLeft
+        if (resizingState.draggingResizer === 'left') {
+            leftLeft = ev.clientX + 5
+            rightLeft = vw - ev.clientX - 15
+        }
+        if (resizingState.draggingResizer === 'right') {
+            leftLeft = vw - ev.clientX + 5
+            rightLeft = ev.clientX - 15
+        }
+
+        leftLeft = Math.min(leftLeft, vw / 2 - 200)
+        rightLeft = Math.max(rightLeft, vw / 2 + 200)
+        return [leftLeft, rightLeft]
+        
 }

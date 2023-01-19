@@ -13,7 +13,6 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<TemplateIndex />} />
-                    <Route path='/edit' element={<Editor />} />
                     <Route path='/edit/:wapId' element={<Editor />} />
                     <Route path='/preview/:wapId' element={<Preview />} />
                 </Routes>
