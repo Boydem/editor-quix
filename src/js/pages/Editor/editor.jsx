@@ -14,8 +14,6 @@ export function Editor() {
     const template = useSelector(storeState => storeState.wapModule.wap)
     const [isSidebarOpen, setSidebarOpen] = useState(false)
     const sidebarContext = useSelector(storeState => storeState.wapModule.sidebarContext)
-    console.log('sidebarContext:', sidebarContext)
-    // const currSide =
     const { wapId } = useParams()
     useEffect(() => {
         loadWap()
