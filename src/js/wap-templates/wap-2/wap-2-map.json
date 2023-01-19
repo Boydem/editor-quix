@@ -30,7 +30,16 @@
                 {
                     "id": "n7CkNR",
                     "type": "input",
-                    "name": "",
+                    "name": "subscribe-input",
+                    "content": {
+                        "placeholder": "Email Address"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "n7CkNt",
+                    "type": "input",
+                    "name": "subscribe-input2",
                     "content": {
                         "placeholder": "Email Address"
                     },
