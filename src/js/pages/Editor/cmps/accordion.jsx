@@ -2,6 +2,14 @@ import React, { useEffect, useState } from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
+import {
+    AiOutlineAlignLeft,
+    AiOutlineAlignRight,
+    AiOutlineAlignCenter,
+    AiOutlineBold,
+    AiOutlineItalic,
+    AiOutlineUnderline,
+} from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
@@ -102,28 +110,10 @@ const AccordionEdit = () => {
     //     </Accordion.Content>
     // ))
 
-    function handleTextStyleChange(changeBy) {
-        console.log(lastClickedCmp)
-        switch (changeBy) {
-            case 'bold':
-                lastClickedCmp.style = { ...lastClickedCmp.style, fontWeight: 'bold' }
-                break
-            case 'italic':
-                lastClickedCmp.style = { ...lastClickedCmp.style, fontStyle: 'italic' }
-                break
-            case 'underline':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textDecoration: 'underline' }
-                break
-            case 'align-left':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'left' }
-                break
-            case 'align-center':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'center' }
-                break
-            case 'align-right':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'right' }
-                break
-        }
+    function handleTextStyleChange(styleToEdit, value) {
+        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
+        if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
+        lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
         return saveCmp(lastClickedCmp)
     }
 
@@ -172,94 +162,93 @@ const AccordionEdit = () => {
                     </AccordionContent>
                 </Accordion.Item>
 
-                <Accordion.Item className='AccordionItem' value='item-3'>
-                    <AccordionTrigger>Adjust</AccordionTrigger>
-                    <Accordion.Content className='AccordionContent'>
-                        <div className='AccordionContentText'>
-                            <div className='color-pick'>
-                                <button className='color-pick-label' onClick={openTextColorPalette}>
-                                    Text Color
-                                </button>
-                                {isTextPaletteOpen && (
-                                    <BlockPicker
-                                        className='palette'
-                                        onChange={handleColorChange}
-                                        triangle={'hide'}
-                                        color={elClickedNode?.style.color}
-                                    />
-                                )}
-                            </div>
-                            <div className='color-pick'>
-                                <button className='color-pick-label' onClick={openBgColorPalette}>
-                                    Background Color
-                                </button>
-                                {isBgPaletteOpen && (
-                                    <BlockPicker
-                                        className='palette'
-                                        onChange={handleColorChange}
-                                        triangle={'hide'}
-                                        color={elClickedNode?.style.backgroundColor}
-                                    />
-                                )}
-                            </div>
-                            <div className='color-pick'>
-                                <button className='color-pick-label' onClick={openBorderColorPalette}>
-                                    Border Color
-                                </button>
-                                {isBorderPaletteOpen && (
-                                    <BlockPicker
-                                        className='palette'
-                                        onChange={handleColorChange}
-                                        triangle={'hide'}
-                                        color={elClickedNode?.style.borderColor}
-                                    />
-                                )}
-                            </div>
-
-                            <div className='text-decoration'>
-                                <button
-                                    title='Bold'
-                                    onClick={() => handleTextStyleChange('bold')}
-                                    className='btn bold-btn'
-                                >
-                                    <i className='fa-solid fa-bold'></i>
-                                </button>
-                                <button
-                                    title='Italic'
-                                    onClick={() => handleTextStyleChange('italic')}
-                                    className='btn italic-btn'
-                                >
-                                    <i className='fa-solid fa-italic'></i>
-                                </button>
-                                <button
-                                    title='Underline'
-                                    onClick={() => handleTextStyleChange('underline')}
-                                    className='btn underline-btn'
-                                >
-                                    <i className='fa-solid fa-underline'></i>
-                                </button>
-                                <button
-                                    title='Align-Left'
-                                    onClick={() => handleTextStyleChange('align-left')}
-                                    className='btn align-left-btn'
-                                >
-                                    <i className='fa-solid fa-align-left'></i>
-                                </button>
-                                <button
-                                    title='Align-Center'
-                                    onClick={() => handleTextStyleChange('align-center')}
-                                    className='btn align-center-btn'
-                                >
-                                    <i className='fa-solid fa-align-center'></i>
-                                </button>
-                                <button
-                                    title='Align-Right'
-                                    onClick={() => handleTextStyleChange('align-right')}
-                                    className='btn align-right-btn'
-                                >
-                                    <i className='fa-solid fa-align-right'></i>
-                                </button>
-                            </div>
+            <Accordion.Item className='AccordionItem' value='item-3'>
+                <AccordionTrigger>Adjust</AccordionTrigger>
+                <Accordion.Content className='AccordionContent'>
+                    <div className='AccordionContentText'>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openTextColorPalette}>
+                                Text Color
+                            </button>
+                            {isTextPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.color}
+                                />
+                            )}
+                        </div>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openBgColorPalette}>
+                                Background Color
+                            </button>
+                            {isBgPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.backgroundColor}
+                                />
+                            )}
+                        </div>
+                        <div className='color-pick'>
+                            <button className='color-pick-label' onClick={openBorderColorPalette}>
+                                Border Color
+                            </button>
+                            {isBorderPaletteOpen && (
+                                <BlockPicker
+                                    className='palette'
+                                    onChange={handleColorChange}
+                                    triangle={'hide'}
+                                    color={elClickedNode?.style.borderColor}
+                                />
+                            )}
+                        </div>
+                        <div className='text-decoration'>
+                            <button
+                                title='Bold'
+                                onClick={() => handleTextStyleChange('fontWeight', 'bold')}
+                                className='btn bold-btn'
+                            >
+                                <AiOutlineBold />
+                            </button>
+                            <button
+                                title='Italic'
+                                onClick={() => handleTextStyleChange('fontStyle', 'italic')}
+                                className='btn italic-btn'
+                            >
+                                <AiOutlineItalic />
+                            </button>
+                            <button
+                                title='Underline'
+                                onClick={() => handleTextStyleChange('textDecoration', 'underline')}
+                                className='btn underline-btn'
+                            >
+                                <AiOutlineUnderline />
+                            </button>
+                            <button
+                                title='Align-Left'
+                                onClick={() => handleTextStyleChange('textAlign', 'start')}
+                                className='btn align-left-btn'
+                            >
+                                <AiOutlineAlignLeft />
+                            </button>
+                            <button
+                                title='Align-Center'
+                                onClick={() => handleTextStyleChange('textAlign', 'center')}
+                                className='btn align-center-btn'
+                            >
+                                <AiOutlineAlignCenter />
+                            </button>
+                            <button
+                                title='Align-Right'
+                                onClick={() => handleTextStyleChange('textAlign', 'end')}
+                                className='btn align-right-btn'
+                            >
+                                <AiOutlineAlignRight />
+                            </button>
+                        </div>
 
                             <form className='slider-form'>
                                 <label htmlFor=''>Font Size</label>

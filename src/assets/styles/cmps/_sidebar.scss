@@ -9,41 +9,21 @@
         min-height: calc(100vh - $app-header-height + $toolbar-height);
         max-height: calc(100vh - $app-header-height + $toolbar-height);
         background-color: $clr1;
+        display: grid;
         z-index: 9999;
-        transition: transform 0.3s;
+        transition: transform 0.35s;
         overflow: hidden;
         top: $app-header-height + $toolbar-height;
     }
     & .add-modules {
-        $modules-menu-width: 180px;
         position: fixed;
+        min-width: px-to-rem(480px);
+        max-width: px-to-rem(480px);
+        grid-template-columns: auto 1fr;
         transform: translateX(-100%);
         left: 0;
-        overflow: visible;
-        .modules {
-            min-height: calc(100vh - $app-header-height + $toolbar-height);
-            width: $modules-menu-width;
-            z-index: 2;
-            background-color: $clr1;
-        }
-        & .module-content {
-            $modules-content-width: 300px;
-            z-index: -1;
-            position: absolute;
-            transform: translateX(-100%);
-            width: $modules-content-width;
-            top: 0;
-            left: $modules-menu-width;
-            background-color: $clr1;
-            height: 100%;
-            transition: transform 0.3s;
-            &.open {
-                transform: translateX(0%);
-            }
-        }
     }
     & .edit-modules {
-        display: grid;
         position: fixed;
         min-width: px-to-rem(280px);
         max-width: px-to-rem(280px);
@@ -60,7 +40,7 @@
 }
 .modules {
     z-index: 2;
-    // box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
+    box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
     border-right: 1px solid $editor-lightgray;
     .modules-list {
         padding: $spacing-s 0;
