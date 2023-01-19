@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 .main-layout {
     display: grid;
     grid-template-columns: $layoutPadding 1fr $layoutPadding;
@@ -28,4 +31,48 @@
 
 .main-text {
     margin-bottom: px-to-rem(30px);
+}
+
+.editor-layout {
+    display: flex;
+    .editor-preview {
+        flex: 1;
+    }
+    .edit-modules {
+        top: $app-header-height - $toolbar-height - 1px;
+        left: 0;
+        width: 260px;
+        margin-right: -260px;
+        height: 100%;
+        justify-self: flex-end;
+        transition: all 0.25s;
+        min-height: calc(100vh - $app-header-height + $toolbar-height);
+        max-height: calc(100vh - $app-header-height + $toolbar-height);
+        background-color: $clr1;
+        z-index: 9999;
+        overflow: hidden;
+        // width: 300px;
+        &.open {
+            margin: 0;
+            // left: 300px;
+            transform: translateX(0%);
+        }
+    }
+    > *.full {
+    }
+    .side-start {
+        grid-column: 1/-2;
+    }
+
+    .side-end {
+        grid-column: -1/2;
+    }
+
+    // @include for-narrow-layout {
+    //     @include layoutGTC($padded-break-narrow);
+    // }
+
+    // @include for-wide-layout {
+    //     @include layoutGTC($padded-break-wide);
+    // }
 }

@@ -10,17 +10,25 @@ export function TemplateIndex() {
         getWaps()
     }, [])
     async function getWaps() {
-        const waps = await wapService.query()
-        const templateWaps = waps.filter(wap => wap.owner === 'admin')
-        setWaps(templateWaps)
+        try {
+            const waps = await wapService.query()
+            const templateWaps = waps.filter(wap => wap.owner === 'admin')
+            setWaps(templateWaps)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     async function onEdit(wapId) {
-        let template = await wapService.get(wapId)
-        template._id = null
-        template.owner = 'guest'
-        template = await wapService.save(template)
-        navigate(`/edit/${template._id}`)
+        try {
+            let template = await wapService.get(wapId)
+            template._id = null
+            template.owner = 'guest'
+            template = await wapService.save(template)
+            navigate(`/edit/${template._id}`)
+        } catch (err) {
+            console.log(err)
+        }
     }
     function onPreview(wapId) {
         navigate(`/preview/${wapId}`)

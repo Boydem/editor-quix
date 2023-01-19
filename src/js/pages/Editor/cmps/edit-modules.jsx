@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import AccordionEdit from './accordion'
 
-export function EditModules({ setSidebarOpen, setActiveModule, activeModule }) {
+export function EditModules({ isSidebarOpen, setSidebarOpen }) {
     return (
-        <div className='edit-modules'>
+        <div className={`${isSidebarOpen ? 'open' : ''} edit-modules`}>
             <div className='module-content'>
                 <div className='module-header'>
                     <span className='module-name'>Edit</span>

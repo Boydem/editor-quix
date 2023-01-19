@@ -1,12 +1,12 @@
 import { wapService } from '../../services/wap.service'
 import { store } from '../store'
-import { SET_CLICKED_CMP, SET_CLICKED_ELEM_NODE, SET_IS_EDITING, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
+import { SET_CLICKED_CMP, SET_EL_CLICKED_NODE, SET_IS_EDITING, SET_SIDEBAR_CONTEXT, SET_WAP } from './wap.reducer'
 
 export async function setClickedCmp(elem) {
     store.dispatch({ type: SET_CLICKED_CMP, elem })
 }
-export async function setClickedElemNode(elemNode) {
-    store.dispatch({ type: SET_CLICKED_ELEM_NODE, elemNode })
+export async function setElClickedNode(elNode) {
+    store.dispatch({ type: SET_EL_CLICKED_NODE, elNode })
 }
 export async function saveWap(wap) {
     try {

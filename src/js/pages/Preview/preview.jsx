@@ -12,8 +12,12 @@ export function Preview() {
     }, [])
 
     async function loadWap() {
-        let template = await wapService.get(wapId)
-        setTemplate(template)
+        try {
+            let template = await wapService.get(wapId)
+            setTemplate(template)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     if (!template) return <></>

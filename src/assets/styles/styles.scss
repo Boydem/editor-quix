@@ -31,9 +31,12 @@
 @import './cmps/_editor-preview.scss';
 @import './cmps/_edit-sidebar.scss';
 
-// Radix Ui
+// Radix UI
 @import './cmps/_accordion.scss';
 @import './cmps/_select-unit.scss';
+
+// UI Overwrites
+@import './setup/_overwrites.scss';
 
 // PAGES
 @import './pages/_home.scss';

@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { saveCmp, setClickedCmp, setClickedElemNode } from '../../../store/wap/wap.action'
+import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
@@ -11,24 +10,32 @@ import { PCmp } from './dynamic-cmps/p-cmp'
 import { SpanCmp } from './dynamic-cmps/span-cmp'
 
 export default function DynamicCmp(props) {
-    const clickedElemNode = useSelector(storeState => storeState.wapModule.clickedElemNode)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
 
-    function handleClick(e, cmp) {
-        e.stopPropagation()
-        e.preventDefault()
+    function handleClick(ev, cmp) {
+        ev.stopPropagation()
+        ev.preventDefault()
         if (!isEditing) return
 
-        if (clickedElemNode) {
-            clickedElemNode.classList.remove('clicked')
+        if (elClickedNode) {
+            elClickedNode.classList.remove('clicked')
         }
-        e.target.classList.add('clicked')
+        ev.target.classList.add('clicked')
 
-        setClickedElemNode(e.target)
+        setElClickedNode(ev.target)
         setClickedCmp(cmp)
-        saveCmp(cmp)
+        // saveCmp(cmp)
     }
-    const basicProps = { cmp: props.cmp, handleClick }
+
+    function onHover(ev) {
+        ev.stopPropagation()
+        ev.preventDefault()
+        if (!isEditing) return
+
+        ev.currentTarget.classList.add('hover')
+    }
+    const basicProps = { cmp: props.cmp, handleClick, onHover }
     switch (props.cmp.type) {
         case 'div':
             return <DivCmp {...basicProps} />
