@@ -10,7 +10,8 @@ export const wap1Section3 = {
     cmps: [
         {
             id: makeId(),
-            type: 'h1',
+            type: 'p',
+            name: 'heading',
             content: {
                 txt: 'Get Ready to Maximize Your Productivity With Our Workflow Solutions',
             },

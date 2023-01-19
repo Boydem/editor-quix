@@ -28,10 +28,11 @@ export const wap1Nav = {
                     cmps: [
                         {
                             id: makeId(),
-                            type: 'h2',
+                            type: 'txt',
                             content: {
                                 txt: 'WeDu',
                             },
+                            style: { fontSize: '1.5rem' },
                         },
                         {
                             id: makeId(),

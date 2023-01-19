@@ -293,6 +293,15 @@ body {
         }
     }
 }
+.wap-2-map-and-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.map-marker {
+    position: relative;
+    z-index: 25;
+    font-size: 1rem;
+}
 
 .wap-2-cta {
     padding: 5rem 10%;

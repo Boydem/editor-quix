@@ -1,11 +1,10 @@
 {
     "id": "SLjtqR",
-    "type": "div",
+    "type": "form",
     "name": "wap-2-cta",
     "category": "cta",
     "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-1_rkvur1.jpg",
-    "cmps": [
-        {
+    "cmps": [{
             "id": "828h0t",
             "type": "h2",
             "name": "",

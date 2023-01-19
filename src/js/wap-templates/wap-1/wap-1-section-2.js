@@ -23,6 +23,7 @@ export const wap1Section2 = {
                 {
                     id: makeId(),
                     type: 'h2',
+                    name: 'heading',
                     content: {
                         txt: 'Built for Creatives, by Creatives',
                     },
@@ -30,6 +31,7 @@ export const wap1Section2 = {
                 {
                     id: makeId(),
                     type: 'p',
+                    name: 'txt',
                     content: {
                         txt: `I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or
                         double click me to add your own content and make changes to the font. I’m a great place for you to
@@ -56,6 +58,7 @@ export const wap1Section2 = {
                                 {
                                     id: makeId(),
                                     type: 'p',
+                                    name: 'txt',
                                     content: {
                                         txt: 'Speed & Security',
                                     },
@@ -77,6 +80,7 @@ export const wap1Section2 = {
                                 {
                                     id: makeId(),
                                     type: 'p',
+                                    name: 'txt',
                                     content: {
                                         txt: 'Flexibility & Scalability',
                                     },
@@ -98,6 +102,7 @@ export const wap1Section2 = {
                                 {
                                     id: makeId(),
                                     type: 'p',
+                                    name: 'txt',
                                     content: {
                                         txt: 'Better Collaboration',
                                     },

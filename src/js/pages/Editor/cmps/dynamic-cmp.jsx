@@ -3,11 +3,12 @@ import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
 import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
-import { HCmp } from './dynamic-cmps/h-cmp'
+import DynamicElement from './dynamic-cmps/dynamic-element'
+import { FormCmp } from './dynamic-cmps/form-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
-import { InputCmp } from './dynamic-cmps/input-cmp'
-import { PCmp } from './dynamic-cmps/p-cmp'
-import { SpanCmp } from './dynamic-cmps/span-cmp'
+import MapCmp from './dynamic-cmps/map-cmp'
+import TextCmp from './dynamic-cmps/txt-cmp'
+import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
@@ -15,7 +16,7 @@ export default function DynamicCmp(props) {
 
     function handleClick(ev, cmp) {
         ev.stopPropagation()
-        ev.preventDefault()
+        // ev.preventDefault()
         if (!isEditing) return
 
         if (elClickedNode) {
@@ -37,30 +38,20 @@ export default function DynamicCmp(props) {
     }
     const basicProps = { cmp: props.cmp, handleClick, onHover }
     switch (props.cmp.type) {
+        case 'form':
+            return <FormCmp {...basicProps} />
         case 'div':
             return <DivCmp {...basicProps} />
-        case 'h1':
-        case 'h2':
-        case 'h3':
-        case 'h4':
-        case 'h5':
-        case 'h6':
-            return <HCmp {...basicProps} hType={props.cmp.type} />
-        case 'img':
-            return <ImgCmp {...basicProps} />
-        case 'p':
-            return <PCmp {...basicProps} />
-        case 'span':
-            return <SpanCmp {...basicProps} />
+        case 'map':
+            return <MapCmp {...basicProps} />
+        case 'video':
+            return <VideoCmp {...basicProps} />
         case 'a':
             return <ACmp {...basicProps} />
-        case 'button':
-            return <ButtonCmp {...basicProps} />
-        case 'input':
-            return <InputCmp {...basicProps} />
+        case 'img':
+            return <ImgCmp {...basicProps} />
         default:
-            console.log('Went into default switch case in dynamic cmp with type of', props.cmp.type)
+            return <DynamicElement {...basicProps} />
             break
     }
-    return <div>{props.cmp.type}</div>
 }
