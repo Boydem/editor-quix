@@ -15,6 +15,7 @@ function App() {
                     <Route path='/create' element={<WapIndex />} />
                     <Route path='/edit/:wapId' element={<Editor />} />
                     <Route path='/preview/:wapId' element={<Preview />} />
+                    <Route path='/:wapId' element={<Preview />} />
                 </Routes>
             </main>
         </div>

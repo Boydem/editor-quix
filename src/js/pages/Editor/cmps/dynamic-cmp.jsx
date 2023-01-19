@@ -1,13 +1,11 @@
 import { useSelector } from 'react-redux'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
-import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
 import DynamicElement from './dynamic-cmps/dynamic-element'
 import { FormCmp } from './dynamic-cmps/form-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import MapCmp from './dynamic-cmps/map-cmp'
-import TextCmp from './dynamic-cmps/txt-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
@@ -52,6 +50,5 @@ export default function DynamicCmp(props) {
             return <ImgCmp {...basicProps} />
         default:
             return <DynamicElement {...basicProps} />
-            break
     }
 }
