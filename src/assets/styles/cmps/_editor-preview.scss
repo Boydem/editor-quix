@@ -9,30 +9,13 @@
     overflow-x: hidden;
 
     .wrapper {
+        container-type: inline-size;
         max-width: 90%;
         margin: auto;
         box-shadow: 0px -5px 32px 24px rgba($clr7, 0.125);
         border-radius: $spacing-s;
         overflow: hidden;
         position: relative;
-        & .editor-resizer {
-            z-index: 3;
-            position: fixed;
-            top: 50%;
-            height: 3rem;
-            width: 10px;
-            border-radius: 10em;
-            cursor: e-resize;
-            background-color: $clr9;
-            &.left {
-                transform: translate(-100%, 100%);
-                left: 5%;
-            }
-            &.right {
-                transform: translate(100%, 100%);
-                right: calc(5% + $scroll-bar-width);
-            }
-        }
     }
     &::-webkit-scrollbar-thumb {
         border: $spacing-xs solid transparent;
@@ -45,5 +28,25 @@
     }
     &::-webkit-scrollbar-track {
         background-color: $clr12;
+    }
+}
+
+.editor-resizer {
+    $scroll-bar-width: $spacing-m;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    height: 3rem;
+    width: 10px;
+    border-radius: 10em;
+    cursor: e-resize;
+    background-color: $clr9;
+    &.left {
+        transform: translate(-100%, 100%);
+        left: 5%;
+    }
+    &.right {
+        transform: translate(100%, 100%);
+        right: calc(5% + $scroll-bar-width);
     }
 }

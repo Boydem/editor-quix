@@ -361,7 +361,7 @@
     padding: 0.5rem;
 }
 
-@media screen and (max-width: 1350px) {
+@container (max-width: 1350px) {
     .wap-1-nav {
         padding-right: 5%;
         padding-left: 5%;
@@ -377,7 +377,7 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@container(max-width: 800px) {
     .wap-1-hero {
         display: flex;
         flex-direction: column;

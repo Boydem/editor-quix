@@ -348,7 +348,7 @@ body {
     padding: 1rem 0;
 }
 
-@media screen and (max-width: 1000px) {
+@container (max-width: 1000px) {
     .wap-2-hero {
         .container {
             .content-1 {

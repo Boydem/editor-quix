@@ -45,8 +45,8 @@ export function EditorPreview({ wapCmps }) {
             {provided => {
                 return (
                     <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
+                        <div ref={editorResizerRef[0]} className='editor-resizer left'></div>
                         <div ref={editorWrapper} className='wrapper'>
-                            <div ref={editorResizerRef[0]} className='editor-resizer left'></div>
                             {wapCmps.map((fraction, idx) => {
                                 return (
                                     <Draggable key={idx} draggableId={idx.toString()} index={idx}>
@@ -64,9 +64,9 @@ export function EditorPreview({ wapCmps }) {
                                     </Draggable>
                                 )
                             })}
-                            <div ref={editorResizerRef[1]} className='editor-resizer right'></div>
                             {provided.placeholder}
                         </div>
+                        <div ref={editorResizerRef[1]} className='editor-resizer right'></div>
                     </div>
                 )
             }}
