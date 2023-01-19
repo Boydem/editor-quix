@@ -28,9 +28,12 @@ export function Editor() {
         isSubMenuOpen: false,
     })
     console.log('leftSidebarState:', leftSidebarState)
+
+    
     useEffect(() => {
         loadWap()
         setIsEditing(true)
+        
 
         return () => {
             setIsEditing(false)

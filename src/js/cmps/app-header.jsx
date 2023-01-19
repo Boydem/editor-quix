@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 export function AppHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
+    const wap = useSelector(storeState => storeState.wapModule.wap)
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
@@ -56,7 +58,7 @@ export function AppHeader() {
                         </Link>
                     </li>
                     <li>
-                        <Link className='nav-link publish' to='/create'>
+                        <Link className='nav-link publish' to={`/${wap.url}`}>
                             <span>Publish</span>
                         </Link>
                     </li>

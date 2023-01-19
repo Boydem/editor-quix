@@ -16,6 +16,7 @@ export const wapService = {
     getEditedWap,
     getCmpsByCategory,
     updateCmp,
+    getCmpByUrl,
     // saveCmp,
 }
 
@@ -26,6 +27,9 @@ const EDITED_WAP_STORAGE_KEY = 'editedWap'
 _createWaps()
 function getCmpById(activeModule, cmpId) {
     return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
+}
+function getCmpByUrl(activeModule, cmpUrl) {
+    return gCmpsMap[activeModule].find(cmp => cmp.url === cmpUrl)
 }
 
 function _createMap() {

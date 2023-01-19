@@ -7,14 +7,19 @@ import { DarkHeader } from '../Template/cmps/dark-header'
 
 export function Preview() {
     const [wap, setWap] = useState(null)
-    const { wapId } = useParams()
+    const { wapId, wapUrl } = useParams()
     useEffect(() => {
         loadWap()
     }, [])
 
     async function loadWap() {
+        let wap
         try {
-            let wap = await wapService.get(wapId)
+            if (wapId) {
+                wap = await wapService.get(wapId)
+            } else {
+                wap = await wapService.getCmpByUrl(wapUrl)
+            }
             setWap(wap)
         } catch (err) {
             console.log('Failed to load wap in wap-preview', err)
