@@ -8,7 +8,7 @@ import SelectUnit from './ui-cmps/select'
 import { BlockPicker } from 'react-color'
 import * as Slider from '@radix-ui/react-slider'
 
-const AccordionEdit = () => {
+export const AccordionEdit = () => {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
     const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
     const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
