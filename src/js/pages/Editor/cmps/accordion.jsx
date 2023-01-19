@@ -186,40 +186,40 @@ const AccordionEdit = () => {
                                 />
                             )}
                         </div>
-                    </div>
 
-                    <form className='slider-form'>
-                        <label htmlFor=''>Font Size</label>
-                        <Slider.Root
-                            className='SliderRoot'
-                            defaultValue={[1]}
-                            max={100}
-                            step={1}
-                            aria-label='Volume'
-                            onValueChange={handleFontSliderChange}
-                        >
-                            <Slider.Track className='SliderTrack'>
-                                <Slider.Range className='SliderRange' />
-                            </Slider.Track>
-                            <Slider.Thumb className='SliderThumb' />
-                        </Slider.Root>
-                    </form>
-                    <form className='slider-form'>
-                        <label htmlFor=''>Border Radius</label>
-                        <Slider.Root
-                            className='SliderRoot'
-                            defaultValue={[1]}
-                            max={50}
-                            step={1}
-                            aria-label='Volume'
-                            onValueChange={handleBorderSliderChange}
-                        >
-                            <Slider.Track className='SliderTrack'>
-                                <Slider.Range className='SliderRange' />
-                            </Slider.Track>
-                            <Slider.Thumb className='SliderThumb' />
-                        </Slider.Root>
-                    </form>
+                        <form className='slider-form'>
+                            <label htmlFor=''>Font Size</label>
+                            <Slider.Root
+                                className='SliderRoot'
+                                defaultValue={[1]}
+                                max={100}
+                                step={1}
+                                aria-label='Volume'
+                                onValueChange={handleFontSliderChange}
+                            >
+                                <Slider.Track className='SliderTrack'>
+                                    <Slider.Range className='SliderRange' />
+                                </Slider.Track>
+                                <Slider.Thumb className='SliderThumb' />
+                            </Slider.Root>
+                        </form>
+                        <form className='slider-form'>
+                            <label htmlFor=''>Border Radius</label>
+                            <Slider.Root
+                                className='SliderRoot'
+                                defaultValue={[1]}
+                                max={50}
+                                step={1}
+                                aria-label='Volume'
+                                onValueChange={handleBorderSliderChange}
+                            >
+                                <Slider.Track className='SliderTrack'>
+                                    <Slider.Range className='SliderRange' />
+                                </Slider.Track>
+                                <Slider.Thumb className='SliderThumb' />
+                            </Slider.Root>
+                        </form>
+                    </div>
                 </Accordion.Content>
             </Accordion.Item>
         </Accordion.Root>

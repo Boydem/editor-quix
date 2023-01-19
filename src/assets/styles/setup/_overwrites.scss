@@ -77,8 +77,9 @@
 }
 
 .slider-form {
+    font-size: px-to-rem(13px);
     label {
-        font-size: 1.2rem;
+        // font-size: 1.2rem;
     }
     span {
         padding-top: 0.4rem;
