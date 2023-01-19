@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
@@ -7,8 +7,8 @@ import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
 
 const AccordionEdit = () => {
-    const [openOption, setOpenOption] = useState()
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const [openOption, setOpenOption] = useState()
 
     const sizeOptions = [
         { name: 'width', title: 'width', unit: 'px' },
@@ -18,6 +18,7 @@ const AccordionEdit = () => {
         { name: 'maxWidth', title: 'max-w', unit: 'px' },
         { name: 'maxHeight', title: 'max-h', unit: 'px' },
     ]
+
     function handleChange(ev) {
         ev.preventDefault()
         if (!lastClickedCmp) return
@@ -29,6 +30,15 @@ const AccordionEdit = () => {
             lastClickedCmp.style = { [name]: `${value + unit}` }
         }
         saveCmp(lastClickedCmp)
+        // ev.target.focused = true
+    }
+
+    function getClickedCmpStyle(styleProp) {
+        if (!lastClickedCmp || !lastClickedCmp?.style || !lastClickedCmp.style[styleProp]) return 0
+        if (lastClickedCmp?.style[styleProp]) {
+            const val = lastClickedCmp.style[styleProp].replace('px', '')
+            return val
+        }
     }
 
     const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
@@ -45,32 +55,34 @@ const AccordionEdit = () => {
             <div className='AccordionContentText'>{children}</div>
         </Accordion.Content>
     ))
-
+    if (!lastClickedCmp) return
     return (
         <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
             <Accordion.Item className='AccordionItem' value='item-1'>
                 <AccordionTrigger>Size</AccordionTrigger>
-                <AccordionContent>
-                    <div className='option-body'>
-                        {sizeOptions.map((option, idx) => (
-                            <div key={idx} className='param-box'>
-                                <label htmlFor={option.name}>{option.title}</label>
-                                <div className='input-wrapper'>
-                                    <input
-                                        info={option.unit}
-                                        type='number'
-                                        name={option.name}
-                                        id={option.name}
-                                        onChange={handleChange}
-                                    />
-                                    <div className='unit'>
-                                        <SelectUnit />
-                                    </div>
+                {/* <AccordionContent> */}
+                <div className='option-body'>
+                    {sizeOptions.map((option, idx) => (
+                        <div key={idx} className='param-box'>
+                            <label htmlFor={option.name}>{option.title}</label>
+                            <div className='input-wrapper'>
+                                <input
+                                    key={option.name}
+                                    info={option.unit}
+                                    type='number'
+                                    name={option.name}
+                                    id={option.name}
+                                    onChange={handleChange}
+                                    value={getClickedCmpStyle(option.name)}
+                                />
+                                <div className='unit'>
+                                    <SelectUnit />
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </AccordionContent>
+                        </div>
+                    ))}
+                </div>
+                {/* </AccordionContent> */}
             </Accordion.Item>
 
             <Accordion.Item className='AccordionItem' value='item-2'>
@@ -91,5 +103,8 @@ const AccordionEdit = () => {
         </Accordion.Root>
     )
 }
-
 export default AccordionEdit
+
+// }
+
+// export default AccordionEdit
