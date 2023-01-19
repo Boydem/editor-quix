@@ -13,6 +13,7 @@ export async function saveWap(wap) {
         wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
+        console.log('Cannot save wap in wap.action', err)
         throw err
     }
 }
@@ -20,10 +21,11 @@ export async function saveWap(wap) {
 export async function saveCmp(newCmp) {
     try {
         const wap = store.getState().wapModule.wap
-        wapService.updateCmp(newCmp, wap)
-        wapService.save(wap)
+        await wapService.updateCmp(newCmp, wap)
+        await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
+        console.log('Cannot save cmp in wap.action', err)
         throw err
     }
 }

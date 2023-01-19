@@ -1,8 +1,11 @@
-import { getWap1Template } from '../wap-templates/wap-template-1/wap-1-template'
-import { getWap2Template } from '../wap-templates/wap-template-2/wap-2-template'
-import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
+// import { getWap1Template } from '../wap-templates/wap-template-1/wap-1-template'
+import { getDemoCmps1 } from '../wap-templates/wap-1/wap-1'
+// import { getWap2Template } from '../wap-templates/wap-template-2/wap-2-template'
+import { getDemoCmps2 } from '../wap-templates/wap-2/wap-2'
+// import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
+import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { storageService } from './async-storage.service'
-import { makeId, utilService } from './util.service'
+import { utilService } from './util.service'
 
 export const wapService = {
     getCmpById,
@@ -11,7 +14,7 @@ export const wapService = {
     remove,
     save,
     getEditedWap,
-    getCategoryFractions,
+    getCmpsByCategory,
     updateCmp,
     // saveCmp,
 }
@@ -26,7 +29,7 @@ function getCmpById(activeModule, cmpId) {
 }
 
 function _createMap() {
-    const allFractions = [...getWap1Template(), ...getWap2Template(), ...getWap3Template()]
+    const allFractions = [...getDemoCmps1(), ...getDemoCmps2(), ...getDemoCmps3()]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
         if (acc[fraction.category]) {
             acc[fraction.category].push(fraction)
@@ -46,7 +49,7 @@ function updateCmp(cmp, parentCmp) {
     }
 }
 
-function getCategoryFractions(category) {
+function getCmpsByCategory(category) {
     return gCmpsMap[category]
 }
 
@@ -63,7 +66,7 @@ function remove(wapId) {
 }
 
 async function save(wap) {
-    var savedWap
+    let savedWap
     if (wap._id) {
         savedWap = await storageService.put(STORAGE_KEY, wap)
         // savedCar = await httpService.put(`car/${car._id}`, car)
@@ -85,28 +88,28 @@ function _createWaps() {
     if (!waps || !waps.length) {
         waps = [
             {
-                _id: makeId(),
-                name: 'wap-1-template',
+                _id: utilService.makeId(),
+                name: 'wap-1',
                 owner: 'admin',
-                cmps: getWap1Template(),
+                cmps: getDemoCmps1(),
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
                 title: 'WeDu',
             },
             {
-                _id: makeId(),
-                name: 'wap-2-template',
+                _id: utilService.makeId(),
+                name: 'wap-2',
                 owner: 'admin',
-                cmps: getWap2Template(),
+                cmps: getDemoCmps2(),
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
                 title: 'Gigaplay',
             },
             {
-                _id: makeId(),
-                name: 'wap-3-template',
+                _id: utilService.makeId(),
+                name: 'wap-3',
                 owner: 'admin',
-                cmps: getWap3Template(),
+                cmps: getDemoCmps3(),
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
                 title: 'Finclvr',

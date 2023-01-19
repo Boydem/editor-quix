@@ -15,7 +15,8 @@ export const wap1Hero = {
             cmps: [
                 {
                     id: makeId(),
-                    type: 'h1',
+                    type: 'txt',
+                    name:'header',
                     content: {
                         txt: 'Communicate. Collaborate. Create.',
                     },
@@ -23,6 +24,7 @@ export const wap1Hero = {
                 {
                     id: makeId(),
                     type: 'p',
+                    name:'txt',
                     content: {
                         txt: 'WeDu provides an effective and powerful way to manage your projects',
                     },
@@ -54,6 +56,7 @@ export const wap1Hero = {
                                 {
                                     id: makeId(),
                                     type: 'p',
+                                    name:"txt",
                                     content: {
                                         txt: 'Speed & Security',
                                     },
@@ -75,6 +78,7 @@ export const wap1Hero = {
                                 {
                                     id: makeId(),
                                     type: 'p',
+                                    name:"txt",
                                     content: {
                                         txt: 'Flexibility & Scalability',
                                     },
@@ -96,6 +100,7 @@ export const wap1Hero = {
                                 {
                                     id: makeId(),
                                     type: 'p',
+                                    name:"txt",
                                     content: {
                                         txt: 'Better Collaboration',
                                     },

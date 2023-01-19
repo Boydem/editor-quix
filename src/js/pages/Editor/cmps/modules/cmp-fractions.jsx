@@ -2,9 +2,9 @@ import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { wapService } from '../../../../services/wap.service'
 
 export function CmpFractions({ activeModule }) {
-    console.log('activeModule:', activeModule)
-    if (!activeModule) return
-    const assets = wapService.getCategoryFractions(activeModule.toLowerCase())
+    // TODO : TEST activeModule working
+    console.log('TODO :activeModule:', activeModule)
+    const assets = wapService.getCmpsByCategory(activeModule.toLowerCase())
     return (
         <section className='quick-add'>
             <Droppable droppableId={activeModule.toLowerCase()}>

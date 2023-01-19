@@ -15,7 +15,8 @@ export const wap1Cards1 = {
             cmps: [
                 {
                     id: makeId(),
-                    type: 'h2',
+                    type: 'p',
+                    name: 'header',
                     content: {
                         txt: 'What We Offer',
                     },
@@ -23,6 +24,7 @@ export const wap1Cards1 = {
                 {
                     id: makeId(),
                     type: 'p',
+                    name: 'txt',
                     content: {
                         txt: ` I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or
                         double click me to add your own content and make changes to the font.`,
@@ -49,7 +51,8 @@ export const wap1Cards1 = {
                         },
                         {
                             id: makeId(),
-                            type: 'h4',
+                            type: 'p',
+                            name: 'mini-heading',
                             content: {
                                 txt: 'Workflows That Work',
                             },
@@ -57,6 +60,7 @@ export const wap1Cards1 = {
                         {
                             id: makeId(),
                             type: 'p',
+                            name: 'txt',
                             content: {
                                 txt: `I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell
                                 a story and let your users know a little more about you.`,
@@ -78,7 +82,8 @@ export const wap1Cards1 = {
                         },
                         {
                             id: makeId(),
-                            type: 'h4',
+                            type: 'p',
+                            name: 'mini-heading',
                             content: {
                                 txt: 'Comprehensive Customer Support',
                             },
@@ -101,6 +106,7 @@ export const wap1Cards1 = {
                         {
                             id: makeId(),
                             type: 'img',
+                            name: 'mini-heading',
                             content: {
                                 imgUrl: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img3_zpvzbd.webp',
                             },
@@ -108,6 +114,7 @@ export const wap1Cards1 = {
                         {
                             id: makeId(),
                             type: 'h4',
+                            name: 'mini-heading',
                             content: {
                                 txt: 'All-In-One Solution',
                             },
@@ -115,6 +122,7 @@ export const wap1Cards1 = {
                         {
                             id: makeId(),
                             type: 'p',
+                            name: 'txt',
                             content: {
                                 txt: `I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell
                                 a story and let your users know a little more about you.`,
@@ -136,7 +144,8 @@ export const wap1Cards1 = {
                         },
                         {
                             id: makeId(),
-                            type: 'h4',
+                            type: 'p',
+                            name: 'mini-heading',
                             content: {
                                 txt: 'Smart Automation Tools',
                             },
@@ -144,6 +153,7 @@ export const wap1Cards1 = {
                         {
                             id: makeId(),
                             type: 'p',
+                            name: 'txt',
                             content: {
                                 txt: `I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell
                                 a story and let your users know a little more about you.`,

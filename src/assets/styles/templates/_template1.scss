@@ -156,12 +156,12 @@
         width: 90%;
     }
     .content {
-        h1 {
+        .header {
             font-size: 3.5rem;
             font-weight: 400;
             margin-bottom: 0;
         }
-        p {
+        p.txt {
             font-size: 1.25rem;
             margin: 2rem 0;
         }
@@ -184,7 +184,7 @@
                 display: flex;
                 align-items: center;
 
-                p {
+                p.txt {
                     font-size: 1rem;
                     padding-left: 1rem;
                 }
@@ -211,7 +211,7 @@
         gap: 5rem;
     }
 
-    h3 {
+    .header {
         font-weight: 400;
         font-size: 2.5rem;
         max-width: 400px;
@@ -222,13 +222,13 @@
     padding: 6rem 15%;
     margin: 0;
     background: #eef;
-    h2 {
+    .header {
         padding-bottom: 1rem;
         margin: 0;
         font-weight: 400;
         font-size: 2.5rem;
     }
-    p {
+    p.txt {
         max-width: 625px;
         padding-bottom: 3rem;
     }
@@ -238,7 +238,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 6rem;
         .item {
-            h4 {
+            .mini-heading {
                 margin-top: 0.5rem;
                 font-size: 1.2rem;
                 margin-bottom: 0.5rem;
@@ -248,7 +248,7 @@
                 border-radius: 10px;
                 border: 3px solid #101010;
             }
-            p {
+            p.txt {
                 font-size: 0.9rem;
                 line-height: 1.5rem;
             }
@@ -267,7 +267,7 @@
         width: 100%;
     }
     .content {
-        h2 {
+        .heading {
             font-size: 2.5rem;
             font-weight: 400;
         }
@@ -279,7 +279,7 @@
                 display: flex;
                 align-items: center;
 
-                p {
+                p.txt {
                     font-size: 1rem;
                     padding-left: 1rem;
                 }
@@ -303,13 +303,13 @@
         padding: 0rem 15%;
         padding-top: 6rem;
 
-        h2 {
+        .heading{
             padding-bottom: 1rem;
             margin: 0;
             font-weight: 400;
             font-size: 2.5rem;
         }
-        p {
+        p.txt {
             max-width: 625px;
             padding-bottom: 3rem;
         }
@@ -333,7 +333,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h1 {
+    .heading {
         max-width: 800px;
         font-size: 2.5rem;
         text-align: center;

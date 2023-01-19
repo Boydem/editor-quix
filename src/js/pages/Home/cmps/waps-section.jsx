@@ -3,9 +3,9 @@ import templateImg2 from '../../../../assets/imgs/home-assets/templates2.webp'
 import templateImg3 from '../../../../assets/imgs/home-assets/templates3.webp'
 import templateImg4 from '../../../../assets/imgs/home-assets/templates4.webp'
 
-export function TemplatesSection() {
+export function WapsSection() {
     return (
-        <section className='templates-section full main-layout'>
+        <section className='waps-section full main-layout'>
             <div className='wrapper'>
                 <div className='title-container'>
                     <h2>

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import { showErrorMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
 import DynamicCmp from '../Editor/cmps/dynamic-cmp'
 import { DarkHeader } from '../Template/cmps/dark-header'
 
 export function Preview() {
-    const [template, setTemplate] = useState(null)
+    const [wap, setWap] = useState(null)
     const { wapId } = useParams()
     useEffect(() => {
         loadWap()
@@ -13,19 +14,20 @@ export function Preview() {
 
     async function loadWap() {
         try {
-            let template = await wapService.get(wapId)
-            setTemplate(template)
+            let wap = await wapService.get(wapId)
+            setWap(wap)
         } catch (err) {
-            console.log(err)
+            console.log('Failed to load wap in wap-preview', err)
+            showErrorMsg('Failed to load your demo, try again later')
         }
     }
 
-    if (!template) return <></>
+    if (!wap) return <></>
     return (
         <div className='full'>
             {/* <DarkHeader /> */}
-            {template.cmps.map(fraction => {
-                return <DynamicCmp cmp={fraction} previewOnly={true} key={fraction.id} />
+            {wap.cmps.map(cmp => {
+                return <DynamicCmp cmp={cmp} previewOnly={true} key={cmp.id} />
             })}
         </div>
     )

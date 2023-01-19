@@ -2,7 +2,7 @@ import { AppFooter } from '../../cmps/app-footer'
 import { DiscoverSection } from './cmps/discover-section'
 import { HeroSection } from './cmps/hero-section'
 import { HomeHeader } from './cmps/home-header'
-import { TemplatesSection } from './cmps/templates-section'
+import { WapsSection } from './cmps/waps-section'
 import { WinxSection } from './cmps/winx-section'
 
 export function Home() {
@@ -12,7 +12,7 @@ export function Home() {
             <main className='home full main-layout'>
                 <HeroSection />
                 <DiscoverSection />
-                <TemplatesSection />
+                <WapsSection />
                 <WinxSection />
             </main>
             <AppFooter />
