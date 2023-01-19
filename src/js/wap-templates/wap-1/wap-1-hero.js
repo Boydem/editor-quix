@@ -15,7 +15,7 @@ export const wap1Hero = {
             cmps: [
                 {
                     id: makeId(),
-                    type: 'txt',
+                    type: 'p',
                     name:'header',
                     content: {
                         txt: 'Communicate. Collaborate. Create.',

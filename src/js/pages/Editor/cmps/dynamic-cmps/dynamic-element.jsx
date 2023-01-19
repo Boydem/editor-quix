@@ -13,7 +13,7 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
             onMouseOver={onHover}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
         >
-            {cmp.content.txt}
+            {cmp.content?.txt}
         </CustomTag>
     )
 }
