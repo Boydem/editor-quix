@@ -30,6 +30,7 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
             contentEditable={isEditing}
             spellCheck='false'
             suppressContentEditableWarning={true}
+            href={CustomTag === 'a' ? cmp.content.href : ''}
         >
             {cmp.content?.txt}
         </CustomTag>

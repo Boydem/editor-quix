@@ -45,8 +45,8 @@ export default function DynamicCmp(props) {
             return <MapCmp {...basicProps} />
         case 'video':
             return <VideoCmp {...basicProps} />
-        case 'a':
-            return <ACmp {...basicProps} />
+        // case 'a':
+        //     return <ACmp {...basicProps} />
         case 'img':
             return <ImgCmp {...basicProps} />
         default:
