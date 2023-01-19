@@ -5,7 +5,8 @@ import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
-import { BlockPicker, CirclePicker, CompactPicker, TwitterPicker } from 'react-color'
+import { BlockPicker } from 'react-color'
+import * as Slider from '@radix-ui/react-slider'
 
 const AccordionEdit = () => {
     const [openOption, setOpenOption] = useState()
@@ -81,6 +82,22 @@ const AccordionEdit = () => {
             <div className='AccordionContentText'>{children}</div>
         </Accordion.Content>
     ))
+    // const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+    //     <Accordion.Content className={classNames('AccordionContent', className)} {...props} ref={forwardedRef}>
+    //         <div className='AccordionContentText'>{children}</div>
+    //     </Accordion.Content>
+    // ))
+
+    function handleFontSliderChange(ev) {
+        lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
+        elClickedNode.style.fontSize = ev[0]
+        saveCmp(lastClickedCmp)
+    }
+    function handleBorderSliderChange(ev) {
+        lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
+        elClickedNode.style.borderRadius = ev[0]
+        saveCmp(lastClickedCmp)
+    }
 
     return (
         <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
@@ -160,6 +177,39 @@ const AccordionEdit = () => {
                             )}
                         </div>
                     </div>
+
+                    <form className='slider-form'>
+                        <label htmlFor=''>Font Size</label>
+                        <Slider.Root
+                            className='SliderRoot'
+                            defaultValue={[1]}
+                            max={100}
+                            step={1}
+                            aria-label='Volume'
+                            onValueChange={handleFontSliderChange}
+                        >
+                            <Slider.Track className='SliderTrack'>
+                                <Slider.Range className='SliderRange' />
+                            </Slider.Track>
+                            <Slider.Thumb className='SliderThumb' />
+                        </Slider.Root>
+                    </form>
+                    <form className='slider-form'>
+                        <label htmlFor=''>Border Radius</label>
+                        <Slider.Root
+                            className='SliderRoot'
+                            defaultValue={[1]}
+                            max={50}
+                            step={1}
+                            aria-label='Volume'
+                            onValueChange={handleBorderSliderChange}
+                        >
+                            <Slider.Track className='SliderTrack'>
+                                <Slider.Range className='SliderRange' />
+                            </Slider.Track>
+                            <Slider.Thumb className='SliderThumb' />
+                        </Slider.Root>
+                    </form>
                 </Accordion.Content>
             </Accordion.Item>
         </Accordion.Root>
