@@ -9,6 +9,7 @@ import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { saveWap, setIsEditing, setSidebarContext } from '../../store/wap/wap.action'
+import { EditModules } from './cmps/edit-modules'
 
 export function Editor() {
     const template = useSelector(storeState => storeState.wapModule.wap)
@@ -44,6 +45,7 @@ export function Editor() {
         template.cmps.splice(result.destination.index, 0, changedCmp)
         saveWap(template)
     }
+    const editModules = ['Text', 'Image', 'Section']
 
     function handleOnDragStart() {
         // setSidebarOpen(false)
@@ -54,8 +56,11 @@ export function Editor() {
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
                 <AppHeader />
                 <ToolsBar isSidebarOpen={isSidebarOpen} onOpenSidebar={onOpenSidebar} />
-                <EditorPreview templateOrder={template.cmps} />
-                <Sidebar context={sidebarContext} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+                <div className='editor-layout full'>
+                    <EditorPreview templateOrder={template.cmps} />
+                    <EditModules setSidebarOpen={setSidebarOpen} isSidebarOpen={isSidebarOpen} />
+                    <Sidebar context={sidebarContext} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+                </div>
             </DragDropContext>
         </>
     )

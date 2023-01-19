@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
@@ -7,21 +7,30 @@ import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
 
 const AccordionEdit = () => {
-    const [openOption, setOpenOption] = useState()
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
 
     const sizeOptions = [
-        { name: 'width', title: 'width', unit: 'px' },
-        { name: 'height', title: 'height', unit: 'px' },
-        { name: 'minWidth', title: 'min-W', unit: 'px' },
-        { name: 'minHeight', title: 'min-h', unit: 'px' },
-        { name: 'maxWidth', title: 'max-w', unit: 'px' },
-        { name: 'maxHeight', title: 'max-h', unit: 'px' },
+        { name: 'width', title: 'width', unit: 'px', value: 0 },
+        { name: 'height', title: 'height', unit: 'px', value: 0 },
+        { name: 'minWidth', title: 'min-W', unit: 'px', value: 0 },
+        { name: 'minHeight', title: 'min-h', unit: 'px', value: 0 },
+        { name: 'maxWidth', title: 'max-w', unit: 'px', value: 0 },
+        { name: 'maxHeight', title: 'max-h', unit: 'px', value: 0 },
     ]
-    function handleChange(ev) {
+    const [propToEdit, setPropToEdit] = useState(sizeOptions)
+
+    // useEffect(()=>{
+
+    // },[])
+
+    console.log('propToEdit:', propToEdit)
+    function handleChange(ev, idx) {
         ev.preventDefault()
-        if (!lastClickedCmp) return
+        // if (!lastClickedCmp) return
         const { name, value } = ev.target
+        const newPropsToEdit = [...propToEdit]
+        newPropsToEdit[idx] = { ...newPropsToEdit[idx], value: value }
+        setPropToEdit(newPropsToEdit)
         const unit = ev.target.getAttribute('info')
         if (lastClickedCmp.style) {
             lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
@@ -52,7 +61,7 @@ const AccordionEdit = () => {
                 <AccordionTrigger>Size</AccordionTrigger>
                 <AccordionContent>
                     <div className='option-body'>
-                        {sizeOptions.map((option, idx) => (
+                        {propToEdit.map((option, idx) => (
                             <div key={idx} className='param-box'>
                                 <label htmlFor={option.name}>{option.title}</label>
                                 <div className='input-wrapper'>
@@ -61,7 +70,8 @@ const AccordionEdit = () => {
                                         type='number'
                                         name={option.name}
                                         id={option.name}
-                                        onChange={handleChange}
+                                        value={option.value}
+                                        onChange={ev => handleChange(ev, idx)}
                                     />
                                     <div className='unit'>
                                         <SelectUnit />

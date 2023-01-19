@@ -19,11 +19,11 @@ export function Sidebar({ setSidebarOpen, isSidebarOpen, context }) {
                 activeModule={activeModule}
                 addModulesMenuItems={addModulesMenuItems}
             />
-            <EditModules
+            {/* <EditModules
                 setSidebarOpen={setSidebarOpen}
                 setActiveModule={setActiveModule}
                 activeModule={activeModule}
-            />
+            /> */}
         </section>
     )
 }
