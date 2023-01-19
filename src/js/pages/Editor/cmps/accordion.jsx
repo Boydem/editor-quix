@@ -7,6 +7,7 @@ import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
 import { BlockPicker } from 'react-color'
 import * as Slider from '@radix-ui/react-slider'
+import { OurAccordion } from './our-accordion'
 
 const AccordionEdit = () => {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
@@ -136,161 +137,169 @@ const AccordionEdit = () => {
     }
 
     return (
-        <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
-            <Accordion.Item className='AccordionItem' value='item-1'>
-                <AccordionTrigger>Size</AccordionTrigger>
-                <AccordionContent>
-                    <div className='option-body'>
-                        {propToEdit.map((option, idx) => (
-                            <div key={idx} className='param-box'>
-                                <label htmlFor={option.name}>{option.title}</label>
-                                <div className='input-wrapper'>
-                                    <input
-                                        info={option.unit}
-                                        type='number'
-                                        name={option.name}
-                                        id={option.name}
-                                        value={option.value}
-                                        onChange={ev => handleChange(ev, idx)}
-                                    />
-                                    <div className='unit'>
-                                        <SelectUnit />
+        <>
+            <Accordion.Root className='AccordionRoot' type='single' defaultValue='item-1' collapsible>
+                <Accordion.Item className='AccordionItem' value='item-1'>
+                    <AccordionTrigger>Size</AccordionTrigger>
+                    <AccordionContent>
+                        <div className='option-body'>
+                            {propToEdit.map((option, idx) => (
+                                <div key={idx} className='param-box'>
+                                    <label htmlFor={option.name}>{option.title}</label>
+                                    <div className='input-wrapper'>
+                                        <input
+                                            info={option.unit}
+                                            type='number'
+                                            name={option.name}
+                                            id={option.name}
+                                            value={option.value}
+                                            onChange={ev => handleChange(ev, idx)}
+                                        />
+                                        <div className='unit'>
+                                            <SelectUnit />
+                                        </div>
                                     </div>
                                 </div>
+                            ))}
+                        </div>
+                    </AccordionContent>
+                </Accordion.Item>
+
+                <Accordion.Item className='AccordionItem' value='item-2'>
+                    <AccordionTrigger>Position</AccordionTrigger>
+                    <AccordionContent>
+                        <SelectUnit />
+                    </AccordionContent>
+                </Accordion.Item>
+
+                <Accordion.Item className='AccordionItem' value='item-3'>
+                    <AccordionTrigger>Adjust</AccordionTrigger>
+                    <Accordion.Content className='AccordionContent'>
+                        <div className='AccordionContentText'>
+                            <div className='color-pick'>
+                                <button className='color-pick-label' onClick={openTextColorPalette}>
+                                    Text Color
+                                </button>
+                                {isTextPaletteOpen && (
+                                    <BlockPicker
+                                        className='palette'
+                                        onChange={handleColorChange}
+                                        triangle={'hide'}
+                                        color={elClickedNode?.style.color}
+                                    />
+                                )}
                             </div>
-                        ))}
-                    </div>
-                </AccordionContent>
-            </Accordion.Item>
+                            <div className='color-pick'>
+                                <button className='color-pick-label' onClick={openBgColorPalette}>
+                                    Background Color
+                                </button>
+                                {isBgPaletteOpen && (
+                                    <BlockPicker
+                                        className='palette'
+                                        onChange={handleColorChange}
+                                        triangle={'hide'}
+                                        color={elClickedNode?.style.backgroundColor}
+                                    />
+                                )}
+                            </div>
+                            <div className='color-pick'>
+                                <button className='color-pick-label' onClick={openBorderColorPalette}>
+                                    Border Color
+                                </button>
+                                {isBorderPaletteOpen && (
+                                    <BlockPicker
+                                        className='palette'
+                                        onChange={handleColorChange}
+                                        triangle={'hide'}
+                                        color={elClickedNode?.style.borderColor}
+                                    />
+                                )}
+                            </div>
 
-            <Accordion.Item className='AccordionItem' value='item-2'>
-                <AccordionTrigger>Position</AccordionTrigger>
-                <AccordionContent>
-                    <SelectUnit />
-                </AccordionContent>
-            </Accordion.Item>
+                            <div className='text-decoration'>
+                                <button
+                                    title='Bold'
+                                    onClick={() => handleTextStyleChange('bold')}
+                                    className='btn bold-btn'
+                                >
+                                    <i className='fa-solid fa-bold'></i>
+                                </button>
+                                <button
+                                    title='Italic'
+                                    onClick={() => handleTextStyleChange('italic')}
+                                    className='btn italic-btn'
+                                >
+                                    <i className='fa-solid fa-italic'></i>
+                                </button>
+                                <button
+                                    title='Underline'
+                                    onClick={() => handleTextStyleChange('underline')}
+                                    className='btn underline-btn'
+                                >
+                                    <i className='fa-solid fa-underline'></i>
+                                </button>
+                                <button
+                                    title='Align-Left'
+                                    onClick={() => handleTextStyleChange('align-left')}
+                                    className='btn align-left-btn'
+                                >
+                                    <i className='fa-solid fa-align-left'></i>
+                                </button>
+                                <button
+                                    title='Align-Center'
+                                    onClick={() => handleTextStyleChange('align-center')}
+                                    className='btn align-center-btn'
+                                >
+                                    <i className='fa-solid fa-align-center'></i>
+                                </button>
+                                <button
+                                    title='Align-Right'
+                                    onClick={() => handleTextStyleChange('align-right')}
+                                    className='btn align-right-btn'
+                                >
+                                    <i className='fa-solid fa-align-right'></i>
+                                </button>
+                            </div>
 
-            <Accordion.Item className='AccordionItem' value='item-3'>
-                <AccordionTrigger>Adjust</AccordionTrigger>
-                <Accordion.Content className='AccordionContent'>
-                    <div className='AccordionContentText'>
-                        <div className='color-pick'>
-                            <button className='color-pick-label' onClick={openTextColorPalette}>
-                                Text Color
-                            </button>
-                            {isTextPaletteOpen && (
-                                <BlockPicker
-                                    className='palette'
-                                    onChange={handleColorChange}
-                                    triangle={'hide'}
-                                    color={elClickedNode?.style.color}
-                                />
-                            )}
+                            <form className='slider-form'>
+                                <label htmlFor=''>Font Size</label>
+                                <Slider.Root
+                                    className='SliderRoot'
+                                    defaultValue={[1]}
+                                    max={100}
+                                    step={1}
+                                    aria-label='Volume'
+                                    onValueChange={handleFontSliderChange}
+                                >
+                                    <Slider.Track className='SliderTrack'>
+                                        <Slider.Range className='SliderRange' />
+                                    </Slider.Track>
+                                    <Slider.Thumb className='SliderThumb' />
+                                </Slider.Root>
+                            </form>
+                            <form className='slider-form'>
+                                <label htmlFor=''>Border Radius</label>
+                                <Slider.Root
+                                    className='SliderRoot'
+                                    defaultValue={[1]}
+                                    max={50}
+                                    step={1}
+                                    aria-label='Volume'
+                                    onValueChange={handleBorderSliderChange}
+                                >
+                                    <Slider.Track className='SliderTrack'>
+                                        <Slider.Range className='SliderRange' />
+                                    </Slider.Track>
+                                    <Slider.Thumb className='SliderThumb' />
+                                </Slider.Root>
+                            </form>
+                            <div className='font-select'></div>
+                            <div className='font-shadow-select'></div>
                         </div>
-                        <div className='color-pick'>
-                            <button className='color-pick-label' onClick={openBgColorPalette}>
-                                Background Color
-                            </button>
-                            {isBgPaletteOpen && (
-                                <BlockPicker
-                                    className='palette'
-                                    onChange={handleColorChange}
-                                    triangle={'hide'}
-                                    color={elClickedNode?.style.backgroundColor}
-                                />
-                            )}
-                        </div>
-                        <div className='color-pick'>
-                            <button className='color-pick-label' onClick={openBorderColorPalette}>
-                                Border Color
-                            </button>
-                            {isBorderPaletteOpen && (
-                                <BlockPicker
-                                    className='palette'
-                                    onChange={handleColorChange}
-                                    triangle={'hide'}
-                                    color={elClickedNode?.style.borderColor}
-                                />
-                            )}
-                        </div>
-
-                        <div className='text-decoration'>
-                            <button title='Bold' onClick={() => handleTextStyleChange('bold')} className='btn bold-btn'>
-                                <i className='fa-solid fa-bold'></i>
-                            </button>
-                            <button
-                                title='Italic'
-                                onClick={() => handleTextStyleChange('italic')}
-                                className='btn italic-btn'
-                            >
-                                <i className='fa-solid fa-italic'></i>
-                            </button>
-                            <button
-                                title='Underline'
-                                onClick={() => handleTextStyleChange('underline')}
-                                className='btn underline-btn'
-                            >
-                                <i className='fa-solid fa-underline'></i>
-                            </button>
-                            <button
-                                title='Align-Left'
-                                onClick={() => handleTextStyleChange('align-left')}
-                                className='btn align-left-btn'
-                            >
-                                <i className='fa-solid fa-align-left'></i>
-                            </button>
-                            <button
-                                title='Align-Center'
-                                onClick={() => handleTextStyleChange('align-center')}
-                                className='btn align-center-btn'
-                            >
-                                <i className='fa-solid fa-align-center'></i>
-                            </button>
-                            <button
-                                title='Align-Right'
-                                onClick={() => handleTextStyleChange('align-right')}
-                                className='btn align-right-btn'
-                            >
-                                <i className='fa-solid fa-align-right'></i>
-                            </button>
-                        </div>
-
-                        <form className='slider-form'>
-                            <label htmlFor=''>Font Size</label>
-                            <Slider.Root
-                                className='SliderRoot'
-                                defaultValue={[1]}
-                                max={100}
-                                step={1}
-                                aria-label='Volume'
-                                onValueChange={handleFontSliderChange}
-                            >
-                                <Slider.Track className='SliderTrack'>
-                                    <Slider.Range className='SliderRange' />
-                                </Slider.Track>
-                                <Slider.Thumb className='SliderThumb' />
-                            </Slider.Root>
-                        </form>
-                        <form className='slider-form'>
-                            <label htmlFor=''>Border Radius</label>
-                            <Slider.Root
-                                className='SliderRoot'
-                                defaultValue={[1]}
-                                max={50}
-                                step={1}
-                                aria-label='Volume'
-                                onValueChange={handleBorderSliderChange}
-                            >
-                                <Slider.Track className='SliderTrack'>
-                                    <Slider.Range className='SliderRange' />
-                                </Slider.Track>
-                                <Slider.Thumb className='SliderThumb' />
-                            </Slider.Root>
-                        </form>
-                    </div>
-                </Accordion.Content>
-            </Accordion.Item>
-        </Accordion.Root>
+                    </Accordion.Content>
+                </Accordion.Item>
+            </Accordion.Root>
+        </>
     )
 }
 

@@ -5,6 +5,7 @@ import { RiArrowDropDownLine } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import AccordionEdit from './accordion'
+import { OurAccordion } from './our-accordion'
 
 export function EditModules({ isSidebarOpen, setSidebarOpen }) {
     return (
@@ -23,7 +24,8 @@ export function EditModules({ isSidebarOpen, setSidebarOpen }) {
                         </span>
                     </div>
                 </div>
-                <AccordionEdit />
+                {/* <AccordionEdit /> */}
+                <OurAccordion />
             </div>
         </div>
     )
