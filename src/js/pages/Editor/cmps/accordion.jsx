@@ -25,6 +25,10 @@ const AccordionEdit = () => {
     ]
     const [propToEdit, setPropToEdit] = useState(sizeOptions)
 
+    // useEffect(()=>{
+
+    // },[])
+
     console.log('propToEdit:', propToEdit)
     function handleChange(ev, idx) {
         ev.preventDefault()
@@ -40,15 +44,6 @@ const AccordionEdit = () => {
             lastClickedCmp.style = { [name]: `${value + unit}` }
         }
         saveCmp(lastClickedCmp)
-        // ev.target.focused = true
-    }
-
-    function getClickedCmpStyle(styleProp) {
-        if (!lastClickedCmp || !lastClickedCmp?.style || !lastClickedCmp.style[styleProp]) return 0
-        if (lastClickedCmp?.style[styleProp]) {
-            const val = lastClickedCmp.style[styleProp].replace('px', '')
-            return val
-        }
     }
 
     function openTextColorPalette() {
@@ -230,4 +225,5 @@ const AccordionEdit = () => {
         </Accordion.Root>
     )
 }
+
 export default AccordionEdit
