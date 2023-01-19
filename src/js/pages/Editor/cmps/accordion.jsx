@@ -8,7 +8,7 @@ import SelectUnit from './ui-cmps/select'
 import { BlockPicker } from 'react-color'
 import * as Slider from '@radix-ui/react-slider'
 
-export const AccordionEdit = () => {
+const AccordionEdit = () => {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
     const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
     const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
@@ -230,3 +230,4 @@ export const AccordionEdit = () => {
         </Accordion.Root>
     )
 }
+export default AccordionEdit
