@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AppHeader } from '../../cmps/app-header'
-import { Sidebar } from './cmps/sidebar'
+
 import { EditorPreview } from './cmps/editor-preview'
 import { ToolsBar } from './cmps/tools-bar'
 import { DragDropContext } from 'react-beautiful-dnd'
@@ -8,15 +8,26 @@ import { DragDropContext } from 'react-beautiful-dnd'
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { saveWap, setIsEditing, setSidebarContext } from '../../store/wap/wap.action'
-import { EditModules } from './cmps/edit-modules'
+import { saveWap, setIsEditing } from '../../store/wap/wap.action'
+import { LeftSidebar } from './cmps/left-sidebar'
+import { RightSidebar } from './cmps/right-sidebar'
 
 export function Editor() {
+    // wap states
     const wap = useSelector(storeState => storeState.wapModule.wap)
-    const [isSidebarOpen, setSidebarOpen] = useState(false)
-    const sidebarContext = useSelector(storeState => storeState.wapModule.sidebarContext)
     const { wapId } = useParams()
 
+    // sidebars states
+    const [rightSidebarState, setRightSidebarState] = useState({ context: null, isOpen: false, currModule: null })
+    const [leftSidebarState, setLeftSidebarState] = useState({
+        context: null,
+        isOpen: false,
+        prevModule: null,
+        currModule: 'add',
+        activeMenuItem: 'quick add',
+        isSubMenuOpen: false,
+    })
+    console.log('leftSidebarState:', leftSidebarState)
     useEffect(() => {
         loadWap()
         setIsEditing(true)
@@ -26,9 +37,12 @@ export function Editor() {
         }
     }, [])
 
-    function onOpenSidebar(context, isOpen = true) {
-        setSidebarContext(context)
-        setSidebarOpen(isOpen)
+    function handleSidebarsChanges(side, stateChanges) {
+        if (side === 'right') {
+            setRightSidebarState(prevState => ({ ...prevState, ...stateChanges }))
+            return
+        }
+        setLeftSidebarState(prevState => ({ ...prevState, ...stateChanges }))
     }
 
     async function loadWap() {
@@ -50,7 +64,6 @@ export function Editor() {
         wap.cmps.splice(res.destination.index, 0, changedCmp)
         saveWap(wap)
     }
-    const editModules = ['Text', 'Image', 'Section']
 
     function handleOnDragStart() {
         // setSidebarOpen(false)
@@ -60,13 +73,16 @@ export function Editor() {
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
                 <AppHeader />
-                <ToolsBar isSidebarOpen={isSidebarOpen} onOpenSidebar={onOpenSidebar} />
+                <ToolsBar
+                    leftSidebarState={leftSidebarState}
+                    rightSidebarState={rightSidebarState}
+                    handleSidebarsChanges={handleSidebarsChanges}
+                />
                 <div className='editor-layout full'>
                     <EditorPreview wapCmps={wap.cmps} />
-                    <EditModules setSidebarOpen={setSidebarOpen} isSidebarOpen={isSidebarOpen} />
-                    <Sidebar context={sidebarContext} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+                    <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
+                    <LeftSidebar leftSidebarState={leftSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                 </div>
-                <Sidebar context={sidebarContext} isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
             </DragDropContext>
         </>
     )

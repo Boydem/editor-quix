@@ -1,22 +1,20 @@
-import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
-import { RiArrowDropRightLine } from 'react-icons/ri'
-import { RiArrowDropDownLine } from 'react-icons/ri'
-import { useSelector } from 'react-redux'
-import { saveCmp } from '../../../store/wap/wap.action'
-import AccordionEdit from './accordion'
 import { OurAccordion } from './our-accordion'
 
-export function EditModules({ isSidebarOpen, setSidebarOpen }) {
+export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
+    function handleSidebar(stateChanges) {
+        handleSidebarsChanges('right', stateChanges)
+    }
+
     return (
-        <div className={`${isSidebarOpen ? 'open' : ''} edit-modules`}>
+        <div className={`right-sidebar ${rightSidebarState.isOpen ? 'open' : ''}`}>
             <div className='module-content'>
                 <div className='module-header'>
                     <span className='module-name'>Edit</span>
                     <div className='actions'>
                         <span
                             onClick={() => {
-                                setSidebarOpen(prev => !prev)
+                                handleSidebar({ isOpen: !rightSidebarState.isOpen })
                             }}
                             className='btn'
                         >

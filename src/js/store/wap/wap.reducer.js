@@ -11,7 +11,6 @@ const initialState = {
     isEditing: false,
     clickedCmp: null,
     elClickedNode: null,
-    sidebarContext: null,
 }
 
 export function wapReducer(state = initialState, action = {}) {
@@ -22,8 +21,6 @@ export function wapReducer(state = initialState, action = {}) {
             return { ...state, clickedCmp: action.elem }
         case 'SET_EL_CLICKED_NODE':
             return { ...state, elClickedNode: action.elNode }
-        case 'SET_SIDEBAR_CONTEXT':
-            return { ...state, sidebarContext: action.context }
         case 'SET_IS_EDITING':
             return { ...state, isEditing: action.mode }
         default:

@@ -28,9 +28,6 @@ export async function saveCmp(newCmp) {
     }
 }
 
-export async function setSidebarContext(context) {
-    store.dispatch({ type: SET_SIDEBAR_CONTEXT, context })
-}
 export async function setIsEditing(mode) {
     store.dispatch({ type: SET_IS_EDITING, mode })
 }

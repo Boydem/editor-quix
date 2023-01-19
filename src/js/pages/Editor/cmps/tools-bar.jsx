@@ -17,23 +17,23 @@ import { CgColorPicker } from 'react-icons/cg'
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { useState } from 'react'
 
-export function ToolsBar({ isSidebarOpen, onOpenSidebar }) {
+export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const [currActive, setCurrActive] = useState(null)
     const tools = [
-        { toolName: 'add', sidebar: 'left' },
-        { toolName: 'layers', sidebar: 'left' },
-        { toolName: 'colorPicker', sidebar: 'right' },
-        { toolName: 'themes', sidebar: 'left' },
+        { side: 'left', module: 'add' },
+        { side: 'left', module: 'layers' },
+        { side: 'right', module: 'colorPicker' },
+        { side: 'left', module: 'themes' },
     ]
-    function onToolClick({ toolName, sidebar }) {
-        sidebar = sidebar === 'left' ? 'add' : 'edit'
-        if (toolName === currActive) {
-            onOpenSidebar(sidebar, null)
+    function onToolClick(side, stateChanges) {
+        if (stateChanges.currModule === currActive) {
+            console.log('side:', side)
+            handleSidebarsChanges(side, { isOpen: false, context: null, currModule: null })
             setCurrActive(null)
             return
         } else {
-            onOpenSidebar(sidebar)
-            setCurrActive(toolName)
+            handleSidebarsChanges(side, { ...stateChanges })
+            setCurrActive(stateChanges.currModule)
         }
     }
     return (
@@ -42,13 +42,13 @@ export function ToolsBar({ isSidebarOpen, onOpenSidebar }) {
                 {tools.map((tool, idx) => (
                     <button
                         key={idx}
-                        onClick={() => onToolClick(tool)}
-                        className={`${currActive === tool.toolName ? 'active' : ''} tool`}
+                        onClick={() => onToolClick(tool.side, { isOpen: true, currModule: tool.module })}
+                        className={`${currActive === tool.module ? 'active' : ''} tool`}
                     >
-                        {tool.toolName === 'add' && <AiOutlinePlus />}
-                        {tool.toolName === 'layers' && <FiLayers />}
-                        {tool.toolName === 'colorPicker' && <CgColorPicker />}
-                        {tool.toolName === 'themes' && <IoColorFilterOutline />}
+                        {tool.module === 'add' && <AiOutlinePlus />}
+                        {tool.module === 'layers' && <FiLayers />}
+                        {tool.module === 'colorPicker' && <CgColorPicker />}
+                        {tool.module === 'themes' && <IoColorFilterOutline />}
                     </button>
                 ))}
             </div>
