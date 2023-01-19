@@ -128,12 +128,10 @@ const AccordionEdit = () => {
 
     function handleFontSliderChange(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
-        elClickedNode.style.fontSize = ev[0]
         saveCmp(lastClickedCmp)
     }
     function handleBorderSliderChange(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
-        elClickedNode.style.borderRadius = ev[0]
         saveCmp(lastClickedCmp)
     }
 
@@ -295,4 +293,5 @@ const AccordionEdit = () => {
         </Accordion.Root>
     )
 }
+
 export default AccordionEdit

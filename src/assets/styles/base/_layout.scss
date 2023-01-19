@@ -39,10 +39,11 @@ body {
         flex: 1;
     }
     .edit-modules {
+        $edit-modules-width: 260px;
         top: $app-header-height - $toolbar-height - 1px;
         left: 0;
-        width: 260px;
-        margin-right: -260px;
+        width: $edit-modules-width;
+        margin-right: -$edit-modules-width;
         height: 100%;
         justify-self: flex-end;
         transition: all 0.25s;

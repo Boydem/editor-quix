@@ -1,7 +1,9 @@
 import { DynamicModule } from './dynamic-module'
 import { AiOutlineClose } from 'react-icons/ai'
+import { useState } from 'react'
 
 export function AddModules({ setSidebarOpen, setActiveModule, activeModule, addModulesMenuItems }) {
+    const [isModuleOpen, setIsModuleOpen] = useState(null)
     return (
         <div className='add-modules'>
             <div className='modules'>
@@ -10,7 +12,10 @@ export function AddModules({ setSidebarOpen, setActiveModule, activeModule, addM
                         {moduleGroup.map((module, idx) => (
                             <li
                                 className={activeModule === module ? 'active' : ''}
-                                onClick={() => setActiveModule(module)}
+                                onClick={() => {
+                                    setIsModuleOpen(true)
+                                    setActiveModule(module)
+                                }}
                                 key={idx}
                             >
                                 {module}
@@ -19,13 +24,15 @@ export function AddModules({ setSidebarOpen, setActiveModule, activeModule, addM
                     </ul>
                 ))}
             </div>
-            <div className='module-content'>
+            <div className={`${isModuleOpen ? 'open' : ''} module-content`}>
                 <div className='module-header'>
                     <span className='module-name'>{activeModule}</span>
                     <div className='actions'>
                         <span
                             onClick={() => {
-                                setSidebarOpen(prev => !prev)
+                                setIsModuleOpen(prev => !prev)
+                                setActiveModule(null)
+                                // setTimeout(() => setSidebarOpen(prev => !prev), 300)
                             }}
                             className='btn'
                         >
