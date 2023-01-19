@@ -15,7 +15,8 @@ export const wap1Cards2 = {
             cmps: [
                 {
                     id: makeId(),
-                    type: 'h2',
+                    type: 'p',
+                    name:"heading",
                     content: {
                         txt: 'Trusted Among Industry Leaders',
                     },
@@ -23,6 +24,7 @@ export const wap1Cards2 = {
                 {
                     id: makeId(),
                     type: 'p',
+                    name:'txt',
                     content: {
                         txt: `I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or
                         double click me to add your own content and make changes to the font.`,

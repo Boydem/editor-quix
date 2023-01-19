@@ -16,6 +16,7 @@ export const wap1Section1 = {
                 {
                     id: makeId(),
                     type: 'h3',
+                    name:'header',
                     content: {
                         txt: 'With the Right Software, Great Things Can Happen',
                     },
