@@ -25,7 +25,21 @@ const AccordionEdit = () => {
     ]
     const [propToEdit, setPropToEdit] = useState(sizeOptions)
 
-    console.log('propToEdit:', propToEdit)
+    const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+        <Accordion.Header className='AccordionHeader'>
+            <Accordion.Trigger className={classNames('AccordionTrigger', className)} {...props} ref={forwardedRef}>
+                {children}
+                <ChevronDownIcon className='AccordionChevron' aria-hidden />
+            </Accordion.Trigger>
+        </Accordion.Header>
+    ))
+
+    const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+        <Accordion.Content className={classNames('AccordionContent', className)} {...props} ref={forwardedRef}>
+            <div className='AccordionContentText'>{children}</div>
+        </Accordion.Content>
+    ))
+
     function handleChange(ev, idx) {
         ev.preventDefault()
         // if (!lastClickedCmp) return
@@ -40,7 +54,6 @@ const AccordionEdit = () => {
             lastClickedCmp.style = { [name]: `${value + unit}` }
         }
         saveCmp(lastClickedCmp)
-        // ev.target.focused = true
     }
 
     function getClickedCmpStyle(styleProp) {
@@ -82,25 +95,36 @@ const AccordionEdit = () => {
         saveCmp(lastClickedCmp)
     }
 
-    const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
-        <Accordion.Header className='AccordionHeader'>
-            <Accordion.Trigger className={classNames('AccordionTrigger', className)} {...props} ref={forwardedRef}>
-                {children}
-                <ChevronDownIcon className='AccordionChevron' aria-hidden />
-            </Accordion.Trigger>
-        </Accordion.Header>
-    ))
-
-    const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
-        <Accordion.Content className={classNames('AccordionContent', className)} {...props} ref={forwardedRef}>
-            <div className='AccordionContentText'>{children}</div>
-        </Accordion.Content>
-    ))
     // const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
     //     <Accordion.Content className={classNames('AccordionContent', className)} {...props} ref={forwardedRef}>
     //         <div className='AccordionContentText'>{children}</div>
     //     </Accordion.Content>
     // ))
+
+    function handleTextStyleChange(changeBy) {
+        console.log(lastClickedCmp)
+        switch (changeBy) {
+            case 'bold':
+                lastClickedCmp.style = { ...lastClickedCmp.style, fontWeight: 'bold' }
+                break
+            case 'italic':
+                lastClickedCmp.style = { ...lastClickedCmp.style, fontStyle: 'italic' }
+                break
+            case 'underline':
+                lastClickedCmp.style = { ...lastClickedCmp.style, textDecoration: 'underline' }
+                break
+            case 'align-left':
+                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'left' }
+                break
+            case 'align-center':
+                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'center' }
+                break
+            case 'align-right':
+                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'right' }
+                break
+        }
+        return saveCmp(lastClickedCmp)
+    }
 
     function handleFontSliderChange(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
@@ -190,6 +214,47 @@ const AccordionEdit = () => {
                                     color={elClickedNode?.style.borderColor}
                                 />
                             )}
+                        </div>
+
+                        <div className='text-decoration'>
+                            <button title='Bold' onClick={() => handleTextStyleChange('bold')} className='btn bold-btn'>
+                                <i className='fa-solid fa-bold'></i>
+                            </button>
+                            <button
+                                title='Italic'
+                                onClick={() => handleTextStyleChange('italic')}
+                                className='btn italic-btn'
+                            >
+                                <i className='fa-solid fa-italic'></i>
+                            </button>
+                            <button
+                                title='Underline'
+                                onClick={() => handleTextStyleChange('underline')}
+                                className='btn underline-btn'
+                            >
+                                <i className='fa-solid fa-underline'></i>
+                            </button>
+                            <button
+                                title='Align-Left'
+                                onClick={() => handleTextStyleChange('align-left')}
+                                className='btn align-left-btn'
+                            >
+                                <i className='fa-solid fa-align-left'></i>
+                            </button>
+                            <button
+                                title='Align-Center'
+                                onClick={() => handleTextStyleChange('align-center')}
+                                className='btn align-center-btn'
+                            >
+                                <i className='fa-solid fa-align-center'></i>
+                            </button>
+                            <button
+                                title='Align-Right'
+                                onClick={() => handleTextStyleChange('align-right')}
+                                className='btn align-right-btn'
+                            >
+                                <i className='fa-solid fa-align-right'></i>
+                            </button>
                         </div>
 
                         <form className='slider-form'>
