@@ -2,6 +2,14 @@ import React, { useEffect, useState } from 'react'
 import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
+import {
+    AiOutlineAlignLeft,
+    AiOutlineAlignRight,
+    AiOutlineAlignCenter,
+    AiOutlineBold,
+    AiOutlineItalic,
+    AiOutlineUnderline,
+} from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../store/wap/wap.action'
 import SelectUnit from './ui-cmps/select'
@@ -101,28 +109,10 @@ const AccordionEdit = () => {
     //     </Accordion.Content>
     // ))
 
-    function handleTextStyleChange(changeBy) {
-        console.log(lastClickedCmp)
-        switch (changeBy) {
-            case 'bold':
-                lastClickedCmp.style = { ...lastClickedCmp.style, fontWeight: 'bold' }
-                break
-            case 'italic':
-                lastClickedCmp.style = { ...lastClickedCmp.style, fontStyle: 'italic' }
-                break
-            case 'underline':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textDecoration: 'underline' }
-                break
-            case 'align-left':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'left' }
-                break
-            case 'align-center':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'center' }
-                break
-            case 'align-right':
-                lastClickedCmp.style = { ...lastClickedCmp.style, textAlign: 'right' }
-                break
-        }
+    function handleTextStyleChange(styleToEdit, value) {
+        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
+        if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
+        lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
         return saveCmp(lastClickedCmp)
     }
 
@@ -213,45 +203,48 @@ const AccordionEdit = () => {
                                 />
                             )}
                         </div>
-
                         <div className='text-decoration'>
-                            <button title='Bold' onClick={() => handleTextStyleChange('bold')} className='btn bold-btn'>
-                                <i className='fa-solid fa-bold'></i>
+                            <button
+                                title='Bold'
+                                onClick={() => handleTextStyleChange('fontWeight', 'bold')}
+                                className='btn bold-btn'
+                            >
+                                <AiOutlineBold />
                             </button>
                             <button
                                 title='Italic'
-                                onClick={() => handleTextStyleChange('italic')}
+                                onClick={() => handleTextStyleChange('fontStyle', 'italic')}
                                 className='btn italic-btn'
                             >
-                                <i className='fa-solid fa-italic'></i>
+                                <AiOutlineItalic />
                             </button>
                             <button
                                 title='Underline'
-                                onClick={() => handleTextStyleChange('underline')}
+                                onClick={() => handleTextStyleChange('textDecoration', 'underline')}
                                 className='btn underline-btn'
                             >
-                                <i className='fa-solid fa-underline'></i>
+                                <AiOutlineUnderline />
                             </button>
                             <button
                                 title='Align-Left'
-                                onClick={() => handleTextStyleChange('align-left')}
+                                onClick={() => handleTextStyleChange('textAlign', 'start')}
                                 className='btn align-left-btn'
                             >
-                                <i className='fa-solid fa-align-left'></i>
+                                <AiOutlineAlignLeft />
                             </button>
                             <button
                                 title='Align-Center'
-                                onClick={() => handleTextStyleChange('align-center')}
+                                onClick={() => handleTextStyleChange('textAlign', 'center')}
                                 className='btn align-center-btn'
                             >
-                                <i className='fa-solid fa-align-center'></i>
+                                <AiOutlineAlignCenter />
                             </button>
                             <button
                                 title='Align-Right'
-                                onClick={() => handleTextStyleChange('align-right')}
+                                onClick={() => handleTextStyleChange('textAlign', 'end')}
                                 className='btn align-right-btn'
                             >
-                                <i className='fa-solid fa-align-right'></i>
+                                <AiOutlineAlignRight />
                             </button>
                         </div>
 
