@@ -83,7 +83,11 @@ export function Editor() {
                     handleSidebarsChanges={handleSidebarsChanges}
                 />
                 <div className='editor-layout full'>
-                    <EditorPreview wapCmps={wap.cmps} setRightSidebarState={setRightSidebarState} />
+                    <EditorPreview
+                        wapCmps={wap.cmps}
+                        setRightSidebarState={setRightSidebarState}
+                        rightSidebarState={rightSidebarState}
+                    />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                     <LeftSidebar
                         leftSidebarState={leftSidebarState}

@@ -4,8 +4,9 @@ import { useRef, useEffect } from 'react'
 import { utilService } from '../../../services/util.service'
 import { FiEdit2 } from 'react-icons/fi'
 import { useSelector } from 'react-redux'
+import { TiBrush } from 'react-icons/ti'
 
-export function EditorPreview({ wapCmps, setRightSidebarState }) {
+export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState }) {
     const editorResizerRef = [useRef(), useRef()]
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -48,6 +49,19 @@ export function EditorPreview({ wapCmps, setRightSidebarState }) {
         editorWrapper.current.classList.toggle('tablet-layout', editorSize < wap.breakpoints.tabletLayout)
     }
 
+    useEffect(() => {
+        selectedActionsRef.current.style.display = 'none'
+        setTimeout(() => {
+            selectedActionsRef.current.style.display = 'flex'
+            selectedActionsRef.current.style.left = `${
+                elClickedNode.getBoundingClientRect().x - editorWrapper.current.getBoundingClientRect().x
+            }px`
+            selectedActionsRef.current.style.top = `${
+                elClickedNode.getBoundingClientRect().y - editorWrapper.current.getBoundingClientRect().y - 30
+            }px`
+        }, 500)
+    }, [rightSidebarState.isOpen])
+
     function onEditPopup(ev) {
         setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
         selectedActionsRef.current.style.display = 'none'
@@ -61,6 +75,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState }) {
             }px`
         }, 500)
     }
+    console.log(elClickedNode)
     return (
         <Droppable droppableId='editor-preview'>
             {provided => {
@@ -68,8 +83,14 @@ export function EditorPreview({ wapCmps, setRightSidebarState }) {
                     <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
                         <div className='editor-resizer left' ref={editorResizerRef[0]}></div>
                         <div className='wrapper' ref={editorWrapper}>
-                            <div className='selected-actions' ref={selectedActionsRef} onClick={onEditPopup}>
-                                <FiEdit2 />
+                            <div
+                                className={`selected-actions ${
+                                    !elClickedNode || rightSidebarState.isOpen ? 'hidden' : ''
+                                }`}
+                                ref={selectedActionsRef}
+                                onClick={onEditPopup}
+                            >
+                                <TiBrush />
                             </div>
                             {wapCmps.map((cmp, idx) => {
                                 return (

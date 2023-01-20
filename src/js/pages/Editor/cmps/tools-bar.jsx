@@ -19,6 +19,7 @@ import { IoColorFilterOutline } from 'react-icons/io5'
 import { useState } from 'react'
 import { removeCmp } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
+import { TiBrush } from 'react-icons/ti'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -108,11 +109,15 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                     <div className='flex align-center'>
                         <button
                             onClick={() =>
-                                onToolClick('right', { isOpen: true, currModule: 'Edit', isSubMenuOpen: true })
+                                onToolClick('right', {
+                                    isOpen: !rightSidebarState.isOpen,
+                                    currModule: 'Edit',
+                                    isSubMenuOpen: true,
+                                })
                             }
                             className={`${rightSidebarState.isOpen ? 'active' : ''} tool`}
                         >
-                            <CgColorPicker />
+                            <TiBrush />
                         </button>
                     </div>
                 </div>
