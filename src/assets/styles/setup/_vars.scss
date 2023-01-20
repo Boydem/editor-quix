@@ -68,3 +68,35 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 // @media (min-width: $break-wide) {
 //     $layoutPadding: $base-font-size * 5.063;
 // }
+
+#root.wap1-primary {
+    --clr1: #ffbf23;
+    --clr2: #ffd7ef;
+    --clr3: #eef;
+    --clr4: #101010;
+}
+
+#root.theme-1 {
+    --clr1: #263140;
+    --clr2: #4c80fb;
+    --clr3: #101010;
+    --clr4: #f4f4f6;
+}
+#root.theme-2 {
+    --clr1: #0d425e;
+    --clr3: #fdd123;
+    --clr2: #101010;
+    --clr4: #eef3f5;
+}
+#root.theme-3 {
+    --clr1: #055345;
+    --clr2: #f3ceac;
+    --clr3: #f9efe6;
+    --clr4: #101010;
+}
+
+#root.theme-4 {
+    --clr1: #222628;
+    --clr2: #8aebf0;
+    --clr3: #f6f8f9;
+}

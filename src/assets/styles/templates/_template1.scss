@@ -76,6 +76,8 @@
     }
 }
 
+// FINISH HAMBURGER
+
 .clicked {
     outline: solid 2px #07396e;
 }
@@ -86,7 +88,7 @@
 }
 
 .wap-1-nav {
-    background: #eef;
+    background: var(--clr3);
     padding: 1.5rem 10%;
     display: flex;
     justify-content: space-between;
@@ -95,6 +97,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: var(--clr4);
 
         h2 {
             margin: 0;
@@ -127,19 +130,19 @@
         list-style: none;
         display: flex;
         align-items: center;
-
         a {
             padding: 0 1rem;
             text-decoration: none;
-            color: black;
+            color: var(--clr4);
         }
         button {
             margin-left: 1rem;
-            background: #ffbf23;
+            background: var(--clr1);
+            color: var(--clr4);
             font-size: 1rem;
             outline: none;
             border-radius: 5px;
-            border: 1px solid black;
+            border: 1px solid var(--clr4);
             padding: 0.5rem 1.4rem;
             font-weight: 600;
         }
@@ -147,7 +150,8 @@
 }
 
 .wap-1-hero {
-    background: #eef;
+    background: var(--clr3);
+    color: var(--clr4);
     padding: 0rem 15%;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -166,14 +170,14 @@
             margin: 2rem 0;
         }
         button {
-            background: #101010;
+            background: var(--clr4);
             font-size: 1rem;
             outline: none;
             border-radius: 5px;
-            border: 1px solid #101010;
+            border: 1px solid var(--clr4);
             padding: 0.5rem 1.4rem;
             font-weight: 600;
-            color: white;
+            color: var(--clr3);
         }
 
         .icons {
@@ -198,11 +202,12 @@
 
 .wap-1-divider-1 {
     height: 125px;
-    background: radial-gradient(180% 180% at right -65% top -65%, #eef 100%, #ffbf23);
+    background: radial-gradient(180% 180% at right -65% top -65%, var(--clr3) 100%, var(--clr1));
 }
 
 .wap-1-section-1 {
-    background: #ffbf23;
+    background: var(--clr1);
+    color: var(--clr4);
     padding: 6rem 15%;
     .content {
         display: grid;
@@ -221,7 +226,8 @@
 .wap-1-cards-1 {
     padding: 6rem 15%;
     margin: 0;
-    background: #eef;
+    background: var(--clr3);
+    color: var(--clr4);
     .header {
         padding-bottom: 1rem;
         margin: 0;
@@ -237,6 +243,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 6rem;
+        color: var(--clr4);
         .item {
             .mini-heading {
                 margin-top: 0.5rem;
@@ -246,7 +253,7 @@
             img {
                 width: 100%;
                 border-radius: 10px;
-                border: 3px solid #101010;
+                border: 3px solid var(--clr4);
             }
             p.txt {
                 font-size: 0.9rem;
@@ -257,12 +264,13 @@
 }
 
 .wap-1-section-2 {
-    background: #eef;
+    background: var(--clr3);
     padding: 6rem 15%;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     align-items: center;
     gap: 15rem;
+    color: var(--clr4);
     img {
         width: 100%;
     }
@@ -293,17 +301,18 @@
 
 .wap-1-divider-2 {
     height: 125px;
-    background: radial-gradient(180% 180% at left -65% top -65%, #eef 100%, #ffd7ef);
+    background: radial-gradient(180% 180% at left -65% top -65%, var(--clr3) 100%, var(--clr2));
 }
 
 .wap-1-cards-2 {
     margin: 0;
-    background: #ffd7ef;
+    background: var(--clr2);
+    color: var(--clr4);
     .content {
         padding: 0rem 15%;
         padding-top: 6rem;
 
-        .heading{
+        .heading {
             padding-bottom: 1rem;
             margin: 0;
             font-weight: 400;
@@ -333,6 +342,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--clr3);
+    color: var(--clr4);
     .heading {
         max-width: 800px;
         font-size: 2.5rem;
@@ -340,23 +351,23 @@
         font-weight: 400;
     }
     button {
-        background: #101010;
+        background: var(--clr4);
         font-size: 1rem;
         outline: none;
         border-radius: 5px;
-        border: 1px solid #101010;
+        border: 1px solid var(--clr4);
         padding: 0.5rem 1.4rem;
         font-weight: 600;
-        color: white;
+        color: var(--clr3);
     }
     img {
         width: 965px;
         height: 500px;
     }
 }
-.footer-1 {
-    background: #101010;
-    color: white;
+.wap-1-footer {
+    background: var(--clr4);
+    color: var(--clr3);
     text-align: center;
     padding: 0.5rem;
 }
@@ -425,5 +436,3 @@
         }
     }
 }
-
-// FINISH HAMBURGER

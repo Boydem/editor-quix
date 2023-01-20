@@ -92,6 +92,8 @@ function _createWaps() {
                 name: 'wap-1',
                 owner: 'admin',
                 cmps: getDemoCmps1(),
+                pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
+                themeClass: 'wap1-primary',
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
                 title: 'WeDu',
