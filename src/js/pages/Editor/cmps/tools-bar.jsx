@@ -22,7 +22,6 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
     const tools = [
         { side: 'left', module: 'add' },
         { side: 'left', module: 'layers' },
-        { side: 'right', module: 'colorPicker' },
         { side: 'left', module: 'themes' },
     ]
     function onToolClick(side, stateChanges) {
@@ -46,7 +45,6 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                     >
                         {tool.module === 'add' && <AiOutlinePlus />}
                         {tool.module === 'layers' && <FiLayers />}
-                        {tool.module === 'colorPicker' && <CgColorPicker />}
                         {tool.module === 'themes' && <IoColorFilterOutline />}
                     </button>
                 ))}
@@ -81,6 +79,14 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                         <button className='tool'>
                             <FiMessageSquare />
+                        </button>
+                    </div>
+                    <div className='btns-user-req flex align-center'>
+                        <button
+                            onClick={() => onToolClick('right', { isOpen: true, currModule: 'Edit' })}
+                            className={`${rightSidebarState.isOpen ? 'active' : ''} tool`}
+                        >
+                            <CgColorPicker />
                         </button>
                     </div>
                 </div>
