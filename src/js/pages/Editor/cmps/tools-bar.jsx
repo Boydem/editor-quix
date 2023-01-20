@@ -6,13 +6,13 @@ import { AiOutlineBold } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { GoDeviceDesktop } from 'react-icons/go'
 import { BiMobileAlt } from 'react-icons/bi'
-import { FaTrash } from 'react-icons/fa'
+import { FiTrash } from 'react-icons/fi'
 import { AiOutlineMobile } from 'react-icons/ai'
 import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { FiLayers } from 'react-icons/fi'
-import { MdNotificationsNone } from 'react-icons/md'
+import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
 import { CgColorPicker } from 'react-icons/cg'
 import { IoColorFilterOutline } from 'react-icons/io5'
@@ -22,7 +22,7 @@ import { useSelector } from 'react-redux'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    
+
     const tools = [
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
@@ -69,7 +69,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                 ))}
             </div>
             <div className='tools tools-views flex align-center'>
-                <div className='responsive-btns flex align-center'>
+                <div className='responsive-btns flex align-center interactives'>
                     <button className='tool'>
                         <GoDeviceDesktop />
                     </button>
@@ -84,10 +84,12 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
 
             <div className='tools tools-views flex align-center'>
                 <div className='responsive-btns flex align-center'>
-                    <div className='btns-undo-redo flex align-center'>
+                    <div className='interactives'>
                         <button className='tool' onClick={onRemoveCmp}>
-                            <FaTrash />
+                            <FiTrash />
                         </button>
+                    </div>
+                    <div className='btns-undo-redo flex align-center'>
                         <button className='tool'>
                             <GrUndo />
                         </button>
@@ -95,15 +97,15 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                             <GrRedo />
                         </button>
                     </div>
-                    <div className='btns-user-req flex align-center'>
+                    <div className='flex align-center interactives'>
                         <button className='tool'>
-                            <MdNotificationsNone />
+                            <BiBell />
                         </button>
                         <button className='tool'>
                             <FiMessageSquare />
                         </button>
                     </div>
-                    <div className='btns-user-req flex align-center'>
+                    <div className='flex align-center'>
                         <button
                             onClick={() =>
                                 onToolClick('right', { isOpen: true, currModule: 'Edit', isSubMenuOpen: true })

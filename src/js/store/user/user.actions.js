@@ -1,5 +1,6 @@
-import { userService } from "../services/user.service.js";
-import { store } from '../store/store.js'
+import { userService } from '../../services/user.service.js'
+import { store } from '../store.js'
+import { SET_USER } from './user.reducer.js'
 
 // import { showErrorMsg } from '../services/event-bus.service.js'
 
@@ -10,6 +11,20 @@ export async function loadUsers() {
         store.dispatch({ type: 'SET_USERS', users })
     } catch (err) {
         console.log('UserActions: err in loadUsers', err)
+    } finally {
+        store.dispatch({ type: 'LOADING_DONE' })
+    }
+}
+
+export async function setUser(userId) {
+    try {
+        store.dispatch({ type: 'LOADING_START' })
+        const user = await userService.getById(userId)
+        store.dispatch({ type: SET_USER, user })
+        return user
+    } catch (err) {
+        console.log('UserActions: err in loadUser', err)
+        throw err
     } finally {
         store.dispatch({ type: 'LOADING_DONE' })
     }
@@ -29,7 +44,7 @@ export async function login(credentials) {
         const user = await userService.login(credentials)
         store.dispatch({
             type: 'SET_USER',
-            user
+            user,
         })
         return user
     } catch (err) {
@@ -43,7 +58,7 @@ export async function signup(credentials) {
         const user = await userService.signup(credentials)
         store.dispatch({
             type: 'SET_USER',
-            user
+            user,
         })
         return user
     } catch (err) {
@@ -57,7 +72,7 @@ export async function logout() {
         await userService.logout()
         store.dispatch({
             type: 'SET_USER',
-            user: null
+            user: null,
         })
     } catch (err) {
         console.log('Cannot logout', err)

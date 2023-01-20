@@ -21,23 +21,44 @@
                 // justify-self: center;
             }
         }
-        .tool {
-            cursor: pointer;
-            font-size: 1.25rem;
-            transition: background-color 0.2s;
-            display: flex;
-            justify-content: center;
-            align-self: center;
-            margin: $spacing-xxs $spacing-xs $spacing-xxs 0;
-            padding: $spacing-xxs $spacing-xs;
-            border-radius: $spacing-xxs;
-            &:hover {
-                background-color: $editor-hover-bg;
-            }
-            &.active {
-                color: $editor-active-clr;
-                background-color: $editor-active-bg;
-            }
+    }
+}
+.tool {
+    color: $clr15;
+    cursor: pointer;
+    font-size: px-to-rem(20px);
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 0 $spacing-s;
+    background-color: transparent;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: $spacing-xxs;
+        width: 30px;
+        height: 30px;
+        z-index: -1;
+        transform: scale(0.25);
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+    &:hover {
+        &::before {
+            transform: scale(1);
+            color: lighten($clr2, 10%);
+            background-color: $editor-lightgray;
+        }
+    }
+    transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    &.active {
+        color: $editor-active-clr;
+        &::before {
+            transform: scale(1);
+            background-color: $editor-active-bg;
         }
     }
 }

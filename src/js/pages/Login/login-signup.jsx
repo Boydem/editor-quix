@@ -1,4 +1,4 @@
-import { login, logout, signup } from '../../store/user.actions'
+import { login, logout, signup } from '../../store/user/user.actions'
 import { useState } from 'react'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { useNavigate } from 'react-router'

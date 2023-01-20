@@ -1,6 +1,6 @@
 import { combineReducers, legacy_createStore } from 'redux'
 
-import { userReducer } from './user.reducer.js'
+import { userReducer } from './user/user.reducer.js'
 import { systemReducer } from './system.reducer'
 import { wapReducer } from './wap/wap.reducer.js'
 
