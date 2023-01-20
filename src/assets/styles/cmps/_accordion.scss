@@ -140,3 +140,15 @@
         }
     }
 }
+
+.edit-map {
+    .marker {
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.3fr;
+        gap: 1rem;
+        button {
+            align-self: flex-end;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
