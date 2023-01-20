@@ -3,13 +3,15 @@
     "type": "div",
     "name": "wap-2-map-and-form",
     "category": "cta",
-    "cmps": [{
+    "cmps": [
+        {
             "id": "trewzs",
             "type": "form",
             "name": "wap-2-cta",
             "category": "cta",
             "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-1_rkvur1.jpg",
-            "cmps": [{
+            "cmps": [
+                {
                     "id": "828h0t",
                     "type": "h2",
                     "name": "",
@@ -26,25 +28,27 @@
                         "txt": "Be the first to know about new games, exclusive previews & special promotions"
                     },
                     "cmps": []
-                }, {
+                },
+                {
                     "id": "n7CfDs",
                     "type": "label",
                     "name": "subscribe-input",
                     "content": {
                         "txt": "Email Address"
                     },
-                    "cmps": [{
-                        "id": "n7CkNR",
-                        "type": "input",
-                        "name": "subscribe-input",
-                        "inputName": "inputName1",
-                        "content": {
-                            "placeholder": "Email Address"
-                        },
-                        "cmps": []
-                    }]
+                    "cmps": [
+                        {
+                            "id": "n7CkNR",
+                            "type": "input",
+                            "name": "subscribe-input",
+                            "inputName": "inputName1",
+                            "content": {
+                                "placeholder": "Email Address"
+                            },
+                            "cmps": []
+                        }
+                    ]
                 },
-
                 {
                     "id": "fdsSa3s",
                     "type": "label",
@@ -52,16 +56,18 @@
                     "content": {
                         "txt": "Email Address"
                     },
-                    "cmps": [{
-                        "id": "n7f43D",
-                        "type": "input",
-                        "name": "subscribe-input-2",
-                        "inputName": "inputName2",
-                        "content": {
-                            "placeholder": "Email Address"
-                        },
-                        "cmps": []
-                    }]
+                    "cmps": [
+                        {
+                            "id": "n7f43D",
+                            "type": "input",
+                            "name": "subscribe-input-2",
+                            "inputName": "inputName2",
+                            "content": {
+                                "placeholder": "Email Address"
+                            },
+                            "cmps": []
+                        }
+                    ]
                 },
                 {
                     "id": "z1EOxc",
@@ -83,24 +89,28 @@
                 "lat": 32.3215,
                 "lng": 34.8532,
                 "zoom": 10,
-                "markers": [{
-                    "name": "Marker1",
-                    "id": "123445",
-                    "lat": 32.3215,
-                    "lng": 34.8532
-                }, {
-                    "name": "Marker2",
-                    "id": "123465",
-                    "lat": 32.3615,
-                    "lng": 34.8932
-                }]
+                "markers": [
+                    {
+                        "name": "Marker1",
+                        "id": "123445",
+                        "lat": 32.3215,
+                        "lng": 34.8532
+                    },
+                    {
+                        "name": "Marker2",
+                        "id": "123465",
+                        "lat": 32.3615,
+                        "lng": 34.8932
+                    }
+                ]
             }
-        }, {
+        },
+        {
             "id": "z1321d",
             "type": "video",
             "name": "",
             "content": {
-                "url": "https://www.youtube.com/embed?v=LlU4FuIJT2k"
+                "url": "https://www.youtube.com/embed/LlU4FuIJT2k"
             },
             "cmps": []
         }
