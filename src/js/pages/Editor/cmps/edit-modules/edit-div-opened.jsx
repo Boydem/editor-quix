@@ -3,7 +3,7 @@ import { BsChevronDown } from 'react-icons/bs'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export function EditDiv({ clickedCmp, elClickedNode }) {
+export function EditDivOpened({ clickedCmp, elClickedNode }) {
     const [currImage, setCurrImage] = useState(
         window.getComputedStyle(elClickedNode).getPropertyValue('background').split(`"`)[1]
     )
@@ -12,9 +12,6 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
     }, [elClickedNode])
 
     const expandedRef = useRef()
-    function setIsExpanded() {
-        expandedRef.current.classList.toggle('hidden')
-    }
 
     async function onImgInput(event) {
         try {
@@ -33,13 +30,7 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
 
     return (
         <div className='adjust inside-accordion'>
-            <div className='header' onClick={setIsExpanded}>
-                <p>Div</p>
-                <button>
-                    <BsChevronDown />
-                </button>
-            </div>
-            <div className='expanded-content hidden edit-div' ref={expandedRef}>
+            <div className='expanded-content edit-div' ref={expandedRef}>
                 <div className='wrapper'>
                     <label>
                         Upload
