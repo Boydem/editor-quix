@@ -8,7 +8,7 @@
     overflow-x: hidden;
 
     .wrapper {
-        // container-type: inline-size;
+        container-type: inline-size;
         margin: auto;
         box-shadow: 0px -5px 32px 24px rgba($clr7, 0.125);
         border-radius: $spacing-s;
