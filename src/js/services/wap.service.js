@@ -15,9 +15,10 @@ export const wapService = {
     save,
     getEditedWap,
     getCmpsByCategory,
-    updateCmp,
+    findParentCmp,
     getWapByUrl,
-    // saveCmp,
+    removeCmp,
+    saveCmp,
 }
 
 let gCmpsMap
@@ -149,14 +150,18 @@ function _createWaps() {
 }
 
 function saveCmp(cmp, index, parentCmp) {
-    parentCmp[index] = cmp
+    parentCmp.cmps.splice(index, 1, cmp)
 }
 
-function updateCmp(cmp, parentCmp, cb) {
+function findParentCmp(cmp, parentCmp, cb) {
     const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
     if (isFoundCmpIndex > -1) {
-        saveCmp(cmp, isFoundCmpIndex, parentCmp)
+        cb(cmp, isFoundCmpIndex, parentCmp)
     } else {
-        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
+        return parentCmp?.cmps?.forEach(c => findParentCmp(cmp, c, cb))
     }
+}
+
+function removeCmp(cmp, index, parentCmp) {
+    parentCmp.cmps.splice(index, 1)
 }

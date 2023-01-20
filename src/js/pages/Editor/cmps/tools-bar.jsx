@@ -6,6 +6,7 @@ import { AiOutlineBold } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { GoDeviceDesktop } from 'react-icons/go'
 import { BiMobileAlt } from 'react-icons/bi'
+import { FaTrash } from 'react-icons/fa'
 import { AiOutlineMobile } from 'react-icons/ai'
 import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
@@ -16,22 +17,33 @@ import { FiMessageSquare } from 'react-icons/fi'
 import { CgColorPicker } from 'react-icons/cg'
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { useState } from 'react'
+import { removeCmp } from '../../../store/wap/wap.action'
+import { useSelector } from 'react-redux'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
-    const [currActive, setCurrActive] = useState(null)
+    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    
     const tools = [
-        { side: 'left', module: 'add' },
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
     ]
     function onToolClick(side, stateChanges) {
-        if (stateChanges.currModule === currActive) {
-            handleSidebarsChanges(side, { isOpen: false, context: null, currModule: null })
-            setCurrActive(null)
+        if (stateChanges.currModule === leftSidebarState.currModule) {
+            handleSidebarsChanges(side, {
+                isOpen: false,
+
+                currModule: null,
+                isSubMenuOpen: !leftSidebarState.isSubMenuOpen,
+            })
             return
         } else {
             handleSidebarsChanges(side, { ...stateChanges })
-            setCurrActive(stateChanges.currModule)
+        }
+    }
+
+    function onRemoveCmp() {
+        if (clickedCmp) {
+            removeCmp(clickedCmp)
         }
     }
     return (
@@ -44,12 +56,13 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                             onToolClick(tool.side, {
                                 isOpen: true,
                                 currModule: tool.module,
-                                isSubMenuOpen: tool.module !== 'add' ? true : false,
+                                activeMenuItem: null,
+                                isSubMenuOpen: true,
                             })
                         }
-                        className={`${currActive === tool.module ? 'active' : ''} tool`}
+                        className={`${leftSidebarState.currModule === tool.module ? 'active' : ''} tool`}
                     >
-                        {tool.module === 'add' && <AiOutlinePlus />}
+                        {/* {tool.module === 'add' && <AiOutlinePlus />} */}
                         {tool.module === 'layers' && <FiLayers />}
                         {tool.module === 'themes' && <IoColorFilterOutline />}
                     </button>
@@ -72,6 +85,9 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             <div className='tools tools-views flex align-center'>
                 <div className='responsive-btns flex align-center'>
                     <div className='btns-undo-redo flex align-center'>
+                        <button className='tool' onClick={onRemoveCmp}>
+                            <FaTrash />
+                        </button>
                         <button className='tool'>
                             <GrUndo />
                         </button>

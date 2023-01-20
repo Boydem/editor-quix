@@ -10,7 +10,9 @@ export function HomeHeader() {
     }
     return (
         <header className='home-header flex justify-between full'>
-            <span className='logo'>Webix.</span>
+            <Link to='/' className='logo'>
+                Webix.
+            </Link>
             <div onClick={toggleMenu} className='btn-mobile-menu'>
                 <FaBars />
             </div>

@@ -39,7 +39,9 @@ export function AppHeader() {
     return (
         <header className='app-header full'>
             <div className='logo-container'>
-                <span className='logo'>Webix.</span>
+                <Link to='/' className='logo'>
+                    Webix.
+                </Link>
             </div>
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>

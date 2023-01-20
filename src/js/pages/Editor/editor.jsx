@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux'
 import { saveWap, setIsEditing } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
-import { FiEdit2 } from 'react-icons/fi'
 
 export function Editor() {
     // wap states
@@ -20,13 +19,12 @@ export function Editor() {
     const { wapId } = useParams()
 
     // sidebars states
-    const [rightSidebarState, setRightSidebarState] = useState({ context: null, isOpen: false, currModule: null })
+    const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false, currModule: null })
     const [leftSidebarState, setLeftSidebarState] = useState({
-        context: null,
         isOpen: false,
         prevModule: null,
-        currModule: 'add',
-        activeMenuItem: 'quick add',
+        currModule: null,
+        activeMenuItem: null,
         isSubMenuOpen: false,
     })
 
@@ -38,7 +36,6 @@ export function Editor() {
             setIsEditing(false)
         }
     }, [])
-    // console.log(rightSidebarState.context)
 
     useEffect(() => {
         handleSidebarsChanges('right', { context: clickedCmp?.type || 'Edit' })

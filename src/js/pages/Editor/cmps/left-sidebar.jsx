@@ -32,12 +32,22 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
-    console.log('leftSidebarState.isSubMenuOpen:', leftSidebarState.isSubMenuOpen)
+
     return (
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
             {
                 <div className={`${leftSidebarState.currModule} module-menu`}>
-                    <div className='indicator'>
+                    <div
+                        onClick={() =>
+                            handleSidebar({
+                                isOpen: !leftSidebarState.isOpen,
+                                isSubMenuOpen: false,
+                                activeMenuItem: 'Quick add',
+                                currModule: leftSidebarState.currModule !== 'add' ? 'add' : null,
+                            })
+                        }
+                        className='indicator'
+                    >
                         <AiOutlinePlus />
                     </div>
                     {addMenuItems.map((menuItems, idx) => (
@@ -47,6 +57,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                                     className={leftSidebarState.activeMenuItem === menuItem ? 'active' : ''}
                                     onClick={() => {
                                         handleSidebar({
+                                            isOpen: true,
                                             isSubMenuOpen: true,
                                             activeMenuItem: menuItem,
                                         })
@@ -64,7 +75,11 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                 className={`${leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}
             >
                 <div className='module-header'>
-                    <span className='module-name'>{leftSidebarState.currModule}</span>
+                    <span className='module-name'>
+                        {leftSidebarState.currModule === 'add'
+                            ? leftSidebarState.activeMenuItem
+                            : leftSidebarState.currModule}
+                    </span>
                     <div className='actions'>
                         <span
                             onClick={() => {

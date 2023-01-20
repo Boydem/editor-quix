@@ -13,7 +13,9 @@
 
     outline: solid 2px $editor-outline !important;
 }
-
+.video-disabled {
+    pointer-events: none;
+}
 .selected-actions {
     position: absolute;
     z-index: 1;
