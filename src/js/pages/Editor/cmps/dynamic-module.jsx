@@ -1,10 +1,10 @@
 import { CmpFractions } from './modules/cmp-fractions'
 
-export function DynamicModule({ currModule, addMenuItems }) {
-    if (!currModule) return
+export function DynamicModule({ activeMenuItem, addMenuItems }) {
+    if (!activeMenuItem) return
 
-    if (addMenuItems[1].includes(currModule)) {
-        return <CmpFractions currModule={currModule} />
+    if (addMenuItems[1].includes(activeMenuItem)) {
+        return <CmpFractions activeMenuItem={activeMenuItem} />
     }
 
     // switch (activeModule) {
