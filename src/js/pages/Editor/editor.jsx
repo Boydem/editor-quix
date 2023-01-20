@@ -29,8 +29,6 @@ export function Editor() {
         isSubMenuOpen: false,
     })
 
-    const selectedActionsRef = useRef()
-
     useEffect(() => {
         loadWap()
         setIsEditing(true)
@@ -71,7 +69,6 @@ export function Editor() {
     function handleOnDragStart() {
         // setSidebarOpen(false)
     }
-    console.log('YE')
     if (Object.keys(wap).length === 0) return
     return (
         <>
@@ -83,16 +80,7 @@ export function Editor() {
                     handleSidebarsChanges={handleSidebarsChanges}
                 />
                 <div className='editor-layout full'>
-                    <div
-                        className='selected-actions'
-                        ref={selectedActionsRef}
-                        onClick={() => {
-                            setRightSidebarState(prev => ({ ...prev, isOpen: true }))
-                        }}
-                    >
-                        <FiEdit2 />
-                    </div>
-                    <EditorPreview wapCmps={wap.cmps} selectedActionsRef={selectedActionsRef} />
+                    <EditorPreview wapCmps={wap.cmps} setRightSidebarState={setRightSidebarState} />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                     <LeftSidebar leftSidebarState={leftSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                 </div>

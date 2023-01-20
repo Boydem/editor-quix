@@ -25,6 +25,7 @@ $editor-bg: #f9f9f9;
 $editor-active-bg: #dce9ff;
 $editor-active-clr: #116dff;
 $editor-hover-bg: #f4f5f8;
+$editor-outline: #07396e;
 
 // font
 $font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -53,6 +54,7 @@ $break-xwide: 1920px;
 $home-header-height: 72px;
 $app-header-height: 52px + 1px; // 1px for border-bottom addition
 $toolbar-height: 44px + 1px; // 1px for border-bottom addition
+$right-sidebar-width: 260px;
 
 // LAYOUT
 $layoutPadding: $base-font-size * 5.063;
