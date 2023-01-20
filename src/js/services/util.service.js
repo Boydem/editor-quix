@@ -6,7 +6,7 @@ export const utilService = {
     randomPastTime,
     saveToStorage,
     loadFromStorage,
-    getLeftRightPropertiesForDrag
+    getLeftRightPropertiesForDrag,
 }
 
 export function makeId(length = 6) {
@@ -21,7 +21,40 @@ export function makeId(length = 6) {
 }
 
 function makeLorem(size = 100) {
-    var words = ['The sky', 'above', 'the port', 'was', 'the color of television', 'tuned', 'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn']
+    var words = [
+        'The sky',
+        'above',
+        'the port',
+        'was',
+        'the color of television',
+        'tuned',
+        'to',
+        'a dead channel',
+        '.',
+        'All',
+        'this happened',
+        'more or less',
+        '.',
+        'I',
+        'had',
+        'the story',
+        'bit by bit',
+        'from various people',
+        'and',
+        'as generally',
+        'happens',
+        'in such cases',
+        'each time',
+        'it',
+        'was',
+        'a different story',
+        '.',
+        'It',
+        'was',
+        'a pleasure',
+        'to',
+        'burn',
+    ]
     var txt = ''
     while (size > 0) {
         size--
@@ -33,9 +66,8 @@ function makeLorem(size = 100) {
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
+    return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
 }
-
 
 function randomPastTime() {
     const HOUR = 1000 * 60 * 60
@@ -46,11 +78,13 @@ function randomPastTime() {
     return Date.now() - pastTime
 }
 
-function debounce(func, timeout = 300){
+function debounce(func, timeout = 300) {
     let timer
     return (...args) => {
-      clearTimeout(timer)
-      timer = setTimeout(() => { func.apply(this, args) }, timeout)
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            func.apply(this, args)
+        }, timeout)
     }
 }
 
@@ -60,24 +94,23 @@ function saveToStorage(key, value) {
 
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
-    return (data) ? JSON.parse(data) : undefined
+    return data ? JSON.parse(data) : undefined
 }
 
-function getLeftRightPropertiesForDrag(ev,resizingState){
+function getLeftRightPropertiesForDrag(ev, resizingState) {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) - 25
     let leftLeft
-        let rightLeft
-        if (resizingState.draggingResizer === 'left') {
-            leftLeft = ev.clientX + 5
-            rightLeft = vw - ev.clientX - 15
-        }
-        if (resizingState.draggingResizer === 'right') {
-            leftLeft = vw - ev.clientX + 5
-            rightLeft = ev.clientX - 15
-        }
+    let rightLeft
+    if (resizingState.draggingResizer === 'left') {
+        leftLeft = ev.clientX + 5
+        rightLeft = vw - ev.clientX - 15
+    }
+    if (resizingState.draggingResizer === 'right') {
+        leftLeft = vw - ev.clientX + 5
+        rightLeft = ev.clientX - 15
+    }
 
-        leftLeft = Math.min(leftLeft, vw / 2 - 200)
-        rightLeft = Math.max(rightLeft, vw / 2 + 200)
-        return [leftLeft, rightLeft]
-        
+    leftLeft = Math.min(leftLeft, vw / 2 - 250)
+    rightLeft = Math.max(rightLeft, vw / 2 + 250)
+    return [leftLeft, rightLeft]
 }
