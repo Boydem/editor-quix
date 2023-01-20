@@ -10,7 +10,7 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
         <div className={`right-sidebar ${rightSidebarState.isOpen ? 'open' : ''}`}>
             <div className='module-content'>
                 <div className='module-header'>
-                    <span className='module-name'>Edit</span>
+                    <span className='module-name'>{rightSidebarState.context}</span>
                     <div className='actions'>
                         <span
                             onClick={() => {
@@ -23,7 +23,7 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                     </div>
                 </div>
                 {/* <AccordionEdit /> */}
-                <Accordion />
+                <Accordion context={rightSidebarState.context} />
             </div>
         </div>
     )
