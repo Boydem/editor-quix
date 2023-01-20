@@ -20,9 +20,8 @@ export function Editor() {
     const { wapId } = useParams()
 
     // sidebars states
-    const [rightSidebarState, setRightSidebarState] = useState({ context: null, isOpen: false, currModule: null })
+    const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false, currModule: null })
     const [leftSidebarState, setLeftSidebarState] = useState({
-        context: null,
         isOpen: false,
         prevModule: null,
         currModule: 'add',

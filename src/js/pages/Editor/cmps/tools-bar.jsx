@@ -18,19 +18,21 @@ import { IoColorFilterOutline } from 'react-icons/io5'
 import { useState } from 'react'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
-    const [currActive, setCurrActive] = useState(null)
     const tools = [
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
     ]
     function onToolClick(side, stateChanges) {
-        if (stateChanges.currModule === currActive) {
-            handleSidebarsChanges(side, { isOpen: false, context: null, currModule: null })
-            setCurrActive(null)
+        if (stateChanges.currModule === leftSidebarState.currModule) {
+            handleSidebarsChanges(side, {
+                isOpen: false,
+
+                currModule: null,
+                isSubMenuOpen: !leftSidebarState.isSubMenuOpen,
+            })
             return
         } else {
             handleSidebarsChanges(side, { ...stateChanges })
-            setCurrActive(stateChanges.currModule)
         }
     }
     return (
@@ -43,12 +45,11 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                             onToolClick(tool.side, {
                                 isOpen: true,
                                 currModule: tool.module,
-                                isSubMenuOpen: tool.module !== 'add' ? true : false,
+                                activeMenuItem: null,
+                                isSubMenuOpen: true,
                             })
                         }
-                        className={`${
-                            currActive === tool.module && leftSidebarState.currModule !== 'add' ? 'active' : ''
-                        } tool`}
+                        className={`${leftSidebarState.currModule === tool.module ? 'active' : ''} tool`}
                     >
                         {/* {tool.module === 'add' && <AiOutlinePlus />} */}
                         {tool.module === 'layers' && <FiLayers />}

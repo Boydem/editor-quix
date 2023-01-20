@@ -32,6 +32,8 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
+    console.log('leftSidebarState:', leftSidebarState)
+    console.log('currModule:', leftSidebarState.currModule)
     return (
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
             {
@@ -40,7 +42,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                         onClick={() =>
                             handleSidebar({
                                 isOpen: !leftSidebarState.isOpen,
-                                isSubMenuOpen: leftSidebarState.module !== 'add' ? true : false,
+                                isSubMenuOpen: false,
                                 activeMenuItem: 'Quick add',
                                 currModule: leftSidebarState.currModule !== 'add' ? 'add' : null,
                             })
@@ -56,6 +58,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                                     className={leftSidebarState.activeMenuItem === menuItem ? 'active' : ''}
                                     onClick={() => {
                                         handleSidebar({
+                                            isOpen: true,
                                             isSubMenuOpen: true,
                                             activeMenuItem: menuItem,
                                         })
