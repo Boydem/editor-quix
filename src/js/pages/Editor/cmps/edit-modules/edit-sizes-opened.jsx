@@ -5,10 +5,7 @@ import { saveCmp } from '../../../../store/wap/wap.action'
 import SelectUnit from '../ui-cmps/select'
 
 export function EditSizesOpened() {
-    const expandedRef = useRef()
-
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
 
     const sizeOptions = [
         { name: 'width', title: 'width', unit: 'px', value: 0 },
@@ -22,7 +19,6 @@ export function EditSizesOpened() {
 
     function handleChange(ev, idx) {
         ev.preventDefault()
-        // if (!lastClickedCmp) return
         const { name, value } = ev.target
         const newPropsToEdit = [...propToEdit]
         newPropsToEdit[idx] = { ...newPropsToEdit[idx], value: value }
@@ -37,27 +33,25 @@ export function EditSizesOpened() {
     }
 
     return (
-        <div className='inside-accordion inputs'>
-            <div className='option-body expanded-content' ref={expandedRef}>
-                {propToEdit.map((option, idx) => (
-                    <div key={idx} className='param-box grid-2-col'>
-                        <label htmlFor={option.name}>{option.title}</label>
-                        <div className='input-wrapper'>
-                            <input
-                                info={option.unit}
-                                type='number'
-                                name={option.name}
-                                id={option.name}
-                                value={option.value}
-                                onChange={ev => handleChange(ev, idx)}
-                            />
-                            <div className='unit'>
-                                <SelectUnit />
-                            </div>
+        <div className='adjust-inputs'>
+            {propToEdit.map((option, idx) => (
+                <div key={idx} className='param-box'>
+                    <label htmlFor={option.name}>{option.title}</label>
+                    <div className='input-wrapper'>
+                        <input
+                            info={option.unit}
+                            type='number'
+                            name={option.name}
+                            id={option.name}
+                            value={option.value}
+                            onChange={ev => handleChange(ev, idx)}
+                        />
+                        <div className='unit'>
+                            <SelectUnit />
                         </div>
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
     )
 }
