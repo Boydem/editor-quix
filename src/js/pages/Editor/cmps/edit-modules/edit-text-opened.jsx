@@ -14,10 +14,7 @@ export function EditTextOpened() {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const expandedRef = useRef()
 
-    useEffect(() => {
-        if (elClickedNode) {
-        }
-    }, [])
+    
 
     function openTextColorPalette() {
         setIsBorderPaletteOpen(false)
