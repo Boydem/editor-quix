@@ -307,7 +307,45 @@
     font-family: 'Syne', sans-serif;
 }
 
-@container (max-width: 1050px) {
+// @container (max-width: 1050px) {
+//     .wap-3-team {
+//         .team-cards-container {
+//             .team-card {
+//                 img {
+//                     width: 75%;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @container (max-width: 700px) {
+//     .wap-3-hero {
+//         .teaser-container {
+//             h1 {
+//                 font-size: 4rem;
+//             }
+//         }
+//     }
+//     .wap-3-about {
+//         display: flex;
+//         flex-direction: column;
+//     }
+
+//     .wap-3-team {
+//         h2 {
+//             padding-bottom: 3rem;
+//             font-size: 3rem;
+//         }
+//     }
+
+//     .wap-3-services {
+//         display: flex;
+//         flex-direction: column;
+//         text-align: center;
+//     }
+// }
+
+.tablet-layout {
     .wap-3-team {
         .team-cards-container {
             .team-card {
@@ -318,7 +356,8 @@
         }
     }
 }
-@container (max-width: 700px) {
+
+.mobile-layout {
     .wap-3-hero {
         .teaser-container {
             h1 {

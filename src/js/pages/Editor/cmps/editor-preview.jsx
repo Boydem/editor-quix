@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 export function EditorPreview({ wapCmps, setRightSidebarState }) {
     const editorResizerRef = [useRef(), useRef()]
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
+    const wap = useSelector(storeState => storeState.wapModule.wap)
     let resizingState = { isResizing: false, draggingResizer: null }
     const editorWrapper = useRef()
     const selectedActionsRef = useRef()
@@ -42,6 +43,9 @@ export function EditorPreview({ wapCmps, setRightSidebarState }) {
         editorResizerRef[1].current.style.left = `${rightResizerLeftProperty}px`
         editorResizerRef[0].current.style.left = `${leftResizerLeftProperty}px`
         editorWrapper.current.style.width = `${rightResizerLeftProperty - leftResizerLeftProperty - 30}px`
+        const editorSize = rightResizerLeftProperty - leftResizerLeftProperty - 30
+        editorWrapper.current.classList.toggle('mobile-layout', editorSize < wap.breakpoints.mobileLayout)
+        editorWrapper.current.classList.toggle('tablet-layout', editorSize < wap.breakpoints.tabletLayout)
     }
 
     function onEditPopup(ev) {

@@ -117,6 +117,10 @@ function _createWaps() {
                 cmps: getDemoCmps1(),
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
                 themeClass: 'wap1-primary',
+                breakpoints: {
+                    mobileLayout: 800,
+                    tabletLayout: 1350,
+                },
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
                 title: 'WeDu',
@@ -128,6 +132,10 @@ function _createWaps() {
                 cmps: getDemoCmps2(),
                 pallete: ['#a3eee9', '#0b1321', '#8b95a6', '#eef'],
                 themeClass: 'wap2-primary',
+                breakpoints: {
+                    tabletLayout: 1000,
+                },
+
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
                 title: 'Gigaplay',
@@ -139,6 +147,11 @@ function _createWaps() {
                 cmps: getDemoCmps3(),
                 pallete: ['#dcdcdc', '#303030', '#5783de'],
                 themeClass: 'wap3-primary',
+                breakpoints: {
+                    mobileLayout: 700,
+                    tabletLayout: 1050,
+                },
+
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
                 title: 'Finclvr',
