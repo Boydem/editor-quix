@@ -24,8 +24,8 @@ export function Editor() {
     const [leftSidebarState, setLeftSidebarState] = useState({
         isOpen: false,
         prevModule: null,
-        currModule: 'add',
-        activeMenuItem: 'quick add',
+        currModule: null,
+        activeMenuItem: null,
         isSubMenuOpen: false,
     })
 

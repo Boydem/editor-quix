@@ -1,0 +1,11 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: $spacing-m auto repeat(4, 1fr) $spacing-m;
+
+    .dashboard-sidebar {
+        .dashboard-menu {
+        }
+    }
+    .dashboard-main {
+    }
+}

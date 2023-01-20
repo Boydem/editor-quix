@@ -32,8 +32,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
-    console.log('leftSidebarState:', leftSidebarState)
-    console.log('currModule:', leftSidebarState.currModule)
+
     return (
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
             {
@@ -76,7 +75,11 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                 className={`${leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}
             >
                 <div className='module-header'>
-                    <span className='module-name'>{leftSidebarState.currModule}</span>
+                    <span className='module-name'>
+                        {leftSidebarState.currModule === 'add'
+                            ? leftSidebarState.activeMenuItem
+                            : leftSidebarState.currModule}
+                    </span>
                     <div className='actions'>
                         <span
                             onClick={() => {

@@ -1,7 +1,7 @@
 .left-sidebar {
     min-height: calc(100vh - $app-header-height + $toolbar-height);
     max-height: calc(100vh - $app-header-height + $toolbar-height);
-
+    pointer-events: none;
     z-index: 9999;
     position: fixed;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -12,6 +12,7 @@
     left: 0;
 
     &.open {
+        pointer-events: all;
         // transform: translateX(0%);
     }
     .module-menu {
@@ -23,6 +24,7 @@
         left: -$modules-menu-width;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         .indicator {
+            pointer-events: all;
             position: absolute;
             inset: 0;
             right: 0;
@@ -62,6 +64,7 @@
         }
     }
     .module-content {
+        pointer-events: all;
         z-index: -1;
         position: absolute;
         width: $modules-content-width;
@@ -88,6 +91,7 @@
 }
 
 .module-menu {
+    pointer-events: all;
     z-index: 2;
     // box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
     border-right: 1px solid $editor-lightgray;
@@ -115,6 +119,7 @@
     // max-width: ;
 }
 .module-content {
+    pointer-events: all;
     min-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     display: grid;
