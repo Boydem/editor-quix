@@ -10,13 +10,14 @@ import {
 
 export function TextToolbar({ handleTextStyleChange }) {
     return (
-        <Toolbar.Root className='ToolbarRoot' aria-label='Formatting options'>
+        <Toolbar.Root className='ToolbarRoot b-btm' aria-label='Formatting options'>
             <Toolbar.ToggleGroup type='multiple' aria-label='Text formatting'>
                 <Toolbar.ToggleItem
                     onClick={() => handleTextStyleChange('fontWeight', 'bold')}
                     className='ToolbarToggleItem'
                     value='bold'
                     aria-label='Bold'
+                    // defaultValue={}
                 >
                     <FontBoldIcon />
                 </Toolbar.ToggleItem>

@@ -1,27 +1,9 @@
 import React, { useEffect } from 'react'
 import { useRef, useState } from 'react'
-import * as Select from '@radix-ui/react-select'
-import classnames from 'classnames'
 import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
-import { BiFontColor } from 'react-icons/bi'
-import { IoMdColorFill } from 'react-icons/io'
 import { useSelector } from 'react-redux'
-import {
-    AiOutlineAlignLeft,
-    AiOutlineAlignRight,
-    AiOutlineAlignCenter,
-    AiOutlineBold,
-    AiOutlineItalic,
-    AiOutlineUnderline,
-} from 'react-icons/ai'
-import { CheckIcon } from '@radix-ui/react-icons'
-import * as Slider from '@radix-ui/react-slider'
-
 import { saveCmp } from '../../../../store/wap/wap.action'
-import { showErrorMsg } from '../../../../services/event-bus.service'
-import { TextShadowSelect } from '../text-shadow-select'
-import { FontFamilySelect } from '../font-family-select'
 import { TextToolbar } from '../ui-cmps/text-toolbar'
 
 export function EditText() {
@@ -31,12 +13,6 @@ export function EditText() {
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const expandedRef = useRef()
-    const [borderRadiusValue, setBorderRadiusValue] = useState(
-        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius'))]) || [0]
-    )
-    const [fontSizeValue, setFontSizeValue] = useState(
-        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size'))]) || [0]
-    )
 
     useEffect(() => {
         if (elClickedNode) {
@@ -47,51 +23,10 @@ export function EditText() {
         expandedRef.current.classList.toggle('hidden')
     }
 
-    const SelectItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => {
-        return (
-            <Select.Item className={classnames('SelectItem', className)} {...props} ref={forwardedRef}>
-                <Select.ItemText>{children}</Select.ItemText>
-                <Select.ItemIndicator className='SelectItemIndicator'>
-                    <CheckIcon />
-                </Select.ItemIndicator>
-            </Select.Item>
-        )
-    })
-
     function openTextColorPalette() {
         setIsBorderPaletteOpen(false)
         setIsBgPaletteOpen(false)
         setIsTextPaletteOpen(prev => !prev)
-    }
-    function openBorderColorPalette() {
-        setIsTextPaletteOpen(false)
-        setIsBgPaletteOpen(false)
-        setIsBorderPaletteOpen(prev => !prev)
-    }
-    function openBgColorPalette() {
-        setIsTextPaletteOpen(false)
-        setIsBorderPaletteOpen(false)
-        setIsBgPaletteOpen(prev => !prev)
-    }
-
-    async function handleFontFamilyChange(val) {
-        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
-        lastClickedCmp.style = { ...lastClickedCmp.style, fontFamily: val }
-        try {
-            saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log('Failed to save lastClickedCmp edit', err)
-        }
-    }
-
-    async function handleTextShadowChange(val) {
-        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
-        lastClickedCmp.style = { ...lastClickedCmp.style, filter: `drop-shadow(0 0 ${val}rem black)` }
-        try {
-            saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log('Failed to save lastClickedCmp at edit', err)
-        }
     }
 
     async function handleColorChange(color) {
@@ -127,33 +62,6 @@ export function EditText() {
         }
     }
 
-    function handleFontSliderChange(ev) {
-        setFontSizeValue(ev[0])
-        elClickedNode.style.fontSize = `${ev[0]}px`
-    }
-
-    async function handleFontSliderCommit(ev) {
-        elClickedNode.style.fontSize = `${ev[0]}px`
-        lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleChange`, err)
-        }
-    }
-    async function handleBorderSliderChange(ev) {
-        setBorderRadiusValue(ev[0])
-        elClickedNode.style.borderRadius = `${ev[0]}px`
-    }
-    async function handleBorderSliderCommit(ev) {
-        lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
-        }
-    }
-
     return (
         <div className='adjust inside-accordion'>
             <div className='header' onClick={setIsExpanded}>
@@ -164,102 +72,29 @@ export function EditText() {
             </div>
 
             <div className='expanded-content hidden' ref={expandedRef}>
-                <TextToolbar handleTextStyleChange={handleTextStyleChange} />
+                <TextToolbar elClickedNode={elClickedNode} handleTextStyleChange={handleTextStyleChange} />
 
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openTextColorPalette}>
-                        <BiFontColor />
-                    </button>
-                    {isTextPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.color}
-                        />
-                    )}
-                </div>
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openBgColorPalette}>
-                        <IoMdColorFill />
-                    </button>
-                    {isBgPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.backgroundColor}
-                        />
-                    )}
-                </div>
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openBorderColorPalette}>
-                        Border Color
-                    </button>
-                    {isBorderPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.borderColor}
-                        />
-                    )}
-                </div>
-
-                <div className='font-family-select'>
-                    {/* <SelectFontFamily /> */}
-                    <FontFamilySelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
-                </div>
-
-                <div className='text-shadow-select'>
-                    {/* <SelectTextShadow /> */}
-                    <TextShadowSelect handleTextShadowChange={handleTextShadowChange} SelectItem={SelectItem} />
-                </div>
-
-                <form className='slider-form'>
-                    <label htmlFor=''>Font Size</label>
-                    <Slider.Root
-                        // value={fontSliderValue}
-                        value={
-                            (elClickedNode && [
-                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size')),
-                            ]) || [16]
+                <div className='color-pick b-btm'>
+                    <label onClick={openTextColorPalette}>Color</label>
+                    <div
+                        onClick={openTextColorPalette}
+                        style={{
+                            backgroundColor: `${
+                                elClickedNode && window.getComputedStyle(elClickedNode).getPropertyValue('color')
+                            }`,
+                        }}
+                        className='curr-color'
+                    ></div>
+                    <BlockPicker
+                        className={`${isTextPaletteOpen ? 'open' : ''} palette`}
+                        onChange={handleColorChange}
+                        triangle={'hide'}
+                        color={
+                            (elClickedNode && window.getComputedStyle(elClickedNode).getPropertyValue('color')) ||
+                            '#000'
                         }
-                        className='SliderRoot'
-                        defaultValue={[16]}
-                        max={100}
-                        step={1}
-                        aria-label='Volume'
-                        onValueChange={handleFontSliderChange}
-                        onValueCommit={handleFontSliderCommit}
-                    >
-                        <Slider.Track className='SliderTrack' value={50}>
-                            <Slider.Range className='SliderRange' />
-                        </Slider.Track>
-                        <Slider.Thumb className='SliderThumb' />
-                    </Slider.Root>
-                </form>
-                <form className='slider-form'>
-                    <label htmlFor=''>Border Radius</label>
-                    <Slider.Root
-                        value={
-                            (elClickedNode && [
-                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius')),
-                            ]) || [0]
-                        }
-                        className='SliderRoot'
-                        max={50}
-                        step={1}
-                        aria-label='Volume'
-                        onValueChange={handleBorderSliderChange}
-                        onValueCommit={handleBorderSliderCommit}
-                    >
-                        <Slider.Track className='SliderTrack'>
-                            <Slider.Range className='SliderRange' />
-                        </Slider.Track>
-                        <Slider.Thumb className='SliderThumb' />
-                    </Slider.Root>
-                </form>
+                    />
+                </div>
             </div>
         </div>
     )

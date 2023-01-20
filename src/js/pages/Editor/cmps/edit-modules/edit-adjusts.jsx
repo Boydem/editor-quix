@@ -23,120 +23,42 @@ import { showErrorMsg } from '../../../../services/event-bus.service'
 import { TextShadowSelect } from '../text-shadow-select'
 import { FontFamilySelect } from '../font-family-select'
 import { TextToolbar } from '../ui-cmps/text-toolbar'
+import SelectUnit from '../ui-cmps/select'
 
 export function EditAdjusts() {
-    const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
-    const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
-    const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
-    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const expandedRef = useRef()
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
     }
 
-    const SelectItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => {
-        return (
-            <Select.Item className={classnames('SelectItem', className)} {...props} ref={forwardedRef}>
-                <Select.ItemText>{children}</Select.ItemText>
-                <Select.ItemIndicator className='SelectItemIndicator'>
-                    <CheckIcon />
-                </Select.ItemIndicator>
-            </Select.Item>
-        )
-    })
+    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
 
-    function openTextColorPalette() {
-        setIsBorderPaletteOpen(false)
-        setIsBgPaletteOpen(false)
-        setIsTextPaletteOpen(prev => !prev)
-    }
-    function openBorderColorPalette() {
-        setIsTextPaletteOpen(false)
-        setIsBgPaletteOpen(false)
-        setIsBorderPaletteOpen(prev => !prev)
-    }
-    function openBgColorPalette() {
-        setIsTextPaletteOpen(false)
-        setIsBorderPaletteOpen(false)
-        setIsBgPaletteOpen(prev => !prev)
-    }
+    const sizeOptions = [
+        { name: 'opacity', title: 'Opacity', unit: '%', value: 0 },
+        { name: 'rotate', title: 'Rotate', unit: 'deg', value: 0 },
+        { name: 'scale', title: 'Scale', unit: '%', value: 0 },
+        { name: 'skew', title: 'Skew', unit: 'deg', value: 0 },
+        { name: 'translateX', title: 'TranslateX', unit: 'px', value: 0 },
+        { name: 'translateY', title: 'TranslateY', unit: 'px', value: 0 },
+    ]
 
-    async function handleFontFamilyChange(val) {
-        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
-        lastClickedCmp.style = { ...lastClickedCmp.style, fontFamily: val }
-        try {
-            saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log('Failed to save lastClickedCmp edit', err)
-        }
-    }
+    const [propToEdit, setPropToEdit] = useState(sizeOptions)
 
-    async function handleTextShadowChange(val) {
-        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
-        lastClickedCmp.style = { ...lastClickedCmp.style, filter: `drop-shadow(0 0 ${val}rem black)` }
-        try {
-            saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log('Failed to save lastClickedCmp at edit', err)
+    function handleChange(ev, idx) {
+        ev.preventDefault()
+        // if (!lastClickedCmp) return
+        const { name, value } = ev.target
+        const newPropsToEdit = [...propToEdit]
+        newPropsToEdit[idx] = { ...newPropsToEdit[idx], value: value }
+        setPropToEdit(newPropsToEdit)
+        const unit = ev.target.getAttribute('info')
+        if (lastClickedCmp.style) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
+        } else {
+            lastClickedCmp.style = { [name]: `${value + unit}` }
         }
-    }
-
-    async function handleColorChange(color) {
-        const hex = color.hex
-        if (isTextPaletteOpen) {
-            lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
-            elClickedNode.style.color = hex
-        } else if (isBorderPaletteOpen) {
-            lastClickedCmp.style = { ...lastClickedCmp.style, borderColor: hex }
-            elClickedNode.style.borderColor = hex
-        } else if (isBgPaletteOpen) {
-            lastClickedCmp.style = { ...lastClickedCmp.style, backgroundColor: hex }
-            elClickedNode.style.backgroundColor = hex
-        }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleColorChange`, err)
-            // showErrorMsg('Failed to save changes, try again later')
-        }
-    }
-
-    async function handleTextStyleChange(styleToEdit, value) {
-        console.log('styleToEdit:', styleToEdit)
-        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
-        if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
-        lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleTextStyleChange`, err)
-        }
-    }
-
-    function handleFontSliderChange(ev) {
-        elClickedNode.style.fontSize = `${ev[0]}px`
-    }
-
-    async function handleFontSliderCommit(ev) {
-        elClickedNode.style.fontSize = `${ev[0]}px`
-        lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleChange`, err)
-        }
-    }
-    async function handleBorderSliderChange(ev) {
-        elClickedNode.style.borderRadius = `${ev[0]}px`
-    }
-    async function handleBorderSliderCommit(ev) {
-        lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
-        }
+        saveCmp(lastClickedCmp)
     }
 
     return (
@@ -147,94 +69,25 @@ export function EditAdjusts() {
                     <BsChevronDown />
                 </button>
             </div>
-
-            <div className='expanded-content hidden' ref={expandedRef}>
-                <TextToolbar handleTextStyleChange={handleTextStyleChange} />
-
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openTextColorPalette}>
-                        <BiFontColor />
-                    </button>
-                    {isTextPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.color}
-                        />
-                    )}
-                </div>
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openBgColorPalette}>
-                        <IoMdColorFill />
-                    </button>
-                    {isBgPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.backgroundColor}
-                        />
-                    )}
-                </div>
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openBorderColorPalette}>
-                        Border Color
-                    </button>
-                    {isBorderPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.borderColor}
-                        />
-                    )}
-                </div>
-
-                <div className='font-family-select'>
-                    {/* <SelectFontFamily /> */}
-                    <FontFamilySelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
-                </div>
-
-                <div className='text-shadow-select'>
-                    {/* <SelectTextShadow /> */}
-                    <TextShadowSelect handleTextShadowChange={handleTextShadowChange} SelectItem={SelectItem} />
-                </div>
-
-                <form className='slider-form'>
-                    <label htmlFor=''>Font Size</label>
-                    <Slider.Root
-                        className='SliderRoot'
-                        defaultValue={[1]}
-                        max={100}
-                        step={1}
-                        aria-label='Volume'
-                        onValueChange={handleFontSliderChange}
-                        onValueCommit={handleFontSliderCommit}
-                    >
-                        <Slider.Track className='SliderTrack'>
-                            <Slider.Range className='SliderRange' />
-                        </Slider.Track>
-                        <Slider.Thumb className='SliderThumb' />
-                    </Slider.Root>
-                </form>
-                <form className='slider-form'>
-                    <label htmlFor=''>Border Radius</label>
-                    <Slider.Root
-                        className='SliderRoot'
-                        defaultValue={[1]}
-                        max={50}
-                        step={1}
-                        aria-label='Volume'
-                        onValueChange={handleBorderSliderChange}
-                        onValueCommit={handleBorderSliderCommit}
-                    >
-                        <Slider.Track className='SliderTrack'>
-                            <Slider.Range className='SliderRange' />
-                        </Slider.Track>
-                        <Slider.Thumb className='SliderThumb' />
-                    </Slider.Root>
-                </form>
+            <div className='option-body expanded-content hidden' ref={expandedRef}>
+                {propToEdit.map((option, idx) => (
+                    <div key={idx} className='param-box grid-2-col'>
+                        <label htmlFor={option.name}>{option.title}</label>
+                        <div className='input-wrapper'>
+                            <input
+                                info={option.unit}
+                                type='number'
+                                name={option.name}
+                                id={option.name}
+                                value={option.value}
+                                onChange={ev => handleChange(ev, idx)}
+                            />
+                            <div className='unit'>
+                                <SelectUnit />
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     )
