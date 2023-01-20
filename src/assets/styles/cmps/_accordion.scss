@@ -18,7 +18,24 @@
         }
     }
     .expanded-content {
-        padding: $spacing-s $spacing-m;
+        display: grid;
+        grid-template-columns: $spacing-s 1fr 1fr $spacing-s;
+        grid-auto-flow: dense;
+        row-gap: $spacing-s;
+        padding: $spacing-s 0;
+
+        > * {
+            grid-column: 2/4;
+        }
+        .full {
+            grid-column: 1/-1;
+        }
+        .grid-2-col:nth-child(1n) {
+            grid-column: 2/3;
+        }
+        .grid-2-col:nth-child(2n) {
+            grid-column: 3/4;
+        }
     }
     .hidden {
         display: none;
@@ -27,9 +44,6 @@
 
 .inputs {
     .option-body {
-        display: grid;
-        gap: $spacing-xs;
-        grid-template-columns: repeat(2, 1fr);
     }
     .hidden {
         display: none;
@@ -38,15 +52,16 @@
 
 .option-body {
     display: grid;
-    gap: $spacing-s;
-    // grid-template-columns: auto 1fr;
-    grid-template-columns: repeat(2, 1fr);
-
+    // gap: $spacing-s;
+    .param-box:nth-of-type(2n) {
+        margin-inline-start: $spacing-s;
+    }
     .param-box {
         font-size: px-to-rem(11px);
         display: grid;
         grid-template-columns: auto 1fr;
         place-items: center;
+
         label {
             text-transform: capitalize;
             padding-inline-end: $spacing-xs;

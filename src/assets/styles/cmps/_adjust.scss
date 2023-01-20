@@ -1,5 +1,15 @@
 /* reset */
 .adjust {
+    & > *:not(:first-child, .expanded-content) {
+        margin-bottom: $spacing-s;
+    }
+    // adds lightgray border-bottom as spacer
+    .b-btm {
+        margin-bottom: $spacing-xs !important;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $editor-lightgray;
+    }
+    font-size: px-to-rem(12px);
     .expanded-content {
         a,
         button {
@@ -8,14 +18,13 @@
 
         .ToolbarRoot {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
-            padding: $spacing-xxs;
+
             width: 100%;
             min-width: max-content;
             margin-bottom: $spacing-s;
             background-color: white;
-            border-bottom: 1px solid $editor-lightgray;
         }
 
         .ToolbarToggleItem,
@@ -43,7 +52,7 @@
         .ToolbarLink:focus,
         .ToolbarButton:focus {
             position: relative;
-            box-shadow: 0 0 0 2px var(--violet7);
+            // box-shadow: 0 0 0 2px var(--violet7);
         }
 
         .ToolbarToggleItem {
@@ -63,64 +72,67 @@
             margin: 0 0;
         }
     }
-}
-.text-decoration {
-    button {
-        padding: 0;
-        background: #eeeeee;
-        border-radius: 5px;
-        padding: 0.3rem 0.3rem;
+    .text-decoration {
+        button {
+            padding: 0;
+            background: #eeeeee;
+            border-radius: 5px;
+            padding: 0.3rem 0.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+    }
+    .slider-form {
+        label {
+            // font-size: 1.2rem;
+        }
+        span {
+        }
+    }
+    .color-pick {
+        position: relative;
+        width: 100%;
+        display: grid;
         align-items: center;
-    }
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-}
+        // grid-auto-flow: column;
+        // justify-content: space-between;
+        padding-right: $spacing-xs;
+        padding-left: $spacing-xs;
+        grid-template-columns: auto 1fr;
 
-.slider-form {
-    margin-top: 0.667rem;
-    padding-bottom: 1rem;
-    font-size: px-to-rem(13px);
-    label {
-        // font-size: 1.2rem;
-    }
-    span {
-        padding-top: 0.4rem;
-    }
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-}
-.color-pick {
-    padding-bottom: 0.667rem;
-    position: relative;
-}
-.color-pick:nth-child(3) {
-    padding-bottom: 0;
-}
+        .curr-color {
+            margin-inline-start: auto;
+            justify-self: end;
+            // max-width: 100%;
+            width: 22px;
+            height: 22px;
+            background-color: #000;
+            border-radius: 4px;
+            box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.154);
+        }
 
-.color-pick .color-pick-label {
-    background: #eee;
-    border-radius: 5px;
-    display: block;
-}
-
-.color-pick .palette {
-    padding-top: 0.667rem;
-    z-index: 3;
-    height: 0;
-}
-.font-family-select,
-.text-shadow-select {
-    button {
-        color: #000000 !important;
-        cursor: pointer;
-        outline: none;
-        border: none;
-        padding: 0.22em 0.88em;
-        font-weight: 400;
-        background: #eeeeee;
+        .block-picker {
+            // height: 100%;
+            padding: 0;
+            // position: absolute !important;
+            left: 50%;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translate(-150%, $spacing-m);
+        }
+        .block-picker.open {
+            transform: translate(-50%, $spacing-m);
+            opacity: 1;
+        }
+        .palette {
+            // padding-top: $spacing-s;
+            z-index: 3;
+            // height: 0;
+            &.open {
+            }
+        }
     }
-    padding-bottom: 0.667rem;
 }

@@ -53,7 +53,8 @@ $break-xwide: 1920px;
 $home-header-height: 72px;
 $app-header-height: 52px + 1px; // 1px for border-bottom addition
 $toolbar-height: 44px + 1px; // 1px for border-bottom addition
-
+// accept both changes!!
+$scroll-bar-width: $spacing-m;
 // LAYOUT
 $layoutPadding: $base-font-size * 5.063;
 

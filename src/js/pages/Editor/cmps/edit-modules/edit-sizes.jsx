@@ -49,7 +49,7 @@ export function EditSizes() {
             </div>
             <div className='option-body expanded-content hidden' ref={expandedRef}>
                 {propToEdit.map((option, idx) => (
-                    <div key={idx} className='param-box'>
+                    <div key={idx} className='param-box grid-2-col'>
                         <label htmlFor={option.name}>{option.title}</label>
                         <div className='input-wrapper'>
                             <input

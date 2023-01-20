@@ -7,10 +7,10 @@ import { EditFaq } from './faq'
 export function Accordion({ context }) {
     return (
         <div className='our-accordion'>
+            <EditText />
             <EditSizes />
             <EditAdjusts />
             <EditColors />
-            <EditText />
         </div>
     )
 }

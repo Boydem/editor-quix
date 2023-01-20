@@ -1,5 +1,4 @@
 .editor-preview {
-    $scroll-bar-width: $spacing-m;
     $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     max-height: $editor-max-height;
     padding: $spacing-m $spacing-l;
