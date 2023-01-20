@@ -6,17 +6,17 @@ import SelectUnit from '../ui-cmps/select'
 
 export function EditSizesOpened() {
     const expandedRef = useRef()
-
+    const [unit, setUnit] = useState('px')
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
 
     const sizeOptions = [
-        { name: 'width', title: 'width', unit: 'px', value: 0 },
-        { name: 'height', title: 'height', unit: 'px', value: 0 },
-        { name: 'minWidth', title: 'min-W', unit: 'px', value: 0 },
-        { name: 'minHeight', title: 'min-h', unit: 'px', value: 0 },
-        { name: 'maxWidth', title: 'max-w', unit: 'px', value: 0 },
-        { name: 'maxHeight', title: 'max-h', unit: 'px', value: 0 },
+        { name: 'width', title: 'width', value: 0 },
+        { name: 'height', title: 'height', value: 0 },
+        { name: 'minWidth', title: 'min-W', value: 0 },
+        { name: 'minHeight', title: 'min-h', value: 0 },
+        { name: 'maxWidth', title: 'max-w', value: 0 },
+        { name: 'maxHeight', title: 'max-h', value: 0 },
     ]
     const [propToEdit, setPropToEdit] = useState(sizeOptions)
 
@@ -27,13 +27,16 @@ export function EditSizesOpened() {
         const newPropsToEdit = [...propToEdit]
         newPropsToEdit[idx] = { ...newPropsToEdit[idx], value: value }
         setPropToEdit(newPropsToEdit)
-        const unit = ev.target.getAttribute('info')
         if (lastClickedCmp.style) {
             lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
         } else {
             lastClickedCmp.style = { [name]: `${value + unit}` }
         }
         saveCmp(lastClickedCmp)
+    }
+
+    function onUnitChange(unit) {
+        setUnit(unit)
     }
 
     return (
@@ -52,7 +55,7 @@ export function EditSizesOpened() {
                                 onChange={ev => handleChange(ev, idx)}
                             />
                             <div className='unit'>
-                                <SelectUnit />
+                                <SelectUnit onUnitChange={onUnitChange} />
                             </div>
                         </div>
                     </div>
