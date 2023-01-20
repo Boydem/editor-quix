@@ -38,7 +38,6 @@ export function Editor() {
             setIsEditing(false)
         }
     }, [])
-    // console.log(rightSidebarState.context)
 
     useEffect(() => {
         handleSidebarsChanges('right', { context: clickedCmp?.type || 'Edit' })

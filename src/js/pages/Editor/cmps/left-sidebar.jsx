@@ -32,7 +32,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
-    console.log('leftSidebarState.isSubMenuOpen:', leftSidebarState.isSubMenuOpen)
     return (
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
             {

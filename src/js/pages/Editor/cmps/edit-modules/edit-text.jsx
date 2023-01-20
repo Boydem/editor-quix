@@ -30,7 +30,6 @@ export function EditText() {
     }
 
     async function handleColorChange(color) {
-        console.log(color)
         const hex = color.hex
         if (isTextPaletteOpen) {
             lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
@@ -51,7 +50,6 @@ export function EditText() {
     }
 
     async function handleTextStyleChange(styleToEdit, value) {
-        console.log('styleToEdit:', styleToEdit)
         if (!lastClickedCmp?.style) lastClickedCmp.style = {}
         if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
         lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
