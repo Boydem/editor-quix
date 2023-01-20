@@ -10,8 +10,8 @@ body {
     padding: 0rem 10%;
     display: flex;
     justify-content: space-between;
-    color: white;
-    background: #080c1f;
+    color: var(--clr4);
+    background: rgb(8, 12, 31);
 
     .logo {
         display: flex;
@@ -48,7 +48,7 @@ body {
             font-size: 1rem;
             outline: none;
             border-radius: 5px;
-            border: 1px solid black;
+            border: 1px solid var(--clr2);
             padding: 0.5rem 1.4rem;
             font-weight: 600;
         }
@@ -59,7 +59,7 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     overflow: hidden;
-    color: white;
+    color: var(--clr4);
     background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/hero_oitt1x.webp) no-repeat center
         center/cover;
     // .hero-image {
@@ -83,18 +83,18 @@ body {
             grid-template-columns: 2.5fr 1fr 0.5fr;
             h1 {
                 margin: 0;
-                color: #a3eee9;
+                color: var(--clr1);
                 font-weight: 500;
                 font-size: 5rem;
                 line-height: 5rem;
             }
             p {
-                color: #8b95a6;
+                color: var(--clr3);
                 line-height: 1.9rem;
             }
             button {
                 font: inherit;
-                background: #a3eee9;
+                background: var(--clr1);
                 padding: 1rem 3.5rem;
                 border-radius: 35px;
             }
@@ -117,20 +117,20 @@ body {
                 img {
                     width: 25%;
                     border-radius: 25px;
-                    border: 5px solid white;
+                    border: 5px solid var(--clr4);
                     margin-bottom: 1rem;
                 }
             }
 
             h2 {
                 margin: 0;
-                color: #a3eee9;
+                color: var(--clr1);
                 font-weight: 500;
                 font-size: 2rem;
                 line-height: 3rem;
             }
             p {
-                color: #8b95a6;
+                color: var(--clr3);
             }
             .card {
                 box-shadow: 0px 10px 20px 0px rgba(11, 19, 33, 0.2);
@@ -150,8 +150,8 @@ body {
                 }
                 button {
                     font: inherit;
-                    color: #8b95a6;
-                    border: 3px solid #8b95a6;
+                    color: var(--clr3);
+                    border: 3px solid var(--clr3);
                     background: transparent;
                     padding: 1rem 3.5rem;
                     border-radius: 35px;
@@ -168,7 +168,7 @@ body {
     padding: 5rem 10%;
     background: url(https://res.cloudinary.com/dotasvsuv/image/upload/v1673988466/dragon_fhucnp.jpg) no-repeat
         center/cover;
-    color: white;
+    color: var(--clr4);
     h2 {
         text-align: center;
         font-weight: 400;
@@ -215,7 +215,7 @@ body {
                 img {
                     width: 40%;
                     border-radius: 15px;
-                    border: 4px white solid;
+                    border: 4px var(--clr4) solid;
                 }
                 h3 {
                     margin: 0;
@@ -229,7 +229,7 @@ body {
             button {
                 border: none;
                 font: inherit;
-                background: #a3eee9;
+                background: var(--clr1);
                 padding: 1rem 3.5rem;
                 border-radius: 35px;
             }
@@ -242,19 +242,19 @@ body {
         h2 {
             text-align: left;
             margin: 0;
-            color: #a3eee9;
+            color: var(--clr1);
             font-weight: 500;
             font-size: 3rem;
             line-height: 3rem;
         }
         p {
-            color: #8b95a6;
+            color: var(--clr3);
             line-height: 1.9rem;
         }
         button {
             border: none;
             font: inherit;
-            background: #a3eee9;
+            background: var(--clr1);
             padding: 1rem 3.5rem;
             border-radius: 35px;
         }
@@ -273,13 +273,13 @@ body {
         h2 {
             text-align: left;
             margin: 0;
-            color: #a3eee9;
+            color: var(--clr1);
             font-weight: 500;
             font-size: 3.5rem;
             line-height: 4rem;
         }
         p {
-            color: #8b95a6;
+            color: var(--clr3);
             line-height: 1.9rem;
             margin-bottom: 2rem;
             max-width: 450px;
@@ -287,7 +287,7 @@ body {
         button {
             border: none;
             font: inherit;
-            background: #a3eee9;
+            background: var(--clr1);
             padding: 1rem 3rem;
             border-radius: 35px;
         }
@@ -313,19 +313,19 @@ body {
     h2 {
         text-align: left;
         margin: 0;
-        color: #a3eee9;
+        color: var(--clr1);
         font-weight: 500;
         font-size: 2.5rem;
         line-height: 3rem;
     }
     p {
-        color: #8b95a6;
+        color: var(--clr3);
         line-height: 1.9rem;
         margin-bottom: 2rem;
     }
     input {
-        color: white;
-        border: 3px solid #8b95a6;
+        color: var(--clr4);
+        border: 3px solid var(--clr3);
         font: inherit;
         background: transparent;
         padding: 1rem 3rem;
@@ -335,7 +335,7 @@ body {
     button {
         border: none;
         font: inherit;
-        background: #a3eee9;
+        background: var(--clr1);
         padding: 1rem 3rem;
         border-radius: 35px;
     }
@@ -343,7 +343,7 @@ body {
 
 .footer {
     background: #0b1321;
-    color: white;
+    color: var(--clr4);
     text-align: center;
     padding: 1rem 0;
 }

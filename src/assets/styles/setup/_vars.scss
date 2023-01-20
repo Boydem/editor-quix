@@ -79,6 +79,19 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
     --clr4: #101010;
 }
 
+#root.wap2-primary {
+    --clr1: #a3eee9;
+    --clr2: #0b1321;
+    --clr3: #8b95a6;
+    --clr4: #eef;
+}
+
+#root.wap3-primary {
+    --clr1: #dcdcdc;
+    --clr2: #303030;
+    --clr3: #5783de;
+}
+
 #root.theme-1 {
     --clr1: #263140;
     --clr2: #4c80fb;

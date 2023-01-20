@@ -17,13 +17,13 @@ a {
 
 // Header
 .wap-3-header {
-    background: #dcdcdc;
+    background: var(--clr1);
     display: flex;
     justify-content: space-between;
     padding: 1.5em 4%;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    color: #303030;
+    color: var(--clr2);
 
     .app-nav {
         display: flex;
@@ -82,7 +82,7 @@ a {
 
 // Hero
 .wap-3-hero {
-    background: #dcdcdc;
+    background: var(--clr1);
     display: grid;
     align-items: center;
     justify-content: center;
@@ -90,7 +90,7 @@ a {
     padding: 0 10%;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    color: #303030;
+    color: var(--clr2);
 
     .teaser-container {
         display: grid;
@@ -115,7 +115,7 @@ a {
         max-width: 1100px;
     }
     button {
-        border: 3px solid #303030;
+        border: 3px solid var(--clr2);
         background: none;
         color: inherit;
         font-weight: 700;
@@ -148,13 +148,13 @@ a {
     margin: 0;
     padding: 0 10%;
     padding-top: 10rem;
-    background: #dcdcdc;
+    background: var(--clr1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    color: #303030;
+    color: var(--clr2);
 
     h2 {
         font-size: 3.5rem;
@@ -185,14 +185,14 @@ a {
 
         img {
             width: 100%;
-            border: 4px black solid;
+            border: 4px var(--clr2) solid;
             position: relative;
             position: relative;
             z-index: 2;
         }
         &::before {
             content: '';
-            color: black;
+            color: var(--clr2);
             z-index: 0;
             position: absolute;
             width: 100%;
@@ -200,11 +200,11 @@ a {
             background: #5d9942;
             top: 8%;
             left: 6%;
-            border: 4px black solid;
+            border: 4px var(--clr2) solid;
         }
         &::after {
             content: '';
-            color: black;
+            color: var(--clr2);
             z-index: 0;
             position: absolute;
             width: 100%;
@@ -212,17 +212,17 @@ a {
             background: #f3ba49;
             top: 3%;
             left: 3%;
-            border: 4px black solid;
+            border: 4px var(--clr2) solid;
         }
     }
 }
 
 .wap-3-team {
     margin: 0;
-    background: #dcdcdc;
+    background: var(--clr1);
     text-align: center;
     font-family: 'Syne', sans-serif;
-    color: #303030;
+    color: var(--clr2);
 
     h2 {
         padding-top: 15rem;
@@ -260,7 +260,7 @@ a {
 .card-img-container {
     & img {
         border-radius: 50%;
-        border: 4px black solid;
+        border: 4px var(--clr2) solid;
     }
 
     padding-bottom: 1em;
@@ -269,11 +269,11 @@ a {
 .wap-3-services {
     padding: 0 10%;
     padding-top: 10rem;
-    background: #dcdcdc;
+    background: var(--clr1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-family: 'Syne', sans-serif;
-    color: #303030;
+    color: var(--clr2);
 
     h2 {
         padding-top: 2em;
@@ -302,7 +302,7 @@ a {
             width: 264px;
             height: 64px;
             padding: 1rem 3rem;
-            border: 3px black solid;
+            border: 3px var(--clr2) solid;
             border-radius: 5em;
             font: inherit;
             font-size: 1.3rem;
@@ -312,8 +312,8 @@ a {
 
 // Footer
 .wap-3-footer {
-    background: #303030;
-    color: #5783de;
+    background: var(--clr2);
+    color: var(--clr3);
     padding-block: 1.2em;
     text-align: center;
     font-family: 'Syne', sans-serif;
