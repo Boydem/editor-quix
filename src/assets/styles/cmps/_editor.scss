@@ -7,3 +7,27 @@
     max-height: calc(100vh - $app-header-height - $toolbar-height);
     background-color: lighten($editor-lightgray, 5%);
 }
+
+.clicked {
+    position: relative;
+
+    outline: solid 2px #07396e !important;
+}
+
+.selected-actions {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    background: rgba(7, 57, 110, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+.hover {
+    // background: rgba(192, 250, 241, 255);
+    background: rgba(7, 57, 110, 0.2);
+    outline: solid 2px #07396e;
+}
