@@ -110,7 +110,13 @@ export function Edit() {
         }
     }
 
-    async function handleFontSliderChange(ev) {
+    function handleFontSliderChange(ev) {
+        console.log(ev[0])
+        elClickedNode.style.fontSize = `${ev[0]}px`
+    }
+
+    async function handleFontSliderCommit(ev) {
+        elClickedNode.style.fontSize = `${ev[0]}px`
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
@@ -119,11 +125,15 @@ export function Edit() {
         }
     }
     async function handleBorderSliderChange(ev) {
+        console.log(ev[0])
+        elClickedNode.style.borderRadius = `${ev[0]}px`
+    }
+    async function handleBorderSliderCommit(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
         } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleeBorderSliderChange`, err)
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
         }
     }
 
@@ -241,6 +251,7 @@ export function Edit() {
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleFontSliderChange}
+                        onValueCommit={handleFontSliderCommit}
                     >
                         <Slider.Track className='SliderTrack'>
                             <Slider.Range className='SliderRange' />
@@ -257,6 +268,7 @@ export function Edit() {
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleBorderSliderChange}
+                        onValueCommit={handleBorderSliderCommit}
                     >
                         <Slider.Track className='SliderTrack'>
                             <Slider.Range className='SliderRange' />
