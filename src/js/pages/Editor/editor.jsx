@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AppHeader } from '../../cmps/app-header'
 
 import { EditorPreview } from './cmps/editor-preview'
@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import { saveWap, setIsEditing } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
+import { FiEdit2 } from 'react-icons/fi'
 
 export function Editor() {
     // wap states
@@ -27,6 +28,8 @@ export function Editor() {
         activeMenuItem: 'quick add',
         isSubMenuOpen: false,
     })
+
+    const selectedActionsRef = useRef()
 
     useEffect(() => {
         loadWap()
@@ -68,6 +71,7 @@ export function Editor() {
     function handleOnDragStart() {
         // setSidebarOpen(false)
     }
+    console.log('YE')
     if (Object.keys(wap).length === 0) return
     return (
         <>
@@ -79,7 +83,16 @@ export function Editor() {
                     handleSidebarsChanges={handleSidebarsChanges}
                 />
                 <div className='editor-layout full'>
-                    <EditorPreview wapCmps={wap.cmps} />
+                    <div
+                        className='selected-actions'
+                        ref={selectedActionsRef}
+                        onClick={() => {
+                            setRightSidebarState(prev => ({ ...prev, isOpen: true }))
+                        }}
+                    >
+                        <FiEdit2 />
+                    </div>
+                    <EditorPreview wapCmps={wap.cmps} selectedActionsRef={selectedActionsRef} />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                     <LeftSidebar leftSidebarState={leftSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                 </div>

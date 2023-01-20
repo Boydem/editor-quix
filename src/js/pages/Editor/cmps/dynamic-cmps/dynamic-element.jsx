@@ -9,14 +9,17 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
     }
     const CustomTag = `${cmp.type}`
 
+    let eventClick
+
     function handleClickMiddleware(ev, cmp) {
-        document.addEventListener('mousedown', () => saveText(ev))
+        eventClick = ev
+        document.addEventListener('mousedown', saveText)
         handleClick(ev, cmp)
     }
 
-    function saveText(ev) {
+    function saveText() {
         document.removeEventListener('mousedown', saveText)
-        cmp.content.txt = ev.target.innerText
+        cmp.content.txt = eventClick.target.innerText
         saveCmp(cmp)
     }
 
@@ -30,6 +33,7 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
             contentEditable={isEditing}
             spellCheck='false'
             suppressContentEditableWarning={true}
+            href={CustomTag === 'a' ? cmp.content.href : ''}
         >
             {cmp.content?.txt}
         </CustomTag>

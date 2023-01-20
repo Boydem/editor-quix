@@ -50,14 +50,14 @@ function _createMap() {
     }, {})
 }
 
-function updateCmp(cmp, parentCmp) {
-    let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
-    if (foundCmp) {
-        foundCmp = cmp
-    } else {
-        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
-    }
-}
+// function updateCmp(cmp, parentCmp) {
+//     let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
+//     if (foundCmp) {
+//         foundCmp = cmp
+//     } else {
+//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
+//     }
+// }
 
 function getCmpsByCategory(category) {
     return gCmpsMap[category]
@@ -140,15 +140,15 @@ function _createWaps() {
     }
 }
 
-// function saveCmp(cmp, index, parentCmp) {
-//     parentCmp[index] = cmp
-// }
+function saveCmp(cmp, index, parentCmp) {
+    parentCmp[index] = cmp
+}
 
-// function updateCmp(cmp, parentCmp, cb) {
-//     const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
-//     if (isFoundCmpIndex > -1) {
-//         saveCmp(cmp, isFoundCmpIndex, parentCmp)
-//     } else {
-//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
-//     }
-// }
+function updateCmp(cmp, parentCmp, cb) {
+    const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
+    if (isFoundCmpIndex > -1) {
+        saveCmp(cmp, isFoundCmpIndex, parentCmp)
+    } else {
+        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
+    }
+}
