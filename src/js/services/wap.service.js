@@ -32,7 +32,7 @@ async function getWapByUrl(wapUrl) {
     try {
         let wap = await query({ url: wapUrl })
         if (!wap[0]) Promise.reject('NOT FOUND')
-        
+
         return wap[0]
     } catch (err) {
         throw err
@@ -125,6 +125,8 @@ function _createWaps() {
                 name: 'wap-2',
                 owner: 'admin',
                 cmps: getDemoCmps2(),
+                pallete: ['#a3eee9', '#0b1321', '#8b95a6', '#eef'],
+                themeClass: 'wap2-primary',
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
                 title: 'Gigaplay',
@@ -134,6 +136,8 @@ function _createWaps() {
                 name: 'wap-3',
                 owner: 'admin',
                 cmps: getDemoCmps3(),
+                pallete: ['#dcdcdc', '#303030', '#5783de'],
+                themeClass: 'wap3-primary',
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
                 title: 'Finclvr',
