@@ -31,6 +31,12 @@ export function EditText() {
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const expandedRef = useRef()
+    const [borderRadiusValue, setBorderRadiusValue] = useState(
+        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius'))]) || [0]
+    )
+    const [fontSizeValue, setFontSizeValue] = useState(
+        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size'))]) || [0]
+    )
 
     useEffect(() => {
         if (elClickedNode) {
@@ -121,6 +127,7 @@ export function EditText() {
     }
 
     function handleFontSliderChange(ev) {
+        setFontSizeValue(ev[0])
         elClickedNode.style.fontSize = `${ev[0]}px`
     }
 
@@ -134,6 +141,7 @@ export function EditText() {
         }
     }
     async function handleBorderSliderChange(ev) {
+        setBorderRadiusValue(ev[0])
         elClickedNode.style.borderRadius = `${ev[0]}px`
     }
     async function handleBorderSliderCommit(ev) {
@@ -239,7 +247,6 @@ export function EditText() {
                             ]) || [0]
                         }
                         className='SliderRoot'
-                        defaultValue={[0]}
                         max={50}
                         step={1}
                         aria-label='Volume'
