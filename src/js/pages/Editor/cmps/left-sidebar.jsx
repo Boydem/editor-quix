@@ -3,13 +3,13 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { saveCmp } from '../../../store/wap/wap.action'
 import { useEffect, useState } from 'react'
 import { wapService } from '../../../services/wap.service'
-
+import { AiOutlinePlus } from 'react-icons/ai'
 export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     const [theme, setTheme] = useState('')
     const addMenuItems = [
         ['Quick add', 'Assets'],
         ['Header', 'Hero', 'Section', 'Card', 'Footer', 'Media', 'Decorative', 'Contact & Forms', 'Embed & Social'],
-        ['Cards', 'Galleries', 'Members', 'Section'],
+        ['Cards', 'Galleries', 'Members'],
     ]
 
     function handleSidebar(sidebarChanges) {
@@ -32,38 +32,43 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
-
+    console.log('leftSidebarState.isSubMenuOpen:', leftSidebarState.isSubMenuOpen)
     return (
-        <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''}`}>
-            {leftSidebarState.currModule === 'add' && (
-                <div className='module-menu'>
-                    {addMenuItems.map((menuItem, idx) => (
+        <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
+            {
+                <div className={`${leftSidebarState.currModule} module-menu`}>
+                    <div className='indicator'>
+                        <AiOutlinePlus />
+                    </div>
+                    {addMenuItems.map((menuItems, idx) => (
                         <ul key={idx} className='menu-items'>
-                            {menuItem.map(module => (
+                            {menuItems.map(menuItem => (
                                 <li
-                                    className={leftSidebarState.currModule === module ? 'active' : ''}
+                                    className={leftSidebarState.activeMenuItem === menuItem ? 'active' : ''}
                                     onClick={() => {
                                         handleSidebar({
-                                            currModule: module,
                                             isSubMenuOpen: true,
+                                            activeMenuItem: menuItem,
                                         })
                                     }}
-                                    key={module}
+                                    key={menuItem}
                                 >
-                                    {module}
+                                    {menuItem}
                                 </li>
                             ))}
                         </ul>
                     ))}
                 </div>
-            )}
-            <div className={`${leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}>
+            }
+            <div
+                className={`${leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}
+            >
                 <div className='module-header'>
                     <span className='module-name'>{leftSidebarState.currModule}</span>
                     <div className='actions'>
                         <span
                             onClick={() => {
-                                handleSidebar({ isSubMenuOpen: !leftSidebarState.isSubMenuOpen })
+                                handleSidebar({ isSubMenuOpen: false })
                             }}
                             className='btn'
                         >
@@ -71,15 +76,22 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                         </span>
                     </div>
                 </div>
-                <div className='module-options'>
-                    <DynamicModule currModule={leftSidebarState.currModule} addMenuItems={addMenuItems} />
-                    {leftSidebarState.currModule === 'themes' && (
-                        <div>
-                            <button onClick={() => handleThemeChange('theme-1')}>Retro</button>
-                            <button onClick={() => handleThemeChange('theme-2')}>Calming</button>
-                        </div>
-                    )}
-                </div>
+                {leftSidebarState.isOpen && (
+                    <div className='module-options'>
+                        {leftSidebarState.currModule === 'add' && (
+                            <DynamicModule
+                                activeMenuItem={leftSidebarState.activeMenuItem}
+                                addMenuItems={addMenuItems}
+                            />
+                        )}
+                        {leftSidebarState.currModule === 'themes' && (
+                            <div>
+                                <button onClick={() => handleThemeChange('theme-1')}>Retro</button>
+                                <button onClick={() => handleThemeChange('theme-2')}>Calming</button>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
         </div>
     )

@@ -40,7 +40,13 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                 {tools.map((tool, idx) => (
                     <button
                         key={idx}
-                        onClick={() => onToolClick(tool.side, { isOpen: true, currModule: tool.module })}
+                        onClick={() =>
+                            onToolClick(tool.side, {
+                                isOpen: true,
+                                currModule: tool.module,
+                                isSubMenuOpen: tool.module !== 'add' ? true : false,
+                            })
+                        }
                         className={`${currActive === tool.module ? 'active' : ''} tool`}
                     >
                         {tool.module === 'add' && <AiOutlinePlus />}
@@ -83,7 +89,9 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                     </div>
                     <div className='btns-user-req flex align-center'>
                         <button
-                            onClick={() => onToolClick('right', { isOpen: true, currModule: 'Edit' })}
+                            onClick={() =>
+                                onToolClick('right', { isOpen: true, currModule: 'Edit', isSubMenuOpen: true })
+                            }
                             className={`${rightSidebarState.isOpen ? 'active' : ''} tool`}
                         >
                             <CgColorPicker />
