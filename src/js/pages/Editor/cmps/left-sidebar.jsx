@@ -35,26 +35,28 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
 
     return (
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''}`}>
-            <div className='module-menu'>
-                {addMenuItems.map((menuItem, idx) => (
-                    <ul key={idx} className='menu-items'>
-                        {menuItem.map(module => (
-                            <li
-                                className={leftSidebarState.currModule === module ? 'active' : ''}
-                                onClick={() => {
-                                    handleSidebar({
-                                        currModule: module,
-                                        isSubMenuOpen: true,
-                                    })
-                                }}
-                                key={module}
-                            >
-                                {module}
-                            </li>
-                        ))}
-                    </ul>
-                ))}
-            </div>
+            {leftSidebarState.currModule === 'add' && (
+                <div className='module-menu'>
+                    {addMenuItems.map((menuItem, idx) => (
+                        <ul key={idx} className='menu-items'>
+                            {menuItem.map(module => (
+                                <li
+                                    className={leftSidebarState.currModule === module ? 'active' : ''}
+                                    onClick={() => {
+                                        handleSidebar({
+                                            currModule: module,
+                                            isSubMenuOpen: true,
+                                        })
+                                    }}
+                                    key={module}
+                                >
+                                    {module}
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
+                </div>
+            )}
             <div className={`${leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}>
                 <div className='module-header'>
                     <span className='module-name'>{leftSidebarState.currModule}</span>
@@ -71,8 +73,12 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                 </div>
                 <div className='module-options'>
                     <DynamicModule currModule={leftSidebarState.currModule} addMenuItems={addMenuItems} />
-                    <button onClick={() => handleThemeChange('theme-1')}>Retro</button>
-                    <button onClick={() => handleThemeChange('theme-2')}>Calming</button>
+                    {leftSidebarState.currModule === 'themes' && (
+                        <div>
+                            <button onClick={() => handleThemeChange('theme-1')}>Retro</button>
+                            <button onClick={() => handleThemeChange('theme-2')}>Calming</button>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
