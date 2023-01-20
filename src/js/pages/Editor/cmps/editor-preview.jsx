@@ -47,7 +47,6 @@ export function EditorPreview({ wapCmps, setRightSidebarState }) {
     function onEditPopup(ev) {
         setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
         selectedActionsRef.current.style.display = 'none'
-        // selectedActionsRef.current.style.top = `${elClickedNode.offsetTop - 30}px`
         setTimeout(() => {
             selectedActionsRef.current.style.display = 'flex'
             selectedActionsRef.current.style.left = `${

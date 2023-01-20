@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRef, useState } from 'react'
 import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
@@ -31,6 +31,12 @@ export function EditText() {
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const expandedRef = useRef()
+
+    useEffect(() => {
+        if (elClickedNode) {
+        }
+    }, [])
+
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
     }
@@ -114,7 +120,12 @@ export function EditText() {
         }
     }
 
-    async function handleFontSliderChange(ev) {
+    function handleFontSliderChange(ev) {
+        elClickedNode.style.fontSize = `${ev[0]}px`
+    }
+
+    async function handleFontSliderCommit(ev) {
+        elClickedNode.style.fontSize = `${ev[0]}px`
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
@@ -123,11 +134,14 @@ export function EditText() {
         }
     }
     async function handleBorderSliderChange(ev) {
+        elClickedNode.style.borderRadius = `${ev[0]}px`
+    }
+    async function handleBorderSliderCommit(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
         } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleeBorderSliderChange`, err)
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
         }
     }
 
@@ -196,14 +210,21 @@ export function EditText() {
                 <form className='slider-form'>
                     <label htmlFor=''>Font Size</label>
                     <Slider.Root
+                        // value={fontSliderValue}
+                        value={
+                            (elClickedNode && [
+                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size')),
+                            ]) || [16]
+                        }
                         className='SliderRoot'
-                        defaultValue={[1]}
+                        defaultValue={[16]}
                         max={100}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleFontSliderChange}
+                        onValueCommit={handleFontSliderCommit}
                     >
-                        <Slider.Track className='SliderTrack'>
+                        <Slider.Track className='SliderTrack' value={50}>
                             <Slider.Range className='SliderRange' />
                         </Slider.Track>
                         <Slider.Thumb className='SliderThumb' />
@@ -212,12 +233,18 @@ export function EditText() {
                 <form className='slider-form'>
                     <label htmlFor=''>Border Radius</label>
                     <Slider.Root
+                        value={
+                            (elClickedNode && [
+                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius')),
+                            ]) || [0]
+                        }
                         className='SliderRoot'
-                        defaultValue={[1]}
+                        defaultValue={[0]}
                         max={50}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleBorderSliderChange}
+                        onValueCommit={handleBorderSliderCommit}
                     >
                         <Slider.Track className='SliderTrack'>
                             <Slider.Range className='SliderRange' />

@@ -18,6 +18,7 @@ export default function DynamicCmp(props) {
         if (!ev.target.type) ev.preventDefault()
 
         if (!isEditing) return
+        if (elClickedNode === ev.target) return
 
         if (elClickedNode) {
             elClickedNode.classList.remove('clicked')
