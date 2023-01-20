@@ -1,14 +1,16 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import DynamicElement from './dynamic-element'
 
 export function FormCmp({ cmp, handleClick, onHover }) {
+    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const inputsMap = cmp.cmps.reduce((acc, c) => {
         if (c.type === 'label' && c.cmps[0]) {
-            acc[c.cmps[0].name] = ''
+            acc[c.cmps[0].inputName] = ''
             return acc
         } else if (c.type !== 'input') return acc
 
-        acc[c.name] = ''
+        acc[c.inputName] = ''
         return acc
     }, {})
     const [inputsValues, setInputsValues] = useState(inputsMap)
@@ -50,12 +52,13 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                             onChange={handleChange}
                         >
+                            {!innerCmp.hidden && innerCmp.cmps[0]?.inputName}
                             {innerCmp.cmps[0] && (
                                 <input
-                                    className={innerCmp.name}
-                                    key={innerCmp.id}
+                                    className={innerCmp.cmps[0].name}
+                                    key={innerCmp.cmps[0].id}
                                     style={cmp.style}
-                                    name={innerCmp.name}
+                                    name={innerCmp.cmps[0].inputName}
                                     onClick={e => handleClick(e, cmp)}
                                     placeholder={cmp.content?.placeholder}
                                     onMouseOver={onHover}
@@ -71,7 +74,7 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                             className={innerCmp.name}
                             key={innerCmp.id}
                             style={cmp.style}
-                            name={innerCmp.name}
+                            name={innerCmp.inputName}
                             onClick={e => handleClick(e, cmp)}
                             placeholder={cmp.content?.placeholder}
                             onMouseOver={onHover}

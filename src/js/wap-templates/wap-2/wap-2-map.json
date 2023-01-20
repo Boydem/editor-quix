@@ -26,24 +26,42 @@
                         "txt": "Be the first to know about new games, exclusive previews & special promotions"
                     },
                     "cmps": []
-                },
-                {
-                    "id": "n7CkNR",
-                    "type": "input",
+                }, {
+                    "id": "n7CfDs",
+                    "type": "label",
                     "name": "subscribe-input",
                     "content": {
-                        "placeholder": "Email Address"
+                        "txt": "Email Address"
                     },
-                    "cmps": []
+                    "cmps": [{
+                        "id": "n7CkNR",
+                        "type": "input",
+                        "name": "subscribe-input",
+                        "inputName": "inputName1",
+                        "content": {
+                            "placeholder": "Email Address"
+                        },
+                        "cmps": []
+                    }]
                 },
+
                 {
-                    "id": "n7CkNt",
-                    "type": "input",
-                    "name": "subscribe-input2",
+                    "id": "fdsSa3s",
+                    "type": "label",
+                    "name": "subscribe-input-2",
                     "content": {
-                        "placeholder": "Email Address"
+                        "txt": "Email Address"
                     },
-                    "cmps": []
+                    "cmps": [{
+                        "id": "n7f43D",
+                        "type": "input",
+                        "name": "subscribe-input-2",
+                        "inputName": "inputName2",
+                        "content": {
+                            "placeholder": "Email Address"
+                        },
+                        "cmps": []
+                    }]
                 },
                 {
                     "id": "z1EOxc",

@@ -122,22 +122,21 @@
 }
 
 .edit-form {
-    .wrapper {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 0.5rem;
+    .heading {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .input-option {
+        margin-bottom: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
 
-        label {
-            color: white;
-            background: #003dff;
-            padding: 0.3rem 0.6rem;
-            border-radius: 10px;
+        .btn {
             cursor: pointer;
-        }
-
-        img {
-            border: 1px solid black;
+            padding: 0.1rem 0.7rem;
+            background: #f4f5f8;
+            border-radius: 5px;
         }
     }
 }
