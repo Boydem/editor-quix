@@ -95,6 +95,7 @@ export function EditText() {
     }
 
     async function handleColorChange(color) {
+        console.log(color)
         const hex = color.hex
         if (isTextPaletteOpen) {
             lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
