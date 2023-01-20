@@ -67,8 +67,8 @@ async function query(filterBy = { url: '' }) {
     try {
         const waps = await storageService.query(STORAGE_KEY)
 
-        let filteredWaps
-        if (filterBy.url !== undefined) {
+        let filteredWaps = waps
+        if (filterBy.url) {
             filteredWaps = waps.filter(wap => wap.url === filterBy.url)
         }
         return filteredWaps
