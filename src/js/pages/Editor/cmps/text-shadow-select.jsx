@@ -5,7 +5,7 @@ export function TextShadowSelect({ handleTextShadowChange, SelectItem }) {
     return (
         <Select.Root onValueChange={handleTextShadowChange}>
             <Select.Trigger className='SelectTrigger' aria-label='unit'>
-                <Select.Value placeholder='Text Shadow' />
+                <Select.Value placeholder='None' />
             </Select.Trigger>
             <Select.Portal>
                 <Select.Content position='popper' className='SelectContent'>

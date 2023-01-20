@@ -5,7 +5,7 @@ export function FontFamilySelect({ handleFontFamilyChange, SelectItem }) {
     return (
         <Select.Root onValueChange={handleFontFamilyChange}>
             <Select.Trigger className='SelectTrigger' aria-label='unit'>
-                <Select.Value placeholder='Font' />
+                <Select.Value placeholder='Poppins' />
             </Select.Trigger>
             <Select.Portal>
                 <Select.Content position='popper' className='SelectContent'>

@@ -3,6 +3,7 @@ import { httpService } from './http.service'
 import { store } from '../store/store'
 // import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
 import { showSuccessMsg } from '../services/event-bus.service'
+import { utilService } from './util.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const STORAGE_KEY_USER_DB = 'userDB'
@@ -20,6 +21,13 @@ export const userService = {
 }
 
 window.userService = userService
+_createUsersForTesting()
+
+function _createUsersForTesting() {
+    if (!utilService.loadFromStorage(STORAGE_KEY_USER_DB)) {
+        utilService.saveToStorage(STORAGE_KEY_USER_DB, [{ fullname: 'King Kong', username: '1', password: '1' }])
+    }
+}
 
 function getUsers() {
     return storageService.query(STORAGE_KEY_USER_DB)
