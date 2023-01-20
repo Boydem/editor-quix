@@ -14,7 +14,10 @@ export function AppHeader() {
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
     const navigate = useNavigate()
 
-    console.log('wap:', wap)
+    useEffect(() => {
+        if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
+    }, [])
+
     function handleChange(ev) {
         const value = ev.target.value
         const field = ev.target.name
@@ -36,7 +39,7 @@ export function AppHeader() {
     return (
         <header className='app-header full'>
             <div className='logo-container'>
-                <span className='logo'>WinX</span>
+                <span className='logo'>Webix.</span>
             </div>
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
@@ -69,7 +72,7 @@ export function AppHeader() {
             </nav>
             <div className='publish-link'>
                 <label className='publish-url-prefix' htmlFor='publishUrl'>
-                    winx.co.il/
+                    webix.co.il/
                     <input
                         onChange={handleChange}
                         value={wapUrlToEdit.publishUrl}
@@ -96,7 +99,7 @@ export function AppHeader() {
                         </Link>
                     </li>
                     <li>
-                        <Link className='nav-link publish' to={`/${wap.url}`}>
+                        <Link className='nav-link publish' to={`/${wap?.url}`}>
                             <span>Publish</span>
                         </Link>
                     </li>

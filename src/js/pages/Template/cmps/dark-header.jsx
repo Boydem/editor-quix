@@ -10,7 +10,7 @@ export function DarkHeader() {
     return (
         <header className='dark-header app-header full'>
             <div className='logo-container'>
-                <span className='logo'>WinX</span>
+                <span className='logo'>Webix.</span>
             </div>
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>

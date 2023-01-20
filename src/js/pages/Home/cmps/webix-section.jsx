@@ -1,9 +1,9 @@
-import WinxSectionBg from '../../../../assets/imgs/home-assets/winx-section-bg.webp'
+import WebixSectionBg from '../../../../assets/imgs/home-assets/webix-section-bg.webp'
 
-export function WinxSection() {
+export function WebixSection() {
     return (
-        <section className='winx-section full'>
-            <img className='bg' src={WinxSectionBg} alt='WinxSectionBg' />
+        <section className='webix-section full'>
+            <img className='bg' src={WebixSectionBg} alt='WebixSectionBg' />
             <div className='sides-svg side-right-svg'>
                 <svg
                     preserveAspectRatio='xMidYMid meet'
@@ -28,7 +28,7 @@ export function WinxSection() {
                 </svg>
             </div>
             <div className='text'>
-                <span className='text-xxl'>Winx</span>
+                <span className='text-xxl'>Webix</span>
                 <h3>
                     <span className='display-3'>The rest is up to you.</span>
                 </h3>

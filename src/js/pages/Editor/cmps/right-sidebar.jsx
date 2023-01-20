@@ -1,5 +1,5 @@
 import { AiOutlineClose } from 'react-icons/ai'
-import { OurAccordion } from './our-accordion'
+import { Accordion } from './edit-accordion'
 
 export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
     function handleSidebar(stateChanges) {
@@ -23,7 +23,7 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                     </div>
                 </div>
                 {/* <AccordionEdit /> */}
-                <OurAccordion />
+                <Accordion />
             </div>
         </div>
     )

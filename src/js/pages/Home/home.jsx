@@ -3,7 +3,7 @@ import { DiscoverSection } from './cmps/discover-section'
 import { HeroSection } from './cmps/hero-section'
 import { HomeHeader } from './cmps/home-header'
 import { WapsSection } from './cmps/waps-section'
-import { WinxSection } from './cmps/winx-section'
+import { WebixSection } from './cmps/webix-section'
 
 export function Home() {
     return (
@@ -13,7 +13,7 @@ export function Home() {
                 <HeroSection />
                 <DiscoverSection />
                 <WapsSection />
-                <WinxSection />
+                <WebixSection />
             </main>
             <AppFooter />
         </>

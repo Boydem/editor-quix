@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
-import { saveCmp } from '../../../store/wap/wap.action'
-import SelectUnit from './ui-cmps/select'
+import { saveCmp } from '../../../../store/wap/wap.action'
+import SelectUnit from '../ui-cmps/select'
 
-export  function Inputs() {
+export function EditSizes() {
     const expandedRef = useRef()
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')

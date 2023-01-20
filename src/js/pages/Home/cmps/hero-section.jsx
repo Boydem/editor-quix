@@ -34,7 +34,7 @@ export function HeroSection() {
                                 </g>
                             </svg>
                         </span>
-                        <span className='display-p'>WinX stands for with Ukraine.</span>
+                        <span className='display-p'>Webix stands for with Ukraine.</span>
                     </span>
                 </div>
                 <div className='wrapper'>

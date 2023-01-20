@@ -4,6 +4,8 @@ import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
+import { BiFontColor } from 'react-icons/bi'
+import { IoMdColorFill } from 'react-icons/io'
 import { useSelector } from 'react-redux'
 import {
     AiOutlineAlignLeft,
@@ -16,12 +18,13 @@ import {
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as Slider from '@radix-ui/react-slider'
 
-import { saveCmp } from '../../../store/wap/wap.action'
-import { showErrorMsg } from '../../../services/event-bus.service'
-import { TextShadowSelect } from './text-shadow-select'
-import { FontFamilySelect } from './font-family-select'
+import { saveCmp } from '../../../../store/wap/wap.action'
+import { showErrorMsg } from '../../../../services/event-bus.service'
+import { TextShadowSelect } from '../text-shadow-select'
+import { FontFamilySelect } from '../font-family-select'
+import { TextToolbar } from '../ui-cmps/text-toolbar'
 
-export function Edit() {
+export function EditAdjusts() {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
     const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
     const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
@@ -100,6 +103,7 @@ export function Edit() {
     }
 
     async function handleTextStyleChange(styleToEdit, value) {
+        console.log('styleToEdit:', styleToEdit)
         if (!lastClickedCmp?.style) lastClickedCmp.style = {}
         if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
         lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
@@ -128,18 +132,20 @@ export function Edit() {
     }
 
     return (
-        <div className='inside-accordion'>
+        <div className='adjust inside-accordion'>
             <div className='header' onClick={setIsExpanded}>
-                <p>Edit</p>
+                <p>Adjust</p>
                 <button>
                     <BsChevronDown />
                 </button>
             </div>
 
             <div className='expanded-content hidden' ref={expandedRef}>
+                <TextToolbar handleTextStyleChange={handleTextStyleChange} />
+
                 <div className='color-pick'>
                     <button className='color-pick-label' onClick={openTextColorPalette}>
-                        Text Color
+                        <BiFontColor />
                     </button>
                     {isTextPaletteOpen && (
                         <BlockPicker
@@ -152,7 +158,7 @@ export function Edit() {
                 </div>
                 <div className='color-pick'>
                     <button className='color-pick-label' onClick={openBgColorPalette}>
-                        Background Color
+                        <IoMdColorFill />
                     </button>
                     {isBgPaletteOpen && (
                         <BlockPicker
@@ -175,51 +181,6 @@ export function Edit() {
                             color={elClickedNode?.style.borderColor}
                         />
                     )}
-                </div>
-
-                <div className='text-decoration'>
-                    <button
-                        title='Bold'
-                        onClick={() => handleTextStyleChange('fontWeight', 'bold')}
-                        className='btn bold-btn'
-                    >
-                        <AiOutlineBold />
-                    </button>
-                    <button
-                        title='Italic'
-                        onClick={() => handleTextStyleChange('fontStyle', 'italic')}
-                        className='btn italic-btn'
-                    >
-                        <AiOutlineItalic />
-                    </button>
-                    <button
-                        title='Underline'
-                        onClick={() => handleTextStyleChange('textDecoration', 'underline')}
-                        className='btn underline-btn'
-                    >
-                        <AiOutlineUnderline />
-                    </button>
-                    <button
-                        title='Align-Left'
-                        onClick={() => handleTextStyleChange('textAlign', 'start')}
-                        className='btn align-left-btn'
-                    >
-                        <AiOutlineAlignLeft />
-                    </button>
-                    <button
-                        title='Align-Center'
-                        onClick={() => handleTextStyleChange('textAlign', 'center')}
-                        className='btn align-center-btn'
-                    >
-                        <AiOutlineAlignCenter />
-                    </button>
-                    <button
-                        title='Align-Right'
-                        onClick={() => handleTextStyleChange('textAlign', 'end')}
-                        className='btn align-right-btn'
-                    >
-                        <AiOutlineAlignRight />
-                    </button>
                 </div>
 
                 <div className='font-family-select'>

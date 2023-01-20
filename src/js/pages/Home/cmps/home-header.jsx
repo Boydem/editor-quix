@@ -10,7 +10,7 @@ export function HomeHeader() {
     }
     return (
         <header className='home-header flex justify-between full'>
-            <span className='logo'>WinX</span>
+            <span className='logo'>Webix.</span>
             <div onClick={toggleMenu} className='btn-mobile-menu'>
                 <FaBars />
             </div>

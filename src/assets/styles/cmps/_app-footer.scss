@@ -1,5 +1,5 @@
 .app-footer {
-    border-top: 1px solid rgba($clr18, .25);
+    border-top: 1px solid rgba($clr18, 0.25);
     padding: 6rem 8rem;
     max-width: 1345px;
     margin: auto;
@@ -33,16 +33,13 @@
             }
         }
 
-
         & .footer-links {
-
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
 
-        & .footer-winx {
-
+        & .footer-webix {
             justify-self: end;
         }
     }
