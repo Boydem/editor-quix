@@ -18,6 +18,7 @@ export default function DynamicCmp(props) {
         if (!ev.target.type) ev.preventDefault()
 
         if (!isEditing) return
+        if (elClickedNode === ev.target) return
 
         if (elClickedNode) {
             elClickedNode.classList.remove('clicked')
@@ -25,8 +26,8 @@ export default function DynamicCmp(props) {
         ev.target.classList.add('clicked')
         // console.log(props.selectedActionsRef.current)
         // console.log(ev.target.offsetTop)
-        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 10 + 100}px`
-        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft + 60}px`
+        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
+        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
 
         setElClickedNode(ev.target)
         setClickedCmp(cmp)

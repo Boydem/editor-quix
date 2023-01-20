@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRef, useState } from 'react'
 import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
@@ -13,6 +13,12 @@ export function EditText() {
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const expandedRef = useRef()
+
+    useEffect(() => {
+        if (elClickedNode) {
+        }
+    }, [])
+
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
     }

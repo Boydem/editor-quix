@@ -11,14 +11,16 @@
 .clicked {
     position: relative;
 
-    outline: solid 2px #07396e !important;
+    outline: solid 2px $editor-outline !important;
 }
 
 .selected-actions {
     position: absolute;
     z-index: 1;
     color: white;
-    background: rgba(7, 57, 110, 0.4);
+    // background: rgba(7, 57, 110, 0.4);
+    background: $editor-outline;
+    color: $editor-active-bg;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -29,5 +31,5 @@
 .hover {
     // background: rgba(192, 250, 241, 255);
     background: rgba(7, 57, 110, 0.2);
-    outline: solid 2px #07396e;
+    outline: solid 2px $editor-outline;
 }
