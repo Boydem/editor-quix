@@ -39,17 +39,6 @@ export function EditColorsOpened() {
         )
     })
 
-    function openBorderColorPalette() {
-        setIsTextPaletteOpen(false)
-        setIsBgPaletteOpen(false)
-        setIsBorderPaletteOpen(prev => !prev)
-    }
-    function openBgColorPalette() {
-        setIsTextPaletteOpen(false)
-        setIsBorderPaletteOpen(false)
-        setIsBgPaletteOpen(prev => !prev)
-    }
-
     async function handleFontFamilyChange(val) {
         if (!lastClickedCmp?.style) lastClickedCmp.style = {}
         lastClickedCmp.style = { ...lastClickedCmp.style, fontFamily: val }
@@ -67,38 +56,6 @@ export function EditColorsOpened() {
             saveCmp(lastClickedCmp)
         } catch (err) {
             console.log('Failed to save lastClickedCmp at edit', err)
-        }
-    }
-
-    async function handleColorChange(color) {
-        const hex = color.hex
-        if (isTextPaletteOpen) {
-            lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
-            elClickedNode.style.color = hex
-        } else if (isBorderPaletteOpen) {
-            lastClickedCmp.style = { ...lastClickedCmp.style, borderColor: hex }
-            elClickedNode.style.borderColor = hex
-        } else if (isBgPaletteOpen) {
-            lastClickedCmp.style = { ...lastClickedCmp.style, backgroundColor: hex }
-            elClickedNode.style.backgroundColor = hex
-        }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleColorChange`, err)
-            // showErrorMsg('Failed to save changes, try again later')
-        }
-    }
-
-    async function handleTextStyleChange(styleToEdit, value) {
-        console.log('styleToEdit:', styleToEdit)
-        if (!lastClickedCmp?.style) lastClickedCmp.style = {}
-        if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
-        lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
-        try {
-            await saveCmp(lastClickedCmp)
-        } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleTextStyleChange`, err)
         }
     }
 
@@ -160,13 +117,15 @@ export function EditColorsOpened() {
                     )}
                 </div> */}
 
-                <div className='font-family-select'>
+                <div className='selector'>
                     {/* <SelectFontFamily /> */}
+                    <p>Font Select</p>
                     <FontFamilySelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
                 </div>
 
-                <div className='text-shadow-select'>
+                <div className='selector'>
                     {/* <SelectTextShadow /> */}
+                    <p>Text Shadow </p>
                     <TextShadowSelect handleTextShadowChange={handleTextShadowChange} SelectItem={SelectItem} />
                 </div>
 

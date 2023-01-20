@@ -25,7 +25,7 @@ export function Accordion({ context }) {
             {context === 'img' && <EditImg clickedCmp={clickedCmp} />}
             {context === 'form' && <EditForm clickedCmp={clickedCmp} />}
             {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
-            {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
+            
         </div>
     )
 }

@@ -68,7 +68,7 @@ input {
 }
 
 .tabs-inner-content {
-    max-width: $right-sidebar-width;
+    // max-width: $right-sidebar-width;
     .inside-accordion {
         .header {
             font-size: px-to-rem(12px);
@@ -263,5 +263,21 @@ input {
                 border: 1px solid black;
             }
         }
+    }
+
+    .selector {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        button {
+            padding: 0 0.5rem;
+            background: #f4f5f8;
+            // width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .selector:last-of-type {
+        margin-bottom: 1rem;
     }
 }

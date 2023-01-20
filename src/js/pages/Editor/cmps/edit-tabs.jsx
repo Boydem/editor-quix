@@ -8,6 +8,7 @@ import { EditMap } from './edit-modules/edit-map'
 import { EditSizes } from './edit-modules/edit-sizes'
 import { EditText } from './edit-modules/edit-text'
 import { EditFaq } from './faq'
+import { EditVideo } from './edit-modules/edit-video'
 import React from 'react'
 import * as Tabs from '@radix-ui/react-tabs'
 import { EditTextOpened } from './edit-modules/edit-text-opened'
@@ -51,6 +52,7 @@ export function EditTabs({ context }) {
                 {context === 'img' && <EditImgOpened clickedCmp={clickedCmp} />}
                 {context === 'form' && <EditFormOpened clickedCmp={clickedCmp} />}
                 {context === 'map' && <EditMapOpened clickedCmp={clickedCmp} />}
+                {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
             </Tabs.Content>
         </Tabs.Root>
     )
