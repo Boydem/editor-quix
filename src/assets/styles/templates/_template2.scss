@@ -11,8 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     color: var(--clr4);
-    background: rgb(8, 12, 31);
-
+    background: var(--clr2);
     .logo {
         display: flex;
         align-items: center;
@@ -342,7 +341,7 @@ body {
 }
 
 .footer {
-    background: #0b1321;
+    background: var(--clr2);
     color: var(--clr4);
     text-align: center;
     padding: 1rem 0;

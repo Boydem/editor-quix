@@ -3,18 +3,6 @@
 
 // Typography
 
-a {
-    text-decoration: none;
-    color: inherit;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-
-    &:hover {
-        opacity: 0.7;
-    }
-}
-
 // Header
 .wap-3-header {
     background: var(--clr1);

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import { wapService } from '../services/wap.service'
-import { showErrorMsg } from '../services/event-bus.service'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { saveWap } from '../store/wap/wap.action'
 export function AppHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState()

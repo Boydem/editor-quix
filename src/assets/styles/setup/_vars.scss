@@ -102,8 +102,10 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 }
 #root.theme-2 {
     --clr1: #0d425e;
-    --clr3: #fdd123;
-    --clr2: #101010;
+    // --clr3: #fdd123;
+    // --clr2: #101010;
+    --clr2: #fdd123;
+    --clr3: #101010;
     --clr4: #eef3f5;
 }
 #root.theme-3 {
@@ -117,4 +119,5 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
     --clr1: #222628;
     --clr2: #8aebf0;
     --clr3: #f6f8f9;
+    --clr4: #101010;
 }
