@@ -14,15 +14,12 @@ export function Preview() {
 
     async function loadWap() {
         let wap
-        console.log('wapId:', wapId)
-        console.log('wapUrl:', wapUrl)
         try {
             if (wapId) {
                 wap = await wapService.get(wapId)
             } else {
                 wap = await wapService.getWapByUrl(wapUrl)
             }
-            console.log(wap)
             setWap(wap)
         } catch (err) {
             console.log('Failed to load wap in wap-preview', err)

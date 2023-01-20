@@ -115,7 +115,6 @@ export function EditAdjusts() {
     }
 
     function handleFontSliderChange(ev) {
-        console.log(ev[0])
         elClickedNode.style.fontSize = `${ev[0]}px`
     }
 
@@ -129,7 +128,6 @@ export function EditAdjusts() {
         }
     }
     async function handleBorderSliderChange(ev) {
-        console.log(ev[0])
         elClickedNode.style.borderRadius = `${ev[0]}px`
     }
     async function handleBorderSliderCommit(ev) {
