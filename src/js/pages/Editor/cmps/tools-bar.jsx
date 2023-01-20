@@ -6,6 +6,7 @@ import { AiOutlineBold } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { GoDeviceDesktop } from 'react-icons/go'
 import { BiMobileAlt } from 'react-icons/bi'
+import { FaTrash } from 'react-icons/fa'
 import { AiOutlineMobile } from 'react-icons/ai'
 import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
@@ -16,8 +17,12 @@ import { FiMessageSquare } from 'react-icons/fi'
 import { CgColorPicker } from 'react-icons/cg'
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { useState } from 'react'
+import { removeCmp } from '../../../store/wap/wap.action'
+import { useSelector } from 'react-redux'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
+    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    
     const tools = [
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
@@ -33,6 +38,12 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             return
         } else {
             handleSidebarsChanges(side, { ...stateChanges })
+        }
+    }
+
+    function onRemoveCmp() {
+        if (clickedCmp) {
+            removeCmp(clickedCmp)
         }
     }
     return (
@@ -74,6 +85,9 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             <div className='tools tools-views flex align-center'>
                 <div className='responsive-btns flex align-center'>
                     <div className='btns-undo-redo flex align-center'>
+                        <button className='tool' onClick={onRemoveCmp}>
+                            <FaTrash />
+                        </button>
                         <button className='tool'>
                             <GrUndo />
                         </button>

@@ -1,14 +1,18 @@
+import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
 
 export function VideoCmp({ cmp, handleClick, onHover }) {
+    const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     let classes = cmp.name + ' '
     if (cmp.class) {
         classes += cmp.class?.join(' ')
     }
 
+    // console.log()
+
     return (
         <div
-            className={classes}
+            className={`${classes}`}
             style={cmp.style}
             onClick={e => handleClick(e, cmp)}
             onMouseOver={onHover}
@@ -22,6 +26,7 @@ export function VideoCmp({ cmp, handleClick, onHover }) {
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 allowFullScreen
                 style={{ width: '100%', height: '100%' }}
+                className={`${isEditing ? 'video-disabled' : ''}`}
             ></iframe>
         </div>
     )

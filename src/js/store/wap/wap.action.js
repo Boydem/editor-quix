@@ -21,11 +21,22 @@ export async function saveWap(wap) {
 export async function saveCmp(newCmp) {
     try {
         const wap = store.getState().wapModule.wap
-        await wapService.updateCmp(newCmp, wap)
+        await wapService.findParentCmp(newCmp, wap, wapService.saveCmp)
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
+        throw err
+    }
+}
+export async function removeCmp(newCmp) {
+    try {
+        const wap = store.getState().wapModule.wap
+        await wapService.findParentCmp(newCmp, wap, wapService.removeCmp)
+        await wapService.save(wap)
+        store.dispatch({ type: SET_WAP, wap })
+    } catch (err) {
+        console.log('Cannot remove cmp in wap.action', err)
         throw err
     }
 }

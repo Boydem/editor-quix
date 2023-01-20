@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux'
 import { saveWap, setIsEditing } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
-import { FiEdit2 } from 'react-icons/fi'
 
 export function Editor() {
     // wap states

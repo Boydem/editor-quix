@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
-import { ACmp } from './dynamic-cmps/a-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
 import DynamicElement from './dynamic-cmps/dynamic-element'
 import { FormCmp } from './dynamic-cmps/form-cmp'

@@ -99,3 +99,56 @@
     &.open {
     }
 }
+
+.edit-img {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 0.5rem;
+
+        label {
+            color: white;
+            background: #003dff;
+            padding: 0.3rem 0.6rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            border: 1px solid black;
+        }
+    }
+}
+
+.edit-form {
+    .heading {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .input-option {
+        margin-bottom: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .btn {
+            cursor: pointer;
+            padding: 0.1rem 0.7rem;
+            background: #f4f5f8;
+            border-radius: 5px;
+        }
+    }
+}
+
+.edit-map {
+    .marker {
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.3fr;
+        gap: 1rem;
+        button {
+            align-self: flex-end;
+            padding-bottom: 0.5rem;
+        }
+    }
+}

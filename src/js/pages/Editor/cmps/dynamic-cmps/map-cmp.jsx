@@ -24,11 +24,13 @@ export default function MapCmp({ cmp, handleClick, onHover }) {
         >
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyB5mXoA76shI6CK3DmGjZi3M4PMn7YX4WA' }}
-                defaultCenter={defaultProps.center}
-                defaultZoom={defaultProps.zoom}
+                // defaultCenter={defaultProps.center}
+                // defaultZoom={defaultProps.zoom}
+                center={defaultProps.center}
+                zoom={defaultProps.zoom}
             >
                 {cmp.content.markers.map(marker => {
-                    return <AnyReactComponent lat={marker.lat} lng={marker.lng} key={marker.id}/>
+                    return <AnyReactComponent lat={marker.lat} lng={marker.lng} key={marker.id} />
                 })}
             </GoogleMapReact>
         </div>
