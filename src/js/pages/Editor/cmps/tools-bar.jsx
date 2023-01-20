@@ -20,7 +20,6 @@ import { useState } from 'react'
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const [currActive, setCurrActive] = useState(null)
     const tools = [
-        { side: 'left', module: 'add' },
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
     ]
@@ -47,9 +46,11 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                                 isSubMenuOpen: tool.module !== 'add' ? true : false,
                             })
                         }
-                        className={`${currActive === tool.module ? 'active' : ''} tool`}
+                        className={`${
+                            currActive === tool.module && leftSidebarState.currModule !== 'add' ? 'active' : ''
+                        } tool`}
                     >
-                        {tool.module === 'add' && <AiOutlinePlus />}
+                        {/* {tool.module === 'add' && <AiOutlinePlus />} */}
                         {tool.module === 'layers' && <FiLayers />}
                         {tool.module === 'themes' && <IoColorFilterOutline />}
                     </button>

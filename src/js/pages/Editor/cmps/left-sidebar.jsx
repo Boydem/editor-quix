@@ -37,7 +37,17 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
             {
                 <div className={`${leftSidebarState.currModule} module-menu`}>
-                    <div className='indicator'>
+                    <div
+                        onClick={() =>
+                            handleSidebar({
+                                isOpen: !leftSidebarState.isOpen,
+                                isSubMenuOpen: leftSidebarState.module !== 'add' ? true : false,
+                                activeMenuItem: 'Quick add',
+                                currModule: leftSidebarState.currModule !== 'add' ? 'add' : null,
+                            })
+                        }
+                        className='indicator'
+                    >
                         <AiOutlinePlus />
                     </div>
                     {addMenuItems.map((menuItems, idx) => (
