@@ -56,6 +56,8 @@ $app-header-height: 52px + 1px; // 1px for border-bottom addition
 $toolbar-height: 44px + 1px; // 1px for border-bottom addition
 $scroll-bar-width: $spacing-m;
 $right-sidebar-width: 260px;
+$modules-menu-width: 180px;
+$modules-content-width: 300px;
 
 // LAYOUT
 $layoutPadding: $base-font-size * 5.063;
@@ -77,6 +79,19 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
     --clr2: #ffd7ef;
     --clr3: #eef;
     --clr4: #101010;
+}
+
+#root.wap2-primary {
+    --clr1: #a3eee9;
+    --clr2: #0b1321;
+    --clr3: #8b95a6;
+    --clr4: #eef;
+}
+
+#root.wap3-primary {
+    --clr1: #dcdcdc;
+    --clr2: #303030;
+    --clr3: #5783de;
 }
 
 #root.theme-1 {

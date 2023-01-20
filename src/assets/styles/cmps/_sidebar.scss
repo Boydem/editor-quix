@@ -1,108 +1,92 @@
 .left-sidebar {
-    $modules-menu-width: 180px;
     min-height: calc(100vh - $app-header-height + $toolbar-height);
     max-height: calc(100vh - $app-header-height + $toolbar-height);
-    background-color: $clr1;
+
     z-index: 9999;
     position: fixed;
-    left: 0;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible;
     display: flex;
-    transform: translateX(-100%);
+    // transform: translateX(-$modules-content-width);
     min-width: $modules-menu-width;
-    // .menu-items {
-    //     overflow: visible;
-    //     // .modules {
-    //     //     min-height: calc(100vh - $app-header-height + $toolbar-height);
-    //     //     width: $modules-menu-width;
-    //     //     z-index: 2;
-    //     //     background-color: $clr1;
-    //     // }
-    // }
+    left: 0;
+
     &.open {
-        transform: translateX(0%);
+        // transform: translateX(0%);
     }
     .module-menu {
         z-index: 2;
         width: 100%;
         background-color: $clr1;
+        max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
+        position: relative;
+        left: -$modules-menu-width;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        .indicator {
+            position: absolute;
+            inset: 0;
+            right: 0;
+            left: unset;
+            margin: auto;
+            cursor: pointer;
+            height: max-content;
+            padding: $spacing-xs $spacing-xxs;
+            color: $editor-active-bg;
+            // font-weight: 900;
+            font-size: px-to-rem(20px);
+            line-height: 1;
+            z-index: 999;
+            transform: translate(100%, -90px);
+            border-radius: 0 55rem 55rem 0;
+            // background-color: rgba($editor-active-clr, 75%);
+            background-color: $editor-active-clr;
+            // position: relative;
+            &::before {
+                z-index: -2;
+                content: '';
+                position: absolute;
+                inset: 0;
+                left: 0;
+                right: unset;
+                margin: auto;
+                border-radius: 0 0.55rem 0.55rem 0;
+                width: 10px;
+                height: $spacing-xxl;
+                background-color: $editor-active-clr;
+            }
+        }
+        &.add {
+            left: 0;
+        }
+        .closed {
+        }
     }
     .module-content {
-        $modules-content-width: 300px;
         z-index: -1;
         position: absolute;
         width: $modules-content-width;
         top: 0;
-        left: -($modules-content-width - $modules-menu-width);
+        left: 0;
+        transform: translateX(-100%);
         background-color: $clr1;
         min-height: 100%;
-        transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-
+        max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
+        transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
         &.open {
-            left: $modules-menu-width;
+            // transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), left 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(0%);
+            // left: 0;
+            transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
         }
     }
 }
+.left-sidebar.add .module-content {
+    transform: translateX(-$modules-menu-width);
+}
+.left-sidebar.add .module-content.open {
+    transform: translateX($modules-menu-width);
+}
 
-// .side-bar {
-//     overflow: hidden;
-//     position: relative;
-//     width: 100vw;
-//     .left-sidebar {
-//         min-height: calc(100vh - $app-header-height + $toolbar-height);
-//         max-height: calc(100vh - $app-header-height + $toolbar-height);
-//         background-color: $clr1;
-//         z-index: 9999;
-//         transition: transform 0.3s;
-//         overflow: hidden;
-//         top: $app-header-height + $toolbar-height;
-//         & {
-//             $modules-menu-width: 180px;
-//             position: fixed;
-//             transform: translateX(-100%);
-//             left: 0;
-//             overflow: visible;
-//             .modules {
-//                 min-height: calc(100vh - $app-header-height + $toolbar-height);
-//                 width: $modules-menu-width;
-//                 z-index: 2;
-//                 background-color: $clr1;
-//             }
-//             & .module-content {
-//                 $modules-content-width: 300px;
-//                 z-index: -1;
-//                 position: absolute;
-//                 transform: translateX(-100%);
-//                 width: $modules-content-width;
-//                 top: 0;
-//                 left: $modules-menu-width;
-//                 background-color: $clr1;
-//                 height: 100%;
-//                 transition: transform 0.3s;
-//                 &.open {
-//                     transform: translateX(0%);
-//                 }
-//             }
-//         }
-//     }
-
-//     & .right-sidebar {
-//         display: grid;
-//         position: fixed;
-//         min-width: px-to-rem(280px);
-//         max-width: px-to-rem(280px);
-//         grid-template-columns: 1fr;
-//         transform: translateX(100%);
-//         right: 0;
-//     }
-//     &.open.edit .right-sidebar {
-//         transform: translateX(0%);
-//     }
-//     &.open.add .left-sidebar {
-//         transform: translateX(0%);
-//     }
-// }
 .module-menu {
     z-index: 2;
     // box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);

@@ -22,20 +22,22 @@ import { useSelector } from 'react-redux'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    const [currActive, setCurrActive] = useState(null)
+    
     const tools = [
-        { side: 'left', module: 'add' },
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
     ]
     function onToolClick(side, stateChanges) {
-        if (stateChanges.currModule === currActive) {
-            handleSidebarsChanges(side, { isOpen: false, context: null, currModule: null })
-            setCurrActive(null)
+        if (stateChanges.currModule === leftSidebarState.currModule) {
+            handleSidebarsChanges(side, {
+                isOpen: false,
+
+                currModule: null,
+                isSubMenuOpen: !leftSidebarState.isSubMenuOpen,
+            })
             return
         } else {
             handleSidebarsChanges(side, { ...stateChanges })
-            setCurrActive(stateChanges.currModule)
         }
     }
 
@@ -50,10 +52,17 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                 {tools.map((tool, idx) => (
                     <button
                         key={idx}
-                        onClick={() => onToolClick(tool.side, { isOpen: true, currModule: tool.module })}
-                        className={`${currActive === tool.module ? 'active' : ''} tool`}
+                        onClick={() =>
+                            onToolClick(tool.side, {
+                                isOpen: true,
+                                currModule: tool.module,
+                                activeMenuItem: null,
+                                isSubMenuOpen: true,
+                            })
+                        }
+                        className={`${leftSidebarState.currModule === tool.module ? 'active' : ''} tool`}
                     >
-                        {tool.module === 'add' && <AiOutlinePlus />}
+                        {/* {tool.module === 'add' && <AiOutlinePlus />} */}
                         {tool.module === 'layers' && <FiLayers />}
                         {tool.module === 'themes' && <IoColorFilterOutline />}
                     </button>
@@ -96,7 +105,9 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                     </div>
                     <div className='btns-user-req flex align-center'>
                         <button
-                            onClick={() => onToolClick('right', { isOpen: true, currModule: 'Edit' })}
+                            onClick={() =>
+                                onToolClick('right', { isOpen: true, currModule: 'Edit', isSubMenuOpen: true })
+                            }
                             className={`${rightSidebarState.isOpen ? 'active' : ''} tool`}
                         >
                             <CgColorPicker />
