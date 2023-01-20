@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export function EditImg() {
+export function EditForm() {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const expandedRef = useRef()
     function setIsExpanded() {
@@ -20,18 +20,14 @@ export function EditImg() {
     return (
         <div className='adjust inside-accordion'>
             <div className='header' onClick={setIsExpanded}>
-                <p>Image</p>
+                <p>Form</p>
                 <button>
                     <BsChevronDown />
                 </button>
             </div>
             <div className='expanded-content hidden edit-form' ref={expandedRef}>
                 <div className='wrapper'>
-                    <label>
-                        Upload
-                        <input type='file' hidden onChange={onImgInput} />
-                    </label>
-                    <img src={clickedCmp.content?.imgUrl} alt='' />
+                    <p>HEYYYY</p>
                 </div>
             </div>
         </div>
