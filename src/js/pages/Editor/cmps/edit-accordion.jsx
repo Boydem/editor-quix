@@ -7,7 +7,7 @@ import { EditFaq } from './faq'
 export function Accordion() {
     return (
         <div className='our-accordion'>
-            <EditSizes />Z
+            <EditSizes />
             <EditAdjusts />
             <EditColors />
             <EditText />
