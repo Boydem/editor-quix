@@ -88,7 +88,11 @@ export function Editor() {
                 <div className='editor-layout full'>
                     <EditorPreview wapCmps={wap.cmps} setRightSidebarState={setRightSidebarState} />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
-                    <LeftSidebar leftSidebarState={leftSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
+                    <LeftSidebar
+                        leftSidebarState={leftSidebarState}
+                        handleSidebarsChanges={handleSidebarsChanges}
+                        wap={wap}
+                    />
                 </div>
             </DragDropContext>
         </>
