@@ -7,6 +7,7 @@ export function VideoCmp({ cmp, handleClick, onHover }) {
     if (cmp.class) {
         classes += cmp.class?.join(' ')
     }
+    console.log('cmp:', cmp)
 
     // console.log()
 
@@ -18,9 +19,8 @@ export function VideoCmp({ cmp, handleClick, onHover }) {
             onMouseOver={onHover}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
         >
-            {/* <iframe src={cmp.content.url} frameborder="0" ></iframe> */}
             <iframe
-                src='https://www.youtube.com/embed/LlU4FuIJT2k'
+                src={cmp.content.url}
                 title='YouTube video player'
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
