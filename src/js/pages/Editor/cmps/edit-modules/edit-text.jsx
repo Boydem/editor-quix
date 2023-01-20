@@ -30,7 +30,8 @@ export function EditText() {
     }
 
     async function handleColorChange(color) {
-        const hex = color?.hex
+        console.log(color)
+        const hex = color.hex
         if (isTextPaletteOpen) {
             lastClickedCmp.style = { ...lastClickedCmp.style, color: hex }
             elClickedNode.style.color = hex

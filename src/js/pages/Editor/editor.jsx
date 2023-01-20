@@ -16,6 +16,7 @@ import { FiEdit2 } from 'react-icons/fi'
 export function Editor() {
     // wap states
     const wap = useSelector(storeState => storeState.wapModule.wap)
+    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const { wapId } = useParams()
 
     // sidebars states
@@ -37,6 +38,11 @@ export function Editor() {
             setIsEditing(false)
         }
     }, [])
+    // console.log(rightSidebarState.context)
+
+    useEffect(() => {
+        handleSidebarsChanges('right', { context: clickedCmp?.type || 'Edit' })
+    }, [clickedCmp])
 
     function handleSidebarsChanges(side, stateChanges) {
         if (side === 'right') {

@@ -24,8 +24,6 @@ export default function DynamicCmp(props) {
             elClickedNode.classList.remove('clicked')
         }
         ev.target.classList.add('clicked')
-        // console.log(props.selectedActionsRef.current)
-        // console.log(ev.target.offsetTop)
         props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
         props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
 
