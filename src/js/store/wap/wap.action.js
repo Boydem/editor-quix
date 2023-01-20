@@ -10,7 +10,7 @@ export async function setElClickedNode(elNode) {
 }
 export async function saveWap(wap) {
     try {
-        wapService.save(wap)
+        await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
         console.log('Cannot save wap in wap.action', err)

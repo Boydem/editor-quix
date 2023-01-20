@@ -1,38 +1,19 @@
 .editor-preview {
-    $scroll-bar-width: $spacing-m;
     $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     max-height: $editor-max-height;
-    padding: $spacing-l $spacing-m;
+    padding: $spacing-m $spacing-l;
     background-color: $editor-hover-bg;
     border-radius: $spacing-s;
     overflow-y: auto;
     overflow-x: hidden;
 
     .wrapper {
-        max-width: 90%;
+        container-type: inline-size;
         margin: auto;
         box-shadow: 0px -5px 32px 24px rgba($clr7, 0.125);
         border-radius: $spacing-s;
         overflow: hidden;
         position: relative;
-        & .editor-resizer {
-            z-index: 3;
-            position: fixed;
-            top: 50%;
-            height: 3rem;
-            width: 10px;
-            border-radius: 10em;
-            cursor: e-resize;
-            background-color: $clr9;
-            &.left {
-                transform: translate(-100%, 100%);
-                left: 5%;
-            }
-            &.right {
-                transform: translate(100%, 100%);
-                right: calc(5% + $scroll-bar-width);
-            }
-        }
     }
     &::-webkit-scrollbar-thumb {
         border: $spacing-xs solid transparent;
@@ -45,5 +26,25 @@
     }
     &::-webkit-scrollbar-track {
         background-color: $clr12;
+    }
+}
+
+.editor-resizer {
+    $scroll-bar-width: $spacing-m;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    height: 3rem;
+    width: 10px;
+    border-radius: 10em;
+    cursor: e-resize;
+    background-color: $clr9;
+    &.left {
+        transform: translate(-100%, 100%);
+        left: 35px;
+    }
+    &.right {
+        transform: translate(100%, 100%);
+        right: calc(35px + $scroll-bar-width);
     }
 }

@@ -8,6 +8,7 @@
     "@radix-ui/react-popover": "1.0.3",
     "@radix-ui/react-select": "^1.2.0",
     "@radix-ui/react-slider": "^1.1.0",
+    "@radix-ui/react-toolbar": "^1.0.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

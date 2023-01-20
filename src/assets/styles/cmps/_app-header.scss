@@ -2,7 +2,7 @@
     background-color: $clr1;
     width: 100%;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     margin: auto;
     z-index: 9999;
     border-bottom: 1px solid $editor-lightgray;
@@ -10,7 +10,6 @@
     position: sticky;
     top: 0;
     min-height: $app-header-height;
-
     &.dark-header {
         background-color: $clr11;
         & > *,
@@ -26,6 +25,7 @@
         align-items: center;
         height: 100%;
         .logo {
+            cursor: pointer;
             font-size: px-to-rem(20px);
             font-weight: 600;
             letter-spacing: -0.02rem;
@@ -55,6 +55,39 @@
             }
         }
     }
+
+    .publish-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .publish-url-prefix {
+            font-size: px-to-rem(12px);
+            padding: 2px $spacing-xxs;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: baseline;
+            background-color: $editor-lightgray;
+            justify-content: center;
+            border-radius: 0.25rem;
+            color: rgba($clr2, 75%);
+            .btn-publish {
+                color: lighten($editor-active-clr, 1%);
+                background: transparent;
+                padding: 0;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-size: px-to-rem(10px);
+                border-radius: 0.1rem;
+                padding-left: 0.5rem;
+            }
+            input {
+                color: rgba($clr2, 50%);
+                padding: 0;
+                background-color: transparent;
+            }
+        }
+    }
+
     .nav-actions {
         .nav-link {
             font-weight: 400;

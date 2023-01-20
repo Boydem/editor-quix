@@ -1,10 +1,31 @@
+import React from 'react'
 import { useRef, useState } from 'react'
+import * as Select from '@radix-ui/react-select'
+import classnames from 'classnames'
+import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
+import { BiFontColor } from 'react-icons/bi'
+import { IoMdColorFill } from 'react-icons/io'
 import { useSelector } from 'react-redux'
-import { saveCmp } from '../../../store/wap/wap.action'
-import SelectUnit from './ui-cmps/select'
+import {
+    AiOutlineAlignLeft,
+    AiOutlineAlignRight,
+    AiOutlineAlignCenter,
+    AiOutlineBold,
+    AiOutlineItalic,
+    AiOutlineUnderline,
+} from 'react-icons/ai'
+import { CheckIcon } from '@radix-ui/react-icons'
+import * as Slider from '@radix-ui/react-slider'
 
-export  function Inputs() {
+import { saveCmp } from '../../../../store/wap/wap.action'
+import { showErrorMsg } from '../../../../services/event-bus.service'
+import { TextShadowSelect } from '../text-shadow-select'
+import { FontFamilySelect } from '../font-family-select'
+import { TextToolbar } from '../ui-cmps/text-toolbar'
+import SelectUnit from '../ui-cmps/select'
+
+export function EditAdjusts() {
     const expandedRef = useRef()
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
@@ -14,13 +35,14 @@ export  function Inputs() {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
 
     const sizeOptions = [
-        { name: 'width', title: 'width', unit: 'px', value: 0 },
-        { name: 'height', title: 'height', unit: 'px', value: 0 },
-        { name: 'minWidth', title: 'min-W', unit: 'px', value: 0 },
-        { name: 'minHeight', title: 'min-h', unit: 'px', value: 0 },
-        { name: 'maxWidth', title: 'max-w', unit: 'px', value: 0 },
-        { name: 'maxHeight', title: 'max-h', unit: 'px', value: 0 },
+        { name: 'opacity', title: 'Opacity', unit: '%', value: 0 },
+        { name: 'rotate', title: 'Rotate', unit: 'deg', value: 0 },
+        { name: 'scale', title: 'Scale', unit: '%', value: 0 },
+        { name: 'skew', title: 'Skew', unit: 'deg', value: 0 },
+        { name: 'translateX', title: 'TranslateX', unit: 'px', value: 0 },
+        { name: 'translateY', title: 'TranslateY', unit: 'px', value: 0 },
     ]
+
     const [propToEdit, setPropToEdit] = useState(sizeOptions)
 
     function handleChange(ev, idx) {
@@ -40,16 +62,16 @@ export  function Inputs() {
     }
 
     return (
-        <div className='inside-accordion inputs'>
+        <div className='adjust inside-accordion'>
             <div className='header' onClick={setIsExpanded}>
-                <p>Size</p>
+                <p>Adjust</p>
                 <button>
                     <BsChevronDown />
                 </button>
             </div>
             <div className='option-body expanded-content hidden' ref={expandedRef}>
                 {propToEdit.map((option, idx) => (
-                    <div key={idx} className='param-box'>
+                    <div key={idx} className='param-box grid-2-col'>
                         <label htmlFor={option.name}>{option.title}</label>
                         <div className='input-wrapper'>
                             <input

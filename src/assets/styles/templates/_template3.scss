@@ -319,7 +319,7 @@ a {
     font-family: 'Syne', sans-serif;
 }
 
-@media screen and (max-width: 1050px) {
+@container (max-width: 1050px) {
     .wap-3-team {
         .team-cards-container {
             .team-card {
@@ -330,7 +330,7 @@ a {
         }
     }
 }
-@media screen and (max-width: 700px) {
+@container (max-width: 700px) {
     .wap-3-hero {
         .teaser-container {
             h1 {

@@ -4,6 +4,8 @@ import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
+import { BiFontColor } from 'react-icons/bi'
+import { IoMdColorFill } from 'react-icons/io'
 import { useSelector } from 'react-redux'
 import {
     AiOutlineAlignLeft,
@@ -16,17 +18,25 @@ import {
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as Slider from '@radix-ui/react-slider'
 
-import { saveCmp } from '../../../store/wap/wap.action'
-import { showErrorMsg } from '../../../services/event-bus.service'
-import { TextShadowSelect } from './text-shadow-select'
-import { FontFamilySelect } from './font-family-select'
+import { saveCmp } from '../../../../store/wap/wap.action'
+import { showErrorMsg } from '../../../../services/event-bus.service'
+import { TextShadowSelect } from '../text-shadow-select'
+import { FontFamilySelect } from '../font-family-select'
+import { TextToolbar } from '../ui-cmps/text-toolbar'
 
-export function Edit() {
+export function EditColors() {
+    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
     const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
     const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
-    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
+    const [borderRadiusValue, setBorderRadiusValue] = useState(
+        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius'))]) || [0]
+    )
+    const [fontSizeValue, setFontSizeValue] = useState(
+        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size'))]) || [0]
+    )
+
     const expandedRef = useRef()
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
@@ -43,11 +53,6 @@ export function Edit() {
         )
     })
 
-    function openTextColorPalette() {
-        setIsBorderPaletteOpen(false)
-        setIsBgPaletteOpen(false)
-        setIsTextPaletteOpen(prev => !prev)
-    }
     function openBorderColorPalette() {
         setIsTextPaletteOpen(false)
         setIsBgPaletteOpen(false)
@@ -100,6 +105,7 @@ export function Edit() {
     }
 
     async function handleTextStyleChange(styleToEdit, value) {
+        console.log('styleToEdit:', styleToEdit)
         if (!lastClickedCmp?.style) lastClickedCmp.style = {}
         if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
         lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }
@@ -110,7 +116,13 @@ export function Edit() {
         }
     }
 
-    async function handleFontSliderChange(ev) {
+    function handleFontSliderChange(ev) {
+        setFontSizeValue(ev[0])
+        elClickedNode.style.fontSize = `${ev[0]}px`
+    }
+
+    async function handleFontSliderCommit(ev) {
+        elClickedNode.style.fontSize = `${ev[0]}px`
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
@@ -119,40 +131,32 @@ export function Edit() {
         }
     }
     async function handleBorderSliderChange(ev) {
+        setBorderRadiusValue(ev[0])
+        elClickedNode.style.borderRadius = `${ev[0]}px`
+    }
+    async function handleBorderSliderCommit(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
         } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleeBorderSliderChange`, err)
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
         }
     }
 
     return (
-        <div className='inside-accordion'>
+        <div className='adjust inside-accordion'>
             <div className='header' onClick={setIsExpanded}>
-                <p>Edit</p>
+                <p>Fill & Colors</p>
                 <button>
                     <BsChevronDown />
                 </button>
             </div>
 
             <div className='expanded-content hidden' ref={expandedRef}>
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openTextColorPalette}>
-                        Text Color
-                    </button>
-                    {isTextPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.color}
-                        />
-                    )}
-                </div>
+                <TextToolbar handleTextStyleChange={handleTextStyleChange} />
                 <div className='color-pick'>
                     <button className='color-pick-label' onClick={openBgColorPalette}>
-                        Background Color
+                        <IoMdColorFill />
                     </button>
                     {isBgPaletteOpen && (
                         <BlockPicker
@@ -177,51 +181,6 @@ export function Edit() {
                     )}
                 </div>
 
-                <div className='text-decoration'>
-                    <button
-                        title='Bold'
-                        onClick={() => handleTextStyleChange('fontWeight', 'bold')}
-                        className='btn bold-btn'
-                    >
-                        <AiOutlineBold />
-                    </button>
-                    <button
-                        title='Italic'
-                        onClick={() => handleTextStyleChange('fontStyle', 'italic')}
-                        className='btn italic-btn'
-                    >
-                        <AiOutlineItalic />
-                    </button>
-                    <button
-                        title='Underline'
-                        onClick={() => handleTextStyleChange('textDecoration', 'underline')}
-                        className='btn underline-btn'
-                    >
-                        <AiOutlineUnderline />
-                    </button>
-                    <button
-                        title='Align-Left'
-                        onClick={() => handleTextStyleChange('textAlign', 'start')}
-                        className='btn align-left-btn'
-                    >
-                        <AiOutlineAlignLeft />
-                    </button>
-                    <button
-                        title='Align-Center'
-                        onClick={() => handleTextStyleChange('textAlign', 'center')}
-                        className='btn align-center-btn'
-                    >
-                        <AiOutlineAlignCenter />
-                    </button>
-                    <button
-                        title='Align-Right'
-                        onClick={() => handleTextStyleChange('textAlign', 'end')}
-                        className='btn align-right-btn'
-                    >
-                        <AiOutlineAlignRight />
-                    </button>
-                </div>
-
                 <div className='font-family-select'>
                     {/* <SelectFontFamily /> */}
                     <FontFamilySelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
@@ -235,14 +194,21 @@ export function Edit() {
                 <form className='slider-form'>
                     <label htmlFor=''>Font Size</label>
                     <Slider.Root
+                        // value={fontSliderValue}
+                        value={
+                            (elClickedNode && [
+                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size')),
+                            ]) || [16]
+                        }
                         className='SliderRoot'
-                        defaultValue={[1]}
+                        defaultValue={[16]}
                         max={100}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleFontSliderChange}
+                        onValueCommit={handleFontSliderCommit}
                     >
-                        <Slider.Track className='SliderTrack'>
+                        <Slider.Track className='SliderTrack' value={50}>
                             <Slider.Range className='SliderRange' />
                         </Slider.Track>
                         <Slider.Thumb className='SliderThumb' />
@@ -251,12 +217,17 @@ export function Edit() {
                 <form className='slider-form'>
                     <label htmlFor=''>Border Radius</label>
                     <Slider.Root
+                        value={
+                            (elClickedNode && [
+                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius')),
+                            ]) || [0]
+                        }
                         className='SliderRoot'
-                        defaultValue={[1]}
                         max={50}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleBorderSliderChange}
+                        onValueCommit={handleBorderSliderCommit}
                     >
                         <Slider.Track className='SliderTrack'>
                             <Slider.Range className='SliderRange' />

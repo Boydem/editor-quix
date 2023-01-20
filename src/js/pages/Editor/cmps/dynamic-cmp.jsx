@@ -1,28 +1,31 @@
 import { useSelector } from 'react-redux'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 import { ACmp } from './dynamic-cmps/a-cmp'
-import { ButtonCmp } from './dynamic-cmps/button-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
 import DynamicElement from './dynamic-cmps/dynamic-element'
 import { FormCmp } from './dynamic-cmps/form-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import MapCmp from './dynamic-cmps/map-cmp'
-import TextCmp from './dynamic-cmps/txt-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
+    // const selectedActionsRef = props.selectedActionsRef
 
     function handleClick(ev, cmp) {
         ev.stopPropagation()
-        // ev.preventDefault()
+        if (!ev.target.type) ev.preventDefault()
+
         if (!isEditing) return
+        if (elClickedNode === ev.target) return
 
         if (elClickedNode) {
             elClickedNode.classList.remove('clicked')
         }
         ev.target.classList.add('clicked')
+        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
+        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
 
         setElClickedNode(ev.target)
         setClickedCmp(cmp)
@@ -36,7 +39,7 @@ export default function DynamicCmp(props) {
 
         ev.currentTarget.classList.add('hover')
     }
-    const basicProps = { cmp: props.cmp, handleClick, onHover }
+    const basicProps = { cmp: props.cmp, handleClick, onHover, selectedActionsRef: props.selectedActionsRef }
     switch (props.cmp.type) {
         case 'form':
             return <FormCmp {...basicProps} />
@@ -46,12 +49,9 @@ export default function DynamicCmp(props) {
             return <MapCmp {...basicProps} />
         case 'video':
             return <VideoCmp {...basicProps} />
-        case 'a':
-            return <ACmp {...basicProps} />
         case 'img':
             return <ImgCmp {...basicProps} />
         default:
             return <DynamicElement {...basicProps} />
-            break
     }
 }

@@ -27,7 +27,7 @@ export const wap1Nav = {
                     cmps: [
                         {
                             id: makeId(),
-                            type: 'txt',
+                            type: 'p',
                             content: {
                                 txt: 'WeDu',
                             },

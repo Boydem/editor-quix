@@ -16,6 +16,7 @@ export const wapService = {
     getEditedWap,
     getCmpsByCategory,
     updateCmp,
+    getWapByUrl,
     // saveCmp,
 }
 
@@ -26,6 +27,17 @@ const EDITED_WAP_STORAGE_KEY = 'editedWap'
 _createWaps()
 function getCmpById(activeModule, cmpId) {
     return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
+}
+async function getWapByUrl(wapUrl) {
+    try {
+        let wap = await query({ url: wapUrl })
+        if (!wap[0]) Promise.reject('NOT FOUND')
+        
+        return wap[0]
+    } catch (err) {
+        throw err
+    }
+    // return gCmpsMap[activeModule].find(cmp => cmp.url === cmpUrl)
 }
 
 function _createMap() {
@@ -40,21 +52,31 @@ function _createMap() {
     }, {})
 }
 
-function updateCmp(cmp, parentCmp) {
-    let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
-    if (foundCmp) {
-        foundCmp = cmp
-    } else {
-        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
-    }
-}
+// function updateCmp(cmp, parentCmp) {
+//     let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
+//     if (foundCmp) {
+//         foundCmp = cmp
+//     } else {
+//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
+//     }
+// }
 
 function getCmpsByCategory(category) {
     return gCmpsMap[category]
 }
 
-function query() {
-    return storageService.query(STORAGE_KEY)
+async function query(filterBy = { url: '' }) {
+    try {
+        const waps = await storageService.query(STORAGE_KEY)
+
+        let filteredWaps = waps
+        if (filterBy.url) {
+            filteredWaps = waps.filter(wap => wap.url === filterBy.url)
+        }
+        return filteredWaps
+    } catch (err) {
+        throw err
+    }
 }
 
 _createMap()
@@ -122,15 +144,15 @@ function _createWaps() {
     }
 }
 
-// function saveCmp(cmp, index, parentCmp) {
-//     parentCmp[index] = cmp
-// }
+function saveCmp(cmp, index, parentCmp) {
+    parentCmp[index] = cmp
+}
 
-// function updateCmp(cmp, parentCmp, cb) {
-//     const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
-//     if (isFoundCmpIndex > -1) {
-//         saveCmp(cmp, isFoundCmpIndex, parentCmp)
-//     } else {
-//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
-//     }
-// }
+function updateCmp(cmp, parentCmp, cb) {
+    const isFoundCmpIndex = parentCmp?.cmps?.findIndex(c => c.id === cmp.id)
+    if (isFoundCmpIndex > -1) {
+        saveCmp(cmp, isFoundCmpIndex, parentCmp)
+    } else {
+        return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c, cb))
+    }
+}

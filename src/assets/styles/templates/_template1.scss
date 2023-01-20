@@ -76,6 +76,7 @@
     }
 }
 
+<<<<<<< HEAD
 // FINISH HAMBURGER
 
 .clicked {
@@ -86,6 +87,9 @@
     background: rgba(7, 57, 110, 0.2);
     outline: solid 2px #07396e;
 }
+=======
+
+>>>>>>> a4fa0fd50cddfd9277cce16e9a3a7f17cda53e15
 
 .wap-1-nav {
     background: var(--clr3);
@@ -372,7 +376,7 @@
     padding: 0.5rem;
 }
 
-@media screen and (max-width: 1350px) {
+@container (max-width: 1350px) {
     .wap-1-nav {
         padding-right: 5%;
         padding-left: 5%;
@@ -388,7 +392,7 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@container (max-width: 800px) {
     .wap-1-hero {
         display: flex;
         flex-direction: column;
