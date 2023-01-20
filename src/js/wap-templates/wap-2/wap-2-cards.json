@@ -4,8 +4,7 @@
     "name": "wap-2-cards",
     "category": "card",
     "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-cards_pwdxzl.jpg",
-    "cmps": [
-        {
+    "cmps": [{
             "id": "on9fek",
             "type": "h2",
             "name": "",
@@ -18,18 +17,15 @@
             "id": "cWg4Hk",
             "type": "div",
             "name": "cards",
-            "cmps": [
-                {
+            "cmps": [{
                     "id": "AMqaGM",
                     "type": "div",
                     "name": "card",
-                    "cmps": [
-                        {
+                    "cmps": [{
                             "id": "QsF5y2",
                             "type": "div",
                             "name": "image image-1",
-                            "cmps": [
-                                {
+                            "cmps": [{
                                     "id": "orNpEm",
                                     "type": "img",
                                     "name": "",
@@ -82,13 +78,11 @@
                     "id": "T6G35G",
                     "type": "div",
                     "name": "card",
-                    "cmps": [
-                        {
+                    "cmps": [{
                             "id": "2KhIgx",
                             "type": "div",
                             "name": "image image-2",
-                            "cmps": [
-                                {
+                            "cmps": [{
                                     "id": "08Av9R",
                                     "type": "img",
                                     "name": "",
@@ -141,13 +135,11 @@
                     "id": "gkWpiT",
                     "type": "div",
                     "name": "card",
-                    "cmps": [
-                        {
+                    "cmps": [{
                             "id": "IIVzoU",
                             "type": "div",
                             "name": "image image-3",
-                            "cmps": [
-                                {
+                            "cmps": [{
                                     "id": "Lbn6DB",
                                     "type": "img",
                                     "name": "",
@@ -202,8 +194,7 @@
             "id": "sCh3Mm",
             "type": "div",
             "name": "about",
-            "cmps": [
-                {
+            "cmps": [{
                     "id": "xvnZ8p",
                     "type": "h2",
                     "name": "",

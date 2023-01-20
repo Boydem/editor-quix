@@ -29,6 +29,11 @@ export function EditTextOpened() {
         setIsBgPaletteOpen(false)
         setIsBorderPaletteOpen(prev => !prev)
     }
+    function openBgColorPalette() {
+        setIsTextPaletteOpen(false)
+        setIsBorderPaletteOpen(false)
+        setIsBgPaletteOpen(prev => !prev)
+    }
 
     async function handleColorChange(color) {
         const hex = color.hex
@@ -87,8 +92,31 @@ export function EditTextOpened() {
                         }
                     />
                 </div>
+                <div className='color-pick'>
+                    <label onClick={openBgColorPalette}>Background Color</label>
+                    <div
+                        onClick={openBgColorPalette}
+                        style={{
+                            backgroundColor: `${
+                                elClickedNode &&
+                                window.getComputedStyle(elClickedNode).getPropertyValue('background-color')
+                            }`,
+                        }}
+                        className='curr-color'
+                    ></div>
+                    <BlockPicker
+                        className={`${isBgPaletteOpen ? 'open' : ''} palette`}
+                        onChange={handleColorChange}
+                        triangle={'hide'}
+                        color={
+                            (elClickedNode &&
+                                window.getComputedStyle(elClickedNode).getPropertyValue('background-color')) ||
+                            '#000'
+                        }
+                    />
+                </div>
                 <div className='color-pick b-btm'>
-                    <label onClick={openBorderColorPalette}>Color</label>
+                    <label onClick={openBorderColorPalette}>Border Color</label>
                     <div
                         onClick={openBorderColorPalette}
                         style={{

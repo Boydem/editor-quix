@@ -114,6 +114,7 @@ function _createWaps() {
                 _id: utilService.makeId(),
                 name: 'wap-1',
                 owner: 'admin',
+                breakpoints: { tabletLayout: 1300, mobileLayout: 800 },
                 cmps: getDemoCmps1(),
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
                 themeClass: 'wap1-primary',
