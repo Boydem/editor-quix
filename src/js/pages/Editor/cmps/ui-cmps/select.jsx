@@ -3,8 +3,8 @@ import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
-const SelectUnit = () => (
-    <Select.Root>
+const SelectUnit = ({ onUnitChange }) => (
+    <Select.Root onValueChange={onUnitChange}>
         <Select.Trigger className='SelectTrigger' aria-label='unit'>
             <Select.Value placeholder='px' />
         </Select.Trigger>
