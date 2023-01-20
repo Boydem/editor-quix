@@ -4,16 +4,14 @@ import { useSelector } from 'react-redux'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export function EditForm() {
-    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-
+export function EditForm({ clickedCmp }) {
     const expandedRef = useRef()
 
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
     }
     // let labelIndex
-    const inputsArr = clickedCmp.cmps.reduce((acc, c) => {
+    const inputsArr = clickedCmp.cmps?.reduce((acc, c) => {
         if (c.type === 'label' && c.cmps[0]) {
             acc.push(c.cmps[0].inputName)
             return acc
@@ -22,7 +20,6 @@ export function EditForm() {
         acc.push(c.inputName)
         return acc
     }, [])
-    console.log(inputsArr)
     // const inputsAmount = clickedCmp.cmps.reduce((acc, c) => {
     //     if (c.type === 'label' && c.cmps[0]) {
     //         acc++
@@ -67,6 +64,7 @@ export function EditForm() {
 
     // const [inputsValues, setInputsValues] = useState(inputsMap)
     // console.log(inputsValues)
+    if (clickedCmp.type !== 'form') return
 
     return (
         <div className='adjust inside-accordion'>

@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export function EditImg() {
-    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+export function EditImg({clickedCmp}) {
+    
     const expandedRef = useRef()
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
