@@ -25,11 +25,18 @@ import { FontFamilySelect } from '../font-family-select'
 import { TextToolbar } from '../ui-cmps/text-toolbar'
 
 export function EditColors() {
+    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
     const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
     const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
-    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
+    const [borderRadiusValue, setBorderRadiusValue] = useState(
+        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius'))]) || [0]
+    )
+    const [fontSizeValue, setFontSizeValue] = useState(
+        (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size'))]) || [0]
+    )
+
     const expandedRef = useRef()
     function setIsExpanded() {
         expandedRef.current.classList.toggle('hidden')
@@ -46,11 +53,6 @@ export function EditColors() {
         )
     })
 
-    function openTextColorPalette() {
-        setIsBorderPaletteOpen(false)
-        setIsBgPaletteOpen(false)
-        setIsTextPaletteOpen(prev => !prev)
-    }
     function openBorderColorPalette() {
         setIsTextPaletteOpen(false)
         setIsBgPaletteOpen(false)
@@ -114,7 +116,13 @@ export function EditColors() {
         }
     }
 
-    async function handleFontSliderChange(ev) {
+    function handleFontSliderChange(ev) {
+        setFontSizeValue(ev[0])
+        elClickedNode.style.fontSize = `${ev[0]}px`
+    }
+
+    async function handleFontSliderCommit(ev) {
+        elClickedNode.style.fontSize = `${ev[0]}px`
         lastClickedCmp.style = { ...lastClickedCmp.style, fontSize: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
@@ -123,11 +131,15 @@ export function EditColors() {
         }
     }
     async function handleBorderSliderChange(ev) {
+        setBorderRadiusValue(ev[0])
+        elClickedNode.style.borderRadius = `${ev[0]}px`
+    }
+    async function handleBorderSliderCommit(ev) {
         lastClickedCmp.style = { ...lastClickedCmp.style, borderRadius: ev[0] }
         try {
             await saveCmp(lastClickedCmp)
         } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleeBorderSliderChange`, err)
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
         }
     }
 
@@ -142,20 +154,6 @@ export function EditColors() {
 
             <div className='expanded-content hidden' ref={expandedRef}>
                 <TextToolbar handleTextStyleChange={handleTextStyleChange} />
-
-                <div className='color-pick'>
-                    <button className='color-pick-label' onClick={openTextColorPalette}>
-                        <BiFontColor />
-                    </button>
-                    {isTextPaletteOpen && (
-                        <BlockPicker
-                            className='palette'
-                            onChange={handleColorChange}
-                            triangle={'hide'}
-                            color={elClickedNode?.style.color}
-                        />
-                    )}
-                </div>
                 <div className='color-pick'>
                     <button className='color-pick-label' onClick={openBgColorPalette}>
                         <IoMdColorFill />
@@ -196,14 +194,21 @@ export function EditColors() {
                 <form className='slider-form'>
                     <label htmlFor=''>Font Size</label>
                     <Slider.Root
+                        // value={fontSliderValue}
+                        value={
+                            (elClickedNode && [
+                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size')),
+                            ]) || [16]
+                        }
                         className='SliderRoot'
-                        defaultValue={[1]}
+                        defaultValue={[16]}
                         max={100}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleFontSliderChange}
+                        onValueCommit={handleFontSliderCommit}
                     >
-                        <Slider.Track className='SliderTrack'>
+                        <Slider.Track className='SliderTrack' value={50}>
                             <Slider.Range className='SliderRange' />
                         </Slider.Track>
                         <Slider.Thumb className='SliderThumb' />
@@ -212,12 +217,17 @@ export function EditColors() {
                 <form className='slider-form'>
                     <label htmlFor=''>Border Radius</label>
                     <Slider.Root
+                        value={
+                            (elClickedNode && [
+                                parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('border-radius')),
+                            ]) || [0]
+                        }
                         className='SliderRoot'
-                        defaultValue={[1]}
                         max={50}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleBorderSliderChange}
+                        onValueCommit={handleBorderSliderCommit}
                     >
                         <Slider.Track className='SliderTrack'>
                             <Slider.Range className='SliderRange' />
