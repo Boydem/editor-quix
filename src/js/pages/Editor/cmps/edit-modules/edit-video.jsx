@@ -4,16 +4,11 @@ import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.ser
 import { saveCmp } from '../../../../store/wap/wap.action'
 
 export function EditVideo({ clickedCmp }) {
-    const expandedRef = useRef()
     const [videoUrl, setVideoUrl] = useState(clickedCmp.content?.url)
 
     function handleChange({ target }) {
         const { value } = target
         setVideoUrl(value)
-    }
-
-    function setIsExpanded() {
-        expandedRef.current.classList.toggle('hidden')
     }
 
     function validateUrl() {
@@ -39,13 +34,7 @@ export function EditVideo({ clickedCmp }) {
 
     return (
         <div className='adjust inside-accordion'>
-            <div className='header' onClick={setIsExpanded}>
-                <p>Video</p>
-                <button>
-                    <BsChevronDown />
-                </button>
-            </div>
-            <div className='expanded-content hidden edit-form' ref={expandedRef}>
+            <div className='expanded-content edit-form'>
                 <div className='wrapper'>
                     <form onSubmit={onSubmitVideoUrl}>
                         <label>

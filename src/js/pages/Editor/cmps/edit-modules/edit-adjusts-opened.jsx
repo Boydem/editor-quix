@@ -1,0 +1,64 @@
+import React from 'react'
+import { useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { saveCmp } from '../../../../store/wap/wap.action'
+import SelectUnit from '../ui-cmps/select'
+
+export function EditAdjustsOpened() {
+    const expandedRef = useRef()
+
+    const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
+
+    const sizeOptions = [
+        { name: 'opacity', title: 'Opacity', unit: '%', value: 0 },
+        { name: 'rotate', title: 'Rotate', unit: 'deg', value: 0 },
+        { name: 'scale', title: 'Scale', unit: '%', value: 0 },
+        { name: 'skew', title: 'Skew', unit: 'deg', value: 0 },
+        { name: 'translateX', title: 'TranslateX', unit: 'px', value: 0 },
+        { name: 'translateY', title: 'TranslateY', unit: 'px', value: 0 },
+    ]
+
+    const [propToEdit, setPropToEdit] = useState(sizeOptions)
+
+    function handleChange(ev, idx) {
+        ev.preventDefault()
+        // if (!lastClickedCmp) return
+        const { name, value } = ev.target
+        const newPropsToEdit = [...propToEdit]
+        newPropsToEdit[idx] = { ...newPropsToEdit[idx], value: value }
+        setPropToEdit(newPropsToEdit)
+        const unit = ev.target.getAttribute('info')
+        if (lastClickedCmp.style) {
+            lastClickedCmp.style = { ...lastClickedCmp.style, [name]: `${value + unit}` }
+        } else {
+            lastClickedCmp.style = { [name]: `${value + unit}` }
+        }
+        saveCmp(lastClickedCmp)
+    }
+
+    return (
+        <div className='adjust inside-accordion'>
+            <div className='option-body expanded-content' ref={expandedRef}>
+                {propToEdit.map((option, idx) => (
+                    <div key={idx} className='param-box grid-2-col'>
+                        <label htmlFor={option.name}>{option.title}</label>
+                        <div className='input-wrapper'>
+                            <input
+                                info={option.unit}
+                                type='number'
+                                name={option.name}
+                                id={option.name}
+                                value={option.value}
+                                onChange={ev => handleChange(ev, idx)}
+                            />
+                            <div className='unit'>
+                                <SelectUnit />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}

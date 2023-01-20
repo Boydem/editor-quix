@@ -1,11 +1,163 @@
 .dashboard {
     display: grid;
-    grid-template-columns: $spacing-m auto repeat(4, 1fr) $spacing-m;
+    grid-template-columns: $logo-container-width repeat(6, 1fr) $spacing-m;
+    // column-gap: $spacing-m;
+    min-height: calc(100vh - 1px - $app-header-height);
+    place-content: baseline;
+    grid-auto-flow: dense;
+    > * {
+        grid-column: 2 / -1;
+    }
+    > *.full {
+        grid-column: 1 / -1;
+    }
+    .side-start {
+        grid-column: 1/-2;
+    }
+
+    .side-end {
+        grid-column: -1/2;
+    }
+    .app-header {
+        .logo-container {
+            grid-column: 1/2;
+        }
+    }
 
     .dashboard-sidebar {
-        .dashboard-menu {
+        min-height: calc(100vh - 1px - $app-header-height);
+        grid-column: 1/2;
+        pointer-events: all;
+        z-index: 2;
+        border-right: 1px solid $editor-lightgray;
+        .dashboard-nav {
+            .menu-items {
+                padding: $spacing-s 0;
+                // margin-bottom: $spacing-s;
+                border-bottom: 1px solid $editor-lightgray;
+                & > * {
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: 0.05rem;
+                    font-size: px-to-rem(12px);
+                    padding: $spacing-xs $spacing-m;
+                    transition: background-color 0.3s, color 0.3s;
+                    &:hover:not(.active) {
+                        background-color: $editor-hover-bg;
+                    }
+                    &.active {
+                        color: $editor-active-clr;
+                        background-color: $editor-active-bg;
+                    }
+                }
+            }
         }
     }
     .dashboard-main {
+        font-weight: 300;
+        background-color: $editor-dashboard-bg;
+        box-shadow: inset 0px 0px 20px -10px rgba(0, 0, 0, 0.144);
+        .layout-wrapper {
+            max-width: 1300px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: auto 1fr;
+            margin: 0 auto;
+            padding: $spacing-m 0;
+            height: 100%;
+            gap: $spacing-l;
+        }
+        // place-items: baseline;
+        // color: darken($editor-active-clr, 20%);
+        // background-color: $editor-active-bg;
+        // grid-auto-flow: row;
+
+        .header {
+            grid-row: 1;
+            grid-column: 1/-1;
+            h2 {
+                font-weight: 600;
+            }
+        }
+        .col {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            > * {
+                margin-bottom: $spacing-m;
+            }
+        }
+        .col-right {
+            grid-column: -1/-3;
+        }
+        .col-left {
+            grid-column: 1/5;
+        }
+        .info-box {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            place-items: start start;
+            padding: $spacing-m;
+            // border: 1px solid $editor-active-bg;
+            border-radius: $spacing-xs;
+            background-color: $clr1;
+
+            .text-wrapper {
+                margin-inline-end: 1rem;
+                .level {
+                    margin-bottom: 1rem;
+                }
+                h3 {
+                    font-weight: 500;
+                    line-height: 1.25;
+                    margin-bottom: $spacing-s;
+                }
+            }
+        }
+        .info-box-1 {
+            .text-wrapper {
+                margin-inline-end: $spacing-l;
+            }
+        }
+        .info-box-2 {
+            // border: 1px solid $editor-active-bg;
+            background-color: darken($editor-active-clr, 15%);
+            color: $clr1;
+        }
+        .my-sites.info-box {
+            padding: 0;
+            .wap-preview {
+                padding: $spacing-s $spacing-m;
+                width: 100%;
+                &:not(:first-child) {
+                    grid-column: 1/-1;
+                    border-top: 1px solid $editor-lightgray;
+                }
+                > .item {
+                    img {
+                        max-width: 50px;
+                        border-radius: 5px;
+                        margin-inline-end: $spacing-xs;
+                    }
+                    display: grid;
+                    grid-template-columns: auto auto 1fr;
+                    align-items: center;
+                    width: 100%;
+                    .actions {
+                        justify-self: end;
+                    }
+                }
+            }
+        }
+    }
+}
+.interactives {
+    display: flex;
+    font-size: px-to-rem(20px);
+    border-right: $editor-lightgray 1px solid;
+    border-left: $editor-lightgray 1px solid;
+    > * {
+        margin: 0;
     }
 }

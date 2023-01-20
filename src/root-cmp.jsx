@@ -15,7 +15,8 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<WapIndex />} />
-                    <Route path='/dashboard' element={<Dashboard />} />
+                    <Route path='/dashboard/' element={<Dashboard />} />
+                    <Route path='/dashboard/:userId' element={<Dashboard />} />
                     <Route path='/edit/:wapId' element={<Editor />} />
                     <Route path='/preview/:wapId' element={<Preview />} />
                     <Route path='/:wapUrl' element={<Preview />} />
