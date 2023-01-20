@@ -15,6 +15,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges }) {
     return (
         <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''}`}>
             <div className='module-menu'>
+                <div className='indicator'>+</div>
                 {addMenuItems.map((menuItem, idx) => (
                     <ul key={idx} className='menu-items'>
                         {menuItem.map(module => (

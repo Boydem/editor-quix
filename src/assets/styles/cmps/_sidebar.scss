@@ -11,15 +11,7 @@
     display: flex;
     transform: translateX(-100%);
     min-width: $modules-menu-width;
-    // .menu-items {
-    //     overflow: visible;
-    //     // .modules {
-    //     //     min-height: calc(100vh - $app-header-height + $toolbar-height);
-    //     //     width: $modules-menu-width;
-    //     //     z-index: 2;
-    //     //     background-color: $clr1;
-    //     // }
-    // }
+
     &.open {
         transform: translateX(0%);
     }
@@ -27,6 +19,18 @@
         z-index: 2;
         width: 100%;
         background-color: $clr1;
+        max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
+
+        .indicator {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            z-index: 999;
+            transform: translateY(-50%);
+            background-color: red;
+        }
     }
     .module-content {
         $modules-content-width: 300px;
@@ -37,6 +41,7 @@
         left: -($modules-content-width - $modules-menu-width);
         background-color: $clr1;
         min-height: 100%;
+        max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
         transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
         &.open {
