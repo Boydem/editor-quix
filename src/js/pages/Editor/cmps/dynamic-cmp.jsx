@@ -14,8 +14,6 @@ export default function DynamicCmp(props) {
     // const selectedActionsRef = props.selectedActionsRef
 
     function handleClick(ev, cmp) {
-        console.log('ev:', ev)
-        console.log('cmp:', cmp)
         ev.stopPropagation()
         if (!ev.target.type) ev.preventDefault()
 
