@@ -2,6 +2,7 @@
     "id": "mSIW3A",
     "type": "div",
     "name": "wap-5-footer",
+    "cmpId": "Footer",
     "cmps": [
         {
             "id": "LDiMXQ",

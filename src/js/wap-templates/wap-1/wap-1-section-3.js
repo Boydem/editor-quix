@@ -6,6 +6,7 @@ export const wap1Section3 = {
     type: 'div',
     category: 'section',
     themePalette: 'primary',
+    cmpId: 'Section-3',
     thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-section3_np61wk.jpg',
     cmps: [
         {

@@ -3,6 +3,7 @@
     "type": "div",
     "name": "wap-3-hero",
     "category": "hero",
+    "cmpId": "Hero",
     "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-hero_m1wnor.jpg",
     "cmps": [
         {

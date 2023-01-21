@@ -6,6 +6,7 @@ export const wap1Cards2 = {
     type: 'div',
     category: 'card',
     themePalette: 'primary',
+    cmpId: 'Cards-2',
     thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053216/wap-1-section-2_fodj8k.jpg',
     cmps: [
         {
@@ -16,7 +17,7 @@ export const wap1Cards2 = {
                 {
                     id: makeId(),
                     type: 'p',
-                    name:"heading",
+                    name: 'heading',
                     content: {
                         txt: 'Trusted Among Industry Leaders',
                     },
@@ -24,7 +25,7 @@ export const wap1Cards2 = {
                 {
                     id: makeId(),
                     type: 'p',
-                    name:'txt',
+                    name: 'txt',
                     content: {
                         txt: `I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or
                         double click me to add your own content and make changes to the font.`,

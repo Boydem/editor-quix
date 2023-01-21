@@ -222,6 +222,29 @@
         }
     }
 
+    .edit-anchor {
+        .heading {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        input {
+            margin-bottom: 0.75rem;
+            // display: block;
+            box-shadow: 0 1px 0 0 black;
+            border-radius: 0px;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0.1rem 0.7rem;
+            display: block;
+            width: 100%;
+            background: #116dff;
+            color: #f4f5f8;
+            border-radius: 5px;
+        }
+    }
+
     .selector {
         display: grid;
         grid-template-columns: 2fr 1fr;

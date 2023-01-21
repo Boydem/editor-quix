@@ -2,6 +2,7 @@
     "id": "uZquoz",
     "type": "div",
     "name": "wap-5-cta",
+    "cmpId": "Cta",
     "cmps": [
         {
             "id": "Nbs00W",

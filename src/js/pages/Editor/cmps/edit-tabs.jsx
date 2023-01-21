@@ -13,6 +13,7 @@ import { EditMapOpened } from './edit-modules/edit-map-opened'
 import { AiOutlineLayout } from 'react-icons/ai'
 import { IoMdBrush } from 'react-icons/io'
 import { BsLightning } from 'react-icons/bs'
+import { EditAnchorOpened } from './edit-modules/edit-anchor-opened'
 
 export function EditTabs({ context }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -44,6 +45,7 @@ export function EditTabs({ context }) {
                 {context === 'form' && <EditFormOpened clickedCmp={clickedCmp} />}
                 {context === 'map' && <EditMapOpened clickedCmp={clickedCmp} />}
                 {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
+                {context === 'a' && <EditAnchorOpened clickedCmp={clickedCmp} />}
             </Tabs.Content>
         </Tabs.Root>
     )

@@ -2,6 +2,8 @@
     "id": "zqeQAs",
     "type": "div",
     "name": "wap-5-nav",
+    "category": "header",
+    "cmpId": "Header",
     "cmps": [
         {
             "id": "Yp2Bd9",
