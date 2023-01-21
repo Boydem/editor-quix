@@ -8,7 +8,7 @@ import { DragDropContext } from 'react-beautiful-dnd'
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { saveWap, setIsEditing } from '../../store/wap/wap.action'
+import { saveWap, setIsEditing, setWapNull } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
 
@@ -35,6 +35,7 @@ export function Editor() {
 
         return () => {
             setIsEditing(false)
+            setWapNull()
         }
     }, [])
 
@@ -58,6 +59,7 @@ export function Editor() {
             console.log(err)
         }
     }
+    console.log('wap', wap)
 
     function handleOnDragEnd(res) {
         let changedCmp
