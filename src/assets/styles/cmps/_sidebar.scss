@@ -41,7 +41,7 @@
             transform: translate(100%, -90px);
             border-radius: 0 55rem 55rem 0;
             // background-color: rgba($editor-active-clr, 75%);
-            background-color: $editor-active-clr;
+            background-color: $clr7;
             // position: relative;
             &::before {
                 z-index: -2;
@@ -54,7 +54,7 @@
                 border-radius: 0 0.55rem 0.55rem 0;
                 width: 10px;
                 height: $spacing-xxl;
-                background-color: $editor-active-clr;
+                background-color: $clr7;
             }
         }
         &.add {
