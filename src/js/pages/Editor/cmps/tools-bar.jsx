@@ -107,7 +107,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                     </div>
                     <div className='responsive-btns interactives curr-width'>
-                        <input type='number' name='currMediaQuery' value={1920} />
+                        {/* <input type='number' name='currMediaQuery' value={1920} /> */}
                     </div>
                 </div>
             </div>
