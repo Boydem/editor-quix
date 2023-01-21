@@ -315,15 +315,31 @@
             .img-wrapper {
                 position: relative;
 
+                // .price {
+                //     position: absolute;
+                //     top: 3%;
+                //     right: 4%;
+                //     background: var(--clr2);
+                //     color: var(--clr4);
+                //     padding: 0.6rem 1.2rem;
+                //     border-radius: 50px;
+                //     font-weight: bold;
+                // }
                 .price {
-                    position: absolute;
-                    top: 3%;
-                    right: 4%;
-                    background: var(--clr2);
-                    color: var(--clr4);
-                    padding: 0.6rem 1.2rem;
-                    border-radius: 50px;
-                    font-weight: bold;
+                    p {
+                        position: absolute;
+                        top: 3%;
+                        right: 4%;
+                        background: white;
+                        color: black;
+                        padding: 0.2rem 1.2rem;
+                        border-radius: 50px;
+                        // font-weight: bold;
+                        font-weight: 600;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
             }
 
