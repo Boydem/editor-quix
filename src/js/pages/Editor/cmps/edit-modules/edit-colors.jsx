@@ -100,7 +100,7 @@ export function EditColors() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleColorChange`, err)
-            // showErrorMsg('Failed to save changes, try again later')
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
 
@@ -112,6 +112,7 @@ export function EditColors() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleTextStyleChange`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
 
@@ -127,6 +128,7 @@ export function EditColors() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleChange`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
     async function handleBorderSliderChange(ev) {
@@ -139,6 +141,7 @@ export function EditColors() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
 

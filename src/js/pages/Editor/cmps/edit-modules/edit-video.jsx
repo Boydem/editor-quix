@@ -28,7 +28,7 @@ export function EditVideo({ clickedCmp }) {
             showSuccessMsg('Video uploaded successfully')
         } catch (err) {
             console.log('Failed to upload video', err)
-            showErrorMsg('Cannot upload video, try again later')
+            showErrorMsg('Cannot upload video. Please try again later.')
         }
     }
 

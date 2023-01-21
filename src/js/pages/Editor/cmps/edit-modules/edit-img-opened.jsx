@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
@@ -6,9 +7,15 @@ export function EditImgOpened({ clickedCmp }) {
     const [imgUrl, setImgUrl] = useState()
 
     async function onImgInput(event) {
-        const image = await uploadService.uploadImg(event)
-        clickedCmp.content.imgUrl = image.url
-        saveCmp(clickedCmp)
+        try {
+            const image = await uploadService.uploadImg(event)
+            clickedCmp.content.imgUrl = image.url
+            saveCmp(clickedCmp)
+            showSuccessMsg('Image uploaded successfully')
+        } catch (err) {
+            console.log(err)
+            showErrorMsg('There was a problem uploading your image. Please try again later.')
+        }
     }
 
     function handleChange({ target }) {

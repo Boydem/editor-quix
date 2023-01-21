@@ -12,6 +12,7 @@ import { saveCmp } from '../../../../store/wap/wap.action'
 import { TextShadowSelect } from '../text-shadow-select'
 import { FontFamilySelect } from '../font-family-select'
 import { TextToolbar } from '../ui-cmps/text-toolbar'
+import { showErrorMsg } from '../../../../services/event-bus.service'
 
 export function EditColorsOpened() {
     const lastClickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -71,6 +72,7 @@ export function EditColorsOpened() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleChange`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
     async function handleBorderSliderChange(ev) {
@@ -83,6 +85,7 @@ export function EditColorsOpened() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
 

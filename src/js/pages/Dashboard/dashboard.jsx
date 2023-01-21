@@ -116,9 +116,8 @@ export function Dashboard() {
         try {
             let user = await setUser(userId)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
-            console.log('user:', user)
         } catch (err) {
-            showErrorMsg('Couldnt load user')
+            showErrorMsg(`Couldn't load user`)
         }
     }
 

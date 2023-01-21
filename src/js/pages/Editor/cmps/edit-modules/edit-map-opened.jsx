@@ -4,6 +4,7 @@ import { locationService } from '../../../../services/location.service'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 import { FaTrash } from 'react-icons/fa'
+import { showErrorMsg } from '../../../../services/event-bus.service'
 
 export function EditMapOpened({ clickedCmp }) {
     const [geoLocationValue, setGeoLocationValue] = useState('')
@@ -22,16 +23,30 @@ export function EditMapOpened({ clickedCmp }) {
         saveCmp(clickedCmp)
     }
     async function onPanTo() {
-        const location = await locationService.getLatLng(geoLocationValue)
-        clickedCmp.content.lat = location.lat
-        clickedCmp.content.lng = location.lng
-        saveCmp(clickedCmp)
+        try {
+            const location = await locationService.getLatLng(geoLocationValue)
+            clickedCmp.content.lat = location.lat
+            clickedCmp.content.lng = location.lng
+            saveCmp(clickedCmp)
+        } catch (err) {
+            console.log(err)
+            showErrorMsg('Please try again later.')
+        }
     }
     async function onAddMarker() {
-        const location = await locationService.getLatLng(geoLocationValue)
-        clickedCmp.content.markers.push({ id: makeId(), lat: location.lat, lng: location.lng, name: geoLocationValue })
+        try {
+            const location = await locationService.getLatLng(geoLocationValue)
+            clickedCmp.content.markers.push({
+                id: makeId(),
+                lat: location.lat,
+                lng: location.lng,
+                name: geoLocationValue,
+            })
 
-        saveCmp(clickedCmp)
+            saveCmp(clickedCmp)
+        } catch (err) {
+            showErrorMsg('Please try again later.')
+        }
     }
 
     function onDeleteMarker(marker) {
