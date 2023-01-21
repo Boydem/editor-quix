@@ -3,10 +3,10 @@ import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
-const SelectUnit = ({ onUnitChange, unit, unitOpts }) => (
-    <Select.Root onValueChange={onUnitChange} value={unit}>
-        <Select.Trigger className='SelectTrigger' aria-label='unit'>
-            <Select.Value placeholder='px' />
+const SelectSectionRef = ({ onSelectSection, wap, clickedCmp }) => (
+    <Select.Root onValueChange={onSelectSection}>
+        <Select.Trigger className='SelectTrigger' aria-label='href'>
+            <Select.Value placeholder={clickedCmp.content?.href || 'Select Section'} />
         </Select.Trigger>
         <Select.Portal>
             <Select.Content position='popper' className='SelectContent'>
@@ -15,14 +15,11 @@ const SelectUnit = ({ onUnitChange, unit, unitOpts }) => (
                 </Select.ScrollUpButton>
                 <Select.Viewport className='SelectViewport'>
                     <Select.Group>
-                        {unitOpts.map(opt => (
-                            <SelectItem key={opt} value={opt}>
-                                {opt}
+                        {wap.cmps.map(cmp => (
+                            <SelectItem key={cmp.cmpId} value={`#${cmp.cmpId}`}>
+                                {cmp.cmpId}
                             </SelectItem>
                         ))}
-                        {/* {<SelectItem value='px'>px</SelectItem>}
-                        <SelectItem value='%'>%</SelectItem>
-                        {unit === 'deg' && <SelectItem value='deg'>Deg</SelectItem>} */}
                     </Select.Group>
                 </Select.Viewport>
                 <Select.ScrollDownButton className='SelectScrollButton'>
@@ -44,4 +41,4 @@ const SelectItem = React.forwardRef(({ children, className, ...props }, forwarde
     )
 })
 
-export default SelectUnit
+export default SelectSectionRef
