@@ -37,7 +37,7 @@ export function Preview() {
 
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
-        <div className='full' ref={containerRef}>
+        <div className='full templates-css-reset' ref={containerRef}>
             {/* <DarkHeader /> */}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
