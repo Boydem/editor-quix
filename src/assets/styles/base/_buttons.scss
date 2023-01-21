@@ -41,8 +41,32 @@ button {
         background-color: transparent;
         color: $clr1;
 
-        &:first-of-type {
-            border-bottom: 1px solid $clr1;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 0;
+            margin: auto;
+            opacity: 0;
+            // transform: translateY(10px);
+            height: 1px;
+            background-color: $clr1;
+            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &:nth-of-type(even)::after {
+            bottom: 20%;
+        }
+        &:nth-of-type(odd)::after {
+            top: 20%;
+        }
+        &:nth-of-type(even):hover::after {
+            opacity: 1;
+            width: 100px;
+        }
+        &:nth-of-type(odd):hover::after {
+            opacity: 1;
+            width: 100px;
         }
     }
 

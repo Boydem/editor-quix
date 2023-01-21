@@ -73,7 +73,9 @@
                     transition: opacity 0.3s;
 
                     & .btn {
+                        cursor: pointer;
                         font-weight: 400 !important;
+                        transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
                     }
                 }
 
