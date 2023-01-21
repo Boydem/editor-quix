@@ -32,7 +32,7 @@ export function Preview() {
         <div className='full'>
             {/* <DarkHeader /> */}
             {wap.cmps.map(cmp => {
-                return <DynamicCmp cmp={cmp} previewOnly={true} key={cmp.id} />
+                return <DynamicCmp cmp={cmp} key={cmp.id} />
             })}
         </div>
     )

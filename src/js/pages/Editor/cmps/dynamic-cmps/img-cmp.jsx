@@ -11,6 +11,7 @@ export function ImgCmp({ cmp, handleClick, onHover }) {
             onClick={e => handleClick(e, cmp)}
             onMouseOver={onHover}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
+            href={cmp.content.href}
         />
     )
 }

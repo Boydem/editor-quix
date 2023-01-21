@@ -17,6 +17,14 @@ export async function saveWap(wap) {
         throw err
     }
 }
+export async function setWapNull() {
+    try {
+        store.dispatch({ type: SET_WAP, wap: null })
+    } catch (err) {
+        console.log('Cannot save wap in wap.action', err)
+        throw err
+    }
+}
 
 export async function saveCmp(newCmp) {
     try {

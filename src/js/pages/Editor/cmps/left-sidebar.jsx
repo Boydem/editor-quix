@@ -1,11 +1,12 @@
 import { DynamicModule } from './dynamic-module'
 import { AiOutlineClose } from 'react-icons/ai'
 import { saveCmp } from '../../../store/wap/wap.action'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { wapService } from '../../../services/wap.service'
 import { AiOutlinePlus } from 'react-icons/ai'
 export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
-    const [theme, setTheme] = useState('')
+    // const [theme, setTheme] = useState('')
+    const theme = useRef()
     const addMenuItems = [
         ['Quick add', 'Assets'],
         ['Header', 'Hero', 'Section', 'Card', 'Form', 'Footer', 'Decorative', 'Contact & Forms', 'Embed & Social'],
@@ -17,18 +18,26 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     }
     useEffect(() => {
         setThemeClass()
+
+        return () => {
+            const root = document.getElementById('root')
+            console.log(theme.current)
+            root.classList.remove(theme.current)
+            theme.current = null
+        }
     }, [])
 
     function setThemeClass() {
         const root = document.getElementById('root')
+        theme.current = wap.themeClass
+        console.log('wap:', wap)
         root.classList.add(wap.themeClass)
     }
 
     function handleThemeChange(selectedTheme) {
         const root = document.getElementById('root')
-        if (theme) root.classList.remove(theme)
-        root.classList.add(selectedTheme)
-        setTheme(selectedTheme)
+        root.classList.replace(theme.current, selectedTheme)
+        theme.current = selectedTheme
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }

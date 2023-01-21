@@ -110,13 +110,13 @@
 .wap-4-cta {
     color: var(--clr3);
     padding: 3rem 10%;
-    background: var(--clr2);
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
+    background: var(--clr2);
 
     > * {
         padding: 10rem 6rem;
@@ -131,7 +131,7 @@
         text-align: center;
     }
     .form {
-        background: #161515;
+        background: var(--clr4);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
@@ -161,6 +161,7 @@
             background: inherit;
             border: 1px solid var(--clr3);
             color: var(--clr3);
+            text-align: center;
         }
     }
 }
