@@ -11,17 +11,7 @@
             "content": {
                 "txt": ""
             },
-            "cmps": [
-                {
-                    "id": "QRb3ux",
-                    "type": "img",
-                    "name": "",
-                    "content": {
-                        "imgUrl": "chat-svgrepo-com.svg"
-                    },
-                    "cmps": []
-                }
-            ]
+            "cmps": []
         },
         {
             "id": "4EfJqF",
@@ -77,23 +67,8 @@
                     "id": "5gJnPg",
                     "type": "div",
                     "name": "messages",
+                    "messages": [],
                     "cmps": [
-                        {
-                            "id": "iLJJov",
-                            "type": "div",
-                            "name": "time",
-                            "cmps": [
-                                {
-                                    "id": "gfdsds",
-                                    "type": "p",
-                                    "name": "time",
-                                    "content": {
-                                        "txt": "Today at 11:41"
-                                    },
-                                    "cmps": []
-                                }
-                            ]
-                        },
                         {
                             "id": "gix5gL",
                             "type": "div",
@@ -102,7 +77,7 @@
                                 {
                                     "id": "gfdsgfsd",
                                     "type": "p",
-                                    "name": "message parker",
+                                    "name": "message customer",
                                     "content": {
                                         "txt": "Hey, man! What's up, Mr Stark?"
                                     },
@@ -134,7 +109,7 @@
                                 {
                                     "id": "dsfssdf",
                                     "type": "p",
-                                    "name": "message parker",
+                                    "name": "message customer",
                                     "content": {
                                         "txt": "Field trip!"
                                     },
@@ -150,7 +125,7 @@
                                 {
                                     "id": "fdsfsfsd",
                                     "type": "p",
-                                    "name": "message parker",
+                                    "name": "message customer",
                                     "content": {
                                         "txt": "Uh, what is this guy's problem, Mr. Stark?"
                                     },

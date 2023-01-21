@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
 import { BsChatFill } from 'react-icons/bs'
+import { AiOutlineSend } from 'react-icons/ai'
+import { makeId } from '../../../../services/util.service'
 
 export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -16,13 +18,31 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
 
     function handleChange(ev) {
         const value = ev.target.value
-
         setMsg(value)
         console.log(value)
     }
 
     function onOpenChat() {
         chatRef.current.classList.toggle('hidden')
+    }
+
+    function onSend() {
+        const msgTemplate = `{
+            "id": ${makeId()},
+            "type": "div",
+            "name": "",
+            "cmps": [
+                {
+                    "id": "32423sd",
+                    "type": "p",
+                    "name": "message customer",
+                    "content": {
+                        "txt": "${msg}"
+                    },
+                    "cmps": []
+                }
+            ]
+        }`
     }
 
     const chatInputCmp = cmp.cmps[1].cmps.at(-1)
@@ -71,6 +91,9 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                         onChange={handleChange}
                         value={msg}
                     ></input>
+                    <button>
+                        <AiOutlineSend size={'2rem'} onClick={onSend} />
+                    </button>
                 </div>
             </div>
         </div>
