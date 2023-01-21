@@ -98,8 +98,9 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 
 #root.wap4-primary {
     --clr1: #eb0000;
-    --clr2: #161515;
+    --clr2: #000000;
     --clr3: #ffffff;
+    --clr4: #161515;
 }
 
 #root.theme-1 {
