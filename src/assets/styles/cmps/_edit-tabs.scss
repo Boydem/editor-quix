@@ -253,6 +253,26 @@
             text-align: center;
             margin-bottom: 0.75rem;
         }
+
+        .select-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            p {
+                font-size: 1.5em;
+            }
+            button {
+                font-size: 1.5em;
+                border-radius: 0.5em;
+                text-align: center;
+                background: $clr3;
+                &:active {
+                    background: $editor-active-clr;
+                }
+            }
+        }
     }
 
     .selector {
