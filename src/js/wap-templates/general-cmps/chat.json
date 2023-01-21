@@ -1,7 +1,8 @@
 {
     "id": "oo3z14",
-    "type": "div",
-    "name": "wap-chat",
+    "type": "chat",
+    "name": "chat-1",
+    "category": "chat",
     "cmps": [
         {
             "id": "GXTvqg",
@@ -66,7 +67,7 @@
                         {
                             "id": "gix5gL",
                             "type": "div",
-                            "name": "message parker",
+                            "name": "message customer",
                             "cmps": []
                         },
                         {
@@ -78,13 +79,13 @@
                         {
                             "id": "usOSH7",
                             "type": "div",
-                            "name": "message parker",
+                            "name": "message customer",
                             "cmps": []
                         },
                         {
                             "id": "BUozKY",
                             "type": "div",
-                            "name": "message parker",
+                            "name": "message customer",
                             "cmps": []
                         },
                         {

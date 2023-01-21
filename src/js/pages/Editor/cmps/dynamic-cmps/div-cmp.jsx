@@ -13,7 +13,6 @@ export function DivCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
             onClick={e => handleClick(e, cmp)}
             onMouseOver={onHover}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
-            data-aos='fade-up'
         >
             {cmp.cmps?.map(c => {
                 return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
