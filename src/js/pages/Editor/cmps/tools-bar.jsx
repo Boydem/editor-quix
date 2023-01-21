@@ -52,6 +52,8 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             <div className='tools tools-cmps'>
                 {tools.map((tool, idx) => (
                     <button
+                        data-tooltip={`${tool.module}`}
+                        data-tooltip-dir='bottom'
                         key={idx}
                         onClick={() =>
                             onToolClick(tool.side, {
@@ -71,13 +73,13 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             </div>
             <div className='tools tools-views flex align-center'>
                 <div className='responsive-btns flex align-center interactives'>
-                    <button className='tool'>
+                    <button data-tooltip='Desktop' data-tooltip-dir='bottom' className='tool'>
                         <GoDeviceDesktop />
                     </button>
-                    <button className='tool'>
+                    <button data-tooltip='Tablet' data-tooltip-dir='bottom' className='tool'>
                         <AiOutlineTablet />
                     </button>
-                    <button className='tool'>
+                    <button data-tooltip='Mobile' data-tooltip-dir='bottom' className='tool'>
                         <AiOutlineMobile />
                     </button>
                 </div>
@@ -86,28 +88,30 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             <div className='tools tools-views flex align-center'>
                 <div className='responsive-btns flex align-center'>
                     <div className='interactives'>
-                        <button className='tool' onClick={onRemoveCmp}>
+                        <button className='tool' onClick={onRemoveCmp} data-tooltip='Trash' data-tooltip-dir='bottom'>
                             <FiTrash />
                         </button>
                     </div>
                     <div className='btns-undo-redo flex align-center'>
-                        <button className='tool'>
+                        <button className='tool' data-tooltip='Undo' data-tooltip-dir='bottom'>
                             <GrUndo />
                         </button>
-                        <button className='tool'>
+                        <button className='tool' data-tooltip='Redo' data-tooltip-dir='bottom'>
                             <GrRedo />
                         </button>
                     </div>
                     <div className='flex align-center interactives'>
-                        <button className='tool'>
+                        <button className='tool' data-tooltip='Notifications' data-tooltip-dir='bottom'>
                             <BiBell />
                         </button>
-                        <button className='tool'>
+                        <button className='tool' data-tooltip='Chat' data-tooltip-dir='bottom'>
                             <FiMessageSquare />
                         </button>
                     </div>
                     <div className='flex align-center'>
                         <button
+                            data-tooltip='Edit'
+                            data-tooltip-dir='bottom'
                             onClick={() =>
                                 onToolClick('right', {
                                     isOpen: !rightSidebarState.isOpen,

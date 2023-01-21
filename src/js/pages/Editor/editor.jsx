@@ -8,7 +8,7 @@ import { DragDropContext } from 'react-beautiful-dnd'
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { saveWap, setIsEditing } from '../../store/wap/wap.action'
+import { saveWap, setIsEditing, setWapNull } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
 
@@ -17,6 +17,7 @@ export function Editor() {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const { wapId } = useParams()
+    const editLayoutRef = useRef()
 
     // sidebars states
     const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false, currModule: null })
@@ -34,6 +35,7 @@ export function Editor() {
 
         return () => {
             setIsEditing(false)
+            setWapNull()
         }
     }, [])
 
@@ -57,6 +59,7 @@ export function Editor() {
             console.log(err)
         }
     }
+    console.log('wap', wap)
 
     function handleOnDragEnd(res) {
         let changedCmp
@@ -82,7 +85,7 @@ export function Editor() {
                     rightSidebarState={rightSidebarState}
                     handleSidebarsChanges={handleSidebarsChanges}
                 />
-                <div className='editor-layout full'>
+                <div className='editor-layout full' ref={editLayoutRef}>
                     <EditorPreview
                         wapCmps={wap.cmps}
                         setRightSidebarState={setRightSidebarState}
@@ -93,6 +96,7 @@ export function Editor() {
                         leftSidebarState={leftSidebarState}
                         handleSidebarsChanges={handleSidebarsChanges}
                         wap={wap}
+                        editLayoutRef={editLayoutRef}
                     />
                 </div>
             </DragDropContext>

@@ -21,7 +21,6 @@ export const eventBusService = createEventEmitter()
 export function showUserMsg(msg) {
     eventBusService.emit('show-user-msg', msg)
 }
-
 export function showSuccessMsg(txt) {
     showUserMsg({ txt, type: 'success' })
 }
