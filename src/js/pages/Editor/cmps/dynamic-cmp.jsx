@@ -26,6 +26,7 @@ export default function DynamicCmp(props) {
         ev.target.classList.add('clicked')
         props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
         props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
+        props.selectedActionsRef.current.style.display = 'flex'
 
         setElClickedNode(ev.target)
         setClickedCmp(cmp)
