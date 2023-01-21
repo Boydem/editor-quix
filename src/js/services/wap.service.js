@@ -5,6 +5,7 @@ import { getDemoCmps2 } from '../wap-templates/wap-2/wap-2'
 // import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
 import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
+import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
 import { storageService } from './async-storage.service'
 import { utilService } from './util.service'
 
@@ -158,6 +159,20 @@ function _createWaps() {
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
                 title: 'Finclvr',
+            },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-4',
+                owner: 'admin',
+                cmps: getDemoCmps4(),
+                themeClass: 'wap4-primary',
+                breakpoints: {
+                    mobileLayout: 750,
+                    tabletLayout: 1400,
+                },
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
+                title: 'ONMYSCREEN',
             },
         ]
 
