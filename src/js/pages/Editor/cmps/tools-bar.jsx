@@ -65,7 +65,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                                     isOpen: true,
                                     currModule: tool.module,
                                     activeMenuItem: null,
-                                    isSubMenuOpen: !tool.module ? true : false,
+                                    isSubMenuOpen: tool.module === 'add' ? false : true,
                                 })
                             }
                             className={`${leftSidebarState.currModule === tool.module ? 'active' : ''} tool`}
