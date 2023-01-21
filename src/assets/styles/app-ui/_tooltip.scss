@@ -43,8 +43,8 @@ $tooltip-danger-bg-color: $dark-pink;
             -webkit-transform 0.5s cubic-bezier(0.73, 0.01, 0, 1);
         pointer-events: none;
         white-space: nowrap;
-        bottom: 50%;
-        transform: translate(-50%, 0px);
+        bottom: 100%;
+        transform: translate(-50%, -18px);
         max-width: 320px;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -64,7 +64,7 @@ $tooltip-danger-bg-color: $dark-pink;
 
     &:hover {
         &:after {
-            transform: translate(-50%, -10px);
+            transform: translate(-50%, -6px);
         }
     }
 }
@@ -86,8 +86,8 @@ $tooltip-danger-bg-color: $dark-pink;
     top: 110%;
     left: 50%;
     bottom: auto;
-    -webkit-transform: translate(-50%, 20px);
-    transform: translate(-50%, 20px);
+    -webkit-transform: translate(-50%, 16px);
+    transform: translate(-50%, 16px);
 }
 
 [data-tooltip][data-tooltip-dir*='bottom']:hover:after {
