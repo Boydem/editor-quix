@@ -2,8 +2,8 @@
     $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     max-height: $editor-max-height;
     padding: $spacing-m $spacing-l;
-    background-color: $editor-hover-bg;
-    border-radius: $spacing-s;
+    background-color: darken($editor-hover-bg, 10%);
+    box-shadow: inset 0px 0px 20px -10px rgba($editor-outline, 50%);
     overflow-y: auto;
     overflow-x: hidden;
 

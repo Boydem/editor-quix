@@ -25,7 +25,7 @@ function App() {
                     <Route path='/:wapUrl' element={<Preview />} />
                     <Route path='/auth' element={<LoginSignup />} />
                 </Routes>
-                {/* <UserMsg /> */}
+                <UserMsg />
             </main>
         </div>
     )

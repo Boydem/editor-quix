@@ -84,14 +84,16 @@ button {
 .ToastTitle {
     grid-area: title;
     font-weight: 500;
-    color: var(--slate12);
-    font-size: 16px;
+    // color: var(--slate12);
+    font-size: 15px;
+    color: $clr7;
 }
 
 .ToastDescription {
     grid-area: description;
     margin: 0;
     color: var(--slate11);
+    color: $clr9;
     font-size: 13px;
     line-height: 1.3;
 }
