@@ -24,7 +24,6 @@ export function EditFormOpened({ clickedCmp }) {
             if (cmp.type !== 'label') return
 
             if (labelIdx === idx) {
-                console.log('FOUND', cmp)
                 cmp.cmps[0].inputName = value
             }
             labelIdx++
@@ -35,8 +34,6 @@ export function EditFormOpened({ clickedCmp }) {
     }
 
     function onDisableLabel(idx) {
-        console.log(idx)
-        console.log(clickedCmp)
         let labelIdx = 0
         clickedCmp.cmps.forEach(cmp => {
             if (cmp.type !== 'label') return

@@ -105,7 +105,6 @@ export function EditColors() {
     }
 
     async function handleTextStyleChange(styleToEdit, value) {
-        console.log('styleToEdit:', styleToEdit)
         if (!lastClickedCmp?.style) lastClickedCmp.style = {}
         if (lastClickedCmp?.style[styleToEdit] === value) value = 'unset'
         lastClickedCmp.style = { ...lastClickedCmp.style, [styleToEdit]: value }

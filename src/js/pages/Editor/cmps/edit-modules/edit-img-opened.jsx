@@ -4,7 +4,6 @@ import { saveCmp } from '../../../../store/wap/wap.action'
 export function EditImgOpened({ clickedCmp }) {
     async function onImgInput(event) {
         const image = await uploadService.uploadImg(event)
-        console.log('image', image)
         clickedCmp.content.imgUrl = image.url
         saveCmp(clickedCmp)
     }

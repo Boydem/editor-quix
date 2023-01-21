@@ -9,6 +9,8 @@ import { LoginSignup } from './js/pages/Login/login-signup'
 import { Dashboard } from './js/pages/Dashboard/dashboard'
 import { UserMsg } from './js/cmps/user-msg'
 
+// import '../node_modules/aos/dist/aos.css'
+
 function App() {
     return (
         <div className='app'>

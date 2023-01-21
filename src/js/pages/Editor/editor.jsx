@@ -59,7 +59,6 @@ export function Editor() {
             console.log(err)
         }
     }
-    console.log('wap', wap)
 
     function handleOnDragEnd(res) {
         let changedCmp

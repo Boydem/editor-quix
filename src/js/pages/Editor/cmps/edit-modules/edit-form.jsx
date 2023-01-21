@@ -37,7 +37,6 @@ export function EditForm({ clickedCmp }) {
             if (cmp.type !== 'label') return
 
             if (labelIdx === idx) {
-                console.log('FOUND', cmp)
                 cmp.cmps[0].inputName = value
             }
             labelIdx++
