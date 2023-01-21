@@ -7,6 +7,7 @@ import { Editor } from './js/pages/Editor/editor'
 import { Preview } from './js/pages/Preview/preview'
 import { LoginSignup } from './js/pages/Login/login-signup'
 import { Dashboard } from './js/pages/Dashboard/dashboard'
+import { UserMsg } from './js/cmps/user-msg'
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path='/:wapUrl' element={<Preview />} />
                     <Route path='/auth' element={<LoginSignup />} />
                 </Routes>
+                <UserMsg />
             </main>
         </div>
     )

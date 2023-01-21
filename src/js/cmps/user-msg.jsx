@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { eventBusService } from '../services/event-bus.service'
 
+import * as Toast from '@radix-ui/react-toast'
+
 export function UserMsg() {
     const [msg, setMsg] = useState(null)
-    const timeoutIdRef = useRef()
+    const timeoutIdRef = useRef(null)
 
     useEffect(() => {
         const unsubscribe = eventBusService.on('show-user-msg', msg => {
@@ -21,12 +23,21 @@ export function UserMsg() {
     function closeMsg() {
         setMsg(null)
     }
-
     if (!msg) return <span></span>
     return (
-        <section className={`user-msg ${msg.type}`}>
-            <button onClick={closeMsg}>x</button>
-            {msg.txt}
-        </section>
+        <div className='user-msg'>
+            <Toast.Provider swipeDirection='right'>
+                <Toast.Root className='ToastRoot' onOpenChange={closeMsg}>
+                    <Toast.Title className='ToastTitle'>{msg}</Toast.Title>
+                    <Toast.Description asChild>This is a message for users</Toast.Description>
+                    <Toast.Action className='ToastAction' asChild altText='Goto schedule to undo'>
+                        <button onClick={closeMsg} className='Button small green'>
+                            Close
+                        </button>
+                    </Toast.Action>
+                </Toast.Root>
+                <Toast.Viewport className='ToastViewport' />
+            </Toast.Provider>
+        </div>
     )
 }
