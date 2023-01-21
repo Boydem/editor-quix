@@ -32,20 +32,26 @@ export function EditTabs({ context }) {
                 </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content className='TabsContent tabs-inner-content' value='tab1'>
+
                 <EditSizesOpened />
                 <EditAdjustsOpened />
+
             </Tabs.Content>
             <Tabs.Content className='TabsContent tabs-inner-content' value='tab2'>
+
                 <EditTextOpened />
                 <EditColorsOpened />
+
             </Tabs.Content>
             <Tabs.Content className='TabsContent tabs-inner-content' value='tab3'>
+
                 {context === 'div' && <EditDivOpened clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
                 {context === 'img' && <EditImgOpened clickedCmp={clickedCmp} />}
                 {context === 'form' && <EditFormOpened clickedCmp={clickedCmp} />}
                 {context === 'map' && <EditMapOpened clickedCmp={clickedCmp} />}
                 {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
                 {context === 'a' && <EditAnchorOpened clickedCmp={clickedCmp} />}
+
             </Tabs.Content>
         </Tabs.Root>
     )
