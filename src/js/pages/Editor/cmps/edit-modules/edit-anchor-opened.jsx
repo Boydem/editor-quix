@@ -23,7 +23,7 @@ export function EditAnchorOpened({ clickedCmp }) {
                     <button className='btn' onClick={onSubmitHRef}>
                         Submit
                     </button>
-                    <iframe src='https://www.instagram.com/?embedded=true' width='300px' height='300px'></iframe>
+                    <iframe src={`${clickedCmp.content?.href}?embedded=true`} width='250px' height='300px'></iframe>
                 </div>
             </div>
         </div>
