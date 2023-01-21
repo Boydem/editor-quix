@@ -4,6 +4,7 @@ import { getDemoCmps1 } from '../wap-templates/wap-1/wap-1'
 import { getDemoCmps2 } from '../wap-templates/wap-2/wap-2'
 // import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
 import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
+import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { storageService } from './async-storage.service'
 import { utilService } from './util.service'
 
@@ -42,7 +43,7 @@ async function getWapByUrl(wapUrl) {
 }
 
 function _createMap() {
-    const allFractions = [...getDemoCmps1(), ...getDemoCmps2(), ...getDemoCmps3()]
+    const allFractions = [...getDemoCmps1(), ...getDemoCmps2(), ...getDemoCmps3(), ...getDemoGeneralCmps()]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
         if (acc[fraction.category]) {
             acc[fraction.category].push(fraction)
@@ -51,6 +52,7 @@ function _createMap() {
         }
         return acc
     }, {})
+    console.log(gCmpsMap)
 }
 
 // function updateCmp(cmp, parentCmp) {

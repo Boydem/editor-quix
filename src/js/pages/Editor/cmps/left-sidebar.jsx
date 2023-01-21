@@ -8,7 +8,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     const [theme, setTheme] = useState('')
     const addMenuItems = [
         ['Quick add', 'Assets'],
-        ['Header', 'Hero', 'Section', 'Card', 'Footer', 'Media', 'Decorative', 'Contact & Forms', 'Embed & Social'],
+        ['Header', 'Hero', 'Section', 'Card', 'Form', 'Footer', 'Decorative', 'Contact & Forms', 'Embed & Social'],
         ['Cards', 'Galleries', 'Members'],
     ]
 

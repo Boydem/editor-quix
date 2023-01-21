@@ -1,0 +1,235 @@
+.form-and-map {
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    padding: 30px 20px;
+
+    background-color: rgb(27, 27, 27);
+    color: #fefefe;
+    .contact-details {
+        position: relative;
+        margin: 1rem;
+        .social {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            & > * {
+                margin-inline-end: 1rem;
+                fill: rgb(241, 241, 241);
+                width: 22px;
+            }
+        }
+        h4 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        p {
+            line-height: 2;
+            font-size: 13px;
+        }
+    }
+    .map {
+        height: 45vh;
+        width: 100%;
+        background-color: $clr2;
+        border-radius: 5px;
+        box-shadow: -20px 0px 50px rgba(0, 0, 0, 0.123);
+        max-height: 45vh;
+        max-width: 100%;
+
+        margin: auto;
+        > * {
+            width: 100%;
+        }
+    }
+    & form {
+        color: #111;
+        padding: 30px 15px;
+        z-index: 3;
+        background-color: #fefefe;
+        box-shadow: 0px 10px 50px -20px rgba(0, 0, 0, 0.342);
+        label {
+            font-size: 12px;
+        }
+        input {
+            background-color: $clr1;
+            font-size: 13px;
+            margin-top: 0.5rem;
+            width: 100%;
+            border: none;
+            padding: 15px 20px;
+            &:focus-visible {
+                outline: none;
+                outline: 1px solid $clr2;
+                // box-shadow: 0px 0px 2px $clr2;
+            }
+        }
+        h1 {
+            font-weight: 300;
+            margin-bottom: 0.845rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        p,
+        button {
+            text-align: center;
+        }
+        button {
+            cursor: pointer;
+            margin-top: 1rem;
+            background-color: #111;
+            padding: 15px 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: $clr1;
+            transition: 0.3s background-color, color 0.3s;
+            border: none;
+            outline: none;
+
+            &:hover {
+                color: darken($clr1, 5%);
+                background-color: lighten(#111, 15%);
+            }
+        }
+    }
+    // medium
+    @media (min-width: 760px) {
+    }
+    // large
+    @media (min-width: 1100px) {
+        & {
+            padding: 0;
+            display: grid;
+            grid-template-columns: minmax(40vw, 1fr) 1fr;
+            & form {
+                padding: 60px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                position: relative;
+                bottom: -50px;
+                left: 100px;
+                gap: 20px;
+                h1,
+                button,
+                p {
+                    grid-column: 1/-1;
+                }
+                label[for='message'] {
+                    display: flex;
+                    flex-wrap: wrap;
+                    grid-column: 1/-1;
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+            .contact-details {
+                place-self: center start;
+                margin: 0;
+                left: 150px;
+                .social {
+                    margin-bottom: 4.5rem;
+                }
+            }
+            .map {
+                position: relative;
+                top: -150px;
+                max-height: 45vh;
+                grid-column: 1/-1;
+                max-width: 80%;
+                margin: auto;
+                > * {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.form-1 {
+    color: black;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    grid-template-columns: minmax(600px, 40vw) 1fr;
+
+    background-color: #111;
+    .map {
+        background-color: $clr2;
+        border-radius: 5px;
+        box-shadow: -20px 0px 50px rgba(0, 0, 0, 0.123);
+    }
+    .contact-details {
+        position: aboslute;
+        z-index: 99;
+        background-color: red;
+        top: 0;
+        left: 0;
+    }
+    & form {
+        padding: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        label {
+            font-size: 12px;
+        }
+        input {
+            font-size: 13px;
+            margin-top: 0.5rem;
+            width: 100%;
+            border: none;
+            padding: 15px 20px;
+            &:focus-visible {
+                outline: none;
+                outline: 1px solid $clr2;
+                // box-shadow: 0px 0px 2px $clr2;
+            }
+        }
+        h1 {
+            font-weight: 300;
+            margin-bottom: 0.845rem;
+        }
+        h1,
+        button,
+        p {
+            grid-column: 1/-1;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+        label[for='message'] {
+            display: flex;
+            flex-wrap: wrap;
+            grid-column: 1/-1;
+            input {
+                width: 100%;
+            }
+        }
+        p,
+        button {
+            text-align: center;
+        }
+        button {
+            cursor: pointer;
+            background-color: #111;
+            padding: 15px 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: $clr1;
+            transition: 0.3s background-color, color 0.3s;
+            border: none;
+            outline: none;
+
+            &:hover {
+                color: darken($clr1, 5%);
+                background-color: lighten(#111, 15%);
+            }
+        }
+    }
+    background-color: lighten($clr1, 5%);
+}

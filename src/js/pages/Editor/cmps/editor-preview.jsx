@@ -2,7 +2,6 @@ import DynamicCmp from './dynamic-cmp'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 import { useRef, useEffect } from 'react'
 import { utilService } from '../../../services/util.service'
-import { FiEdit2 } from 'react-icons/fi'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 
@@ -15,6 +14,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     const selectedActionsRef = useRef()
     useEffect(() => {
         addResizerEventListeners()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     function addResizerEventListeners() {
@@ -60,6 +60,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
                 elClickedNode.getBoundingClientRect().y - editorWrapper.current.getBoundingClientRect().y - 30
             }px`
         }, 500)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rightSidebarState.isOpen])
 
     function onEditPopup(ev) {

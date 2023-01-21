@@ -125,7 +125,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    overflow: auto;
+    // overflow: auto;
     &::-webkit-scrollbar-thumb {
         border: $spacing-xs solid transparent;
         border-radius: 100px;
