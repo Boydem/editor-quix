@@ -12,6 +12,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     let resizingState = { isResizing: false, draggingResizer: null }
     const editorWrapper = useRef()
     const selectedActionsRef = useRef()
+
     useEffect(() => {
         addResizerEventListeners()
 
@@ -36,11 +37,11 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
         // editorWrapper.current.addEventListener('resize', () => {
         //     console.log('YEES')
         // })
-        // new ResizeObserver(onEditorWrapperResize).observe(editorWrapper.current)
-        // document.addEventListener('resize', onEditorWrapperResize)
-        const observer = new MutationObserver(onEditorWrapperResize)
-        const config = { attributes: true, attributeFilter: ['style'] }
-        observer.observe(editorWrapper.current, config)
+        new ResizeObserver(onEditorWrapperResize).observe(editorWrapper.current)
+        document.addEventListener('resize', onEditorWrapperResize)
+        // const observer = new MutationObserver(onEditorWrapperResize)
+        // const config = { attributes: true, attributeFilter: ['style'] }
+        // observer.observe(editorWrapper.current, config)
     }
     // setInterval(() => {
     //     console.log(editorWrapper.current.getBoundingClientRect().x)
@@ -48,7 +49,6 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
 
     function onEditorWrapperResize(ev) {
         // console.log(window.getComputedStyle(editorWrapper.current))
-        // console.log(editorWrapper.current.getBoundingClientRect().x)
     }
     // useEffect(() => {
     //     setTimeout(() => {
@@ -119,7 +119,6 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
             }px`
         }, 500)
     }
-    console.log(elClickedNode)
     return (
         <Droppable droppableId='editor-preview'>
             {provided => {

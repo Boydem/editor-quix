@@ -7,7 +7,7 @@ import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
 import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
+import { makeId, utilService } from './util.service'
 import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5-template'
 
 export const wapService = {
@@ -22,6 +22,7 @@ export const wapService = {
     getWapByUrl,
     removeCmp,
     saveCmp,
+    getBlankWap,
 }
 
 let gCmpsMap
@@ -54,7 +55,6 @@ function _createMap() {
         }
         return acc
     }, {})
-    console.log(gCmpsMap)
 }
 
 // function updateCmp(cmp, parentCmp) {
@@ -108,6 +108,16 @@ async function save(wap) {
 
 function getEditedWap() {
     return utilService.loadFromStorage(EDITED_WAP_STORAGE_KEY)
+}
+
+function getBlankWap() {
+    return {
+        _id: makeId(),
+        owner: 'guest',
+        title: 'blank-template',
+        cmps: [],
+        breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
+    }
 }
 
 function _createWaps() {

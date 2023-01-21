@@ -21,7 +21,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
 
         return () => {
             const root = document.getElementById('root')
-            console.log(theme.current)
             root.classList.remove(theme.current)
             theme.current = null
         }
@@ -30,7 +29,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     function setThemeClass() {
         const root = document.getElementById('root')
         theme.current = wap.themeClass
-        console.log('wap:', wap)
         root.classList.add(wap.themeClass)
     }
 

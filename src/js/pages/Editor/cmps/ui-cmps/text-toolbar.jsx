@@ -12,7 +12,7 @@ export function TextToolbar({ elClickedNode, handleTextStyleChange }) {
     const fontWeight =
         (elClickedNode && window.getComputedStyle(elClickedNode).getPropertyValue('font-weight')) || '400'
     const isBold = fontWeight > 400 ? 'on' : 'off'
-    const isUnderline = elClickedNode.style.textDecorationStyle
+    const isUnderline = elClickedNode && elClickedNode.style.textDecorationStyle
     const textAlign = elClickedNode && elClickedNode.style.textAlign
     const isItalic = elClickedNode && elClickedNode.style.fontStyle
 

@@ -30,7 +30,7 @@ export function EditMapOpened({ clickedCmp }) {
     async function onAddMarker() {
         const location = await locationService.getLatLng(geoLocationValue)
         clickedCmp.content.markers.push({ id: makeId(), lat: location.lat, lng: location.lng, name: geoLocationValue })
-        console.log(clickedCmp.content.markers)
+
         saveCmp(clickedCmp)
     }
 

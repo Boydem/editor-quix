@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
@@ -8,6 +8,7 @@ import { DarkHeader } from '../Template/cmps/dark-header'
 export function Preview() {
     const [wap, setWap] = useState(null)
     const { wapId, wapUrl } = useParams()
+    const containerRef = useRef()
     useEffect(() => {
         loadWap()
     }, [])
@@ -27,9 +28,10 @@ export function Preview() {
         }
     }
 
+
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
-        <div className='full'>
+        <div className='full' ref={containerRef}>
             {/* <DarkHeader /> */}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
