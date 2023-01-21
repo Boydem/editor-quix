@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
+import { ChatCmp } from './dynamic-cmps/chat-cmp'
 import { DivCmp } from './dynamic-cmps/div-cmp'
 import DynamicElement from './dynamic-cmps/dynamic-element'
 import { FormCmp } from './dynamic-cmps/form-cmp'
@@ -13,6 +14,8 @@ export default function DynamicCmp(props) {
     // const selectedActionsRef = props.selectedActionsRef
 
     function handleClick(ev, cmp) {
+        console.log('ev:', ev)
+        console.log('cmp:', cmp)
         ev.stopPropagation()
         if (!ev.target.type) ev.preventDefault()
 
@@ -42,6 +45,8 @@ export default function DynamicCmp(props) {
     switch (props.cmp.type) {
         case 'form':
             return <FormCmp {...basicProps} />
+        case 'chat':
+            return <ChatCmp {...basicProps} />
         case 'div':
             return <DivCmp {...basicProps} />
         case 'map':

@@ -13,7 +13,9 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
 
     function handleClickMiddleware(ev, cmp) {
         eventClick = ev
-        document.addEventListener('mousedown', saveText)
+        if (cmp.type !== 'input') {
+            document.addEventListener('mousedown', saveText)
+        }
         handleClick(ev, cmp)
     }
 
@@ -22,7 +24,7 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
         cmp.content.txt = eventClick.target.innerText
         saveCmp(cmp)
     }
-
+    if (cmp.type === 'input') return
     return (
         <CustomTag
             className={classes}
