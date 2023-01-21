@@ -9,7 +9,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     const theme = useRef()
     const addMenuItems = [
         ['Quick add', 'Assets'],
-        ['Header', 'Hero', 'Section', 'Card', 'Form', 'Footer', 'Decorative', 'Contact & Forms', 'Embed & Social'],
+        ['Header', 'Hero', 'Section', 'Card', 'Form', 'Chat', 'Footer', 'Contact & Forms', 'Embed & Social'],
         ['Cards', 'Galleries', 'Members'],
     ]
 
@@ -21,7 +21,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
 
         return () => {
             const root = document.getElementById('root')
-            console.log(theme.current)
             root.classList.remove(theme.current)
             theme.current = null
         }
@@ -30,7 +29,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     function setThemeClass() {
         const root = document.getElementById('root')
         theme.current = wap.themeClass
-        console.log('wap:', wap)
         root.classList.add(wap.themeClass)
     }
 

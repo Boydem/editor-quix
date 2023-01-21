@@ -7,7 +7,8 @@ import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
 import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
+import { makeId, utilService } from './util.service'
+import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5-template'
 
 export const wapService = {
     getCmpById,
@@ -21,6 +22,7 @@ export const wapService = {
     getWapByUrl,
     removeCmp,
     saveCmp,
+    getBlankWap,
 }
 
 let gCmpsMap
@@ -53,7 +55,6 @@ function _createMap() {
         }
         return acc
     }, {})
-    console.log(gCmpsMap)
 }
 
 // function updateCmp(cmp, parentCmp) {
@@ -107,6 +108,16 @@ async function save(wap) {
 
 function getEditedWap() {
     return utilService.loadFromStorage(EDITED_WAP_STORAGE_KEY)
+}
+
+function getBlankWap() {
+    return {
+        _id: makeId(),
+        owner: 'guest',
+        title: 'blank-template',
+        cmps: [],
+        breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
+    }
 }
 
 function _createWaps() {
@@ -173,6 +184,21 @@ function _createWaps() {
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
                 title: 'ONMYSCREEN',
+            },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-5',
+                owner: 'admin',
+                cmps: getDemoCmps5(),
+                themeClass: 'wap5-primary',
+                breakpoints: {
+                    mobileLayout: 550,
+                    tabletLayout: 1130,
+                    pcLayout: 1500,
+                },
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674308505/wap5-thumbnail_ockqmi.jpg',
+                title: 'Restaurante X',
             },
         ]
 

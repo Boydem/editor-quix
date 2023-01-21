@@ -94,6 +94,7 @@ body {
             button {
                 font: inherit;
                 background: var(--clr1);
+                color: var(--clr2);
                 padding: 1rem 3.5rem;
                 border-radius: 35px;
             }
@@ -229,6 +230,7 @@ body {
                 border: none;
                 font: inherit;
                 background: var(--clr1);
+                color: var(--clr2);
                 padding: 1rem 3.5rem;
                 border-radius: 35px;
             }
@@ -256,6 +258,7 @@ body {
             background: var(--clr1);
             padding: 1rem 3.5rem;
             border-radius: 35px;
+            color: var(--clr2);
         }
     }
 }
@@ -350,74 +353,74 @@ body {
     padding: 1rem 0;
 }
 
-// @container (max-width: 1000px) {
-//     .wap-2-hero {
-//         .container {
-//             .content-1 {
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 align-items: center;
-//                 flex-direction: column;
-
-//                 .content {
-//                     display: flex;
-//                     flex-direction: column;
-//                     justify-content: center;
-//                     align-items: center;
-//                     flex-direction: column;
-//                     h1 {
-//                         font-size: 2.2rem;
-//                     }
-//                 }
-//             }
-//             .content-2 {
-//                 margin-top: 10rem;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 align-items: center;
-
-//                 .side-content {
-//                     margin-top: 10rem;
-//                     order: 2;
-//                 }
-//             }
-//         }
-//     }
-//     .wap-2-cards {
-//         .cards {
-//             display: flex;
-//             flex-direction: column;
-//             text-align: center;
-//         }
-//     }
-
-//     .wap-2-section-1 {
-//         .content {
-//             padding: 2rem;
-//             display: flex;
-//             justify-content: center;
-//             flex-direction: column;
-//             align-items: center;
-//             text-align: center;
-//             h2 {
-//                 font-weight: 400;
-//                 font-size: 2rem;
-//             }
-//         }
-//     }
-
-//     .wap-2-cta {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         flex-direction: column;
-//         text-align: center;
-//     }
-// }
-
 .tablet-layout {
+    .wap-2-hero {
+        .container {
+            .content-1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    h1 {
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+            .content-2 {
+                margin-top: 10rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .side-content {
+                    margin-top: 10rem;
+                    order: 2;
+                }
+            }
+        }
+    }
+    .wap-2-cards {
+        .cards {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .wap-2-section-1 {
+        .content {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            h2 {
+                font-weight: 400;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .wap-2-cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
     .wap-2-hero {
         .container {
             .content-1 {

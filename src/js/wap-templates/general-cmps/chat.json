@@ -1,0 +1,108 @@
+{
+    "id": "oo3z14",
+    "type": "chat",
+    "name": "chat-1",
+    "category": "chat",
+    "cmps": [
+        {
+            "id": "GXTvqg",
+            "type": "button",
+            "name": "open-chat",
+            "content": {
+                "txt": ""
+            },
+            "cmps": [
+                {
+                    "id": "QRb3ux",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "chat-svgrepo-com.svg"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "4EfJqF",
+            "type": "div",
+            "name": "chat live-chat hidden",
+            "cmps": [
+                {
+                    "id": "Srfl0w",
+                    "type": "div",
+                    "name": "contact bar",
+                    "cmps": [
+                        {
+                            "id": "iQ8ahe",
+                            "type": "div",
+                            "name": "pic stark",
+                            "cmps": []
+                        },
+                        {
+                            "id": "K3Pg5J",
+                            "type": "div",
+                            "name": "name",
+                            "cmps": []
+                        },
+                        {
+                            "id": "Sa0rKo",
+                            "type": "div",
+                            "name": "seen",
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "5gJnPg",
+                    "type": "div",
+                    "name": "messages",
+                    "cmps": [
+                        {
+                            "id": "iLJJov",
+                            "type": "div",
+                            "name": "time",
+                            "cmps": []
+                        },
+                        {
+                            "id": "gix5gL",
+                            "type": "div",
+                            "name": "message customer",
+                            "cmps": []
+                        },
+                        {
+                            "id": "NRPC4y",
+                            "type": "div",
+                            "name": "message stark",
+                            "cmps": []
+                        },
+                        {
+                            "id": "usOSH7",
+                            "type": "div",
+                            "name": "message customer",
+                            "cmps": []
+                        },
+                        {
+                            "id": "BUozKY",
+                            "type": "div",
+                            "name": "message customer",
+                            "cmps": []
+                        },
+                        {
+                            "id": "DGERMt",
+                            "type": "div",
+                            "name": "message stark",
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "bJENya",
+                    "type": "input",
+                    "name": "",
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
 
 export function FormCmp({ cmp, handleClick, onHover }) {
@@ -82,10 +83,10 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                             onChange={handleChange}
                         ></input>
                     )
-                } else
-                    return (
-                        <DynamicElement cmp={innerCmp} handleClick={handleClick} onHover={onHover} key={innerCmp.id} />
-                    )
+                } else {
+                    /* CHANGED I HAVE TO CHECK!!! */
+                }
+                return <DynamicCmp cmp={innerCmp} handleClick={handleClick} onHover={onHover} key={innerCmp.id} />
             })}
         </form>
     )

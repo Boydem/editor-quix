@@ -166,35 +166,6 @@
     }
 }
 
-.tablet-layout {
-    .wap-4-cards {
-        h1 {
-            font-size: 8rem;
-        }
-        .cards {
-            columns: 2;
-            .card {
-                .content {
-                    h2 {
-                        font-size: 1.7rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .wap-4-cta {
-        > * {
-            padding: 6rem 2rem;
-        }
-
-        .form {
-            button {
-                width: 100%;
-            }
-        }
-    }
-}
 .mobile-layout {
     .wap-4-cards {
         padding-left: 5%;
@@ -233,6 +204,108 @@
         .form {
             button {
                 grid-column: 1/-1;
+            }
+        }
+    }
+}
+
+.tablet-layout {
+    .wap-4-cards {
+        h1 {
+            font-size: 8rem;
+        }
+        .cards {
+            columns: 2;
+            .card {
+                .content {
+                    h2 {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .wap-4-cta {
+        > * {
+            padding: 6rem 2rem;
+        }
+
+        .form {
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .wap-4-cards {
+        padding-left: 5%;
+        padding-right: 5%;
+        h1 {
+            font-size: 4rem;
+        }
+        .cards {
+            columns: 2;
+            gap: 1rem;
+            .card {
+                .content {
+                    padding: 1rem;
+                    h2 {
+                        font-size: 1.2rem;
+                    }
+                    p {
+                        font-weight: 400;
+                        padding-bottom: 3rem;
+                    }
+                    p.info {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .wap-4-cta {
+        display: flex;
+        flex-direction: column;
+        > * {
+            padding: 3rem 2rem;
+        }
+
+        .form {
+            button {
+                grid-column: 1/-1;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1400px) {
+    .wap-4-cards {
+        h1 {
+            font-size: 8rem;
+        }
+        .cards {
+            columns: 2;
+            .card {
+                .content {
+                    h2 {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .wap-4-cta {
+        > * {
+            padding: 6rem 2rem;
+        }
+
+        .form {
+            button {
+                width: 100%;
             }
         }
     }

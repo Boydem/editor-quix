@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
 import { DarkHeader } from './cmps/dark-header'
+import { HiPlus } from 'react-icons/hi'
 
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
@@ -22,8 +23,13 @@ export function WapIndex() {
     }
 
     async function onEdit(wapId) {
+        let wap
         try {
-            let wap = await wapService.get(wapId)
+            if (wapId === 'blank') {
+                wap = wapService.getBlankWap()
+            } else {
+                wap = await wapService.get(wapId)
+            }
             wap._id = null
             wap.owner = 'guest'
             wap = await wapService.save(wap)
@@ -51,6 +57,25 @@ export function WapIndex() {
                     </div>
                 </div>
                 <div className='templates'>
+                    <article className='template'>
+                        <div className='img-container'>
+                            <div className='blank-template'>
+                                <HiPlus size={'2.5rem'} />
+                            </div>
+                            <div className='actions'>
+                                <button className='btn btn-template' onClick={() => onEdit('blank')}>
+                                    Edit
+                                </button>
+                                {/* <button className='btn btn-template' onClick={() => onPreview('blank')}>
+                                    View
+                                </button> */}
+                            </div>
+                        </div>
+                        <div className='text-container'>
+                            <div className='template-title text-bold'>Blank</div>
+                            <p className='template-categories text-muted'>Sticky / Lightbox / Transparent Video</p>
+                        </div>
+                    </article>
                     {waps.map(wap => (
                         <article className='template' key={wap._id}>
                             <div className='img-container'>

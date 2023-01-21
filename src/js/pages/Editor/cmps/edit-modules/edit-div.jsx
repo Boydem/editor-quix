@@ -19,7 +19,6 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
     async function onImgInput(event) {
         try {
             const image = await uploadService.uploadImg(event)
-            console.log('image', image)
             clickedCmp.style = {
                 ...clickedCmp.style,
                 background: `url(${image.url}) no-repeat center center/cover`,

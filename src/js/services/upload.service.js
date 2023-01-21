@@ -21,4 +21,3 @@ function uploadImg(ev) {
         })
         .catch(err => console.error(err))
 }
-
