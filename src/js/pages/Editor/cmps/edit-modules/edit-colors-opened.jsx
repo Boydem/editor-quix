@@ -140,7 +140,8 @@ export function EditColorsOpened() {
                         }
                         className='SliderRoot'
                         defaultValue={[16]}
-                        max={100}
+                        max={72}
+                        min={8}
                         step={1}
                         aria-label='Volume'
                         onValueChange={handleFontSliderChange}
