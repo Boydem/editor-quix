@@ -45,6 +45,8 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
             {
                 <div className={`${leftSidebarState.currModule} module-menu`}>
                     <div
+                        data-tooltip={!leftSidebarState.isOpen ? 'add' : ''}
+                        data-tooltip-dir={['right', 'no-fading']}
                         onClick={() =>
                             handleSidebar({
                                 isOpen: !leftSidebarState.isOpen,
@@ -54,9 +56,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                             })
                         }
                         className='indicator'
-                    >
-                        <AiOutlinePlus />
-                    </div>
+                    ></div>
                     {addMenuItems.map((menuItems, idx) => (
                         <ul key={idx} className='menu-items'>
                             {menuItems.map(menuItem => (

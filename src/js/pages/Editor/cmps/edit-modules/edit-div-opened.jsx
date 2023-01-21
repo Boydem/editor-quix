@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
+import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
@@ -22,7 +23,9 @@ export function EditDivOpened({ clickedCmp, elClickedNode }) {
             }
             setCurrImage(image.url)
             saveCmp(clickedCmp)
+            showSuccessMsg('Image uploaded successfully!')
         } catch (err) {
+            showErrorMsg('There was a problem uploading your image. Please try again later.')
             console.log(err)
         }
     }

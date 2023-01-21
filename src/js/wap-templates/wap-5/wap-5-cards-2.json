@@ -50,7 +50,17 @@
                                     "id": "kYcMVs",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kfgfdsgsdas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$10.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -97,7 +107,17 @@
                                     "id": "ZUFFRc",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kfgfdsgdssas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$6.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -144,7 +164,17 @@
                                     "id": "GQj4qt",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kfgdfsgsdsas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$5.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -191,7 +221,17 @@
                                     "id": "yf66Vn",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kfgfdsgsdas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$8.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -238,7 +278,17 @@
                                     "id": "RA5DPq",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kgfdsgfsdas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$3.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -285,7 +335,17 @@
                                     "id": "9JS8kT",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kgdfsgsdfas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$9.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -332,7 +392,17 @@
                                     "id": "x6gut1",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kfgfdsgdsas",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$6.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -379,7 +449,17 @@
                                     "id": "5z6Ltf",
                                     "type": "div",
                                     "name": "price",
-                                    "cmps": []
+                                    "cmps": [
+                                        {
+                                            "id": "kgfdssds",
+                                            "type": "p",
+                                            "name": "price",
+                                            "content": {
+                                                "txt": "$1.99 USD"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
                                 }
                             ]
                         },

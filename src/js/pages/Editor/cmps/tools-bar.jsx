@@ -25,6 +25,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
 
     const tools = [
+        { side: 'left', module: 'add' },
         { side: 'left', module: 'layers' },
         { side: 'left', module: 'themes' },
     ]
@@ -47,45 +48,71 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             removeCmp(clickedCmp)
         }
     }
+    function setMediaQuery() {
+        console.log('Hello:')
+    }
     return (
         <section className='tools-bar full'>
-            <div className='tools tools-cmps'>
-                {tools.map((tool, idx) => (
-                    <button
-                        data-tooltip={`${tool.module}`}
-                        data-tooltip-dir='bottom'
-                        key={idx}
-                        onClick={() =>
-                            onToolClick(tool.side, {
-                                isOpen: true,
-                                currModule: tool.module,
-                                activeMenuItem: null,
-                                isSubMenuOpen: true,
-                            })
-                        }
-                        className={`${leftSidebarState.currModule === tool.module ? 'active' : ''} tool`}
-                    >
-                        {/* {tool.module === 'add' && <AiOutlinePlus />} */}
-                        {tool.module === 'layers' && <FiLayers />}
-                        {tool.module === 'themes' && <IoColorFilterOutline />}
-                    </button>
-                ))}
+            <div className='left-side'>
+                <div className='tools tools-cmps'>
+                    {tools.map((tool, idx) => (
+                        <button
+                            data-tooltip={`${tool.module}`}
+                            data-tooltip-dir='bottom'
+                            key={idx}
+                            onClick={() =>
+                                onToolClick(tool.side, {
+                                    isOpen: true,
+                                    currModule: tool.module,
+                                    activeMenuItem: null,
+                                    isSubMenuOpen: tool.module === 'add' ? false : true,
+                                })
+                            }
+                            className={`${leftSidebarState.currModule === tool.module ? 'active' : ''} tool`}
+                        >
+                            {/* {tool.module === 'add' && <AiOutlinePlus />} */}
+                            {tool.module === 'add' && <AiOutlinePlus />}
+                            {tool.module === 'layers' && <FiLayers />}
+                            {tool.module === 'themes' && <IoColorFilterOutline />}
+                        </button>
+                    ))}
+                </div>
             </div>
-            <div className='tools tools-views flex align-center'>
-                <div className='responsive-btns flex align-center interactives'>
-                    <button data-tooltip='Desktop' data-tooltip-dir='bottom' className='tool'>
-                        <GoDeviceDesktop />
-                    </button>
-                    <button data-tooltip='Tablet' data-tooltip-dir='bottom' className='tool'>
-                        <AiOutlineTablet />
-                    </button>
-                    <button data-tooltip='Mobile' data-tooltip-dir='bottom' className='tool'>
-                        <AiOutlineMobile />
-                    </button>
+            <div className='center'>
+                <div className='tools responsive tools-views flex align-center'>
+                    <div className='responsive-btns flex align-center interactives'>
+                        <button
+                            onClick={setMediaQuery}
+                            data-tooltip='Desktop'
+                            data-tooltip-dir='bottom'
+                            className='tool'
+                        >
+                            <GoDeviceDesktop />
+                        </button>
+                        <button
+                            onClick={setMediaQuery}
+                            data-tooltip='Tablet'
+                            data-tooltip-dir='bottom'
+                            className='tool'
+                        >
+                            <AiOutlineTablet />
+                        </button>
+                        <button
+                            onClick={setMediaQuery}
+                            data-tooltip='Mobile'
+                            data-tooltip-dir='bottom'
+                            className='tool'
+                        >
+                            <AiOutlineMobile />
+                        </button>
+                    </div>
+                    <div className='responsive-btns interactives curr-width'>
+                        <input type='number' name='currMediaQuery' value={1920} />
+                    </div>
                 </div>
             </div>
 
-            <div className='tools tools-views flex align-center'>
+            <div className='tools tools-views'>
                 <div className='responsive-btns flex align-center'>
                     <div className='interactives'>
                         <button className='tool' onClick={onRemoveCmp} data-tooltip='Trash' data-tooltip-dir='bottom'>

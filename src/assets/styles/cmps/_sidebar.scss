@@ -18,12 +18,14 @@
     .module-menu {
         z-index: 2;
         width: 100%;
+        // height: 100%;
         background-color: $clr1;
         max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
         position: relative;
         left: -$modules-menu-width;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         .indicator {
+            z-index: -5;
             pointer-events: all;
             position: absolute;
             inset: 0;
@@ -37,12 +39,15 @@
             // font-weight: 900;
             font-size: px-to-rem(20px);
             line-height: 1;
-            z-index: 999;
-            transform: translate(100%, -90px);
+            transform: translate(-15%, -90px);
             border-radius: 0 55rem 55rem 0;
             // background-color: rgba($editor-active-clr, 75%);
-            background-color: $editor-active-clr;
+            background-color: $clr7;
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
             // position: relative;
+
             &::before {
                 z-index: -2;
                 content: '';
@@ -54,8 +59,21 @@
                 border-radius: 0 0.55rem 0.55rem 0;
                 width: 10px;
                 height: $spacing-xxl;
-                background-color: $editor-active-clr;
+                background-color: $clr7;
             }
+        }
+        &:not(.add, .layers, .themes) .indicator {
+            transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+                transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            animation: show 1200ms ease-in;
+            opacity: 1;
+            transform: translate(100%, -90px);
+            z-index: 1;
+            // z-index: -1;
+        }
+
+        &:not(.add) .indicator::before {
         }
         &.add {
             left: 0;
@@ -96,6 +114,7 @@
     // box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
     border-right: 1px solid $editor-lightgray;
     .menu-items {
+        background-color: $clr1;
         padding: $spacing-s 0;
         // margin-bottom: $spacing-s;
         border-bottom: 1px solid $editor-lightgray;
@@ -176,5 +195,23 @@
     }
     .module-options {
         padding: $spacing-s $spacing-m;
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

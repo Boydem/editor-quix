@@ -2,7 +2,10 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem 10%;
-
+    h2 {
+        font-size: 1.5rem;
+        letter-spacing: -0.65px;
+    }
     .links {
         padding: 0;
         display: flex;
@@ -11,14 +14,20 @@
         list-style: none;
         .logo {
             display: flex;
-            gap: 1rem;
             img {
-                width: 30px;
+                margin-inline-end: 0.25rem;
+                width: 36px;
             }
         }
         a {
-            color: var(--clr4);
+            color: var(--clr3);
+            font-weight: 600;
+            text-transform: uppercase;
             text-decoration: none;
+            @include linkUnderline(var(--clr4), 2px, var(--clr4));
+            &:hover {
+                color: var(--clr4);
+            }
         }
     }
     button {
@@ -110,6 +119,7 @@
     border-bottom: 1px solid #e8e8e8;
     h2 {
         font-weight: 600;
+        font-size: 20px;
     }
 
     .logos {
@@ -305,15 +315,31 @@
             .img-wrapper {
                 position: relative;
 
+                // .price {
+                //     position: absolute;
+                //     top: 3%;
+                //     right: 4%;
+                //     background: var(--clr2);
+                //     color: var(--clr4);
+                //     padding: 0.6rem 1.2rem;
+                //     border-radius: 50px;
+                //     font-weight: bold;
+                // }
                 .price {
-                    position: absolute;
-                    top: 3%;
-                    right: 4%;
-                    background: var(--clr2);
-                    color: var(--clr4);
-                    padding: 0.6rem 1.2rem;
-                    border-radius: 50px;
-                    font-weight: bold;
+                    p {
+                        position: absolute;
+                        top: 3%;
+                        right: 4%;
+                        background: white;
+                        color: black;
+                        padding: 0.2rem 1.2rem;
+                        border-radius: 50px;
+                        // font-weight: bold;
+                        font-weight: 600;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
             }
 

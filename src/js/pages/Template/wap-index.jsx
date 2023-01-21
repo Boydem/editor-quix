@@ -18,7 +18,7 @@ export function WapIndex() {
             setWaps(demoWaps)
         } catch (err) {
             console.log('Failed to get waps in wap index', err)
-            showErrorMsg('Failed to load demos, try again later')
+            showErrorMsg('Failed to load demos. Please try again later.')
         }
     }
 
@@ -37,7 +37,7 @@ export function WapIndex() {
             showSuccessMsg('Start working on your site!')
         } catch (err) {
             console.log('failed to get wap to edit at wap-index', err)
-            showErrorMsg('Failed to get your demo, please try again later')
+            showErrorMsg('Failed to load your template. Please try again later.')
         }
     }
     function onPreview(wapId) {

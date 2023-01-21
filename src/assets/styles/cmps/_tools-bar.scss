@@ -4,27 +4,39 @@
     background-color: $clr1;
     width: 100%;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: auto;
     border-bottom: 1px solid $editor-lightgray;
     padding-inline-start: $spacing-m - $spacing-s;
     position: sticky;
     top: $app-header-height + 1px;
     z-index: 99999;
+    align-items: center;
+    > * {
+        height: 100%;
+    }
+    .left-side {
+        justify-self: start;
+    }
+    .center {
+        justify-self: center;
+    }
     .tools {
         display: grid;
         grid-auto-flow: column;
-
-        &.tools-views {
-            justify-self: center;
-            .responsive-btns {
-                // justify-self: center;
+        justify-self: end;
+        height: 100%;
+        .curr-width {
+            height: 100%;
+            input {
+                height: 100%;
+                font-size: 14px;
+                max-width: 70px;
             }
         }
     }
 }
 .tool {
-    // @include tooltip(5px, bottom, rgba(0, 0, 0, 0.8));
     color: $clr15;
     cursor: pointer;
     font-size: px-to-rem(20px);

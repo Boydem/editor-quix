@@ -5,6 +5,7 @@ import DynamicElement from './dynamic-element'
 import { BsChatFill } from 'react-icons/bs'
 import { AiOutlineSend } from 'react-icons/ai'
 import { makeId } from '../../../../services/util.service'
+import { saveCmp } from '../../../../store/wap/wap.action'
 
 export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -19,7 +20,6 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
     function handleChange(ev) {
         const value = ev.target.value
         setMsg(value)
-        console.log(value)
     }
 
     function onOpenChat() {
@@ -27,25 +27,13 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
     }
 
     function onSend() {
-        const msgTemplate = `{
-            "id": ${makeId()},
-            "type": "div",
-            "name": "",
-            "cmps": [
-                {
-                    "id": "32423sd",
-                    "type": "p",
-                    "name": "message customer",
-                    "content": {
-                        "txt": "${msg}"
-                    },
-                    "cmps": []
-                }
-            ]
-        }`
+        console.log('SENDING', msg)
+        msgsCmp.messages.push({ by: 'customer', txt: `${msg}` })
+        setMsg('')
+        saveCmp(msgsCmp)
     }
-
-    const chatInputCmp = cmp.cmps[1].cmps.at(-1)
+    const msgsCmp = cmp?.cmps[1]?.cmps[1]
+    const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
 
     return (
         <div
@@ -78,6 +66,15 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                 {cmp.cmps[1].cmps?.map(c => {
                     return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
                 })}
+                <div className='messages'>
+                    {msgsCmp.messages?.map((msg, idx) => {
+                        return (
+                            <p className={`${msg.by} message`} key={idx}>
+                                {msg.txt}
+                            </p>
+                        )
+                    })}
+                </div>
                 <div className='input'>
                     <input
                         className={chatInputCmp.name}

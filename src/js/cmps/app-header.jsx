@@ -31,8 +31,9 @@ export function AppHeader({ location = 'editor' }) {
             wap.url = wapUrlToEdit.publishUrl
             await saveWap(wap)
             navigate(`/${wapUrlToEdit.publishUrl}`)
+            showSuccessMsg('Your site has been published!')
         } catch (err) {
-            showErrorMsg('Couldnt Publish, try again later.')
+            showErrorMsg(`Couldn't Publish, try again later.`)
         }
     }
     function toggleMenu() {

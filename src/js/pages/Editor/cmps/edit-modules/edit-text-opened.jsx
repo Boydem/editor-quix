@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { BlockPicker } from 'react-color'
 import { BsChevronDown } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
+import { showErrorMsg } from '../../../../services/event-bus.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 import { TextToolbar } from '../ui-cmps/text-toolbar'
 
@@ -48,7 +49,7 @@ export function EditTextOpened() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleColorChange`, err)
-            // showErrorMsg('Failed to save changes, try again later')
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
 
@@ -60,6 +61,7 @@ export function EditTextOpened() {
             await saveCmp(lastClickedCmp)
         } catch (err) {
             console.log(`Failed to save cmp - ${lastClickedCmp} in handleTextStyleChange`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
         }
     }
 

@@ -29,7 +29,7 @@ export function LoginSignup({ onLogin, onSignup }) {
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             console.error('Failed to login', err)
-            showErrorMsg('Cannot login, try again later')
+            showErrorMsg('Cannot login. Please try again later.')
         } finally {
             clearState()
             navigate('/')
@@ -43,7 +43,7 @@ export function LoginSignup({ onLogin, onSignup }) {
             showSuccessMsg(`Welcome, ${user.fullname}`)
         } catch (err) {
             console.error('Failed to signup', err)
-            showErrorMsg('Cannot signup, try again later')
+            showErrorMsg('Cannot login. Please try again later.')
         } finally {
             clearState()
             navigate('/')

@@ -6,50 +6,50 @@ import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 
 export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState }) {
-    const editorResizerRef = [useRef(), useRef()]
+    // const editorResizerRef = [useRef(), useRef()]
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let resizingState = { isResizing: false, draggingResizer: null }
     const editorWrapper = useRef()
     const selectedActionsRef = useRef()
 
-    useEffect(() => {
-        addResizerEventListeners()
+    // useEffect(() => {
+    // addResizerEventListeners()
 
-        return () => {
-            removeResizerEventListeners()
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    // return () => {
+    //     removeResizerEventListeners()
+    // }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
 
-    function removeResizerEventListeners() {
-        document.removeEventListener('mousemove', handleResizeDrag)
-        // editorResizerRef[0].current.removeEventListener('mousedown', () => handleMouseDown('left'))
-        // editorResizerRef[1].current.removeEventListener('mousedown', () => handleMouseDown('right'))
-        document.removeEventListener('mouseup', handleMouseUp)
-    }
+    // function removeResizerEventListeners() {
+    // document.removeEventListener('mousemove', handleResizeDrag)
+    // editorResizerRef[0].current.removeEventListener('mousedown', () => handleMouseDown('left'))
+    // editorResizerRef[1].current.removeEventListener('mousedown', () => handleMouseDown('right'))
+    // document.removeEventListener('mouseup', handleMouseUp)
+    // }
 
-    function addResizerEventListeners() {
-        document.addEventListener('mousemove', handleResizeDrag)
-        editorResizerRef[0].current.addEventListener('mousedown', () => handleMouseDown('left'))
-        editorResizerRef[1].current.addEventListener('mousedown', () => handleMouseDown('right'))
-        document.addEventListener('mouseup', handleMouseUp)
-        // editorWrapper.current.addEventListener('resize', () => {
-        //     console.log('YEES')
-        // })
-        new ResizeObserver(onEditorWrapperResize).observe(editorWrapper.current)
-        document.addEventListener('resize', onEditorWrapperResize)
-        // const observer = new MutationObserver(onEditorWrapperResize)
-        // const config = { attributes: true, attributeFilter: ['style'] }
-        // observer.observe(editorWrapper.current, config)
-    }
+    // function addResizerEventListeners() {
+    //     document.addEventListener('mousemove', handleResizeDrag)
+    //     editorResizerRef[0].current.addEventListener('mousedown', () => handleMouseDown('left'))
+    //     editorResizerRef[1].current.addEventListener('mousedown', () => handleMouseDown('right'))
+    //     document.addEventListener('mouseup', handleMouseUp)
+    // editorWrapper.current.addEventListener('resize', () => {
+    //     console.log('YEES')
+    // })
+    // new ResizeObserver(onEditorWrapperResize).observe(editorWrapper.current)
+    // document.addEventListener('resize', onEditorWrapperResize)
+    // const observer = new MutationObserver(onEditorWrapperResize)
+    // const config = { attributes: true, attributeFilter: ['style'] }
+    // observer.observe(editorWrapper.current, config)
+    // }
     // setInterval(() => {
     //     console.log(editorWrapper.current.getBoundingClientRect().x)
     // }, 1000)
 
-    function onEditorWrapperResize(ev) {
-        // console.log(window.getComputedStyle(editorWrapper.current))
-    }
+    // function onEditorWrapperResize(ev) {
+    // console.log(window.getComputedStyle(editorWrapper.current))
+    // }
     // useEffect(() => {
     //     setTimeout(() => {
     //         // const editorWrapperX = editorWrapper.current.getBoundingClientRect().x
@@ -65,31 +65,31 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     //     }, 500)
     // }, [rightSidebarState])
 
-    function handleMouseDown(dir) {
-        resizingState.isResizing = true
-        if (dir === 'left') {
-            resizingState.draggingResizer = 'left'
-        } else {
-            resizingState.draggingResizer = 'right'
-        }
-    }
-    function handleMouseUp() {
-        resizingState.isResizing = false
-    }
-    function handleResizeDrag(ev) {
-        if (!resizingState.isResizing) return
-        const [leftResizerLeftProperty, rightResizerLeftProperty] = utilService.getLeftRightPropertiesForDrag(
-            ev,
-            resizingState
-        )
-        editorResizerRef[1].current.style.left = `${rightResizerLeftProperty}px`
-        editorResizerRef[0].current.style.left = `${leftResizerLeftProperty}px`
-        editorWrapper.current.style.width = `${rightResizerLeftProperty - leftResizerLeftProperty - 30}px`
-        const editorSize = rightResizerLeftProperty - leftResizerLeftProperty - 30
+    // function handleMouseDown(dir) {
+    //     resizingState.isResizing = true
+    //     if (dir === 'left') {
+    //         resizingState.draggingResizer = 'left'
+    //     } else {
+    //         resizingState.draggingResizer = 'right'
+    //     }
+    // }
+    // function handleMouseUp() {
+    //     resizingState.isResizing = false
+    // }
+    // function handleResizeDrag(ev) {
+    //     if (!resizingState.isResizing) return
+    //     const [leftResizerLeftProperty, rightResizerLeftProperty] = utilService.getLeftRightPropertiesForDrag(
+    //         ev,
+    //         resizingState
+    //     )
+    //     editorResizerRef[1].current.style.left = `${rightResizerLeftProperty}px`
+    //     editorResizerRef[0].current.style.left = `${leftResizerLeftProperty}px`
+    //     editorWrapper.current.style.width = `${rightResizerLeftProperty - leftResizerLeftProperty - 30}px`
+    //     const editorSize = rightResizerLeftProperty - leftResizerLeftProperty - 30
 
-        editorWrapper.current.classList.toggle('mobile-layout', editorSize < wap.breakpoints.mobileLayout)
-        editorWrapper.current.classList.toggle('tablet-layout', editorSize < wap.breakpoints.tabletLayout)
-    }
+    //     editorWrapper.current.classList.toggle('mobile-layout', editorSize < wap.breakpoints.mobileLayout)
+    //     editorWrapper.current.classList.toggle('tablet-layout', editorSize < wap.breakpoints.tabletLayout)
+    // }
 
     useEffect(() => {
         selectedActionsRef.current.style.display = 'none'
@@ -124,8 +124,8 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
             {provided => {
                 return (
                     <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
-                        <div className='editor-resizer left' ref={editorResizerRef[0]}></div>
-                        <div className='wrapper' ref={editorWrapper}>
+                        {/* <div className='editor-resizer left' ref={editorResizerRef[0]}></div> */}
+                        <div className='wrapper templates-css-reset' ref={editorWrapper}>
                             <div
                                 className={`selected-actions ${
                                     !elClickedNode || rightSidebarState.isOpen ? 'hidden' : ''
@@ -154,7 +154,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
                             })}
                             {provided.placeholder}
                         </div>
-                        <div className='editor-resizer right' ref={editorResizerRef[1]}></div>
+                        {/* <div className='editor-resizer right' ref={editorResizerRef[1]}></div> */}
                     </div>
                 )
             }}

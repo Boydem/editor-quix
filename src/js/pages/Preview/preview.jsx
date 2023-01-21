@@ -31,13 +31,13 @@ export function Preview() {
             root.classList.add(wap.themeClass)
         } catch (err) {
             console.log('Failed to load wap in wap-preview', err)
-            showErrorMsg('Failed to load your demo, try again later')
+            showErrorMsg('Failed to load your demo. Please try again later.')
         }
     }
 
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
-        <div className='full' ref={containerRef}>
+        <div className='full templates-css-reset' ref={containerRef}>
             {/* <DarkHeader /> */}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
