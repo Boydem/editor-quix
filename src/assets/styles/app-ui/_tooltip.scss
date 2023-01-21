@@ -30,7 +30,6 @@ $tooltip-danger-bg-color: $dark-pink;
         z-index: 999;
         backface-visibility: hidden;
     }
-
     &:after {
         text-transform: capitalize;
         content: attr(data-tooltip);
