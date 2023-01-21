@@ -8,7 +8,14 @@ import {
     FontItalicIcon,
 } from '@radix-ui/react-icons'
 
-export function TextToolbar({ handleTextStyleChange }) {
+export function TextToolbar({ elClickedNode, handleTextStyleChange }) {
+    const fontWeight =
+        (elClickedNode && window.getComputedStyle(elClickedNode).getPropertyValue('font-weight')) || '400'
+    const isBold = fontWeight > 400 ? 'on' : 'off'
+    const isUnderline = elClickedNode.style.textDecorationStyle
+    const textAlign = elClickedNode && elClickedNode.style.textAlign
+    const isItalic = elClickedNode && elClickedNode.style.fontStyle
+
     return (
         <Toolbar.Root className='ToolbarRoot b-btm' aria-label='Formatting options'>
             <Toolbar.ToggleGroup type='multiple' aria-label='Text formatting'>
@@ -17,7 +24,7 @@ export function TextToolbar({ handleTextStyleChange }) {
                     className='ToolbarToggleItem'
                     value='bold'
                     aria-label='Bold'
-                    // defaultValue={}
+                    data-state={isBold}
                 >
                     <FontBoldIcon />
                 </Toolbar.ToggleItem>
@@ -26,6 +33,7 @@ export function TextToolbar({ handleTextStyleChange }) {
                     className='ToolbarToggleItem'
                     value='italic'
                     aria-label='Italic'
+                    data-state={isItalic === 'italic' ? 'on' : 'off'}
                 >
                     <FontItalicIcon />
                 </Toolbar.ToggleItem>
@@ -34,6 +42,7 @@ export function TextToolbar({ handleTextStyleChange }) {
                     className='ToolbarToggleItem'
                     value='strikethrough'
                     aria-label='Strike through'
+                    data-state={isUnderline === 'initial' ? 'on' : 'off'}
                 >
                     <UnderlineIcon />
                 </Toolbar.ToggleItem>
@@ -45,6 +54,7 @@ export function TextToolbar({ handleTextStyleChange }) {
                     className='ToolbarToggleItem'
                     value='left'
                     aria-label='Left aligned'
+                    data-state={textAlign === 'start' ? 'on' : 'off'}
                 >
                     <TextAlignLeftIcon />
                 </Toolbar.ToggleItem>
@@ -53,6 +63,7 @@ export function TextToolbar({ handleTextStyleChange }) {
                     className='ToolbarToggleItem'
                     value='center'
                     aria-label='Center aligned'
+                    data-state={textAlign === 'center' ? 'on' : 'off'}
                 >
                     <TextAlignCenterIcon />
                 </Toolbar.ToggleItem>
@@ -61,6 +72,7 @@ export function TextToolbar({ handleTextStyleChange }) {
                     className='ToolbarToggleItem'
                     value='right'
                     aria-label='Right aligned'
+                    data-state={textAlign === 'end' ? 'on' : 'off'}
                 >
                     <TextAlignRightIcon />
                 </Toolbar.ToggleItem>
