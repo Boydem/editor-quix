@@ -17,6 +17,7 @@ export function Editor() {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const { wapId } = useParams()
+    const editLayoutRef = useRef()
 
     // sidebars states
     const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false, currModule: null })
@@ -82,7 +83,7 @@ export function Editor() {
                     rightSidebarState={rightSidebarState}
                     handleSidebarsChanges={handleSidebarsChanges}
                 />
-                <div className='editor-layout full'>
+                <div className='editor-layout full' ref={editLayoutRef}>
                     <EditorPreview
                         wapCmps={wap.cmps}
                         setRightSidebarState={setRightSidebarState}
@@ -93,6 +94,7 @@ export function Editor() {
                         leftSidebarState={leftSidebarState}
                         handleSidebarsChanges={handleSidebarsChanges}
                         wap={wap}
+                        editLayoutRef={editLayoutRef}
                     />
                 </div>
             </DragDropContext>

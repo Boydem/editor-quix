@@ -4,7 +4,7 @@ import { saveCmp } from '../../../store/wap/wap.action'
 import { useEffect, useState } from 'react'
 import { wapService } from '../../../services/wap.service'
 import { AiOutlinePlus } from 'react-icons/ai'
-export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
+export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap, editLayoutRef }) {
     const [theme, setTheme] = useState('')
     const addMenuItems = [
         ['Quick add', 'Assets'],
@@ -20,8 +20,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     }, [])
 
     function setThemeClass() {
-        const root = document.getElementById('root')
-        root.classList.add(wap.themeClass)
+        editLayoutRef.current.classList.add(wap.themeClass)
     }
 
     function handleThemeChange(selectedTheme) {
