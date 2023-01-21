@@ -1,7 +1,7 @@
 import * as Select from '@radix-ui/react-select'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
-export function TextShadowSelect({ handleTextShadowChange, SelectItem }) {
+export function TextShadowSelectInput({ handleTextShadowChange, SelectItem }) {
     return (
         <Select.Root onValueChange={handleTextShadowChange}>
             <Select.Trigger className='SelectTrigger' aria-label='unit'>

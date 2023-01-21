@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../../store/wap/wap.action'
 import SelectSectionRef from '../ui-cmps/select-section-ref'
 
-export function EditAnchorOpened({ clickedCmp }) {
+export function EditAnchor({ clickedCmp }) {
     const [hRef, setHRef] = useState(clickedCmp.content?.href)
     const wap = useSelector(storeState => storeState.wapModule.wap)
 

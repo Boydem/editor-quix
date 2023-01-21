@@ -1,36 +1,46 @@
-import { useRef } from 'react'
-import { BsChevronDown } from 'react-icons/bs'
-import { useSelector } from 'react-redux'
+import { useState } from 'react'
+import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
 export function EditImg({ clickedCmp }) {
-    const expandedRef = useRef()
-    function setIsExpanded() {
-        expandedRef.current.classList.toggle('hidden')
-    }
+    const [imgUrl, setImgUrl] = useState()
+
     async function onImgInput(event) {
-        const image = await uploadService.uploadImg(event)
-        clickedCmp.content.imgUrl = image.url
+        try {
+            const image = await uploadService.uploadImg(event)
+            clickedCmp.content.imgUrl = image.url
+            saveCmp(clickedCmp)
+            showSuccessMsg('Image uploaded successfully')
+        } catch (err) {
+            console.log(err)
+            showErrorMsg('There was a problem uploading your image. Please try again later.')
+        }
+    }
+
+    function handleChange({ target }) {
+        const { value } = target
+        setImgUrl(value)
+    }
+
+    async function onImgUrlInput() {
+        clickedCmp.content.imgUrl = imgUrl
         saveCmp(clickedCmp)
     }
 
     return (
         <div className='adjust inside-accordion'>
-            <div className='header' onClick={setIsExpanded}>
-                <p>Image</p>
-                <button>
-                    <BsChevronDown />
-                </button>
-            </div>
-            <div className='expanded-content hidden edit-img' ref={expandedRef}>
+            <div className='expanded-content edit-img'>
                 <div className='wrapper'>
+                    <input type='url' placeholder='Enter image link..' value={imgUrl} onChange={handleChange} />
+
                     <label>
-                        Upload
+                        Browse
                         <input type='file' hidden onChange={onImgInput} />
                     </label>
-                    <img src={clickedCmp.content?.imgUrl} alt='' />
                 </div>
+                <img src={clickedCmp.content?.imgUrl} alt='' />
+                <button onClick={onImgUrlInput}>Upload</button>
             </div>
         </div>
     )

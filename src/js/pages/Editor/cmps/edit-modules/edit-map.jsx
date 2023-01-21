@@ -4,61 +4,49 @@ import { locationService } from '../../../../services/location.service'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 import { FaTrash } from 'react-icons/fa'
+import { showErrorMsg } from '../../../../services/event-bus.service'
 
 export function EditMap({ clickedCmp }) {
     const [geoLocationValue, setGeoLocationValue] = useState('')
 
-    function setIsExpanded() {
-        expandedRef.current.classList.toggle('hidden')
-    }
-    const expandedRef = useRef()
-
     function handleChange({ target }) {
         setGeoLocationValue(target.value)
     }
-    // const [latLng, setLatLng] = useState({
-    //     lat: clickedCmp.content?.lat,
-    //     lng: clickedCmp.content?.lng,
-    //     zoom: clickedCmp.content?.zoom,
-    // })
     const [zoom, setZoom] = useState(clickedCmp.content?.zoom)
-    // const markers = clickedCmp.content?.markers?.reduce((acc, marker) => {
-    //     acc.push({ lat: marker.lat, lng: marker.lng, id: +marker.id })
-    //     return acc
-    // }, [])
-    // console.log(markers)
 
     function handleMapChange(ev) {
         const value = ev.target.value
         const field = ev.target.name
 
         setZoom(+value)
-        // console.log('clickedCmp.content[field]', clickedCmp.content[field])
         clickedCmp.content[field] = parseFloat(value)
         saveCmp(clickedCmp)
     }
-
-    // function handleMarkerChange(ev) {
-    //     const value = ev.target.value
-    //     const field = ev.target.name
-
-    //     setLatLng(prev => ({ ...prev, [field]: value }))
-    //     console.log('clickedCmp.content[field]', clickedCmp.content[field])
-    //     clickedCmp.content[field] = parseFloat(value)
-    //     saveCmp(clickedCmp)
-    // }
-
     async function onPanTo() {
-        const location = await locationService.getLatLng(geoLocationValue)
-        clickedCmp.content.lat = location.lat
-        clickedCmp.content.lng = location.lng
-        saveCmp(clickedCmp)
+        try {
+            const location = await locationService.getLatLng(geoLocationValue)
+            clickedCmp.content.lat = location.lat
+            clickedCmp.content.lng = location.lng
+            saveCmp(clickedCmp)
+        } catch (err) {
+            console.log(err)
+            showErrorMsg('Please try again later.')
+        }
     }
     async function onAddMarker() {
-        const location = await locationService.getLatLng(geoLocationValue)
-        clickedCmp.content.markers.push({ id: makeId(), lat: location.lat, lng: location.lng, name: geoLocationValue })
+        try {
+            const location = await locationService.getLatLng(geoLocationValue)
+            clickedCmp.content.markers.push({
+                id: makeId(),
+                lat: location.lat,
+                lng: location.lng,
+                name: geoLocationValue,
+            })
 
-        saveCmp(clickedCmp)
+            saveCmp(clickedCmp)
+        } catch (err) {
+            showErrorMsg('Please try again later.')
+        }
     }
 
     function onDeleteMarker(marker) {
@@ -72,14 +60,7 @@ export function EditMap({ clickedCmp }) {
     if (clickedCmp.type !== 'map') return
     return (
         <div className='inside-accordion'>
-            <div className='header' onClick={setIsExpanded}>
-                <p>Map</p>
-                <button>
-                    <BsChevronDown />
-                </button>
-            </div>
-
-            <div className='expanded-content hidden edit-map' ref={expandedRef}>
+            <div className='expanded-content edit-map'>
                 <h6>Map</h6>
                 <label htmlFor=''>
                     Search your desired location
