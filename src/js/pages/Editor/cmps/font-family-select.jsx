@@ -16,6 +16,14 @@ export function FontFamilySelect({ handleFontFamilyChange, SelectItem }) {
                         <Select.Group>
                             <SelectItem value='arial'>Arial</SelectItem>
                             <SelectItem value='roboto'>Roboto</SelectItem>
+                            <SelectItem value='poppins'>Poppins</SelectItem>
+                            <SelectItem value='Tahoma'>Tahoma</SelectItem>
+                            <SelectItem value='verdana'>Verdana</SelectItem>
+                            <SelectItem value='Trebuchet MS'>Trebuchet MS</SelectItem>
+                            <SelectItem value='Times New Roman'>Times New Roman</SelectItem>
+                            <SelectItem value='Georgia '>Georgia </SelectItem>
+                            <SelectItem value='Courier New'>Courier New</SelectItem>
+                            <SelectItem value='Brush Script MT'>Brush Script MT</SelectItem>
                         </Select.Group>
                     </Select.Viewport>
                     <Select.ScrollDownButton className='SelectScrollButton'>
