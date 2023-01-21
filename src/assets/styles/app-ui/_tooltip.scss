@@ -32,6 +32,7 @@ $tooltip-danger-bg-color: $dark-pink;
     }
 
     &:after {
+        text-transform: capitalize;
         content: attr(data-tooltip);
         text-align: center;
         padding: 4px 6px;
