@@ -45,8 +45,8 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
             {
                 <div className={`${leftSidebarState.currModule} module-menu`}>
                     <div
-                        data-tooltip='Add'
-                        data-tooltip-dir='right'
+                        data-tooltip={!leftSidebarState.isOpen ? 'add' : ''}
+                        data-tooltip-dir={['right', 'no-fading']}
                         onClick={() =>
                             handleSidebar({
                                 isOpen: !leftSidebarState.isOpen,
