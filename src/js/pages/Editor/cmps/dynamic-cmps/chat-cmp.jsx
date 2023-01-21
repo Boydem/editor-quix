@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
 import { BsChatFill } from 'react-icons/bs'
+import { AiOutlineSend } from 'react-icons/ai'
+import { makeId } from '../../../../services/util.service'
+import { saveCmp } from '../../../../store/wap/wap.action'
 
 export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -16,16 +19,21 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
 
     function handleChange(ev) {
         const value = ev.target.value
-
         setMsg(value)
-        console.log(value)
     }
 
     function onOpenChat() {
         chatRef.current.classList.toggle('hidden')
     }
 
-    const chatInputCmp = cmp.cmps[1].cmps.at(-1)
+    function onSend() {
+        console.log('SENDING', msg)
+        msgsCmp.messages.push({ by: 'customer', txt: `${msg}` })
+        setMsg('')
+        saveCmp(msgsCmp)
+    }
+    const msgsCmp = cmp?.cmps[1]?.cmps[1]
+    const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
 
     return (
         <div
@@ -58,6 +66,15 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                 {cmp.cmps[1].cmps?.map(c => {
                     return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
                 })}
+                <div className='messages'>
+                    {msgsCmp.messages?.map((msg, idx) => {
+                        return (
+                            <p className={`${msg.by} message`} key={idx}>
+                                {msg.txt}
+                            </p>
+                        )
+                    })}
+                </div>
                 <div className='input'>
                     <input
                         className={chatInputCmp.name}
@@ -71,6 +88,9 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                         onChange={handleChange}
                         value={msg}
                     ></input>
+                    <button>
+                        <AiOutlineSend size={'2rem'} onClick={onSend} />
+                    </button>
                 </div>
             </div>
         </div>

@@ -223,25 +223,35 @@
     }
 
     .edit-anchor {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        margin: 0.5em 0 0.85em 0;
         .heading {
             font-size: 1.1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         input {
             margin-bottom: 0.75rem;
             // display: block;
+            width: 95.2%;
             box-shadow: 0 1px 0 0 black;
             border-radius: 0px;
+            background: none;
         }
 
         .btn {
             cursor: pointer;
-            padding: 0.1rem 0.7rem;
+            padding: 0.4em 0;
             display: block;
-            width: 100%;
+            width: 95%;
             background: #116dff;
             color: #f4f5f8;
             border-radius: 5px;
+            text-align: center;
+            margin-bottom: 0.75rem;
         }
     }
 

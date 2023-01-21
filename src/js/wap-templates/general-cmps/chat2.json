@@ -11,17 +11,7 @@
             "content": {
                 "txt": ""
             },
-            "cmps": [
-                {
-                    "id": "QRb3ux",
-                    "type": "img",
-                    "name": "",
-                    "content": {
-                        "imgUrl": "chat-svgrepo-com.svg"
-                    },
-                    "cmps": []
-                }
-            ]
+            "cmps": []
         },
         {
             "id": "4EfJqF",
@@ -77,104 +67,17 @@
                     "id": "5gJnPg",
                     "type": "div",
                     "name": "messages",
-                    "cmps": [
+                    "messages": [
+                        { "by": "customer", "txt": "Hey, man! What's up, Mr Stark?" },
+                        { "by": "owner", "txt": "Kid, where'd you come from?" },
+                        { "by": "customer", "txt": "Field trip!" },
+                        { "by": "owner", "txt": "Uh, what is this guy's problem, Mr. Stark?" },
                         {
-                            "id": "iLJJov",
-                            "type": "div",
-                            "name": "time",
-                            "cmps": [
-                                {
-                                    "id": "gfdsds",
-                                    "type": "p",
-                                    "name": "time",
-                                    "content": {
-                                        "txt": "Today at 11:41"
-                                    },
-                                    "cmps": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "gix5gL",
-                            "type": "div",
-                            "name": "",
-                            "cmps": [
-                                {
-                                    "id": "gfdsgfsd",
-                                    "type": "p",
-                                    "name": "message parker",
-                                    "content": {
-                                        "txt": "Hey, man! What's up, Mr Stark?"
-                                    },
-                                    "cmps": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "NRPC4y",
-                            "type": "div",
-                            "name": "",
-                            "cmps": [
-                                {
-                                    "id": "234242",
-                                    "type": "p",
-                                    "name": "message stark",
-                                    "content": {
-                                        "txt": "Kid, where'd you come from?"
-                                    },
-                                    "cmps": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "usOSH7",
-                            "type": "div",
-                            "name": "",
-                            "cmps": [
-                                {
-                                    "id": "dsfssdf",
-                                    "type": "p",
-                                    "name": "message parker",
-                                    "content": {
-                                        "txt": "Field trip!"
-                                    },
-                                    "cmps": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "BUozKY",
-                            "type": "div",
-                            "name": "",
-                            "cmps": [
-                                {
-                                    "id": "fdsfsfsd",
-                                    "type": "p",
-                                    "name": "message parker",
-                                    "content": {
-                                        "txt": "Uh, what is this guy's problem, Mr. Stark?"
-                                    },
-                                    "cmps": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "DGERMt",
-                            "type": "div",
-                            "name": "",
-                            "cmps": [
-                                {
-                                    "id": "32423sd",
-                                    "type": "p",
-                                    "name": "message stark",
-                                    "content": {
-                                        "txt": "Uh, he's from space, he came here to steal a necklace from a wizard."
-                                    },
-                                    "cmps": []
-                                }
-                            ]
+                            "by": "customer",
+                            "txt": "Uh, he's from space, he came here to steal a necklace from a wizard."
                         }
-                    ]
+                    ],
+                    "cmps": []
                 },
                 {
                     "id": "bJENya",

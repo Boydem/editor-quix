@@ -14,8 +14,6 @@ export default function DynamicCmp(props) {
     // const selectedActionsRef = props.selectedActionsRef
 
     function handleClick(ev, cmp) {
-        console.log('ev:', ev)
-        console.log('cmp:', cmp)
         ev.stopPropagation()
         if (!ev.target.type) ev.preventDefault()
 
@@ -28,6 +26,7 @@ export default function DynamicCmp(props) {
         ev.target.classList.add('clicked')
         props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
         props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
+        props.selectedActionsRef.current.style.display = 'flex'
 
         setElClickedNode(ev.target)
         setClickedCmp(cmp)
