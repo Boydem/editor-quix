@@ -103,6 +103,13 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
     --clr4: #161515;
 }
 
+#root.wap5-primary {
+    --clr1: #ff7629;
+    --clr2: #f7f7f7;
+    --clr3: #8c8c8c;
+    --clr4: #030303;
+}
+
 #root.theme-1 {
     --clr1: #263140;
     --clr2: #4c80fb;

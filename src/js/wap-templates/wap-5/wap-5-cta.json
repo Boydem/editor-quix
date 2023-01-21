@@ -1,0 +1,68 @@
+{
+    "id": "uZquoz",
+    "type": "div",
+    "name": "wap-5-cta",
+    "cmps": [
+        {
+            "id": "Nbs00W",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "Order from your favorite app today!"
+            },
+            "cmps": []
+        },
+        {
+            "id": "36DnGw",
+            "type": "div",
+            "name": "logos",
+            "cmps": [
+                {
+                    "id": "lcX4Es",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo1_b9oukv.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "MtcOQm",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo2_xtuqse.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "8niELK",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo3_teuxoe.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "sokbSJ",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo4_f1wxhl.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "f2iDML",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992843/logo5_gyv6cj.svg"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

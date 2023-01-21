@@ -1,0 +1,16 @@
+{
+    "id": "mSIW3A",
+    "type": "div",
+    "name": "wap-5-footer",
+    "cmps": [
+        {
+            "id": "LDiMXQ",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© Copyright - Restaurante X | Designed by Winx - Powered by Winx"
+            },
+            "cmps": []
+        }
+    ]
+}
