@@ -6,6 +6,7 @@ export const wap1Section1 = {
     type: 'div',
     category: 'section',
     themePalette: 'primary',
+    cmpId: 'Section-1',
     thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-section-1_qtuqgo.jpg',
     cmps: [
         {
@@ -16,7 +17,7 @@ export const wap1Section1 = {
                 {
                     id: makeId(),
                     type: 'h3',
-                    name:'header',
+                    name: 'header',
                     content: {
                         txt: 'With the Right Software, Great Things Can Happen',
                     },

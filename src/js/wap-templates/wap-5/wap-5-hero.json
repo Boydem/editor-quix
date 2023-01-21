@@ -2,6 +2,7 @@
     "id": "azeBmO",
     "type": "div",
     "name": "wap-5-hero",
+    "cmpId": "Hero",
     "cmps": [
         {
             "id": "FbttDJ",

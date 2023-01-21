@@ -6,6 +6,7 @@ export const wap1Hero = {
     type: 'div',
     category: 'hero',
     themePalette: 'primary',
+    cmpId: 'Hero',
     thumbnail: 'https://res.cloudinary.com/yaronshapira-com/image/upload/v1673995017/wapHero1_nadu0l.png',
     cmps: [
         {
@@ -16,7 +17,7 @@ export const wap1Hero = {
                 {
                     id: makeId(),
                     type: 'p',
-                    name:'header',
+                    name: 'header',
                     content: {
                         txt: 'Communicate. Collaborate. Create.',
                     },
@@ -24,7 +25,7 @@ export const wap1Hero = {
                 {
                     id: makeId(),
                     type: 'p',
-                    name:'txt',
+                    name: 'txt',
                     content: {
                         txt: 'WeDu provides an effective and powerful way to manage your projects',
                     },
@@ -56,7 +57,7 @@ export const wap1Hero = {
                                 {
                                     id: makeId(),
                                     type: 'p',
-                                    name:"txt",
+                                    name: 'txt',
                                     content: {
                                         txt: 'Speed & Security',
                                     },
@@ -78,7 +79,7 @@ export const wap1Hero = {
                                 {
                                     id: makeId(),
                                     type: 'p',
-                                    name:"txt",
+                                    name: 'txt',
                                     content: {
                                         txt: 'Flexibility & Scalability',
                                     },
@@ -100,7 +101,7 @@ export const wap1Hero = {
                                 {
                                     id: makeId(),
                                     type: 'p',
-                                    name:"txt",
+                                    name: 'txt',
                                     content: {
                                         txt: 'Better Collaboration',
                                     },

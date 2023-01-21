@@ -3,8 +3,10 @@
     "type": "form",
     "name": "wap-2-cta",
     "category": "cta",
+    "cmpId": "Cta-1",
     "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-1_rkvur1.jpg",
-    "cmps": [{
+    "cmps": [
+        {
             "id": "828h0t",
             "type": "h2",
             "name": "",
@@ -21,26 +23,27 @@
                 "txt": "Be the first to know about new games, exclusive previews & special promotions"
             },
             "cmps": []
-        }, {
+        },
+        {
             "id": "n7CkNR",
             "type": "label",
             "name": "subscribe-input",
             "content": {
                 "placeholder": "Email Address"
             },
-            "cmps": [{
-                "id": "n7CkNR",
-                "type": "input",
-                "name": "subscribe-input",
-                "inputName": "Subscribe",
-                "content": {
-                    "placeholder": "Email Address"
-                },
-                "cmps": []
-            }]
+            "cmps": [
+                {
+                    "id": "n7CkNR",
+                    "type": "input",
+                    "name": "subscribe-input",
+                    "inputName": "Subscribe",
+                    "content": {
+                        "placeholder": "Email Address"
+                    },
+                    "cmps": []
+                }
+            ]
         },
-
-
         {
             "id": "z1EOxc",
             "type": "button",

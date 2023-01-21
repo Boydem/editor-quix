@@ -2,6 +2,7 @@
     "id": "Ta0w1I",
     "type": "div",
     "name": "wap-5-cards-2",
+    "cmpId": "Cards-2",
     "cmps": [
         {
             "id": "pdFx24",

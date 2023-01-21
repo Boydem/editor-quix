@@ -57,10 +57,10 @@ export function AppHeader({ location = 'editor' }) {
                         </ul>
                     </nav>
                     <div className='interactives'>
-                        <button className='tool inbox'>
+                        <button data-tooltip='Chat' data-tooltip-dir='bottom' className='tool inbox'>
                             <FiMessageSquare />
                         </button>
-                        <button className='tool notifications'>
+                        <button data-tooltip='Notifications' data-tooltip-dir='bottom' className='tool notifications'>
                             <BiBell />
                         </button>
                     </div>
