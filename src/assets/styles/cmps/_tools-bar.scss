@@ -24,6 +24,7 @@
     }
 }
 .tool {
+    // @include tooltip(5px, bottom, rgba(0, 0, 0, 0.8));
     color: $clr15;
     cursor: pointer;
     font-size: px-to-rem(20px);

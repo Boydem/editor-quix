@@ -53,47 +53,85 @@
     }
 }
 
-// Buttons
+// Tooltip
 
-@mixin btn($type: regular, $bg: $clr1, $clr: $clr3, $padding: em(24px) em(44px), $hover: darken($bg, 8%)) {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: $padding;
-    line-height: 1.25;
-    font-size: em(14px);
-    font-variation-settings: 'wght' 430;
-    border: none;
-    cursor: pointer;
-
-    transition: background-color 0.2s;
-
-    @if $type ==regular {
-        background-color: $bg;
-        color: $clr;
-
-        &:hover {
-            background-color: $hover;
+@mixin tooltip($size: 5px, $dir: left, $bgcolor: #000) {
+    background: $bgcolor;
+    position: relative;
+    &:after {
+        border-style: solid;
+        content: '';
+        display: block;
+        position: absolute;
+        @if (($dir == top) or ($dir == bottom)) {
+            border-color: $bgcolor transparent;
+            left: 50%;
+            margin-left: -$size;
+        } @else {
+            border-color: transparent $bgcolor;
+            margin-top: -$size;
+            top: 50%;
         }
-    } @else if $type ==dark {
-        background-color: $clr2;
-        color: $clr3;
-
-        &:hover {
-            background-color: $clr1;
-            color: $clr3;
+        @if ($dir == top) {
+            border-width: 0 $size $size $size;
+            top: -$size;
         }
-    } @else if $type ==light {
-        background-color: $clr3;
-        color: $clr2;
-
-        &:hover {
-            background-color: $clr1;
-            color: $clr3;
+        @if ($dir == right) {
+            border-width: $size 0 $size $size;
+            right: -$size;
+        }
+        @if ($dir == bottom) {
+            border-width: $size $size 0 $size;
+            bottom: -$size;
+        }
+        @if ($dir == left) {
+            border-width: $size $size $size 0;
+            left: -$size;
         }
     }
 }
+
+// Buttons
+
+// @mixin btn($type: regular, $bg: $clr1, $clr: $clr3, $padding: em(24px) em(44px), $hover: darken($bg, 8%)) {
+//     display: inline-flex;
+//     align-items: center;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     padding: $padding;
+//     line-height: 1.25;
+//     font-size: em(14px);
+//     font-variation-settings: 'wght' 430;
+//     border: none;
+//     cursor: pointer;
+
+//     transition: background-color 0.2s;
+
+//     @if $type ==regular {
+//         background-color: $bg;
+//         color: $clr;
+
+//         &:hover {
+//             background-color: $hover;
+//         }
+//     } @else if $type ==dark {
+//         background-color: $clr2;
+//         color: $clr3;
+
+//         &:hover {
+//             background-color: $clr1;
+//             color: $clr3;
+//         }
+//     } @else if $type ==light {
+//         background-color: $clr3;
+//         color: $clr2;
+
+//         &:hover {
+//             background-color: $clr1;
+//             color: $clr3;
+//         }
+//     }
+// }
 
 // Type
 
