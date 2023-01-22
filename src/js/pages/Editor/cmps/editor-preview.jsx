@@ -28,6 +28,8 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     }, [rightSidebarState.isOpen])
 
     function onClickEditPopup(ev) {
+        elHoveredNode.classList.add('clicked')
+        elHoveredNode.classList.remove('hover')
         setElClickedNode(elHoveredNode)
         setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
         // selectedActionsRef.current.style.display = 'none'
