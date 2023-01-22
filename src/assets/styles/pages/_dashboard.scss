@@ -51,7 +51,7 @@
                     text-transform: uppercase;
                     font-weight: 600;
                     letter-spacing: 0.05rem;
-                    font-size: px-to-rem(12px);
+                    font-size: px-to-rem(12.44px);
                     padding: $spacing-xs $spacing-m;
                     transition: background-color 0.3s, color 0.3s;
                     &:hover:not(.active) {
@@ -146,7 +146,7 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     grid-area: body;
-                    font-size: px-to-rem(12px);
+                    font-size: px-to-rem(12.44px);
                     color: $clr18;
                 }
             }

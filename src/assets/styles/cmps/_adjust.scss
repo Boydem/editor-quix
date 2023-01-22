@@ -1,21 +1,19 @@
 /* reset */
 .adjust {
-    & > *:not(:first-child, .expanded-content) {
+    & > *:not(:first-child) {
         margin-bottom: $spacing-s;
     }
     // adds lightgray border-bottom as spacer
     .b-btm {
-        margin-bottom: $spacing-xs !important;
-        padding-bottom: 1rem;
         border-bottom: 1px solid $editor-lightgray;
     }
-    font-size: px-to-rem(12px);
+    font-size: px-to-rem(12.44px);
+    line-height: 1.125;
     .expanded-content {
         a,
         button {
             all: unset;
         }
-
         .ToolbarRoot {
             display: flex;
             justify-content: space-between;
