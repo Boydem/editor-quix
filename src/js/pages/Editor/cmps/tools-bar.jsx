@@ -7,11 +7,12 @@ import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { FiLayers } from 'react-icons/fi'
 import { BiBell } from 'react-icons/bi'
-import { FiMessageSquare } from 'react-icons/fi'
+
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { removeCmp } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
+import { InteractiveChat } from './ui-cmps/interactive-chat'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges, layout, onLayoutChange }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -113,9 +114,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                     </div>
                     <div className='flex align-center interactives'>
-                        <button className='tool' data-tooltip='Chat' data-tooltip-dir='bottom'>
-                            <FiMessageSquare />
-                        </button>
+                        <InteractiveChat />
                     </div>
                     <div className='flex align-center'>
                         <button
