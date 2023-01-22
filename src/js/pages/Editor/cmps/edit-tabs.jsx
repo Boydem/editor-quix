@@ -24,6 +24,7 @@ import classNames from 'classnames'
 import TextShadowSelect from './edit-modules/text-shadow-select'
 import { FontSizeSlider } from './edit-modules/font-size-slider'
 import { BorderRadiusSlider } from './edit-modules/border-radius-slider'
+import { LineHeightSlider } from './edit-modules/line-height-slider'
 
 export function EditTabs({ context }) {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
@@ -122,7 +123,7 @@ export function EditTabs({ context }) {
         try {
             await saveCmp(lastClickedCmp)
         } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleChange`, err)
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleFontStyleCommit`, err)
             showErrorMsg('Failed to save changes. Please try again later')
         }
     }
@@ -136,7 +137,21 @@ export function EditTabs({ context }) {
         try {
             await saveCmp(lastClickedCmp)
         } catch (err) {
-            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderChange`, err)
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleBorderSliderCommit`, err)
+            showErrorMsg('Failed to save changes. Please try again later')
+        }
+    }
+
+    async function handleLineHeightSliderChange(ev) {
+        elClickedNode.style.lineHeight = `${ev[0]}px`
+    }
+
+    async function handleLineHeightSliderCommit(ev) {
+        lastClickedCmp.style = { ...lastClickedCmp.style, lineHeight: `${ev[0]}px` }
+        try {
+            await saveCmp(lastClickedCmp)
+        } catch (err) {
+            console.log(`Failed to save cmp - ${lastClickedCmp} in handleLineHeightSliderCommit`, err)
             showErrorMsg('Failed to save changes. Please try again later')
         }
     }
@@ -201,6 +216,11 @@ export function EditTabs({ context }) {
                             elClickedNode={elClickedNode}
                             handleBorderSliderChange={handleBorderSliderChange}
                             handleBorderSliderCommit={handleBorderSliderCommit}
+                        />
+                        <LineHeightSlider
+                            elClickedNode={elClickedNode}
+                            handleLineHeightSliderChange={handleLineHeightSliderChange}
+                            handleLineHeightSliderCommit={handleLineHeightSliderCommit}
                         />
                     </div>
                 </div>

@@ -1,37 +1,37 @@
 import * as Slider from '@radix-ui/react-slider'
 import { useEffect, useState } from 'react'
 
-export function FontSizeSlider({ elClickedNode, handleFontSliderChange, handleFontSliderCommit }) {
-    const [clickedCmpFontSize, setClickedCmpFontSize] = useState([16])
+export function LineHeightSlider({ elClickedNode, handleLineHeightSliderChange, handleLineHeightSliderCommit }) {
+    const [clickedCmpLineHeight, setClickedCmpLineHeight] = useState([16])
 
     useEffect(() => {
-        setClickedCmpFontSize(
-            (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('font-size'))]) || [16]
+        setClickedCmpLineHeight(
+            elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('line-height'))]
         )
     }, [elClickedNode])
 
-    function handleFontSizeChange(value) {
-        setClickedCmpFontSize(value)
-        handleFontSliderChange(value)
+    function handleLineHeightChange(value) {
+        setClickedCmpLineHeight(value)
+        handleLineHeightSliderChange(value)
     }
 
     return (
         <form className='slider-form'>
             <div className='wrapper'>
-                <label htmlFor=''>Font Size</label>
-                <span>{clickedCmpFontSize}</span>
+                <label htmlFor=''>Line Height</label>
+                <span>{clickedCmpLineHeight}</span>
             </div>
             <Slider.Root
                 // value={fontSliderValue}
-                value={clickedCmpFontSize}
+                value={clickedCmpLineHeight}
                 className='SliderRoot slider-input'
-                defaultValue={[16]}
+                // defaultValue={[16]}
                 max={72}
                 min={8}
                 step={1}
                 aria-label='Volume'
-                onValueChange={handleFontSizeChange}
-                onValueCommit={handleFontSliderCommit}
+                onValueChange={handleLineHeightChange}
+                onValueCommit={handleLineHeightSliderCommit}
             >
                 <Slider.Track className='SliderTrack' value={50}>
                     <Slider.Range className='SliderRange' />
