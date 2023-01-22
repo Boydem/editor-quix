@@ -1,19 +1,19 @@
 // AccordionContentText
 
-.color-pick {
-    padding-bottom: $spacing-m;
-    position: relative;
-    .color-pick-label {
-        background: $clr1;
-        border-radius: 5px;
-        display: block;
-    }
-    .palette {
-        padding-top: $spacing-m;
-        z-index: 3;
-        height: 0;
-    }
-}
+// .color-pick {
+//     padding-bottom: $spacing-m;
+//     position: relative;
+//     .color-pick-label {
+//         background: $clr1;
+//         border-radius: 5px;
+//         display: block;
+//     }
+//     .palette {
+//         padding-top: $spacing-m;
+//         z-index: 3;
+//         height: 0;
+//     }
+// }
 // .color-pick:last-of-type {
 //     padding-bottom: 0;
 // }
@@ -60,18 +60,17 @@
 
 .SliderThumb {
     display: block;
-    width: 16px;
-    height: 16px;
-    background-color: $editor-active-clr;
-    // box-shadow: 0 2px 10px rgba($clr2, 0.5);
-    // box-shadow: 0 2px 10px var(--blackA7);
+    width: 10px;
+    height: 10px;
+    background-color: $clr9;
     border-radius: 10px;
+    box-shadow: 0 0 0 2px $clr9;
+    transition: box-shadow 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .SliderThumb:hover {
     // background-color: var(--violet3);
 }
 .SliderThumb:focus {
     outline: none;
-    // box-shadow: 0 0 0 5px var(--blackA8);
-    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px $editor-active-clr;
 }
