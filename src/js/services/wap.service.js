@@ -231,7 +231,7 @@ function _createWaps() {
                 breakpoints: {
                     mobileLayout: 550,
                     tabletLayout: 1130,
-                    pcLayout: 1500,
+                    desktopLayout: 1500,
                 },
                 msgs: [
                     { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },

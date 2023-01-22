@@ -14,9 +14,14 @@ import { RightSidebar } from './cmps/right-sidebar'
 
 export function Editor() {
     // wap states
-    
+
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    // const [layout, setLayout] = useState({
+    //     layoutClass: 'desktopLayout',
+    //     width: wap.breakpoints?.desktopLayout || null,
+    // })
+    const [layout, setLayout] = useState({})
     const { wapId } = useParams()
     const editLayoutRef = useRef()
 
@@ -62,6 +67,10 @@ export function Editor() {
         }
     }
 
+    function onLayoutChange(layout) {
+        setLayout({ layoutClass: layout, width: wap.breakpoints[layout] || null })
+    }
+
     function handleOnDragEnd(res) {
         handleSidebarsChanges('left', { isDragging: false })
         let changedCmp
@@ -87,12 +96,15 @@ export function Editor() {
                     leftSidebarState={leftSidebarState}
                     rightSidebarState={rightSidebarState}
                     handleSidebarsChanges={handleSidebarsChanges}
+                    layout={layout}
+                    onLayoutChange={onLayoutChange}
                 />
                 <div className='editor-layout full' ref={editLayoutRef}>
                     <EditorPreview
                         wapCmps={wap.cmps}
                         setRightSidebarState={setRightSidebarState}
                         rightSidebarState={rightSidebarState}
+                        layout={layout}
                         handleSidebarsChanges={handleSidebarsChanges}
                     />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
