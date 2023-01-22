@@ -18,8 +18,8 @@ export function BorderRadiusSlider({ elClickedNode, handleBorderSliderChange, ha
     }
 
     return (
-        <form className='slider-form'>
-            <div className='wrapper'>
+        <form className='slider-form adjust-inputs'>
+            <div className='wrapper '>
                 <label htmlFor=''>Border Radius</label>
                 <span>{clickedCmpBorderRadius}</span>
             </div>

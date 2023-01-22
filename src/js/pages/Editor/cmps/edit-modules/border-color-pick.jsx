@@ -1,8 +1,8 @@
-import { BlockPicker } from "react-color";
+import { BlockPicker } from 'react-color'
 
 export function BorderColorPick({ openBorderColorPalette, elClickedNode, isBorderPaletteOpen, handleColorChange }) {
     return (
-        <div className='color-pick b-btm'>
+        <div className='color-pick adjust-inputs'>
             <label onClick={openBorderColorPalette}>Border Color</label>
             <div
                 onClick={openBorderColorPalette}

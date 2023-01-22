@@ -16,7 +16,7 @@ export function FontSizeSlider({ elClickedNode, handleFontSliderChange, handleFo
     }
 
     return (
-        <form className='slider-form'>
+        <form className='slider-form adjust-inputs'>
             <div className='wrapper'>
                 <label htmlFor=''>Font Size</label>
                 <span>{clickedCmpFontSize}</span>

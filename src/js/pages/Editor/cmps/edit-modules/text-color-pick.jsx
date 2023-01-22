@@ -1,11 +1,8 @@
-import { BlockPicker } from "react-color";
+import { BlockPicker } from 'react-color'
 
-export default function TextColorPick({openTextColorPalette, elClickedNode, isTextPaletteOpen, handleColorChange}) {
-
-    
-
+export default function TextColorPick({ openTextColorPalette, elClickedNode, isTextPaletteOpen, handleColorChange }) {
     return (
-        <div className='color-pick'>
+        <div className='color-pick adjust-inputs'>
             <label onClick={openTextColorPalette}>Color</label>
             <div
                 onClick={openTextColorPalette}

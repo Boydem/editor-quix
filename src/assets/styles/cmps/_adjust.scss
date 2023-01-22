@@ -1,143 +1,102 @@
 /* reset */
 .adjust {
-    & > *:not(:first-child) {
-        margin-bottom: $spacing-s;
-    }
-    // adds lightgray border-bottom as spacer
-    .b-btm {
-        border-bottom: 1px solid $editor-lightgray;
-    }
-    font-size: px-to-rem(12.44px);
-    line-height: 1.125;
-    .expanded-content {
-        a,
-        button {
-            all: unset;
-        }
-        .ToolbarRoot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            width: 100%;
-            min-width: max-content;
-            margin-bottom: $spacing-s;
-            background-color: white;
-        }
-
-        .ToolbarToggleItem,
-        .ToolbarLink,
-        .ToolbarButton {
-            cursor: pointer;
-            flex: 0 0 auto;
-            color: $clr2;
-            // height: 25px;
-            padding: $spacing-xxs;
-            border-radius: 4px;
-            display: inline-flex;
-            font-size: 13px;
-            line-height: 1;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1) background-color, color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .ToolbarToggleItem:hover,
-        .ToolbarLink:hover,
-        .ToolbarButton:hover {
-            background-color: $editor-lightgray;
-        }
-        .ToolbarToggleItem:focus,
-        .ToolbarLink:focus,
-        .ToolbarButton:focus {
-            position: relative;
-            // box-shadow: 0 0 0 2px var(--violet7);
-        }
-
-        .ToolbarToggleItem {
-            margin-inline-start: $spacing-xxs;
-        }
-        .ToolbarToggleItem:first-child {
-            margin: 0;
-        }
-        .ToolbarToggleItem[data-state='on'] {
-            background-color: $editor-active-bg;
-            color: $editor-active-clr;
-        }
-
-        .ToolbarSeparator {
-            width: 1px;
-            background-color: $editor-lightgray;
-            margin: 0 0;
-        }
-    }
-    .text-decoration {
-        button {
-            padding: 0;
-            background: #eeeeee;
-            border-radius: 5px;
-            padding: 0.3rem 0.3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        display: flex;
-        justify-content: space-between;
-    }
-    .slider-form {
-        label {
-            // font-size: 1.2rem;
-        }
-        span {
-        }
-    }
-    .color-pick {
+    .ToolbarToggleItem,
+    .ToolbarLink,
+    .ToolbarButton {
         cursor: pointer;
-        position: relative;
-        width: 100%;
-        display: grid;
+        flex: 0 0 auto;
+        color: $clr2;
+        // height: 25px;
+        padding: $spacing-xxs;
+        border: 1px solid $editor-lightgray;
+        border-radius: 4px;
+        display: inline-flex;
+        line-height: 1;
         align-items: center;
-        // grid-auto-flow: column;
-        // justify-content: space-between;
-        padding-right: $spacing-xs;
-        // padding-left: $spacing-xs;
-        grid-template-columns: auto 1fr;
+        justify-content: center;
+        transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1) background-color, color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .ToolbarToggleItem:hover,
+    .ToolbarLink:hover,
+    .ToolbarButton:hover {
+        background-color: $editor-lightgray;
+    }
+    .ToolbarToggleItem:focus,
+    .ToolbarLink:focus,
+    .ToolbarButton:focus {
+        position: relative;
+        // box-shadow: 0 0 0 2px var(--violet7);
+    }
 
-        .curr-color {
-            margin-inline-start: auto;
-            justify-self: end;
-            // max-width: 100%;
-            width: 22px;
-            height: 22px;
-            background-color: #000;
-            border-radius: 4px;
-            box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.154);
-        }
+    .ToolbarToggleItem {
+        margin-inline-start: $spacing-xxs;
+    }
+    .ToolbarToggleItem:first-child {
+        margin: 0;
+    }
+    .ToolbarToggleItem[data-state='on'] {
+        background-color: $editor-active-bg;
+        color: $editor-active-clr;
+    }
 
-        .block-picker {
-            margin-top: -5.6rem;
-            > *:last-child {
-                background: white;
-                box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.5);
-            }
+    .ToolbarSeparator {
+        width: 1px;
+        background-color: $editor-lightgray;
+        margin: 0 0;
+    }
+}
+.text-decoration {
+    button {
+        padding: 0;
+        background: #eeeeee;
+        border-radius: 5px;
+        padding: 0.3rem 0.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-pick {
+    cursor: pointer;
+    position: relative;
+    .curr-color {
+        margin-inline-start: auto;
+        justify-self: end;
+        // max-width: 100%;
+        width: 22px;
+        height: 22px;
+        background-color: #000;
+        border-radius: 4px;
+        box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.154);
+    }
+
+    .block-picker {
+        margin-top: -5.6rem;
+        > *:last-child {
             background: white;
-            // height: 100%;
-            padding: 0;
-            // position: absolute !important;
-            left: 50%;
-            opacity: 0;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translate(-150%, $spacing-m);
+            box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.5);
         }
-        .block-picker.open {
-            transform: translate(-28%, $spacing-m);
-            opacity: 1;
-        }
-        .palette {
-            // padding-top: $spacing-s;
-            z-index: 3;
-            // height: 0;
-            &.open {
-            }
+        background: white;
+        // height: 100%;
+        padding: 0;
+        // position: absolute !important;
+        left: 0%;
+        opacity: 0;
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translate(-150%, $spacing-m);
+    }
+    .block-picker.open {
+        transform: translate(-28%, $spacing-m);
+        opacity: 1;
+    }
+    .palette {
+        // padding-top: $spacing-s;
+        z-index: 3;
+        // height: 0;
+        &.open {
         }
     }
 }
