@@ -18,6 +18,7 @@ export const userService = {
     getById,
     remove,
     update,
+    onGoogleLoginSignup,
 }
 
 window.userService = userService
@@ -86,6 +87,12 @@ async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     // socketService.logout()
     // return await httpService.post('auth/logout')
+}
+
+async function onGoogleLoginSignup(user) {
+    const users = await getUsers()
+    const isSignedup = users.find(u => u.username === user.username && user.password === u.password)
+    return isSignedup ? saveLocalUser(user) : signup(user)
 }
 
 function saveLocalUser(user) {

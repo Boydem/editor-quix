@@ -68,7 +68,8 @@ export function Editor() {
     }
 
     function onLayoutChange(layout) {
-        setLayout({ layoutClass: layout, width: wap.breakpoints[layout] || null })
+        const deafultWidth = { tableLayout: 980, mobileLayout: 500 }
+        setLayout({ layoutClass: layout, width: wap.breakpoints[layout] || deafultWidth[layout] })
     }
 
     function handleOnDragEnd(res) {

@@ -1,26 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router'
-import GoogleLogin from 'react-google-login'
-import { gapi } from 'gapi-script'
-import { login, logout, signup } from '../../store/user/user.actions'
+import { login, logout, signup, onGoogleLogin } from '../../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { AppHeader } from '../../cmps/app-header'
+import { GoogleLoginSignup } from './google-login-signup'
 
 export function LoginSignup({ onLogin, onSignup }) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignup, setIsSignup] = useState(false)
     const navigate = useNavigate()
-    const clientId = '28399919732-osd9s038ajll6eq48pj8sce2cc0span8.apps.googleusercontent.com'
-
-    useEffect(() => {
-        const initClient = () => {
-            gapi.client.init({
-                clientId: clientId,
-                scope: '',
-            })
-        }
-        gapi.load('client:auth2', initClient)
-    }, [])
 
     function clearState() {
         setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
@@ -36,11 +24,12 @@ export function LoginSignup({ onLogin, onSignup }) {
         setCredentials({ ...credentials, [field]: value })
     }
 
-    async function onLogin(ev, credentials) {
-        if (ev) ev.preventDefault()
+    async function onLogin(ev) {
+        ev.preventDefault()
         try {
             const user = await login(credentials)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
+            console.log('credentials:', credentials)
         } catch (err) {
             console.error('Failed to login', err)
             showErrorMsg('Cannot login. Please try again later.')
@@ -50,20 +39,6 @@ export function LoginSignup({ onLogin, onSignup }) {
         }
     }
 
-    function onGoogleLogin({ profileObj }) {
-        const user = {
-            username: profileObj.email,
-            password: profileObj.googleId,
-            fullname: profileObj.name,
-            imgUrl: profileObj.imageUrl,
-        }
-        onLogin('', user)
-    }
-    function onGoogleLoginFailure(err) {
-        console.log('failed:', err)
-        showErrorMsg('Cannot login, try again later')
-    }
-
     async function onSignup(ev) {
         ev.preventDefault()
         try {
@@ -71,6 +46,19 @@ export function LoginSignup({ onLogin, onSignup }) {
             showSuccessMsg(`Welcome, ${user.fullname}`)
         } catch (err) {
             console.error('Failed to signup', err)
+            showErrorMsg('Cannot login. Please try again later.')
+        } finally {
+            clearState()
+            navigate('/')
+        }
+    }
+
+    async function handleGoogleLogin(user) {
+        try {
+            const user = await onGoogleLogin(user)
+            showSuccessMsg(`Welcome, ${user.fullname}`)
+        } catch (err) {
+            console.error('Failed to login', err)
             showErrorMsg('Cannot login. Please try again later.')
         } finally {
             clearState()
@@ -147,14 +135,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                         </form>
                     </div>
                 )}
-                <GoogleLogin
-                    clientId={clientId}
-                    buttonText='Sign in with Google'
-                    onSuccess={onGoogleLogin}
-                    onFailure={onGoogleLoginFailure}
-                    cookiePolicy={'single_host_origin'}
-                    isSignedIn={true}
-                />
+                <GoogleLoginSignup handleGoogleLogin={handleGoogleLogin} />
             </div>
         </>
     )

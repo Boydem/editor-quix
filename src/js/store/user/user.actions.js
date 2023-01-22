@@ -79,3 +79,13 @@ export async function logout() {
         throw err
     }
 }
+
+export async function onGoogleLogin(user) {
+    try {
+        await userService.onGoogleLoginSignup(user)
+        store.dispatch({ type: 'SET_USER', user })
+    } catch (err) {
+        console.log('Cannot login with google', err)
+        throw err
+    }
+}
