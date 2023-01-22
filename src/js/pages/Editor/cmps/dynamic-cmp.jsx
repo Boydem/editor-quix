@@ -9,38 +9,14 @@ import MapCmp from './dynamic-cmps/map-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
-    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
-    const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
-    // const selectedActionsRef = props.selectedActionsRef
 
-    function handleClick(ev, cmp) {
-        ev.stopPropagation()
-        if (!ev.target.type) ev.preventDefault()
-
-        if (!isEditing) return
-        if (elClickedNode === ev.target) return
-
-        if (elClickedNode) {
-            elClickedNode.classList.remove('clicked')
-        }
-        ev.target.classList.add('clicked')
-        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
-        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
-        props.selectedActionsRef.current.style.display = 'flex'
-
-        setElClickedNode(ev.target)
-        setClickedCmp(cmp)
-        // saveCmp(cmp)
+    const basicProps = {
+        cmp: props.cmp,
+        onSelectCmp: props.onSelectCmp,
+        onHoverCmp: props.onHoverCmp,
+        selectedActionsRef: props.selectedActionsRef,
+        setElHoveredNode: props.setElHoveredNode,
     }
-
-    function onHover(ev) {
-        ev.stopPropagation()
-        ev.preventDefault()
-        if (!isEditing) return
-
-        ev.currentTarget.classList.add('hover')
-    }
-    const basicProps = { cmp: props.cmp, handleClick, onHover, selectedActionsRef: props.selectedActionsRef }
     switch (props.cmp.type) {
         case 'form':
             return <FormCmp {...basicProps} />

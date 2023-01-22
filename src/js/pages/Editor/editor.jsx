@@ -14,6 +14,7 @@ import { RightSidebar } from './cmps/right-sidebar'
 
 export function Editor() {
     // wap states
+
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     // const [layout, setLayout] = useState({
@@ -32,6 +33,7 @@ export function Editor() {
         currModule: null,
         activeMenuItem: null,
         isSubMenuOpen: false,
+        isDragging: false,
     })
 
     useEffect(() => {
@@ -70,6 +72,7 @@ export function Editor() {
     }
 
     function handleOnDragEnd(res) {
+        handleSidebarsChanges('left', { isDragging: false })
         let changedCmp
         if (res.source.droppableId !== 'editor-preview' && res.destination.droppableId === 'editor-preview') {
             changedCmp = wapService.getCmpById(res.source.droppableId, res.draggableId)
@@ -81,7 +84,8 @@ export function Editor() {
     }
 
     function handleOnDragStart() {
-        // setSidebarOpen(false)
+        // console.log('YES')
+        handleSidebarsChanges('left', { isDragging: true })
     }
     if (Object.keys(wap).length === 0) return
     return (
@@ -101,6 +105,7 @@ export function Editor() {
                         setRightSidebarState={setRightSidebarState}
                         rightSidebarState={rightSidebarState}
                         layout={layout}
+                        handleSidebarsChanges={handleSidebarsChanges}
                     />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                     <LeftSidebar

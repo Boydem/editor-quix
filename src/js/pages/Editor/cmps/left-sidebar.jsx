@@ -41,7 +41,11 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     }
 
     return (
-        <div className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule}`}>
+        <div
+            className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${leftSidebarState.currModule} ${
+                leftSidebarState.isDragging ? 'dragging' : ''
+            }`}
+        >
             {
                 <div className={`${leftSidebarState.currModule} module-menu`}>
                     <div

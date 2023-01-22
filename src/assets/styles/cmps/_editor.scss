@@ -19,16 +19,21 @@
 .selected-actions {
     position: absolute;
     z-index: 1;
-    color: white;
-    // background: rgba(7, 57, 110, 0.4);
-    background: $editor-outline;
-    color: $editor-active-bg;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.3rem;
-    cursor: pointer;
+
+    // padding: 1rem 1rem 2rem 1rem;
+    padding: 1rem 1rem 0.7rem 1rem;
+
+    .mini-wrapper {
+        color: white;
+        cursor: pointer;
+        background: $editor-outline;
+        color: $editor-active-bg;
+        padding: 0.3rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .hover {
     // background: rgba(192, 250, 241, 255);

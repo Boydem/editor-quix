@@ -1,4 +1,4 @@
-export function ImgCmp({ cmp, handleClick, onHover }) {
+export function ImgCmp({ cmp, onSelectCmp, onHoverCmp }) {
     let classes = cmp.name + ' '
     if (cmp.class) {
         classes += cmp.class?.join(' ')
@@ -8,8 +8,8 @@ export function ImgCmp({ cmp, handleClick, onHover }) {
             src={cmp.content.imgUrl}
             alt=''
             className={classes}
-            onClick={e => handleClick(e, cmp)}
-            onMouseOver={onHover}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
             href={cmp.content.href}
         />

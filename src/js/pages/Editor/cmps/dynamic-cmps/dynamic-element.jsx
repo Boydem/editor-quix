@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export default function DynamicElement({ cmp, handleClick, onHover }) {
+export default function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     let classes = cmp.name + ' '
     if (cmp.class) {
@@ -11,12 +11,12 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
 
     let eventClick
 
-    function handleClickMiddleware(ev, cmp) {
+    function onSelectCmpMiddleware(ev, cmp) {
         eventClick = ev
         if (cmp.type !== 'input') {
             document.addEventListener('mousedown', saveText)
         }
-        handleClick(ev, cmp)
+        onSelectCmp(ev, cmp)
     }
 
     function saveText() {
@@ -29,9 +29,9 @@ export default function DynamicElement({ cmp, handleClick, onHover }) {
         <CustomTag
             className={classes}
             style={cmp.style}
-            onClick={e => handleClickMiddleware(e, cmp)}
-            onMouseOver={onHover}
-            onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
+            onClick={e => onSelectCmpMiddleware(e, cmp)}
+            onMouseOver={onHoverCmp}
+            onMouseOut={ev => ev.target.classList.remove('hover')}
             contentEditable={isEditing}
             spellCheck='false'
             suppressContentEditableWarning={true}

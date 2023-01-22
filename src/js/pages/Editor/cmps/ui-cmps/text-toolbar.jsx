@@ -17,7 +17,7 @@ export function TextToolbar({ elClickedNode, handleTextStyleChange }) {
     const isItalic = elClickedNode && elClickedNode.style.fontStyle
 
     return (
-        <Toolbar.Root className='ToolbarRoot b-btm' aria-label='Formatting options'>
+        <Toolbar.Root className='ToolbarRoot adjust-inputs' aria-label='Formatting options'>
             <Toolbar.ToggleGroup type='multiple' aria-label='Text formatting'>
                 <Toolbar.ToggleItem
                     onClick={() => handleTextStyleChange('fontWeight', 'bold')}
@@ -47,7 +47,6 @@ export function TextToolbar({ elClickedNode, handleTextStyleChange }) {
                     <UnderlineIcon />
                 </Toolbar.ToggleItem>
             </Toolbar.ToggleGroup>
-            <Toolbar.Separator className='ToolbarSeparator' />
             <Toolbar.ToggleGroup type='single' defaultValue='center' aria-label='Text alignment'>
                 <Toolbar.ToggleItem
                     onClick={() => handleTextStyleChange('textAlign', 'start')}

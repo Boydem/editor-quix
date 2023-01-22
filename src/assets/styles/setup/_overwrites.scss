@@ -1,15 +1,15 @@
 // AccordionContentText
 
 .color-pick {
-    padding-bottom: 0.667rem;
+    padding-bottom: $spacing-m;
     position: relative;
     .color-pick-label {
-        background: #eee;
+        background: $clr1;
         border-radius: 5px;
         display: block;
     }
     .palette {
-        padding-top: 0.667rem;
+        padding-top: $spacing-m;
         z-index: 3;
         height: 0;
     }
@@ -39,7 +39,7 @@
 }
 
 .SliderTrack {
-    background-color: var(--blackA10);
+    background-color: $clr9;
     position: relative;
     flex-grow: 1;
     border-radius: 9999px;
@@ -53,17 +53,17 @@
 
 .SliderRange {
     position: absolute;
-    background-color: #2d2e6f;
+    background-color: $editor-active-clr;
     border-radius: 9999px;
     height: 100%;
 }
 
 .SliderThumb {
     display: block;
-    width: 20px;
-    height: 20px;
-    background-color: #2d2e6f;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 16px;
+    height: 16px;
+    background-color: $editor-active-clr;
+    // box-shadow: 0 2px 10px rgba($clr2, 0.5);
     // box-shadow: 0 2px 10px var(--blackA7);
     border-radius: 10px;
 }

@@ -16,7 +16,7 @@ export function LineHeightSlider({ elClickedNode, handleLineHeightSliderChange, 
     }
 
     return (
-        <form className='slider-form'>
+        <form className='slider-form adjust-inputs'>
             <div className='wrapper'>
                 <label htmlFor=''>Line Height</label>
                 <span>{clickedCmpLineHeight}</span>

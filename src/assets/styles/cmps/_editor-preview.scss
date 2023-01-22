@@ -2,7 +2,7 @@
     $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     max-height: $editor-max-height;
     padding: $spacing-m $spacing-l;
-    background-color: darken($editor-hover-bg, 10%);
+    background-color: darken($editor-hover-bg, 5%);
     box-shadow: inset 0px 0px 20px -10px rgba($editor-outline, 50%);
     overflow-y: auto;
     overflow-x: hidden;
@@ -10,7 +10,7 @@
     .wrapper {
         // container-type: inline-size;
         margin: auto;
-        box-shadow: 0px -5px 32px 24px rgba($clr7, 0.125);
+        box-shadow: 0px -5px 15px 20px rgba($clr7, 0.125);
         border-radius: $spacing-s;
         overflow: hidden;
         position: relative;

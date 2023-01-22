@@ -67,16 +67,6 @@
                     "id": "5gJnPg",
                     "type": "div",
                     "name": "messages",
-                    "messages": [
-                        { "by": "customer", "txt": "Hey, man! What's up, Mr Stark?" },
-                        { "by": "owner", "txt": "Kid, where'd you come from?" },
-                        { "by": "customer", "txt": "Field trip!" },
-                        { "by": "owner", "txt": "Uh, what is this guy's problem, Mr. Stark?" },
-                        {
-                            "by": "customer",
-                            "txt": "Uh, he's from space, he came here to steal a necklace from a wizard."
-                        }
-                    ],
                     "cmps": []
                 },
                 {

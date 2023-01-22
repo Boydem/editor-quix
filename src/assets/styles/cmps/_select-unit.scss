@@ -36,14 +36,13 @@
 
 .SelectItem {
     outline: none;
-    font-size: px-to-rem(12px);
-    line-height: 1;
+    font-size: px-to-rem(12.44px);
     color: $clr2;
     border-radius: 3px;
     display: flex;
     align-items: center;
     height: $spacing-m;
-    padding: 0 $spacing-s 0 $spacing-m;
+    padding: 0 $spacing-xs 0 $spacing-m;
     position: relative;
     user-select: none;
     transition: 0.2s all;

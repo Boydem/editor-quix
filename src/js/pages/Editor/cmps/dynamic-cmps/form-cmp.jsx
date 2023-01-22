@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
 
-export function FormCmp({ cmp, handleClick, onHover }) {
+export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const inputsMap = cmp.cmps.reduce((acc, c) => {
         if (c.type === 'label' && c.cmps[0]) {
@@ -34,8 +34,8 @@ export function FormCmp({ cmp, handleClick, onHover }) {
         <form
             className={cmp.name}
             style={cmp.style}
-            onClick={e => handleClick(e, cmp)}
-            onMouseOver={onHover}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
             onSubmit={onSubmit}
         >
@@ -46,10 +46,10 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                             className={innerCmp.name}
                             key={innerCmp.id}
                             style={cmp.style}
-                            onClick={e => handleClick(e, cmp)}
+                            onClick={e => onSelectCmp(e, cmp)}
                             placeholder={cmp.content?.placeholder}
                             // name={innerCmp.name}
-                            onMouseOver={onHover}
+                            onMouseOver={onHoverCmp}
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                             onChange={handleChange}
                         >
@@ -60,9 +60,9 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                                     key={innerCmp.cmps[0].id}
                                     style={cmp.style}
                                     name={innerCmp.cmps[0].inputName}
-                                    onClick={e => handleClick(e, cmp)}
+                                    onClick={e => onSelectCmp(e, cmp)}
                                     placeholder={cmp.content?.placeholder}
-                                    onMouseOver={onHover}
+                                    onMouseOver={onHoverCmp}
                                     onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                                     onChange={handleChange}
                                 ></input>
@@ -76,9 +76,9 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                             key={innerCmp.id}
                             style={cmp.style}
                             name={innerCmp.inputName}
-                            onClick={e => handleClick(e, cmp)}
+                            onClick={e => onSelectCmp(e, cmp)}
                             placeholder={cmp.content?.placeholder}
-                            onMouseOver={onHover}
+                            onMouseOver={onHoverCmp}
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                             onChange={handleChange}
                         ></input>
@@ -86,7 +86,7 @@ export function FormCmp({ cmp, handleClick, onHover }) {
                 } else {
                     /* CHANGED I HAVE TO CHECK!!! */
                 }
-                return <DynamicCmp cmp={innerCmp} handleClick={handleClick} onHover={onHover} key={innerCmp.id} />
+                return <DynamicCmp cmp={innerCmp} onSelectCmp={onSelectCmp} onHoverCmp={onHoverCmp} key={innerCmp.id} />
             })}
         </form>
     )

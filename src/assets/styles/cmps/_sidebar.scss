@@ -11,6 +11,14 @@
     min-width: $modules-menu-width;
     left: 0;
 
+    &.dragging {
+        transform: translateX(calc(-500%));
+
+        // .module-menu {
+        //     left:
+        // }
+    }
+
     &.open {
         pointer-events: all;
         // transform: translateX(0%);
@@ -121,9 +129,9 @@
         & > * {
             cursor: pointer;
             text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.05rem;
-            font-size: px-to-rem(12px);
+            font-weight: 500;
+            letter-spacing: 0.025rem;
+            font-size: px-to-rem(12.44px);
             padding: $spacing-xs $spacing-m;
             transition: background-color 0.3s, color 0.3s;
             &:hover:not(.active) {

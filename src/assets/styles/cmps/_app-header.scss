@@ -1,20 +1,35 @@
 .app-header {
     background-color: $clr1;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    margin: auto;
-    z-index: 9999;
-    border-bottom: 1px solid $editor-lightgray;
-    padding: 0 $spacing-m;
     position: sticky;
     top: 0;
-    min-height: $app-header-height;
+    z-index: 99;
     &.dark {
-        background-color: $clr11;
-        & > *,
+        background-color: $clr2;
+        & *,
         & a {
             color: $clr1 !important;
+        }
+    }
+
+    .layout-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        margin: auto;
+        z-index: 9999;
+        border-bottom: 1px solid $editor-lightgray;
+        padding: 0 $spacing-m;
+        min-height: $app-header-height;
+    }
+    &.main-layout {
+        .layout-wrapper {
+            min-height: $app-header-height + 1px;
+            padding: 0;
+            border-bottom: none;
+        }
+        .logo-container {
+            font-size: px-to-rem(24px);
+            border: none;
         }
     }
     .logo-container {
@@ -24,9 +39,9 @@
         justify-content: center;
         align-items: center;
         height: 100%;
+        font-size: px-to-rem(20px);
         .logo {
             cursor: pointer;
-            font-size: px-to-rem(20px);
             font-weight: 600;
             letter-spacing: -0.02rem;
         }
@@ -51,7 +66,7 @@
             font-weight: 400;
             transition: 0.4s color, background-color 0.4s;
             &:hover {
-                color: $clr5;
+                color: $editor-active-clr;
             }
         }
     }
@@ -61,8 +76,8 @@
         align-items: center;
         justify-content: center;
         .publish-url-prefix {
-            font-size: px-to-rem(12px);
-            padding: 2px $spacing-xxs;
+            font-size: px-to-rem(12.44px);
+            padding: 2px $spacing-s;
             display: grid;
             grid-template-columns: auto 1fr auto;
             align-items: baseline;
@@ -96,10 +111,10 @@
             padding: $spacing-xxs $spacing-xs;
             transition: color 0.3s, background-color 0.2s;
             &.publish {
-                background-color: $clr5;
+                background-color: $editor-active-clr;
                 color: $clr1;
                 &:hover {
-                    background-color: $clr5;
+                    background-color: darken($editor-active-clr, 10%);
                 }
             }
             &.preview {
