@@ -243,8 +243,10 @@
 .interactives {
     display: flex;
     font-size: px-to-rem(20px);
-    border-right: $editor-lightgray 1px solid;
     border-left: $editor-lightgray 1px solid;
+    &:not(.responsive-btns) {
+        border-right: $editor-lightgray 1px solid;
+    }
     > * {
         margin: 0;
     }
