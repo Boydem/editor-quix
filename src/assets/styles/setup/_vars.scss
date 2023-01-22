@@ -1,32 +1,32 @@
 // COLOR PALETTE
-$clr1: #ffffff;
-$clr2: #1b1b1b;
+$clr1: lighten(#787c95, 46%);
+$clr2: darken(#787c95, 46%);
 $clr3: #0000ee;
 $clr4: #0074ff;
 $clr5: #003dff;
 $clr6: #013965;
 $clr7: #787c95;
-$clr8: #0e131d;
+$clr8: #444;
 $clr9: #979aaa;
 $clr10: #116dff;
-$clr11: #141414;
+$clr11: #343434;
 $clr12: #e8eaed;
 $clr13: #e900ff;
 $clr14: #eef0f4;
-$clr15: #181818;
+$clr15: darken(#787c95, 40%);
 $clr16: #1c2c49;
 $clr17: #384ad3;
-$clr18: #6f6f6f;
+$clr18: #5f616e;
 $clr19: #5f4172;
-$clr20: #181818;
+$clr20: #383838;
 $clr21: #07168d;
-$editor-lightgray: #e2e3eaea;
+$editor-lightgray: #dadae6ea;
 $editor-dashboard-bg: #eceff3;
 $editor-bg: #f9f9f9;
 $editor-active-bg: #dce9ff;
 $editor-active-clr: #116dff;
-$editor-hover-bg: #f4f5f8;
-$editor-outline: #07396e;
+$editor-hover-bg: #e4e8f1;
+$editor-outline: $clr2;
 
 // font
 $font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -35,7 +35,7 @@ $base-font-size: 14px;
 $base-font-ratio: 1.5;
 
 // Define spacing variables
-$spacing-unit: 1rem;
+$spacing-unit: 1em;
 $spacing-xxs: 0.296 * $spacing-unit;
 $spacing-xs: 0.444 * $spacing-unit;
 $spacing-s: 0.667 * $spacing-unit;

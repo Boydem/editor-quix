@@ -9,7 +9,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
 import { saveWap } from '../store/wap/wap.action'
-export function AppHeader({ location = 'editor', theme = '' }) {
+export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -40,101 +40,107 @@ export function AppHeader({ location = 'editor', theme = '' }) {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className={`${theme === 'dark' ? 'dark' : ''} app-header full`}>
-            <div className='logo-container'>
-                <Link to='/' className='logo'>
-                    Webix.
-                </Link>
-            </div>
-            {location === 'dashboard' && (
-                <>
-                    <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                        <ul className='flex align-center'>
-                            <li>
-                                <a className='nav-link link-underline' href='#'>
-                                    <span>My Sites</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className='interactives'>
-                        <button data-tooltip='Chat' data-tooltip-dir='bottom' className='tool inbox'>
-                            <FiMessageSquare />
-                        </button>
-                        <button data-tooltip='Notifications' data-tooltip-dir='bottom' className='tool notifications'>
-                            <BiBell />
-                        </button>
-                    </div>
-                </>
-            )}
-            {location === 'editor' && (
-                <>
-                    <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                        <ul className='flex align-center'>
-                            <li>
-                                <a className='nav-link link-underline' href='#'>
-                                    <span>Site</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='nav-link link-underline' href='#'>
-                                    <span>Add</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='nav-link link-underline' href='#'>
-                                    <span>View</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='nav-link link-underline' href='#'>
-                                    <span>Tools</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='nav-link link-underline' href='#'>
-                                    <span>Help</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className='publish-link'>
-                        <label className='publish-url-prefix' htmlFor='publishUrl'>
-                            webix.co.il/
-                            <input
-                                onChange={handleChange}
-                                value={wapUrlToEdit.publishUrl}
-                                type='text'
-                                name='publishUrl'
-                                id='publishUrl'
-                                placeholder='MySite'
-                            />
-                            <button onClick={publishWap} className='btn-publish'>
-                                Connet your domain.
+        <header className={`${theme} app-header full ${layout}`}>
+            <div className='layout-wrapper'>
+                <div className='logo-container'>
+                    <Link to='/' className='logo'>
+                        Webix.
+                    </Link>
+                </div>
+                {location === 'dashboard' && (
+                    <>
+                        <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
+                            <ul className='flex align-center'>
+                                <li>
+                                    <a className='nav-link link-underline' href='#'>
+                                        <span>My Sites</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div className='interactives'>
+                            <button data-tooltip='Chat' data-tooltip-dir='bottom' className='tool inbox'>
+                                <FiMessageSquare />
                             </button>
-                        </label>
-                    </div>
-                    <nav className={`nav-actions ${isMenuOpen ? 'open' : ''}`}>
-                        <ul className='flex align-center'>
-                            <li>
-                                <Link className='nav-link' to='/edit'>
-                                    <span>Invite</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className='nav-link preview' to={`/preview/${wapId}`}>
-                                    <span>Preview</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className='nav-link publish' to={`/${wap?.url}`}>
-                                    <span>Publish</span>
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </>
-            )}
+                            <button
+                                data-tooltip='Notifications'
+                                data-tooltip-dir='bottom'
+                                className='tool notifications'
+                            >
+                                <BiBell />
+                            </button>
+                        </div>
+                    </>
+                )}
+                {location === 'editor' && (
+                    <>
+                        <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
+                            <ul className='flex align-center'>
+                                <li>
+                                    <a className='nav-link link-underline' href='#'>
+                                        <span>Site</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='nav-link link-underline' href='#'>
+                                        <span>Add</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='nav-link link-underline' href='#'>
+                                        <span>View</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='nav-link link-underline' href='#'>
+                                        <span>Tools</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className='nav-link link-underline' href='#'>
+                                        <span>Help</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div className='publish-link'>
+                            <label className='publish-url-prefix' htmlFor='publishUrl'>
+                                webix.co.il/
+                                <input
+                                    onChange={handleChange}
+                                    value={wapUrlToEdit.publishUrl}
+                                    type='text'
+                                    name='publishUrl'
+                                    id='publishUrl'
+                                    placeholder='MySite'
+                                />
+                                <button onClick={publishWap} className='btn-publish'>
+                                    Connet your domain.
+                                </button>
+                            </label>
+                        </div>
+                        <nav className={`nav-actions ${isMenuOpen ? 'open' : ''}`}>
+                            <ul className='flex align-center'>
+                                <li>
+                                    <Link className='nav-link' to='/edit'>
+                                        <span>Invite</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className='nav-link preview' to={`/preview/${wapId}`}>
+                                        <span>Preview</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className='nav-link publish' to={`/${wap?.url}`}>
+                                        <span>Publish</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </nav>
+                    </>
+                )}
+            </div>
         </header>
     )
 }
