@@ -1,4 +1,92 @@
 .login-signup {
+    font-size: px-to-rem(16px);
     background-color: $clr2;
-    color: $clr1;
+    color: $login-gray;
+    // color: $clr9;
+    min-height: calc(100vh - $app-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h2 {
+        font-size: px-to-rem(81px);
+        line-height: 1.5;
+        color: $clr1;
+    }
+
+    .login-options-container {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 100%;
+        > * {
+            // padding: 1em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            button {
+                cursor: pointer;
+                margin-top: 1em;
+                background-color: $clr1;
+                color: $editor-active-clr;
+                padding: 0.4em 1.8em;
+                font-weight: 600;
+                border-radius: 55em;
+                font-size: px-to-rem(20px);
+                transition: background-color 0.3s, color 0.3s, background 0.3s, box-shadow 0.1s ease-in-out;
+                border: 1px solid $editor-active-clr;
+                &:hover {
+                    color: $clr1;
+                    background-color: $editor-active-clr;
+                }
+            }
+        }
+        .seperetor {
+            display: flex;
+            flex-direction: column;
+            margin: 0 px-to-em(69px);
+            .with-or {
+            }
+            .divider {
+                width: 1px;
+                min-height: 100px;
+                height: 100%;
+                background-color: $login-gray;
+                margin: auto;
+            }
+        }
+        margin: 2em 0;
+    }
+    input {
+        margin-bottom: 1em;
+        background-color: transparent;
+        color: $clr1;
+        border-bottom: 1px solid $clr1;
+        border-radius: 0;
+    }
+    .toggle-link {
+        color: $editor-active-clr;
+    }
+
+    .header {
+        h2 {
+            //    font-size: ;
+        }
+    }
+    .divider {
+    }
+    .api-login {
+    }
+
+    .footer {
+        text-align: center;
+        .recaptcha {
+            width: 100%;
+        }
+        .links {
+            width: 100%;
+        }
+    }
 }

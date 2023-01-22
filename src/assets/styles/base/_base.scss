@@ -58,7 +58,7 @@ a {
     transition: color 0.3s;
     font-family: $font-family;
     color: $clr2;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 ul {
@@ -77,7 +77,9 @@ select,
 a {
     font: inherit;
 }
-
+button {
+    font-weight: 600;
+}
 /*
   8. Avoid text overflows
 */
@@ -93,4 +95,9 @@ h6 {
 
 [contenteditable]:focus {
     outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
 }
