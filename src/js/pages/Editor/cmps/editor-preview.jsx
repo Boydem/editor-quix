@@ -5,7 +5,7 @@ import { utilService } from '../../../services/util.service'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 
-export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState }) {
+export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, layout }) {
     // const editorResizerRef = [useRef(), useRef()]
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -106,6 +106,10 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rightSidebarState.isOpen])
 
+    useEffect(() => {
+        setEditorWrapperLayout()
+    }, [layout])
+
     function onEditPopup(ev) {
         setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
         selectedActionsRef.current.style.display = 'none'
@@ -119,6 +123,22 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
             }px`
         }, 500)
     }
+
+    function setEditorWrapperLayout() {
+        editorWrapper.current.style.maxWidth =
+            layout.layoutClass === 'desktopLayout' ? 'revert' : `${layout.width - 10}px`
+        editorWrapper.current.classList.toggle('mobile-layout', layout.layoutClass === 'mobileLayout')
+        editorWrapper.current.classList.toggle('tablet-layout', layout.layoutClass === 'mobileLayout')
+        editorWrapper.current.classList.toggle(
+            'tablet-layout',
+            layout.layoutClass === 'tabletLayout' || layout.layoutClass === 'mobileLayout'
+        )
+        editorWrapper.current.classList.toggle('desktop-layout', layout.layoutClass === 'desktopLayout')
+    }
+
+    //     editorWrapper.current.classList.toggle('mobile-layout', editorSize < wap.breakpoints.mobileLayout)
+    //     editorWrapper.current.classList.toggle('tablet-layout', editorSize < wap.breakpoints.tabletLayout)
+
     return (
         <Droppable droppableId='editor-preview'>
             {provided => {

@@ -128,7 +128,6 @@ function _createWaps() {
                 _id: utilService.makeId(),
                 name: 'wap-1',
                 owner: 'admin',
-                breakpoints: { tabletLayout: 1300, mobileLayout: 800 },
                 cmps: getDemoCmps1(),
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
                 themeClass: 'wap1-primary',
@@ -194,7 +193,7 @@ function _createWaps() {
                 breakpoints: {
                     mobileLayout: 550,
                     tabletLayout: 1130,
-                    pcLayout: 1500,
+                    desktopLayout: 1500,
                 },
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674308505/wap5-thumbnail_ockqmi.jpg',
