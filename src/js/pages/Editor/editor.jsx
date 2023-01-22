@@ -27,6 +27,7 @@ export function Editor() {
         currModule: null,
         activeMenuItem: null,
         isSubMenuOpen: false,
+        isDragging: false,
     })
 
     useEffect(() => {
@@ -61,6 +62,7 @@ export function Editor() {
     }
 
     function handleOnDragEnd(res) {
+        handleSidebarsChanges('left', { isDragging: false })
         let changedCmp
         if (res.source.droppableId !== 'editor-preview' && res.destination.droppableId === 'editor-preview') {
             changedCmp = wapService.getCmpById(res.source.droppableId, res.draggableId)
@@ -72,7 +74,8 @@ export function Editor() {
     }
 
     function handleOnDragStart() {
-        // setSidebarOpen(false)
+        // console.log('YES')
+        handleSidebarsChanges('left', { isDragging: true })
     }
     if (Object.keys(wap).length === 0) return
     return (

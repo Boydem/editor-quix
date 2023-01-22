@@ -11,6 +11,14 @@
     min-width: $modules-menu-width;
     left: 0;
 
+    &.dragging {
+        transform: translateX(calc(-500%));
+
+        // .module-menu {
+        //     left:
+        // }
+    }
+
     &.open {
         pointer-events: all;
         // transform: translateX(0%);
