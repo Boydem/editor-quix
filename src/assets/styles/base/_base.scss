@@ -13,6 +13,12 @@
 * {
     margin: 0;
 }
+label,
+input,
+button {
+    display: inline-flex;
+    align-items: center;
+}
 
 /*
   3. Allow percentage-based heights in the application
