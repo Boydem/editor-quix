@@ -56,7 +56,7 @@ export function LoginSignup({ onLogin, onSignup }) {
             fullname: profileObj.name,
             imgUrl: profileObj.imageUrl,
         }
-        onLogin(user)
+        onLogin('', user)
     }
     function onGoogleLoginFailure(err) {
         console.log('failed:', err)
