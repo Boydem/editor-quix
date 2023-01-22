@@ -21,7 +21,7 @@ import { removeCmp } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 
-export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges }) {
+export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges, layout, onLayoutChange }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
 
     const tools = [
@@ -48,9 +48,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             removeCmp(clickedCmp)
         }
     }
-    function setMediaQuery() {
-        console.log('Hello:')
-    }
+
     return (
         <section className='tools-bar full'>
             <div className='left-side'>
@@ -82,26 +80,26 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                 <div className='tools responsive tools-views flex align-center'>
                     <div className='responsive-btns flex align-center interactives'>
                         <button
-                            onClick={setMediaQuery}
+                            onClick={() => onLayoutChange('desktopLayout')}
                             data-tooltip='Desktop'
                             data-tooltip-dir='bottom'
-                            className='tool'
+                            className={`tool  ${layout.layoutClass === 'desktopLayout' ? 'active' : ''}`}
                         >
                             <GoDeviceDesktop />
                         </button>
                         <button
-                            onClick={setMediaQuery}
+                            onClick={() => onLayoutChange('tabletLayout')}
                             data-tooltip='Tablet'
                             data-tooltip-dir='bottom'
-                            className='tool'
+                            className={`tool  ${layout.layoutClass === 'tabletLayout' ? 'active' : ''}`}
                         >
                             <AiOutlineTablet />
                         </button>
                         <button
-                            onClick={setMediaQuery}
+                            onClick={() => onLayoutChange('mobileLayout')}
                             data-tooltip='Mobile'
                             data-tooltip-dir='bottom'
-                            className='tool'
+                            className={`tool  ${layout.layoutClass === 'mobileLayout' ? 'active' : ''}`}
                         >
                             <AiOutlineMobile />
                         </button>

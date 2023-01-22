@@ -6,7 +6,8 @@ import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 
-export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, handleSidebarsChanges }) {
+export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, layout, handleSidebarsChanges }) {
+    // const editorResizerRef = [useRef(), useRef()]
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const [elHoveredNode, setElHoveredNode] = useState(null)
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
@@ -29,6 +30,24 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rightSidebarState.isOpen])
 
+    useEffect(() => {
+        setEditorWrapperLayout()
+    }, [layout])
+
+    function setEditorWrapperLayout() {
+        editorWrapper.current.style.maxWidth =
+            layout.layoutClass === 'desktopLayout' ? 'revert' : `${layout.width - 10}px`
+        editorWrapper.current.classList.toggle('mobile-layout', layout.layoutClass === 'mobileLayout')
+        editorWrapper.current.classList.toggle('tablet-layout', layout.layoutClass === 'mobileLayout')
+        editorWrapper.current.classList.toggle(
+            'tablet-layout',
+            layout.layoutClass === 'tabletLayout' || layout.layoutClass === 'mobileLayout'
+        )
+        editorWrapper.current.classList.toggle('desktop-layout', layout.layoutClass === 'desktopLayout')
+    }
+
+    //     editorWrapper.current.classList.toggle('mobile-layout', editorSize < wap.breakpoints.mobileLayout)
+    //     editorWrapper.current.classList.toggle('tablet-layout', editorSize < wap.breakpoints.tabletLayout)
     function onClickEditPopup(ev) {
         elHoveredNode.classList.add('clicked')
         elHoveredNode.classList.remove('hover')

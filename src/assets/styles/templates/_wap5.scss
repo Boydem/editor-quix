@@ -450,114 +450,6 @@
     background: #e8e8e8;
 }
 
-.mobile-layout {
-    .wap-5-cards-2 {
-        padding-right: 5%;
-        padding-left: 5%;
-        .cards {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-}
-
-.tablet-layout {
-    .wap-5-hero {
-        display: flex;
-        flex-direction: column;
-        .content {
-            padding: 10rem 10%;
-
-            button {
-                width: 100%;
-            }
-        }
-
-        .side {
-            img {
-                transform: none;
-                width: 70%;
-                transform: rotate(-3deg) translateY(-10%);
-            }
-        }
-    }
-    .wap-5-cta {
-        .logos {
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
-    .wap-5-cards-1 {
-        .cards {
-            display: flex;
-            flex-direction: column;
-            .card {
-                p {
-                    margin: 0;
-                }
-                button {
-                    margin: 0;
-                }
-                img {
-                    width: 25%;
-                }
-            }
-        }
-        .btns {
-            flex-direction: column;
-            > * {
-                width: 100%;
-            }
-        }
-    }
-    .wap-5-section-1 {
-        padding-right: 5%;
-        padding-left: 5%;
-        display: flex;
-        flex-direction: column;
-        .content {
-            .btns {
-                > * {
-                    width: 100%;
-                }
-            }
-        }
-        .side {
-            order: 1;
-            img {
-                width: 100%;
-            }
-            .card {
-                width: 100%;
-                transform: none;
-                transform: translateY(25%);
-            }
-        }
-    }
-    .wap-5-cards-2 {
-        .cards {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    .wap-5-section-2 {
-        display: flex;
-        flex-direction: column;
-
-        .content {
-            padding: 3rem;
-        }
-    }
-}
-
-.pc-layout {
-    .wap-5-cards-1 {
-        .cards {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-}
-
 // ////////
 
 @media screen and (max-width: 550px) {
@@ -664,6 +556,114 @@
     .wap-5-cards-1 {
         .cards {
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.pc-layout {
+    .wap-5-cards-1 {
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.mobile-layout {
+    .wap-5-cards-2 {
+        padding-right: 5%;
+        padding-left: 5%;
+        .cards {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.tablet-layout {
+    .wap-5-hero {
+        display: flex;
+        flex-direction: column;
+        .content {
+            padding: 10rem 10%;
+
+            button {
+                width: 100%;
+            }
+        }
+
+        .side {
+            img {
+                transform: none;
+                width: 70%;
+                transform: rotate(-3deg) translateY(-10%);
+            }
+        }
+    }
+    .wap-5-cta {
+        .logos {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    .wap-5-cards-1 {
+        .cards {
+            display: flex;
+            flex-direction: column;
+            .card {
+                p {
+                    margin: 0;
+                }
+                button {
+                    margin: 0;
+                }
+                img {
+                    width: 25%;
+                }
+            }
+        }
+        .btns {
+            flex-direction: column;
+            > * {
+                width: 100%;
+            }
+        }
+    }
+    .wap-5-section-1 {
+        padding-right: 5%;
+        padding-left: 5%;
+        display: flex;
+        flex-direction: column;
+        .content {
+            .btns {
+                > * {
+                    width: 100%;
+                }
+            }
+        }
+        .side {
+            order: 1;
+            img {
+                width: 100%;
+            }
+            .card {
+                width: 100%;
+                transform: none;
+                transform: translateY(25%);
+            }
+        }
+    }
+    .wap-5-cards-2 {
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .wap-5-section-2 {
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            padding: 3rem;
         }
     }
 }
