@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,300;1,400&display=swap');
-/* Setup */
 
+/* Setup */
 @import './setup/_vars.scss';
 @import './setup/_functions.scss';
 @import './setup/_mixins.scss';
@@ -20,12 +19,12 @@
 @import './base/_buttons.scss';
 @import './library/locomotive-scroll.scss';
 
-// App common
+//**// COMPONENTS //**//
 
+// App common
 @import './cmps/_home-header.scss';
 @import './cmps/_app-header.scss';
 @import './cmps/_app-footer.scss';
-
 @import './cmps/_empty-right-sidebar.scss';
 
 // Editor
@@ -34,19 +33,26 @@
 @import './cmps/_sidebar.scss';
 @import './cmps/cmp-fractions.scss';
 @import './cmps/_editor-preview.scss';
-// @import './cmps/_accordion.scss';
 @import './cmps/_adjust.scss';
 
+// Home
+@import './pages/_home.scss';
+
+// Dashboard
+@import './pages/_dashboard.scss';
+
+// USER
+@import './cmps/_loginsignup.scss';
+@import './cmps/_user-msg.scss';
+@import './cmps/_wap-index.scss';
+
+//**// UI //**//
 // Radix UI
 @import './cmps/_select-unit.scss';
 @import './cmps/_edit-tabs.scss';
 
 // UI Overwrites
 @import './setup/_overwrites.scss';
-
-// PAGES
-@import './pages/_home.scss';
-@import './pages/_dashboard.scss';
 
 // Templates
 @import './templates/_template1.scss';
@@ -55,7 +61,3 @@
 @import './templates/general-cmps.scss';
 @import './templates/_wap4.scss';
 @import './templates/_wap5.scss';
-
-// USER
-@import './cmps/_user-msg.scss';
-@import './cmps/_wap-index.scss';
