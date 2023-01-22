@@ -169,55 +169,57 @@ export function EditTabs({ context }) {
 
     return (
         <>
-            <div className='expanded-content TabsContent tabs-inner-content'>
-                {context === 'div' && <EditDiv clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
-                {context === 'img' && <EditImg clickedCmp={clickedCmp} />}
-                {context === 'form' && <EditForm clickedCmp={clickedCmp} />}
-                {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
-                {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
-                {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
-            </div>
-            <div className='expanded-content adjust inside-accordion TabsContent tabs-inner-content'>
-                <TextToolbar elClickedNode={elClickedNode} handleTextStyleChange={handleTextStyleChange} />
-                <TextColorPick
-                    openTextColorPalette={openTextColorPalette}
-                    elClickedNode={elClickedNode}
-                    isTextPaletteOpen={isTextPaletteOpen}
-                    handleColorChange={handleColorChange}
-                />
-                <BgColorPick
-                    openBgColorPalette={openBgColorPalette}
-                    elClickedNode={elClickedNode}
-                    isBgPaletteOpen={isBgPaletteOpen}
-                    handleColorChange={handleColorChange}
-                />
-                <BorderColorPick
-                    openBorderColorPalette={openBorderColorPalette}
-                    elClickedNode={elClickedNode}
-                    isBorderPaletteOpen={isBorderPaletteOpen}
-                    handleColorChange={handleColorChange}
-                />
-                <FontSelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
-                <TextShadowSelect handleTextShadowChange={handleTextShadowChange} SelectItem={SelectItem} />
-                <FontSizeSlider
-                    elClickedNode={elClickedNode}
-                    handleFontSliderChange={handleFontSliderChange}
-                    handleFontSliderCommit={handleFontSliderCommit}
-                />
-                <BorderRadiusSlider
-                    elClickedNode={elClickedNode}
-                    handleBorderSliderChange={handleBorderSliderChange}
-                    handleBorderSliderCommit={handleBorderSliderCommit}
-                />
-                <LineHeightSlider
-                    elClickedNode={elClickedNode}
-                    handleLineHeightSliderChange={handleLineHeightSliderChange}
-                    handleLineHeightSliderCommit={handleLineHeightSliderCommit}
-                />
-            </div>
-            <div className='TabsContent tabs-inner-content'>
-                <EditSizes />
-            </div>
+            <Tabs.Root className='TabsRoot' defaultValue='tab1'>
+                <div className='expanded-content TabsContent tabs-inner-content'>
+                    {context === 'div' && <EditDiv clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
+                    {context === 'img' && <EditImg clickedCmp={clickedCmp} />}
+                    {context === 'form' && <EditForm clickedCmp={clickedCmp} />}
+                    {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
+                    {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
+                    {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
+                </div>
+                <div className='expanded-content adjust inside-accordion TabsContent tabs-inner-content'>
+                    <TextToolbar elClickedNode={elClickedNode} handleTextStyleChange={handleTextStyleChange} />
+                    <TextColorPick
+                        openTextColorPalette={openTextColorPalette}
+                        elClickedNode={elClickedNode}
+                        isTextPaletteOpen={isTextPaletteOpen}
+                        handleColorChange={handleColorChange}
+                    />
+                    <BgColorPick
+                        openBgColorPalette={openBgColorPalette}
+                        elClickedNode={elClickedNode}
+                        isBgPaletteOpen={isBgPaletteOpen}
+                        handleColorChange={handleColorChange}
+                    />
+                    <BorderColorPick
+                        openBorderColorPalette={openBorderColorPalette}
+                        elClickedNode={elClickedNode}
+                        isBorderPaletteOpen={isBorderPaletteOpen}
+                        handleColorChange={handleColorChange}
+                    />
+                    <FontSelect handleFontFamilyChange={handleFontFamilyChange} SelectItem={SelectItem} />
+                    <TextShadowSelect handleTextShadowChange={handleTextShadowChange} SelectItem={SelectItem} />
+                    <FontSizeSlider
+                        elClickedNode={elClickedNode}
+                        handleFontSliderChange={handleFontSliderChange}
+                        handleFontSliderCommit={handleFontSliderCommit}
+                    />
+                    <BorderRadiusSlider
+                        elClickedNode={elClickedNode}
+                        handleBorderSliderChange={handleBorderSliderChange}
+                        handleBorderSliderCommit={handleBorderSliderCommit}
+                    />
+                    <LineHeightSlider
+                        elClickedNode={elClickedNode}
+                        handleLineHeightSliderChange={handleLineHeightSliderChange}
+                        handleLineHeightSliderCommit={handleLineHeightSliderCommit}
+                    />
+                </div>
+                <div className='TabsContent tabs-inner-content'>
+                    <EditSizes />
+                </div>
+            </Tabs.Root>
         </>
     )
 }

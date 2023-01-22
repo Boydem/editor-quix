@@ -128,41 +128,49 @@
 
     .edit-img {
         .wrapper {
-            display: grid;
-            grid-template-columns: 1fr 0.2fr;
-            align-items: center;
-            gap: 0.3em;
-            margin: 0.5em 0 0.85em 0;
+            > * {
+                margin-bottom: 1em;
+            }
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
 
+                button {
+                    background: #e4e8f1;
+                    padding: 0.4em 0.6em;
+                    border-radius: 0.3em;
+                }
+            }
             label {
                 color: $clr1;
                 background: $editor-active-clr;
-                padding: 0.3em 0.6em;
-                height: 100%;
-                display: inline-flex;
-                align-items: center;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
                 cursor: pointer;
+                background: #e4e8f1;
+                color: black;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
             }
-            input {
-                box-shadow: 0 1px 0 0 black;
-                border-radius: 0px;
+            .img-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-        }
-        img {
-            border: 1px solid black;
-        }
-
-        button {
-            /* padding: 0.5em; */
-            display: block;
-            width: 100%;
-            color: $clr1;
-            background: $editor-active-clr;
-            padding-block: 0.3em;
-            border-radius: 1rem;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 0.4em;
+            img {
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+            .file-input {
+                all: unset;
+                // visibility: hidden;
+                display: none;
+            }
         }
     }
 
@@ -187,6 +195,13 @@
     }
 
     .edit-map {
+        label {
+            display: inline;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+        input {
+        }
         .btns {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -196,10 +211,19 @@
 
             button {
                 border-radius: 5px;
-                background: #f4f5f8;
+                background: #e4e8f1;
+                padding: 0.2rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
         .markers {
+            h6 {
+                font-weight: 400;
+                margin-bottom: 1em;
+            }
             .marker {
                 gap: 1rem;
                 display: flex;
@@ -220,21 +244,48 @@
 
     .edit-div {
         .wrapper {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 0.5em;
+            > * {
+                margin-bottom: 1em;
+            }
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
 
+                button {
+                    background: #e4e8f1;
+                    padding: 0.4em 0.6em;
+                    border-radius: 0.3em;
+                }
+            }
             label {
                 color: $clr1;
                 background: $editor-active-clr;
-                padding: 0.3em 0.6em;
-                border-radius: 10px;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
                 cursor: pointer;
+                background: #e4e8f1;
+                color: black;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
             }
-
+            .img-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             img {
                 border: 1px solid black;
+                border-radius: 10px;
+            }
+            .file-input {
+                all: unset;
+                // visibility: hidden;
+                display: none;
             }
         }
     }

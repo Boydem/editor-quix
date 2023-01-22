@@ -31,14 +31,19 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
     }
 
     return (
-        <div className='adjust inside-accordion'>
+        <div className='adjust inside-accordion full adjust-inputs full'>
             <div className='expanded-content edit-div' ref={expandedRef}>
                 <div className='wrapper'>
-                    <label>
-                        Upload
-                        <input type='file' hidden onChange={onImgInput} />
-                    </label>
-                    <img src={currImage} alt='' />
+                    <div className='link'>
+                        <input type='text' />
+                        <button>Browse</button>
+                    </div>
+                    <div className='img-container'>
+                        <img src={currImage} alt='' />
+                    </div>
+
+                    <label htmlFor='file-input'>Upload background</label>
+                    <input type='file' id='file-input' className='file-input' hidden onChange={onImgInput} />
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { BsChevronDown } from 'react-icons/bs'
 import { locationService } from '../../../../services/location.service'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
-import { FaTrash } from 'react-icons/fa'
+import { FiTrash } from 'react-icons/fi'
 import { showErrorMsg } from '../../../../services/event-bus.service'
 
 export function EditMap({ clickedCmp }) {
@@ -59,7 +59,7 @@ export function EditMap({ clickedCmp }) {
 
     if (clickedCmp.type !== 'map') return
     return (
-        <div className='inside-accordion adjust-inputs expanded-content edit-map'>
+        <div className='inside-accordion adjust-inputs expanded-content edit-map full'>
             <label htmlFor=''>
                 Search your desired location
                 <input type='text' value={geoLocationValue} onChange={handleChange} />
@@ -73,13 +73,13 @@ export function EditMap({ clickedCmp }) {
                 <input type='text' name='zoom' value={zoom} onChange={handleMapChange} />
             </label>
 
-            <h6>Markers</h6>
             <div className='markers'>
+                <h6>Markers</h6>
                 {clickedCmp.content.markers.map(marker => {
                     return (
                         <div className='marker' key={marker.id}>
                             <button className='btn' onClick={() => onDeleteMarker(marker)}>
-                                <FaTrash />
+                                <FiTrash />
                             </button>
                             <p>{marker.name}</p>
                         </div>
