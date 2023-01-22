@@ -78,11 +78,39 @@
     .divider {
     }
     .api-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1em;
+        > button {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            background-color: #4285f4 !important;
+            color: white !important;
+
+            span {
+                margin: auto;
+            }
+        }
     }
 
     .footer {
         text-align: center;
         .recaptcha {
+            p:first-of-type {
+                margin-bottom: 0.5em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1em;
+            }
+            width: 100%;
+            a {
+                color: $login-gray;
+                text-decoration: underline;
+            }
             width: 100%;
         }
         .links {

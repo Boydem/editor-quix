@@ -125,6 +125,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                             </div>
                             <div className='login-options-container'>
                                 <form onSubmit={onLogin}>
+                                    <label htmlFor='username'>Username</label>
                                     <input
                                         type='text'
                                         name='username'
@@ -132,6 +133,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                         onChange={handleChange}
                                         required
                                     />
+                                    <label htmlFor='username'>Password</label>
                                     <input
                                         type='password'
                                         name='password'
@@ -147,7 +149,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                     <div className='divider'></div>
                                 </div>
                                 <div className='api-login'>
-                                    <div className='api-login-btn'>Continue with Google</div>
+                                    <GoogleLoginSignup handleGoogleLogin={handleGoogleLogin} />
                                     <div className='api-login-btn'>Continue with Facebook</div>
                                 </div>
                             </div>
@@ -164,7 +166,6 @@ export function LoginSignup({ onLogin, onSignup }) {
                             </div>
                         </div>
                     )}
-                    <GoogleLoginSignup handleGoogleLogin={handleGoogleLogin} />
                 </div>
             </div>
         </>
