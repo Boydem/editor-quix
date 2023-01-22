@@ -9,42 +9,12 @@ import MapCmp from './dynamic-cmps/map-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
-    const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
-    const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     // const selectedActionsRef = props.selectedActionsRef
 
-    function handleClick(ev, cmp) {
-        ev.stopPropagation()
-        if (!ev.target.type) ev.preventDefault()
-
-        if (!isEditing) return
-        if (elClickedNode === ev.target) return
-
-        if (elClickedNode) {
-            elClickedNode.classList.remove('clicked')
-        }
-        ev.target.classList.add('clicked')
-
-        setElClickedNode(ev.target)
-        setClickedCmp(cmp)
-    }
-
-    function onHover(ev) {
-        ev.stopPropagation()
-        ev.preventDefault()
-        if (!isEditing) return
-
-        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 45}px`
-        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft - 16}px`
-        props.selectedActionsRef.current.style.display = 'flex'
-
-        ev.currentTarget.classList.add('hover')
-        props.setElHoveredNode(ev.currentTarget)
-    }
     const basicProps = {
         cmp: props.cmp,
-        handleClick,
-        onHover,
+        onSelectCmp: props.onSelectCmp,
+        onHoverCmp: props.onHoverCmp,
         selectedActionsRef: props.selectedActionsRef,
         setElHoveredNode: props.setElHoveredNode,
     }

@@ -7,7 +7,7 @@ import { AiOutlineSend } from 'react-icons/ai'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
+export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const chatRef = useRef()
 
@@ -39,17 +39,17 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
         <div
             className={cmp.name}
             style={cmp.style}
-            onClick={e => handleClick(e, cmp)}
-            onMouseOver={onHover}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
             onSubmit={onSubmit}
         >
             <button
                 className={cmp.cmps[0].name}
                 style={cmp.style}
-                // onClick={e => handleClick(e, cmp)}
+                // onClick={e => onSelectCmp(e, cmp)}
                 onClick={onOpenChat}
-                onMouseOver={onHover}
+                onMouseOver={onHoverCmp}
                 onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                 spellCheck='false'
             >
@@ -58,8 +58,8 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
             <div
                 className={cmp.cmps[1].name}
                 style={cmp.style}
-                onClick={e => handleClick(e, cmp)}
-                onMouseOver={onHover}
+                onClick={e => onSelectCmp(e, cmp)}
+                onMouseOver={onHoverCmp}
                 onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                 ref={chatRef}
             >
@@ -81,9 +81,9 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                         key={chatInputCmp.id}
                         style={cmp.style}
                         name={chatInputCmp.inputName}
-                        onClick={e => handleClick(e, cmp)}
+                        onClick={e => onSelectCmp(e, cmp)}
                         placeholder={cmp.content?.placeholder}
-                        onMouseOver={onHover}
+                        onMouseOver={onHoverCmp}
                         onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                         onChange={handleChange}
                         value={msg}

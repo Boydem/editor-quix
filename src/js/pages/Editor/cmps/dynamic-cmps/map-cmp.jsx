@@ -4,7 +4,7 @@ import { FaMapMarker } from 'react-icons/fa'
 
 const AnyReactComponent = ({ text }) => <div className='map-marker'>📍</div>
 
-export default function MapCmp({ cmp, handleClick, onHover }) {
+export default function MapCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const defaultProps = {
         center: {
             lat: cmp.content.lat,
@@ -18,8 +18,8 @@ export default function MapCmp({ cmp, handleClick, onHover }) {
             style={{ height: '100%', width: '100%', ...cmp.style }}
             className={cmp.name}
             // style={cmp.style}
-            onClick={e => handleClick(e, cmp)}
-            onMouseOver={onHover}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
         >
             <GoogleMapReact

@@ -14,6 +14,7 @@ import { RightSidebar } from './cmps/right-sidebar'
 
 export function Editor() {
     // wap states
+    
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const { wapId } = useParams()
