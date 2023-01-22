@@ -26,6 +26,7 @@
     .module-menu {
         z-index: 2;
         width: 100%;
+
         // height: 100%;
         background-color: $clr1;
         max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
@@ -101,6 +102,11 @@
         min-height: 100%;
         max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
         transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        .quick-add {
+            & > * {
+                margin-bottom: 1rem;
+            }
+        }
         &.open {
             // transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), left 1.6s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateX(0%);
@@ -129,7 +135,7 @@
         & > * {
             cursor: pointer;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.025rem;
             font-size: px-to-rem(12.44px);
             padding: $spacing-xs $spacing-m;
