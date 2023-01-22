@@ -29,12 +29,16 @@ $tooltip-danger-bg-color: $dark-pink;
         left: 50%;
         z-index: 999;
         backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
     }
     &:after {
         text-transform: capitalize;
         content: attr(data-tooltip);
         text-align: center;
-        padding: 4px 6px;
+        padding: 5px 6px;
         font-size: px-to-rem(11px);
         border-radius: 4px;
         color: $tooltip-base-text-color;

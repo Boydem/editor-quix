@@ -47,6 +47,7 @@
     padding: 0 $spacing-s;
     background-color: transparent;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     &::before {
         content: '';
         position: absolute;
@@ -56,17 +57,29 @@
         width: 30px;
         height: 30px;
         z-index: -1;
-        transform: scale(0.25);
+        transform: scale(0.15);
         transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     }
     &:hover {
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
         &::before {
             transform: scale(1);
             color: lighten($clr2, 10%);
             background-color: $editor-lightgray;
         }
     }
-    transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    &.trash {
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        background-color: transparent;
+    }
+    &.trash:hover {
+        background-color: transparent;
+        color: $error-red;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &::before {
+            background-color: $error-red-light;
+        }
+    }
     &.active {
         color: $editor-active-clr;
         &::before {

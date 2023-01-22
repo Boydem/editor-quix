@@ -1,9 +1,13 @@
+import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
-import { useSelector } from 'react-redux'
+
 import { Accordion } from './edit-accordion'
 import { EmptyRightSidebar } from './edit-modules/empty-right-sidebar'
 import { EditTabs } from './edit-tabs'
+import { removeCmp } from '../../../store/wap/wap.action'
+import { showErrorMsg } from '../../../services/event-bus.service'
+import { DeleteAlertDialog } from './ui-cmps/alert-dialog'
 
 export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
@@ -70,12 +74,14 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                 <div className='module-content'>
                     <div className='module-header'>
                         <span className='module-name'>{cmpTitle}</span>
-                        <div className='actions'>
+                        <div className='actions flex align-center'>
+                            <DeleteAlertDialog />
+
                             <span
                                 onClick={() => {
                                     handleSidebar({ isOpen: !rightSidebarState.isOpen })
                                 }}
-                                className='btn'
+                                className='tool'
                             >
                                 <AiOutlineClose />
                             </span>

@@ -7,11 +7,12 @@ import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { FiLayers } from 'react-icons/fi'
 import { BiBell } from 'react-icons/bi'
-import { FiMessageSquare } from 'react-icons/fi'
+
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { removeCmp } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
+import { InteractiveChat } from './ui-cmps/interactive-chat'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges, layout, onLayoutChange }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
@@ -103,12 +104,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             </div>
 
             <div className='tools tools-views'>
-                <div className='responsive-btns flex align-center'>
-                    <div className='interactives'>
-                        <button className='tool' onClick={onRemoveCmp} data-tooltip='Trash' data-tooltip-dir='bottom'>
-                            <FiTrash />
-                        </button>
-                    </div>
+                <div className='responsive-btns flex align-center interactives'>
                     <div className='btns-undo-redo flex align-center'>
                         <button className='tool' data-tooltip='Undo' data-tooltip-dir='bottom'>
                             <GrUndo />
@@ -118,12 +114,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                     </div>
                     <div className='flex align-center interactives'>
-                        <button className='tool' data-tooltip='Notifications' data-tooltip-dir='bottom'>
-                            <BiBell />
-                        </button>
-                        <button className='tool' data-tooltip='Chat' data-tooltip-dir='bottom'>
-                            <FiMessageSquare />
-                        </button>
+                        <InteractiveChat />
                     </div>
                     <div className='flex align-center'>
                         <button
