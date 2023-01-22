@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 
-export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState }) {
+export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const [elHoveredNode, setElHoveredNode] = useState(null)
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
@@ -33,7 +33,8 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
         elHoveredNode.classList.add('clicked')
         elHoveredNode.classList.remove('hover')
         setElClickedNode(elHoveredNode)
-        setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
+        handleSidebarsChanges('right', { isOpen: true })
+        // setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
         // selectedActionsRef.current.style.display = 'none'
         // setTimeout(() => {
         //     selectedActionsRef.current.style.display = 'flex'
@@ -55,6 +56,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     }
 
     function onSelectCmp(ev, cmp) {
+        handleSidebarsChanges('left', { isOpen: false, currModule: null })
         ev.stopPropagation()
         if (!ev.target.type) ev.preventDefault()
 
@@ -65,7 +67,6 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
             elClickedNode.classList.remove('clicked')
         }
         ev.target.classList.add('clicked')
-
         setElClickedNode(ev.target)
         setClickedCmp(cmp)
     }

@@ -9,7 +9,6 @@ import MapCmp from './dynamic-cmps/map-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
-    // const selectedActionsRef = props.selectedActionsRef
 
     const basicProps = {
         cmp: props.cmp,

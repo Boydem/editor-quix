@@ -93,6 +93,7 @@ export function Editor() {
                         wapCmps={wap.cmps}
                         setRightSidebarState={setRightSidebarState}
                         rightSidebarState={rightSidebarState}
+                        handleSidebarsChanges={handleSidebarsChanges}
                     />
                     <RightSidebar rightSidebarState={rightSidebarState} handleSidebarsChanges={handleSidebarsChanges} />
                     <LeftSidebar

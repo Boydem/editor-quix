@@ -36,6 +36,12 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
             showErrorMsg(`Couldn't Publish, try again later.`)
         }
     }
+
+    function onEditDomain() {
+        if (!wap.url) return
+        wap.url = wapUrlToEdit.publishUrl
+        showSuccessMsg('Your site URL has been updated!')
+    }
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
     }
@@ -114,8 +120,8 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
                                     id='publishUrl'
                                     placeholder='MySite'
                                 />
-                                <button onClick={publishWap} className='btn-publish'>
-                                    Connet your domain.
+                                <button onClick={onEditDomain} className='btn-publish'>
+                                    {wap.url && 'Edit your domain.'}
                                 </button>
                             </label>
                         </div>
@@ -132,7 +138,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className='nav-link publish' to={`/${wap?.url}`}>
+                                    <Link className='nav-link publish' onClick={publishWap}>
                                         <span>Publish</span>
                                     </Link>
                                 </li>
