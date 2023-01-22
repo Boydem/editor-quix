@@ -1,8 +1,8 @@
-import { BlockPicker } from "react-color";
+import { BlockPicker } from 'react-color'
 
 export function BgColorPick({ openBgColorPalette, elClickedNode, isBgPaletteOpen, handleColorChange }) {
     return (
-        <div className='color-pick'>
+        <div className='color-pick adjust-inputs'>
             <label onClick={openBgColorPalette}>Background Color</label>
             <div
                 onClick={openBgColorPalette}

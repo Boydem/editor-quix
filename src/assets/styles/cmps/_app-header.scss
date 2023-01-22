@@ -2,6 +2,7 @@
     background-color: $clr1;
     position: sticky;
     top: 0;
+    z-index: 99;
     &.dark {
         background-color: $clr2;
         & *,
@@ -22,7 +23,7 @@
     }
     &.main-layout {
         .layout-wrapper {
-            min-height: $app-header-height;
+            min-height: $app-header-height + 1px;
             padding: 0;
             border-bottom: none;
         }
@@ -65,7 +66,7 @@
             font-weight: 400;
             transition: 0.4s color, background-color 0.4s;
             &:hover {
-                color: $clr5;
+                color: $editor-active-clr;
             }
         }
     }
@@ -75,7 +76,7 @@
         align-items: center;
         justify-content: center;
         .publish-url-prefix {
-            font-size: px-to-rem(12px);
+            font-size: px-to-rem(12.44px);
             padding: 2px $spacing-s;
             display: grid;
             grid-template-columns: auto 1fr auto;
@@ -110,10 +111,10 @@
             padding: $spacing-xxs $spacing-xs;
             transition: color 0.3s, background-color 0.2s;
             &.publish {
-                background-color: $clr5;
+                background-color: $editor-active-clr;
                 color: $clr1;
                 &:hover {
-                    background-color: $clr5;
+                    background-color: darken($editor-active-clr, 10%);
                 }
             }
             &.preview {

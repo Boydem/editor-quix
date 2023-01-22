@@ -7,7 +7,7 @@
         z-index: 1;
 
         .wrapper {
-            padding: $spacing-m 0;
+            padding: px-to-em(32px) 0;
             display: flex;
             align-items: center;
             background-color: $clr1;
@@ -17,9 +17,9 @@
     .templates {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: $spacing-l $spacing-l;
+        gap: px-to-em(132px) px-to-em(80px);
         grid-auto-flow: dense;
-        padding: $spacing-m 0 $spacing-l;
+        padding: px-to-em(80px) 0;
 
         article.template {
             display: flex;
@@ -60,9 +60,6 @@
                     opacity: 0;
                     transition: opacity 0.3s;
                     & .btn {
-                        &:first-of-type {
-                            border: 1px solid $clr1;
-                        }
                         cursor: pointer;
                         font-weight: 400 !important;
                         transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
@@ -78,7 +75,8 @@
                     height: 100%;
                     background-color: rgba($clr2, 75%);
                     opacity: 0;
-                    transition: opacity 0.2s, backdrop-filter 0.2s 0.05s;
+                    transition: opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+                        backdrop-filter 0.2s 0.05s cubic-bezier(0.165, 0.84, 0.44, 1);
                     min-width: 100%;
                     pointer-events: none;
                 }
