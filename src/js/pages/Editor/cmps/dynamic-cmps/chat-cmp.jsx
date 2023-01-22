@@ -8,7 +8,7 @@ import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
 export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
-    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const wap = useSelector(storeState => storeState.wapModule.wap)
     const chatRef = useRef()
 
     const [msg, setMsg] = useState('')
@@ -28,11 +28,11 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
 
     function onSend() {
         console.log('SENDING', msg)
-        msgsCmp.messages.push({ by: 'customer', txt: `${msg}` })
+        msgs.push({ by: 'customer', txt: `${msg}` })
         setMsg('')
-        saveCmp(msgsCmp)
+        saveCmp(cmp)
     }
-    const msgsCmp = cmp?.cmps[1]?.cmps[1]
+    const msgs = wap.msgs
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
 
     return (
@@ -67,7 +67,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
                     return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
                 })}
                 <div className='messages'>
-                    {msgsCmp.messages?.map((msg, idx) => {
+                    {msgs.map((msg, idx) => {
                         return (
                             <p className={`${msg.by} message`} key={idx}>
                                 {msg.txt}
