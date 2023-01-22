@@ -49,3 +49,31 @@
         right: calc(35px + $scroll-bar-width);
     }
 }
+
+.mobile-layout {
+    overflow-y: auto !important;
+    box-sizing: border-box;
+    // top: calc(116px + 2rem);
+    height: calc(100vh - $app-header-height - $toolbar-height - 3.1em) !important;
+    z-index: 1;
+    opacity: 0.9999;
+    border: 6px solid #f7f7f7;
+    border-radius: 40px !important;
+    box-shadow: #ffffff1a 0 1px 1px inset, #32325d40 0 50px 100px -20px, #0000004d 0 30px 60px -30px;
+}
+.tablet-layout {
+    overflow-y: auto !important;
+    box-sizing: border-box;
+    // top: calc(116px + 2rem);
+    height: calc(100vh - $app-header-height - $toolbar-height - 3.1em) !important;
+    z-index: 1;
+    opacity: 0.9999;
+    border: 6px solid #f7f7f7;
+    border-radius: 40px !important;
+    box-shadow: #ffffff1a 0 1px 1px inset, #32325d40 0 50px 100px -20px, #0000004d 0 30px 60px -30px;
+}
+
+.mobile-layout::-webkit-scrollbar,
+.tablet-layout::-webkit-scrollbar {
+    display: none;
+}
