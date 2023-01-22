@@ -63,14 +63,18 @@
 }
 
 .tabs-inner-content {
+    margin-top: 1em;
     .adjust-inputs {
-        padding: 1em $spacing-m;
         align-items: center;
         border-bottom: 1px solid $editor-lightgray;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0 0.75rem;
         grid-auto-flow: row;
+        padding: 1em $spacing-m;
+        &:first-of-type {
+            padding: 0 $spacing-m 1em;
+        }
         > *:nth-of-type(2n) {
             margin-inline-start: $spacing-s;
             justify-self: end;
