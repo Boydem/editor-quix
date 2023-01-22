@@ -150,6 +150,12 @@
     }
     // max-width: ;
 }
+
+.right-sidebar {
+    .module-content {
+        min-height: 0;
+    }
+}
 .module-content {
     pointer-events: all;
     min-height: calc(100vh - $app-header-height - $toolbar-height - 1px);

@@ -33,15 +33,20 @@ export function EditVideo({ clickedCmp }) {
     }
 
     return (
-        <div className='adjust inside-accordion'>
+        <div className='adjust inside-accordion adjust-inputs expanded-content edit-img full edit-video'>
             <div className='expanded-content edit-form'>
                 <div className='wrapper'>
                     <form onSubmit={onSubmitVideoUrl}>
-                        <label>
-                            Upload your youtube video
-                            <input type='url' name='video' value={videoUrl} onChange={handleChange} />
-                        </label>
-                        <button>Upload</button>
+                        <div className='link'>
+                            <input
+                                type='url'
+                                name='video'
+                                className='btn-edit input-edit'
+                                value={videoUrl}
+                                onChange={handleChange}
+                            />
+                            <button className='btn-edit'>Browse</button>
+                        </div>
                     </form>
 
                     <iframe
