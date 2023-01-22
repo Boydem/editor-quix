@@ -5,7 +5,19 @@ export function CmpFractions({ activeMenuItem }) {
     const assets = wapService.getCmpsByCategory(activeMenuItem.toLowerCase())
     return (
         <section className='quick-add'>
-            <Droppable droppableId={activeMenuItem.toLowerCase()}>
+            <Droppable
+                droppableId={activeMenuItem.toLowerCase()}
+                renderClone={(provided, snapshot, rubric) => (
+                    <div
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                        className='drag-and-drop-portal'
+                    >
+                        <img src={assets[0].thumbnail} alt='ggggggggg'></img>
+                    </div>
+                )}
+            >
                 {provided => {
                     return (
                         <div {...provided.droppableProps} ref={provided.innerRef} className='full'>

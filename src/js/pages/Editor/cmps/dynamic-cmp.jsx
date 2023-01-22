@@ -24,13 +24,9 @@ export default function DynamicCmp(props) {
             elClickedNode.classList.remove('clicked')
         }
         ev.target.classList.add('clicked')
-        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 30}px`
-        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft}px`
-        props.selectedActionsRef.current.style.display = 'flex'
 
         setElClickedNode(ev.target)
         setClickedCmp(cmp)
-        // saveCmp(cmp)
     }
 
     function onHover(ev) {
@@ -38,9 +34,20 @@ export default function DynamicCmp(props) {
         ev.preventDefault()
         if (!isEditing) return
 
+        props.selectedActionsRef.current.style.top = `${ev.target.offsetTop - 45}px`
+        props.selectedActionsRef.current.style.left = `${ev.target.offsetLeft - 16}px`
+        props.selectedActionsRef.current.style.display = 'flex'
+
         ev.currentTarget.classList.add('hover')
+        props.setElHoveredNode(ev.currentTarget)
     }
-    const basicProps = { cmp: props.cmp, handleClick, onHover, selectedActionsRef: props.selectedActionsRef }
+    const basicProps = {
+        cmp: props.cmp,
+        handleClick,
+        onHover,
+        selectedActionsRef: props.selectedActionsRef,
+        setElHoveredNode: props.setElHoveredNode,
+    }
     switch (props.cmp.type) {
         case 'form':
             return <FormCmp {...basicProps} />
