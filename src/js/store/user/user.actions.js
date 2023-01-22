@@ -80,10 +80,11 @@ export async function logout() {
     }
 }
 
-export async function onGoogleLogin(user) {
+export async function onGoogleLogin(credentials) {
     try {
-        await userService.onGoogleLoginSignup(user)
+        const user = await userService.onGoogleLoginSignup(credentials)
         store.dispatch({ type: 'SET_USER', user })
+        return user
     } catch (err) {
         console.log('Cannot login with google', err)
         throw err

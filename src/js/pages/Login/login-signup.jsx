@@ -53,9 +53,9 @@ export function LoginSignup({ onLogin, onSignup }) {
         }
     }
 
-    async function handleGoogleLogin(user) {
+    async function handleGoogleLogin(credentials) {
         try {
-            const user = await onGoogleLogin(user)
+            const user = await onGoogleLogin(credentials)
             showSuccessMsg(`Welcome, ${user.fullname}`)
         } catch (err) {
             console.error('Failed to login', err)
