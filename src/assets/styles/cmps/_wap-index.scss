@@ -7,28 +7,17 @@
         z-index: 1;
 
         .wrapper {
-            padding: $spacing-s 0;
+            padding: $spacing-m 0;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             background-color: $clr1;
-            .filter {
-                display: flex;
-                color: $clr7;
-                gap: $spacing-s;
-                font-weight: 600;
-                & > span {
-                    color: $clr20;
-                    cursor: pointer;
-                }
-            }
         }
     }
 
     .templates {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: $spacing-l $spacing-m;
+        gap: $spacing-l $spacing-l;
         grid-auto-flow: dense;
         padding: $spacing-m 0 $spacing-l;
 
@@ -40,7 +29,7 @@
             .img-container {
                 transition: 0.5s box-shadow;
                 position: relative;
-                box-shadow: 0px 5px 18px -5px rgba($clr2, 0.4);
+                box-shadow: 0px 5px 18px -5px rgba($clr2, 0.2);
                 border-radius: 0.5rem;
                 overflow: hidden;
                 width: 100%;
@@ -63,7 +52,6 @@
                     position: absolute;
                     inset: 0;
                     margin: auto;
-                    max-width: 30%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -71,8 +59,10 @@
                     z-index: 1;
                     opacity: 0;
                     transition: opacity 0.3s;
-
                     & .btn {
+                        &:first-of-type {
+                            border: 1px solid $clr1;
+                        }
                         cursor: pointer;
                         font-weight: 400 !important;
                         transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
@@ -100,7 +90,7 @@
                 }
 
                 &:hover {
-                    box-shadow: 0px 0px 0px 0px black;
+                    box-shadow: 0px 0px 0px 0px $clr2;
                 }
 
                 &:hover .actions {

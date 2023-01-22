@@ -93,6 +93,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
 
     useEffect(() => {
         selectedActionsRef.current.style.display = 'none'
+
         if (!elClickedNode) return
         setTimeout(() => {
             selectedActionsRef.current.style.display = 'flex'

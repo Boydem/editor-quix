@@ -47,14 +47,11 @@ export function WapIndex() {
     if (!waps) return <></>
     return (
         <>
-            <AppHeader location={''} theme={'dark'} />
+            <AppHeader location={''} theme={'dark'} layout={'main-layout'} />
             <section className='wap-index full main-layout'>
                 <div className='intro full main-layout'>
                     <div className='wrapper'>
                         <h1>Choose how you want to start</h1>
-                        <div className='filter'>
-                            <span>Templates</span> | <span>Wirerames</span>
-                        </div>
                     </div>
                 </div>
                 <div className='templates'>
