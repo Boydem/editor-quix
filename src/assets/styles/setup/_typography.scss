@@ -34,7 +34,14 @@ body {
 }
 
 /* Headings */
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: -0.01rem;
+}
 h1 {
     font-size: px-to-rem(48.38px);
     letter-spacing: -0.05rem;
@@ -42,19 +49,15 @@ h1 {
 
 h2 {
     font-size: px-to-rem(36px);
-    letter-spacing: -0.05rem;
-    font-weight: 800 !important;
+    letter-spacing: -0.01rem;
 }
 
 h3 {
     font-size: px-to-rem(25.23px);
-    letter-spacing: -0.01rem;
-    font-weight: 600 !important;
 }
 
 h4 {
     font-size: px-to-rem(22.43px);
-    letter-spacing: -0.01rem;
 }
 
 h5 {

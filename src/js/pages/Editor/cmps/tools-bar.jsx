@@ -103,12 +103,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             </div>
 
             <div className='tools tools-views'>
-                <div className='responsive-btns flex align-center'>
-                    <div className='interactives'>
-                        <button className='tool' onClick={onRemoveCmp} data-tooltip='Trash' data-tooltip-dir='bottom'>
-                            <FiTrash />
-                        </button>
-                    </div>
+                <div className='responsive-btns flex align-center interactives'>
                     <div className='btns-undo-redo flex align-center'>
                         <button className='tool' data-tooltip='Undo' data-tooltip-dir='bottom'>
                             <GrUndo />
@@ -118,9 +113,6 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                     </div>
                     <div className='flex align-center interactives'>
-                        <button className='tool' data-tooltip='Notifications' data-tooltip-dir='bottom'>
-                            <BiBell />
-                        </button>
                         <button className='tool' data-tooltip='Chat' data-tooltip-dir='bottom'>
                             <FiMessageSquare />
                         </button>
