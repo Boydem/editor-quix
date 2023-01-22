@@ -79,63 +79,93 @@ export function LoginSignup({ onLogin, onSignup }) {
     return (
         <>
             <AppHeader location={''} theme={'dark'} layout={'main-layout'} />
-            <div className='login-signup'>
-                {isSignup ? (
-                    <div className='signup-section'>
-                        <h2>Sign Up</h2>
-                        <span>Already a member?</span>
-                        <button onClick={toggleSignup}>Log In</button>
-                        <form onSubmit={onSignup}>
-                            <input
-                                type='text'
-                                name='username'
-                                value={credentials.username}
-                                onChange={handleChange}
-                                required
-                            />
-                            <input
-                                type='password'
-                                name='password'
-                                value={credentials.password}
-                                onChange={handleChange}
-                                required
-                            />
+            <div className='login-signup full main-layout'>
+                <div className='wrapper'>
+                    {isSignup ? (
+                        <div className='signup-section'>
+                            <h1>Sign Up</h1>
+                            <span>Already a member?</span>
+                            <button onClick={toggleSignup}>Log In</button>
+                            <form onSubmit={onSignup}>
+                                <input
+                                    type='text'
+                                    name='username'
+                                    value={credentials.username}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <input
+                                    type='password'
+                                    name='password'
+                                    value={credentials.password}
+                                    onChange={handleChange}
+                                    required
+                                />
 
-                            <input
-                                type='text'
-                                name='fullname'
-                                value={credentials.fullname}
-                                onChange={handleChange}
-                                required
-                            />
-                            <button>Sign Up</button>
-                        </form>
-                    </div>
-                ) : (
-                    <div className='login-section'>
-                        <h2>Log In</h2>
-                        <span>Don't have an account ?</span>
-                        <button onClick={toggleSignup}>Sign Up</button>
-                        <form onSubmit={onLogin}>
-                            <input
-                                type='text'
-                                name='username'
-                                value={credentials.username}
-                                onChange={handleChange}
-                                required
-                            />
-                            <input
-                                type='password'
-                                name='password'
-                                value={credentials.password}
-                                onChange={handleChange}
-                                required
-                            />
-                            <button>Log In</button>
-                        </form>
-                    </div>
-                )}
-                <GoogleLoginSignup handleGoogleLogin={handleGoogleLogin} />
+                                <input
+                                    type='text'
+                                    name='fullname'
+                                    value={credentials.fullname}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <button>Sign Up</button>
+                            </form>
+                        </div>
+                    ) : (
+                        <div className='login-section'>
+                            <div className='header'>
+                                <h2>Log In</h2>
+                                <p>
+                                    Don't have an account ?{' '}
+                                    <a className='toggle-link' href='#' onClick={toggleSignup}>
+                                        Sign Up
+                                    </a>
+                                </p>
+                            </div>
+                            <div className='login-options-container'>
+                                <form onSubmit={onLogin}>
+                                    <input
+                                        type='text'
+                                        name='username'
+                                        value={credentials.username}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <input
+                                        type='password'
+                                        name='password'
+                                        value={credentials.password}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <button>Log In</button>
+                                </form>
+                                <div className='seperetor'>
+                                    <div className='divider'></div>
+                                    <span className='with-or'>or</span>
+                                    <div className='divider'></div>
+                                </div>
+                                <div className='api-login'>
+                                    <div className='api-login-btn'>Continue with Google</div>
+                                    <div className='api-login-btn'>Continue with Facebook</div>
+                                </div>
+                            </div>
+                            <div className='footer'>
+                                <div className='recaptcha'>
+                                    <p>
+                                        <a href='#'>Terms of Use</a> <a href='#'> Privacy Policy</a>
+                                    </p>
+                                    <p>
+                                        This site is protected by reCAPTCHA Enterprise. Google's Privacy Policy and
+                                        Terms of Use apply.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    <GoogleLoginSignup handleGoogleLogin={handleGoogleLogin} />
+                </div>
             </div>
         </>
     )

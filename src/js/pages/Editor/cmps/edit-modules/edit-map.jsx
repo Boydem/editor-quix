@@ -3,7 +3,7 @@ import { BsChevronDown } from 'react-icons/bs'
 import { locationService } from '../../../../services/location.service'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
-import { FaTrash } from 'react-icons/fa'
+import { FiTrash } from 'react-icons/fi'
 import { showErrorMsg } from '../../../../services/event-bus.service'
 
 export function EditMap({ clickedCmp }) {
@@ -59,52 +59,42 @@ export function EditMap({ clickedCmp }) {
 
     if (clickedCmp.type !== 'map') return
     return (
-        <div className='inside-accordion'>
-            <div className='expanded-content edit-map'>
-                <h6>Map</h6>
-                <label htmlFor=''>
-                    Search your desired location
-                    <input type='text' value={geoLocationValue} onChange={handleChange} />
-                </label>
-                <div className='btns'>
-                    <button onClick={onPanTo}>Pan To</button>
-                    <button onClick={onAddMarker}>Add Marker</button>
-                </div>
-                {/* <label htmlFor=''>
-                    Lat
-                    <input type='text' name='lat' value={latLng.lat} onChange={handleMapChange} />
-                </label>
-                <label htmlFor=''>
-                    Lng
-                    <input type='text' name='lng' value={latLng.lng} onChange={handleMapChange} />
-                </label> */}
-                <label htmlFor=''>
-                    Zoom
-                    <input type='text' name='zoom' value={zoom} onChange={handleMapChange} />
-                </label>
+        <div className='inside-accordion adjust-inputs expanded-content edit-map full'>
+            <label htmlFor=''>
+                Search your desired location
+                <input type='text' value={geoLocationValue} onChange={handleChange} className='input-edit' />
+            </label>
+            <div className='btns'>
+                <button onClick={onPanTo} className='btn-edit'>
+                    Pan To
+                </button>
+                <button onClick={onAddMarker} className='btn-edit'>
+                    Add Marker
+                </button>
+            </div>
+            <label htmlFor=''>
+                Zoom
+                <input
+                    type='text'
+                    name='zoom'
+                    value={zoom}
+                    className='btn-edit input-edit'
+                    onChange={handleMapChange}
+                />
+            </label>
 
+            <div className='markers'>
                 <h6>Markers</h6>
-                <div className='markers'>
-                    {clickedCmp.content.markers.map(marker => {
-                        return (
-                            <div className='marker' key={marker.id}>
-                                {/* <label htmlFor=''>
-                                Lat
-                                <input type='text' name='zoom' value={marker.lat} onChange={handleMarkerChange} />
-                            </label>
-                            <label htmlFor=''>
-                                Lng
-                                <input type='text' name='zoom' value={marker.lng} onChange={handleMarkerChange} />
-                            </label> */}
-                                <button className='btn' onClick={() => onDeleteMarker(marker)}>
-                                    <FaTrash />
-                                </button>
-                                <p>{marker.name}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-                {/* <button className='btn'>Add Marker</button> */}
+                {clickedCmp.content.markers.map(marker => {
+                    return (
+                        <div className='marker' key={marker.id}>
+                            <button className='btn btn-edit' onClick={() => onDeleteMarker(marker)}>
+                                <FiTrash />
+                            </button>
+                            <p>{marker.name}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
