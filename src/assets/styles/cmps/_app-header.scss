@@ -70,6 +70,7 @@
             padding: 0 1em;
             font-weight: 400;
             transition: 0.4s color, background-color 0.4s;
+
             &:hover {
                 color: $editor-active-clr;
             }
@@ -129,11 +130,14 @@
                 }
             }
             &.preview {
-                color: $clr15;
                 cursor: pointer;
                 background-color: transparent;
                 position: relative;
                 padding: $spacing-xxs $spacing-xs;
+                color: $editor-active-clr;
+                &:hover {
+                    color: $editor-active-clr;
+                }
 
                 &::before {
                     content: '';
