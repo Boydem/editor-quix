@@ -70,8 +70,14 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0 0.75em;
-        grid-auto-flow: row;
+        grid-auto-flow: dense;
         padding: 1em $spacing-m;
+        &.full {
+            grid-template-columns: 1fr;
+            > * {
+                width: 100%;
+            }
+        }
         &:first-child {
             padding: 0 $spacing-m 1em;
         }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { Accordion } from './edit-accordion'
@@ -6,6 +7,7 @@ import { EditTabs } from './edit-tabs'
 
 export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
+
     function handleSidebar(stateChanges) {
         handleSidebarsChanges('right', stateChanges)
     }

@@ -4,6 +4,7 @@ import GoogleLogin from 'react-google-login'
 import { gapi } from 'gapi-script'
 import { login, logout, signup } from '../../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
+import { AppHeader } from '../../cmps/app-header'
 
 export function LoginSignup({ onLogin, onSignup }) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
@@ -88,71 +89,73 @@ export function LoginSignup({ onLogin, onSignup }) {
     }
 
     return (
-        <div className='login-signup'>
-            {isSignup ? (
-                <div className='signup-section'>
-                    <h2>Sign Up</h2>
-                    <span>Already a member?</span>
-                    <button onClick={toggleSignup}>Log In</button>
-                    <form onSubmit={onSignup}>
-                        <input
-                            type='text'
-                            name='username'
-                            value={credentials.username}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type='password'
-                            name='password'
-                            value={credentials.password}
-                            onChange={handleChange}
-                            required
-                        />
+        <>
+            <AppHeader location={''} theme={'dark'} layout={'main-layout'} />
+            <div className='login-signup'>
+                {isSignup ? (
+                    <div className='signup-section'>
+                        <h2>Sign Up</h2>
+                        <span>Already a member?</span>
+                        <button onClick={toggleSignup}>Log In</button>
+                        <form onSubmit={onSignup}>
+                            <input
+                                type='text'
+                                name='username'
+                                value={credentials.username}
+                                onChange={handleChange}
+                                required
+                            />
+                            <input
+                                type='password'
+                                name='password'
+                                value={credentials.password}
+                                onChange={handleChange}
+                                required
+                            />
 
-                        <input
-                            type='text'
-                            name='fullname'
-                            value={credentials.fullname}
-                            onChange={handleChange}
-                            required
-                        />
-                        <button>Sign Up</button>
-                    </form>
-                </div>
-            ) : (
-                <div className='login-section'>
-                    <h2>Log In</h2>
-                    <span>Don't have an account ?</span>
-                    <button onClick={toggleSignup}>Sign Up</button>
-                    <form onSubmit={ev => onLogin(ev, credentials)}>
-                        <input
-                            type='text'
-                            name='username'
-                            value={credentials.username}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type='password'
-                            name='password'
-                            value={credentials.password}
-                            onChange={handleChange}
-                            required
-                        />
-                        <button>Log In</button>
-                    </form>
-                </div>
-            )}
-
-            <GoogleLogin
-                clientId={clientId}
-                buttonText='Sign in with Google'
-                onSuccess={onGoogleLogin}
-                onFailure={onGoogleLoginFailure}
-                cookiePolicy={'single_host_origin'}
-                isSignedIn={true}
-            />
-        </div>
+                            <input
+                                type='text'
+                                name='fullname'
+                                value={credentials.fullname}
+                                onChange={handleChange}
+                                required
+                            />
+                            <button>Sign Up</button>
+                        </form>
+                    </div>
+                ) : (
+                    <div className='login-section'>
+                        <h2>Log In</h2>
+                        <span>Don't have an account ?</span>
+                        <button onClick={toggleSignup}>Sign Up</button>
+                        <form onSubmit={onLogin}>
+                            <input
+                                type='text'
+                                name='username'
+                                value={credentials.username}
+                                onChange={handleChange}
+                                required
+                            />
+                            <input
+                                type='password'
+                                name='password'
+                                value={credentials.password}
+                                onChange={handleChange}
+                                required
+                            />
+                            <button>Log In</button>
+                        </form>
+                    </div>
+                )}
+                <GoogleLogin
+                    clientId={clientId}
+                    buttonText='Sign in with Google'
+                    onSuccess={onGoogleLogin}
+                    onFailure={onGoogleLoginFailure}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                />
+            </div>
+        </>
     )
 }
