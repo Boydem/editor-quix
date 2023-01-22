@@ -27,7 +27,6 @@ export default function DynamicCmp(props) {
 
         setElClickedNode(ev.target)
         setClickedCmp(cmp)
-        // saveCmp(cmp)
     }
 
     function onHover(ev) {
@@ -40,7 +39,6 @@ export default function DynamicCmp(props) {
         props.selectedActionsRef.current.style.display = 'flex'
 
         ev.currentTarget.classList.add('hover')
-        console.log(props)
         props.setElHoveredNode(ev.currentTarget)
     }
     const basicProps = {
