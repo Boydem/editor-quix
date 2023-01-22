@@ -9,7 +9,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
 import { saveWap } from '../store/wap/wap.action'
-export function AppHeader({ location = 'editor' }) {
+export function AppHeader({ location = 'editor', theme = '' }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -40,7 +40,7 @@ export function AppHeader({ location = 'editor' }) {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className='app-header full'>
+        <header className={`${theme === 'dark' ? 'dark' : ''} app-header full`}>
             <div className='logo-container'>
                 <Link to='/' className='logo'>
                     Webix.
