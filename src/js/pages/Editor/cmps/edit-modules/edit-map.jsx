@@ -59,52 +59,32 @@ export function EditMap({ clickedCmp }) {
 
     if (clickedCmp.type !== 'map') return
     return (
-        <div className='inside-accordion'>
-            <div className='expanded-content edit-map'>
-                <h6>Map</h6>
-                <label htmlFor=''>
-                    Search your desired location
-                    <input type='text' value={geoLocationValue} onChange={handleChange} />
-                </label>
-                <div className='btns'>
-                    <button onClick={onPanTo}>Pan To</button>
-                    <button onClick={onAddMarker}>Add Marker</button>
-                </div>
-                {/* <label htmlFor=''>
-                    Lat
-                    <input type='text' name='lat' value={latLng.lat} onChange={handleMapChange} />
-                </label>
-                <label htmlFor=''>
-                    Lng
-                    <input type='text' name='lng' value={latLng.lng} onChange={handleMapChange} />
-                </label> */}
-                <label htmlFor=''>
-                    Zoom
-                    <input type='text' name='zoom' value={zoom} onChange={handleMapChange} />
-                </label>
+        <div className='inside-accordion adjust-inputs expanded-content edit-map'>
+            <label htmlFor=''>
+                Search your desired location
+                <input type='text' value={geoLocationValue} onChange={handleChange} />
+            </label>
+            <div className='btns'>
+                <button onClick={onPanTo}>Pan To</button>
+                <button onClick={onAddMarker}>Add Marker</button>
+            </div>
+            <label htmlFor=''>
+                Zoom
+                <input type='text' name='zoom' value={zoom} onChange={handleMapChange} />
+            </label>
 
-                <h6>Markers</h6>
-                <div className='markers'>
-                    {clickedCmp.content.markers.map(marker => {
-                        return (
-                            <div className='marker' key={marker.id}>
-                                {/* <label htmlFor=''>
-                                Lat
-                                <input type='text' name='zoom' value={marker.lat} onChange={handleMarkerChange} />
-                            </label>
-                            <label htmlFor=''>
-                                Lng
-                                <input type='text' name='zoom' value={marker.lng} onChange={handleMarkerChange} />
-                            </label> */}
-                                <button className='btn' onClick={() => onDeleteMarker(marker)}>
-                                    <FaTrash />
-                                </button>
-                                <p>{marker.name}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-                {/* <button className='btn'>Add Marker</button> */}
+            <h6>Markers</h6>
+            <div className='markers'>
+                {clickedCmp.content.markers.map(marker => {
+                    return (
+                        <div className='marker' key={marker.id}>
+                            <button className='btn' onClick={() => onDeleteMarker(marker)}>
+                                <FaTrash />
+                            </button>
+                            <p>{marker.name}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
