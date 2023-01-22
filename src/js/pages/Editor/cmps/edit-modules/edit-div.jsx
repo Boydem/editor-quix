@@ -35,15 +35,15 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
             <div className='expanded-content edit-div' ref={expandedRef}>
                 <div className='wrapper'>
                     <div className='link'>
-                        <input type='text' />
-                        <button>Browse</button>
+                        <input type='text' placeholder='Enter image link...' className='input-edit' />
+                        <button className='btn-edit'>Browse</button>
                     </div>
                     <div className='img-container'>
                         <img src={currImage} alt='' />
                     </div>
 
                     <label htmlFor='file-input'>Upload background</label>
-                    <input type='file' id='file-input' className='file-input' hidden onChange={onImgInput} />
+                    <input type='file' id='file-input' className='file-input btn-edit' hidden onChange={onImgInput} />
                 </div>
             </div>
         </div>

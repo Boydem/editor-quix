@@ -62,15 +62,25 @@ export function EditMap({ clickedCmp }) {
         <div className='inside-accordion adjust-inputs expanded-content edit-map full'>
             <label htmlFor=''>
                 Search your desired location
-                <input type='text' value={geoLocationValue} onChange={handleChange} />
+                <input type='text' value={geoLocationValue} onChange={handleChange} className='input-edit' />
             </label>
             <div className='btns'>
-                <button onClick={onPanTo}>Pan To</button>
-                <button onClick={onAddMarker}>Add Marker</button>
+                <button onClick={onPanTo} className='btn-edit'>
+                    Pan To
+                </button>
+                <button onClick={onAddMarker} className='btn-edit'>
+                    Add Marker
+                </button>
             </div>
             <label htmlFor=''>
                 Zoom
-                <input type='text' name='zoom' value={zoom} onChange={handleMapChange} />
+                <input
+                    type='text'
+                    name='zoom'
+                    value={zoom}
+                    className='btn-edit input-edit'
+                    onChange={handleMapChange}
+                />
             </label>
 
             <div className='markers'>
@@ -78,7 +88,7 @@ export function EditMap({ clickedCmp }) {
                 {clickedCmp.content.markers.map(marker => {
                     return (
                         <div className='marker' key={marker.id}>
-                            <button className='btn' onClick={() => onDeleteMarker(marker)}>
+                            <button className='btn btn-edit' onClick={() => onDeleteMarker(marker)}>
                                 <FiTrash />
                             </button>
                             <p>{marker.name}</p>

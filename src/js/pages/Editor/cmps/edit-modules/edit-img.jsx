@@ -32,29 +32,20 @@ export function EditImg({ clickedCmp }) {
         <div className='adjust inside-accordion adjust-inputs expanded-content edit-img full'>
             <div className='wrapper'>
                 <div className='link'>
-                    <input type='url' placeholder='Enter image link..' value={imgUrl} onChange={handleChange} />
-                    <button>Browse</button>
+                    <input
+                        type='url'
+                        placeholder='Enter image link..'
+                        value={imgUrl}
+                        onChange={handleChange}
+                        className='input-edit'
+                    />
+                    <button className='btn-edit'>Browse</button>
                 </div>
 
                 <img src={clickedCmp.content?.imgUrl} alt='' />
                 <label htmlFor='file-input2'>Upload image</label>
-                <input type='file' className='file-input' id='file-input2' hidden onChange={onImgInput} />
+                <input type='file' className='file-input btn-edit' id='file-input2' hidden onChange={onImgInput} />
             </div>
         </div>
     )
-}
-
-{
-    /* <div className='wrapper'>
-<div className='link'>
-<input type='text' />
-<button>Browse</button>
-</div>
-<div className='img-container'>
-<img src={currImage} alt='' />
-</div>
-
-<label htmlFor='file-input'>Upload background</label>
-<input type='file' id='file-input' className='file-input' hidden onChange={onImgInput} />
-</div> */
 }

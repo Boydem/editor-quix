@@ -63,6 +63,20 @@
 }
 
 .tabs-inner-content {
+    // COMMON CLASS
+    button.btn-edit {
+        background: #e4e8f1;
+        padding: 0.4em 0.6em;
+        border-radius: 0.3em;
+    }
+    input.input-edit {
+        margin-bottom: 0.2em;
+        width: 95.2%;
+        box-shadow: 0 1px 0 0 black;
+        border-radius: 0px;
+        background: none;
+    }
+
     margin-top: 1em;
     .adjust-inputs {
         align-items: center;
@@ -188,7 +202,7 @@
             .btn {
                 cursor: pointer;
                 padding: 0.1em 0.7em;
-                background: #f4f5f8;
+                background: #e4e8f1;
                 border-radius: 5px;
             }
         }
@@ -288,56 +302,104 @@
                 display: none;
             }
         }
+        input {
+            width: 95.2%;
+            box-shadow: 0 1px 0 0 black;
+            border-radius: 0px;
+            background: none;
+        }
+    }
+
+    .edit-video {
+        .wrapper {
+            > * {
+                margin-bottom: 1em;
+            }
+
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
+
+                button {
+                    background: #e4e8f1;
+                    padding: 0.4em 0.6em;
+                    border-radius: 0.3em;
+                }
+            }
+            label {
+                color: $clr1;
+                background: $editor-active-clr;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
+                cursor: pointer;
+                background: #e4e8f1;
+                color: black;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .img-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+            .file-input {
+                all: unset;
+                // visibility: hidden;
+                display: none;
+            }
+        }
     }
 
     .edit-anchor {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        justify-content: center;
-        gap: 0.3rem;
-        margin: 0.5em 0 0.85em 0;
+        .or {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            margin-bottom: 0.8em;
+            margin-top: 0.5em;
+        }
+        .mini-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+
+            button {
+                background: #e4e8f1;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
+            }
+        }
         .heading {
             font-size: 1.1rem;
             margin-bottom: 0.5em;
         }
         input {
-            margin-bottom: 0.75em;
-            // display: block;
+            margin-bottom: 0.2em;
             width: 95.2%;
             box-shadow: 0 1px 0 0 black;
             border-radius: 0px;
             background: none;
         }
 
-        .btn {
-            cursor: pointer;
-            padding: 0.4em 0;
-            display: block;
-            width: 95%;
-            background: $editor-active-clr;
-            color: #f4f5f8;
-            border-radius: 5px;
-            text-align: center;
-            margin-bottom: 0.75em;
-        }
-
         .select-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1em;
-            p {
-                font-size: 1.5em;
-            }
             button {
-                font-size: 1.5em;
-                border-radius: 0.5em;
-                text-align: center;
-                background: $clr3;
-                &:active {
-                    background: $editor-active-clr;
+                background: #e4e8f1;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
+                color: black;
+                &:focus {
+                    color: black;
                 }
             }
         }

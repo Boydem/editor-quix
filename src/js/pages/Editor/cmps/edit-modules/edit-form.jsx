@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import { saveCmp } from '../../../../store/wap/wap.action'
+import { RiDeleteBack2Fill } from 'react-icons/ri'
 
 export function EditForm({ clickedCmp }) {
     // let labelIndex
@@ -50,15 +51,19 @@ export function EditForm({ clickedCmp }) {
 
     return (
         <div className='adjust inside-accordion'>
-            <div className='expanded-content edit-form'>
+            <div className='expanded-content adjust inside-accordion full adjust-inputs full edit-form'>
                 <div className='wrapper'>
-                    <p className='heading'>Enter the name of the fields</p>
                     {inputsArr.map((input, idx) => {
                         return (
                             <div key={idx} className='input-option'>
-                                <input onChange={ev => handleChange(ev, idx)} value={input} name={input} />
-                                <button className='btn' onClick={() => onDisableLabel(idx)}>
-                                    X
+                                <input
+                                    onChange={ev => handleChange(ev, idx)}
+                                    className='btn-edit input-edit'
+                                    value={input}
+                                    name={input}
+                                />
+                                <button className='btn btn-edit' onClick={() => onDisableLabel(idx)}>
+                                    <RiDeleteBack2Fill />
                                 </button>
                             </div>
                         )
