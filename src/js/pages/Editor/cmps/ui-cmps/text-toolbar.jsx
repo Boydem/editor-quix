@@ -17,7 +17,7 @@ export function TextToolbar({ elClickedNode, handleTextStyleChange }) {
     const isItalic = elClickedNode && elClickedNode.style.fontStyle
 
     return (
-        <Toolbar.Root className='ToolbarRoot adjust-inputs' aria-label='Formatting options'>
+        <Toolbar.Root className='adjust-inputs' aria-label='Formatting options'>
             <Toolbar.ToggleGroup type='multiple' aria-label='Text formatting'>
                 <Toolbar.ToggleItem
                     onClick={() => handleTextStyleChange('fontWeight', 'bold')}
