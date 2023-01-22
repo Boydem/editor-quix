@@ -1,7 +1,8 @@
 /* for all buttons */
 a,
 button {
-    transition: color 0.3s, background 0.3s, stroke 0.3s;
+    transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+        background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95), stroke 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 button {
@@ -15,6 +16,11 @@ button {
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1.25;
+    font-size: px-to-em(14px);
     padding: $spacing-xxs $spacing-xs;
     font-weight: 600;
     font-size: 1rem;
@@ -40,33 +46,19 @@ button {
     &.btn-template {
         background-color: transparent;
         color: $clr1;
-
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            width: 0;
-            margin: auto;
-            opacity: 0;
-            // transform: translateY(10px);
-            height: 1px;
+        border-radius: 6px;
+        padding: px-to-em(6px) px-to-em(32px);
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:first-of-type {
+            border: 1px solid $clr1;
+            margin-bottom: $spacing-s;
+        }
+        &:nth-of-type(odd):hover {
             background-color: $clr1;
-            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            color: $clr2;
         }
-        &:nth-of-type(even)::after {
-            bottom: 20%;
-        }
-        &:nth-of-type(odd)::after {
-            top: 20%;
-        }
-        &:nth-of-type(even):hover::after {
-            opacity: 1;
-            width: 100px;
-        }
-        &:nth-of-type(odd):hover::after {
-            opacity: 1;
-            width: 100px;
+        &:nth-of-type(even):hover {
         }
     }
 

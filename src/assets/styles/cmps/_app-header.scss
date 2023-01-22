@@ -2,6 +2,7 @@
     background-color: $clr1;
     position: sticky;
     top: 0;
+    z-index: 99;
     &.dark {
         background-color: $clr2;
         & *,
@@ -22,7 +23,7 @@
     }
     &.main-layout {
         .layout-wrapper {
-            min-height: $app-header-height;
+            min-height: $app-header-height + 1px;
             padding: 0;
             border-bottom: none;
         }
@@ -75,7 +76,7 @@
         align-items: center;
         justify-content: center;
         .publish-url-prefix {
-            font-size: px-to-rem(12px);
+            font-size: px-to-rem(12.44px);
             padding: 2px $spacing-s;
             display: grid;
             grid-template-columns: auto 1fr auto;
