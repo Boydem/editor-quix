@@ -1,0 +1,29 @@
+.interactive-chat {
+    background-color: $clr1;
+    font-size: px-to-rem(14px);
+    min-height: 40dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1em;
+    box-shadow: 0px 20px 30px -20px $clr7;
+    width: 300px;
+    .PopoverClose {
+        position: absolute;
+    }
+    .chat-body {
+        flex: 1;
+        padding: 1.5em;
+        .msg {
+            display: inline-flex;
+            align-items: center;
+            background-color: #eee;
+            padding: 2.5px 6px;
+            margin-bottom: $spacing-xs;
+            border-radius: 0.25em;
+        }
+        .msg-other {
+            align-self: flex-end;
+        }
+    }
+}

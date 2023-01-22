@@ -28,6 +28,10 @@ $editor-active-clr: rgb(17, 109, 255);
 $editor-hover-bg: rgb(228, 232, 241);
 $editor-outline: $clr2;
 $login-gray: #b9b9bd;
+// $success-green:;
+// $success-green-light:;
+$error-red: darken(#ff0f0f, 15%);
+$error-red-light: #ffdbdb;
 
 // font
 $font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;

@@ -19,13 +19,13 @@ export function HomeHeader() {
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
                     <li>
-                        <Link className='nav-link link-underline' to='/edit'>
-                            <span>Home</span>
+                        <Link className='nav-link link-underline sign-in' to='/auth'>
+                            <span>Login</span>
                         </Link>
                     </li>
                     <li>
-                        <a className='nav-link link-underline' href='#'>
-                            <span>About Us</span>
+                        <a className='nav-link link-underline sign-up' href='#'>
+                            <span>Sign up</span>
                         </a>
                     </li>
                     <li>

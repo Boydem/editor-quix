@@ -31,7 +31,7 @@ export function UserMsg() {
                     <Toast.Title className='ToastTitle'>{msg.txt}</Toast.Title>
                     <Toast.Description asChild>This is a message for users</Toast.Description>
                     <Toast.Action className='ToastAction' asChild altText='Goto schedule to undo'>
-                        <button onClick={closeMsg} className='Button small green'>
+                        <button onClick={closeMsg} className={`Button small ${msg.type}`}>
                             Close
                         </button>
                     </Toast.Action>
