@@ -37,6 +37,8 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     function setEditorWrapperLayout() {
         editorWrapper.current.style.maxWidth =
             layout.layoutClass === 'desktopLayout' ? 'revert' : `${layout.width - 10}px`
+        // editorWrapper.current.style.maxHeight = `calc(100vh - 160px - 4rem)`
+
         editorWrapper.current.classList.toggle('mobile-layout', layout.layoutClass === 'mobileLayout')
         editorWrapper.current.classList.toggle('tablet-layout', layout.layoutClass === 'mobileLayout')
         editorWrapper.current.classList.toggle(

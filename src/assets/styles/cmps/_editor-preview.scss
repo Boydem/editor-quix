@@ -15,6 +15,7 @@
         overflow: hidden;
         position: relative;
     }
+
     &::-webkit-scrollbar-thumb {
         border: $spacing-xs solid transparent;
         border-radius: 100px;
