@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
 
-export function VideoCmp({ cmp, handleClick, onHover }) {
+export function VideoCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     let classes = cmp.name + ' '
     if (cmp.class) {
@@ -15,8 +15,8 @@ export function VideoCmp({ cmp, handleClick, onHover }) {
         <div
             className={`${classes}`}
             style={cmp.style}
-            onClick={e => handleClick(e, cmp)}
-            onMouseOver={onHover}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
         >
             <iframe

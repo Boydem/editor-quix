@@ -4,11 +4,12 @@ import { useRef, useEffect, useState } from 'react'
 import { utilService } from '../../../services/util.service'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
-import { setElClickedNode } from '../../../store/wap/wap.action'
+import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 
-export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState }) {
+export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, handleSidebarsChanges }) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const [elHoveredNode, setElHoveredNode] = useState(null)
+    const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     const editorWrapper = useRef()
     const selectedActionsRef = useRef()
 
@@ -32,7 +33,8 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
         elHoveredNode.classList.add('clicked')
         elHoveredNode.classList.remove('hover')
         setElClickedNode(elHoveredNode)
-        setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
+        handleSidebarsChanges('right', { isOpen: true })
+        // setRightSidebarState(prev => ({ ...prev, isOpen: !prev.isOpen }))
         // selectedActionsRef.current.style.display = 'none'
         // setTimeout(() => {
         //     selectedActionsRef.current.style.display = 'flex'
@@ -52,6 +54,36 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     function ohLeaveHoverEditPopup(ev) {
         elHoveredNode.classList.remove('hover')
     }
+
+    function onSelectCmp(ev, cmp) {
+        handleSidebarsChanges('left', { isOpen: false, currModule: null })
+        ev.stopPropagation()
+        if (!ev.target.type) ev.preventDefault()
+
+        if (!isEditing) return
+        if (elClickedNode === ev.target) return
+
+        if (elClickedNode) {
+            elClickedNode.classList.remove('clicked')
+        }
+        ev.target.classList.add('clicked')
+        setElClickedNode(ev.target)
+        setClickedCmp(cmp)
+    }
+
+    function onHoverCmp(ev) {
+        ev.stopPropagation()
+        ev.preventDefault()
+        if (!isEditing) return
+
+        selectedActionsRef.current.style.top = `${ev.target.offsetTop - 45}px`
+        selectedActionsRef.current.style.left = `${ev.target.offsetLeft - 16}px`
+        selectedActionsRef.current.style.display = 'flex'
+
+        ev.currentTarget.classList.add('hover')
+        setElHoveredNode(ev.currentTarget)
+    }
+
     return (
         <Droppable droppableId='editor-preview'>
             {provided => {
@@ -83,6 +115,8 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
                                                         cmp={cmp}
                                                         selectedActionsRef={selectedActionsRef}
                                                         setElHoveredNode={setElHoveredNode}
+                                                        onHoverCmp={onHoverCmp}
+                                                        onSelectCmp={onSelectCmp}
                                                     />
                                                 </div>
                                             )

@@ -7,8 +7,8 @@ import { AiOutlineSend } from 'react-icons/ai'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
-    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
+    const wap = useSelector(storeState => storeState.wapModule.wap)
     const chatRef = useRef()
 
     const [msg, setMsg] = useState('')
@@ -28,28 +28,28 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
 
     function onSend() {
         console.log('SENDING', msg)
-        msgsCmp.messages.push({ by: 'customer', txt: `${msg}` })
+        msgs.push({ by: 'customer', txt: `${msg}` })
         setMsg('')
-        saveCmp(msgsCmp)
+        saveCmp(cmp)
     }
-    const msgsCmp = cmp?.cmps[1]?.cmps[1]
+    const msgs = wap.msgs
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
 
     return (
         <div
             className={cmp.name}
             style={cmp.style}
-            onClick={e => handleClick(e, cmp)}
-            onMouseOver={onHover}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
             onSubmit={onSubmit}
         >
             <button
                 className={cmp.cmps[0].name}
                 style={cmp.style}
-                // onClick={e => handleClick(e, cmp)}
+                // onClick={e => onSelectCmp(e, cmp)}
                 onClick={onOpenChat}
-                onMouseOver={onHover}
+                onMouseOver={onHoverCmp}
                 onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                 spellCheck='false'
             >
@@ -58,8 +58,8 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
             <div
                 className={cmp.cmps[1].name}
                 style={cmp.style}
-                onClick={e => handleClick(e, cmp)}
-                onMouseOver={onHover}
+                onClick={e => onSelectCmp(e, cmp)}
+                onMouseOver={onHoverCmp}
                 onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                 ref={chatRef}
             >
@@ -67,7 +67,7 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                     return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
                 })}
                 <div className='messages'>
-                    {msgsCmp.messages?.map((msg, idx) => {
+                    {msgs.map((msg, idx) => {
                         return (
                             <p className={`${msg.by} message`} key={idx}>
                                 {msg.txt}
@@ -81,9 +81,9 @@ export function ChatCmp({ cmp, handleClick, onHover, selectedActionsRef }) {
                         key={chatInputCmp.id}
                         style={cmp.style}
                         name={chatInputCmp.inputName}
-                        onClick={e => handleClick(e, cmp)}
+                        onClick={e => onSelectCmp(e, cmp)}
                         placeholder={cmp.content?.placeholder}
-                        onMouseOver={onHover}
+                        onMouseOver={onHoverCmp}
                         onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                         onChange={handleChange}
                         value={msg}

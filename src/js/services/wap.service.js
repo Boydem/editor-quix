@@ -116,6 +116,7 @@ function getBlankWap() {
         owner: 'guest',
         title: 'blank-template',
         cmps: [],
+        msgs: [],
         breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
     }
 }
@@ -128,14 +129,20 @@ function _createWaps() {
                 _id: utilService.makeId(),
                 name: 'wap-1',
                 owner: 'admin',
-                breakpoints: { tabletLayout: 1300, mobileLayout: 800 },
                 cmps: getDemoCmps1(),
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
                 themeClass: 'wap1-primary',
-                breakpoints: {
-                    mobileLayout: 800,
-                    tabletLayout: 1350,
-                },
+                breakpoints: { mobileLayout: 800, tabletLayout: 1350 },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
                 title: 'WeDu',
@@ -150,6 +157,16 @@ function _createWaps() {
                 breakpoints: {
                     tabletLayout: 1000,
                 },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
@@ -166,6 +183,16 @@ function _createWaps() {
                     mobileLayout: 700,
                     tabletLayout: 1050,
                 },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
@@ -181,6 +208,16 @@ function _createWaps() {
                     mobileLayout: 750,
                     tabletLayout: 1400,
                 },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
                 title: 'ONMYSCREEN',
@@ -196,6 +233,16 @@ function _createWaps() {
                     tabletLayout: 1130,
                     pcLayout: 1500,
                 },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674308505/wap5-thumbnail_ockqmi.jpg',
                 title: 'Restaurante X',
