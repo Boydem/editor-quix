@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
-import { DarkHeader } from './cmps/dark-header'
+
 import { HiPlus } from 'react-icons/hi'
+import { AppHeader } from '../../cmps/app-header'
 
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
@@ -46,7 +47,7 @@ export function WapIndex() {
     if (!waps) return <></>
     return (
         <>
-            <DarkHeader />
+            <AppHeader location={''} theme={'dark'} />
             <section className='wap-index full main-layout'>
                 <div className='intro full main-layout'>
                     <div className='wrapper'>

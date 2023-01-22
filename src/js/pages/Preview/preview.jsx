@@ -3,7 +3,6 @@ import { useParams } from 'react-router'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
 import DynamicCmp from '../Editor/cmps/dynamic-cmp'
-import { DarkHeader } from '../Template/cmps/dark-header'
 
 export function Preview() {
     const [wap, setWap] = useState(null)
@@ -38,7 +37,6 @@ export function Preview() {
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
         <div className='full templates-css-reset' ref={containerRef}>
-            {/* <DarkHeader /> */}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
             })}
