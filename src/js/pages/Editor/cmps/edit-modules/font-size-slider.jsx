@@ -17,27 +17,27 @@ export function FontSizeSlider({ elClickedNode, handleFontSliderChange, handleFo
 
     return (
         <form className='slider-form adjust-inputs'>
+            <label htmlFor=''>Font Size</label>
             <div className='wrapper'>
-                <label htmlFor=''>Font Size</label>
-                <span>{clickedCmpFontSize}</span>
+                <Slider.Root
+                    // value={fontSliderValue}
+                    value={clickedCmpFontSize}
+                    className='SliderRoot slider-input'
+                    defaultValue={[16]}
+                    max={72}
+                    min={8}
+                    step={1}
+                    aria-label='Volume'
+                    onValueChange={handleFontSizeChange}
+                    onValueCommit={handleFontSliderCommit}
+                >
+                    <Slider.Track className='SliderTrack' value={50}>
+                        <Slider.Range className='SliderRange' />
+                    </Slider.Track>
+                    <Slider.Thumb className='SliderThumb' />
+                </Slider.Root>
+                <span>{clickedCmpFontSize}px</span>
             </div>
-            <Slider.Root
-                // value={fontSliderValue}
-                value={clickedCmpFontSize}
-                className='SliderRoot slider-input'
-                defaultValue={[16]}
-                max={72}
-                min={8}
-                step={1}
-                aria-label='Volume'
-                onValueChange={handleFontSizeChange}
-                onValueCommit={handleFontSliderCommit}
-            >
-                <Slider.Track className='SliderTrack' value={50}>
-                    <Slider.Range className='SliderRange' />
-                </Slider.Track>
-                <Slider.Thumb className='SliderThumb' />
-            </Slider.Root>
         </form>
     )
 }
