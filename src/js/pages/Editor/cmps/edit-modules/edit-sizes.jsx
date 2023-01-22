@@ -17,15 +17,14 @@ export function EditSizes() {
         { name: 'rotate', title: 'Rotate', unit: 'deg', unitOpts: ['deg'] },
         { name: 'scale', title: 'Scale', unit: '%', unitOpts: ['%'] },
     ]
-    // { name: 'skew', title: 'Skew', unit: 'deg' },
-    // { name: 'translateX', title: 'TranslateX', unit: 'px', value: 0 },
-    // { name: 'translateY', title: 'TranslateY', unit: 'px', value: 0 },
 
     useEffect(() => {
         const clickedCmpProps = propOptions.reduce((acc, opt) => {
-            acc[opt] = (elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue(opt))]) || [
-                0,
-            ]
+            let propValue =
+                elClickedNode && parseFloat(window.getComputedStyle(elClickedNode).getPropertyValue(opt.name))
+            console.log('propValue:', propValue)
+            if (opt.name === 'opacity' || opt.name === 'scale') propValue *= 100
+            acc[opt.name] = propValue
             return acc
         }, {})
         setPropsToEdit(clickedCmpProps)
@@ -45,7 +44,6 @@ export function EditSizes() {
         } else {
             lastClickedCmp.style = { [name]: `${value + unit}` }
         }
-        console.log(propsToEdit)
         saveCmp(lastClickedCmp)
     }
 
@@ -64,8 +62,9 @@ export function EditSizes() {
                             info={opt.unit}
                             name={opt.name}
                             id={opt.name}
-                            value={propsToEdit[opt.name] || 0}
+                            value={+propsToEdit[opt.name] || ''}
                             onChange={handleChange}
+                            placeholder='0'
                         />
                         <div className='unit'>
                             <SelectUnit onUnitChange={onUnitChange} unit={opt.unit} unitOpts={opt.unitOpts} />

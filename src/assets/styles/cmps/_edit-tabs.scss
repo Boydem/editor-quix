@@ -275,6 +275,19 @@
         }
     }
 
+    .slider-form {
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-weight: bold;
+            }
+        }
+        .slider-input {
+            width: 100%;
+        }
+    }
+
     .selector {
         margin-bottom: 0.6rem;
         display: grid;
