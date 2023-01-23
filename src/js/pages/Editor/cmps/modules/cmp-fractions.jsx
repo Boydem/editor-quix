@@ -2,8 +2,8 @@ import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { wapService } from '../../../../services/wap.service'
 
 export function CmpFractions({ activeMenuItem }) {
-    console.log(activeMenuItem)
     const assets = wapService.getCmpsByCategory(activeMenuItem.toLowerCase())
+
     return (
         <section className='quick-add'>
             <Droppable
@@ -15,7 +15,8 @@ export function CmpFractions({ activeMenuItem }) {
                         ref={provided.innerRef}
                         className='drag-and-drop-portal'
                     >
-                        <img src={assets[0].thumbnail} alt='ggggggggg'></img>
+                        {console.log(provided, snapshot, rubric)}
+                        <img src={assets[rubric.source.index].thumbnail} alt='' />
                     </div>
                 )}
             >
@@ -25,7 +26,7 @@ export function CmpFractions({ activeMenuItem }) {
                             {assets?.map((asset, idx) => {
                                 return (
                                     <Draggable draggableId={asset.id.toString()} index={idx} key={asset.id}>
-                                        {provided => {
+                                        {(provided, snapshot) => {
                                             return (
                                                 <img
                                                     ref={provided.innerRef}

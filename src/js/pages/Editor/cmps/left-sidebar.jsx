@@ -22,6 +22,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         ],
     ]
 
+
     function handleSidebar(sidebarChanges) {
         handleSidebarsChanges('left', sidebarChanges)
     }
@@ -111,6 +112,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                         </span>
                     </div>
                 </div>
+                
                 {leftSidebarState.isOpen && (
                     <div className='module-options'>
                         {leftSidebarState.currModule === 'add' && (

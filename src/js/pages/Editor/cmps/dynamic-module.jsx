@@ -1,10 +1,8 @@
 import { CmpFractions } from './modules/cmp-fractions'
 
 export function DynamicModule({ activeMenuItem, addMenuItems }) {
-    console.log(activeMenuItem)
     if (!activeMenuItem) return
-
-    if (addMenuItems.includes(activeMenuItem)) {
+    if (addMenuItems[0].includes(activeMenuItem)) {
         return <CmpFractions activeMenuItem={activeMenuItem} />
     }
 
