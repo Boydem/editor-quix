@@ -5,10 +5,10 @@ import { BsPencil } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 import { useSelector } from 'react-redux'
 import { utilService } from '../../../services/util.service'
+import ComposeMail from '../cmps/compose-mail'
 
 export function Forms({ user }) {
     const wap = utilService.loadFromStorage('wapDB').at(-1)
-    console.log(wap.leads[0])
     return (
         <div className='forms layout-wrapper'>
             <div className='header'>
@@ -51,16 +51,20 @@ export function Forms({ user }) {
                     </div>
                     <div className='user-forms leads-table'>
                         <ul className='table-row table-header container'>
-                            {Object.keys(wap.leads[0].data).map((key, keyIndex) => {
-                                return (
-                                    <li className='col' key={key}>
-                                        {key}
-                                    </li>
-                                )
-                            })}
+                            {wap.leads && (
+                                <span>
+                                    {Object.keys(wap.leads?.at(-1).data).map((key, keyIndex) => {
+                                        return (
+                                            <li className='col' key={key}>
+                                                {key}
+                                            </li>
+                                        )
+                                    })}
+                                </span>
+                            )}
                         </ul>
 
-                        {wap.leads.map(lead => {
+                        {wap.leads?.map(lead => {
                             return (
                                 <ul className='table-row container'>
                                     {Object.keys(lead.data).map((key, keyIndex) => {
@@ -77,6 +81,7 @@ export function Forms({ user }) {
                     </div>
                 </div>
             </div>
+            <ComposeMail />
         </div>
     )
 }

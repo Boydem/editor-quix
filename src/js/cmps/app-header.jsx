@@ -17,6 +17,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
+    console.log(user, 'user')
     useEffect(() => {
         if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
     }, [])
@@ -52,9 +53,9 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         }
     }
     function getShortenName() {
-        if (!user) return '?'
-        const names = user.fullname.split(' ')
-        return names[0][0] + names[1][0]
+        // if (!user ||) return '?'
+        // const names = user.fullname.split(' ')
+        // return names[0][0] + names[1][0]
     }
     function onEditDomain() {
         if (!wap.url) return
