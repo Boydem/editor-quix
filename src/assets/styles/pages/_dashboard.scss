@@ -246,9 +246,12 @@
     display: flex;
     font-size: px-to-rem(20px);
     border-left: $editor-lightgray 1px solid;
-    &:not(.responsive-btns) {
+    background: $clr1;
+    height: 100%;
+    & {
         border-right: $editor-lightgray 1px solid;
     }
+
     > * {
         margin: 0;
     }
@@ -332,5 +335,20 @@
             background-color: $clr1;
             box-shadow: inset 0px 0px 0px 1px lighten($editor-active-clr, 5%);
         }
+    }
+}
+.save-msg {
+    background-color: #eee;
+    padding: 2px 8px;
+    margin-inline-start: 1em;
+    border-radius: 3px;
+    position: relative;
+    opacity: 1;
+    transform: translateX(calc(-100% - 16px));
+    z-index: -1;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    &.shown {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }

@@ -15,6 +15,9 @@
         overflow: hidden;
         position: relative;
         transition: max-width 0.5s cubic-bezier(0.83, 0.22, 0.17, 0.84);
+        min-width: 80vw;
+        min-height: 100%;
+        background: white;
     }
 
     &::-webkit-scrollbar-thumb {

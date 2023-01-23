@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
+import noamImg from '../../assets/imgs/dashboard-assets/noam-tn.jpg'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import { wapService } from '../services/wap.service'
@@ -81,32 +82,15 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
                 {location === 'editor' && (
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                            <ul className='flex align-center'>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Site</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Add</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>View</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Tools</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Help</span>
-                                    </a>
-                                </li>
+                            <ul className='user-area'>
+                                <div className='avatar'>
+                                    ND
+                                    {/* <img src={noamImg} alt="userAvatar" /> */}
+                                </div>
+                                <div className='user-info'>
+                                    <div className='user-fullname'>Noam dahan</div>
+                                    <div className='dashboard-link'>Dashboard</div>
+                                </div>
                             </ul>
                         </nav>
                         <div className='publish-link'>

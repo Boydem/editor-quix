@@ -15,7 +15,8 @@ export function Forms({ user }) {
                 <div className='info-box table-box'>
                     <div className='header'>
                         <div className='text-wrapper'>
-                            <h3>Subscribers</h3>
+                            <h3>Subscriptions</h3>
+                            <p>Manage all recurring payments coming to you from Pricing Plans, Stores, and Invoices.</p>
                         </div>
                         <button className='btn-send-msg'>Message all</button>
                     </div>
@@ -54,7 +55,7 @@ export function Forms({ user }) {
                         </div>
                         <button className='btn-send-msg'>Download CSV</button>
                     </div>
-                    <div className='leads-table'>
+                    <div className='user-forms leads-table'>
                         <ul className='table-row table-header container'>
                             <li className='col'>Email</li>
                             <li className='col'>City</li>
@@ -65,25 +66,25 @@ export function Forms({ user }) {
                             <li className='col'>Yotamos@gmail.com</li>
                             <li className='col'>Beer Sheva</li>
                             <li className='col'>31</li>
-                            <li className='col'>yesterday</li>
+                            <li className='col'>Mens Haircut</li>
                         </ul>
                         <ul className='table-row container'>
                             <li className='col'>Gili3000@gmail.com</li>
                             <li className='col'>Tel aviv</li>
                             <li className='col'>26</li>
-                            <li className='col'>2 days ago</li>
+                            <li className='col'>Wedding Haircut</li>
                         </ul>
                         <ul className='table-row container'>
                             <li className='col'>Saritt123@gmail.com</li>
                             <li className='col'>Herzeliya</li>
                             <li className='col'>26</li>
-                            <li className='col'>2 days ago</li>
+                            <li className='col'>Haircut</li>
                         </ul>
                         <ul className='table-row container'>
                             <li className='col'>TheBoyZfan@gmail.com</li>
                             <li className='col'>Natanya</li>
                             <li className='col'>26</li>
-                            <li className='col'>2 days ago</li>
+                            <li className='col'>Haircut</li>
                         </ul>
                     </div>
                 </div>
