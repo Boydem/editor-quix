@@ -46,7 +46,7 @@
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
         background-color: $clr1;
-        z-index: 9999;
+        z-index: 2;
         overflow: hidden;
         // width: 300px;
         &.open {

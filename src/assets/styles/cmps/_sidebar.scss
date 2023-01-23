@@ -2,7 +2,7 @@
     min-height: calc(100vh - $app-header-height + $toolbar-height);
     max-height: calc(100vh - $app-header-height + $toolbar-height);
     pointer-events: none;
-    z-index: 9999;
+    z-index: 2;
     position: fixed;
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow: visible;
@@ -185,7 +185,7 @@
         align-items: center;
         // border-bottom: 1px solid $editor-lightgray;
         .module-name {
-            font-weight: 600;
+            font-weight: 800;
             text-transform: uppercase;
         }
         .actions {

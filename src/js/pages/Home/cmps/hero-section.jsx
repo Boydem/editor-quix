@@ -11,32 +11,6 @@ export function HeroSection() {
     return (
         <section className='hero full main-layout'>
             <section className='hero-top full main-layout'>
-                <div className='top-bar full'>
-                    <img src={topBarImg} alt='topBarImg' />
-                    <span className='ukraine-txt'>
-                        <span className='ukraine-flag'>
-                            <svg
-                                preserveAspectRatio='xMidYMid meet'
-                                data-bbox='0 0 33 20'
-                                xmlns='http://www.w3.org/2000/svg'
-                                viewBox='0 0 33 20'
-                                height='20'
-                                width='33'
-                                data-type='color'
-                                role='img'
-                                aria-labelledby='svgcid--8jo9674p5van'
-                            >
-                                <title id='svgcid--8jo9674p5van'>Ukrainian flag</title>
-                                <g>
-                                    <path fill='#ffffff' d='M33 0v20H0V0h33z' data-color='1'></path>
-                                    <path fill='#015BBB' d='M33 0v10H0V0h33z' data-color='2'></path>
-                                    <path fill='#FFD503' d='M33 10v10H0V10h33z' data-color='3'></path>
-                                </g>
-                            </svg>
-                        </span>
-                        <span className='display-p'>Webix stands for with Ukraine.</span>
-                    </span>
-                </div>
                 <div className='wrapper'>
                     <div className='hero-title'>
                         <h1>
