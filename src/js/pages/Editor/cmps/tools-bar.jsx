@@ -6,7 +6,7 @@ import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { FiLayers } from 'react-icons/fi'
-import { BiRefresh } from 'react-icons/bi'
+import { FiRefreshCw } from 'react-icons/fi'
 
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action'
@@ -106,7 +106,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                     </div>
                     <div className='save-msg flex align-center shown'>
-                        <BiRefresh />
+                        <FiRefreshCw className='refresh-icon' />
                         Saving...
                     </div>
                 </div>
