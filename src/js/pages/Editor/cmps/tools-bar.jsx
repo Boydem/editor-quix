@@ -69,7 +69,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                     ))}
                 </div>
             </div>
-            <div className='center'>
+            <div className='left-side'>
                 <div className='tools responsive tools-views flex align-center'>
                     <div className='responsive-btns flex align-center interactives'>
                         <button
