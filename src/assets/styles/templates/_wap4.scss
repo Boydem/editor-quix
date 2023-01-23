@@ -12,8 +12,8 @@
 
 .wap-4-nav {
     padding: 3rem 10%;
-    background: var(--clr2);
-    color: var(--clr3);
+    background: var(--clr3);
+    color: var(--clr2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +50,7 @@
         padding: 1rem;
 
         &::placeholder {
-            color: var(--clr3);
+            color: var(--clr2);
         }
     }
     .links {
@@ -61,7 +61,7 @@
         gap: 2rem;
 
         a {
-            color: var(--clr3);
+            color: var(--clr2);
             text-decoration: none;
         }
     }
@@ -69,8 +69,8 @@
 
 .wap-4-cards {
     padding: 0 10%;
-    background: var(--clr2);
-    color: var(--clr3);
+    background: var(--clr3);
+    color: var(--clr2);
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
@@ -108,7 +108,7 @@
 }
 
 .wap-4-cta {
-    color: var(--clr3);
+    color: var(--clr2);
     padding: 3rem 10%;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -116,7 +116,7 @@
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
-    background: var(--clr2);
+    background: var(--clr3);
 
     > * {
         padding: 10rem 6rem;
@@ -131,17 +131,17 @@
         text-align: center;
     }
     .form {
-        background: var(--clr4);
+        background: var(--clr3);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
 
         input {
-            color: var(--clr3);
+            color: var(--clr2);
             display: block;
             background: inherit;
             border: none;
-            border-bottom: 1px solid var(--clr3);
+            border-bottom: 1px solid var(--clr2);
             width: 100%;
 
             &:focus {
@@ -159,8 +159,8 @@
             justify-self: flex-end;
             padding: 0.7rem;
             background: inherit;
-            border: 1px solid var(--clr3);
-            color: var(--clr3);
+            border: 1px solid var(--clr2);
+            color: var(--clr2);
             text-align: center;
         }
     }

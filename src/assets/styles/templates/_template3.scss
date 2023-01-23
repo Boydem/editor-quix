@@ -12,7 +12,9 @@
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     color: var(--clr2);
-
+    a {
+        color: inherit;
+    }
     .app-nav {
         display: flex;
         justify-content: space-evenly;

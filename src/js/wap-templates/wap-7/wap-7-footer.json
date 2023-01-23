@@ -1,0 +1,17 @@
+{
+    "id": "BuSXjE",
+    "type": "div",
+    "name": "wap-7-footer",
+    "cmpId": "Footer",
+    "cmps": [
+        {
+            "id": "iFRVIy",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© 2035 by The Pop Show. Powered and secured by Wix"
+            },
+            "cmps": []
+        }
+    ]
+}

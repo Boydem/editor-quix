@@ -16,10 +16,10 @@ button {
 
 .btn {
     display: inline-flex;
-    align-items: center;
     text-decoration: none;
-    font-size: px-to-em(14px);
-    padding: $spacing-xxs $spacing-xs;
+    font-size: 16px;
+    padding: 2px $spacing-m;
+    align-items: center;
     justify-content: center;
     &.primary {
         background-color: $clr1;

@@ -56,17 +56,9 @@ export function WapIndex() {
                 </div>
                 <div className='templates'>
                     <article className='template'>
-                        <div className='img-container'>
-                            <div className='blank-template'>
+                        <div className='img-container blank-template'>
+                            <div onClick={() => onEdit('blank')}>
                                 <HiPlus size={'2.5rem'} />
-                            </div>
-                            <div className='actions'>
-                                <button className='btn btn-template' onClick={() => onEdit('blank')}>
-                                    Edit
-                                </button>
-                                {/* <button className='btn btn-template' onClick={() => onPreview('blank')}>
-                                    View
-                                </button> */}
                             </div>
                         </div>
                         <div className='text-container'>

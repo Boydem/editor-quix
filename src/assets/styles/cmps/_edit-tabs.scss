@@ -1,16 +1,25 @@
 .TabsRoot {
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
     width: 100%;
     overflow-x: hidden;
-    //   box-shadow: 0 2px 10px var(--blackA4);
+    &::-webkit-scrollbar-thumb {
+        border: 5px solid transparent;
+        border-radius: 100px;
+        background-color: $clr9;
+        background-clip: content-box;
+    }
+    &::-webkit-scrollbar {
+        width: 15px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $clr12;
+    }
 }
 
 .TabsList {
     flex-shrink: 0;
     display: flex;
-    //   border-bottom: 1px solid var(--mauve6);
 }
 
 .TabsTrigger {
