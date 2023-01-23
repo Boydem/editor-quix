@@ -86,19 +86,20 @@ export async function redoChange() {
 
         let wap = store.getState().wapModule.wap
         let redoCmp = wapRedos.at(-1)
+        let undoCmp
         if (redoCmp.owner) {
             console.log('WAP OWNER')
             wap = structuredClone(redoCmp)
         } else {
             await wapService.findParentCmp(redoCmp, wap, (_, index, parentOfParentCmp) => {
-                redoCmp = structuredClone(parentOfParentCmp.cmps[index])
+                undoCmp = structuredClone(parentOfParentCmp.cmps[index])
                 wapService.saveCmp(redoCmp, index, parentOfParentCmp)
             })
         }
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
-        store.dispatch({ type: POP_WAP_UNDO })
-        store.dispatch({ type: POP_WAP_REDO, redoCmp })
+        store.dispatch({ type: ADD_WAP_UNDO, newUndoParentCmp: undoCmp })
+        store.dispatch({ type: POP_WAP_REDO })
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err
