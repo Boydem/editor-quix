@@ -3,10 +3,15 @@ import { removeCmp, saveCmp, setClickedCmp } from '../../../../store/wap/wap.act
 import { FiTrash } from 'react-icons/fi'
 import { BsLink45Deg } from 'react-icons/bs'
 import { makeId } from '../../../../services/util.service'
+import React from 'react'
+import * as Select from '@radix-ui/react-select'
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
+import classNames from 'classnames'
 
 export function EditSocial({ clickedCmp }) {
     const linksArr = clickedCmp.cmps
     const [linksValues, setLinksValues] = useState(Array.from(new Array(linksArr?.length), (val, index) => ''))
+    const [selected, setSelected] = useState('')
 
     function handleChange(ev, idx) {
         const value = ev.target.value
@@ -32,12 +37,27 @@ export function EditSocial({ clickedCmp }) {
             name: '',
             content: {
                 href: '',
-                iconImg: 'fa-brands fa-square-whatsapp',
+                iconImg: selected,
             },
             cmps: [],
         })
         saveCmp(clickedCmp)
     }
+
+    function onSelectSection(selected) {
+        setSelected(selected)
+    }
+
+    const SelectItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => {
+        return (
+            <Select.Item className={classNames('SelectItem', className)} {...props} ref={forwardedRef}>
+                <Select.ItemText>{children}</Select.ItemText>
+                <Select.ItemIndicator className='SelectItemIndicator'>
+                    <CheckIcon />
+                </Select.ItemIndicator>
+            </Select.Item>
+        )
+    })
 
     if (clickedCmp.type !== 'social') return
 
@@ -69,7 +89,35 @@ export function EditSocial({ clickedCmp }) {
                             </div>
                         )
                     })}
-                    <button onClick={addLink}>Add</button>
+                    <div className='selection'>
+                        <Select.Root onValueChange={onSelectSection}>
+                            <Select.Trigger className='SelectTrigger' aria-label='href'>
+                                <Select.Value placeholder={'Select Social Link'} />
+                            </Select.Trigger>
+                            <Select.Portal>
+                                <Select.Content position='popper' className='SelectContent'>
+                                    <Select.ScrollUpButton className='SelectScrollButton'>
+                                        <ChevronUpIcon />
+                                    </Select.ScrollUpButton>
+                                    <Select.Viewport className='SelectViewport'>
+                                        <Select.Group>
+                                            <SelectItem value={'fa-brands fa-facebook'}>Facebook</SelectItem>
+                                            <SelectItem value={'fa-brands fa-square-github'}>Github</SelectItem>
+                                            <SelectItem value={'fa-brands fa-linkedin'}>Linkedin</SelectItem>
+                                            <SelectItem value={'fa-brands fa-square-instagram'}>Instagram</SelectItem>
+                                            <SelectItem value={'fa-brands fa-square-twitter'}>Twitter</SelectItem>
+                                            <SelectItem value={'fa-brands fa-square-pinterest'}>Pinterest</SelectItem>
+                                            <SelectItem value={'fa-brands fa-square-reddit'}>Reddit</SelectItem>
+                                        </Select.Group>
+                                    </Select.Viewport>
+                                    <Select.ScrollDownButton className='SelectScrollButton'>
+                                        <ChevronDownIcon />
+                                    </Select.ScrollDownButton>
+                                </Select.Content>
+                            </Select.Portal>
+                        </Select.Root>
+                        <button onClick={addLink}>Add</button>
+                    </div>
                 </div>
             </div>
         </div>

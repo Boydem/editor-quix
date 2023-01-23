@@ -422,6 +422,19 @@
         }
     }
     .edit-social {
+        .selection {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                background: #e4e8f1;
+                padding: 0.2rem 0.4rem;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
         .input-option {
             margin-bottom: 0.75em;
             // display: flex;
