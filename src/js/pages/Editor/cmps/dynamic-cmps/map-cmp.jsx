@@ -4,7 +4,7 @@ import { FaMapMarker } from 'react-icons/fa'
 
 const AnyReactComponent = ({ text }) => <div className='map-marker'>📍</div>
 
-export default function MapCmp({ cmp, onSelectCmp, onHoverCmp }) {
+export function MapCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const defaultProps = {
         center: {
             lat: cmp.content.lat,

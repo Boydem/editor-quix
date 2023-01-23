@@ -48,6 +48,9 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
         case 'form':
             cmpTitle = 'Form'
             break
+        case 'social':
+            cmpTitle = 'Social'
+            break
         case 'video':
             cmpTitle = 'Video'
             break

@@ -15,7 +15,6 @@ export function CmpFractions({ activeMenuItem }) {
                         ref={provided.innerRef}
                         className='drag-and-drop-portal'
                     >
-                        {console.log(provided, snapshot, rubric)}
                         <img src={assets[rubric.source.index].thumbnail} alt='' />
                     </div>
                 )}
