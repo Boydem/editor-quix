@@ -8,7 +8,7 @@ import { utilService } from '../../../services/util.service'
 
 export function Forms({ user }) {
     const wap = utilService.loadFromStorage('wapDB').at(-1)
-    console.log(wap.leads[0].data)
+    console.log(wap.leads[0])
     return (
         <div className='forms layout-wrapper'>
             <div className='header'>
@@ -34,7 +34,7 @@ export function Forms({ user }) {
                                 <ul className='table-row container' key={idx}>
                                     <li className='lead'>{sub.email}</li>
                                     <li className='actions'>
-                                        <span className='time-ago'>{sub.subscribedAt}</span>{' '}
+                                        <span className='time-ago'>{utilService.formatTimeAgo(sub.date)}</span>{' '}
                                         <button className='btn-send-msg'>Message</button>
                                     </li>
                                 </ul>
@@ -60,17 +60,20 @@ export function Forms({ user }) {
                             })}
                         </ul>
 
-                        <ul className='table-row container'>
-                            {wap.leads.map(lead => {
-                                return Object.keys(lead.data).map((key, keyIndex) => {
-                                    return (
-                                        <li className='col' key={key}>
-                                            {lead.data[key]}
-                                        </li>
-                                    )
-                                })
-                            })}
-                        </ul>
+                        {wap.leads.map(lead => {
+                            return (
+                                <ul className='table-row container'>
+                                    {Object.keys(lead.data).map((key, keyIndex) => {
+                                        return (
+                                            <li className='col' key={key}>
+                                                {key === 'date' && utilService.formatTimeAgo(lead.data[key])}
+                                                {key !== 'date' && lead.data[key]}
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            )
+                        })}
                     </div>
                 </div>
             </div>

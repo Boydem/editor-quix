@@ -10,7 +10,7 @@ export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
     function onSubmit(ev) {
         ev.preventDefault()
         if (!wap.subscribers) wap.subscribers = []
-        wap.subscribers.push({ email: subscriber, createdAt: new Date().getTime() })
+        wap.subscribers.push({ email: subscriber, date: new Date().getTime() })
         console.log(`A new subscriber: ${subscriber}`)
         saveWap(wap)
     }

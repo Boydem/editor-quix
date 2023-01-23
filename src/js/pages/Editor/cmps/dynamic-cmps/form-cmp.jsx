@@ -29,7 +29,8 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
             leadData = { ...leadData, [key]: inputsValues[key] }
             console.log(`The value for ${key} is: ${inputsValues[key]}`)
         }
-        let lead = { id: makeId(), createdAt: new Date().getTime(), data: leadData }
+        leadData = { ...leadData, date: new Date().getTime() }
+        let lead = { id: makeId(), data: leadData }
         // lead = { ...lead, id: makeId(), createdAt: new Date().getTime() }
         wap.leads.push(lead)
         console.log(lead)
