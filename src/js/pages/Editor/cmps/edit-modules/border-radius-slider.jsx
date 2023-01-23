@@ -19,24 +19,24 @@ export function BorderRadiusSlider({ elClickedNode, handleBorderSliderChange, ha
 
     return (
         <form className='slider-form adjust-inputs'>
+            <label htmlFor=''>Border Radius</label>
             <div className='wrapper '>
-                <label htmlFor=''>Border Radius</label>
-                <span>{clickedCmpBorderRadius}</span>
+                <Slider.Root
+                    value={clickedCmpBorderRadius}
+                    className='SliderRoot slider-input'
+                    max={50}
+                    step={1}
+                    aria-label='Volume'
+                    onValueChange={handleBorderRadiusChange}
+                    onValueCommit={handleBorderSliderCommit}
+                >
+                    <Slider.Track className='SliderTrack'>
+                        <Slider.Range className='SliderRange' />
+                    </Slider.Track>
+                    <Slider.Thumb className='SliderThumb' />
+                </Slider.Root>
+                <span>{clickedCmpBorderRadius}px</span>
             </div>
-            <Slider.Root
-                value={clickedCmpBorderRadius}
-                className='SliderRoot slider-input'
-                max={50}
-                step={1}
-                aria-label='Volume'
-                onValueChange={handleBorderRadiusChange}
-                onValueCommit={handleBorderSliderCommit}
-            >
-                <Slider.Track className='SliderTrack'>
-                    <Slider.Range className='SliderRange' />
-                </Slider.Track>
-                <Slider.Thumb className='SliderThumb' />
-            </Slider.Root>
         </form>
     )
 }
