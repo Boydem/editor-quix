@@ -58,6 +58,61 @@
             letter-spacing: -0.02rem;
         }
     }
+    .user-area {
+        margin: 0 1em;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        place-items: center start;
+        .avatar {
+            cursor: default;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 55px;
+            overflow: hidden;
+            color: white;
+            text-transform: uppercase;
+            background-color: $clr19;
+            box-shadow: 0px 2px 10px -4px rgba($clr2, 10%), 0px 0px 10px rgba($clr9, 40%);
+        }
+        .user-info {
+            background-color: #eee;
+            padding: 4px 8px;
+            border-radius: 3px;
+            // gap: 3px;
+            // font-size: 14px;
+            line-height: 1.125;
+            cursor: default;
+            font-weight: 600;
+            display: grid;
+            place-items: center start;
+
+            margin-inline-start: 0.5em;
+            .user-fullname {
+            }
+            .user-links {
+                cursor: pointer;
+                & > * {
+                    font-size: px-to-rem(12.414px);
+                    transition: color 0.18s;
+                    color: $clr9;
+                    &:hover {
+                        color: $editor-active-clr;
+                    }
+                }
+                .btn-dashboard {
+                    color: $clr20;
+                }
+            }
+            .btn-logout {
+                margin-inline-start: 0.4em;
+            }
+        }
+    }
     .main-nav,
     .nav-actions {
         position: static;

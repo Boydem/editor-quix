@@ -246,9 +246,12 @@
     display: flex;
     font-size: px-to-rem(20px);
     border-left: $editor-lightgray 1px solid;
-    &:not(.responsive-btns) {
+    background: $clr1;
+    height: 100%;
+    & {
         border-right: $editor-lightgray 1px solid;
     }
+
     > * {
         margin: 0;
     }
@@ -289,7 +292,7 @@
         .table-header {
             border-bottom: 1px solid $editor-lightgray;
             > *:nth-child(2n) {
-                background-color: $editor-lightgray;
+                background-color: lighten($editor-lightgray, 5%);
             }
         }
         .table-row {
@@ -304,7 +307,6 @@
                 }
                 &:last-child {
                     width: 100%;
-                    text-align: end;
                 }
                 height: 100%;
                 display: flex;
@@ -332,5 +334,35 @@
             background-color: $clr1;
             box-shadow: inset 0px 0px 0px 1px lighten($editor-active-clr, 5%);
         }
+    }
+}
+.save-msg {
+    background-color: #eee;
+    padding: 2px 8px;
+    margin-inline-start: 1em;
+    border-radius: 3px;
+    position: relative;
+    opacity: 1;
+    transform: translateX(calc(-100% - 16px));
+    z-index: -1;
+    transition: 0.25s all ease-out;
+    color: $clr7;
+    .refresh-icon {
+        margin-inline-end: 0.5em;
+        color: $clr7;
+        animation: infinite spin 0.7s linear;
+        @keyframes spin {
+            from {
+                transform: rotateZ(180deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+    }
+    &.shown {
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        opacity: 1;
+        transform: translateX(0%);
     }
 }

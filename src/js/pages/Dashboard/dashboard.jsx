@@ -22,6 +22,7 @@ export function Dashboard() {
     const activeMenu = useRef('Dashboard')
     const [currView, setCurrView] = useState('dashboard')
     const user = useSelector(storeState => storeState.userModule.user)
+    const [userData, setUserData] = useState({})
     const navigate = useNavigate()
     const menuItems = ['Dashboard', 'Messages', 'Forms']
     const { userId } = useParams()
@@ -36,11 +37,13 @@ export function Dashboard() {
         activeMenu.current = view.toLowerCase()
         setCurrView(view.toLowerCase())
     }
-
+    console.log('userData:', userData)
     async function loadUser() {
         if (!userId) return
         try {
-            let user = await setUser(userId)
+            const user = await setUser(userId)
+            const userData = await wapService.query({ owner: user._id })
+            setUserData(userData)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)

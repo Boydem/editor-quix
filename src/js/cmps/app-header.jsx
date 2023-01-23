@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
+import { saveWap } from '../store/wap/wap.action'
+import { logout } from '../store/user/user.actions'
 import { FaBars } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
+import noamImg from '../../assets/imgs/dashboard-assets/noam-tn.jpg'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router'
-import { wapService } from '../services/wap.service'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
-import { saveWap } from '../store/wap/wap.action'
 export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
     const navigate = useNavigate()
-
+    const user = useSelector(storeState => storeState.userModule.user)
     useEffect(() => {
         if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
     }, [])
@@ -26,8 +27,22 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
     }
 
-    async function publishWap() {
+    async function onLogout() {
         try {
+            await logout()
+            showSuccessMsg('Logged out')
+        } catch (err) {
+            showErrorMsg('Logout failed')
+        }
+    }
+
+    async function publishWap() {
+        if (!user) {
+            showErrorMsg('You must login first')
+            return
+        }
+        try {
+            wap.owner = user._id
             wap.url = wapUrlToEdit.publishUrl
             await saveWap(wap)
             navigate(`/${wapUrlToEdit.publishUrl}`)
@@ -36,7 +51,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
             showErrorMsg(`Couldn't Publish, try again later.`)
         }
     }
-
+    function getShortenName() {
+        if (!user) return '?'
+        const names = user.fullname.split(' ')
+        return names[0][0] + names[1][0]
+    }
     function onEditDomain() {
         if (!wap.url) return
         wap.url = wapUrlToEdit.publishUrl
@@ -81,32 +100,28 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
                 {location === 'editor' && (
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                            <ul className='flex align-center'>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Site</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Add</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>View</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Tools</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        <span>Help</span>
-                                    </a>
-                                </li>
+                            <ul className='user-area'>
+                                <div className='avatar'>
+                                    {getShortenName()}
+                                    {/* <img src={user.imgUrl} alt='userAvatar' /> */}
+                                </div>
+                                <div className='user-info'>
+                                    {user && <div className='user-fullname'>{user.fullname}</div>}
+                                    <div className='user-links'>
+                                        {user ? (
+                                            <>
+                                                <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
+                                                    Dashboard
+                                                </Link>
+                                                <span className='btn-logout' onClick={onLogout}>
+                                                    Logout
+                                                </span>
+                                            </>
+                                        ) : (
+                                            <Link to={`/auth`}>Login</Link>
+                                        )}
+                                    </div>
+                                </div>
                             </ul>
                         </nav>
                         <div className='publish-link'>

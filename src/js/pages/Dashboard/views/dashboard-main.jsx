@@ -12,6 +12,7 @@ import { BsPencil } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 
 export function DashboardMain({ user }) {
+    console.log('user:', user)
     let SubsChartOptions = useRef({
         series: [
             {

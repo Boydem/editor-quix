@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
-export default function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
+export function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     let classes = cmp.name + ' '
     if (cmp.class) {
@@ -39,7 +39,7 @@ export default function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
             contentEditable={isEditing}
             spellCheck='false'
             suppressContentEditableWarning={true}
-            href={CustomTag === 'a' ? cmp.content.href : null}
+            href={CustomTag === 'a' ? cmp?.content?.href : null}
         >
             {cmpCopy.content?.txt}
         </CustomTag>

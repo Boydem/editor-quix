@@ -36,6 +36,7 @@
     overflow: hidden;
     .editor-preview {
         flex: 1;
+        height: calc(100vh - $app-header-height - $toolbar-height);
     }
     .right-sidebar {
         left: 0;

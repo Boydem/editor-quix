@@ -6,7 +6,7 @@ import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { FiLayers } from 'react-icons/fi'
-import { BiBell } from 'react-icons/bi'
+import { FiRefreshCw } from 'react-icons/fi'
 
 import { IoColorFilterOutline } from 'react-icons/io5'
 import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action'
@@ -105,8 +105,9 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                             <AiOutlineMobile />
                         </button>
                     </div>
-                    <div className='responsive-btns interactives curr-width'>
-                        {/* <input type='number' name='currMediaQuery' value={1920} /> */}
+                    <div className='save-msg flex align-center shown'>
+                        <FiRefreshCw className='refresh-icon' />
+                        Saving...
                     </div>
                 </div>
             </div>

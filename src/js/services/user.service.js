@@ -27,7 +27,7 @@ _createUsersForTesting()
 function _createUsersForTesting() {
     if (!utilService.loadFromStorage(STORAGE_KEY_USER_DB)) {
         utilService.saveToStorage(STORAGE_KEY_USER_DB, [
-            { fullname: 'King Kong', username: '1', password: '1', id: '123' },
+            { fullname: 'King Kong', username: '1', password: '1', _id: '1' },
         ])
     }
 }

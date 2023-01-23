@@ -54,7 +54,7 @@
         border-radius: $spacing-xxs;
         width: 30px;
         height: 30px;
-        z-index: -1;
+
         transform: scale(0.15);
         transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     }
@@ -84,5 +84,8 @@
             transform: scale(1);
             background-color: $editor-active-bg;
         }
+    }
+    > svg {
+        z-index: 2;
     }
 }
