@@ -106,7 +106,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         </button>
                     </div>
                     <div className='save-msg flex align-center shown'>
-                        <span class='loader'></span>
+                        <FiRefreshCw className='refresh-icon' />
                         Saving...
                     </div>
                 </div>
