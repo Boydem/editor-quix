@@ -78,7 +78,7 @@ export function LoginSignup({ onLogin, onSignup }) {
 
     return (
         <>
-            <AppHeader location={''} theme={'dark'} layout={'main-layout'} />
+            <AppHeader location={'auth'} theme={'dark'} layout={'main-layout'} />
             <div className='login-signup full main-layout'>
                 <div className='wrapper'>
                     {isSignup ? (

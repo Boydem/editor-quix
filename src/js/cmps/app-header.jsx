@@ -46,7 +46,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <header className={`${theme} app-header full ${layout}`}>
+        <header className={`${theme} app-header full ${layout} ${location === 'auth' ? 'auth' : ''}`}>
             <div className='layout-wrapper'>
                 <div className='logo-container'>
                     <Link to='/' className='logo'>
