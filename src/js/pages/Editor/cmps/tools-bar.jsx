@@ -9,7 +9,7 @@ import { FiLayers } from 'react-icons/fi'
 import { BiBell } from 'react-icons/bi'
 
 import { IoColorFilterOutline } from 'react-icons/io5'
-import { removeCmp } from '../../../store/wap/wap.action'
+import { removeCmp, undoChange } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { InteractiveChat } from './ui-cmps/interactive-chat'
@@ -40,6 +40,10 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
         if (clickedCmp) {
             removeCmp(clickedCmp)
         }
+    }
+
+    function onUndo() {
+        undoChange()
     }
 
     return (
@@ -106,7 +110,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
             <div className='tools tools-views'>
                 <div className='responsive-btns flex align-center interactives'>
                     <div className='btns-undo-redo flex align-center'>
-                        <button className='tool' data-tooltip='Undo' data-tooltip-dir='bottom'>
+                        <button className='tool' data-tooltip='Undo' data-tooltip-dir='bottom' onClick={onUndo}>
                             <GrUndo />
                         </button>
                         <button className='tool' data-tooltip='Redo' data-tooltip-dir='bottom'>
