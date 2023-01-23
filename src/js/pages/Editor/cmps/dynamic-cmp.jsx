@@ -6,13 +6,20 @@ import DynamicElement from './dynamic-cmps/dynamic-element'
 import { FormCmp } from './dynamic-cmps/form-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import MapCmp from './dynamic-cmps/map-cmp'
+import { SubscribeCmp } from './dynamic-cmps/subscribe-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
 
 export default function DynamicCmp(props) {
+    const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
 
+    function onSelectCmpMiddleware(e, cmp) {
+        if (!isEditing) return
+
+        props.onSelectCmp(e, cmp)
+    }
     const basicProps = {
         cmp: props.cmp,
-        onSelectCmp: props.onSelectCmp,
+        onSelectCmp: onSelectCmpMiddleware,
         onHoverCmp: props.onHoverCmp,
         selectedActionsRef: props.selectedActionsRef,
         setElHoveredNode: props.setElHoveredNode,
@@ -20,6 +27,8 @@ export default function DynamicCmp(props) {
     switch (props.cmp.type) {
         case 'form':
             return <FormCmp {...basicProps} />
+        case 'subscribe':
+            return <SubscribeCmp {...basicProps} />
         case 'chat':
             return <ChatCmp {...basicProps} />
         case 'div':
