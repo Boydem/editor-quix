@@ -55,25 +55,19 @@ export async function undoChange() {
         const wapUndos = store.getState().wapModule.wapUndos
         if (!wapUndos || !wapUndos.length) return
 
-        let newUndoParentCmp
         let wap = store.getState().wapModule.wap
         const oldUndoParentCmp = wapUndos.at(-1)
         if (oldUndoParentCmp.owner) {
             wap = structuredClone(oldUndoParentCmp)
         } else {
-            await wapService.findParentCmp(
-                oldUndoParentCmp,
-                wap,
-                (newUndoParentCmp, index, parentOfOldUndoParentCmp) => {
-                    parentOfOldUndoParentCmp[index] = newUndoParentCmp
-                    wapService.saveCmp(newUndoParentCmp, index, parentOfOldUndoParentCmp)
-                }
-            )
+            await wapService.findParentCmp(oldUndoParentCmp, wap, (newUndoParentCmp, index, parentOfParentCmp) => {
+                wapService.saveCmp(newUndoParentCmp, index, parentOfParentCmp)
+            })
         }
 
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
-        store.dispatch({ type: POP_WAP_UNDO, newUndoParentCmp })
+        store.dispatch({ type: POP_WAP_UNDO })
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err

@@ -7,10 +7,12 @@ export const SET_IS_EDITING = 'SET_IS_EDITING'
 export const SET_WAP = 'SET_WAP'
 export const ADD_WAP_UNDO = 'ADD_WAP_UNDO'
 export const POP_WAP_UNDO = 'POP_WAP_UNDO'
+export const ADD_WAP_REDO = 'ADD_WAP_REDO'
 
 const initialState = {
     wap: {},
     wapUndos: [],
+    wapRedos: [],
     isEditing: false,
     clickedCmp: null,
     elClickedNode: null,
@@ -18,6 +20,7 @@ const initialState = {
 
 export function wapReducer(state = initialState, action = {}) {
     let wapUndos = []
+    let wapRedos = []
     switch (action.type) {
         case 'SET_WAP':
             return { ...state, wap: { ...action.wap } }
@@ -28,18 +31,20 @@ export function wapReducer(state = initialState, action = {}) {
         case 'SET_IS_EDITING':
             return { ...state, isEditing: action.mode }
         case 'ADD_WAP_UNDO':
-            console.log('ADDING')
             wapUndos = state.wapUndos
             wapUndos.push(action.newUndoParentCmp)
             console.log('wapUndos:', wapUndos)
             return { ...state, wapUndos }
         case 'POP_WAP_UNDO':
-            console.log('POPPING')
             wapUndos = state.wapUndos
             wapUndos.pop()
-            console.log('wapUndos:', wapUndos)
             return { ...state, wapUndos }
-
+        case 'ADD_WAP_REDO':
+            console.log('REDOING')
+            wapRedos = state.wapRedos
+            wapRedos.push(action.newUndoParentCmp)
+            console.log('wapRedos:', wapRedos)
+            return { ...state, wapRedos }
         default:
             return { ...state }
     }
