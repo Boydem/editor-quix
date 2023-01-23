@@ -492,6 +492,18 @@
     }
 }
 
+.social-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    a {
+        text-decoration: none;
+    }
+}
+
 // Obviously in a real app I would load this from a DB with JS
 // For now this is a nice quick and easy method to mockup
 

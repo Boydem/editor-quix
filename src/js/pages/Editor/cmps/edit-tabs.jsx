@@ -25,6 +25,8 @@ import TextShadowSelect from './edit-modules/text-shadow-select'
 import { FontSizeSlider } from './edit-modules/font-size-slider'
 import { BorderRadiusSlider } from './edit-modules/border-radius-slider'
 import { LineHeightSlider } from './edit-modules/line-height-slider'
+import { EditSubscribe } from './edit-modules/edit-subscribe'
+import { EditSocial } from './edit-modules/edit-social'
 
 export function EditTabs({ context }) {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
@@ -172,8 +174,10 @@ export function EditTabs({ context }) {
             <Tabs.Root className='TabsRoot' defaultValue='tab1'>
                 <div className='expanded-content TabsContent tabs-inner-content'>
                     {context === 'div' && <EditDiv clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
+                    {context === 'social' && <EditSocial clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
                     {context === 'img' && <EditImg clickedCmp={clickedCmp} />}
                     {context === 'form' && <EditForm clickedCmp={clickedCmp} />}
+                    {context === 'subscribe' && <EditSubscribe clickedCmp={clickedCmp} />}
                     {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
                     {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
                     {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
