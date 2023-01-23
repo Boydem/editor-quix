@@ -1,11 +1,12 @@
 {
-    "id": "mSIW3A",
+    "id": "tXEFIG",
     "type": "div",
-    "name": "wap-5-footer",
+    "name": "footer",
+    "category": "footer",
     "cmpId": "Footer",
     "cmps": [
         {
-            "id": "LDiMXQ",
+            "id": "Ht5D9i",
             "type": "span",
             "name": "",
             "content": {
