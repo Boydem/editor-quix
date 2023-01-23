@@ -6,7 +6,7 @@ import { getDemoCmps2 } from '../wap-templates/wap-2/wap-2'
 import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
-import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5-template'
+import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5'
 import { getDemoCmps7 } from '../wap-templates/wap-7/wap-7'
 
 import { storageService } from './async-storage.service'
@@ -254,9 +254,9 @@ function _createWaps() {
                 cmps: getDemoCmps5(),
                 themeClass: 'wap5-primary',
                 breakpoints: {
-                    mobileLayout: 550,
-                    tabletLayout: 1130,
-                    desktopLayout: 1500,
+                    mobileLayout: 680,
+                    tabletLayout: 880,
+                    desktopLayout: 1300,
                 },
                 msgs: [
                     { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
@@ -269,8 +269,8 @@ function _createWaps() {
                     },
                 ],
 
-                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674308505/wap5-thumbnail_ockqmi.jpg',
-                title: 'Restaurante X',
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
+                title: 'Food, Burgers',
             },
             {
                 _id: utilService.makeId(),
@@ -279,9 +279,9 @@ function _createWaps() {
                 cmps: getDemoCmps7(),
                 themeClass: 'wap7-primary',
                 breakpoints: {
-                    mobileLayout: 680,
-                    tabletLayout: 880,
-                    desktopLayout: 1300,
+                    mobileLayout: 700,
+                    tabletLayout: 1230,
+                    desktopLayout: 1400,
                 },
                 msgs: [
                     { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
@@ -298,7 +298,6 @@ function _createWaps() {
                 title: 'Music Podcast',
             },
         ]
-
         localStorage.setItem(STORAGE_KEY, JSON.stringify(waps))
     }
 }

@@ -82,6 +82,10 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 //     $layoutPadding: $base-font-size * 5.063;
 // }
 
+:root {
+    --container-width: 1300px;
+}
+
 #root.wap1-primary {
     --clr1: #ffbf23;
     --clr2: #ffd7ef;
@@ -90,10 +94,8 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 }
 
 #root.wap2-primary {
-    --clr1: #a3eee9;
-    --clr2: #0b1321;
-    --clr3: #8b95a6;
-    --clr4: #eef;
+    --clr1: #0b1321;
+    --clr2: #eef;
 }
 
 #root.wap3-primary {
@@ -111,9 +113,7 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 
 #root.wap5-primary {
     --clr1: #ff7629;
-    --clr2: #f7f7f7;
-    --clr3: #8c8c8c;
-    --clr4: #030303;
+    --clr2: #fe863047;
 }
 
 #root.wap7-primary {
@@ -124,8 +124,13 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
 }
 
 #root.theme-1 {
-    --clr1: #263140;
-    --clr2: #4c80fb;
+    // --clr1: #263140;
+    // --clr2: #4c80fb;
+    // --clr3: #101010;
+    // --clr4: #f4f4f6;
+
+    --clr2: #556a87;
+    --clr1: #4c80fb;
     --clr3: #101010;
     --clr4: #f4f4f6;
 }
