@@ -17,7 +17,7 @@ export function Editor() {
 
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    console.log('clickedCmp:', clickedCmp)
+    // console.log('clickedCmp:', clickedCmp)
     // const [layout, setLayout] = useState({
     //     layoutClass: 'desktopLayout',
     //     width: wap.breakpoints?.desktopLayout || null,

@@ -10,6 +10,7 @@ export default function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
     const CustomTag = `${cmp.type}`
 
     let eventClick
+    const cmpCopy = structuredClone(cmp)
 
     function onSelectCmpMiddleware(ev, cmp) {
         eventClick = ev
@@ -19,11 +20,14 @@ export default function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
         onSelectCmp(ev, cmp)
     }
 
-    function saveText() {
+    async function saveText() {
         document.removeEventListener('mousedown', saveText)
+        if (cmp.content.txt === eventClick.target.innerText) return
+        cmpCopy.content.txt = eventClick.target.innerText
+        await saveCmp(cmpCopy)
         cmp.content.txt = eventClick.target.innerText
-        saveCmp(cmp)
     }
+
     if (cmp.type === 'input') return
     return (
         <CustomTag
@@ -37,7 +41,7 @@ export default function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
             suppressContentEditableWarning={true}
             href={CustomTag === 'a' ? cmp.content.href : null}
         >
-            {cmp.content?.txt}
+            {cmpCopy.content?.txt}
         </CustomTag>
     )
 }
