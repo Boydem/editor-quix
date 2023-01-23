@@ -37,12 +37,12 @@ export function Dashboard() {
         activeMenu.current = view.toLowerCase()
         setCurrView(view.toLowerCase())
     }
-    console.log('userData:', userData)
     async function loadUser() {
         if (!userId) return
         try {
             const user = await setUser(userId)
             const userData = await wapService.query({ owner: user._id })
+            console.log('userData:', userData)
             setUserData(userData)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
@@ -76,7 +76,7 @@ export function Dashboard() {
                     </nav>
                 </aside>
                 <main className='dashboard-main'>
-                    {currView === 'dashboard' && <DashboardMain user={user} />}
+                    {currView === 'dashboard' && <DashboardMain user={user} userData={userData} />}
                     {currView === 'forms' && <Forms user={user} />}
                     {currView === 'messages' && <Messages user={user} />}
                 </main>

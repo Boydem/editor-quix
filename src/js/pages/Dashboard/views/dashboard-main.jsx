@@ -8,11 +8,10 @@ import { LineChart } from '.././cmps/line-chart'
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import { BsTrash } from 'react-icons/bs'
-import { BsPencil } from 'react-icons/bs'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 
-export function DashboardMain({ user }) {
-    console.log('user:', user)
+export function DashboardMain({ user, userData }) {
     let SubsChartOptions = useRef({
         series: [
             {
@@ -97,6 +96,7 @@ export function DashboardMain({ user }) {
             },
         },
     })
+    if (!userData.sites) return <div>Loading....</div>
     return (
         <div className='layout-wrapper'>
             <div className='header'>
@@ -122,8 +122,8 @@ export function DashboardMain({ user }) {
                         <p>Advance to new levels as you earn points for creating Premium sites</p>
                     </div>
                     <div className='last-messages info-box info-box-rows'>
-                        {'1,2,3'.split(',').map((userSite, idx) => (
-                            <article key={userSite} className='wap-preview'>
+                        {userData?.sites.map((site, idx) => (
+                            <article key={idx} className='wap-preview'>
                                 <div className='item'>
                                     <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
                                     <span className='user-name'>
@@ -188,18 +188,21 @@ export function DashboardMain({ user }) {
                     <div className='wap-preview header'>
                         <h3>My sites</h3>
                     </div>
-                    {'1,2,3'.split(',').map(userSite => (
-                        <article key={userSite} className='wap-preview'>
+                    {userData?.sites.map(site => (
+                        <article key={site} className='wap-preview'>
                             <div className='item'>
                                 <img src={explorerSVG} alt='explorerSVG' />
-                                <span>{'My Site ' + userSite}</span>
+                                <span>{site.title}</span>
                                 <div className='actions flex'>
-                                    <button data-tooltip='Edit' className='tool'>
+                                    <button className='tool'>
+                                        <BsThreeDotsVertical />
+                                    </button>
+                                    {/* <button data-tooltip='Edit' className='tool'>
                                         <BsPencil />
                                     </button>
                                     <button data-tooltip='Trash' className='tool'>
                                         <BsTrash />
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </article>
