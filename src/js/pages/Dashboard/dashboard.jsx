@@ -22,6 +22,7 @@ export function Dashboard() {
     const activeMenu = useRef('Dashboard')
     const [currView, setCurrView] = useState('dashboard')
     const user = useSelector(storeState => storeState.userModule.user)
+    const [userData, setUserData] = useState({})
     const navigate = useNavigate()
     const menuItems = ['Dashboard', 'Messages', 'Forms']
     const { userId } = useParams()
@@ -40,7 +41,7 @@ export function Dashboard() {
     async function loadUser() {
         if (!userId) return
         try {
-            let user = await setUser(userId)
+            const user = await setUser(userId)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)

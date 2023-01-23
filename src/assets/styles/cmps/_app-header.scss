@@ -94,14 +94,22 @@
             margin-inline-start: 0.5em;
             .user-fullname {
             }
-            .dashboard-link {
-                color: $clr9;
+            .user-links {
                 cursor: pointer;
-                font-size: px-to-rem(12.414px);
-                transition: color 0.18s;
-                &:hover {
-                    color: $editor-active-clr;
+                & > * {
+                    font-size: px-to-rem(12.414px);
+                    transition: color 0.18s;
+                    color: $clr9;
+                    &:hover {
+                        color: $editor-active-clr;
+                    }
                 }
+                .btn-dashboard {
+                    color: $clr20;
+                }
+            }
+            .btn-logout {
+                margin-inline-start: 0.4em;
             }
         }
     }

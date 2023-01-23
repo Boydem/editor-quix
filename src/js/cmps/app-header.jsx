@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import noamImg from '../../assets/imgs/dashboard-assets/noam-tn.jpg'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router'
-import { wapService } from '../services/wap.service'
+import { logout } from '../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
@@ -16,7 +16,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
     const navigate = useNavigate()
-
+    const user = useSelector(storeState => storeState.userModule.user)
     useEffect(() => {
         if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
     }, [])
@@ -26,9 +26,18 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         const field = ev.target.name
         setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
     }
+    async function onLogout() {
+        try {
+            await logout()
+            showSuccessMsg('Logged out')
+        } catch (err) {
+            showErrorMsg('Logout failed')
+        }
+    }
 
     async function publishWap() {
         try {
+            wap.owner = user._id
             wap.url = wapUrlToEdit.publishUrl
             await saveWap(wap)
             navigate(`/${wapUrlToEdit.publishUrl}`)
@@ -37,7 +46,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
             showErrorMsg(`Couldn't Publish, try again later.`)
         }
     }
-
+    function getShortenName() {
+        if (!user) return '?'
+        const names = user.fullname.split(' ')
+        return names[0][0] + names[1][0]
+    }
     function onEditDomain() {
         if (!wap.url) return
         wap.url = wapUrlToEdit.publishUrl
@@ -84,12 +97,25 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='user-area'>
                                 <div className='avatar'>
-                                    ND
-                                    {/* <img src={noamImg} alt="userAvatar" /> */}
+                                    {getShortenName()}
+                                    {/* <img src={user.imgUrl} alt='userAvatar' /> */}
                                 </div>
                                 <div className='user-info'>
-                                    <div className='user-fullname'>Noam dahan</div>
-                                    <div className='dashboard-link'>Dashboard</div>
+                                    {user && <div className='user-fullname'>{user.fullname}</div>}
+                                    <div className='user-links'>
+                                        {user ? (
+                                            <>
+                                                <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
+                                                    Dashboard
+                                                </Link>
+                                                <span className='btn-logout' onClick={onLogout}>
+                                                    Logout
+                                                </span>
+                                            </>
+                                        ) : (
+                                            <Link to={`/auth`}>Login</Link>
+                                        )}
+                                    </div>
                                 </div>
                             </ul>
                         </nav>
