@@ -3,6 +3,13 @@
     position: sticky;
     top: 0;
     z-index: 99;
+    &.auth {
+        .logo {
+            position: relative;
+            top: $spacing-s;
+            font-size: px-to-rem(38px);
+        }
+    }
     &.dark {
         background-color: $clr2;
         & *,
