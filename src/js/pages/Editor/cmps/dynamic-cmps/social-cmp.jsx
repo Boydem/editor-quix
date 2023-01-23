@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
