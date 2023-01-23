@@ -37,11 +37,13 @@ export function Dashboard() {
         activeMenu.current = view.toLowerCase()
         setCurrView(view.toLowerCase())
     }
-
+    console.log('userData:', userData)
     async function loadUser() {
         if (!userId) return
         try {
             const user = await setUser(userId)
+            const userData = await wapService.query({ owner: user._id })
+            setUserData(userData)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)

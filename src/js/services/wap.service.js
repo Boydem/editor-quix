@@ -32,6 +32,7 @@ const STORAGE_KEY = 'wapDB'
 const EDITED_WAP_STORAGE_KEY = 'editedWap'
 
 _createWaps()
+_createMap()
 function getCmpById(activeModule, cmpId) {
     return gCmpsMap[activeModule].find(cmp => cmp.id === cmpId)
 }
@@ -72,12 +73,16 @@ function getCmpsByCategory(category) {
     return gCmpsMap[category]
 }
 
-async function query(filterBy = { url: '' }) {
+async function query(filterBy = { owner: 'guest', url: '' }) {
     try {
         const waps = await storageService.query(STORAGE_KEY)
 
         let filteredWaps = waps
-        if (filterBy.url) {
+        if (filterBy.owner !== 'guest') {
+            filteredWaps = waps.filter(wap => wap.owner === filterBy.owner)
+            const userData = arrangeUserData(filteredWaps)
+            return userData
+        } else if (filterBy.url) {
             filteredWaps = waps.filter(wap => wap.url === filterBy.url)
         }
         return filteredWaps
@@ -86,7 +91,25 @@ async function query(filterBy = { url: '' }) {
     }
 }
 
-_createMap()
+function arrangeUserData(userWaps) {
+    const userData = userWaps.reduce((acc, wap) => {
+        const wapData = {
+            leads: wap.leads,
+            subscribers: wap.subscribers,
+            msgs: wap.msgs,
+            title: wap.title,
+            thumbnail: wap.thumbnail,
+        }
+        if (!acc.sites) {
+            acc.sites = [wapData]
+        } else {
+            acc.sites.push(wapData)
+        }
+        return acc
+    }, {})
+    return userData
+}
+
 async function get(wapId) {
     return await storageService.get(STORAGE_KEY, wapId)
 }

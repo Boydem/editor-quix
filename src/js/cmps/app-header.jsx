@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
+import { saveWap } from '../store/wap/wap.action'
+import { logout } from '../store/user/user.actions'
 import { FaBars } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import noamImg from '../../assets/imgs/dashboard-assets/noam-tn.jpg'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router'
-import { logout } from '../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
-import { saveWap } from '../store/wap/wap.action'
 export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
@@ -26,6 +26,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         const field = ev.target.name
         setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
     }
+
     async function onLogout() {
         try {
             await logout()
@@ -36,6 +37,10 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
     }
 
     async function publishWap() {
+        if (!user) {
+            showErrorMsg('You must login first')
+            return
+        }
         try {
             wap.owner = user._id
             wap.url = wapUrlToEdit.publishUrl
