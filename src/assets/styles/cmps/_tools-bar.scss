@@ -4,13 +4,13 @@
     background-color: $clr1;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto 1fr auto;
     margin: auto;
     border-bottom: 1px solid $editor-lightgray;
     padding-inline-start: $spacing-m - $spacing-s;
     position: sticky;
     top: $app-header-height + 1px;
-    z-index: 99999;
+    z-index: 99;
     align-items: center;
     > * {
         height: 100%;
