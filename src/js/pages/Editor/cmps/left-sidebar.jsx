@@ -22,7 +22,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         ],
     ]
 
-
     function handleSidebar(sidebarChanges) {
         handleSidebarsChanges('left', sidebarChanges)
     }
@@ -112,7 +111,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                         </span>
                     </div>
                 </div>
-                
+
                 {leftSidebarState.isOpen && (
                     <div className='module-options'>
                         {leftSidebarState.currModule === 'add' && (
@@ -125,6 +124,8 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                             <div>
                                 <button onClick={() => handleThemeChange('theme-1')}>Retro</button>
                                 <button onClick={() => handleThemeChange('theme-2')}>Calming</button>
+                                <button onClick={() => handleThemeChange('theme-3')}>Fuck</button>
+                                <button onClick={() => handleThemeChange('theme-4')}>This Shit</button>
                             </div>
                         )}
                     </div>

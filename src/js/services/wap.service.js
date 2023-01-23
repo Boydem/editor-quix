@@ -6,9 +6,11 @@ import { getDemoCmps2 } from '../wap-templates/wap-2/wap-2'
 import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
+import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5-template'
+import { getDemoCmps7 } from '../wap-templates/wap-7/wap-7'
+
 import { storageService } from './async-storage.service'
 import { makeId, utilService } from './util.service'
-import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5-template'
 
 export const wapService = {
     getCmpById,
@@ -246,6 +248,31 @@ function _createWaps() {
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674308505/wap5-thumbnail_ockqmi.jpg',
                 title: 'Restaurante X',
+            },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-7',
+                owner: 'admin',
+                cmps: getDemoCmps7(),
+                themeClass: 'wap7-primary',
+                breakpoints: {
+                    mobileLayout: 680,
+                    tabletLayout: 880,
+                    desktopLayout: 1300,
+                },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674479603/wap-7-thumbnail_f7fyrx.jpg',
+                title: 'Music Podcast',
             },
         ]
 
