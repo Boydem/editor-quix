@@ -1,12 +1,18 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { saveWap } from '../../../../store/wap/wap.action'
 import DynamicCmp from '../dynamic-cmp'
 
 export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
+    const wap = useSelector(storeState => storeState.wapModule.wap)
     const [subscriber, setSubscriber] = useState('')
 
     function onSubmit(ev) {
         ev.preventDefault()
+        if (!wap.subscribers) wap.subscribers = []
+        wap.subscribers.push({ email: subscriber, createdAt: new Date().getTime() })
         console.log(`A new subscriber: ${subscriber}`)
+        saveWap(wap)
     }
 
     function handleChange(ev) {

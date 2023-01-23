@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { makeId } from '../../../../services/util.service'
+import { saveWap } from '../../../../store/wap/wap.action'
 import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
 
 export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const wap = useSelector(storeState => storeState.wapModule.wap)
+
     const inputsMap = cmp.cmps.reduce((acc, c) => {
         if (c.type === 'label' && c.cmps[0]) {
             acc[c.cmps[0].inputName] = ''
@@ -18,8 +22,21 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
     function onSubmit(ev) {
         ev.preventDefault()
+        if (!wap.leads) wap.leads = []
+
+        let leadData
         for (const key of Object.keys(inputsValues)) {
+            leadData = { ...leadData, [key]: inputsValues[key] }
             console.log(`The value for ${key} is: ${inputsValues[key]}`)
+        }
+        let lead = { id: makeId(), createdAt: new Date().getTime(), data: leadData }
+        // lead = { ...lead, id: makeId(), createdAt: new Date().getTime() }
+        wap.leads.push(lead)
+        console.log(lead)
+        try {
+            saveWap(wap)
+        } catch (err) {
+            console.log(err)
         }
     }
 
