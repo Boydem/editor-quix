@@ -9,6 +9,7 @@ import {
     POP_WAP_UNDO,
     ADD_WAP_REDO,
     POP_WAP_REDO,
+    CLEAN_WAP_REDO,
 } from './wap.reducer'
 
 export async function setClickedCmp(cmp) {
@@ -47,6 +48,7 @@ export async function saveCmp(newCmp) {
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
         store.dispatch({ type: ADD_WAP_UNDO, newUndoParentCmp })
+        store.dispatch({ type: CLEAN_WAP_REDO })
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err

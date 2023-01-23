@@ -9,6 +9,7 @@ export const ADD_WAP_UNDO = 'ADD_WAP_UNDO'
 export const POP_WAP_UNDO = 'POP_WAP_UNDO'
 export const ADD_WAP_REDO = 'ADD_WAP_REDO'
 export const POP_WAP_REDO = 'POP_WAP_REDO'
+export const CLEAN_WAP_REDO = 'CLEAN_WAP_REDO'
 
 const initialState = {
     wap: {},
@@ -51,6 +52,8 @@ export function wapReducer(state = initialState, action = {}) {
             wapRedos = state.wapRedos
             wapRedos.pop()
             return { ...state, wapRedos }
+        case 'CLEAN_WAP_REDO':
+            return { ...state, wapRedos: [] }
         default:
             return { ...state }
     }
