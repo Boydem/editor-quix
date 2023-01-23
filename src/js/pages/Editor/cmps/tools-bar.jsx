@@ -9,7 +9,7 @@ import { FiLayers } from 'react-icons/fi'
 import { BiBell } from 'react-icons/bi'
 
 import { IoColorFilterOutline } from 'react-icons/io5'
-import { removeCmp, undoChange } from '../../../store/wap/wap.action'
+import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { InteractiveChat } from './ui-cmps/interactive-chat'
@@ -44,6 +44,10 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
 
     function onUndo() {
         undoChange()
+    }
+
+    function onRedo() {
+        redoChange()
     }
 
     return (
@@ -113,7 +117,7 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                         <button className='tool' data-tooltip='Undo' data-tooltip-dir='bottom' onClick={onUndo}>
                             <GrUndo />
                         </button>
-                        <button className='tool' data-tooltip='Redo' data-tooltip-dir='bottom'>
+                        <button className='tool' data-tooltip='Redo' data-tooltip-dir='bottom' onClick={onRedo}>
                             <GrRedo />
                         </button>
                     </div>

@@ -8,6 +8,7 @@ export const SET_WAP = 'SET_WAP'
 export const ADD_WAP_UNDO = 'ADD_WAP_UNDO'
 export const POP_WAP_UNDO = 'POP_WAP_UNDO'
 export const ADD_WAP_REDO = 'ADD_WAP_REDO'
+export const POP_WAP_REDO = 'POP_WAP_REDO'
 
 const initialState = {
     wap: {},
@@ -40,10 +41,15 @@ export function wapReducer(state = initialState, action = {}) {
             wapUndos.pop()
             return { ...state, wapUndos }
         case 'ADD_WAP_REDO':
+            console.log(action)
             console.log('REDOING')
             wapRedos = state.wapRedos
-            wapRedos.push(action.newUndoParentCmp)
+            wapRedos.push(action.redoCmp)
             console.log('wapRedos:', wapRedos)
+            return { ...state, wapRedos }
+        case 'POP_WAP_REDO':
+            wapRedos = state.wapRedos
+            wapRedos.pop()
             return { ...state, wapRedos }
         default:
             return { ...state }

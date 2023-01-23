@@ -7,6 +7,8 @@ import {
     SET_WAP,
     ADD_WAP_UNDO,
     POP_WAP_UNDO,
+    ADD_WAP_REDO,
+    POP_WAP_REDO,
 } from './wap.reducer'
 
 export async function setClickedCmp(cmp) {
@@ -57,17 +59,46 @@ export async function undoChange() {
 
         let wap = store.getState().wapModule.wap
         const oldUndoParentCmp = wapUndos.at(-1)
+        let redoCmp
         if (oldUndoParentCmp.owner) {
+            console.log('WAP OWNER')
             wap = structuredClone(oldUndoParentCmp)
         } else {
-            await wapService.findParentCmp(oldUndoParentCmp, wap, (newUndoParentCmp, index, parentOfParentCmp) => {
-                wapService.saveCmp(newUndoParentCmp, index, parentOfParentCmp)
+            await wapService.findParentCmp(oldUndoParentCmp, wap, (_, index, parentOfParentCmp) => {
+                redoCmp = structuredClone(parentOfParentCmp.cmps[index])
+                wapService.saveCmp(oldUndoParentCmp, index, parentOfParentCmp)
             })
         }
-
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
         store.dispatch({ type: POP_WAP_UNDO })
+        store.dispatch({ type: ADD_WAP_REDO, redoCmp })
+    } catch (err) {
+        console.log('Cannot save cmp in wap.action', err)
+        throw err
+    }
+}
+
+export async function redoChange() {
+    try {
+        const wapRedos = store.getState().wapModule.wapRedos
+        if (!wapRedos || !wapRedos.length) return
+
+        let wap = store.getState().wapModule.wap
+        let redoCmp = wapRedos.at(-1)
+        if (redoCmp.owner) {
+            console.log('WAP OWNER')
+            wap = structuredClone(redoCmp)
+        } else {
+            await wapService.findParentCmp(redoCmp, wap, (_, index, parentOfParentCmp) => {
+                redoCmp = structuredClone(parentOfParentCmp.cmps[index])
+                wapService.saveCmp(redoCmp, index, parentOfParentCmp)
+            })
+        }
+        await wapService.save(wap)
+        store.dispatch({ type: SET_WAP, wap })
+        store.dispatch({ type: POP_WAP_UNDO })
+        store.dispatch({ type: POP_WAP_REDO, redoCmp })
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err
