@@ -6,9 +6,18 @@ import Chart from 'react-apexcharts'
 import { useSelector } from 'react-redux'
 import { utilService } from '../../../services/util.service'
 import ComposeMail from '../cmps/compose-mail'
+import { useState } from 'react'
 
 export function Forms({ user }) {
+    const [isMailOpen, setIsMailOpen] = useState(false)
     const wap = utilService.loadFromStorage('wapDB').at(-1)
+    const [subscriber, setSubscriber] = useState(null)
+
+    function onMailToSubscriber(sub) {
+        setSubscriber(sub)
+        setIsMailOpen(true)
+    }
+    console.log('isMailOpen', isMailOpen)
     return (
         <div className='forms layout-wrapper'>
             <div className='header'>
@@ -35,7 +44,9 @@ export function Forms({ user }) {
                                     <li className='lead'>{sub.email}</li>
                                     <li className='actions'>
                                         <span className='time-ago'>{utilService.formatTimeAgo(sub.date)}</span>{' '}
-                                        <button className='btn-send-msg'>Message</button>
+                                        <button className='btn-send-msg' onClick={() => onMailToSubscriber(sub)}>
+                                            Message
+                                        </button>
                                     </li>
                                 </ul>
                             )
@@ -81,7 +92,8 @@ export function Forms({ user }) {
                     </div>
                 </div>
             </div>
-            <ComposeMail />
+            {isMailOpen && <ComposeMail subscriber={subscriber} setIsMailOpen={setIsMailOpen} />}
+            {/* <ComposeMail /> */}
         </div>
     )
 }
