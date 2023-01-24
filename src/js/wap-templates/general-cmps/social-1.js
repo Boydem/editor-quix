@@ -4,6 +4,7 @@ export const social1 = {
     name: 'social-1',
     category: 'social',
     cmpId: 'Cta-1',
+    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674575330/social-media1_c4z4x2.jpg',
     cmps: [
         {
             id: 'gfdsgsd',

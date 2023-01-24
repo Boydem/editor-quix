@@ -4,6 +4,7 @@
     "name": "gallery-2",
     "category": "card",
     "cmpId": "Menu-Cards",
+    "thumnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674573074/wap-5-gallery-2-edited_dsopma.jpg",
     "cmps": [
         {
             "id": "pG4dMJ",
