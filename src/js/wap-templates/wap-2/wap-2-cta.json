@@ -2,9 +2,9 @@
     "id": "SLjtqR",
     "type": "subscribe",
     "name": "wap-2-cta",
-    "category": "cta",
+    "category": "form",
     "cmpId": "Cta-1",
-    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-1_rkvur1.jpg",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-2_zuvdtv.jpg",
     "cmps": [
         {
             "id": "828h0t",

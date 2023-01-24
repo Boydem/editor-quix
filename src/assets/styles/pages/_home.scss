@@ -233,6 +233,56 @@
         box-shadow: 0px 30px 50px -30px rgba($clr2, 0.5);
         border-radius: $spacing-s;
         overflow: hidden;
+        max-height: 220px;
+        .outer {
+            background: #b4b4b4;
+            opacity: 0.9;
+            width: 100%;
+            border-radius: 7px 7px 0px 0px;
+            &.yosemite {
+                background: #f6f6f6;
+                background: -moz-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                background: -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    color-stop(0%, #f6f6f6),
+                    color-stop(100%, #dadada)
+                );
+                background: -webkit-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                background: -o-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                background: -ms-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                background: linear-gradient(to bottom, #f6f6f6 0%, #dadada 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
+                border: 1px solid #d8d8d8;
+                border-bottom: 1px solid #b4b4b4;
+            }
+        }
+
+        .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #f9f9f9;
+            border-radius: 50%;
+            margin: 0 4px 0 0;
+
+            &.red {
+                background: #ff6057;
+                border: 1px solid #e14640;
+                margin-left: 6px;
+            }
+
+            &.amber {
+                background: #ffbd2e;
+                border: 1px solid #dfa123;
+            }
+
+            &.green {
+                background: #27c93f;
+                border: 1px solid #1dad2b;
+            }
+        }
 
         .actions {
             position: absolute;
@@ -249,10 +299,21 @@
             transition: opacity 0.3s;
             max-width: 30%;
         }
+        .wap-img {
+            width: 420px;
+            position: relative;
+            transition: transform linear 3s;
+            aspect-ratio: 3/7;
+        }
 
-        &:hover .actions {
-            transition: opacity 0.4s 0.2s;
-            opacity: 1;
+        &:hover {
+            .wap-img {
+                transform: translateY(calc(-100% + 179px));
+            }
+            .actions {
+                transition: opacity 0.4s 0.2s;
+                opacity: 1;
+            }
         }
 
         &::after {
@@ -270,7 +331,7 @@
         }
 
         &:hover::after {
-            opacity: 1;
+            opacity: 0.4;
             pointer-events: all;
             backdrop-filter: blur(3px);
         }

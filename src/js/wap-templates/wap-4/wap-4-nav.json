@@ -4,6 +4,7 @@
     "name": "wap-4-nav",
     "category": "header",
     "cmpId": "Header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674524329/wap4-header_tlug8u.jpg",
     "cmps": [
         {
             "id": "9aEfPK",
