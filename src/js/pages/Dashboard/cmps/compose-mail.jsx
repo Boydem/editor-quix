@@ -44,7 +44,7 @@ export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
                 <input type='text' />
             </div>
             <div className='mail-container'>
-                <textarea id='' rows='10' value={msg} onChange={handleChange} name='message'></textarea>
+                <textarea id='' rows='14' value={msg} onChange={handleChange} name='message'></textarea>
             </div>
             <div className='actions'>
                 <div className='btns'></div>

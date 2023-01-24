@@ -34,7 +34,7 @@ export function SocialCmp({ cmp, onSelectCmp, onHoverCmp }) {
                             onMouseOver={onHoverCmp}
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                         >
-                            <i className={`${innerCmp?.content?.iconImg} fa-3x`}></i>
+                            <i className={`${innerCmp?.content?.iconImg} fa-3x`} style={innerCmp.style}></i>
                         </a>
                     )
                 } else {
