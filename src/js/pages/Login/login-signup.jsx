@@ -35,7 +35,7 @@ export function LoginSignup({ onLogin, onSignup }) {
             showErrorMsg('Cannot login. Please try again later.')
         } finally {
             clearState()
-            navigate('/')
+            navigate(-1)
         }
     }
 

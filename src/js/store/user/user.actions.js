@@ -1,4 +1,5 @@
 import { userService } from '../../services/user.service.js'
+import { wapService } from '../../services/wap.service.js'
 import { store } from '../store.js'
 import { SET_USER } from './user.reducer.js'
 
@@ -20,6 +21,7 @@ export async function setUser(userId) {
     try {
         store.dispatch({ type: 'LOADING_START' })
         const user = await userService.getById(userId)
+        user.userData = await wapService.query({ owner: user._id })
         store.dispatch({ type: SET_USER, user })
         return user
     } catch (err) {
@@ -46,6 +48,7 @@ export async function login(credentials) {
             type: 'SET_USER',
             user,
         })
+
         return user
     } catch (err) {
         console.log('Cannot login', err)
@@ -66,6 +69,19 @@ export async function signup(credentials) {
         throw err
     }
 }
+
+// export async function setUserData(user, userData) {
+//     try {
+//         await userService.logout()
+//         store.dispatch({
+//             type: 'SET_USER',
+//             user: { ...user, userData },
+//         })
+//     } catch (err) {
+//         console.log('Couldnt set data for user:', err)
+//         throw err
+//     }
+// }
 
 export async function logout() {
     try {

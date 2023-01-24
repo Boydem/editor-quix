@@ -11,7 +11,7 @@ import { BsTrash } from 'react-icons/bs'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 
-export function DashboardMain({ user, userData }) {
+export function DashboardMain({ user }) {
     let SubsChartOptions = useRef({
         series: [
             {
@@ -96,7 +96,7 @@ export function DashboardMain({ user, userData }) {
             },
         },
     })
-    if (!userData.sites) return <div>Loading....</div>
+    if (!user?.userData?.sites) return <div>Loading....</div>
     return (
         <div className='layout-wrapper'>
             <div className='header'>
@@ -122,8 +122,8 @@ export function DashboardMain({ user, userData }) {
                         <p>Advance to new levels as you earn points for creating Premium sites</p>
                     </div>
                     <div className='last-messages info-box info-box-rows'>
-                        {userData?.sites.map((site, idx) => (
-                            <article key={idx} className='wap-preview'>
+                        {user?.userData?.sites.map((site, idx) => (
+                            <article key={site._id} className='wap-preview'>
                                 <div className='item'>
                                     <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
                                     <span className='user-name'>
@@ -188,8 +188,8 @@ export function DashboardMain({ user, userData }) {
                     <div className='wap-preview header'>
                         <h3>My sites</h3>
                     </div>
-                    {userData?.sites.map(site => (
-                        <article key={site} className='wap-preview'>
+                    {user?.userData?.sites.map(site => (
+                        <article key={site._id} className='wap-preview'>
                             <div className='item'>
                                 <img src={explorerSVG} alt='explorerSVG' />
                                 <span>{site.title}</span>
