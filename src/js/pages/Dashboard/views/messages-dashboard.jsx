@@ -44,10 +44,13 @@ export function MessagesDashboard({ user, currSite }) {
                     <div className='chat-layout'>
                         <div className='contact bar'>
                             <div className='pic guest'></div>
-                            <div className='name'>{currContact.contact}</div>
-                            <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
+                            <div className='wrapper'>
+                                <div className='name'>{currContact.contact}</div>
+                                <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
+                            </div>
                         </div>
                         <div className='messages' id='chat'>
+                            <div className='time'>Today at 11:41</div>
                             {currContact.msgs.map((msg, idx) => {
                                 return (
                                     <p className={`${msg.by} message`} key={idx}>
