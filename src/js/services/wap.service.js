@@ -252,16 +252,30 @@ function _createWaps() {
                     mobileLayout: 700,
                     tabletLayout: 1050,
                 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
@@ -279,16 +293,30 @@ function _createWaps() {
                     mobileLayout: 750,
                     tabletLayout: 1400,
                 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
                 title: 'Movie Blog',
@@ -306,16 +334,30 @@ function _createWaps() {
                     tabletLayout: 880,
                     desktopLayout: 1300,
                 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
                 title: 'Restaurant Webflow',
@@ -331,16 +373,30 @@ function _createWaps() {
                 breakpoints: {
                     tabletLayout: 800,
                 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-thumbnail_fcovpe.jpg',
                 title: 'Cafe & Bakery',
@@ -358,16 +414,30 @@ function _createWaps() {
                     tabletLayout: 1230,
                     desktopLayout: 1400,
                 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674479603/wap-7-thumbnail_f7fyrx.jpg',
                 title: 'Music Podcast',

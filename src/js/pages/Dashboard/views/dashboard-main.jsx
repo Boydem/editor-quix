@@ -1,10 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
-import { wapService } from '../../../services/wap.service'
-import { saveWap } from '../../../store/wap/wap.action'
-import { userService } from '../../../services/user.service'
-import { LineChart } from '.././cmps/line-chart'
+import { useEffect, useRef } from 'react'
 
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 
@@ -54,17 +48,15 @@ export function DashboardMain({ user, currSite }) {
         return acc
     }, [])
 
-    // const leadsTimestamps = curr
 
     // let [organizedLeadsTimestamps, setOrganizedLeadsTimestamps] = useState([0, 0, 0, 0, 0, 0, 0])
     let organizedLeadsTimestamps = [0, 0, 0, 0, 0, 0, 0]
-    // if (leadTimestamps) {
+
     organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
     organizedLeadsTimestamps.reverse()
-    // }
     // let [organizedSubscribersTimestamps, setOrganizedSubscribersTimestamps] = useState([0, 0, 0, 0, 0, 0, 0])
     let organizedSubscribersTimestamps = [0, 0, 0, 0, 0, 0, 0]
-    // if (subscribersTimestamps) {
+
     organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
     organizedSubscribersTimestamps.reverse()
     // }
