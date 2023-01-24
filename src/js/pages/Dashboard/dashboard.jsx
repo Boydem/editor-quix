@@ -39,6 +39,7 @@ export function Dashboard() {
     async function onSiteChange(siteId) {
         try {
             let currSite = user?.sites.find(site => site._id === siteId)
+
             await setCurrSite(currSite)
             showSuccessMsg(`Currently viewing site: ${currSite.title}`)
         } catch (err) {
@@ -65,7 +66,7 @@ export function Dashboard() {
         if (!userId) return
         try {
             const user = await setUser(userId)
-
+            console.log('🚀 ~ file: dashboard.jsx:69 ~ loadUser ~ user', user)
             if (!user.sites || !user.sites.length) navigate('/create')
             dispatch({ type: SET_CURR_SITE, currSite: user.sites[0] })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
