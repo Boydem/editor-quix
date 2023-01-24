@@ -103,6 +103,7 @@
         display: flex;
         flex-direction: row;
         // padding: $spacing-s 0;
+
         overflow-x: auto;
         flex: 1;
         &.themes {
@@ -295,11 +296,21 @@
                     padding: $spacing-s 0;
                     border-bottom: 1px solid $editor-lightgray;
                     flex-direction: column;
+                    flex: auto;
+                    &.themes {
+                    }
                     & li {
                         padding: $spacing-xs $spacing-m;
                         letter-spacing: 0.025rem;
                         border-radius: 0;
                         margin-inline-start: 0em;
+                        &.themes {
+                            top: unset;
+                            transform: translateY(0%);
+                            background-color: inherit;
+                            color: inherit;
+                            position: unset;
+                        }
                     }
                 }
             }
