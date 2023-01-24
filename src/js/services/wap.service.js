@@ -12,6 +12,10 @@ import { getDemoCmps7 } from '../wap-templates/wap-7/wap-7'
 import { storageService } from './async-storage.service'
 import { makeId, utilService } from './util.service'
 
+const SECOND = 1000
+const MINUTE = 60 * SECOND
+const HOUR = MINUTE * 60
+
 export const wapService = {
     getCmpById,
     query,
@@ -169,21 +173,26 @@ function _createWaps() {
                 breakpoints: { mobileLayout: 800, tabletLayout: 1350 },
                 msgs: {
                     guest1: [
-                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                        { by: 'owner', txt: "Kid, where'd you come from?" },
-                        { by: 'customer', txt: 'Field trip!' },
-                        { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
                         {
                             by: 'customer',
                             txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
                         },
                     ],
                     guest2: [
-                        { by: 'customer', txt: 'hahaha' },
-                        { by: 'owner', txt: 'Yes this is lit' },
-                        { by: 'customer', txt: 'help me please!' },
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
                         { by: 'owner', txt: 'NOOO!' },
-                        { by: 'customer', txt: 'I love Wix!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
                     ],
                 },
                 thumbnail:

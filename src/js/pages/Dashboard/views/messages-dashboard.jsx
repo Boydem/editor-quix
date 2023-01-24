@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BiSend } from 'react-icons/bi'
+import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
 
 export function MessagesDashboard({ user }) {
@@ -17,7 +18,7 @@ export function MessagesDashboard({ user }) {
     }
 
     function onSend() {
-        currContact.msgs.push({ by: 'owner', txt: `${msgTxt}` })
+        currContact.msgs.push({ by: 'owner', txt: `${msgTxt}`, date: new Date().getTime() })
         setMsgs(prev => ({ ...prev }))
         saveWap(currSite)
     }
@@ -44,7 +45,7 @@ export function MessagesDashboard({ user }) {
                         <div className='contact bar'>
                             <div className='pic guest'></div>
                             <div className='name'>{currContact.contact}</div>
-                            <div className='seen'>Today at 12:56</div>
+                            <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
                         </div>
                         <div className='messages' id='chat'>
                             {currContact.msgs.map((msg, idx) => {

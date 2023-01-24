@@ -35,7 +35,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
             msgs = wap.msgs[currGuest]
         }
         console.log('SENDING', msg)
-        msgs.push({ by: 'customer', txt: `${msg}` })
+        msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
         setMsg('')
         // saveCmp(cmp)
         saveWap(wap)
