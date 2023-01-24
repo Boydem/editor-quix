@@ -167,16 +167,25 @@ function _createWaps() {
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
                 themeClass: 'wap1-primary',
                 breakpoints: { mobileLayout: 800, tabletLayout: 1350 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                        { by: 'owner', txt: "Kid, where'd you come from?" },
+                        { by: 'customer', txt: 'Field trip!' },
+                        { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha' },
+                        { by: 'owner', txt: 'Yes this is lit' },
+                        { by: 'customer', txt: 'help me please!' },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!' },
+                    ],
+                },
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
                 title: 'Tech Company',

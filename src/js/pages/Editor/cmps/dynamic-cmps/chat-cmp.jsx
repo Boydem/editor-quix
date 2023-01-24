@@ -32,7 +32,8 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
         setMsg('')
         saveCmp(cmp)
     }
-    const msgs = wap.msgs
+    console.log('wap.msgs:', wap.msgs)
+    const msgs = wap.msgs.guest1
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
 
     return (

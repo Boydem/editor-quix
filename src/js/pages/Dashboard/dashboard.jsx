@@ -14,7 +14,7 @@ import { GrAnalytics } from 'react-icons/gr'
 
 import { DashboardMain } from './views/dashboard-main'
 import { Forms } from './views/forms'
-import { Messages } from './views/messages'
+import { Messages, MessagesDashboard } from './views/messages'
 import { setUser } from '../../store/user/user.actions'
 
 export function Dashboard() {
@@ -73,7 +73,7 @@ export function Dashboard() {
                 <main className='dashboard-main'>
                     {currView === 'dashboard' && <DashboardMain user={user} />}
                     {currView === 'forms' && <Forms user={user} />}
-                    {currView === 'messages' && <Messages user={user} />}
+                    {currView === 'messages' && <MessagesDashboard user={user} />}
                 </main>
             </div>
         </>
