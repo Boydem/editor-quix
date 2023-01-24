@@ -2,6 +2,7 @@ import templateImg from '../../../../assets/imgs/home-assets/templates1.webp'
 import templateImg2 from '../../../../assets/imgs/home-assets/templates2.webp'
 import templateImg3 from '../../../../assets/imgs/home-assets/templates3.webp'
 import templateImg4 from '../../../../assets/imgs/home-assets/templates4.webp'
+import wapImg1 from '../../../../assets/imgs/home-assets/wap-1-home-thumbnail.jpg'
 
 export function WapsSection() {
     return (
@@ -25,6 +26,11 @@ export function WapsSection() {
             </div>
             <div className='slider flex space-inline-l'>
                 <div className='slider-item'>
+                    <div className='outer yosemite'>
+                        <div className='dot red'></div>
+                        <div className='dot amber'></div>
+                        <div className='dot green'></div>
+                    </div>
                     <div className='actions'>
                         <button className='btn btn-template'>
                             <span className='display-link'>View</span>
@@ -33,9 +39,18 @@ export function WapsSection() {
                             <span className='display-link'>Edit</span>
                         </button>
                     </div>
-                    <img src={templateImg} alt='templateImg' />
+                    <img
+                        className='wap-img'
+                        src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674500849/wap5-full-thumbnail_tq7ov6.jpg'
+                        alt='templateImg'
+                    />
                 </div>
                 <div className='slider-item'>
+                    <div className='outer yosemite'>
+                        <div className='dot red'></div>
+                        <div className='dot amber'></div>
+                        <div className='dot green'></div>
+                    </div>
                     <div className='actions'>
                         <button className='btn btn-template'>
                             <span className='display-link'>View</span>
@@ -44,9 +59,39 @@ export function WapsSection() {
                             <span className='display-link'>Edit</span>
                         </button>
                     </div>
-                    <img src={templateImg2} alt='templateImg' />
+                    <img
+                        className='wap-img'
+                        src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674479605/wap-7-full-thumbnail_muhg8r.jpg'
+                        alt='templateImg'
+                    />
+                </div>
+
+                <div className='slider-item'>
+                    <div className='outer yosemite'>
+                        <div className='dot red'></div>
+                        <div className='dot amber'></div>
+                        <div className='dot green'></div>
+                    </div>
+                    <div className='actions'>
+                        <button className='btn btn-template'>
+                            <span className='display-link'>View</span>
+                        </button>
+                        <button className='btn btn-template'>
+                            <span className='display-link'>Edit</span>
+                        </button>
+                    </div>
+                    <img
+                        className='wap-img'
+                        src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674060299/wap-2-full-size-thumbnail_gth6ya.jpg'
+                        alt='templateImg'
+                    />
                 </div>
                 <div className='slider-item'>
+                    <div className='outer yosemite'>
+                        <div className='dot red'></div>
+                        <div className='dot amber'></div>
+                        <div className='dot green'></div>
+                    </div>
                     <div className='actions'>
                         <button className='btn btn-template'>
                             <span className='display-link'>View</span>
@@ -55,18 +100,11 @@ export function WapsSection() {
                             <span className='display-link'>Edit</span>
                         </button>
                     </div>
-                    <img src={templateImg3} alt='templateImg' />
-                </div>
-                <div className='slider-item'>
-                    <div className='actions'>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>View</span>
-                        </button>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>Edit</span>
-                        </button>
-                    </div>
-                    <img src={templateImg4} alt='templateImg' />
+                    <img
+                        className='wap-img'
+                        src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674060312/wap-2-full-size-thumbnail_qfbobw.jpg'
+                        alt='templateImg'
+                    />
                 </div>
             </div>
         </section>

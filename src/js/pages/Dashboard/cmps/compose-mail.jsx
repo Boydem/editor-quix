@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import emailjs from 'emailjs-com'
 
-export default function ComposeMail({ subscriber, setIsMailOpen }) {
+export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
     const [msg, setMsg] = useState('')
+    const formRef = useRef()
 
     function handleChange(ev) {
         setMsg(ev.target.value)
@@ -11,8 +12,8 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
 
     function onSend(ev) {
         ev.preventDefault()
-
-        emailjs.sendForm('service_ra3355j', 'template_2k87m98', ev.target, 'BA6_vXLALxmOosQQV').then(
+        console.log(formRef.current)
+        emailjs.sendForm('service_ra3355j', 'template_2k87m98', formRef.current, 'BA6_vXLALxmOosQQV').then(
             result => {
                 console.log(result)
             },
@@ -28,7 +29,7 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
     }
 
     return (
-        <form className='compose-mail full' onSubmit={onSend}>
+        <form className='compose-mail full' onSubmit={onSend} ref={formRef}>
             <div className='close-btn-wrapper'>
                 <button onClick={onClose}>
                     <AiOutlineClose fontSize={'1rem'} />
@@ -36,7 +37,7 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
             </div>
             <div className='to'>
                 <p className='weight-700'>To:</p>
-                <input value={subscriber.email} name='user_email' readOnly />
+                <input value={subscriberEmail} name='user_email' readOnly type='email' id='user_email' />
             </div>
             <div className='title'>
                 <p className='weight-700'>Title:</p>
@@ -59,6 +60,8 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
                 className='hidden'
                 readOnly
             />
+            <input type='text' hidden={true} value={subscriberEmail} name='user_name' className='hidden' readOnly />
+            <input type='text' hidden={true} value={subscriberEmail} name='user_email' className='hidden' readOnly />
         </form>
     )
 }

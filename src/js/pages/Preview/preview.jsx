@@ -10,6 +10,7 @@ export function Preview() {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const { wapId, wapUrl } = useParams()
     const containerRef = useRef()
+    console.log('wap:', wap)
     useEffect(() => {
         loadWap()
 

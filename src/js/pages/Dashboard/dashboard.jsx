@@ -14,8 +14,9 @@ import { GrAnalytics } from 'react-icons/gr'
 
 import { DashboardMain } from './views/dashboard-main'
 import { Forms } from './views/forms'
-import { Messages } from './views/messages'
+
 import { setCurrSite, setUser } from '../../store/user/user.actions'
+import { MessagesDashboard } from './views/messages-dashboard'
 
 export function Dashboard() {
     const activeMenu = useRef('Dashboard')
@@ -93,7 +94,7 @@ export function Dashboard() {
                 <main className='dashboard-main'>
                     {currView === 'dashboard' && <DashboardMain onEditSite={onEditSite} user={user} />}
                     {currView === 'forms' && <Forms user={user} />}
-                    {currView === 'messages' && <Messages user={user} />}
+                    {currView === 'messages' && <MessagesDashboard user={user} />}
                 </main>
             </div>
         </>

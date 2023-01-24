@@ -2,6 +2,7 @@
     "id": "bdoxES",
     "type": "div",
     "name": "wap-7-header",
+    "category": "header",
     "cmpId": "Header",
     "cmps": [
         {

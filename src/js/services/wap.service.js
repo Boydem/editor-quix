@@ -12,6 +12,10 @@ import { getDemoCmps7 } from '../wap-templates/wap-7/wap-7'
 import { storageService } from './async-storage.service'
 import { makeId, utilService } from './util.service'
 
+const SECOND = 1000
+const MINUTE = 60 * SECOND
+const HOUR = MINUTE * 60
+
 export const wapService = {
     getCmpById,
     query,
@@ -49,7 +53,15 @@ async function getWapByUrl(wapUrl) {
 }
 
 function _createMap() {
-    const allFractions = [...getDemoCmps1(), ...getDemoCmps2(), ...getDemoCmps3(), ...getDemoGeneralCmps()]
+    const allFractions = [
+        ...getDemoCmps1(),
+        ...getDemoCmps2(),
+        ...getDemoCmps3(),
+        ...getDemoCmps4(),
+        ...getDemoCmps5(),
+        ...getDemoCmps7(),
+        ...getDemoGeneralCmps(),
+    ]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
         if (acc[fraction.category]) {
             acc[fraction.category].push(fraction)
@@ -154,19 +166,33 @@ function _createWaps() {
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
                 themeClass: 'wap1-primary',
                 breakpoints: { mobileLayout: 800, tabletLayout: 1350 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
-                title: 'WeDu',
+                title: 'Tech Company',
             },
             {
                 _id: utilService.makeId(),
@@ -178,20 +204,34 @@ function _createWaps() {
                 breakpoints: {
                     tabletLayout: 1000,
                 },
-                msgs: [
-                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
-                    { by: 'owner', txt: "Kid, where'd you come from?" },
-                    { by: 'customer', txt: 'Field trip!' },
-                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
-                    {
-                        by: 'customer',
-                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                    },
-                ],
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
-                title: 'Gigaplay',
+                title: 'Gaming Startup',
             },
             {
                 _id: utilService.makeId(),
@@ -217,7 +257,7 @@ function _createWaps() {
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
-                title: 'Finclvr',
+                title: 'Fintech Webinar',
             },
             {
                 _id: utilService.makeId(),
@@ -241,7 +281,7 @@ function _createWaps() {
                 ],
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
-                title: 'ONMYSCREEN',
+                title: 'Movie Blog',
             },
             {
                 _id: utilService.makeId(),
@@ -266,7 +306,7 @@ function _createWaps() {
                 ],
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
-                title: 'Food, Burgers',
+                title: 'Restaurant Webflow',
             },
             {
                 _id: utilService.makeId(),

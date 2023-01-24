@@ -2,7 +2,9 @@
     "id": "34XUwn",
     "type": "div",
     "name": "wap-4-cta",
-    "cmpId": "Cta",
+    "category": "form",
+    "cmpId": "Subscribe-Form",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674525601/wap-4-form_dodgau.jpg",
     "cmps": [
         {
             "id": "hOSzmV",

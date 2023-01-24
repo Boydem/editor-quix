@@ -4,11 +4,12 @@ import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
 import { BsChatFill } from 'react-icons/bs'
 import { AiOutlineSend } from 'react-icons/ai'
-import { makeId } from '../../../../services/util.service'
-import { saveCmp } from '../../../../store/wap/wap.action'
+import { makeId, utilService } from '../../../../services/util.service'
+import { saveCmp, saveWap } from '../../../../store/wap/wap.action'
 
 export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
+    let [msgs, setMsgs] = useState(null)
     const chatRef = useRef()
 
     const [msg, setMsg] = useState('')
@@ -27,12 +28,20 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
     }
 
     function onSend() {
+        let currGuest
+        if (!msgs) {
+            currGuest = `guest${utilService.makeId()}`
+            wap.msgs = { ...wap.msgs, [currGuest]: [] }
+            msgs = wap.msgs[currGuest]
+        }
         console.log('SENDING', msg)
-        msgs.push({ by: 'customer', txt: `${msg}` })
+        msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
         setMsg('')
-        saveCmp(cmp)
+        // saveCmp(cmp)
+        saveWap(wap)
+        setMsgs(msgs)
     }
-    const msgs = wap.msgs
+    // const msgs = wap.msgs.guest1
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
 
     return (
@@ -67,7 +76,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
                     return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
                 })}
                 <div className='messages'>
-                    {msgs.map((msg, idx) => {
+                    {msgs?.map((msg, idx) => {
                         return (
                             <p className={`${msg.by} message`} key={idx}>
                                 {msg.txt}

@@ -2,6 +2,7 @@
     "id": "BuSXjE",
     "type": "div",
     "name": "wap-7-footer",
+    "category": "footer",
     "cmpId": "Footer",
     "cmps": [
         {

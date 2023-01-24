@@ -2,6 +2,7 @@
     "id": "ELOVxs",
     "type": "div",
     "name": "wap-7-cta",
+    "category": "form",
     "cmpId": "Subscribe-Section",
     "cmps": [
         {
