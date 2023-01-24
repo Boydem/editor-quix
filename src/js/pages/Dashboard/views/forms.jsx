@@ -11,6 +11,7 @@ import { useState } from 'react'
 export function Forms({ user }) {
     const [isMailOpen, setIsMailOpen] = useState(false)
     const wap = utilService.loadFromStorage('wapDB').at(-1)
+    console.log(wap)
     const [subscriber, setSubscriber] = useState(null)
 
     function onMailToSubscriber(sub) {

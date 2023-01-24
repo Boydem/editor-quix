@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
+import emailjs from 'emailjs-com'
 
 export default function ComposeMail({ subscriber, setIsMailOpen }) {
     const [msg, setMsg] = useState('')
@@ -8,7 +9,17 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
         setMsg(ev.target.value)
     }
 
-    function onSend() {
+    function onSend(ev) {
+        ev.preventDefault()
+
+        emailjs.sendForm('service_ra3355j', 'template_2k87m98', ev.target, 'BA6_vXLALxmOosQQV').then(
+            result => {
+                console.log(result)
+            },
+            error => {
+                console.log(error.text)
+            }
+        )
         console.log(msg)
     }
 
@@ -17,7 +28,7 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
     }
 
     return (
-        <div className='compose-mail full'>
+        <form className='compose-mail full' onSubmit={onSend}>
             <div className='close-btn-wrapper'>
                 <button onClick={onClose}>
                     <AiOutlineClose fontSize={'1rem'} />
@@ -25,21 +36,29 @@ export default function ComposeMail({ subscriber, setIsMailOpen }) {
             </div>
             <div className='to'>
                 <p className='weight-700'>To:</p>
-                <p>{subscriber.email}</p>
+                <input value={subscriber.email} name='user_email' readOnly />
             </div>
             <div className='title'>
                 <p className='weight-700'>Title:</p>
                 <input type='text' />
             </div>
             <div className='mail-container'>
-                <textarea name='' id='' rows='10' value={msg} onChange={handleChange}></textarea>
+                <textarea id='' rows='10' value={msg} onChange={handleChange} name='message'></textarea>
             </div>
             <div className='actions'>
                 <div className='btns'></div>
                 <div className='send'>
-                    <button onClick={onSend}>Send now</button>
+                    <button type='submit'>Send now</button>
                 </div>
             </div>
-        </div>
+            <input
+                type='text'
+                hidden={true}
+                value={'CHANGE THIS TO SITE TITLE'}
+                name='from_name'
+                className='hidden'
+                readOnly
+            />
+        </form>
     )
 }
