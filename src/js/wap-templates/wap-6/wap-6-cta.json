@@ -1,0 +1,26 @@
+{
+    "id": "uogfLx",
+    "type": "div",
+    "name": "wap-6-cta",
+    "cmps": [
+        {
+            "id": "YGn9wU",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "Join the Club & Get Rewards in Every Order!"
+            },
+            "cmps": []
+        },
+        {
+            "id": "CD8Mto",
+            "type": "a",
+            "name": "",
+            "content": {
+                "txt": "Sign Up Now",
+                "href": ""
+            },
+            "cmps": []
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "id": "FDyTn2",
+    "type": "div",
+    "name": "wap-6-header",
+    "category": "header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674564208/wap-6-header-edited_lqljwr.jpg",
+    "cmps": [
+        {
+            "id": "vJeHsi",
+            "type": "div",
+            "name": "nav",
+            "cmps": [
+                {
+                    "id": "gpB8I6",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "About",
+                        "href": ""
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "h8QTgm",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "Menu",
+                        "href": ""
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "hMubqt",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "Contact Us",
+                        "href": ""
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "mREUtq",
+            "type": "div",
+            "name": "logo",
+            "cmps": [
+                {
+                    "id": "o2sGln",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994996/donut_jzbb69.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "VWUTEw",
+                    "type": "div",
+                    "name": "label",
+                    "cmps": [
+                        {
+                            "id": "AdQN2P",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994993/label_tts609.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "7gXN1K",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Sugar & Cream"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "6mWSpm",
+                    "type": "span",
+                    "name": "sub-heading",
+                    "content": {
+                        "txt": "Donut Shop"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "c4nI9w",
+            "type": "div",
+            "name": "login",
+            "cmps": [
+                {
+                    "id": "NPMlnA",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/user_nsmerg.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "ImWlMb",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "Log in"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "a1opSe",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Order Online"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}
