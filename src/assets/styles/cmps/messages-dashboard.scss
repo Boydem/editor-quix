@@ -10,18 +10,27 @@ $background: #f7f7f7;
     grid-template-columns: 1fr 4fr;
     height: 74vh;
     .pic {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
         background-size: cover;
         background-position: center;
         border-radius: 50%;
+
+        &.bigger {
+            width: 4rem;
+            height: 4rem;
+        }
     }
 
     .contact {
         position: relative;
         margin-bottom: 1rem;
-        padding-left: 5rem;
+        padding-left: 4rem;
         height: 4.5rem;
+
+        &.bar {
+            padding-left: 5rem;
+        }
 
         display: flex;
         flex-direction: column;

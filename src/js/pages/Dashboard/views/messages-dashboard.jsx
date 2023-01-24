@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BiSend } from 'react-icons/bi'
 import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
+import { AiOutlineSend } from 'react-icons/ai'
 
 export function MessagesDashboard({ user, currSite }) {
     // const currSite = user.userData.sites.at(-1)
@@ -43,7 +44,7 @@ export function MessagesDashboard({ user, currSite }) {
                 <div className='chat'>
                     <div className='chat-layout'>
                         <div className='contact bar'>
-                            <div className='pic guest'></div>
+                            <div className='pic bigger guest'></div>
                             <div className='wrapper'>
                                 <div className='name'>{currContact.contact}</div>
                                 <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
@@ -86,7 +87,7 @@ export function MessagesDashboard({ user, currSite }) {
                             value={msgTxt}
                         />
                         {/* <i className='fas fa-microphone'></i> */}
-                        <BiSend fontSize={'2rem'} className='send-btn' onClick={onSend} />
+                        <AiOutlineSend fontSize={'2rem'} className='send-btn' onClick={onSend} color='#333333' />
                     </div>
                 </div>
             </div>
