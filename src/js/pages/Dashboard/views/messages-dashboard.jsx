@@ -45,7 +45,7 @@ export function MessagesDashboard({ user, currSite }) {
                             <div className='pic guest'></div>
                             <div className='name'>{keyName}</div>
                             {/* {console.log(msgs[keyName].at(-1).txt)} */}
-                            <div className='message'>{msgs[keyName].at(-1).txt.substring(0, 35)}...</div>
+                            <div className='message'>{msgs[keyName].at(-1).txt.substring(0, 25)}...</div>
                         </div>
                     )
                 })}

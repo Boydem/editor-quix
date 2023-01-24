@@ -274,6 +274,10 @@
                 &.active {
                     background: #004cc4;
 
+                    svg {
+                        fill: white;
+                    }
+
                     &:hover {
                         background-color: darken(#004cc4, 5%);
                     }
