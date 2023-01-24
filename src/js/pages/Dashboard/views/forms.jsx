@@ -8,9 +8,9 @@ import { utilService } from '../../../services/util.service'
 import ComposeMail from '../cmps/compose-mail'
 import { useState } from 'react'
 
-export function Forms({ user }) {
+export function Forms({ user, currSite }) {
     const [isMailOpen, setIsMailOpen] = useState(false)
-    const currSite = utilService.loadFromStorage('wapDB').at(-1)
+    // const currSite = utilService.loadFromStorage('wapDB').at(-1)
     console.log(currSite)
     const [subscriberEmail, setSubscriberEmail] = useState(null)
 

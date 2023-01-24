@@ -3,9 +3,9 @@ import { BiSend } from 'react-icons/bi'
 import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
 
-export function MessagesDashboard({ user }) {
-    const currSite = user.userData.sites.at(-1)
-    console.log(currSite)
+export function MessagesDashboard({ user, currSite }) {
+    // const currSite = user.userData.sites.at(-1)
+    console.log('currSite', currSite)
     const [msgs, setMsgs] = useState(currSite.msgs)
     const [currContact, setCurrContact] = useState({ contact: 'guest1', msgs: msgs['guest1'] })
     const [msgTxt, setMsgTxt] = useState('')

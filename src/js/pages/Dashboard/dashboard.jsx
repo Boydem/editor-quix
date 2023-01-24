@@ -59,7 +59,7 @@ export function Dashboard() {
         if (!userId) return
         try {
             const user = await setUser(userId)
-            // await setCurrSite(user.sites[0])
+            await setCurrSite(user.sites[0])
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)
@@ -93,8 +93,8 @@ export function Dashboard() {
                 </aside>
                 <main className='dashboard-main'>
                     {currView === 'dashboard' && <DashboardMain onEditSite={onEditSite} user={user} />}
-                    {currView === 'forms' && <Forms user={user} />}
-                    {currView === 'messages' && <MessagesDashboard user={user} />}
+                    {currView === 'forms' && <Forms user={user} currSite={currSite} />}
+                    {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                 </main>
             </div>
         </>
