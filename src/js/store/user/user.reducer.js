@@ -9,6 +9,7 @@ const initialState = {
     users: [],
 }
 export function userReducer(state = initialState, action) {
+    console.log('state.user:', state.user)
     var newState = state
     switch (action.type) {
         case 'SET_USER':

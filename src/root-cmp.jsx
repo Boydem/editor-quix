@@ -23,7 +23,7 @@ function App() {
                     <Route path='/edit/:wapId' element={<Editor />} />
                     <Route path='/preview/:wapId' element={<Preview />} />
                     <Route path='/:wapUrl' element={<Preview />} />
-                    <Route path='/auth' element={<LoginSignup />} />
+                    <Route path='/auth/:state' element={<LoginSignup />} />
                 </Routes>
                 <UserMsg />
             </main>

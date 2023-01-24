@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router'
 import { login, logout, signup, onGoogleLogin } from '../../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { AppHeader } from '../../cmps/app-header'
@@ -9,6 +9,12 @@ export function LoginSignup({ onLogin, onSignup }) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignup, setIsSignup] = useState(false)
     const navigate = useNavigate()
+    const { state } = useParams()
+
+    useEffect(() => {
+        console.log('state:', state)
+        state === 'login' ? setIsSignup(false) : setIsSignup(true)
+    }, [])
 
     function clearState() {
         setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
@@ -30,12 +36,11 @@ export function LoginSignup({ onLogin, onSignup }) {
             const user = await login(credentials)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
             console.log('credentials:', credentials)
-        } catch (err) {
-            console.error('Failed to login', err)
-            showErrorMsg('Cannot login. Please try again later.')
-        } finally {
             clearState()
             navigate(-1)
+        } catch (err) {
+            console.error('Failed to login', err)
+            showErrorMsg(err.txt)
         }
     }
 
@@ -43,13 +48,13 @@ export function LoginSignup({ onLogin, onSignup }) {
         ev.preventDefault()
         try {
             const user = await signup(credentials)
+            console.log('user:', user)
             showSuccessMsg(`Welcome, ${user.fullname}`)
+            clearState()
+            navigate(-1)
         } catch (err) {
             console.error('Failed to signup', err)
-            showErrorMsg('Cannot login. Please try again later.')
-        } finally {
-            clearState()
-            navigate('/')
+            showErrorMsg(err.txt)
         }
     }
 
@@ -62,7 +67,7 @@ export function LoginSignup({ onLogin, onSignup }) {
             showErrorMsg('Cannot login. Please try again later.')
         } finally {
             clearState()
-            navigate('/')
+            navigate(-1)
         }
     }
 
@@ -92,6 +97,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                     name='username'
                                     value={credentials.username}
                                     onChange={handleChange}
+                                    placeholder='Enter your username'
                                     required
                                 />
                                 <input
@@ -99,6 +105,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                     name='password'
                                     value={credentials.password}
                                     onChange={handleChange}
+                                    placeholder='Enter your password'
                                     required
                                 />
 
@@ -107,6 +114,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                     name='fullname'
                                     value={credentials.fullname}
                                     onChange={handleChange}
+                                    placeholder='Enter your full name'
                                     required
                                 />
                                 <button>Sign Up</button>
@@ -118,7 +126,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                 <h2>Log In</h2>
                                 <p>
                                     Don't have an account ?{' '}
-                                    <a className='toggle-link' href='#' onClick={toggleSignup}>
+                                    <a className='toggle-link' onClick={toggleSignup}>
                                         Sign Up
                                     </a>
                                 </p>
@@ -131,6 +139,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                         name='username'
                                         value={credentials.username}
                                         onChange={handleChange}
+                                        placeholder='Enter your username'
                                         required
                                     />
                                     <label htmlFor='username'>Password</label>
@@ -139,6 +148,7 @@ export function LoginSignup({ onLogin, onSignup }) {
                                         name='password'
                                         value={credentials.password}
                                         onChange={handleChange}
+                                        placeholder='Enter your password'
                                         required
                                     />
                                     <button>Log In</button>

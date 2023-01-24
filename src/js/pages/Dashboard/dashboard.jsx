@@ -31,7 +31,7 @@ export function Dashboard() {
     const { userId } = useParams()
     console.log('currSite:', currSite)
     useLayoutEffect(() => {
-        if (!userId) navigate('/auth')
+        if (!userId) navigate('/auth/login')
         loadUser()
     }, [])
 

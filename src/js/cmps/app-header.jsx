@@ -93,7 +93,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <button
                                 data-tooltip='Notifications'
                                 data-tooltip-dir='bottom'
-                                className='tab notifications'
+                                className='tool notifications'
                             >
                                 <BiBell />
                             </button>
@@ -121,7 +121,18 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                                 </span>
                                             </>
                                         ) : (
-                                            <Link to={`/auth`}>Login</Link>
+                                            <ul className='flex align-center'>
+                                                <li>
+                                                    <Link className='nav-link link-underline sign-in' to='/auth/login'>
+                                                        <span>Login</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link className='nav-link link-underline sign-up' to='/auth/login'>
+                                                        <span>Sign up</span>
+                                                    </Link>
+                                                </li>
+                                            </ul>
                                         )}
                                     </div>
                                 </div>
