@@ -1,22 +1,8 @@
 .left-sidebar {
-    min-height: calc(100vh - $app-header-height + $toolbar-height);
-    max-height: calc(100vh - $app-header-height + $toolbar-height);
-    pointer-events: none;
-    z-index: 2;
+    bottom: 0;
+    width: 100vw;
     position: fixed;
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    overflow: visible;
-    display: flex;
-    min-width: $modules-menu-width;
-    left: 0;
-    transform: translateX(-100%);
-    &.dragging {
-        transform: translateX(calc(-100% - $modules-content-width));
-    }
-    &.open {
-        pointer-events: all;
-        transform: translateX(0%);
-    }
+    z-index: 2;
     .indicator {
         z-index: -5;
         pointer-events: all;
@@ -36,7 +22,6 @@
         border-radius: 0 55rem 55rem 0;
         background-color: $clr7;
         opacity: 1;
-
         transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
             transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         &::before {
@@ -66,7 +51,6 @@
         z-index: 2;
         width: 100%;
         background-color: $clr1;
-        min-height: calc(100vh - $app-header-height - $toolbar-height);
         position: relative;
         left: 0;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -92,58 +76,60 @@
         pointer-events: all;
         z-index: -1;
         position: absolute;
-        width: $modules-content-width;
         top: 0;
         left: 0;
-        transform: translateX(-100%);
+        height: 60vh;
+        width: 100vw;
         background-color: $clr1;
-        transition: left 1.2s cubic-bezier(0.075, 0.82, 0.165, 1), transform 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-        min-height: 100%;
-        overflow-y: auto;
-
-        .quick-add {
-            > div {
-                height: 100%;
-            }
-            img {
-                margin-bottom: 2em;
-                border-radius: 0.15rem;
-                box-shadow: 0px 5px 7px -2px rgba($clr9, 30%);
-            }
-        }
+        transition: all 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
         &.open {
-            transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            top: -60vh;
         }
     }
-}
-.left-sidebar .module-content {
-    transform: translateX(-$modules-menu-width);
-}
-.left-sidebar .module-content.open {
-    transform: translateX($modules-menu-width);
 }
 
 .module-menu {
     .menu-wrapper {
         pointer-events: all;
         z-index: 2;
-        border-right: 1px solid $editor-lightgray;
         background-color: $clr1;
         height: 100%;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
     .menu-items {
-        padding: $spacing-s 0;
-        border-bottom: 1px solid $editor-lightgray;
-        & > * {
+        padding: 0 1em;
+        display: flex;
+        flex-direction: row;
+        // padding: $spacing-s 0;
+        overflow-x: auto;
+        flex: 1;
+        &.themes {
+            flex: 0;
+            padding: 0;
+        }
+        & li {
             cursor: pointer;
             text-transform: uppercase;
             font-weight: 800;
-            letter-spacing: 0.025rem;
+            padding: 3px 9px;
+            display: flex;
+            align-items: center;
+            border-radius: 7px;
             font-size: px-to-rem(12.44px);
-            padding: $spacing-xs $spacing-m;
             transition: background-color 0.3s, color 0.3s;
+
+            &:not(:last-of-type) {
+                margin-inline-end: 1em;
+            }
+            &.themes {
+                top: 0;
+                transform: translateY(-100%);
+                background-color: $editor-active-clr;
+                color: $clr1;
+                position: absolute;
+            }
             &:hover:not(.active) {
                 background-color: $editor-hover-bg;
             }
@@ -163,21 +149,26 @@
 .module-content {
     pointer-events: all;
     overflow-y: auto;
-    min-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    &::-webkit-scrollbar-thumb {
-        border: $spacing-xs solid transparent;
-        border-radius: 100px;
-        background-color: $clr9;
-        background-clip: content-box;
-    }
-    &::-webkit-scrollbar {
-        width: 1.25rem;
-    }
-    &::-webkit-scrollbar-track {
-        background-color: $clr12;
+    position: relative;
+    .module-options {
+        height: 100%;
+        overflow-y: auto;
+        padding: $spacing-m $spacing-m $spacing-l;
+        &::-webkit-scrollbar-thumb {
+            border: 3.5px solid transparent;
+            border-radius: 100px;
+            background-color: $clr9;
+            background-clip: content-box;
+        }
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $clr12;
+        }
     }
     .module-header {
         padding: $spacing-xxs $spacing-m;
@@ -212,9 +203,6 @@
                 // }
             }
         }
-    }
-    .module-options {
-        padding: $spacing-s $spacing-m;
     }
     .themes-intro {
         color: $clr7;
@@ -277,5 +265,68 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@media (min-width: 960px) {
+    .left-sidebar {
+        min-height: calc(100vh - $app-header-height + $toolbar-height);
+        pointer-events: none;
+        bottom: unset;
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        overflow: visible;
+        display: flex;
+        max-width: $modules-menu-width;
+        left: 0;
+        transform: translateX(-100%);
+        &.dragging {
+            transform: translateX(calc(-100% - $modules-content-width));
+        }
+        &.open {
+            pointer-events: all;
+            transform: translateX(0%);
+        }
+        .module-menu {
+            min-height: calc(100vh - $app-header-height + $toolbar-height);
+            .menu-wrapper {
+                flex-direction: column;
+                border-right: 1px solid $editor-lightgray;
+                .menu-items {
+                    padding: $spacing-s 0;
+                    border-bottom: 1px solid $editor-lightgray;
+                    flex-direction: column;
+                    & li {
+                        padding: $spacing-xs $spacing-m;
+                        letter-spacing: 0.025rem;
+                        border-radius: 0;
+                        margin-inline-start: 0em;
+                    }
+                }
+            }
+        }
+        .module-content {
+            width: $modules-content-width;
+            transform: translateX(-$modules-menu-width);
+            height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+            .quick-add {
+                > div {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2em;
+                }
+                img {
+                    border-radius: 0.15rem;
+                    box-shadow: 0px 5px 7px -2px rgba($clr9, 30%);
+                }
+            }
+            &.open {
+                top: unset;
+                transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+        & .module-content.open {
+            transform: translateX($modules-menu-width);
+        }
     }
 }

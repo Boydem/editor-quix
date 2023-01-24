@@ -12,8 +12,16 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     // const [theme, setTheme] = useState('')
     const theme = useRef()
     const menuItems = [
-        ['Header', 'Hero', 'Section', 'Card', 'Form', 'Chat', 'Footer', 'Contact & Forms', 'Social', 'Galleries'],
-        ['Themes'],
+        'Header',
+        'Hero',
+        'Section',
+        'Card',
+        'Form',
+        'Chat',
+        'Footer',
+        'Contact & Forms',
+        'Social',
+        'Galleries',
     ]
 
     function handleSidebar(sidebarChanges) {
@@ -141,25 +149,37 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                     </div>
                 </div>
                 <div className='menu-wrapper'>
-                    {menuItems.map((menuItems, idx) => (
-                        <ul key={idx} className='menu-items'>
-                            {menuItems.map(menuItem => (
-                                <li
-                                    className={leftSidebarState.activeMenuItem === menuItem ? 'active' : ''}
-                                    onClick={() => {
-                                        handleSidebar({
-                                            isOpen: true,
-                                            isSubMenuOpen: true,
-                                            activeMenuItem: menuItem,
-                                        })
-                                    }}
-                                    key={menuItem}
-                                >
-                                    {menuItem}
-                                </li>
-                            ))}
-                        </ul>
-                    ))}
+                    <ul className={`menu-items`}>
+                        {menuItems.map(menuItem => (
+                            <li
+                                className={`${leftSidebarState.activeMenuItem === menuItem ? 'active' : ''} `}
+                                onClick={() => {
+                                    handleSidebar({
+                                        isOpen: true,
+                                        isSubMenuOpen: true,
+                                        activeMenuItem: menuItem,
+                                    })
+                                }}
+                                key={menuItem}
+                            >
+                                {menuItem}
+                            </li>
+                        ))}
+                    </ul>
+                    <ul className='menu-items themes'>
+                        <li
+                            className='themes'
+                            onClick={() => {
+                                handleSidebar({
+                                    isOpen: true,
+                                    isSubMenuOpen: true,
+                                    activeMenuItem: 'themes',
+                                })
+                            }}
+                        >
+                            Themes
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
