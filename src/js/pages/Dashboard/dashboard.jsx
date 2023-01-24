@@ -95,7 +95,7 @@ export function Dashboard() {
             </aside>
 
             <main className='dashboard-main'>
-                <div className='header layout-wrapper'>
+                <div className='main-header layout-wrapper'>
                     <div className='titles'>
                         <h2>Hello, {user.fullname}</h2>
                         <h6>Welcome to your Dashboard</h6>

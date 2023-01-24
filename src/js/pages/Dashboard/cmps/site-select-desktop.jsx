@@ -15,7 +15,7 @@ export function SiteSelectDesktop({ user }) {
             </div>
             <div className='info-box info-box-rows my-sites'>
                 <div className='list-item-preview header'>
-                    <h3>My sites</h3>
+                    <h4>My sites</h4>
                 </div>
                 {user?.sites?.map(site => (
                     <article key={site._id} className='list-item-preview'>
@@ -26,13 +26,28 @@ export function SiteSelectDesktop({ user }) {
                                 <button className='tool'>
                                     <BsThreeDotsVertical />
                                 </button>
-                                {/* <button data-tooltip='Edit' className='tool'>
-                          <BsPencil />
-                          </button>
-                          <button data-tooltip='Trash' className='tool'>
-                          <BsTrash />
-                        </button> */}
                             </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+            <div className='last-messages info-box info-box-rows my-sites'>
+                <div className='list-item-preview header'>
+                    <h4>Last Messages</h4>
+                </div>
+                {user?.sites.map((site, idx) => (
+                    <article key={site._id} className='list-item-preview'>
+                        <div className='item'>
+                            <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
+                            <span className='user-name'>
+                                {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')}
+                            </span>
+                            <div className='message-body'>
+                                <p>
+                                    Lorem ipsum, commodi dolor sit amet consectetur adipisicing elit. Facilis ratione.
+                                </p>
+                            </div>
+                            <div className='time-ago flex'>2 days ago</div>
                         </div>
                     </article>
                 ))}
