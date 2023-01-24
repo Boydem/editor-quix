@@ -95,8 +95,10 @@
             display: flex;
             align-items: baseline;
             margin: 0 auto;
-            height: 100%;
             gap: $spacing-m;
+            &:not(.header) {
+                height: 100%;
+            }
         }
         .header {
             width: 100%;
