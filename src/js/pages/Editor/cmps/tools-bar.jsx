@@ -13,9 +13,11 @@ import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { InteractiveChat } from './ui-cmps/interactive-chat'
+import { useState } from 'react'
 
 export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsChanges, layout, onLayoutChange }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    const isSaving = useSelector(storeState => storeState.wapModule.isSaving)
 
     const tools = [
         { side: 'left', module: 'add' },
@@ -105,7 +107,8 @@ export function ToolsBar({ leftSidebarState, rightSidebarState, handleSidebarsCh
                             <AiOutlineMobile />
                         </button>
                     </div>
-                    <div className='save-msg flex align-center shown'>
+
+                    <div className={`save-msg flex align-center ${isSaving ? 'shown' : ''}`}>
                         <FiRefreshCw className='refresh-icon' />
                         Saving...
                     </div>
