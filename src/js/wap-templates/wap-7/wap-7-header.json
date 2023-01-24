@@ -4,6 +4,7 @@
     "name": "wap-7-header",
     "category": "header",
     "cmpId": "Header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574342/wap-7-header_pjryol.jpg",
     "cmps": [
         {
             "id": "FDyQBv",
@@ -16,7 +17,7 @@
                     "name": "",
                     "content": {
                         "txt": "THE POP SHOW",
-                        "href": "about:blank#"
+                        "href": "#"
                     },
                     "cmps": []
                 }
