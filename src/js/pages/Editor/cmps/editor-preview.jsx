@@ -32,11 +32,12 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
 
     useEffect(() => {
         setEditorWrapperLayout()
+        console.log('layout:', layout)
     }, [layout])
 
     function setEditorWrapperLayout() {
         editorWrapper.current.style.maxWidth =
-            layout.layoutClass === 'desktopLayout' ? 'revert' : `${layout.width - 10}px`
+            layout.layoutClass === 'desktopLayout' ? '100%' : `${layout.width - 10}px`
         // editorWrapper.current.style.maxHeight = `calc(100vh - 160px - 4rem)`
 
         editorWrapper.current.classList.toggle('mobile-layout', layout.layoutClass === 'mobileLayout')
@@ -77,7 +78,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
     }
 
     function onSelectCmp(ev, cmp) {
-        handleSidebarsChanges('left', { isOpen: false, currModule: null })
+        handleSidebarsChanges('left', { isOpen: false })
         ev.stopPropagation()
         if (!ev.target.type) ev.preventDefault()
 

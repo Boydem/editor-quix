@@ -4,6 +4,7 @@
     "name": "section-4",
     "category": "galleries",
     "cmpId": "Gallery",
+    "thumnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674573074/wap-5-section-4-edited_yvrasr.jpg",
     "cmps": [
         {
             "id": "VojiAr",

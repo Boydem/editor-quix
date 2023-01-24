@@ -87,7 +87,7 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                                 onClick={() => {
                                     handleSidebar({ isOpen: !rightSidebarState.isOpen })
                                 }}
-                                className='tool'
+                                className='tab'
                             >
                                 <AiOutlineClose />
                             </span>

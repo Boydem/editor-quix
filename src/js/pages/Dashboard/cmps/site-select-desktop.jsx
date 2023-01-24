@@ -26,7 +26,7 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite }) {
                             <img src={explorerSVG} alt='explorerSVG' />
                             <span>{site.title}</span>
                             <div className='actions flex'>
-                                <button className='tool'>
+                                <button className='tab'>
                                     <BsThreeDotsVertical />
                                 </button>
                             </div>

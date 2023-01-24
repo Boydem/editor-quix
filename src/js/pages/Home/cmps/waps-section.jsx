@@ -41,7 +41,7 @@ export function WapsSection() {
                     </div>
                     <img
                         className='wap-img'
-                        src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674500849/wap5-full-thumbnail_tq7ov6.jpg'
+                        src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674573127/127.0.0.1_3000_preview_2dVX0X_djlrz2.jpg'
                         alt='templateImg'
                     />
                 </div>

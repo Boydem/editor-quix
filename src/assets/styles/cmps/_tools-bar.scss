@@ -19,7 +19,7 @@
         justify-self: start;
     }
 
-    .tools {
+    .tabs {
         display: grid;
         grid-auto-flow: column;
         justify-self: end;
@@ -34,7 +34,7 @@
         }
     }
 }
-.tool {
+.tab {
     color: $clr15;
     cursor: pointer;
     font-size: px-to-rem(20px);

@@ -10,6 +10,7 @@ export const POP_WAP_UNDO = 'POP_WAP_UNDO'
 export const ADD_WAP_REDO = 'ADD_WAP_REDO'
 export const POP_WAP_REDO = 'POP_WAP_REDO'
 export const CLEAN_WAP_REDO = 'CLEAN_WAP_REDO'
+export const SET_IS_SAVING = 'SET_IS_SAVING'
 
 const initialState = {
     wap: {},
@@ -18,6 +19,7 @@ const initialState = {
     isEditing: false,
     clickedCmp: null,
     elClickedNode: null,
+    isSaving: false,
 }
 
 export function wapReducer(state = initialState, action = {}) {
@@ -54,6 +56,10 @@ export function wapReducer(state = initialState, action = {}) {
             return { ...state, wapRedos }
         case 'CLEAN_WAP_REDO':
             return { ...state, wapRedos: [] }
+
+        case SET_IS_SAVING:
+            return { ...state, isSaving: action.isSaving }
+
         default:
             return { ...state }
     }

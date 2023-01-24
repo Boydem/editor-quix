@@ -10,7 +10,10 @@ import {
     ADD_WAP_REDO,
     POP_WAP_REDO,
     CLEAN_WAP_REDO,
+    SET_IS_SAVING,
 } from './wap.reducer'
+
+let timeoutRef
 
 export async function setClickedCmp(cmp) {
     store.dispatch({ type: SET_CLICKED_CMP, cmp })
@@ -20,11 +23,17 @@ export async function setElClickedNode(elNode) {
 }
 export async function saveWap(wap) {
     try {
+        store.dispatch({ type: SET_IS_SAVING, isSaving: true })
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
         console.log('Cannot save wap in wap.action', err)
         throw err
+    } finally {
+        clearTimeout(timeoutRef)
+        timeoutRef = setTimeout(() => {
+            store.dispatch({ type: SET_IS_SAVING, isSaving: false })
+        }, 2000)
     }
 }
 
@@ -48,6 +57,7 @@ export async function setWap(wap) {
 export async function saveCmp(newCmp) {
     // wapService.saveCmp
     try {
+        store.dispatch({ type: SET_IS_SAVING, isSaving: true })
         let newUndoParentCmp
         const wap = store.getState().wapModule.wap
         await wapService.findParentCmp(newCmp, wap, (cmp, index, parentCmp) => {
@@ -61,10 +71,16 @@ export async function saveCmp(newCmp) {
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err
+    } finally {
+        clearTimeout(timeoutRef)
+        timeoutRef = setTimeout(() => {
+            store.dispatch({ type: SET_IS_SAVING, isSaving: false })
+        }, 2000)
     }
 }
 export async function undoChange() {
     try {
+        store.dispatch({ type: SET_IS_SAVING, isSaving: true })
         const wapUndos = store.getState().wapModule.wapUndos
         if (!wapUndos || !wapUndos.length) return
 
@@ -87,11 +103,17 @@ export async function undoChange() {
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err
+    } finally {
+        clearTimeout(timeoutRef)
+        timeoutRef = setTimeout(() => {
+            store.dispatch({ type: SET_IS_SAVING, isSaving: false })
+        }, 2000)
     }
 }
 
 export async function redoChange() {
     try {
+        store.dispatch({ type: SET_IS_SAVING, isSaving: true })
         const wapRedos = store.getState().wapModule.wapRedos
         if (!wapRedos || !wapRedos.length) return
 
@@ -114,6 +136,11 @@ export async function redoChange() {
     } catch (err) {
         console.log('Cannot save cmp in wap.action', err)
         throw err
+    } finally {
+        clearTimeout(timeoutRef)
+        timeoutRef = setTimeout(() => {
+            store.dispatch({ type: SET_IS_SAVING, isSaving: false })
+        }, 2000)
     }
 }
 
@@ -125,6 +152,7 @@ export async function removeCmp(newCmp) {
             newUndoParentCmp = structuredClone(parentCmp)
             wapService.removeCmp(cmp, index, parentCmp)
         })
+        store.dispatch({ type: SET_IS_SAVING, isSaving: true })
         await wapService.save(wap)
         store.dispatch({ type: SET_WAP, wap })
         store.dispatch({ type: ADD_WAP_UNDO, newUndoParentCmp })
@@ -133,6 +161,11 @@ export async function removeCmp(newCmp) {
     } catch (err) {
         console.log('Cannot remove cmp in wap.action', err)
         throw err
+    } finally {
+        clearTimeout(timeoutRef)
+        timeoutRef = setTimeout(() => {
+            store.dispatch({ type: SET_IS_SAVING, isSaving: false })
+        }, 2000)
     }
 }
 
