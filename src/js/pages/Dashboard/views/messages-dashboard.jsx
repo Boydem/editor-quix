@@ -27,7 +27,7 @@ export function MessagesDashboard({ user, currSite }) {
         <section className='layout-wrapper'>
             <div className='messages-dashboard full'>
                 <div className='contacts'>
-                    <i className='fas fa-bars fa-2x'></i>
+                    {/* <i className='fas fa-bars fa-2x'></i> */}
                     <h2>Contacts</h2>
                     {Object.keys(msgs).map((keyName, idx) => {
                         return (
