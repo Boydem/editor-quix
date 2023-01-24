@@ -215,6 +215,11 @@
                     width: 100%;
                     margin: auto;
                 }
+
+                canvas {
+                    background: #fbfcfc;
+                    box-shadow: 0 0 0 0 black;
+                }
             }
 
             &:not(.last-messages, .chart-wrapper) {

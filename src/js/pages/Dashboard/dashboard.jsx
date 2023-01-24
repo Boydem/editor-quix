@@ -1,12 +1,9 @@
+import { useEffect, useRef, useState } from 'react'
 import { AppHeader } from '../../cmps/app-header'
-import { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router'
-import { wapService } from '../../services/wap.service'
-import { saveWap } from '../../store/wap/wap.action'
-import { userService } from '../../services/user.service'
-import { LineChart } from './cmps/line-chart'
+
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 
 import { BsPencil } from 'react-icons/bs'
@@ -20,16 +17,20 @@ import { Forms } from './views/forms'
 import { setCurrSite, setUser } from '../../store/user/user.actions'
 import { MessagesDashboard } from './views/messages-dashboard'
 import { SiteSelectDesktop } from './cmps/site-select-desktop'
+import { useDispatch } from 'react-redux'
+import { SET_CURR_SITE } from '../../store/user/user.reducer'
 
 export function Dashboard() {
-    const activeMenu = useRef('Dashboard')
     const [currView, setCurrView] = useState('dashboard')
     const user = useSelector(storeState => storeState.userModule.user)
     const currSite = useSelector(storeState => storeState.userModule.currSite)
-    const menuItems = ['Dashboard', 'Messages', 'Forms']
     const navigate = useNavigate()
     const { userId } = useParams()
-    // console.log('currSite:', currSite)
+    const dispatch = useDispatch()
+    const activeMenu = useRef('Dashboard')
+
+    const menuItems = ['Dashboard', 'Messages', 'Forms']
+
     useEffect(() => {
         if (!userId) navigate('/auth')
         loadUser()
@@ -59,12 +60,14 @@ export function Dashboard() {
         activeMenu.current = view.toLowerCase()
         setCurrView(view.toLowerCase())
     }
+
     async function loadUser() {
         if (!userId) return
         try {
             const user = await setUser(userId)
+
             if (!user.sites || !user.sites.length) navigate('/create')
-            await setCurrSite(user.sites[0])
+            dispatch({ type: SET_CURR_SITE, currSite: user.sites[0] })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)

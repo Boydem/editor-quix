@@ -38,7 +38,7 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
             </div>
             <div className='last-messages info-box info-box-rows my-sites'>
                 <div className='list-item-preview header'>
-                    <h4>Last Messages</h4>
+                    <h4>Latest Events</h4>
                 </div>
                 {sortedEvents?.map((event, idx) => (
                     <article key={idx} className='list-item-preview'>

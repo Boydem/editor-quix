@@ -28,6 +28,7 @@ export function Forms({ user, currSite }) {
         setSubscriberEmail(allSubs)
         setIsMailOpen(true)
     }
+    console.log('currSite:', currSite)
     console.log('isMailOpen', isMailOpen)
     return (
         <>
@@ -70,7 +71,7 @@ export function Forms({ user, currSite }) {
                 </div>
                 <div className='user-forms leads-table'>
                     <ul className='table-row table-header container'>
-                        {currSite.leads && (
+                        {currSite.leads && currSite.leads.length > 0 && (
                             <>
                                 {Object.keys(currSite.leads?.at(-1).data).map((key, keyIndex) => {
                                     return (

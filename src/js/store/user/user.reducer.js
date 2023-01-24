@@ -24,6 +24,7 @@ export function userReducer(state = initialState, action) {
             newState = { ...state, users: action.users }
             break
         case 'SET_CURR_SITE':
+            console.log('action.currSite', action.currSite)
             newState = { ...state, currSite: action.currSite }
             break
         default:

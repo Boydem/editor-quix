@@ -81,12 +81,14 @@ export async function saveCmp(newCmp) {
 export async function undoChange() {
     try {
         store.dispatch({ type: SET_IS_SAVING, isSaving: true })
+
         const wapUndos = store.getState().wapModule.wapUndos
         if (!wapUndos || !wapUndos.length) return
 
         let wap = store.getState().wapModule.wap
         const oldUndoParentCmp = wapUndos.at(-1)
         let redoCmp
+        
         if (oldUndoParentCmp.owner) {
             console.log('WAP OWNER')
             wap = structuredClone(oldUndoParentCmp)

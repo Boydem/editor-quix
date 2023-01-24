@@ -20,12 +20,13 @@ export async function loadUsers() {
 export async function setUser(userId) {
     try {
         store.dispatch({ type: 'LOADING_START' })
+        // Will become one request with backend
         const user = await userService.getById(userId)
         user.sites = await wapService.query({ owner: user._id })
         store.dispatch({ type: SET_USER, user })
         return user
     } catch (err) {
-        console.log('UserActions: err in loadUser', err)
+        console.error('UserActions: err in loadUser', err)
         throw err
     } finally {
         store.dispatch({ type: 'LOADING_DONE' })
@@ -71,15 +72,10 @@ export async function signup(credentials) {
 }
 
 export async function setCurrSite(currSite) {
-    try {
-        store.dispatch({
-            type: SET_CURR_SITE,
-            currSite,
-        })
-    } catch (err) {
-        console.log('Couldnt set site data:', err)
-        throw err
-    }
+    store.dispatch({
+        type: SET_CURR_SITE,
+        currSite,
+    })
 }
 
 export async function logout() {

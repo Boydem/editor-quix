@@ -6,15 +6,15 @@ import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
-    BarElement,
     PointElement,
     LineElement,
     Title,
     Tooltip,
+    Filler,
     Legend,
 } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend)
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend)
 
 export function DashboardMain({ user, currSite }) {
     const DAY = 1000 * 60 * 60 * 24
@@ -76,11 +76,12 @@ export function DashboardMain({ user, currSite }) {
         labels,
         datasets: [
             {
+                fill: true,
                 label: 'Subscribers',
                 data: organizedSubscribersTimestamps,
 
                 borderColor: '#23cc93',
-                backgroundColor: '#26e7a6',
+                backgroundColor: 'rgba(35, 204, 147,0.4)',
             },
         ],
     }
@@ -88,10 +89,11 @@ export function DashboardMain({ user, currSite }) {
         labels,
         datasets: [
             {
+                fill: true,
                 label: 'Leads',
                 data: organizedLeadsTimestamps,
                 borderColor: '#24a0fe',
-                backgroundColor: '#24a0fe',
+                backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
         ],
     }
@@ -99,10 +101,11 @@ export function DashboardMain({ user, currSite }) {
         labels,
         datasets: [
             {
+                fill: true,
                 label: 'Visitors',
                 data: [50, 42, 15, 32, 64, 15, 16],
                 borderColor: '#24a0fe',
-                backgroundColor: '#24a0fe',
+                backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
         ],
     }
@@ -125,11 +128,11 @@ export function DashboardMain({ user, currSite }) {
 
             <div className='info-box flex'>
                 <div className='text-wrapper'>
-                    <h3>Visitors</h3>
-                    <p>Here is your sites visitors statistics</p>
+                    <h3>Leads</h3>
+                    <p>Here is your sites leads statistics</p>
                 </div>
                 <div className='info-box chart-wrapper'>
-                    <Line options={options} data={visitorsData} />
+                    <Line options={options} data={leadData} />
                 </div>
             </div>
 
@@ -145,11 +148,11 @@ export function DashboardMain({ user, currSite }) {
 
             <div className='info-box flex'>
                 <div className='text-wrapper'>
-                    <h3>Leads</h3>
-                    <p>Here is your sites leads statistics</p>
+                    <h3>Visitors</h3>
+                    <p>Here is your sites visitors statistics</p>
                 </div>
                 <div className='info-box chart-wrapper'>
-                    <Bar options={options} data={leadData} />
+                    <Line options={options} data={visitorsData} />
                 </div>
             </div>
         </>

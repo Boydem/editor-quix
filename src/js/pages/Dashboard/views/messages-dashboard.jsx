@@ -3,6 +3,7 @@ import { BiSend } from 'react-icons/bi'
 import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
 import { AiOutlineSend } from 'react-icons/ai'
+import { useEffect } from 'react'
 
 export function MessagesDashboard({ user, currSite }) {
     // const currSite = user.userData.sites.at(-1)
@@ -13,6 +14,11 @@ export function MessagesDashboard({ user, currSite }) {
     function onContact(keyName) {
         setCurrContact({ contact: keyName, msgs: msgs[keyName] })
     }
+
+    useEffect(() => {
+        setMsgs(currSite.msgs)
+    }, [currSite])
+    console.log('currSite:', currSite)
 
     function handleChange(ev) {
         setMsgTxt(ev.target.value)
@@ -28,7 +34,7 @@ export function MessagesDashboard({ user, currSite }) {
         <div className='messages-dashboard full'>
             <div className='contacts'>
                 {/* <i className='fas fa-bars fa-2x'></i> */}
-                <h2>Contacts</h2>
+                {/* <h2>Contacts</h2> */}
                 {Object.keys(msgs).map((keyName, idx) => {
                     return (
                         <div className='contact' key={keyName} onClick={() => onContact(keyName)}>
