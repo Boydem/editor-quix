@@ -27,9 +27,18 @@ export async function saveWap(wap) {
         throw err
     }
 }
+
 export async function setWapNull() {
     try {
         store.dispatch({ type: SET_WAP, wap: null })
+    } catch (err) {
+        console.log('Cannot save wap in wap.action', err)
+        throw err
+    }
+}
+export async function setWap(wap) {
+    try {
+        store.dispatch({ type: SET_WAP, wap })
     } catch (err) {
         console.log('Cannot save wap in wap.action', err)
         throw err
@@ -129,4 +138,8 @@ export async function removeCmp(newCmp) {
 
 export async function setIsEditing(mode) {
     store.dispatch({ type: SET_IS_EDITING, mode })
+}
+
+export async function setCurrWatched(wapId) {
+    console.log('wapId:', wapId)
 }

@@ -5,10 +5,20 @@ import { BsPencil } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 import { useSelector } from 'react-redux'
 import { utilService } from '../../../services/util.service'
+import ComposeMail from '../cmps/compose-mail'
+import { useState } from 'react'
 
 export function Forms({ user }) {
+    const [isMailOpen, setIsMailOpen] = useState(false)
     const wap = utilService.loadFromStorage('wapDB').at(-1)
-    console.log(wap.leads[0])
+    console.log(wap)
+    const [subscriber, setSubscriber] = useState(null)
+
+    function onMailToSubscriber(sub) {
+        setSubscriber(sub)
+        setIsMailOpen(true)
+    }
+    console.log('isMailOpen', isMailOpen)
     return (
         <div className='forms layout-wrapper'>
             <div className='header'>
@@ -35,7 +45,9 @@ export function Forms({ user }) {
                                     <li className='lead'>{sub.email}</li>
                                     <li className='actions'>
                                         <span className='time-ago'>{utilService.formatTimeAgo(sub.date)}</span>{' '}
-                                        <button className='btn-send-msg'>Message</button>
+                                        <button className='btn-send-msg' onClick={() => onMailToSubscriber(sub)}>
+                                            Message
+                                        </button>
                                     </li>
                                 </ul>
                             )
@@ -51,16 +63,20 @@ export function Forms({ user }) {
                     </div>
                     <div className='user-forms leads-table'>
                         <ul className='table-row table-header container'>
-                            {Object.keys(wap.leads[0].data).map((key, keyIndex) => {
-                                return (
-                                    <li className='col' key={key}>
-                                        {key}
-                                    </li>
-                                )
-                            })}
+                            {wap.leads && (
+                                <span>
+                                    {Object.keys(wap.leads?.at(-1).data).map((key, keyIndex) => {
+                                        return (
+                                            <li className='col' key={key}>
+                                                {key}
+                                            </li>
+                                        )
+                                    })}
+                                </span>
+                            )}
                         </ul>
 
-                        {wap.leads.map(lead => {
+                        {wap.leads?.map(lead => {
                             return (
                                 <ul className='table-row container'>
                                     {Object.keys(lead.data).map((key, keyIndex) => {
@@ -77,6 +93,8 @@ export function Forms({ user }) {
                     </div>
                 </div>
             </div>
+            {isMailOpen && <ComposeMail subscriber={subscriber} setIsMailOpen={setIsMailOpen} />}
+            {/* <ComposeMail /> */}
         </div>
     )
 }

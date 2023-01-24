@@ -106,6 +106,9 @@
                 }
                 .btn-dashboard {
                     color: $clr20;
+                    &:hover {
+                        color: $editor-active-clr;
+                    }
                 }
             }
             .btn-logout {

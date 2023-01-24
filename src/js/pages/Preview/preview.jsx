@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
+import { setWap, setWapNull } from '../../store/wap/wap.action'
 import DynamicCmp from '../Editor/cmps/dynamic-cmp'
 
 export function Preview() {
-    const [wap, setWap] = useState(null)
+    const wap = useSelector(storeState => storeState.wapModule.wap)
     const { wapId, wapUrl } = useParams()
     const containerRef = useRef()
     console.log('wap:', wap)
@@ -15,6 +17,7 @@ export function Preview() {
         return () => {
             const root = document.getElementById('root')
             root.classList.remove(wap.themeClass)
+            setWapNull()
         }
     }, [])
 
@@ -27,6 +30,7 @@ export function Preview() {
                 wap = await wapService.getWapByUrl(wapUrl)
             }
             setWap(wap)
+            console.log(wap, 'wap')
             const root = document.getElementById('root')
             root.classList.add(wap.themeClass)
         } catch (err) {

@@ -102,6 +102,7 @@ async function query(filterBy = { owner: 'guest', url: '' }) {
 function arrangeUserData(userWaps) {
     const userData = userWaps.reduce((acc, wap) => {
         const wapData = {
+            _id: wap._id,
             leads: wap.leads,
             subscribers: wap.subscribers,
             msgs: wap.msgs,

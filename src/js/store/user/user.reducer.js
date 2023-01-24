@@ -4,6 +4,7 @@ export const SET_USER = 'SET_USER'
 
 const initialState = {
     user: userService.getLoggedinUser(),
+    currWatchedSite: null,
     users: [],
 }
 export function userReducer(state = initialState, action) {

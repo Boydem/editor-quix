@@ -10,13 +10,17 @@ import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
-export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) {
+import { SiteSelect } from './site-select'
+
+export function AppHeader({ location = 'editor', theme = '', layout = 'full', userData }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
+    const currWatchedSite = useSelector(storeState => storeState.userModule.currWatchedSite)
+    console.log(user, 'user')
     useEffect(() => {
         if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
     }, [])
@@ -25,6 +29,10 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         const value = ev.target.value
         const field = ev.target.name
         setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
+    }
+
+    function onSiteChange(site) {
+        console.log('site:', site)
     }
 
     async function onLogout() {
@@ -52,9 +60,9 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
         }
     }
     function getShortenName() {
-        if (!user) return '?'
-        const names = user.fullname.split(' ')
-        return names[0][0] + names[1][0]
+        // if (!user ||) return '?'
+        // const names = user.fullname.split(' ')
+        // return names[0][0] + names[1][0]
     }
     function onEditDomain() {
         if (!wap.url) return
@@ -78,7 +86,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full' }) 
                             <ul className='flex align-center'>
                                 <li>
                                     <a className='nav-link link-underline' href='#'>
-                                        <span>My Sites</span>
+                                        {/* <SiteSelect
+                                            userData={userData}
+                                            onSiteChange={onSiteChange}
+                                            currWatchedSite={currWatchedSite}
+                                        /> */}
                                     </a>
                                 </li>
                             </ul>
