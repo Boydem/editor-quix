@@ -1,6 +1,6 @@
 import DynamicCmp from '../dynamic-cmp'
 
-export function DivCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef, setElHoveredNode }) {
+export function DivCmp({ cmp, onSelectCmp, onHoverCmp }) {
     let classes = cmp.name + ' '
     if (cmp.class) {
         classes += cmp.class?.join(' ')
@@ -20,8 +20,6 @@ export function DivCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef, setEl
                     <DynamicCmp
                         cmp={c}
                         key={c.id}
-                        selectedActionsRef={selectedActionsRef}
-                        setElHoveredNode={setElHoveredNode}
                         onSelectCmp={onSelectCmp}
                         onHoverCmp={onHoverCmp}
                     />

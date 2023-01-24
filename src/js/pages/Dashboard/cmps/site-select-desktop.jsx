@@ -1,7 +1,9 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import { utilService } from '../../../services/util.service'
 
-export function SiteSelectDesktop({ user, currSite }) {
+export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
+    console.log('sortedEvents:', sortedEvents)
     return (
         <>
             <div className='info-box info-box-2'>
@@ -17,7 +19,11 @@ export function SiteSelectDesktop({ user, currSite }) {
                     <h4>My sites</h4>
                 </div>
                 {user?.sites?.map(site => (
-                    <article key={site._id} className='list-item-preview'>
+                    <article
+                        key={site._id}
+                        className={`list-item-preview ${currSite?._id === site._id ? 'active' : ''}`}
+                        onClick={() => onChangeSite(site._id)}
+                    >
                         <div className='item'>
                             <img src={explorerSVG} alt='explorerSVG' />
                             <span>{site.title}</span>
@@ -32,21 +38,22 @@ export function SiteSelectDesktop({ user, currSite }) {
             </div>
             <div className='last-messages info-box info-box-rows my-sites'>
                 <div className='list-item-preview header'>
-                    <h4>Last Messages</h4>
+                    <h4>Latest Events</h4>
                 </div>
-                {user?.sites?.map((site, idx) => (
-                    <article key={site._id} className='list-item-preview'>
+                {sortedEvents?.map((event, idx) => (
+                    <article key={idx} className='list-item-preview'>
                         <div className='item'>
                             <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
                             <span className='user-name'>
-                                {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')}
+                                {/* {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')} */}
+                                User
                             </span>
                             <div className='message-body'>
-                                <p>
-                                    Lorem ipsum, commodi dolor sit amet consectetur adipisicing elit. Facilis ratione.
-                                </p>
+                                <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
+                                <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>
+                                <p>{event['key'] === 'leadTimestamps' && 'A user just left their information!'}</p>
                             </div>
-                            <div className='time-ago flex'>2 days ago</div>
+                            <div className='time-ago flex'>{utilService.formatTimeAgo(event.timestamp)}</div>
                         </div>
                     </article>
                 ))}

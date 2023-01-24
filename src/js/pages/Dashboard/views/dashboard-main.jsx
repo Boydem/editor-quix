@@ -1,101 +1,119 @@
-import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
-import { wapService } from '../../../services/wap.service'
-import { saveWap } from '../../../store/wap/wap.action'
-import { userService } from '../../../services/user.service'
-import { LineChart } from '.././cmps/line-chart'
+import { useEffect, useRef } from 'react'
 
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 
-import Chart from 'react-apexcharts'
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Filler,
+    Legend,
+} from 'chart.js'
+import { Bar, Line } from 'react-chartjs-2'
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend)
 
-export function DashboardMain({ user, onEditSite }) {
-    let SubsChartOptions = useRef({
-        series: [
-            {
-                data: [44, 55, 41, 64, 22, 43, 21],
+export function DashboardMain({ user, currSite }) {
+    const DAY = 1000 * 60 * 60 * 24
+
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
             },
+            title: {
+                display: true,
+            },
+        },
+    }
+    const labels = [
+        new Date(Date.now() - 6 * DAY).toLocaleDateString(),
+        new Date(Date.now() - 5 * DAY).toLocaleDateString(),
+        new Date(Date.now() - 4 * DAY).toLocaleDateString(),
+        new Date(Date.now() - 3 * DAY).toLocaleDateString(),
+        new Date(Date.now() - 2 * DAY).toLocaleDateString(),
+        new Date(Date.now() - 1 * DAY).toLocaleDateString(),
+        new Date(Date.now() - 0 * DAY).toLocaleDateString(),
+    ]
+
+    function organizeTimestamps(timestamps) {
+        if (!timestamps || !timestamps.length) return [0, 0, 0, 0, 0, 0, 0]
+        const today = new Date()
+        const oneDay = 24 * 60 * 60 * 1000 // milliseconds in one day
+        const week = new Array(7).fill(0) // create an array of 7 places filled with 0
+        for (let timestamp of timestamps) {
+            const date = new Date(timestamp)
+            const diffDays = Math.round(Math.abs((today.getTime() - date.getTime()) / oneDay))
+            if (diffDays < 7) {
+                week[diffDays] += 1
+            }
+        }
+        return week
+    }
+
+    const subscribersTimestamps = currSite?.subscribers?.reduce((acc, sub) => {
+        acc.push(sub.date)
+        return acc
+    }, [])
+    const leadTimestamps = currSite.leads?.reduce((acc, lead) => {
+        acc.push(lead.data.date)
+        return acc
+    }, [])
+
+    let organizedLeadsTimestamps = [0, 0, 0, 0, 0, 0, 0]
+    organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
+    organizedLeadsTimestamps.reverse()
+
+    let organizedSubscribersTimestamps = [0, 0, 0, 0, 0, 0, 0]
+    organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
+    organizedSubscribersTimestamps.reverse()
+
+    const subData = {
+        labels,
+        datasets: [
             {
-                data: [53, 32, 33, 52, 13, 44, 32],
+                pointRadius: 3,
+                fill: true,
+                label: 'Subscribers',
+                data: organizedSubscribersTimestamps,
+
+                borderColor: '#23cc93',
+                backgroundColor: 'rgba(35, 204, 147,0.4)',
             },
         ],
-        options: {
-            chart: {
-                type: 'bar',
-                height: 430,
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: true,
-                    dataLabels: {
-                        position: 'top',
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                offsetX: -6,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#fff'],
-                },
-            },
-            stroke: {
-                show: true,
-                width: 1,
-                colors: ['#fff'],
-            },
-            tooltip: {
-                shared: true,
-                intersect: false,
-            },
-            xaxis: {
-                categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
-            },
-        },
-    })
-    let visitorsChartOptions = useRef({
-        series: [
+    }
+    const leadData = {
+        labels,
+        datasets: [
             {
-                name: 'series1',
-                data: [31, 40, 28, 51, 42, 109, 100],
-            },
-            {
-                name: 'series2',
-                data: [11, 32, 45, 32, 34, 52, 41],
+                pointRadius: 3,
+                fill: true,
+                label: 'Leads',
+                data: organizedLeadsTimestamps,
+                borderColor: '#24a0fe',
+                backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
         ],
-        chart: {
-            height: '100%',
-            width: '100%',
-            type: 'area',
-        },
-        dataLabels: {
-            enabled: false,
-        },
-        stroke: {
-            curve: 'smooth',
-        },
-        xaxis: {
-            type: 'datetime',
-            categories: [
-                '2018-09-19T00:00:00.000Z',
-                '2018-09-19T01:30:00.000Z',
-                '2018-09-19T02:30:00.000Z',
-                '2018-09-19T03:30:00.000Z',
-                '2018-09-19T04:30:00.000Z',
-                '2018-09-19T05:30:00.000Z',
-                '2018-09-19T06:30:00.000Z',
-            ],
-        },
-        tooltip: {
-            x: {
-                format: 'dd/MM/yy HH:mm',
+    }
+    const visitorsData = {
+        labels,
+        datasets: [
+            {
+                lineTension: 0.4,
+                fill: true,
+                label: 'Visitors',
+                data: [50, 42, 15, 32, 64, 15, 16],
+                borderColor: '#24a0fe',
+                backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
-        },
-    })
-    if (!user?.sites) return <div>Loading....</div>
+        ],
+    }
+
+    if (!currSite) return <div>Loading....</div>
     return (
         <>
             <div className='info-box  flex justify-between'>
@@ -113,17 +131,21 @@ export function DashboardMain({ user, onEditSite }) {
 
             <div className='info-box flex'>
                 <div className='text-wrapper'>
+                    <h3>Leads</h3>
+                    <p>Here is your sites leads statistics</p>
+                </div>
+                <div className='info-box chart-wrapper'>
+                    <Line options={options} data={leadData} />
+                </div>
+            </div>
+
+            <div className='info-box flex'>
+                <div className='text-wrapper'>
                     <h3>Subscribers</h3>
                     <p>Here is your sites subscribers statistics</p>
                 </div>
                 <div className='info-box chart-wrapper'>
-                    <Chart
-                        options={SubsChartOptions.current}
-                        series={SubsChartOptions.current.series}
-                        type={'bar'}
-                        width={'100%'}
-                        height={300}
-                    />
+                    <Line options={options} data={subData} />
                 </div>
             </div>
 
@@ -133,13 +155,7 @@ export function DashboardMain({ user, onEditSite }) {
                     <p>Here is your sites visitors statistics</p>
                 </div>
                 <div className='info-box chart-wrapper'>
-                    <Chart
-                        options={visitorsChartOptions.current}
-                        series={visitorsChartOptions.current.series}
-                        type={'area'}
-                        width={'100%'}
-                        height={300}
-                    />
+                    <Line options={options} data={visitorsData} />
                 </div>
             </div>
         </>

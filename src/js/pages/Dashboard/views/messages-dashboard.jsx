@@ -3,6 +3,7 @@ import { BiSend } from 'react-icons/bi'
 import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
 import { AiOutlineSend } from 'react-icons/ai'
+import { useEffect } from 'react'
 
 export function MessagesDashboard({ user, currSite }) {
     // const currSite = user.userData.sites.at(-1)
@@ -14,6 +15,11 @@ export function MessagesDashboard({ user, currSite }) {
         setCurrContact({ contact: keyName, msgs: msgs[keyName] })
     }
 
+    useEffect(() => {
+        setMsgs(currSite.msgs)
+    }, [currSite])
+    console.log('currSite:', currSite)
+
     function handleChange(ev) {
         setMsgTxt(ev.target.value)
     }
@@ -24,44 +30,48 @@ export function MessagesDashboard({ user, currSite }) {
         saveWap(currSite)
     }
     return (
-        <section className='layout-wrapper'>
-            <div className='messages-dashboard full'>
-                <div className='contacts'>
-                    {/* <i className='fas fa-bars fa-2x'></i> */}
-                    <h2>Contacts</h2>
-                    {Object.keys(msgs).map((keyName, idx) => {
-                        return (
-                            <div className='contact' key={keyName} onClick={() => onContact(keyName)}>
-                                <div className='pic guest'></div>
-                                <div className='name'>{keyName}</div>
-                                {/* {console.log(msgs[keyName].at(-1).txt)} */}
-                                <div className='message'>{msgs[keyName].at(-1).txt.substring(0, 35)}...</div>
-                            </div>
-                        )
-                    })}
-                </div>
-
-                <div className='chat'>
-                    <div className='chat-layout'>
-                        <div className='contact bar'>
-                            <div className='pic bigger guest'></div>
-                            <div className='wrapper'>
-                                <div className='name'>{currContact.contact}</div>
-                                <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
-                            </div>
+        // <section className='layout-wrapper'>
+        <div className='messages-dashboard full'>
+            <div className='contacts'>
+                {/* <i className='fas fa-bars fa-2x'></i> */}
+                {/* <h2>Contacts</h2> */}
+                {Object.keys(msgs).map((keyName, idx) => {
+                    return (
+                        <div
+                            className={`contact ${currContact.contact === keyName ? 'active' : ''}`}
+                            key={keyName}
+                            onClick={() => onContact(keyName)}
+                        >
+                            <div className='pic guest'></div>
+                            <div className='name'>{keyName}</div>
+                            {/* {console.log(msgs[keyName].at(-1).txt)} */}
+                            <div className='message'>{msgs[keyName].at(-1).txt.substring(0, 25)}...</div>
                         </div>
-                        <div className='messages' id='chat'>
-                            <div className='time'>Today at 11:41</div>
-                            {currContact.msgs.map((msg, idx) => {
-                                return (
-                                    <p className={`${msg.by} message`} key={idx}>
-                                        {msg.txt}
-                                    </p>
-                                )
-                            })}
-                        </div>
+                    )
+                })}
+            </div>
 
-                        {/* <div className='contact bar'>
+            <div className='chat'>
+                <div className='chat-layout'>
+                    <div className='contact bar'>
+                        <div className='pic bigger guest'></div>
+                        <div className='wrapper'>
+                            <div className='name'>{currContact.contact}</div>
+                            <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
+                        </div>
+                    </div>
+                    <div className='messages' id='chat'>
+                        <div className='time'>Today at 11:41</div>
+                        {currContact.msgs.map((msg, idx) => {
+                            return (
+                                <p className={`${msg.by} message`} key={idx}>
+                                    {msg.txt}
+                                </p>
+                            )
+                        })}
+                    </div>
+
+                    {/* <div className='contact bar'>
                             <div className='pic stark'></div>
                             <div className='name'>Tony Stark</div>
                             <div className='seen'>Today at 12:56</div>
@@ -76,22 +86,17 @@ export function MessagesDashboard({ user, currSite }) {
                                 Uh, he's from space, he came here to steal a necklace from a wizard.
                             </div>
                         </div> */}
-                    </div>
-                    <div className='input'>
-                        {/* <i className='fas fa-camera'></i>
+                </div>
+                <div className='input'>
+                    {/* <i className='fas fa-camera'></i>
                         <i className='far fa-laugh-beam'></i> */}
-                        <input
-                            placeholder='Type your message here!'
-                            type='text'
-                            onChange={handleChange}
-                            value={msgTxt}
-                        />
-                        {/* <i className='fas fa-microphone'></i> */}
-                        <AiOutlineSend fontSize={'2rem'} className='send-btn' onClick={onSend} color='#444444' />
-                    </div>
+                    <input placeholder='Type your message here!' type='text' onChange={handleChange} value={msgTxt} />
+                    {/* <i className='fas fa-microphone'></i> */}
+                    <AiOutlineSend fontSize={'2rem'} className='send-btn' onClick={onSend} color='#444444' />
                 </div>
             </div>
-        </section>
+        </div>
+        // </section>
     )
 }
 {

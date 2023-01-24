@@ -29,7 +29,7 @@ export function Editor() {
     // sidebars states
     const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false })
     const [leftSidebarState, setLeftSidebarState] = useState({
-        isOpen: false,
+        isOpen: true,
         activeMenuItem: null,
         isSubMenuOpen: false,
         isDragging: false,

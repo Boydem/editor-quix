@@ -1,27 +1,58 @@
 .left-sidebar {
-    min-height: calc(100vh - $app-header-height + $toolbar-height);
-    max-height: calc(100vh - $app-header-height + $toolbar-height);
-    pointer-events: none;
-    z-index: 2;
+    bottom: 0;
+    width: 100vw;
     position: fixed;
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    overflow: visible;
-    display: flex;
-    min-width: $modules-menu-width;
-    left: 0;
-    &.dragging {
-        transform: translateX(calc(-100% - $modules-content-width));
-    }
-    &.open {
+    z-index: 2;
+    .indicator {
+        z-index: -5;
         pointer-events: all;
-        // transform: translateX(0%);
+        position: absolute;
+        inset: 0;
+        right: 0;
+        left: unset;
+        margin: auto;
+        cursor: pointer;
+        height: max-content;
+        padding: $spacing-xs $spacing-xxs;
+        color: $editor-active-bg;
+        font-size: px-to-rem(20px);
+        line-height: 1;
+        animation: show 1200ms ease-in;
+        transform: translate(100%, -90px);
+        border-radius: 0 55rem 55rem 0;
+        background-color: $clr7;
+        opacity: 1;
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &::before {
+            z-index: -2;
+            content: '';
+            position: absolute;
+            inset: 0;
+            left: 0;
+            right: unset;
+            margin: auto;
+            border-radius: 0 0.55rem 0.55rem 0;
+            width: 10px;
+            height: $spacing-xxl;
+            background-color: $clr7;
+        }
+    }
+    &.open .indicator {
+        transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: translate(-15%, -90px);
+
+        opacity: 0;
+
+        z-index: 1;
     }
     .module-menu {
         z-index: 2;
         width: 100%;
         background-color: $clr1;
         position: relative;
-        left: -$modules-menu-width;
+        left: 0;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         .tabs {
             background-color: $clr1;
@@ -33,60 +64,10 @@
                 font-size: 20px;
             }
         }
-        .indicator {
-            z-index: -5;
-            pointer-events: all;
-            position: absolute;
-            inset: 0;
-            right: 0;
-            left: unset;
-            margin: auto;
-            cursor: pointer;
-            height: max-content;
-            padding: $spacing-xs $spacing-xxs;
-            color: $editor-active-bg;
-            // font-weight: 900;
-            font-size: px-to-rem(20px);
-            line-height: 1;
-            transform: translate(-15%, -90px);
-            border-radius: 0 55rem 55rem 0;
-            // background-color: rgba($editor-active-clr, 75%);
-            background-color: $clr7;
-            opacity: 0;
-            transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
-                transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-            // position: relative;
 
-            &::before {
-                z-index: -2;
-                content: '';
-                position: absolute;
-                inset: 0;
-                left: 0;
-                right: unset;
-                margin: auto;
-                border-radius: 0 0.55rem 0.55rem 0;
-                width: 10px;
-                height: $spacing-xxl;
-                background-color: $clr7;
-            }
-        }
-        &:not(.add, .layers, .themes) .indicator {
-            transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
-                transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-            animation: show 1200ms ease-in;
-            opacity: 1;
-            transform: translate(100%, -90px);
-            z-index: 1;
-            // z-index: -1;
+        &.open .indicator::before {
         }
 
-        &:not(.add) .indicator::before {
-        }
-        &.add {
-            left: 0;
-        }
         .closed {
         }
     }
@@ -95,58 +76,61 @@
         pointer-events: all;
         z-index: -1;
         position: absolute;
-        width: $modules-content-width;
         top: 0;
         left: 0;
-        transform: translateX(-100%);
+        height: 60vh;
+        width: 100vw;
         background-color: $clr1;
-        // max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
-        transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        min-height: 100%;
-        overflow-y: auto;
-
-        .quick-add {
-            > div {
-                height: 100%;
-            }
-            img {
-                margin-bottom: 2em;
-                border-radius: 0.15rem;
-                box-shadow: 0px 5px 7px -2px rgba($clr9, 30%);
-                // padding: 1em;
-            }
-        }
+        transition: all 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
         &.open {
-            // transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), left 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translateX(0%);
-            // left: 0;
-            transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            top: -60vh;
         }
     }
 }
-.left-sidebar.add .module-content {
-    transform: translateX(-$modules-menu-width);
-}
-.left-sidebar.add .module-content.open {
-    transform: translateX($modules-menu-width);
-}
 
 .module-menu {
-    pointer-events: all;
-    z-index: 2;
-    border-right: 1px solid $editor-lightgray;
-    .menu-items {
+    .menu-wrapper {
+        pointer-events: all;
+        z-index: 2;
         background-color: $clr1;
-        padding: $spacing-s 0;
-        border-bottom: 1px solid $editor-lightgray;
-        & > * {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .menu-items {
+        padding: 0 1em;
+        display: flex;
+        flex-direction: row;
+        // padding: $spacing-s 0;
+
+        overflow-x: auto;
+        flex: 1;
+        &.themes {
+            flex: 0;
+            padding: 0;
+        }
+        & li {
             cursor: pointer;
             text-transform: uppercase;
             font-weight: 800;
-            letter-spacing: 0.025rem;
+            padding: 3px 9px;
+            display: flex;
+            align-items: center;
+            border-radius: 7px;
             font-size: px-to-rem(12.44px);
-            padding: $spacing-xs $spacing-m;
             transition: background-color 0.3s, color 0.3s;
+
+            &:not(:last-of-type) {
+                margin-inline-end: 1em;
+            }
+            &.themes {
+                top: 0;
+                transform: translateY(-100%);
+                background-color: $editor-active-clr;
+                color: $clr1;
+                position: absolute;
+            }
             &:hover:not(.active) {
                 background-color: $editor-hover-bg;
             }
@@ -156,7 +140,6 @@
             }
         }
     }
-    // max-width: ;
 }
 
 .right-sidebar {
@@ -166,23 +149,27 @@
 }
 .module-content {
     pointer-events: all;
-    min-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
-    max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+    overflow-y: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    // overflow: auto;
-    &::-webkit-scrollbar-thumb {
-        border: $spacing-xs solid transparent;
-        border-radius: 100px;
-        background-color: $clr9;
-        background-clip: content-box;
-    }
-    &::-webkit-scrollbar {
-        width: 1.25rem;
-    }
-    &::-webkit-scrollbar-track {
-        background-color: $clr12;
+    position: relative;
+    .module-options {
+        height: 100%;
+        overflow-y: auto;
+        padding: $spacing-m $spacing-m $spacing-l;
+        &::-webkit-scrollbar-thumb {
+            border: 3.5px solid transparent;
+            border-radius: 100px;
+            background-color: $clr9;
+            background-clip: content-box;
+        }
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $clr12;
+        }
     }
     .module-header {
         padding: $spacing-xxs $spacing-m;
@@ -191,7 +178,7 @@
         grid-template-rows: 1fr;
         grid-template-columns: auto 1fr;
         align-items: center;
-        // border-bottom: 1px solid $editor-lightgray;
+        border-bottom: 1px solid $editor-lightgray;
         .module-name {
             font-weight: 800;
             text-transform: uppercase;
@@ -218,15 +205,15 @@
             }
         }
     }
-    .module-options {
-        padding: $spacing-s $spacing-m;
+    .themes-intro {
+        color: $clr7;
+        margin-bottom: $spacing-s;
     }
 }
 .theme-container {
     $clr1-5d: darken($clr1, 5%);
     background-color: darken($clr1, 2%);
     border-radius: 5px;
-    // box-shadow: 0 0 1px 0 #d3d3d3;
     cursor: pointer;
     overflow: hidden;
     margin-bottom: $spacing-s;
@@ -279,5 +266,78 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@media (min-width: 960px) {
+    .left-sidebar {
+        min-height: calc(100vh - $app-header-height + $toolbar-height);
+        pointer-events: none;
+        bottom: unset;
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        overflow: visible;
+        display: flex;
+        max-width: $modules-menu-width;
+        left: 0;
+        transform: translateX(-100%);
+        &.dragging {
+            transform: translateX(calc(-100% - $modules-content-width));
+        }
+        &.open {
+            pointer-events: all;
+            transform: translateX(0%);
+        }
+        .module-menu {
+            min-height: calc(100vh - $app-header-height + $toolbar-height);
+            .menu-wrapper {
+                flex-direction: column;
+                border-right: 1px solid $editor-lightgray;
+                .menu-items {
+                    padding: $spacing-s 0;
+                    border-bottom: 1px solid $editor-lightgray;
+                    flex-direction: column;
+                    flex: auto;
+                    &.themes {
+                    }
+                    & li {
+                        padding: $spacing-xs $spacing-m;
+                        letter-spacing: 0.025rem;
+                        border-radius: 0;
+                        margin-inline-start: 0em;
+                        &.themes {
+                            top: unset;
+                            transform: translateY(0%);
+                            background-color: inherit;
+                            color: inherit;
+                            position: unset;
+                        }
+                    }
+                }
+            }
+        }
+        .module-content {
+            width: $modules-content-width;
+            transform: translateX(-$modules-menu-width);
+            height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+            .quick-add {
+                > div {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2em;
+                }
+                img {
+                    border-radius: 0.15rem;
+                    box-shadow: 0px 5px 7px -2px rgba($clr9, 30%);
+                }
+            }
+            &.open {
+                top: unset;
+                transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+        & .module-content.open {
+            transform: translateX($modules-menu-width);
+        }
     }
 }

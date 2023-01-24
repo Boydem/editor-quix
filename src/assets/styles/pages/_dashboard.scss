@@ -95,9 +95,9 @@
             display: flex;
             margin: 0 auto;
             gap: $spacing-m;
-            &:not(.main-header) {
-                height: 100%;
-            }
+            // &:not(.main-header, .col-left) {
+            //     height: 100%;
+            // }
         }
         .main-header {
             width: 100%;
@@ -154,6 +154,7 @@
         }
         .col-right {
             flex: 1;
+            min-height: 80vh;
         }
         .col-left {
             max-width: 300px;
@@ -214,6 +215,11 @@
                     width: 100%;
                     margin: auto;
                 }
+
+                canvas {
+                    background: #fbfcfc;
+                    box-shadow: 0 0 0 0 black;
+                }
             }
 
             &:not(.last-messages, .chart-wrapper) {
@@ -255,6 +261,7 @@
                 padding: $spacing-s $spacing-m;
                 width: 100%;
                 border-bottom: 1px solid $editor-lightgray;
+
                 &:not(.header) {
                     transition: background-color 0.5s, color 0.5s;
                     grid-column: 1/-1;
@@ -263,9 +270,26 @@
                         color: $editor-active-clr;
                     }
                 }
+
+                &.active {
+                    background: #004cc4;
+
+                    svg {
+                        fill: white;
+                    }
+
+                    &:hover {
+                        background-color: darken(#004cc4, 5%);
+                    }
+
+                    .item {
+                        color: white;
+                    }
+                }
                 > .item {
                     cursor: pointer;
                     color: $clr18;
+
                     img {
                         max-width: 50px;
                         border-radius: 5px;

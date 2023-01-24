@@ -381,7 +381,10 @@
             background: #f7f7f7;
             // flex-grow: 1;
             overflow-y: auto;
-
+            &.flex-end {
+                width: 100%;
+                height: 100%;
+            }
             box-shadow: inset 0 2rem 2rem -2rem rgba(black, 0.05), inset 0 -2rem 2rem -2rem rgba(black, 0.05);
 
             .time {
@@ -533,7 +536,9 @@
 
 // Obviously in a real app I would load this from a DB with JS
 // For now this is a nice quick and easy method to mockup
-
+.pic.support {
+    background-image: url('https://res.cloudinary.com/yaronshapira-com/image/upload/v1674600456/man_1_arrdyn.png');
+}
 .pic.stark {
     background-image: url('https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/7/73/SMH_Mentor_6.png');
 }

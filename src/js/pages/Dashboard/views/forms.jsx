@@ -4,7 +4,7 @@ import { BsTrash } from 'react-icons/bs'
 import { BsPencil } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 import { useSelector } from 'react-redux'
-import { utilService } from '../../../services/util.service'
+import { makeId, utilService } from '../../../services/util.service'
 import ComposeMail from '../cmps/compose-mail'
 import { useState } from 'react'
 
@@ -28,6 +28,7 @@ export function Forms({ user, currSite }) {
         setSubscriberEmail(allSubs)
         setIsMailOpen(true)
     }
+    console.log('currSite:', currSite)
     console.log('isMailOpen', isMailOpen)
     return (
         <>
@@ -70,7 +71,7 @@ export function Forms({ user, currSite }) {
                 </div>
                 <div className='user-forms leads-table'>
                     <ul className='table-row table-header container'>
-                        {currSite.leads && (
+                        {currSite.leads && currSite.leads.length > 0 && (
                             <>
                                 {Object.keys(currSite.leads?.at(-1).data).map((key, keyIndex) => {
                                     return (
@@ -85,7 +86,7 @@ export function Forms({ user, currSite }) {
 
                     {currSite.leads?.map(lead => {
                         return (
-                            <ul className='table-row container'>
+                            <ul className='table-row container' key={lead.id}>
                                 {Object.keys(lead.data).map((key, keyIndex) => {
                                     return (
                                         <li className='col' key={key}>

@@ -11,10 +11,17 @@ import { IoColorFilterOutline } from 'react-icons/io5'
 export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     // const [theme, setTheme] = useState('')
     const theme = useRef()
-    let currActive = useRef('Header')
     const menuItems = [
-        ['Header', 'Hero', 'Section', 'Card', 'Form', 'Chat', 'Footer', 'Contact & Forms', 'Social', 'Galleries'],
-        ['Themes'],
+        'Header',
+        'Hero',
+        'Section',
+        'Card',
+        'Form',
+        'Chat',
+        'Footer',
+        'Contact & Forms',
+        'Social',
+        'Galleries',
     ]
 
     function handleSidebar(sidebarChanges) {
@@ -43,59 +50,50 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
-    console.log('leftSidebarState:', leftSidebarState)
+
     return (
         <div
             className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${
                 leftSidebarState.isDragging ? 'dragging' : ''
             }`}
         >
-            {
-                <div className={`module-menu`}>
-                    {/* <div className='tabs flex'>
-                        {tabs.map((tab, idx) => (
-                            <button
-                                data-tabtip={`${tab}`}
-                                data-tabtip-dir='bottom'
-                                key={idx}
-                                onClick={() =>
-                                    onTabClick('left', {
-                                        isOpen: true,
-                                        currModule: tab,
-                                        activeMenuItem: null,
-                                        isSubMenuOpen: tab === 'add' ? false : true,
-                                    })
-                                }
-                                className={`${leftSidebarState.currModule === tab ? 'active' : ''} tab`}
-                            >
-                                {tab === 'add' && <AiOutlinePlus />}
-                                {tab === 'themes' && <IoColorFilterOutline />}
-                            </button>
-                        ))}
-                    </div> */}
-                </div>
-            }
             <div
-                className={`${leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}
+                data-tooltip={!leftSidebarState.isOpen ? 'add' : ''}
+                data-tooltip-dir={['right', 'no-fading']}
+                onClick={() =>
+                    handleSidebar({
+                        isOpen: !leftSidebarState.isOpen,
+                        isSubMenuOpen: false,
+                        activeMenuItem: 'Header',
+                    })
+                }
+                className='indicator'
             >
-                <div className='module-header'>
-                    <span className='module-name'>{leftSidebarState.activeMenuItem}</span>
-                    <div className='actions'>
-                        <span
-                            onClick={() => {
-                                handleSidebar({ isSubMenuOpen: false })
-                            }}
-                            className='tab'
-                        >
-                            <AiOutlineClose />
-                        </span>
+                <AiOutlinePlus />
+            </div>
+            <div className={`module-menu ${leftSidebarState.isOpen ? 'open' : ''}`}>
+                <div
+                    className={`${
+                        leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''
+                    } module-content`}
+                >
+                    <div className='module-header'>
+                        <span className='module-name'>{leftSidebarState.activeMenuItem}</span>
+                        <div className='actions'>
+                            <span
+                                onClick={() => {
+                                    handleSidebar({ isSubMenuOpen: false })
+                                }}
+                                className='tab'
+                            >
+                                <AiOutlineClose />
+                            </span>
+                        </div>
                     </div>
-                </div>
-
-                {leftSidebarState.isOpen && (
                     <div className='module-options'>
-                        {leftSidebarState.activeMenuItem === 'themes' && (
+                        {leftSidebarState.activeMenuItem?.toLowerCase() === 'themes' ? (
                             <div>
+                                <p className='themes-intro'>Give your design a sense of meaning</p>
                                 <div className='theme-container' onClick={() => handleThemeChange('theme-1')}>
                                     <div className='theme-header'>
                                         <h5>Buisness</h5>
@@ -145,10 +143,44 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                                     </div>
                                 </div>
                             </div>
+                        ) : (
+                            <DynamicModule activeMenuItem={leftSidebarState.activeMenuItem} addMenuItems={menuItems} />
                         )}
-                        <DynamicModule activeMenuItem={leftSidebarState.activeMenuItem} addMenuItems={menuItems} />
                     </div>
-                )}
+                </div>
+                <div className='menu-wrapper'>
+                    <ul className={`menu-items`}>
+                        {menuItems.map(menuItem => (
+                            <li
+                                className={`${leftSidebarState.activeMenuItem === menuItem ? 'active' : ''} `}
+                                onClick={() => {
+                                    handleSidebar({
+                                        isOpen: true,
+                                        isSubMenuOpen: true,
+                                        activeMenuItem: menuItem,
+                                    })
+                                }}
+                                key={menuItem}
+                            >
+                                {menuItem}
+                            </li>
+                        ))}
+                    </ul>
+                    <ul className='menu-items themes'>
+                        <li
+                            className='themes'
+                            onClick={() => {
+                                handleSidebar({
+                                    isOpen: true,
+                                    isSubMenuOpen: true,
+                                    activeMenuItem: 'themes',
+                                })
+                            }}
+                        >
+                            Themes
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     )

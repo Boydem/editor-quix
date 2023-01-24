@@ -27,7 +27,13 @@ window.userService = userService
 function _createUsersForTesting() {
     if (!utilService.loadFromStorage(STORAGE_KEY_USER_DB)) {
         utilService.saveToStorage(STORAGE_KEY_USER_DB, [
-            { fullname: 'King Kong', username: '1', password: '1', _id: '1' },
+            {
+                fullname: 'Yaron Shapira',
+                imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+                password: '1',
+                username: '1',
+                _id: 'I6ju1',
+            },
         ])
     }
 }
