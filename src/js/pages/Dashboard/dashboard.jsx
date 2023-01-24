@@ -115,7 +115,7 @@ export function Dashboard() {
                 </div>
                 <div className='layout-wrapper'>
                     <div className='col col-left'>
-                        <SiteSelectDesktop user={user} />
+                        <SiteSelectDesktop user={user} currSite={currSite} />
                     </div>
                     <div className='col col-right'>
                         {currView === 'dashboard' && (

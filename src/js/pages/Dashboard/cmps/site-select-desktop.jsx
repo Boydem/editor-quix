@@ -1,14 +1,14 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 
-export function SiteSelectDesktop({ user }) {
+export function SiteSelectDesktop({ user, currSite }) {
     return (
         <>
             <div className='info-box info-box-2'>
                 <div className='text-wrapper'>
-                    <h3>Your Partner level</h3>
+                    <h3>Currently viewing</h3>
                     <div className='level flex align-center'>
-                        <img src={explorerSVG} alt='explorerSVG' /> <h2>Explorer</h2>
+                        <img src={explorerSVG} alt='explorerSVG' /> <h2>{currSite.title}</h2>
                     </div>
                     <p>You have 35 points. Only 400 points until you reach the next level.</p>
                 </div>
