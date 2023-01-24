@@ -1,0 +1,100 @@
+{
+    "id": "u7Dbr5",
+    "type": "div",
+    "name": "wap-6-cta-2",
+    "category": "section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-cta-edited_i81jxy.jpg",
+    "cmps": [
+        {
+            "id": "S6qPZN",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "Come Get Your Favorites!"
+            },
+            "cmps": []
+        },
+        {
+            "id": "3EINs1",
+            "type": "div",
+            "name": "grid",
+            "cmps": [
+                {
+                    "id": "emD5AX",
+                    "type": "div",
+                    "name": "visit",
+                    "cmps": [
+                        {
+                            "id": "Ltjzz5",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/visit_j5atx4.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "TSh0M5",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Visit Our Store"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "FyUO63",
+                    "type": "div",
+                    "name": "order",
+                    "cmps": [
+                        {
+                            "id": "cWlhG5",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994993/order_nua1cf.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "0Carl8",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Order Online & Pickup in Store"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ZMmo77",
+                    "type": "div",
+                    "name": "visit",
+                    "cmps": [
+                        {
+                            "id": "W2zFwj",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/delivery_lrh0o1.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "nKPNQx",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Get Sugar & Cream at Your Door"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

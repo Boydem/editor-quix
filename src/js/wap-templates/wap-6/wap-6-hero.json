@@ -1,0 +1,24 @@
+{
+    "id": "IGqobl",
+    "type": "div",
+    "name": "wap-6-hero",
+    "category": "hero",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674564273/wap-6-hero_koqlkv.jpg",
+    "cmps": [
+        {
+            "id": "9oSgyu",
+            "type": "h1",
+            "name": "",
+            "content": {
+                "txt": "The Best Donuts in Town"
+            },
+            "cmps": []
+        },
+        {
+            "id": "sWErVL",
+            "type": "div",
+            "name": "image",
+            "cmps": []
+        }
+    ]
+}
