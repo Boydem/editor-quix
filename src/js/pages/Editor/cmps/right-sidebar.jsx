@@ -65,7 +65,6 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
             cmpTitle = 'Chat'
             break
         default:
-            console.log('Went to default in right side bar')
     }
 
     function handleSidebar(stateChanges) {
