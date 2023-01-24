@@ -87,7 +87,7 @@ export function MessagesDashboard({ user, currSite }) {
                             value={msgTxt}
                         />
                         {/* <i className='fas fa-microphone'></i> */}
-                        <AiOutlineSend fontSize={'2rem'} className='send-btn' onClick={onSend} color='#333333' />
+                        <AiOutlineSend fontSize={'2rem'} className='send-btn' onClick={onSend} color='#444444' />
                     </div>
                 </div>
             </div>
