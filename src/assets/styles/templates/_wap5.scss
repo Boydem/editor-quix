@@ -885,7 +885,7 @@
     // :root {
     //     --container-width: 900px;
     // }
-    .app-header {
+    .wap-5-header {
         grid-template-columns: repeat(2, 1fr);
         position: relative;
         .open-close-icon {
@@ -973,7 +973,7 @@
             }
         }
     }
-    .app-header,
+    .wap-5-header,
     .wap-5-hero,
     .gallery-1,
     .gallery-2,
@@ -1099,7 +1099,7 @@
 }
 
 @media screen and (max-width: 700px) {
-    .app-header {
+    .wap-5-header {
         .logo {
             gap: 0.5em;
             h2 {
@@ -1224,7 +1224,7 @@
     // :root {
     //     --container-width: 900px;
     // }
-    .app-header {
+    .wap-5-header {
         grid-template-columns: repeat(2, 1fr);
         position: relative;
         .open-close-icon {
@@ -1312,7 +1312,7 @@
             }
         }
     }
-    .app-header,
+    .wap-5-header,
     .wap-5-hero,
     .gallery-1,
     .gallery-2,
@@ -1438,7 +1438,7 @@
 }
 
 .mobile-layout {
-    .app-header {
+    .wap-5-header {
         .logo {
             gap: 0.5em;
             h2 {
