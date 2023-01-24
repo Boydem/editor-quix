@@ -1,6 +1,6 @@
-import { userService } from '../../services/user.service.js'
-import { wapService } from '../../services/wap.service.js'
 import { store } from '../store.js'
+import { wapService } from '../../services/wap.service.js'
+import { userService } from '../../services/user.service.js'
 import { SET_CURR_SITE, SET_USER } from './user.reducer.js'
 
 // import { showErrorMsg } from '../services/event-bus.service.js'

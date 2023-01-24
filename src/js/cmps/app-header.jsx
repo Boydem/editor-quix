@@ -56,9 +56,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         }
     }
     function getShortenName() {
-        // if (!user ||) return '?'
-        // const names = user.fullname.split(' ')
-        // return names[0][0] + names[1][0]
+        if (!user) return
+        const matches = user?.fullname.match(/\b(\w)/g)
+        const shortName = matches.join('')
+        console.log('shortName:', shortName)
+        return shortName
     }
     function onEditDomain() {
         if (!wap.url) return
@@ -92,7 +94,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <button
                                 data-tooltip='Notifications'
                                 data-tooltip-dir='bottom'
-                                className='tab notifications'
+                                className='tool notifications'
                             >
                                 <BiBell />
                             </button>
@@ -103,10 +105,12 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='user-area'>
-                                <div className='avatar'>
-                                    {getShortenName()}
-                                    {/* <img src={user.imgUrl} alt='userAvatar' /> */}
-                                </div>
+                                {user && (
+                                    <div className='avatar'>
+                                        {getShortenName()}
+                                        {/* <img src={user.imgUrl} alt='userAvatar' /> */}
+                                    </div>
+                                )}
                                 <div className='user-info'>
                                     {user && <div className='user-fullname'>{user.fullname}</div>}
                                     <div className='user-links'>
@@ -120,7 +124,18 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                                 </span>
                                             </>
                                         ) : (
-                                            <Link to={`/auth`}>Login</Link>
+                                            <ul className='flex align-center'>
+                                                <li>
+                                                    <Link className='nav-link link-underline sign-in' to='/auth/login'>
+                                                        <span>Login</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link className='nav-link link-underline sign-up' to='/auth/login'>
+                                                        <span>Sign up</span>
+                                                    </Link>
+                                                </li>
+                                            </ul>
                                         )}
                                     </div>
                                 </div>

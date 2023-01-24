@@ -22,7 +22,7 @@ export const userService = {
 }
 
 window.userService = userService
-_createUsersForTesting()
+// _createUsersForTesting()
 
 function _createUsersForTesting() {
     if (!utilService.loadFromStorage(STORAGE_KEY_USER_DB)) {
@@ -81,12 +81,16 @@ async function login(userCred) {
         // socketService.login(user._id)
         return saveLocalUser(user)
     }
+    throw new Error('Invalid username or password')
 }
 async function signup(userCred) {
-    if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+    console.log('userCred:', userCred)
+    // if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+    const users = await storageService.query(STORAGE_KEY_USER_DB)
+    console.log('users:', users)
+    const isUsernameTaken = users.find(user => user.username === userCred.username)
+    if (isUsernameTaken) throw new Error('Username already taken')
     const user = await storageService.post(STORAGE_KEY_USER_DB, userCred)
-    // const user = await httpService.post('auth/signup', userCred)
-    // socketService.login(user._id)
     return saveLocalUser(user)
 }
 async function logout() {

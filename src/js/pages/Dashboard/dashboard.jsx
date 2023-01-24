@@ -32,7 +32,7 @@ export function Dashboard() {
     const menuItems = ['Dashboard', 'Messages', 'Forms']
 
     useEffect(() => {
-        if (!userId) navigate('/auth')
+        if (!userId) navigate('/auth/login')
         loadUser()
     }, [])
 
