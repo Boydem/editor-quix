@@ -104,7 +104,7 @@ export function Dashboard() {
                         <button
                             data-tooltip='Site Actions'
                             data-tooltip-dir={['left', 'info']}
-                            className='site-actions-dropdown tool'
+                            className='site-actions-dropdown tab'
                         >
                             <BsThreeDots />
                         </button>

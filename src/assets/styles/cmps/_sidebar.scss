@@ -23,6 +23,16 @@
         position: relative;
         left: -$modules-menu-width;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        .tabs {
+            background-color: $clr1;
+            padding: $spacing-s $spacing-m;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .tab {
+                font-size: 20px;
+            }
+        }
         .indicator {
             z-index: -5;
             pointer-events: all;
@@ -101,8 +111,8 @@
             }
             img {
                 margin-bottom: 2em;
-                border-radius: 0.5rem;
-                box-shadow: 0px 5px 7px -2px $clr9;
+                border-radius: 0.15rem;
+                box-shadow: 0px 5px 7px -2px rgba($clr9, 30%);
                 // padding: 1em;
             }
         }
@@ -124,12 +134,10 @@
 .module-menu {
     pointer-events: all;
     z-index: 2;
-    // box-shadow: 10px 0px 10px -6px lighten($clr1, 55%);
     border-right: 1px solid $editor-lightgray;
     .menu-items {
         background-color: $clr1;
         padding: $spacing-s 0;
-        // margin-bottom: $spacing-s;
         border-bottom: 1px solid $editor-lightgray;
         & > * {
             cursor: pointer;
@@ -215,30 +223,36 @@
     }
 }
 .theme-container {
-    background-color: #efefef;
+    $clr1-5d: darken($clr1, 5%);
+    background-color: darken($clr1, 2%);
     border-radius: 5px;
-    box-shadow: 0 0 1px 0 #d3d3d3;
+    // box-shadow: 0 0 1px 0 #d3d3d3;
     cursor: pointer;
     overflow: hidden;
-    margin-bottom: 5px;
-    border: 2px solid #d3d3d3;
-
-    .theme-header {
-        padding: 1rem 1.2rem;
-        .theme-title {
-            font-size: 1.4rem;
-            font-weight: 500;
+    margin-bottom: $spacing-s;
+    border: 1px solid darken($clr1, 10%);
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+        transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+        background-color: $clr1-5d;
+        box-shadow: inset 0 0 0 3px rgba($clr1-5d, 50%);
+        h5 {
+            color: $clr2;
         }
-
+    }
+    .theme-header {
+        padding: $spacing-s 1em;
+        h5 {
+            color: $clr11;
+        }
         .theme-desc {
             color: #858585;
-            font-size: 0.8rem;
+            font-size: 0.8em;
         }
     }
     .theme-colors-container {
         display: flex;
         & > * {
-            border-radius: 2px;
             flex-grow: 1;
         }
         & > :first-child {

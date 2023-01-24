@@ -27,11 +27,9 @@ export function Editor() {
     const editLayoutRef = useRef()
 
     // sidebars states
-    const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false, currModule: null })
+    const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false })
     const [leftSidebarState, setLeftSidebarState] = useState({
         isOpen: false,
-        prevModule: null,
-        currModule: null,
         activeMenuItem: null,
         isSubMenuOpen: false,
         isDragging: false,
@@ -86,7 +84,6 @@ export function Editor() {
     }
 
     function handleOnDragStart() {
-        // console.log('YES')
         handleSidebarsChanges('left', { isDragging: true })
     }
     if (Object.keys(wap).length === 0) return

@@ -93,7 +93,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <button
                                 data-tooltip='Notifications'
                                 data-tooltip-dir='bottom'
-                                className='tool notifications'
+                                className='tab notifications'
                             >
                                 <BiBell />
                             </button>
