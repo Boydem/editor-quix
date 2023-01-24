@@ -9,20 +9,18 @@ import { userService } from '../../services/user.service'
 import { LineChart } from './cmps/line-chart'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 
-import { setUser } from '../../store/user/user.actions'
-
 import { IoAnalyticsOutline } from 'react-icons/io5'
 import { GrAnalytics } from 'react-icons/gr'
 
 import { DashboardMain } from './views/dashboard-main'
 import { Forms } from './views/forms'
 import { Messages } from './views/messages'
+import { setUser } from '../../store/user/user.actions'
 
 export function Dashboard() {
     const activeMenu = useRef('Dashboard')
     const [currView, setCurrView] = useState('dashboard')
     const user = useSelector(storeState => storeState.userModule.user)
-    const [userData, setUserData] = useState({})
     const navigate = useNavigate()
     const menuItems = ['Dashboard', 'Messages', 'Forms']
     const { userId } = useParams()
@@ -37,24 +35,21 @@ export function Dashboard() {
         activeMenu.current = view.toLowerCase()
         setCurrView(view.toLowerCase())
     }
-    console.log('userData:', userData)
     async function loadUser() {
         if (!userId) return
         try {
             const user = await setUser(userId)
-            const userData = await wapService.query({ owner: user._id })
-            setUserData(userData)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)
         }
     }
-
+    console.log('user:', user)
     if (!user) return <div>Loading...</div>
     return (
         <>
             <div className='dashboard full'>
-                <AppHeader location={'dashboard'} />
+                <AppHeader location={'dashboard'} userData={user.userData} />
                 <aside className='dashboard-sidebar side-start'>
                     <nav className='dashboard-nav'>
                         <ul className='menu-items'>

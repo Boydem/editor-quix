@@ -139,3 +139,7 @@ export async function removeCmp(newCmp) {
 export async function setIsEditing(mode) {
     store.dispatch({ type: SET_IS_EDITING, mode })
 }
+
+export async function setCurrWatched(wapId) {
+    console.log('wapId:', wapId)
+}
