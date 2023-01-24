@@ -35,7 +35,7 @@ export function SiteSelectDesktop({ user }) {
                 <div className='list-item-preview header'>
                     <h4>Last Messages</h4>
                 </div>
-                {user?.sites.map((site, idx) => (
+                {user?.sites?.map((site, idx) => (
                     <article key={site._id} className='list-item-preview'>
                         <div className='item'>
                             <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
