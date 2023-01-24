@@ -98,7 +98,7 @@ export function DashboardMain({ user, onEditSite }) {
     if (!user?.sites) return <div>Loading....</div>
     return (
         <>
-            <div className='info-box'>
+            <div className='info-box  flex justify-between'>
                 <div className='text-wrapper'>
                     <h3>Welcome to your Partner Dashboard</h3>
                     <p>
@@ -110,14 +110,14 @@ export function DashboardMain({ user, onEditSite }) {
                     <img src={diamondSVG} alt='diamonds' />
                 </div>
             </div>
-            <div className='info-box'>
+            <div className='info-box flex space-between'>
                 <div className='text-wrapper'>
                     <h3>Last Messages</h3>
                     <p>Advance to new levels as you earn points for creating Premium sites</p>
                 </div>
-                <div className='last-messages info-box info-box-rows'>
+                <div className='last-messages info-box info-box-rows flex'>
                     {user?.sites.map((site, idx) => (
-                        <article key={site._id} className='wap-preview'>
+                        <article key={site._id} className='list-item-preview'>
                             <div className='item'>
                                 <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
                                 <span className='user-name'>
@@ -135,8 +135,8 @@ export function DashboardMain({ user, onEditSite }) {
                     ))}
                 </div>
             </div>
-            <div className='info-box charts'>
-                <div>
+            <div className='info-box'>
+                <div className='flex'>
                     <div className='text-wrapper'>
                         <h3>Subscribers</h3>
                         <p>Here is your sites subscribers statistics</p>
@@ -151,7 +151,7 @@ export function DashboardMain({ user, onEditSite }) {
                         />
                     </div>
                 </div>
-                <div>
+                <div className='flex'>
                     <div className='text-wrapper'>
                         <h3>Visitors</h3>
                         <p>Here is your sites visitors statistics</p>

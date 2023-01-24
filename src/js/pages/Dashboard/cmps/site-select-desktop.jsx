@@ -14,11 +14,11 @@ export function SiteSelectDesktop({ user }) {
                 </div>
             </div>
             <div className='info-box info-box-rows my-sites'>
-                <div className='wap-preview header'>
+                <div className='list-item-preview header'>
                     <h3>My sites</h3>
                 </div>
                 {user?.sites?.map(site => (
-                    <article key={site._id} className='wap-preview'>
+                    <article key={site._id} className='list-item-preview'>
                         <div className='item'>
                             <img src={explorerSVG} alt='explorerSVG' />
                             <span>{site.title}</span>

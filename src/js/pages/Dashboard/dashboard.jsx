@@ -95,25 +95,25 @@ export function Dashboard() {
             </aside>
 
             <main className='dashboard-main'>
-                <div className='layout-wrapper'>
-                    <div className='header'>
-                        <div className='titles'>
-                            <h2>Hello, {user.fullname}</h2>
-                            <h6>Welcome to your Dashboard</h6>
-                        </div>
-                        <div className='actions'>
-                            <button
-                                data-tooltip='Site Actions'
-                                data-tooltip-dir={['left', 'info']}
-                                className='site-actions-dropdown tool'
-                            >
-                                <BsThreeDots />
-                            </button>
-                            <button onClick={onEditSite} className='site-actions-edit flex align-center'>
-                                <BsPencil /> <span>Edit Site</span>
-                            </button>
-                        </div>
+                <div className='header'>
+                    <div className='titles'>
+                        <h2>Hello, {user.fullname}</h2>
+                        <h6>Welcome to your Dashboard</h6>
                     </div>
+                    <div className='actions'>
+                        <button
+                            data-tooltip='Site Actions'
+                            data-tooltip-dir={['left', 'info']}
+                            className='site-actions-dropdown tool'
+                        >
+                            <BsThreeDots />
+                        </button>
+                        <button onClick={onEditSite} className='site-actions-edit flex align-center'>
+                            <BsPencil /> <span>Edit Site</span>
+                        </button>
+                    </div>
+                </div>
+                <div className='layout-wrapper'>
                     <div className='col col-left'>
                         <SiteSelectDesktop user={user} />
                     </div>
