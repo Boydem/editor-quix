@@ -8,7 +8,7 @@ export function SiteSelectDesktop({ user, currSite }) {
                 <div className='text-wrapper'>
                     <h3>Currently viewing</h3>
                     <div className='flex align-center'>
-                        <img src={explorerSVG} alt='explorerSVG' /> <h4>{currSite.title}</h4>
+                        <img src={explorerSVG} alt='explorerSVG' /> <h4>{currSite?.title}</h4>
                     </div>
                 </div>
             </div>
