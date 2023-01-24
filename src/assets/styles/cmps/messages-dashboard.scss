@@ -8,7 +8,8 @@ $background: #f7f7f7;
 .messages-dashboard {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    height: 74vh;
+    // height: 74vh;
+    // height: 100%;
     .pic {
         width: 3rem;
         height: 3rem;
@@ -83,9 +84,12 @@ $background: #f7f7f7;
         // width: 24rem;
         // height: 90vh;
         width: 100%;
-        padding: 1rem;
+        padding: 0.4rem;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
         box-sizing: border-box;
-        border-radius: 1rem 0 0 1rem;
+        border-radius: 0.444rem 0 0 0.444rem;
 
         cursor: pointer;
 
@@ -128,8 +132,8 @@ $background: #f7f7f7;
         z-index: 2;
         box-sizing: border-box;
         // border-radius: 1rem;
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 0.444rem;
+        border-bottom-right-radius: 0.444rem;
 
         background: white;
         // box-shadow: 0 0 8rem 0 rgba(black, 0.1), 0rem 2rem 4rem -3rem rgba(black, 0.5);
