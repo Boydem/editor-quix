@@ -75,7 +75,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 {cmp.cmps[1].cmps?.map(c => {
                     return <DynamicCmp cmp={c} key={c.id} />
                 })}
-                <div className='messages'>
+                <div className='messages flex-end'>
                     {msgs?.map((msg, idx) => {
                         return (
                             <p className={`${msg.by} message`} key={idx}>

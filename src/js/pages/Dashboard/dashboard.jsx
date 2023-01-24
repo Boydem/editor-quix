@@ -80,11 +80,12 @@ export function Dashboard() {
     }
     let sortedEvents
     if (currSite) {
-        const subscribersTimestamps = currSite?.subscribers?.reduce((acc, sub) => {
+        console.log('currSite:', currSite)
+        const subscribersTimestamps = currSite?.subscribers.reduce((acc, sub) => {
             acc.push(sub.date)
             return acc
         }, [])
-        const leadTimestamps = currSite?.leads?.reduce((acc, lead) => {
+        const leadTimestamps = currSite?.leads.reduce((acc, lead) => {
             acc.push(lead.data.date)
             return acc
         }, [])

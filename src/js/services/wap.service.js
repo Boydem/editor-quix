@@ -152,6 +152,8 @@ function getBlankWap() {
         title: 'blank-template',
         cmps: [],
         msgs: [],
+        leads: [],
+        subscribers: [],
         breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
     }
 }
