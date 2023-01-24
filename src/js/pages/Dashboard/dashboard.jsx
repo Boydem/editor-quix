@@ -29,8 +29,8 @@ export function Dashboard() {
     const menuItems = ['Dashboard', 'Messages', 'Forms']
     const navigate = useNavigate()
     const { userId } = useParams()
-    console.log('currSite:', currSite)
-    useLayoutEffect(() => {
+    // console.log('currSite:', currSite)
+    useEffect(() => {
         if (!userId) navigate('/auth')
         loadUser()
     }, [])
@@ -46,7 +46,7 @@ export function Dashboard() {
     }
 
     async function onEditSite(ev) {
-        console.log(currSite, 'currSite')
+        // console.log(currSite, 'currSite')
         if (!currSite?._id) {
             showErrorMsg('Failed Editing site, try again later ')
             return
@@ -63,6 +63,7 @@ export function Dashboard() {
         if (!userId) return
         try {
             const user = await setUser(userId)
+            if (!user.sites || !user.sites.length) navigate('/create')
             await setCurrSite(user.sites[0])
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
@@ -73,6 +74,29 @@ export function Dashboard() {
     async function onChangeSite(siteId) {
         let currSite = user?.sites.find(site => site._id === siteId)
         await setCurrSite(currSite)
+    }
+    let sortedEvents
+    if (currSite) {
+        const subscribersTimestamps = currSite?.subscribers?.reduce((acc, sub) => {
+            acc.push(sub.date)
+            return acc
+        }, [])
+        const leadTimestamps = currSite?.leads?.reduce((acc, lead) => {
+            acc.push(lead.data.date)
+            return acc
+        }, [])
+        const msgsTimestamps = Object.keys(currSite?.msgs).reduce((acc, key) => {
+            acc.push(currSite?.msgs[key].at(-1).date)
+            return acc
+        }, [])
+
+        const allTimestamps = { subscribersTimestamps, leadTimestamps, msgsTimestamps }
+        console.log(allTimestamps)
+
+        sortedEvents = Object.entries(allTimestamps)
+            .flatMap(([key, values]) => values.map(timestamp => ({ key, timestamp })))
+            .sort((a, b) => b.timestamp - a.timestamp)
+            .slice(0, 5)
     }
 
     if (!user || !currSite) return <div>Loading...</div>
@@ -121,7 +145,12 @@ export function Dashboard() {
                 </div>
                 <div className='layout-wrapper'>
                     <div className='col col-left'>
-                        <SiteSelectDesktop user={user} currSite={currSite} onChangeSite={onChangeSite} />
+                        <SiteSelectDesktop
+                            user={user}
+                            currSite={currSite}
+                            onChangeSite={onChangeSite}
+                            sortedEvents={sortedEvents}
+                        />
                     </div>
                     <div className='col col-right'>
                         {currView === 'dashboard' && <DashboardMain user={user} currSite={currSite} />}

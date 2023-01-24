@@ -11,7 +11,27 @@ import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 import Chart from 'react-apexcharts'
 
 export function DashboardMain({ user, currSite }) {
+    const subscribersChartRef = useRef()
+    const leadsChartRef = useRef()
+    const visitorsChartRef = useRef()
+    useEffect(() => {
+        // console.log('currSite has changed')
+        // console.log('organizedLeadsTimestamps', organizedLeadsTimestamps)
+        // console.log('organizedSubscribersTimestamps', organizedSubscribersTimestamps)
+
+        // organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
+        // organizedLeadsTimestamps.reverse()
+        // setOrganizedLeadsTimestamps(organizedLeadsTimestamps)
+
+        // organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
+        // organizedSubscribersTimestamps.reverse()
+        // setOrganizedSubscribersTimestamps(organizedSubscribersTimestamps)
+        // console.log('organizedSubscribersTimestamps:', organizedSubscribersTimestamps)
+
+        subscribersChartRef.current.render()
+    }, [currSite])
     function organizeTimestamps(timestamps) {
+        if (!timestamps || !timestamps.length) return [0, 0, 0, 0, 0, 0, 0]
         const today = new Date()
         const oneDay = 24 * 60 * 60 * 1000 // milliseconds in one day
         const week = new Array(7).fill(0) // create an array of 7 places filled with 0
@@ -35,21 +55,27 @@ export function DashboardMain({ user, currSite }) {
     }, [])
 
     // const leadsTimestamps = curr
-    let organizedLeadsTimestamps
-    if (leadTimestamps) {
-        organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
-        organizedLeadsTimestamps.reverse()
-    }
-    let organizedSubscribersTimestamps
-    if (subscribersTimestamps) {
-        organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
-        organizedSubscribersTimestamps.reverse()
-    }
 
+    // let [organizedLeadsTimestamps, setOrganizedLeadsTimestamps] = useState([0, 0, 0, 0, 0, 0, 0])
+    let organizedLeadsTimestamps = [0, 0, 0, 0, 0, 0, 0]
+    // if (leadTimestamps) {
+    organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
+    organizedLeadsTimestamps.reverse()
+    // }
+    // let [organizedSubscribersTimestamps, setOrganizedSubscribersTimestamps] = useState([0, 0, 0, 0, 0, 0, 0])
+    let organizedSubscribersTimestamps = [0, 0, 0, 0, 0, 0, 0]
+    // if (subscribersTimestamps) {
+    organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
+    organizedSubscribersTimestamps.reverse()
+    // }
+    // setInterval(() => {
+    //     organizedLeadsTimestamps.push(1)
+    // }, 1000)
     const DAY = 1000 * 60 * 60 * 24
     let LeadsChartOptions = useRef({
         series: [
             {
+                // data: organizedLeadsTimestamps,
                 data: organizedLeadsTimestamps,
             },
         ],
@@ -213,6 +239,7 @@ export function DashboardMain({ user, currSite }) {
                         type={'bar'}
                         width={'100%'}
                         height={300}
+                        ref={subscribersChartRef}
                     />
                 </div>
             </div>
@@ -229,6 +256,7 @@ export function DashboardMain({ user, currSite }) {
                         type={'area'}
                         width={'100%'}
                         height={300}
+                        ref={visitorsChartRef}
                     />
                 </div>
             </div>
@@ -244,6 +272,7 @@ export function DashboardMain({ user, currSite }) {
                         type={'line'}
                         width={'100%'}
                         height={300}
+                        ref={leadsChartRef}
                     />
                 </div>
             </div>
