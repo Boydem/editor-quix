@@ -45,12 +45,13 @@ export function Dashboard() {
         }
     }
 
-    async function onEditSite(currSite) {
+    async function onEditSite(ev) {
+        console.log(currSite, 'currSite')
         if (!currSite?._id) {
             showErrorMsg('Failed Editing site, try again later ')
             return
         }
-        navigate(`edit/${currSite._id}`)
+        navigate(`/edit/${currSite._id}`)
     }
 
     function onChangeView(view) {
@@ -73,7 +74,7 @@ export function Dashboard() {
         let currSite = user?.sites.find(site => site._id === siteId)
         await setCurrSite(currSite)
     }
-    console.log('user:', user)
+
     if (!user || !currSite) return <div>Loading...</div>
     return (
         <div className='dashboard full'>

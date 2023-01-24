@@ -35,10 +35,16 @@ export function DashboardMain({ user, currSite }) {
     }, [])
 
     // const leadsTimestamps = curr
-    const organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
-    const organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
-    organizedLeadsTimestamps.reverse()
-    organizedSubscribersTimestamps.reverse()
+    let organizedLeadsTimestamps
+    if (leadTimestamps) {
+        organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
+        organizedLeadsTimestamps.reverse()
+    }
+    let organizedSubscribersTimestamps
+    if (subscribersTimestamps) {
+        organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
+        organizedSubscribersTimestamps.reverse()
+    }
 
     const DAY = 1000 * 60 * 60 * 24
     let LeadsChartOptions = useRef({
@@ -48,35 +54,35 @@ export function DashboardMain({ user, currSite }) {
             },
         ],
         options: {
-            chart: {
-                type: 'line',
-                height: 430,
-            },
-            plotOptions: {
-                bar: {
-                    // horizontal: true,
-                    dataLabels: {
-                        position: 'top',
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                offsetY: 6,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#fff'],
-                },
-            },
-            stroke: {
-                show: true,
-                width: 1,
-                colors: ['#fff'],
-            },
-            tooltip: {
-                shared: true,
-                intersect: false,
-            },
+            // chart: {
+            //     type: 'line',
+            //     height: 430,
+            // },
+            // plotOptions: {
+            //     bar: {
+            //         // horizontal: true,
+            //         dataLabels: {
+            //             position: 'top',
+            //         },
+            //     },
+            // },
+            // dataLabels: {
+            //     enabled: true,
+            //     offsetY: 6,
+            //     style: {
+            //         fontSize: '12px',
+            //         colors: ['#fff'],
+            //     },
+            // },
+            // stroke: {
+            //     show: true,
+            //     width: 1,
+            //     colors: ['#fff'],
+            // },
+            // tooltip: {
+            //     shared: true,
+            //     intersect: false,
+            // },
             xaxis: {
                 categories: [
                     new Date(Date.now() - 6 * DAY).toLocaleDateString(),
@@ -228,8 +234,8 @@ export function DashboardMain({ user, currSite }) {
             </div>
             <div className='info-box flex'>
                 <div className='text-wrapper'>
-                    <h3>Visitors</h3>
-                    <p>Here is your sites visitors statistics</p>
+                    <h3>Leads</h3>
+                    <p>Here is your sites leads statistics</p>
                 </div>
                 <div className='info-box chart-wrapper'>
                     <Chart
