@@ -1,7 +1,7 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 
-export function SiteSelectDesktop({ user, currSite }) {
+export function SiteSelectDesktop({ user, currSite, onChangeSite }) {
     return (
         <>
             <div className='info-box info-box-2'>
@@ -17,7 +17,11 @@ export function SiteSelectDesktop({ user, currSite }) {
                     <h4>My sites</h4>
                 </div>
                 {user?.sites?.map(site => (
-                    <article key={site._id} className='list-item-preview'>
+                    <article
+                        key={site._id}
+                        className={`list-item-preview ${currSite?._id === site._id ? 'active' : ''}`}
+                        onClick={() => onChangeSite(site._id)}
+                    >
                         <div className='item'>
                             <img src={explorerSVG} alt='explorerSVG' />
                             <span>{site.title}</span>
@@ -34,7 +38,7 @@ export function SiteSelectDesktop({ user, currSite }) {
                 <div className='list-item-preview header'>
                     <h4>Last Messages</h4>
                 </div>
-                {user?.sites?.map((site, idx) => (
+                {/* {currSite?.msgs?.map((site, idx) => (
                     <article key={site._id} className='list-item-preview'>
                         <div className='item'>
                             <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
@@ -49,7 +53,7 @@ export function SiteSelectDesktop({ user, currSite }) {
                             <div className='time-ago flex'>2 days ago</div>
                         </div>
                     </article>
-                ))}
+                ))} */}
             </div>
         </>
     )

@@ -10,24 +10,51 @@ import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 
 import Chart from 'react-apexcharts'
 
-export function DashboardMain({ user, onEditSite }) {
-    let SubsChartOptions = useRef({
+export function DashboardMain({ user, currSite }) {
+    function organizeTimestamps(timestamps) {
+        const today = new Date()
+        const oneDay = 24 * 60 * 60 * 1000 // milliseconds in one day
+        const week = new Array(7).fill(0) // create an array of 7 places filled with 0
+        for (let timestamp of timestamps) {
+            const date = new Date(timestamp)
+            const diffDays = Math.round(Math.abs((today.getTime() - date.getTime()) / oneDay))
+            if (diffDays < 7) {
+                week[diffDays] += 1
+            }
+        }
+        return week
+    }
+
+    const subscribersTimestamps = currSite?.subscribers?.reduce((acc, sub) => {
+        acc.push(sub.date)
+        return acc
+    }, [])
+    const leadTimestamps = currSite.leads?.reduce((acc, lead) => {
+        acc.push(lead.data.date)
+        return acc
+    }, [])
+
+    // const leadsTimestamps = curr
+    const organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
+    const organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
+    organizedLeadsTimestamps.reverse()
+    organizedSubscribersTimestamps.reverse()
+
+    const DAY = 1000 * 60 * 60 * 24
+    let LeadsChartOptions = useRef({
         series: [
             {
-                data: [44, 55, 41, 64, 22, 43, 21],
-            },
-            {
-                data: [53, 32, 33, 52, 13, 44, 32],
+                data: organizedLeadsTimestamps,
             },
         ],
         options: {
             chart: {
-                type: 'bar',
+                type: 'line',
                 height: 430,
             },
             plotOptions: {
                 bar: {
-                    horizontal: true,
+                    // horizontal: true,
                     dataLabels: {
                         position: 'top',
                     },
@@ -35,7 +62,7 @@ export function DashboardMain({ user, onEditSite }) {
             },
             dataLabels: {
                 enabled: true,
-                offsetX: -6,
+                offsetY: 6,
                 style: {
                     fontSize: '12px',
                     colors: ['#fff'],
@@ -51,7 +78,64 @@ export function DashboardMain({ user, onEditSite }) {
                 intersect: false,
             },
             xaxis: {
-                categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
+                categories: [
+                    new Date(Date.now() - 6 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 5 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 4 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 3 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 2 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 1 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 0 * DAY).toLocaleDateString(),
+                ],
+            },
+        },
+    })
+    let SubsChartOptions = useRef({
+        series: [
+            {
+                data: organizedSubscribersTimestamps,
+            },
+        ],
+        options: {
+            chart: {
+                type: 'bars',
+                height: 430,
+            },
+            plotOptions: {
+                bar: {
+                    // horizontal: true,
+                    dataLabels: {
+                        position: 'top',
+                    },
+                },
+            },
+            dataLabels: {
+                enabled: true,
+                offsetY: 6,
+                style: {
+                    fontSize: '12px',
+                    colors: ['#fff'],
+                },
+            },
+            stroke: {
+                show: true,
+                width: 1,
+                colors: ['#fff'],
+            },
+            tooltip: {
+                shared: true,
+                intersect: false,
+            },
+            xaxis: {
+                categories: [
+                    new Date(Date.now() - 6 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 5 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 4 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 3 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 2 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 1 * DAY).toLocaleDateString(),
+                    new Date(Date.now() - 0 * DAY).toLocaleDateString(),
+                ],
             },
         },
     })
@@ -118,7 +202,7 @@ export function DashboardMain({ user, onEditSite }) {
                 </div>
                 <div className='info-box chart-wrapper'>
                     <Chart
-                        options={SubsChartOptions.current}
+                        options={SubsChartOptions.current.options}
                         series={SubsChartOptions.current.series}
                         type={'bar'}
                         width={'100%'}
@@ -137,6 +221,21 @@ export function DashboardMain({ user, onEditSite }) {
                         options={visitorsChartOptions.current}
                         series={visitorsChartOptions.current.series}
                         type={'area'}
+                        width={'100%'}
+                        height={300}
+                    />
+                </div>
+            </div>
+            <div className='info-box flex'>
+                <div className='text-wrapper'>
+                    <h3>Visitors</h3>
+                    <p>Here is your sites visitors statistics</p>
+                </div>
+                <div className='info-box chart-wrapper'>
+                    <Chart
+                        options={LeadsChartOptions.current.options}
+                        series={LeadsChartOptions.current.series}
+                        type={'line'}
                         width={'100%'}
                         height={300}
                     />

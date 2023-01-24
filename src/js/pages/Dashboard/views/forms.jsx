@@ -4,7 +4,7 @@ import { BsTrash } from 'react-icons/bs'
 import { BsPencil } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
 import { useSelector } from 'react-redux'
-import { utilService } from '../../../services/util.service'
+import { makeId, utilService } from '../../../services/util.service'
 import ComposeMail from '../cmps/compose-mail'
 import { useState } from 'react'
 
@@ -85,7 +85,7 @@ export function Forms({ user, currSite }) {
 
                     {currSite.leads?.map(lead => {
                         return (
-                            <ul className='table-row container'>
+                            <ul className='table-row container' key={lead.id}>
                                 {Object.keys(lead.data).map((key, keyIndex) => {
                                     return (
                                         <li className='col' key={key}>

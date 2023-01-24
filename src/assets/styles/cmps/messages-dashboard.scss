@@ -8,6 +8,8 @@ $background: #f7f7f7;
 .messages-dashboard {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    height: 100%;
+    flex: 1;
     // height: 74vh;
     // height: 100%;
     .pic {
