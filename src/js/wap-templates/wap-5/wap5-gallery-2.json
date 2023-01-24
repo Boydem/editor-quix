@@ -2,7 +2,7 @@
     "id": "alxfTg",
     "type": "div",
     "name": "gallery-2",
-    "category": "cards",
+    "category": "card",
     "cmpId": "Menu-Cards",
     "cmps": [
         {

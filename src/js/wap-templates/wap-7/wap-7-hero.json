@@ -2,6 +2,7 @@
     "id": "4i6a5i",
     "type": "div",
     "name": "wap-7-hero",
+    "category": "hero",
     "cmpId": "Hero",
     "cmps": [
         {

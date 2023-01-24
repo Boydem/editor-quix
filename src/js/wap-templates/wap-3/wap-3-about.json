@@ -2,7 +2,7 @@
     "id": "xBq3f7",
     "type": "div",
     "name": "wap-3-about",
-    "category": "about",
+    "category": "section",
     "cmpId": "About",
     "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-about_knyfwg.jpg",
     "cmps": [

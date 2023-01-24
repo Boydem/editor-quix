@@ -7,7 +7,7 @@ export const wap1Cards2 = {
     category: 'card',
     themePalette: 'primary',
     cmpId: 'Cards-2',
-    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053216/wap-1-section-2_fodj8k.jpg',
+    thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-section3_np61wk.jpg',
     cmps: [
         {
             id: makeId(),

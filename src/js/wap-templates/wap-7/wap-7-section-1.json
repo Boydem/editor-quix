@@ -2,6 +2,7 @@
     "id": "VcUxpP",
     "type": "div",
     "name": "wap-7-section-1",
+    "category": "section",
     "cmpId": "Platforms-Section",
     "cmps": [
         {

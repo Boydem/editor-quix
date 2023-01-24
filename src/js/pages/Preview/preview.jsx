@@ -8,6 +8,7 @@ export function Preview() {
     const [wap, setWap] = useState(null)
     const { wapId, wapUrl } = useParams()
     const containerRef = useRef()
+    console.log('wap:', wap)
     useEffect(() => {
         loadWap()
 

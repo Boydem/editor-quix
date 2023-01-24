@@ -49,7 +49,15 @@ async function getWapByUrl(wapUrl) {
 }
 
 function _createMap() {
-    const allFractions = [...getDemoCmps1(), ...getDemoCmps2(), ...getDemoCmps3(), ...getDemoGeneralCmps()]
+    const allFractions = [
+        ...getDemoCmps1(),
+        ...getDemoCmps2(),
+        ...getDemoCmps3(),
+        ...getDemoCmps4(),
+        ...getDemoCmps5(),
+        ...getDemoCmps7(),
+        ...getDemoGeneralCmps(),
+    ]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
         if (acc[fraction.category]) {
             acc[fraction.category].push(fraction)
@@ -170,7 +178,7 @@ function _createWaps() {
                 ],
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
-                title: 'WeDu',
+                title: 'Tech Company',
             },
             {
                 _id: utilService.makeId(),
@@ -195,7 +203,7 @@ function _createWaps() {
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
-                title: 'Gigaplay',
+                title: 'Gaming Startup',
             },
             {
                 _id: utilService.makeId(),
@@ -221,7 +229,7 @@ function _createWaps() {
 
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
-                title: 'Finclvr',
+                title: 'Fintech Webinar',
             },
             {
                 _id: utilService.makeId(),
@@ -245,7 +253,7 @@ function _createWaps() {
                 ],
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
-                title: 'ONMYSCREEN',
+                title: 'Movie Blog',
             },
             {
                 _id: utilService.makeId(),
@@ -270,7 +278,7 @@ function _createWaps() {
                 ],
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
-                title: 'Food, Burgers',
+                title: 'Restaurant Webflow',
             },
             {
                 _id: utilService.makeId(),

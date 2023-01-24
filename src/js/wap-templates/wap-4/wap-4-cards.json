@@ -2,7 +2,9 @@
     "id": "xZSxeQ",
     "type": "div",
     "name": "wap-4-cards",
+    "category": "card",
     "cmpId": "Cards",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674525172/wap-4-card_blco0n.jpg",
     "cmps": [
         {
             "id": "93IFaw",

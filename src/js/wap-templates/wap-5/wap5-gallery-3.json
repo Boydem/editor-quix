@@ -3,7 +3,7 @@
     "type": "div",
     "name": "gallery-3",
     "category": "card",
-    "cmpId": "Menu-Cards",
+    "cmpId": "Menu-Items",
     "cmps": [
         {
             "id": "5IkqBI",
