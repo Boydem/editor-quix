@@ -116,6 +116,11 @@ $padded-break-wide: $break-xwide + $layoutPadding * 1.5;
     --clr2: #fe863047;
 }
 
+#root.wap6-primary {
+    --clr1: #ffc098;
+    --clr2: #414581;
+}
+
 #root.wap7-primary {
     --clr1: #ffe2c1;
     --clr2: #c6bcff;

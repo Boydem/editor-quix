@@ -214,6 +214,41 @@
         padding: $spacing-s $spacing-m;
     }
 }
+.theme-container {
+    background-color: #efefef;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 #d3d3d3;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 5px;
+    border: 2px solid #d3d3d3;
+
+    .theme-header {
+        padding: 1rem 1.2rem;
+        .theme-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .theme-desc {
+            color: #858585;
+            font-size: 0.8rem;
+        }
+    }
+    .theme-colors-container {
+        display: flex;
+        & > * {
+            border-radius: 2px;
+            flex-grow: 1;
+        }
+        & > :first-child {
+            flex-grow: 3;
+        }
+        & > :nth-child(2) {
+            flex-grow: 2;
+        }
+    }
+}
 
 @keyframes hide {
     from {

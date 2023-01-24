@@ -7,6 +7,7 @@ import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
 import { getDemoCmps5 } from '../wap-templates/wap-5/wap-5'
+import { getDemoCmps6 } from '../wap-templates/wap-6/wap-6'
 import { getDemoCmps7 } from '../wap-templates/wap-7/wap-7'
 
 import { storageService } from './async-storage.service'
@@ -55,6 +56,7 @@ function _createMap() {
         ...getDemoCmps3(),
         ...getDemoCmps4(),
         ...getDemoCmps5(),
+        ...getDemoCmps6(),
         ...getDemoCmps7(),
         ...getDemoGeneralCmps(),
     ]
@@ -280,6 +282,29 @@ function _createWaps() {
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
                 title: 'Restaurant Webflow',
+            },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-6',
+                owner: 'admin',
+                cmps: getDemoCmps6(),
+                themeClass: 'wap6-primary',
+                breakpoints: {
+                    tabletLayout: 800,
+                },
+                msgs: [
+                    { by: 'customer', txt: "Hey, man! What's up, Mr Stark?" },
+                    { by: 'owner', txt: "Kid, where'd you come from?" },
+                    { by: 'customer', txt: 'Field trip!' },
+                    { by: 'owner', txt: "Uh, what is this guy's problem, Mr. Stark?" },
+                    {
+                        by: 'customer',
+                        txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                    },
+                ],
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-thumbnail_fcovpe.jpg',
+                title: 'Cafe & Bakery',
             },
             {
                 _id: utilService.makeId(),
