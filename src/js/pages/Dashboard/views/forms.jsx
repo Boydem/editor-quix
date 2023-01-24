@@ -12,10 +12,20 @@ export function Forms({ user }) {
     const [isMailOpen, setIsMailOpen] = useState(false)
     const wap = utilService.loadFromStorage('wapDB').at(-1)
     console.log(wap)
-    const [subscriber, setSubscriber] = useState(null)
+    const [subscriberEmail, setSubscriberEmail] = useState(null)
 
     function onMailToSubscriber(sub) {
-        setSubscriber(sub)
+        setSubscriberEmail(sub.email)
+        setIsMailOpen(true)
+    }
+    function onMsgAll() {
+        let allSubs = wap.subscribers.reduce((acc, sub) => {
+            acc.push(sub.email)
+            return acc
+        }, [])
+        allSubs = allSubs.join(', ')
+        console.log(allSubs)
+        setSubscriberEmail(allSubs)
         setIsMailOpen(true)
     }
     console.log('isMailOpen', isMailOpen)
@@ -32,7 +42,9 @@ export function Forms({ user }) {
                             <h3>Subscriptions</h3>
                             <p>Manage all recurring payments coming to you from Pricing Plans, Stores, and Invoices.</p>
                         </div>
-                        <button className='btn-send-msg'>Message all</button>
+                        <button className='btn-send-msg' onClick={onMsgAll}>
+                            Message all
+                        </button>
                     </div>
                     <div className='leads-table'>
                         <ul className='table-header container'>
@@ -64,7 +76,7 @@ export function Forms({ user }) {
                     <div className='user-forms leads-table'>
                         <ul className='table-row table-header container'>
                             {wap.leads && (
-                                <span>
+                                <>
                                     {Object.keys(wap.leads?.at(-1).data).map((key, keyIndex) => {
                                         return (
                                             <li className='col' key={key}>
@@ -72,7 +84,7 @@ export function Forms({ user }) {
                                             </li>
                                         )
                                     })}
-                                </span>
+                                </>
                             )}
                         </ul>
 
@@ -93,7 +105,7 @@ export function Forms({ user }) {
                     </div>
                 </div>
             </div>
-            {isMailOpen && <ComposeMail subscriber={subscriber} setIsMailOpen={setIsMailOpen} />}
+            {isMailOpen && <ComposeMail subscriberEmail={subscriberEmail} setIsMailOpen={setIsMailOpen} />}
             {/* <ComposeMail /> */}
         </div>
     )
