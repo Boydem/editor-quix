@@ -93,14 +93,13 @@
             position: relative;
             max-width: 1500px;
             display: flex;
-            align-items: baseline;
             margin: 0 auto;
             gap: $spacing-m;
-            &:not(.header) {
-                // height: 100%;
+            &:not(.main-header) {
+                height: 100%;
             }
         }
-        .header {
+        .main-header {
             width: 100%;
             display: flex;
             align-items: center;
@@ -157,7 +156,6 @@
             flex: 1;
         }
         .col-left {
-            max-width: 330px;
             position: sticky;
             top: $app-header-height;
         }
@@ -205,10 +203,6 @@
             border-radius: $spacing-xs;
             background-color: $clr1;
             place-items: start;
-
-            > * {
-                padding: 0 $spacing-s;
-            }
             .chart-wrapper {
                 flex: 1;
                 width: 100%;
@@ -225,7 +219,7 @@
                 box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
             }
             .text-wrapper {
-                width: 300px;
+                min-width: 280px;
                 place-self: start;
                 margin-inline-end: 1rem;
                 .level {
@@ -239,11 +233,6 @@
                 p {
                     color: rgba($clr7, 90%);
                 }
-            }
-        }
-        .info-box-1 {
-            .text-wrapper {
-                margin-inline-end: $spacing-l;
             }
         }
         .info-box-2 {
@@ -269,7 +258,7 @@
                     transition: background-color 0.5s, color 0.5s;
                     grid-column: 1/-1;
                     &:hover {
-                        background-color: $editor-hover-bg;
+                        background-color: darken($clr1, 5%);
                         color: $editor-active-clr;
                     }
                 }

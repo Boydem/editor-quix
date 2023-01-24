@@ -110,61 +110,36 @@ export function DashboardMain({ user, onEditSite }) {
                     <img src={diamondSVG} alt='diamonds' />
                 </div>
             </div>
-            <div className='info-box flex space-between'>
+
+            <div className='info-box flex'>
                 <div className='text-wrapper'>
-                    <h3>Last Messages</h3>
-                    <p>Advance to new levels as you earn points for creating Premium sites</p>
+                    <h3>Subscribers</h3>
+                    <p>Here is your sites subscribers statistics</p>
                 </div>
-                <div className='last-messages info-box info-box-rows flex'>
-                    {user?.sites.map((site, idx) => (
-                        <article key={site._id} className='list-item-preview'>
-                            <div className='item'>
-                                <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
-                                <span className='user-name'>
-                                    {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')}
-                                </span>
-                                <div className='message-body'>
-                                    <p>
-                                        Lorem ipsum, commodi dolor sit amet consectetur adipisicing elit. Facilis
-                                        ratione.
-                                    </p>
-                                </div>
-                                <div className='time-ago flex'>2 days ago</div>
-                            </div>
-                        </article>
-                    ))}
+                <div className='info-box chart-wrapper'>
+                    <Chart
+                        options={SubsChartOptions.current}
+                        series={SubsChartOptions.current.series}
+                        type={'bar'}
+                        width={'100%'}
+                        height={300}
+                    />
                 </div>
             </div>
-            <div className='info-box'>
-                <div className='flex'>
-                    <div className='text-wrapper'>
-                        <h3>Subscribers</h3>
-                        <p>Here is your sites subscribers statistics</p>
-                    </div>
-                    <div className='info-box chart-wrapper'>
-                        <Chart
-                            options={SubsChartOptions.current}
-                            series={SubsChartOptions.current.series}
-                            type={'bar'}
-                            width={'100%'}
-                            height={300}
-                        />
-                    </div>
+
+            <div className='info-box flex'>
+                <div className='text-wrapper'>
+                    <h3>Visitors</h3>
+                    <p>Here is your sites visitors statistics</p>
                 </div>
-                <div className='flex'>
-                    <div className='text-wrapper'>
-                        <h3>Visitors</h3>
-                        <p>Here is your sites visitors statistics</p>
-                    </div>
-                    <div className='info-box chart-wrapper'>
-                        <Chart
-                            options={visitorsChartOptions.current}
-                            series={visitorsChartOptions.current.series}
-                            type={'area'}
-                            width={'100%'}
-                            height={300}
-                        />
-                    </div>
+                <div className='info-box chart-wrapper'>
+                    <Chart
+                        options={visitorsChartOptions.current}
+                        series={visitorsChartOptions.current.series}
+                        type={'area'}
+                        width={'100%'}
+                        height={300}
+                    />
                 </div>
             </div>
         </>
