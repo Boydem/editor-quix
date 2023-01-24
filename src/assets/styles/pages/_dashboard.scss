@@ -156,6 +156,7 @@
             flex: 1;
         }
         .col-left {
+            max-width: 300px;
             position: sticky;
             top: $app-header-height;
         }
