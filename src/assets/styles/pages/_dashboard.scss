@@ -95,9 +95,9 @@
             display: flex;
             margin: 0 auto;
             gap: $spacing-m;
-            &:not(.main-header) {
-                height: 100%;
-            }
+            // &:not(.main-header, .col-left) {
+            //     height: 100%;
+            // }
         }
         .main-header {
             width: 100%;
@@ -154,6 +154,7 @@
         }
         .col-right {
             flex: 1;
+            min-height: 80vh;
         }
         .col-left {
             max-width: 300px;

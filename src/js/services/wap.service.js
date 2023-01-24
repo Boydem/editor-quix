@@ -43,7 +43,7 @@ function getCmpById(activeModule, cmpId) {
 }
 async function getWapByUrl(wapUrl) {
     try {
-        let wap = await query({ url: wapUrl })
+        let wap = await query({ owner: 'guest', url: wapUrl })
         if (!wap[0]) Promise.reject('NOT FOUND')
 
         return wap[0]
