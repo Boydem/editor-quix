@@ -74,7 +74,7 @@ $background: #f7f7f7;
         // width: 24rem;
         // height: 90vh;
         width: 100%;
-        padding: 1rem 2rem 1rem 1rem;
+        padding: 1rem;
         box-sizing: border-box;
         border-radius: 1rem 0 0 1rem;
 
@@ -86,7 +86,8 @@ $background: #f7f7f7;
         transition: transform 500ms;
 
         h2 {
-            margin: 0.5rem 0 1.5rem 5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         .fa-bars {
@@ -165,7 +166,7 @@ $background: #f7f7f7;
 
                 box-shadow: 0 0 2rem rgba(black, 0.075), 0rem 1rem 1rem -1rem rgba(black, 0.1);
 
-                &.customer {
+                &.owner {
                     margin: 1rem 1rem 1rem auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
                     background: #333;
@@ -262,6 +263,9 @@ $background: #f7f7f7;
     .pic.stark {
         background-image: url('https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/7/73/SMH_Mentor_6.png');
     }
+    .pic.guest {
+        background-image: url('https://res.cloudinary.com/yaronshapira-com/image/upload/v1674562734/no-profile-pic-icon-11_gp6obg.jpg');
+    }
     .pic.banner {
         background-image: url('https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/4f/BruceHulk-Endgame-TravelingCapInPast.jpg');
     }
@@ -273,5 +277,10 @@ $background: #f7f7f7;
     }
     .pic.rogers {
         background-image: url('https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/7/7c/Cap.America_%28We_Don%27t_Trade_Lives_Vision%29.png');
+    }
+
+    .send-btn {
+        margin-right: 0.2rem;
+        cursor: pointer;
     }
 }

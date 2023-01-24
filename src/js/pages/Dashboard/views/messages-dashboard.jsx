@@ -1,12 +1,25 @@
 import { useState } from 'react'
+import { BiSend } from 'react-icons/bi'
+import { saveWap } from '../../../store/wap/wap.action'
 
 export function MessagesDashboard({ user }) {
     const currSite = user.userData.sites.at(-1)
-    const msgs = currSite.msgs
+    console.log(currSite)
+    const [msgs, setMsgs] = useState(currSite.msgs)
     const [currContact, setCurrContact] = useState({ contact: 'guest1', msgs: msgs['guest1'] })
-
+    const [msgTxt, setMsgTxt] = useState('')
     function onContact(keyName) {
         setCurrContact({ contact: keyName, msgs: msgs[keyName] })
+    }
+
+    function handleChange(ev) {
+        setMsgTxt(ev.target.value)
+    }
+
+    function onSend() {
+        currContact.msgs.push({ by: 'owner', txt: `${msgTxt}` })
+        setMsgs(prev => ({ ...prev }))
+        saveWap(currSite)
     }
     return (
         <section className='layout-wrapper'>
@@ -17,7 +30,7 @@ export function MessagesDashboard({ user }) {
                     {Object.keys(msgs).map((keyName, idx) => {
                         return (
                             <div className='contact' key={keyName} onClick={() => onContact(keyName)}>
-                                <div className='pic rogers'></div>
+                                <div className='pic guest'></div>
                                 <div className='name'>{keyName}</div>
                                 {/* {console.log(msgs[keyName].at(-1).txt)} */}
                                 <div className='message'>{msgs[keyName].at(-1).txt.substring(0, 35)}...</div>
@@ -29,7 +42,7 @@ export function MessagesDashboard({ user }) {
                 <div className='chat'>
                     <div className='chat-layout'>
                         <div className='contact bar'>
-                            <div className='pic stark'></div>
+                            <div className='pic guest'></div>
                             <div className='name'>{currContact.contact}</div>
                             <div className='seen'>Today at 12:56</div>
                         </div>
@@ -60,10 +73,16 @@ export function MessagesDashboard({ user }) {
                         </div> */}
                     </div>
                     <div className='input'>
-                        <i className='fas fa-camera'></i>
-                        <i className='far fa-laugh-beam'></i>
-                        <input placeholder='Type your message here!' type='text' />
-                        <i className='fas fa-microphone'></i>
+                        {/* <i className='fas fa-camera'></i>
+                        <i className='far fa-laugh-beam'></i> */}
+                        <input
+                            placeholder='Type your message here!'
+                            type='text'
+                            onChange={handleChange}
+                            value={msgTxt}
+                        />
+                        {/* <i className='fas fa-microphone'></i> */}
+                        <BiSend fontSize={'2rem'} className='send-btn' onClick={onSend} />
                     </div>
                 </div>
             </div>

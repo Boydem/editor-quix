@@ -14,7 +14,7 @@ import { GrAnalytics } from 'react-icons/gr'
 
 import { DashboardMain } from './views/dashboard-main'
 import { Forms } from './views/forms'
-import { Messages, MessagesDashboard } from './views/messages'
+import { Messages, MessagesDashboard } from './views/messages-dashboard'
 import { setUser } from '../../store/user/user.actions'
 
 export function Dashboard() {
