@@ -68,8 +68,13 @@ export function Dashboard() {
             showErrorMsg(`Couldn't load user`)
         }
     }
+
+    async function onChangeSite(siteId) {
+        let currSite = user?.sites.find(site => site._id === siteId)
+        await setCurrSite(currSite)
+    }
     console.log('user:', user)
-    if (!user) return <div>Loading...</div>
+    if (!user || !currSite) return <div>Loading...</div>
     return (
         <div className='dashboard full'>
             <AppHeader location={'dashboard'} onSiteChange={onSiteChange} />
@@ -115,12 +120,10 @@ export function Dashboard() {
                 </div>
                 <div className='layout-wrapper'>
                     <div className='col col-left'>
-                        <SiteSelectDesktop user={user} currSite={currSite} />
+                        <SiteSelectDesktop user={user} currSite={currSite} onChangeSite={onChangeSite} />
                     </div>
                     <div className='col col-right'>
-                        {currView === 'dashboard' && (
-                            <DashboardMain onEditSite={onEditSite} user={user} currSite={currSite} />
-                        )}
+                        {currView === 'dashboard' && <DashboardMain user={user} currSite={currSite} />}
                         {currView === 'forms' && <Forms user={user} currSite={currSite} />}
                         {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                     </div>

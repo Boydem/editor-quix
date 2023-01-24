@@ -256,6 +256,7 @@
                 padding: $spacing-s $spacing-m;
                 width: 100%;
                 border-bottom: 1px solid $editor-lightgray;
+
                 &:not(.header) {
                     transition: background-color 0.5s, color 0.5s;
                     grid-column: 1/-1;
@@ -264,9 +265,22 @@
                         color: $editor-active-clr;
                     }
                 }
+
+                &.active {
+                    background: #004cc4;
+
+                    &:hover {
+                        background-color: darken(#004cc4, 5%);
+                    }
+
+                    .item {
+                        color: white;
+                    }
+                }
                 > .item {
                     cursor: pointer;
                     color: $clr18;
+
                     img {
                         max-width: 50px;
                         border-radius: 5px;
