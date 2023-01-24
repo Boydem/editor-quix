@@ -17,6 +17,51 @@
         pointer-events: all;
         transform: translateX(0%);
     }
+    .indicator {
+        z-index: -5;
+        pointer-events: all;
+        position: absolute;
+        inset: 0;
+        right: 0;
+        left: unset;
+        margin: auto;
+        cursor: pointer;
+        height: max-content;
+        padding: $spacing-xs $spacing-xxs;
+        color: $editor-active-bg;
+        font-size: px-to-rem(20px);
+        line-height: 1;
+        animation: show 1200ms ease-in;
+        transform: translate(100%, -90px);
+        border-radius: 0 55rem 55rem 0;
+        background-color: $clr7;
+        opacity: 1;
+
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &::before {
+            z-index: -2;
+            content: '';
+            position: absolute;
+            inset: 0;
+            left: 0;
+            right: unset;
+            margin: auto;
+            border-radius: 0 0.55rem 0.55rem 0;
+            width: 10px;
+            height: $spacing-xxl;
+            background-color: $clr7;
+        }
+    }
+    &.open .indicator {
+        transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: translate(-15%, -90px);
+
+        opacity: 0;
+
+        z-index: 1;
+    }
     .module-menu {
         z-index: 2;
         width: 100%;
@@ -35,53 +80,8 @@
                 font-size: 20px;
             }
         }
-        .indicator {
-            z-index: -5;
-            pointer-events: all;
-            position: absolute;
-            inset: 0;
-            right: 0;
-            left: unset;
-            margin: auto;
-            cursor: pointer;
-            height: max-content;
-            padding: $spacing-xs $spacing-xxs;
-            color: $editor-active-bg;
-            font-size: px-to-rem(20px);
-            line-height: 1;
-            transform: translate(-15%, -90px);
-            border-radius: 0 55rem 55rem 0;
-            background-color: $clr7;
-            opacity: 0;
-            transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
-                transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-            &::before {
-                z-index: -2;
-                content: '';
-                position: absolute;
-                inset: 0;
-                left: 0;
-                right: unset;
-                margin: auto;
-                border-radius: 0 0.55rem 0.55rem 0;
-                width: 10px;
-                height: $spacing-xxl;
-                background-color: $clr7;
-            }
-        }
-        & .indicator {
-            transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
-                transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-            animation: show 1200ms ease-in;
-            opacity: 1;
-            transform: translate(100%, -90px);
-            z-index: 1;
-            // z-index: -1;
-        }
-
-        & .indicator::before {
+        &.open .indicator::before {
         }
 
         .closed {
@@ -186,6 +186,7 @@
         grid-template-rows: 1fr;
         grid-template-columns: auto 1fr;
         align-items: center;
+        border-bottom: 1px solid $editor-lightgray;
         .module-name {
             font-weight: 800;
             text-transform: uppercase;
@@ -214,6 +215,10 @@
     }
     .module-options {
         padding: $spacing-s $spacing-m;
+    }
+    .themes-intro {
+        color: $clr7;
+        margin-bottom: $spacing-s;
     }
 }
 .theme-container {
