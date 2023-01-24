@@ -5,11 +5,9 @@ import { wapService } from '../../../services/wap.service'
 import { saveWap } from '../../../store/wap/wap.action'
 import { userService } from '../../../services/user.service'
 import { LineChart } from '.././cmps/line-chart'
+
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
-import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
-import { BsPencil } from 'react-icons/bs'
-import { BsThreeDots } from 'react-icons/bs'
-import { BsThreeDotsVertical } from 'react-icons/bs'
+
 import Chart from 'react-apexcharts'
 
 export function DashboardMain({ user, onEditSite }) {
@@ -99,132 +97,76 @@ export function DashboardMain({ user, onEditSite }) {
     })
     if (!user?.sites) return <div>Loading....</div>
     return (
-        <div className='layout-wrapper'>
-            <div className='header'>
-                <div className='titles'>
-                    <h2>Hello, {user.fullname}</h2>
-                    <h6>Welcome to your Dashboard</h6>
+        <>
+            <div className='info-box'>
+                <div className='text-wrapper'>
+                    <h3>Welcome to your Partner Dashboard</h3>
+                    <p>
+                        Advance to new levels as you earn points for creating Premium sites. For each level you reach,
+                        you unlock new benefits.
+                    </p>
                 </div>
-                <div className='actions'>
-                    <button
-                        data-tooltip='Site Actions'
-                        data-tooltip-dir={['left', 'info']}
-                        className='site-actions-dropdown tool'
-                    >
-                        <BsThreeDots />
-                    </button>
-                    <button onClick={onEditSite} className='site-actions-edit flex align-center'>
-                        <BsPencil /> <span>Edit Site</span>
-                    </button>
+                <div className='img-wrapper'>
+                    <img src={diamondSVG} alt='diamonds' />
                 </div>
             </div>
-
-            <div className='col col-left'>
-                <div className='info-box info-box-2'>
-                    <div className='text-wrapper'>
-                        <h3>Your Partner level</h3>
-                        <div className='level flex align-center'>
-                            <img src={explorerSVG} alt='explorerSVG' /> <h2>Explorer</h2>
-                        </div>
-                        <p>You have 35 points. Only 400 points until you reach the next level.</p>
-                    </div>
+            <div className='info-box'>
+                <div className='text-wrapper'>
+                    <h3>Last Messages</h3>
+                    <p>Advance to new levels as you earn points for creating Premium sites</p>
                 </div>
-                <div className='info-box info-box-rows my-sites'>
-                    <div className='wap-preview header'>
-                        <h3>My sites</h3>
-                    </div>
-                    {user?.sites.map(site => (
+                <div className='last-messages info-box info-box-rows'>
+                    {user?.sites.map((site, idx) => (
                         <article key={site._id} className='wap-preview'>
                             <div className='item'>
-                                <img src={explorerSVG} alt='explorerSVG' />
-                                <span>{site.title}</span>
-                                <div className='actions flex'>
-                                    <button className='tool'>
-                                        <BsThreeDotsVertical />
-                                    </button>
-                                    {/* <button data-tooltip='Edit' className='tool'>
-                                        <BsPencil />
-                                    </button>
-                                    <button data-tooltip='Trash' className='tool'>
-                                        <BsTrash />
-                                    </button> */}
+                                <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
+                                <span className='user-name'>
+                                    {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')}
+                                </span>
+                                <div className='message-body'>
+                                    <p>
+                                        Lorem ipsum, commodi dolor sit amet consectetur adipisicing elit. Facilis
+                                        ratione.
+                                    </p>
                                 </div>
+                                <div className='time-ago flex'>2 days ago</div>
                             </div>
                         </article>
                     ))}
                 </div>
             </div>
-            <div className='col col-right'>
-                <div className='info-box'>
+            <div className='info-box charts'>
+                <div>
                     <div className='text-wrapper'>
-                        <h3>Welcome to your Partner Dashboard</h3>
-                        <p>
-                            Advance to new levels as you earn points for creating Premium sites. For each level you
-                            reach, you unlock new benefits.
-                        </p>
+                        <h3>Subscribers</h3>
+                        <p>Here is your sites subscribers statistics</p>
                     </div>
-                    <div className='img-wrapper'>
-                        <img src={diamondSVG} alt='diamonds' />
+                    <div className='info-box chart-wrapper'>
+                        <Chart
+                            options={SubsChartOptions.current}
+                            series={SubsChartOptions.current.series}
+                            type={'bar'}
+                            width={'100%'}
+                            height={300}
+                        />
                     </div>
                 </div>
-                <div className='info-box'>
+                <div>
                     <div className='text-wrapper'>
-                        <h3>Last Messages</h3>
-                        <p>Advance to new levels as you earn points for creating Premium sites</p>
+                        <h3>Visitors</h3>
+                        <p>Here is your sites visitors statistics</p>
                     </div>
-                    <div className='last-messages info-box info-box-rows'>
-                        {user?.sites.map((site, idx) => (
-                            <article key={site._id} className='wap-preview'>
-                                <div className='item'>
-                                    <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
-                                    <span className='user-name'>
-                                        {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')}
-                                    </span>
-                                    <div className='message-body'>
-                                        <p>
-                                            Lorem ipsum, commodi dolor sit amet consectetur adipisicing elit. Facilis
-                                            ratione.
-                                        </p>
-                                    </div>
-                                    <div className='time-ago flex'>2 days ago</div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-                <div className='info-box charts'>
-                    <div>
-                        <div className='text-wrapper'>
-                            <h3>Subscribers</h3>
-                            <p>Here is your sites subscribers statistics</p>
-                        </div>
-                        <div className='info-box chart-wrapper'>
-                            <Chart
-                                options={SubsChartOptions.current}
-                                series={SubsChartOptions.current.series}
-                                type={'bar'}
-                                width={'100%'}
-                                height={300}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <div className='text-wrapper'>
-                            <h3>Visitors</h3>
-                            <p>Here is your sites visitors statistics</p>
-                        </div>
-                        <div className='info-box chart-wrapper'>
-                            <Chart
-                                options={visitorsChartOptions.current}
-                                series={visitorsChartOptions.current.series}
-                                type={'area'}
-                                width={'100%'}
-                                height={300}
-                            />
-                        </div>
+                    <div className='info-box chart-wrapper'>
+                        <Chart
+                            options={visitorsChartOptions.current}
+                            series={visitorsChartOptions.current.series}
+                            type={'area'}
+                            width={'100%'}
+                            height={300}
+                        />
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
