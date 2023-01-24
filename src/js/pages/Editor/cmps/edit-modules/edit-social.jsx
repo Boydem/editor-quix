@@ -93,6 +93,9 @@ export function EditSocial({ clickedCmp }) {
                         <Select.Root onValueChange={onSelectSection}>
                             <Select.Trigger className='SelectTrigger' aria-label='href'>
                                 <Select.Value placeholder={'Select Social Link'} />
+                                <Select.Icon className='SelectIcon'>
+                                    <ChevronDownIcon />
+                                </Select.Icon>
                             </Select.Trigger>
                             <Select.Portal>
                                 <Select.Content position='popper' className='SelectContent'>

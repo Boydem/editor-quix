@@ -6,6 +6,9 @@ export function TextShadowSelectInput({ handleTextShadowChange, SelectItem }) {
         <Select.Root onValueChange={handleTextShadowChange}>
             <Select.Trigger className='SelectTrigger' aria-label='unit'>
                 <Select.Value placeholder='None' />
+                <Select.Icon className='SelectIcon'>
+                    <ChevronDownIcon />
+                </Select.Icon>
             </Select.Trigger>
             <Select.Portal>
                 <Select.Content position='popper' className='SelectContent'>

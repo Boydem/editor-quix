@@ -30,7 +30,7 @@ export function EditAnchor({ clickedCmp }) {
                     <div className='mini-wrapper'>
                         <input
                             placeholder='e.g facebook.com/Webix'
-                            className='btn-edit input-edit'
+                            className='input-edit'
                             onChange={handleChange}
                             value={hRef}
                         />

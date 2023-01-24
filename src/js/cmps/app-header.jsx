@@ -11,15 +11,16 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
 import { SiteSelect } from './site-select'
+import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
 
-export function AppHeader({ location = 'editor', theme = '', layout = 'full', userData }) {
+export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const { wapId } = useParams()
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
-    const currWatchedSite = useSelector(storeState => storeState.userModule.currWatchedSite)
+    const currSite = useSelector(storeState => storeState.userModule.currSite)
     console.log(user, 'user')
     useEffect(() => {
         if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
@@ -29,10 +30,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', us
         const value = ev.target.value
         const field = ev.target.name
         setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
-    }
-
-    function onSiteChange(site) {
-        console.log('site:', site)
     }
 
     async function onLogout() {
@@ -72,6 +69,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', us
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
     }
+
     return (
         <header className={`${theme} app-header full ${layout} ${location === 'auth' ? 'auth' : ''}`}>
             <div className='layout-wrapper'>
@@ -85,20 +83,13 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', us
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
                                 <li>
-                                    <a className='nav-link link-underline' href='#'>
-                                        {/* <SiteSelect
-                                            userData={userData}
-                                            onSiteChange={onSiteChange}
-                                            currWatchedSite={currWatchedSite}
-                                        /> */}
-                                    </a>
+                                    <SiteSelect sites={user?.sites} onSiteChange={onSiteChange} currSite={currSite} />
                                 </li>
                             </ul>
                         </nav>
-                        <div className='interactives'>
-                            <button data-tooltip='Chat' data-tooltip-dir='bottom' className='tool inbox'>
-                                <FiMessageSquare />
-                            </button>
+                        <div className='interactives flex- align-center'>
+                            <InteractiveChat />
+
                             <button
                                 data-tooltip='Notifications'
                                 data-tooltip-dir='bottom'

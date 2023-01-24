@@ -3,29 +3,36 @@ import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
-export function SiteSelect({ userData, onSiteChange, currSite }) {
-    if (!userData) return <div>No sites</div>
+export function SiteSelect({ sites, onSiteChange, currSite }) {
+    if (!sites) return <div>Loading...</div>
     return (
         <section className='site-select'>
             <Select.Root onValueChange={onSiteChange} value={currSite}>
-                <Select.Trigger className='SelectTrigger' aria-label='unit'>
-                    <Select.Value />
+                <Select.Trigger className='SelectTrigger open-style-select' aria-label='unit'>
+                    <Select.Value placeholder='Select Site' />
+                    <Select.Icon className='SelectIcon'>
+                        <ChevronDownIcon />
+                    </Select.Icon>
                 </Select.Trigger>
                 <Select.Portal>
-                    <Select.Content position='popper' className='SelectContent'>
+                    <Select.Content sideOffset={0} position='popper' className='SelectContent open-style-select'>
                         <Select.ScrollUpButton className='SelectScrollButton'>
                             <ChevronUpIcon />
                         </Select.ScrollUpButton>
-                        <Select.Viewport className='SelectViewport'>
+                        <Select.Viewport className='SelectViewport open-style-select'>
                             <Select.Group>
-                                {userData?.sites.length > 1 ? (
-                                    userData.sites.map(site => (
-                                        <SelectItem key={site._id} value={site._id}>
+                                {sites.length > 1 ? (
+                                    sites.map(site => (
+                                        <SelectItem
+                                            className='open-style-select SelectItem'
+                                            key={site._id}
+                                            value={site._id}
+                                        >
                                             {site.title}
                                         </SelectItem>
                                     ))
                                 ) : (
-                                    <SelectItem value={userData.sites[0]._id}>{userData.sites[0].title}</SelectItem>
+                                    <SelectItem value={sites[0]._id}>{sites[0].title}</SelectItem>
                                 )}
                             </Select.Group>
                         </Select.Viewport>

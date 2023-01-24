@@ -6,7 +6,9 @@
     background-color: $editor-lightgray;
     color: $clr7;
     padding: 0 $spacing-xxs;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-radius: $spacing-xxs;
     transition: background-color 0.3s, color 0.3s;
     &:focus {
@@ -15,8 +17,8 @@
     &[data-placeholder] {
         color: $clr7;
         &:hover {
-            background-color: $editor-active-clr;
-            color: $clr1;
+            background-color: lighten($editor-lightgray, 5%);
+            color: $clr7;
         }
     }
 }
@@ -25,7 +27,7 @@
     overflow: hidden;
     z-index: 9999;
     pointer-events: all;
-    background-color: white;
+    background-color: $clr1;
     border-radius: 6px;
     box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
 }
@@ -82,7 +84,48 @@
     align-items: center;
     justify-content: center;
     height: $spacing-m;
-    background-color: white;
+    background-color: $clr1;
     color: $clr7;
     cursor: default;
+}
+
+// OPEN STYLE SELECT
+.site-select {
+    height: 100%;
+    .open-style-select {
+        &.SelectTrigger {
+            all: unset;
+            padding: 0 $spacing-m;
+            background-color: darken($color: $clr1, $amount: 2);
+            height: 100%;
+            border-inline-end: 1px solid darken($color: $clr1, $amount: 10);
+            transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+            cursor: pointer;
+            &:hover {
+                background-color: darken($color: $clr1, $amount: 5);
+                color: $clr2;
+            }
+        }
+        &.SelectContent {
+            // all: unset;
+
+            border-radius: 0px !important;
+            background-color: red;
+        }
+        &.SelectViewport {
+            background-color: red;
+        }
+        &.SelectItem {
+            background-color: red;
+            outline: none;
+            color: $clr2;
+            border-radius: 0px;
+            display: flex;
+            align-items: center;
+            padding: 0 $spacing-xs 0 $spacing-m;
+            position: relative;
+            user-select: none;
+            transition: 0.2s all;
+        }
+    }
 }

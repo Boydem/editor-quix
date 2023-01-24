@@ -40,3 +40,33 @@
     background: rgba(7, 57, 110, 0.2);
     outline: solid 2px $editor-outline;
 }
+.save-msg {
+    background-color: $clr1;
+    padding: 2px 8px;
+    margin-inline-start: 1em;
+    border-radius: 3px;
+    position: relative;
+    opacity: 1;
+    transform: translateX(calc(-100% - 16px));
+    z-index: -1;
+    transition: 0.25s all ease-out;
+    color: $clr7;
+    .refresh-icon {
+        margin-inline-end: 0.5em;
+        color: $clr7;
+        animation: infinite spin 0.7s linear;
+        @keyframes spin {
+            from {
+                transform: rotateZ(180deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+    }
+    &.shown {
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
