@@ -92,8 +92,8 @@ async function query(filterBy = { owner: 'guest', url: '' }) {
         let filteredWaps = waps
         if (filterBy.owner !== 'guest') {
             filteredWaps = waps.filter(wap => wap.owner === filterBy.owner)
-            const userData = arrangeUserData(filteredWaps)
-            return userData
+            const userSites = getUserSites(filteredWaps)
+            return userSites
         } else if (filterBy.url) {
             filteredWaps = waps.filter(wap => wap.url === filterBy.url)
         }
@@ -103,24 +103,19 @@ async function query(filterBy = { owner: 'guest', url: '' }) {
     }
 }
 
-function arrangeUserData(userWaps) {
-    const userData = userWaps.reduce((acc, wap) => {
-        const wapData = {
+function getUserSites(userWaps) {
+    const sites = userWaps.reduce((acc, wap) => {
+        acc.push({
             _id: wap._id,
             leads: wap.leads,
             subscribers: wap.subscribers,
             msgs: wap.msgs,
             title: wap.title,
             thumbnail: wap.thumbnail,
-        }
-        if (!acc.sites) {
-            acc.sites = [wapData]
-        } else {
-            acc.sites.push(wapData)
-        }
+        })
         return acc
-    }, {})
-    return userData
+    }, [])
+    return sites
 }
 
 async function get(wapId) {
