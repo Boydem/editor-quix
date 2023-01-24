@@ -17,7 +17,7 @@ export function SiteSelectDesktop({ user }) {
                 <div className='wap-preview header'>
                     <h3>My sites</h3>
                 </div>
-                {user?.sites.map(site => (
+                {user?.sites?.map(site => (
                     <article key={site._id} className='wap-preview'>
                         <div className='item'>
                             <img src={explorerSVG} alt='explorerSVG' />

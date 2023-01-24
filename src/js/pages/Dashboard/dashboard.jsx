@@ -118,9 +118,11 @@ export function Dashboard() {
                         <SiteSelectDesktop user={user} />
                     </div>
                     <div className='col col-right'>
-                        {currView === 'dashboard' && <DashboardMain onEditSite={onEditSite} user={user} />}
-                        {currView === 'forms' && <Forms user={user} />}
-                        {currView === 'messages' && <MessagesDashboard user={user} />}
+                        {currView === 'dashboard' && (
+                            <DashboardMain onEditSite={onEditSite} user={user} currSite={currSite} />
+                        )}
+                        {currView === 'forms' && <Forms user={user} currSite={currSite} />}
+                        {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                     </div>
                 </div>
             </main>
