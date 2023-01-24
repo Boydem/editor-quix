@@ -10,8 +10,8 @@ import { useState } from 'react'
 
 export function Forms({ user }) {
     const [isMailOpen, setIsMailOpen] = useState(false)
-    const wap = utilService.loadFromStorage('wapDB').at(-1)
-    console.log(wap)
+    const currSite = utilService.loadFromStorage('wapDB').at(-1)
+    console.log(currSite)
     const [subscriberEmail, setSubscriberEmail] = useState(null)
 
     function onMailToSubscriber(sub) {
@@ -19,7 +19,7 @@ export function Forms({ user }) {
         setIsMailOpen(true)
     }
     function onMsgAll() {
-        let allSubs = wap.subscribers.reduce((acc, sub) => {
+        let allSubs = currSite.subscribers.reduce((acc, sub) => {
             acc.push(sub.email)
             return acc
         }, [])
@@ -51,7 +51,7 @@ export function Forms({ user }) {
                             <li>Email</li>
                             <li>Actions</li>
                         </ul>
-                        {wap.subscribers?.map((sub, idx) => {
+                        {currSite.subscribers?.map((sub, idx) => {
                             return (
                                 <ul className='table-row container' key={idx}>
                                     <li className='lead'>{sub.email}</li>
@@ -75,9 +75,9 @@ export function Forms({ user }) {
                     </div>
                     <div className='user-forms leads-table'>
                         <ul className='table-row table-header container'>
-                            {wap.leads && (
+                            {currSite.leads && (
                                 <>
-                                    {Object.keys(wap.leads?.at(-1).data).map((key, keyIndex) => {
+                                    {Object.keys(currSite.leads?.at(-1).data).map((key, keyIndex) => {
                                         return (
                                             <li className='col' key={key}>
                                                 {key}
@@ -88,7 +88,7 @@ export function Forms({ user }) {
                             )}
                         </ul>
 
-                        {wap.leads?.map(lead => {
+                        {currSite.leads?.map(lead => {
                             return (
                                 <ul className='table-row container'>
                                     {Object.keys(lead.data).map((key, keyIndex) => {
