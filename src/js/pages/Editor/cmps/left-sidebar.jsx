@@ -11,7 +11,6 @@ import { IoColorFilterOutline } from 'react-icons/io5'
 export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     // const [theme, setTheme] = useState('')
     const theme = useRef()
-    let currActive = useRef('Header')
     const menuItems = [
         ['Header', 'Hero', 'Section', 'Card', 'Form', 'Chat', 'Footer', 'Contact & Forms', 'Social', 'Galleries'],
         ['Themes'],
@@ -43,7 +42,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         wap.themeClass = selectedTheme
         wapService.save(wap)
     }
-    console.log('leftSidebarState:', leftSidebarState)
+
     return (
         <div
             className={`left-sidebar ${leftSidebarState.isOpen ? 'open' : ''} ${
@@ -52,104 +51,119 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
         >
             {
                 <div className={`module-menu`}>
-                    {/* <div className='tabs flex'>
-                        {tabs.map((tab, idx) => (
-                            <button
-                                data-tabtip={`${tab}`}
-                                data-tabtip-dir='bottom'
-                                key={idx}
-                                onClick={() =>
-                                    onTabClick('left', {
-                                        isOpen: true,
-                                        currModule: tab,
-                                        activeMenuItem: null,
-                                        isSubMenuOpen: tab === 'add' ? false : true,
-                                    })
-                                }
-                                className={`${leftSidebarState.currModule === tab ? 'active' : ''} tab`}
-                            >
-                                {tab === 'add' && <AiOutlinePlus />}
-                                {tab === 'themes' && <IoColorFilterOutline />}
-                            </button>
+                    <div
+                        className={`${
+                            leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''
+                        } module-content`}
+                    >
+                        <div className='module-header'>
+                            <span className='module-name'>{leftSidebarState.activeMenuItem}</span>
+                            <div className='actions'>
+                                <span
+                                    onClick={() => {
+                                        handleSidebar({ isSubMenuOpen: false })
+                                    }}
+                                    className='tab'
+                                >
+                                    <AiOutlineClose />
+                                </span>
+                            </div>
+                        </div>
+                        <div className='module-options'>
+                            {leftSidebarState.activeMenuItem === 'themes' ? (
+                                <div>
+                                    <div className='theme-container' onClick={() => handleThemeChange('theme-1')}>
+                                        <div className='theme-header'>
+                                            <h5>Buisness</h5>
+                                            <p className='theme-desc'>Modern & efficient</p>
+                                        </div>
+                                        <div className='theme-colors-container'>
+                                            <div style={{ backgroundColor: '#4c80fb', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#556a87', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#f4f4f6', height: '15px' }}></div>
+                                        </div>
+                                    </div>
+                                    <div className='theme-container' onClick={() => handleThemeChange('theme-2')}>
+                                        <div className='theme-header'>
+                                            <h5>Creamy</h5>
+                                            <p className='theme-desc'>Netural & serene</p>
+                                        </div>
+                                        <div className='theme-colors-container'>
+                                            <div style={{ backgroundColor: '#055345', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#f3ceac', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#f9efe6', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
+                                        </div>
+                                    </div>
+                                    <div className='theme-container' onClick={() => handleThemeChange('theme-3')}>
+                                        <div className='theme-header'>
+                                            <h5>Mature</h5>
+                                            <p className='theme-desc'>Subtle & refined</p>
+                                        </div>
+                                        <div className='theme-colors-container'>
+                                            <div style={{ backgroundColor: '#3d405b', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#e07a5f', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#f4f1de', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#66c697', height: '15px' }}></div>
+                                        </div>
+                                    </div>
+                                    <div className='theme-container' onClick={() => handleThemeChange('theme-4')}>
+                                        <div className='theme-header'>
+                                            <h5>Laid-back</h5>
+                                            <p className='theme-desc'>Mellow & easygoing</p>
+                                        </div>
+                                        <div className='theme-colors-container'>
+                                            <div style={{ backgroundColor: '#a0a0a0', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#ffcdb2', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
+                                            <div style={{ backgroundColor: '#a17171', height: '15px' }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <DynamicModule
+                                    activeMenuItem={leftSidebarState.activeMenuItem}
+                                    addMenuItems={menuItems}
+                                />
+                            )}
+                        </div>
+                    </div>
+                    <div
+                        data-tooltip={!leftSidebarState.isOpen ? 'add' : ''}
+                        data-tooltip-dir={['right', 'no-fading']}
+                        onClick={() =>
+                            handleSidebar({
+                                isOpen: !leftSidebarState.isOpen,
+                                isSubMenuOpen: false,
+                                activeMenuItem: 'Header',
+                            })
+                        }
+                        className='indicator'
+                    ></div>
+                    <div className='menu-wrapper'>
+                        {menuItems.map((menuItems, idx) => (
+                            <ul key={idx} className='menu-items'>
+                                {menuItems.map(menuItem => (
+                                    <li
+                                        className={leftSidebarState.activeMenuItem === menuItem ? 'active' : ''}
+                                        onClick={() => {
+                                            handleSidebar({
+                                                isOpen: true,
+                                                isSubMenuOpen: true,
+                                                activeMenuItem: menuItem,
+                                            })
+                                        }}
+                                        key={menuItem}
+                                    >
+                                        {menuItem}
+                                    </li>
+                                ))}
+                            </ul>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
             }
-            <div
-                className={`${leftSidebarState.isOpen && leftSidebarState.isSubMenuOpen ? 'open' : ''} module-content`}
-            >
-                <div className='module-header'>
-                    <span className='module-name'>{leftSidebarState.activeMenuItem}</span>
-                    <div className='actions'>
-                        <span
-                            onClick={() => {
-                                handleSidebar({ isSubMenuOpen: false })
-                            }}
-                            className='tab'
-                        >
-                            <AiOutlineClose />
-                        </span>
-                    </div>
-                </div>
-
-                {leftSidebarState.isOpen && (
-                    <div className='module-options'>
-                        {leftSidebarState.activeMenuItem === 'themes' && (
-                            <div>
-                                <div className='theme-container' onClick={() => handleThemeChange('theme-1')}>
-                                    <div className='theme-header'>
-                                        <h5>Buisness</h5>
-                                        <p className='theme-desc'>Modern & efficient</p>
-                                    </div>
-                                    <div className='theme-colors-container'>
-                                        <div style={{ backgroundColor: '#4c80fb', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#556a87', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#f4f4f6', height: '15px' }}></div>
-                                    </div>
-                                </div>
-                                <div className='theme-container' onClick={() => handleThemeChange('theme-2')}>
-                                    <div className='theme-header'>
-                                        <h5>Creamy</h5>
-                                        <p className='theme-desc'>Netural & serene</p>
-                                    </div>
-                                    <div className='theme-colors-container'>
-                                        <div style={{ backgroundColor: '#055345', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#f3ceac', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#f9efe6', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
-                                    </div>
-                                </div>
-                                <div className='theme-container' onClick={() => handleThemeChange('theme-3')}>
-                                    <div className='theme-header'>
-                                        <h5>Mature</h5>
-                                        <p className='theme-desc'>Subtle & refined</p>
-                                    </div>
-                                    <div className='theme-colors-container'>
-                                        <div style={{ backgroundColor: '#3d405b', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#e07a5f', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#f4f1de', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#66c697', height: '15px' }}></div>
-                                    </div>
-                                </div>
-                                <div className='theme-container' onClick={() => handleThemeChange('theme-4')}>
-                                    <div className='theme-header'>
-                                        <h5>Laid-back</h5>
-                                        <p className='theme-desc'>Mellow & easygoing</p>
-                                    </div>
-                                    <div className='theme-colors-container'>
-                                        <div style={{ backgroundColor: '#a0a0a0', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#ffcdb2', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#a17171', height: '15px' }}></div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                        <DynamicModule activeMenuItem={leftSidebarState.activeMenuItem} addMenuItems={menuItems} />
-                    </div>
-                )}
-            </div>
         </div>
     )
 }

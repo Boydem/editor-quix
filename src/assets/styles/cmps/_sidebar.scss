@@ -9,19 +9,21 @@
     display: flex;
     min-width: $modules-menu-width;
     left: 0;
+    transform: translateX(-100%);
     &.dragging {
         transform: translateX(calc(-100% - $modules-content-width));
     }
     &.open {
         pointer-events: all;
-        // transform: translateX(0%);
+        transform: translateX(0%);
     }
     .module-menu {
         z-index: 2;
         width: 100%;
         background-color: $clr1;
+        min-height: calc(100vh - $app-header-height - $toolbar-height);
         position: relative;
-        left: -$modules-menu-width;
+        left: 0;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         .tabs {
             background-color: $clr1;
@@ -45,17 +47,14 @@
             height: max-content;
             padding: $spacing-xs $spacing-xxs;
             color: $editor-active-bg;
-            // font-weight: 900;
             font-size: px-to-rem(20px);
             line-height: 1;
             transform: translate(-15%, -90px);
             border-radius: 0 55rem 55rem 0;
-            // background-color: rgba($editor-active-clr, 75%);
             background-color: $clr7;
             opacity: 0;
             transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
                 transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-            // position: relative;
 
             &::before {
                 z-index: -2;
@@ -71,7 +70,7 @@
                 background-color: $clr7;
             }
         }
-        &:not(.add, .layers, .themes) .indicator {
+        & .indicator {
             transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
                 transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
@@ -82,11 +81,9 @@
             // z-index: -1;
         }
 
-        &:not(.add) .indicator::before {
+        & .indicator::before {
         }
-        &.add {
-            left: 0;
-        }
+
         .closed {
         }
     }
@@ -100,8 +97,7 @@
         left: 0;
         transform: translateX(-100%);
         background-color: $clr1;
-        // max-height: calc(100vh - $app-header-height + $toolbar-height - 1px);
-        transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: left 1.2s cubic-bezier(0.075, 0.82, 0.165, 1), transform 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
         min-height: 100%;
         overflow-y: auto;
 
@@ -113,30 +109,31 @@
                 margin-bottom: 2em;
                 border-radius: 0.15rem;
                 box-shadow: 0px 5px 7px -2px rgba($clr9, 30%);
-                // padding: 1em;
             }
         }
         &.open {
-            // transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), left 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translateX(0%);
-            // left: 0;
             transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
         }
     }
 }
-.left-sidebar.add .module-content {
+.left-sidebar .module-content {
     transform: translateX(-$modules-menu-width);
 }
-.left-sidebar.add .module-content.open {
+.left-sidebar .module-content.open {
     transform: translateX($modules-menu-width);
 }
 
 .module-menu {
-    pointer-events: all;
-    z-index: 2;
-    border-right: 1px solid $editor-lightgray;
-    .menu-items {
+    .menu-wrapper {
+        pointer-events: all;
+        z-index: 2;
+        border-right: 1px solid $editor-lightgray;
         background-color: $clr1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-items {
         padding: $spacing-s 0;
         border-bottom: 1px solid $editor-lightgray;
         & > * {
@@ -156,7 +153,6 @@
             }
         }
     }
-    // max-width: ;
 }
 
 .right-sidebar {
@@ -166,12 +162,11 @@
 }
 .module-content {
     pointer-events: all;
+    overflow-y: auto;
     min-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
-    max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    // overflow: auto;
     &::-webkit-scrollbar-thumb {
         border: $spacing-xs solid transparent;
         border-radius: 100px;
@@ -191,7 +186,6 @@
         grid-template-rows: 1fr;
         grid-template-columns: auto 1fr;
         align-items: center;
-        // border-bottom: 1px solid $editor-lightgray;
         .module-name {
             font-weight: 800;
             text-transform: uppercase;
@@ -226,7 +220,6 @@
     $clr1-5d: darken($clr1, 5%);
     background-color: darken($clr1, 2%);
     border-radius: 5px;
-    // box-shadow: 0 0 1px 0 #d3d3d3;
     cursor: pointer;
     overflow: hidden;
     margin-bottom: $spacing-s;
