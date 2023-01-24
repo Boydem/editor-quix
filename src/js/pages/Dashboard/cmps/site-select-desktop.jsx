@@ -7,10 +7,9 @@ export function SiteSelectDesktop({ user, currSite }) {
             <div className='info-box info-box-2'>
                 <div className='text-wrapper'>
                     <h3>Currently viewing</h3>
-                    <div className='level flex align-center'>
-                        <img src={explorerSVG} alt='explorerSVG' /> <h2>{currSite.title}</h2>
+                    <div className='flex align-center'>
+                        <img src={explorerSVG} alt='explorerSVG' /> <h4>{currSite.title}</h4>
                     </div>
-                    <p>You have 35 points. Only 400 points until you reach the next level.</p>
                 </div>
             </div>
             <div className='info-box info-box-rows my-sites'>
