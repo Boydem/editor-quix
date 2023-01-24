@@ -1,10 +1,11 @@
 import { userService } from '../../services/user.service.js'
 
 export const SET_USER = 'SET_USER'
+export const SET_CURR_SITE = 'SET_CURR_SITE'
 
 const initialState = {
     user: userService.getLoggedinUser(),
-    currWatchedSite: null,
+    currSite: null,
     users: [],
 }
 export function userReducer(state = initialState, action) {
@@ -21,6 +22,9 @@ export function userReducer(state = initialState, action) {
             break
         case 'SET_USERS':
             newState = { ...state, users: action.users }
+            break
+        case 'SET_CURR_SITE':
+            newState = { ...state, currSite: action.currSite }
             break
         default:
     }

@@ -127,7 +127,11 @@
         & ul {
             display: flex;
             flex-direction: row;
+            height: 100%;
             gap: unset;
+            > li {
+                height: 100%;
+            }
         }
         & .nav-link {
             height: $app-header-height;
@@ -227,6 +231,9 @@
         }
     }
     .main-nav {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
         .nav-link {
             margin-inline-start: 1em;
         }

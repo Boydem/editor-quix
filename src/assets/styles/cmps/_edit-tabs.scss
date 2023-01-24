@@ -370,6 +370,14 @@
     }
 
     .edit-anchor {
+        .btn-edit {
+            cursor: pointer;
+            transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+            &:hover {
+                background-color: $editor-active-clr;
+                color: $clr1;
+            }
+        }
         .or {
             display: flex;
             justify-content: center;
@@ -383,12 +391,6 @@
             justify-content: space-between;
             align-items: center;
             gap: 1em;
-
-            button {
-                background: #e4e8f1;
-                padding: 0.4em 0.6em;
-                border-radius: 0.3em;
-            }
         }
         .heading {
             font-size: 1.1rem;
@@ -397,20 +399,18 @@
         input {
             margin-bottom: 0.2em;
             width: 95.2%;
-            box-shadow: 0 1px 0 0 black;
+            box-shadow: 0 1px 0 0 $clr2;
             border-radius: 0px;
             background: none;
+            transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            &:focus {
+                box-shadow: 0 2px 0 0 $editor-active-clr;
+            }
         }
 
         .select-wrapper {
             button {
-                background: #e4e8f1;
-                padding: 0.4em 0.6em;
-                border-radius: 0.3em;
-                color: black;
-                &:focus {
-                    color: black;
-                }
+                cursor: pointer;
             }
         }
     }
