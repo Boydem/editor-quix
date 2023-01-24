@@ -35,6 +35,9 @@ export function EditSocial({ clickedCmp }) {
             id: makeId(),
             type: 'a',
             name: '',
+            style: {
+                color: 'blue',
+            },
             content: {
                 href: '',
                 iconImg: selected,
