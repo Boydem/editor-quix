@@ -7,7 +7,7 @@ import { AiOutlineSend } from 'react-icons/ai'
 import { makeId, utilService } from '../../../../services/util.service'
 import { saveCmp, saveWap } from '../../../../store/wap/wap.action'
 
-export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
+export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [msgs, setMsgs] = useState(null)
     const chatRef = useRef()
@@ -73,7 +73,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp, selectedActionsRef }) {
                 ref={chatRef}
             >
                 {cmp.cmps[1].cmps?.map(c => {
-                    return <DynamicCmp cmp={c} key={c.id} selectedActionsRef={selectedActionsRef} />
+                    return <DynamicCmp cmp={c} key={c.id} />
                 })}
                 <div className='messages'>
                     {msgs?.map((msg, idx) => {

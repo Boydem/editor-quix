@@ -37,7 +37,11 @@ export function MessagesDashboard({ user, currSite }) {
                 {/* <h2>Contacts</h2> */}
                 {Object.keys(msgs).map((keyName, idx) => {
                     return (
-                        <div className='contact' key={keyName} onClick={() => onContact(keyName)}>
+                        <div
+                            className={`contact ${currContact.contact === keyName ? 'active' : ''}`}
+                            key={keyName}
+                            onClick={() => onContact(keyName)}
+                        >
                             <div className='pic guest'></div>
                             <div className='name'>{keyName}</div>
                             {/* {console.log(msgs[keyName].at(-1).txt)} */}

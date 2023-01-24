@@ -21,8 +21,6 @@ export default function DynamicCmp(props) {
         cmp: props.cmp,
         onSelectCmp: onSelectCmpMiddleware,
         onHoverCmp: props.onHoverCmp,
-        selectedActionsRef: props.selectedActionsRef,
-        setElHoveredNode: props.setElHoveredNode,
     }
     switch (props.cmp.type) {
         case 'form':

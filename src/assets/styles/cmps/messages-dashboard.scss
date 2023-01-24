@@ -30,6 +30,11 @@ $background: #f7f7f7;
         margin-bottom: 1rem;
         padding-left: 4rem;
         height: 4.5rem;
+        padding-left: 5rem;
+        padding-right: 1rem;
+        &.active {
+            background: #ececec;
+        }
 
         &.bar {
             padding-left: 5rem;
@@ -41,7 +46,11 @@ $background: #f7f7f7;
 
         .pic {
             position: absolute;
-            left: 0;
+            left: 15px;
+
+            &.bigger {
+                left: 0px;
+            }
         }
 
         .name {
@@ -86,10 +95,10 @@ $background: #f7f7f7;
         // width: 24rem;
         // height: 90vh;
         width: 100%;
-        padding: 0.4rem;
-        padding-bottom: 1rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
+        // padding: 0.4rem;
+        // padding-bottom: 1rem;
+        // padding-right: 1rem;
+        // padding-left: 1rem;
         box-sizing: border-box;
         border-radius: 0.444rem 0 0 0.444rem;
 
@@ -106,7 +115,7 @@ $background: #f7f7f7;
             font-size: 2rem;
         }
         .contact:first-of-type {
-            margin-top: 6rem;
+            margin-top: 5.5rem;
         }
 
         .fa-bars {
