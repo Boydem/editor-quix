@@ -160,6 +160,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     }
 
     async function handleTimeslotClicked(selectedMeeting) {
+        
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
         availableTimeslots.splice(selectedMeetingIdx, 1)
         // setAvailableTimeslots([...availableTimeslots])
