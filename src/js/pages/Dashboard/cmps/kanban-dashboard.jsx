@@ -58,6 +58,7 @@ export function KanbanDashboard({ user, currSite }) {
             user.boards[boardIdx].title = ev.target.innerText
             console.log('user.boards[boardIdx]', user.boards[boardIdx])
         } else {
+            console.log('ev.target:', ev.target)
             itemToUpdate.txt = ev.target.innerText
         }
         updateUser(user, boards)
@@ -131,7 +132,6 @@ export function KanbanDashboard({ user, currSite }) {
                                                     {provided => {
                                                         return (
                                                             <li
-                                                                onClick={ev => onSelectItem(ev, item, idx)}
                                                                 {...provided.dragHandleProps}
                                                                 {...provided.draggableProps}
                                                                 ref={provided.innerRef}
@@ -143,6 +143,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                                     <FiTrash />
                                                                 </button>
                                                                 <span
+                                                                    onClick={ev => onSelectItem(ev, item, idx)}
                                                                     contentEditable={true}
                                                                     suppressContentEditableWarning={true}
                                                                 >
