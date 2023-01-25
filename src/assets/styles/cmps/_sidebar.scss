@@ -299,7 +299,7 @@
             0.5s opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
         transform: translateY(0%);
         .module-content .TabsRoot {
-            max-height: calc(100vh - $app-header-height - $toolbar-height);
+            max-height: calc(100vh - $app-header-height - $toolbar-height - 50px);
         }
         &.open {
             margin: 0;
@@ -319,7 +319,7 @@
         left: 0;
         transform: translateX(-100%);
         &.dragging {
-            transform: translateX(calc(-100% - $modules-content-width));
+            transform: translateX(calc(-100% - $modules-content-width)) !important;
         }
         &.open {
             pointer-events: all;

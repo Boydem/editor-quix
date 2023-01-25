@@ -493,7 +493,13 @@
             }
         }
         .multi-select-wrapper {
-            max-width: 100%;
+            max-width: 200px;
+            min-width: 200px;
+            margin: auto;
+            .rmsc .dropdown-heading {
+                width: unset;
+                height: unset;
+            }
         }
     }
     .item-renderer {

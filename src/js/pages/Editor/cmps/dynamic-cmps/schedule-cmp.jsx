@@ -10,7 +10,26 @@ import { Cross2Icon } from '@radix-ui/react-icons'
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [availableTimeslots, setAvailableTimeslots] = useState(wap.schedule.data)
-
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const services = [
+        {
+            label: 'Family dinner table(2 hours)',
+            value: 'family',
+        },
+        {
+            label: 'Birthday party(4 hours)',
+            value: 'birthday',
+        },
+        {
+            label: 'Romantic evening',
+            value: 'romantic',
+        },
+        {
+            label: 'Dine&Wine with your friends',
+            value: 'dineWine',
+        },
+    ]
+    const [selectedService, setSelectedService] = useState('family')
     useDidMountEffect(() => {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
@@ -29,11 +48,16 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     //     wap.schedule.data = generateEmptyTimeslots()
     //     setAvailableTimeslots(wap.schedule.data)
     // }, [wap.schedule.daysForward])
-
     useEffect(() => {
         generateTimeslots()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    function handleServiceChange(ev) {
+        const { value } = ev.target
+        setSelectedService(value)
+    }
+    console.log('selectedService:', selectedService)
 
     function getDayName(timestamp) {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -164,6 +188,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         availableTimeslots.splice(selectedMeetingIdx, 1)
         // setAvailableTimeslots([...availableTimeslots])
         wap.schedule.data = availableTimeslots
+        setIsModalOpen(true)
         saveWap(wap)
     }
     if (!availableTimeslots) return
@@ -183,7 +208,30 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 startTimeListStyle={'scroll-list'}
                 startTimeFormatString='HH:mm'
             />
-            <div className='schedule-modal'></div>
+            <div className={`${isModalOpen ? 'open' : ''} schedule-modal`}>
+                <form className='send-meeting-form'>
+                    <h3>Finalize your booking</h3>
+                    <p>Fill up these fields so we let you know in any case of changes !</p>
+                    <label htmlFor='fullName'>Full name</label>
+                    <input type='text' id='fullName' name='fullName' placeholder='Fullname' />
+                    <label htmlFor='phoneNumber'>Phone number</label>
+                    <input type='tel' name='phoneNumber' id='phoneNumber' placeholder='Phone Number' />
+                    <select
+                        type='select'
+                        id='serviceSelect'
+                        name='serviceSelect'
+                        onChange={handleServiceChange}
+                        value={selectedService}
+                    >
+                        {services.map((service, idx) => (
+                            <option key={idx} value={service.value}>
+                                {service.label}
+                            </option>
+                        ))}
+                    </select>
+                    <button type='submit'>Send</button>
+                </form>
+            </div>
         </div>
     )
 }
