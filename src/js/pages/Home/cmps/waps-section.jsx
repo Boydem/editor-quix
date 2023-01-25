@@ -8,7 +8,7 @@ export function WapsSection() {
     return (
         <section className='waps-section full main-layout'>
             <div className='wrapper'>
-                <div className='title-container'>
+                <div className='title-container' id='waps-section'>
                     <h2>
                         <span className='display-2'>Website templates by our in-house design studio.</span>
                     </h2>
@@ -19,7 +19,7 @@ export function WapsSection() {
                             Accelerate your next project or get inspired and design from a blank canvas.
                         </span>
                     </p>
-                    <button className='btn circled secondary'>
+                    <button className='btn circled secondary' onClick={() => navigate('/create')}>
                         <span className='display-link'>Start Creating</span>
                     </button>
                 </div>
@@ -31,14 +31,7 @@ export function WapsSection() {
                         <div className='dot amber'></div>
                         <div className='dot green'></div>
                     </div>
-                    <div className='actions'>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>View</span>
-                        </button>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>Edit</span>
-                        </button>
-                    </div>
+
                     <img
                         className='wap-img'
                         src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674573127/127.0.0.1_3000_preview_2dVX0X_djlrz2.jpg'
@@ -51,14 +44,7 @@ export function WapsSection() {
                         <div className='dot amber'></div>
                         <div className='dot green'></div>
                     </div>
-                    <div className='actions'>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>View</span>
-                        </button>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>Edit</span>
-                        </button>
-                    </div>
+
                     <img
                         className='wap-img'
                         src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674479605/wap-7-full-thumbnail_muhg8r.jpg'
@@ -72,14 +58,7 @@ export function WapsSection() {
                         <div className='dot amber'></div>
                         <div className='dot green'></div>
                     </div>
-                    <div className='actions'>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>View</span>
-                        </button>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>Edit</span>
-                        </button>
-                    </div>
+
                     <img
                         className='wap-img'
                         src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674060299/wap-2-full-size-thumbnail_gth6ya.jpg'
@@ -92,14 +71,7 @@ export function WapsSection() {
                         <div className='dot amber'></div>
                         <div className='dot green'></div>
                     </div>
-                    <div className='actions'>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>View</span>
-                        </button>
-                        <button className='btn btn-template'>
-                            <span className='display-link'>Edit</span>
-                        </button>
-                    </div>
+
                     <img
                         className='wap-img'
                         src='https://res.cloudinary.com/dotasvsuv/image/upload/v1674060312/wap-2-full-size-thumbnail_qfbobw.jpg'
