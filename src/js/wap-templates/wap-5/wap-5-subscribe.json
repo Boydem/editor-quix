@@ -2,6 +2,8 @@
     "id": "qDkjIm",
     "type": "div",
     "name": "form-2",
+    "category": "subscribe",
+    "thumbnail": "",
     "cmps": [
         {
             "id": "e65q8R",
@@ -46,7 +48,7 @@
                 },
                 {
                     "id": "vVStD9",
-                    "type": "form",
+                    "type": "subscribe",
                     "name": "form-2-inner-form",
                     "cmps": [
                         {
