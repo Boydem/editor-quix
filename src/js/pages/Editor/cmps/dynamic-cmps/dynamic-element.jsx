@@ -28,7 +28,7 @@ export function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
         cmp.content.txt = eventClick.target.innerText
     }
 
-    if (cmp.type === 'input') return
+    if (cmp.type === 'input' && !cmp.htmlId) return
     return (
         <CustomTag
             className={classes}
@@ -40,6 +40,9 @@ export function DynamicElement({ cmp, onSelectCmp, onHoverCmp }) {
             spellCheck='false'
             suppressContentEditableWarning={true}
             href={CustomTag === 'a' ? cmp?.content?.href : null}
+            htmlFor={CustomTag === 'label' ? cmp.htmlFor : null}
+            id={CustomTag === 'input' ? cmp.htmlId : null}
+            type={CustomTag === 'input' ? cmp.inputType : null}
         >
             {cmpCopy.content?.txt}
         </CustomTag>
