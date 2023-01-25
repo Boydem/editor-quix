@@ -3,12 +3,47 @@ import { useSelector } from 'react-redux'
 import { saveCmp, saveWap } from '../../../../store/wap/wap.action'
 import SelectSectionRef from '../ui-cmps/select-section-ref'
 import * as Slider from '@radix-ui/react-slider'
+import { MultiSelect } from 'react-multi-select-component'
+import { utilService } from '../../../../services/util.service'
 
 export function EditSchedule({ clickedCmp }) {
-    const [hRef, setHRef] = useState(clickedCmp.content?.href)
     const wap = useSelector(storeState => storeState.wapModule.wap)
+    const [selected, setSelected] = useState(() => {
+        return wap.schedule.days.reduce((acc, day) => {
+            acc.push({ label: utilService.capitalize(day), value: day })
+            return acc
+        }, [])
+    })
+
+    function handleMultiSelectChange(newSelected) {
+        // newSelected.forEach(day => {
+        //     if (!wap.schedule.days.includes(day.value)) {
+        //         wap.schedule.days.push(day.value)
+        //     }
+        // })
+        const newScheduleDays = newSelected.reduce((acc, day) => {
+            console.log('acc:', acc)
+            acc.push(day.value)
+            return acc
+        }, [])
+        console.log('newScheduleDays:', newScheduleDays)
+        wap.schedule.days = newScheduleDays
+        setSelected(newSelected)
+        saveWap(wap)
+    }
+
     // const eventDuration =
     const [eventDuration, setEventDuration] = useState(wap.schedule?.eventDuration || 30)
+
+    const options = [
+        { label: 'Sunday', value: 'sunday' },
+        { label: 'Monday', value: 'monday' },
+        { label: 'Tuesday', value: 'tuesday' },
+        { label: 'Wednesday', value: 'wednesday' },
+        { label: 'Thursday', value: 'thursday' },
+        { label: 'Friday', value: 'friday' },
+        { label: 'Saturday', value: 'saturday' },
+    ]
 
     function handleEventDurationCommit(ev) {
         setEventDuration(ev[0])
@@ -23,7 +58,7 @@ export function EditSchedule({ clickedCmp }) {
     return (
         <div className='adjust inside-accordion'>
             <div className='expanded-content edit-schedule expanded-content adjust inside-accordion full adjust-inputs full'>
-                <div className='wrapper'>
+                <div className='big-wrapper'>
                     <form className='slider-form adjust-inputs'>
                         <label htmlFor=''>Event Duration</label>
                         <div className='wrapper'>
@@ -46,6 +81,14 @@ export function EditSchedule({ clickedCmp }) {
                             <span>{eventDuration || '30'}Min</span>
                         </div>
                     </form>
+                    <MultiSelect
+                        options={options}
+                        value={selected}
+                        onChange={handleMultiSelectChange}
+                        labelledBy='Select'
+                        hasSelectAll={false}
+                        disableSearch={true}
+                    />
                 </div>
             </div>
         </div>

@@ -9,32 +9,44 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [availableTimeslots, setAvailableTimeslots] = useState(wap.schedule.data)
 
-    // useEffect(() => {
-    //     // wap.schedule.data = generateEmptyTimeslots()
-    //     // setAvailableTimeslots(wap.schedule.data)
-    // }, [wap.schedule.eventDuration])
-
     useDidMountEffect(() => {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
     }, [wap.schedule.eventDuration])
+    useDidMountEffect(() => {
+        wap.schedule.data = generateEmptyTimeslots()
+        setAvailableTimeslots(wap.schedule.data)
+    }, [wap.schedule.days])
 
     useEffect(() => {
         generateTimeslots()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    function getDayName(timestamp) {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const date = new Date(timestamp)
+        const day = date.getDay()
+        return days[day]
+    }
+
     function generateEmptyTimeslots() {
         const start = new Date()
         start.setHours(9, 0, 0, 0)
         const end = new Date()
-        end.setDate(end.getDate() + 5)
+        end.setDate(end.getDate() + wap.schedule.daysForward)
         end.setHours(17, 0, 0, 0)
 
         const intervals = []
         let current = new Date(start)
         let id = 0
         while (current < end) {
+            // console.log('wap.schedule.days:', wap.schedule.days)
+            if (!wap.schedule.days.includes(getDayName(current).toLowerCase())) {
+                current.setDate(current.getDate() + 1)
+                current.setHours(9, 0, 0, 0)
+                continue
+            }
             let endTime = new Date(current)
             endTime.setMinutes(endTime.getMinutes() + wap.schedule.eventDuration)
             intervals.push({
@@ -142,6 +154,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         wap.schedule.data = availableTimeslots
         saveWap(wap)
     }
+    console.log('availableTimeslots:', availableTimeslots)
     if (!availableTimeslots) return
     return (
         <div
