@@ -34,7 +34,6 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
             wap.msgs = { ...wap.msgs, [currGuest]: [] }
             msgs = wap.msgs[currGuest]
         }
-        console.log('SENDING', msg)
         msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
         setMsg('')
         // saveCmp(cmp)

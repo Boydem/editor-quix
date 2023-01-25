@@ -129,10 +129,6 @@ export function DashboardMain({ user, currSite }) {
             </div>
 
             <div className='info-box flex'>
-                <ScheduleCmp />
-            </div>
-
-            <div className='info-box flex'>
                 <div className='text-wrapper'>
                     <h3>Leads</h3>
                     <p>Here is your sites leads statistics</p>

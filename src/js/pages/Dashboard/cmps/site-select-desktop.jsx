@@ -2,7 +2,7 @@ import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import { utilService } from '../../../services/util.service'
 
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
-    console.log('sortedEvents:', sortedEvents)
+
     return (
         <>
             <div className='info-box info-box-2'>

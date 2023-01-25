@@ -5,8 +5,6 @@ import { AiOutlineSend } from 'react-icons/ai'
 import { useEffect } from 'react'
 
 export function MessagesDashboard({ user, currSite }) {
-    // const currSite = user.userData.sites.at(-1)
-    console.log('currSite', currSite)
     const [msgs, setMsgs] = useState(currSite.msgs)
     const [currContact, setCurrContact] = useState({ contact: 'guest1', msgs: msgs['guest1'] })
     const [msgTxt, setMsgTxt] = useState('')
@@ -17,7 +15,6 @@ export function MessagesDashboard({ user, currSite }) {
     useEffect(() => {
         setMsgs(currSite.msgs)
     }, [currSite])
-    console.log('currSite:', currSite)
 
     function handleChange(ev) {
         setMsgTxt(ev.target.value)

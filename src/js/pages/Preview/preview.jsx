@@ -10,7 +10,6 @@ export function Preview() {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const { wapId, wapUrl } = useParams()
     const containerRef = useRef()
-    console.log('wap:', wap)
     useEffect(() => {
         loadWap()
 
@@ -30,11 +29,9 @@ export function Preview() {
                 wap = await wapService.getWapByUrl(wapUrl)
             }
             setWap(wap)
-            console.log(wap, 'wap')
             const root = document.getElementById('root')
             root.classList.add(wap.themeClass)
         } catch (err) {
-            console.log('Failed to load wap in wap-preview', err)
             showErrorMsg('Failed to load your demo. Please try again later.')
         }
     }

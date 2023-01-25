@@ -22,7 +22,7 @@ export function EditSizes() {
         const clickedCmpProps = propOptions.reduce((acc, opt) => {
             let propValue =
                 elClickedNode && parseFloat(window.getComputedStyle(elClickedNode).getPropertyValue(opt.name))
-            // console.log('propValue:', propValue)
+
             if (opt.name === 'opacity' || opt.name === 'scale') propValue *= 100
             acc[opt.name] = propValue
             return acc

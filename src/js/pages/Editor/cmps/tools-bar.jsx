@@ -78,6 +78,10 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
                     </button>
                 </li>
             </ul>
+            <div className={`save-msg flex align-center ${isSaving ? 'shown' : ''}`}>
+                <FiRefreshCw className='refresh-icon' />
+                Saving...
+            </div>
             <ul className='icons-group'>
                 <li className='icon-container b-l'>
                     <button className='btn-icon' data-tooltip='Undo' data-tooltip-dir='bottom' onClick={onUndo}>
