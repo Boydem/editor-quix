@@ -9,6 +9,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { SiteSelect } from './site-select'
 import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
+import { QuixLogo } from './quix-logo'
 
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
@@ -77,7 +78,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
             <div className='layout-wrapper'>
                 <div className='logo-container'>
                     <Link to='/' className='logo'>
-                        Webix.
+                        <QuixLogo />
                     </Link>
                 </div>
                 {location === 'dashboard' && (

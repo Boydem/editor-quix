@@ -57,3 +57,8 @@
     //     @include layoutGTC($padded-break-wide);
     // }
 }
+@media (min-width: 960px) {
+    .editor-layout .editor-preview {
+        padding: 1.5em 3.375em;
+    }
+}

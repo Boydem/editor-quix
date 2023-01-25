@@ -3,6 +3,7 @@ import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { QuixLogo } from '../../../cmps/quix-logo'
 import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service'
 import { logout } from '../../../store/user/user.actions'
 export function HomeHeader() {
@@ -30,9 +31,12 @@ export function HomeHeader() {
     }
     return (
         <header className='home-header flex justify-between full'>
-            <Link to='/' className='logo'>
-                Webix.
-            </Link>
+            <div className='logo-container'>
+                <Link to='/' className='logo'>
+                    <QuixLogo />
+                </Link>
+            </div>
+
             <div onClick={toggleMenu} className='btn-mobile-menu'>
                 <FaBars />
             </div>

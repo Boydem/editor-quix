@@ -26,10 +26,8 @@
             background-color: darken($clr5, 10%);
         }
     }
-
-    & .logo {
-        font-size: #{fluid(28px, 32px, $break-narrow, $break-wide)};
-        font-weight: 700;
+    .logo-container {
+        max-width: 90px;
     }
 
     & .main-nav {
@@ -101,4 +99,7 @@
             display: none;
         }
     }
+}
+.quix-logo {
+    width: 100%;
 }
