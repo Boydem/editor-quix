@@ -7,7 +7,7 @@ import heroBottom from '../../../../assets/imgs/home-assets/hero-bottom.jpg'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { Brands } from './brands'
 
-export function HeroSection() {
+export function HeroSection({ navigate }) {
     return (
         <section className='hero full main-layout'>
             <section className='hero-top full main-layout'>

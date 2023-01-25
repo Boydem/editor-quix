@@ -4,7 +4,7 @@ import templateImg3 from '../../../../assets/imgs/home-assets/templates3.webp'
 import templateImg4 from '../../../../assets/imgs/home-assets/templates4.webp'
 import wapImg1 from '../../../../assets/imgs/home-assets/wap-1-home-thumbnail.jpg'
 
-export function WapsSection() {
+export function WapsSection({ navigate }) {
     return (
         <section className='waps-section full main-layout'>
             <div className='wrapper'>
