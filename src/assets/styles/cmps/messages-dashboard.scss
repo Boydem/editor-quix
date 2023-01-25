@@ -33,7 +33,7 @@ $background: #f7f7f7;
         flex-direction: column;
         justify-content: center;
         &.active {
-            background: #darken($clr1, 10%);
+            background: darken($clr1, 10%);
         }
         &.bar {
             padding-left: 5rem;
