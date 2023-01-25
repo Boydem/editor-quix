@@ -343,6 +343,8 @@
     }
 }
 .kanban-board {
+    background: url('https://res.cloudinary.com/yaronshapira-com/image/upload/v1674687501/igor-son-FV_PxCqgtwc-unsplash_sb2h0l.jpg')
+        center center/cover;
     bottom: 0;
     left: 0;
     margin-bottom: 8px;
@@ -376,7 +378,8 @@
         border-radius: $spacing-xxs;
     }
     .list-wrapper {
-        background-color: lighten($editor-lightgray, 3.5%);
+        // background-color: lighten($editor-lightgray, 3.5%);
+        background-color: rgba(218, 218, 230, 0.5);
         display: inline-flex;
         height: 100%;
         margin: 0 4px;
