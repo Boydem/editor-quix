@@ -34,6 +34,7 @@
 @import './cmps/cmp-fractions.scss';
 @import './cmps/_editor-preview.scss';
 @import './cmps/_adjust.scss';
+@import './cmps/schedule-modal.scss';
 
 // Home
 @import './pages/_home.scss';
@@ -58,6 +59,7 @@
 
 // UI Overwrites
 @import './setup/_overwrites.scss';
+
 
 // Templates
 @import './templates/general-cmps.scss';

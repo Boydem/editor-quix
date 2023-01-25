@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import { ScheduleMeeting } from 'react-schedule-meeting'
 import useDidMountEffect from '../../../../hooks/use-did-mount-effect'
 import { saveWap } from '../../../../store/wap/wap.action'
+import * as Dialog from '@radix-ui/react-dialog'
+import { Cross2Icon } from '@radix-ui/react-icons'
 
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -157,14 +159,13 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         })
     }
 
-    const handleTimeslotClicked = selectedMeeting => {
+    async function handleTimeslotClicked(selectedMeeting) {
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
         availableTimeslots.splice(selectedMeetingIdx, 1)
-        setAvailableTimeslots([...availableTimeslots])
+        // setAvailableTimeslots([...availableTimeslots])
         wap.schedule.data = availableTimeslots
         saveWap(wap)
     }
-    console.log('availableTimeslots:', availableTimeslots)
     if (!availableTimeslots) return
     return (
         <div
@@ -182,6 +183,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 startTimeListStyle={'scroll-list'}
                 startTimeFormatString='HH:mm'
             />
+            <div className='schedule-modal'></div>
         </div>
     )
 }
