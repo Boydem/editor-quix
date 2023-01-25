@@ -19,17 +19,17 @@ import { SiteSelectDesktop } from './cmps/site-select-desktop'
 import { useDispatch } from 'react-redux'
 import { SET_CURR_SITE } from '../../store/user/user.reducer'
 import DropdownMenuDemo from './cmps/site-actions-dropdown'
+import { ScheduleDashboard } from './views/schedule-dashboard'
 
 export function Dashboard() {
-    const [currView, setCurrView] = useState('dashboard')
+    const [currView, setCurrView] = useState('home')
     const user = useSelector(storeState => storeState.userModule.user)
     const currSite = useSelector(storeState => storeState.userModule.currSite)
     const navigate = useNavigate()
     const { userId } = useParams()
     const dispatch = useDispatch()
-    const activeMenu = useRef('Dashboard')
 
-    const menuItems = ['Dashboard', 'Messages', 'Forms']
+    const menuItems = ['Home', 'Messages', 'Forms', 'Schedule']
 
     useEffect(() => {
         if (!userId) navigate('/auth/login')
@@ -57,7 +57,6 @@ export function Dashboard() {
 
     function onChangeView(view) {
         if (view.toLowerCase() === currView) return
-        activeMenu.current = view.toLowerCase()
         setCurrView(view.toLowerCase())
     }
 
@@ -94,7 +93,6 @@ export function Dashboard() {
 
         const allTimestamps = { subscribersTimestamps, leadTimestamps, msgsTimestamps }
 
-
         sortedEvents = Object.entries(allTimestamps)
             .flatMap(([key, values]) => values.map(timestamp => ({ key, timestamp })))
             .sort((a, b) => b.timestamp - a.timestamp)
@@ -110,15 +108,15 @@ export function Dashboard() {
                     <ul className='menu-items'>
                         {menuItems.map(menuItem => (
                             <li
-                                className={`menu-item ${activeMenu.current === menuItem ? 'active' : ''}`}
+                                className={`menu-item ${currView === menuItem.toLocaleLowerCase() ? 'active' : ''}`}
                                 onClick={() => onChangeView(menuItem)}
                                 key={menuItem}
                             >
                                 <span>{menuItem}</span>
                                 <span>
-                                    {menuItem === 'Dashboard' && <IoAnalyticsOutline size={'1.4rem'} />}
+                                    {/* {menuItem === 'Home' && <IoAnalyticsOutline size={'1.4rem'} />}
                                     {menuItem === 'Messages' && <GrAnalytics size={'1.4rem'} />}
-                                    {menuItem === 'Forms' && <GrAnalytics size={'1.4rem'} />}
+                                    {menuItem === 'Forms' && <GrAnalytics size={'1.4rem'} />} */}
                                 </span>
                             </li>
                         ))}
@@ -148,9 +146,10 @@ export function Dashboard() {
                         />
                     </div>
                     <div className='col col-right'>
-                        {currView === 'dashboard' && <DashboardMain user={user} currSite={currSite} />}
+                        {currView === 'home' && <DashboardMain user={user} currSite={currSite} />}
                         {currView === 'forms' && <Forms user={user} currSite={currSite} />}
                         {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
+                        {currView === 'schedule' && <ScheduleDashboard user={user} currSite={currSite} />}
                     </div>
                 </div>
             </main>

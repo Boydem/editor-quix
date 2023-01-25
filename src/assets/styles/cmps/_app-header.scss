@@ -3,6 +3,12 @@
     position: sticky;
     top: 0;
     z-index: 99;
+    .logo-container {
+        max-width: 85px;
+        .quix-logo {
+            width: 100%;
+        }
+    }
     &.auth {
         .logo {
             position: relative;
@@ -14,7 +20,10 @@
         background-color: $clr2;
         & *,
         & a {
-            color: $clr1 !important;
+            fill: $clr1 !important;
+            .logo-container {
+                max-width: 120px;
+            }
         }
     }
     label,
