@@ -30,7 +30,7 @@ function _createUsersForTesting() {
         utilService.saveToStorage(STORAGE_KEY_USER_DB, [
             {
                 fullname: 'Yaron Shapira',
-                imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+                imgUrl: 'https://avatars.githubusercontent.com/u/84077420?v=4',
                 password: '1',
                 username: '1',
                 _id: 'I6ju1',
