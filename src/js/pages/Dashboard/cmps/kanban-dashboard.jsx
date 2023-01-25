@@ -158,6 +158,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                 </Draggable>
                                             ))}
                                         </ul>
+
                                         {provided.placeholder}
                                         <form onSubmit={ev => addNewItem(ev, board._id, idx)} className='add-item'>
                                             <input
@@ -174,9 +175,11 @@ export function KanbanDashboard({ user, currSite }) {
                         }}
                     </Droppable>
                 ))}
-                <button className='btn-icon add-board' onClick={onAddBoard}>
-                    <AiOutlinePlus />
-                </button>
+                <div className='list-wrapper add-btn'>
+                    <button className='' onClick={onAddBoard}>
+                        Add a new board
+                    </button>
+                </div>
             </section>
         </DragDropContext>
     )

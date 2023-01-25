@@ -359,9 +359,9 @@
     user-select: none;
     white-space: nowrap;
     .add-board {
-        position: fixed;
-        bottom: 13%;
-        left: 91.7%;
+        // position: fixed;
+        // bottom: 13%;
+        // left: 91.7%;
         cursor: pointer;
         padding: 0.2rem;
         background-color: lighten($editor-lightgray, 10%);
@@ -387,6 +387,18 @@
         white-space: nowrap;
         width: 272px;
         border-radius: 12px;
+
+        &.add-btn {
+            height: 5%;
+            text-align: center;
+            button {
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+                font-weight: 700;
+                color: darken($editor-lightgray, 55%);
+            }
+        }
     }
     .list-content {
         .list-header {
