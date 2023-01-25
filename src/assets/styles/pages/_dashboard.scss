@@ -352,6 +352,15 @@
     -webkit-user-select: none;
     user-select: none;
     white-space: nowrap;
+    .add-board {
+        position: fixed;
+        bottom: 13%;
+        left: 91.7%;
+        cursor: pointer;
+        padding: 0.2rem;
+        background-color: lighten($editor-lightgray, 10%);
+        transition: opacity 0.3s ease;
+    }
     .list {
         display: flex;
         flex-direction: column;
