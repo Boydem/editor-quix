@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { wapService } from '../../services/wap.service'
 import { setWap, setWapNull } from '../../store/wap/wap.action'
@@ -10,6 +12,9 @@ export function Preview() {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const { wapId, wapUrl } = useParams()
     const containerRef = useRef()
+    const user = useSelector(storeState => storeState.userModule.user)
+    const [isUserSite, setIsUserSite] = useState(false)
+
     useEffect(() => {
         loadWap()
 
@@ -31,14 +36,24 @@ export function Preview() {
             setWap(wap)
             const root = document.getElementById('root')
             root.classList.add(wap.themeClass)
+            if (wap.owner === user._id) setIsUserSite(true)
         } catch (err) {
             showErrorMsg('Failed to load your demo. Please try again later.')
         }
+        console.log(wap)
     }
 
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
         <div className='full templates-css-reset' ref={containerRef}>
+            {isUserSite && (
+                <div className='site-owner-link'>
+                    <p>Your site is on air!</p>
+                    <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
+                        Go to dashboard
+                    </Link>
+                </div>
+            )}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
             })}

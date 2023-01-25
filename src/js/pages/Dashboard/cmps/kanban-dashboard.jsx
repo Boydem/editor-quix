@@ -70,7 +70,7 @@ export function KanbanDashboard({ user, currSite }) {
         }
 
         user.boards = user.boards.length ? [...user.boards, boardToAdd] : [boardToAdd]
-        setBoards(user.boards)
+        setBoards([...user.boards])
         updateUser(user, boards)
     }
 

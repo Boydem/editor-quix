@@ -48,6 +48,7 @@
 @import './cmps/_loginsignup.scss';
 @import './cmps/_user-msg.scss';
 @import './cmps/_wap-index.scss';
+@import './cmps/_wap-preview';
 
 //**// UI //**//
 // App UI
@@ -60,13 +61,12 @@
 // UI Overwrites
 @import './setup/_overwrites.scss';
 
-
 // Templates
-@import './templates/general-cmps.scss';
-@import './templates/_template1.scss';
-@import './templates/_template2.scss';
-@import './templates/_template3.scss';
-@import './templates/_wap4.scss';
-@import './templates/_wap5.scss';
-@import './templates/_wap6.scss';
-@import './templates/_wap7.scss';
+@import './waps/general-cmps.scss';
+@import './waps/_wap1.scss';
+@import './waps/_wap2.scss';
+@import './waps/_wap3.scss';
+@import './waps/_wap4.scss';
+@import './waps/_wap5.scss';
+@import './waps/_wap6.scss';
+@import './waps/_wap7.scss';

@@ -4,6 +4,7 @@ import wap5Gallery1 from './wap5-gallery-1.json'
 import wap5Gallery2 from './wap5-gallery-2.json'
 import wap5Section2 from './wap5-section-2.json'
 import wap5Gallery3 from './wap5-gallery-3.json'
+import wap5Subscribe from './wap-5-subscribe.json'
 import wap5Cta from './wap5-cta.json'
 import wap5Section4 from './wap5-section-4.json'
 import wap5Form from './wap5-form.json'
@@ -18,6 +19,7 @@ export function getDemoCmps5() {
         wap5Gallery2,
         wap5Section2,
         wap5Gallery3,
+        wap5Subscribe,
         wap5Cta,
         wap5Section4,
         wap5Form,
