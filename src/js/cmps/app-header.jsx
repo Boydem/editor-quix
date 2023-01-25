@@ -48,6 +48,8 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         try {
             wap.owner = user._id
             wap.url = wapUrlToEdit.publishUrl
+            // --- choose title if first time publish
+            // --- choose to nav to preview or dashboard -- CTA dashboard
             await saveWap(wap)
             navigate(`/${wapUrlToEdit.publishUrl}`)
             showSuccessMsg('Your site has been published!')
@@ -94,7 +96,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <button
                                 data-tooltip='Notifications'
                                 data-tooltip-dir='bottom'
-                                className='tool notifications'
+                                className='tab notifications'
                             >
                                 <BiBell />
                             </button>
@@ -124,18 +126,15 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                                 </span>
                                             </>
                                         ) : (
-                                            <ul className='flex align-center'>
-                                                <li>
-                                                    <Link className='nav-link link-underline sign-in' to='/auth/login'>
-                                                        <span>Login</span>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className='nav-link link-underline sign-up' to='/auth/login'>
-                                                        <span>Sign up</span>
-                                                    </Link>
-                                                </li>
-                                            </ul>
+                                            <>
+                                                <Link className='nav-link link-underline sign-in' to='/auth/login'>
+                                                    <span>Login</span>
+                                                </Link>
+
+                                                <Link className='nav-link link-underline sign-up' to='/auth/login'>
+                                                    <span>Sign up</span>
+                                                </Link>
+                                            </>
                                         )}
                                     </div>
                                 </div>

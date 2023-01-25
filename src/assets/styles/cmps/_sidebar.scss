@@ -298,6 +298,7 @@
         width: $right-sidebar-width;
         margin-right: -$right-sidebar-width;
         height: 100%;
+        bottom: 0;
         &.open {
             margin: 0;
             // left: 300px;
@@ -350,10 +351,19 @@
                 }
             }
         }
+        .right-sidebar {
+            .module-content {
+                .TabsRoot {
+                    max-height: unset !important;
+                    overflow-y: auto;
+                }
+            }
+        }
         .module-content {
             width: $modules-content-width;
             transform: translateX(-$modules-menu-width);
             height: calc(100vh - $app-header-height - $toolbar-height - 1px);
+
             .quick-add {
                 > div {
                     height: 100%;
