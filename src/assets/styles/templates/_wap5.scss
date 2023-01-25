@@ -1153,6 +1153,16 @@
             }
         }
     }
+    .gallery-1 {
+        .layout-container {
+            .logos {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
 }
 .open-close-icon {
     width: 40px;
@@ -1459,6 +1469,16 @@
             }
         }
     }
+    .gallery-1 {
+        .layout-container {
+            .logos {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
 
     .gallery-2 {
         .layout-container {
@@ -1493,6 +1513,13 @@
         }
     }
 }
+input[type='checkbox'] {
+    appearance: none;
+    background: transparent;
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+}
 .open-close-icon {
     width: 40px;
     background-color: #eee;
@@ -1503,9 +1530,11 @@
     border-radius: 5px;
     padding: 0 0.25em;
     // overflow: hidden;
-    input[type='checkbox'] {
-        appearance: none;
+
+    &::before {
+        content: '☰';
     }
+
     span {
         display: flex;
         align-items: center;

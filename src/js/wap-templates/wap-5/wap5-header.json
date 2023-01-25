@@ -38,47 +38,20 @@
                 },
                 {
                     "id": "9YXTJS",
-                    "type": "div",
+                    "type": "label",
+                    "htmlFor": "hamburger",
                     "name": "open-close-icon",
-                    "cmps": [
-                        {
-                            "id": "hxQUNq",
-                            "type": "input",
-                            "name": "mobile-open-close-btn",
-                            "inputName": "",
-                            "content": {
-                                "inputType": "checkbox"
-                            },
-                            "cmps": []
-                        },
-                        {
-                            "id": "iCS9Vt",
-                            "type": "span",
-                            "name": "",
-                            "content": {
-                                "txt": ""
-                            },
-                            "cmps": []
-                        },
-                        {
-                            "id": "Ug0fMD",
-                            "type": "span",
-                            "name": "",
-                            "content": {
-                                "txt": ""
-                            },
-                            "cmps": []
-                        },
-                        {
-                            "id": "vc1ur6",
-                            "type": "span",
-                            "name": "",
-                            "content": {
-                                "txt": ""
-                            },
-                            "cmps": []
-                        }
-                    ]
+                    "cmps": []
+                },
+                {
+                    "id": "hxQUNq",
+                    "htmlId": "hamburger",
+                    "type": "input",
+                    "name": "mobile-open-close-btn",
+                    "inputType": "checkbox",
+                    "inputName": "",
+                    "content": {},
+                    "cmps": []
                 },
                 {
                     "id": "4kQEVt",
