@@ -96,11 +96,13 @@ export function KanbanDashboard({ user, currSite }) {
                 },
             ],
         }
-
+        console.log('boardToAdd:', boardToAdd)
         user.boards = user.boards.length ? [...user.boards, boardToAdd] : [boardToAdd]
+        console.log('user.boards:', user.boards)
         setBoards(user.boards)
-        updateUser(user, boards)
+        // updateUser(user, boards)
     }
+    console.log('user:', user)
 
     console.log('boards:', boards)
     if (!boards || !boards.length) return <div>Loading..</div>
@@ -158,6 +160,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                 </Draggable>
                                             ))}
                                         </ul>
+
                                         {provided.placeholder}
                                         <form onSubmit={ev => addNewItem(ev, board._id, idx)} className='add-item'>
                                             <input
@@ -174,9 +177,11 @@ export function KanbanDashboard({ user, currSite }) {
                         }}
                     </Droppable>
                 ))}
-                <button className='btn-icon add-board' onClick={onAddBoard}>
-                    <AiOutlinePlus />
-                </button>
+                <div className='list-wrapper add-btn'>
+                    <button className='' onClick={onAddBoard}>
+                        Add a new board
+                    </button>
+                </div>
             </section>
         </DragDropContext>
     )

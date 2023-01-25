@@ -3,6 +3,7 @@
     "type": "chat",
     "name": "chat-1",
     "category": "chat",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689963/chat-cmp_hcvevc.png",
     "cmps": [
         {
             "id": "GXTvqg",
