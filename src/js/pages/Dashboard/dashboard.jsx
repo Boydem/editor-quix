@@ -128,7 +128,6 @@ export function Dashboard() {
                     </ul>
                 </nav>
             </aside>
-
             <main className='dashboard-main'>
                 <div className='main-header layout-wrapper'>
                     <div className='titles'>
@@ -137,7 +136,6 @@ export function Dashboard() {
                     </div>
                     <div className='actions'>
                         <DropdownMenuDemo />
-
                         <button onClick={onEditSite} className='site-actions-edit flex align-center'>
                             <BsPencil /> <span>Edit Site</span>
                         </button>

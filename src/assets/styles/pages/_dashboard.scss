@@ -131,7 +131,8 @@
                     cursor: pointer;
                 }
                 button.site-actions-dropdown {
-                    padding: 4px;
+                    padding: $spacing-xs;
+                    border-radius: 3px;
                 }
                 button.site-actions-edit {
                     padding: 4px 26px;

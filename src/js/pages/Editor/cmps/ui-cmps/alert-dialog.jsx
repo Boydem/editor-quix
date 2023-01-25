@@ -24,7 +24,7 @@ export function DeleteAlertDialog() {
             <AlertDialog.Trigger asChild>
                 <button
                     onClick={() => setOpen(prev => !prev)}
-                    className='tab trash'
+                    className='btn-icon small alert'
                     data-tooltip='Trash'
                     data-tooltip-dir='left'
                 >

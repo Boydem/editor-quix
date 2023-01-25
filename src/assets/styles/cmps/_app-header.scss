@@ -58,37 +58,8 @@
             letter-spacing: -0.02rem;
         }
     }
-    .main-nav,
-    .nav-actions {
-        position: static;
-        transform: unset;
-        background-color: unset;
-        min-height: unset;
-        min-width: unset;
-        padding: 0;
-        & ul {
-            display: flex;
-            flex-direction: row;
-            height: 100%;
-            gap: unset;
-            > li {
-                height: 100%;
-            }
-        }
-        & .nav-link {
-            height: $app-header-height;
-            line-height: $app-header-height;
-            padding: 0 1em;
-            font-weight: 400;
-            transition: 0.4s color, background-color 0.4s;
 
-            &:hover {
-                color: $editor-active-clr;
-            }
-        }
-    }
-
-    .publish-link {
+    .site-link {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -146,8 +117,10 @@
                 position: relative;
                 padding: $spacing-xxs $spacing-xs;
                 color: $editor-active-clr;
+                transition: color 0.14s;
                 &:hover {
-                    color: $editor-active-clr;
+                    transition: color 0.14s;
+                    color: darken($editor-active-clr, 5%);
                 }
 
                 &::before {
@@ -181,7 +154,13 @@
         }
     }
 }
-
+.app-header[data-location='editor'] {
+    .user-area,
+    .site-link,
+    .nav-actions ul li {
+        display: none;
+    }
+}
 .user-area {
     margin: 0 1em;
     display: grid;
@@ -198,7 +177,7 @@
         justify-content: center;
         border-radius: 55px;
         overflow: hidden;
-        color: white;
+        color: $clr1;
         text-transform: uppercase;
         background-color: $clr19;
         box-shadow: 0px 2px 10px -4px rgba($clr2, 10%), 0px 0px 10px rgba($clr9, 40%);
@@ -241,6 +220,18 @@
         }
         .btn-logout {
             margin-inline-start: 0.4em;
+        }
+    }
+}
+.interactives > * {
+    height: 100%;
+}
+@media (min-width: 960px) {
+    .app-header[data-location='editor'] {
+        .user-area,
+        .site-link,
+        .nav-actions ul li {
+            display: flex;
         }
     }
 }
