@@ -96,11 +96,13 @@ export function KanbanDashboard({ user, currSite }) {
                 },
             ],
         }
-
+        console.log('boardToAdd:', boardToAdd)
         user.boards = user.boards.length ? [...user.boards, boardToAdd] : [boardToAdd]
+        console.log('user.boards:', user.boards)
         setBoards(user.boards)
-        updateUser(user, boards)
+        // updateUser(user, boards)
     }
+    console.log('user:', user)
 
     console.log('boards:', boards)
     if (!boards || !boards.length) return <div>Loading..</div>
