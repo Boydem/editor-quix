@@ -2,7 +2,6 @@ export const uploadService = {
     uploadImg,
 }
 function uploadImg(ev) {
-    console.log('PLOADING')
     const CLOUD_NAME = 'yaronshapira-com'
     const UPLOAD_PRESET = 'mg6aefx9'
     const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
+
 import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { saveWap } from '../store/wap/wap.action'
 import { logout } from '../store/user/user.actions'
 import { FaBars } from 'react-icons/fa'
-import { useSelector } from 'react-redux'
 import noamImg from '../../assets/imgs/dashboard-assets/noam-tn.jpg'
-import { Link, useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BiBell } from 'react-icons/bi'
 import { FiMessageSquare } from 'react-icons/fi'
@@ -61,7 +62,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         if (!user) return
         const matches = user?.fullname.match(/\b(\w)/g)
         const shortName = matches.join('')
-        console.log('shortName:', shortName)
         return shortName
     }
     function onEditDomain() {
@@ -113,12 +113,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='user-area'>
-                                {user && (
-                                    <div className='avatar'>
-                                        {getShortenName()}
-                                        {/* <img src={user.imgUrl} alt='userAvatar' /> */}
-                                    </div>
-                                )}
+                                {user && <div className='avatar'>{getShortenName()}</div>}
                                 <div className='user-info'>
                                     {user && <div className='user-fullname'>{user.fullname}</div>}
                                     <div className='user-links'>

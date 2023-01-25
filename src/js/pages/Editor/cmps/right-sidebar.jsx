@@ -57,6 +57,9 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
         case 'subscribe':
             cmpTitle = 'Subscribe'
             break
+        case 'schedule':
+            cmpTitle = 'Schedule'
+            break
 
         case 'map':
             cmpTitle = 'Map'

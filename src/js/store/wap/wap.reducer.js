@@ -37,18 +37,14 @@ export function wapReducer(state = initialState, action = {}) {
         case 'ADD_WAP_UNDO':
             wapUndos = state.wapUndos
             wapUndos.push(action.newUndoParentCmp)
-            console.log('wapUndos:', wapUndos)
             return { ...state, wapUndos }
         case 'POP_WAP_UNDO':
             wapUndos = state.wapUndos
             wapUndos.pop()
             return { ...state, wapUndos }
         case 'ADD_WAP_REDO':
-            console.log(action)
-            console.log('REDOING')
             wapRedos = state.wapRedos
             wapRedos.push(action.redoCmp)
-            console.log('wapRedos:', wapRedos)
             return { ...state, wapRedos }
         case 'POP_WAP_REDO':
             wapRedos = state.wapRedos

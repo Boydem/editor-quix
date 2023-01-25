@@ -26,11 +26,8 @@ export function HomeHeader() {
         if (!user) return
         const matches = user?.fullname.match(/\b(\w)/g)
         const shortName = matches.join('')
-        console.log('shortName:', shortName)
         return shortName
     }
-    console.log('user:', user)
-
     return (
         <header className='home-header flex justify-between full'>
             <Link to='/' className='logo'>

@@ -27,6 +27,7 @@ import { BorderRadiusSlider } from './edit-modules/border-radius-slider'
 import { LineHeightSlider } from './edit-modules/line-height-slider'
 import { EditSubscribe } from './edit-modules/edit-subscribe'
 import { EditSocial } from './edit-modules/edit-social'
+import { EditSchedule } from './edit-modules/edit-schedule'
 
 export function EditTabs({ context }) {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
@@ -181,6 +182,7 @@ export function EditTabs({ context }) {
                     {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
                     {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
                     {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
+                    {context === 'schedule' && <EditSchedule clickedCmp={clickedCmp} />}
                 </div>
                 <div className='expanded-content adjust inside-accordion TabsContent tabs-inner-content'>
                     <TextToolbar elClickedNode={elClickedNode} handleTextStyleChange={handleTextStyleChange} />

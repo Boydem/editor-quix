@@ -12,7 +12,6 @@ export function LoginSignup({ onLogin, onSignup }) {
     const { state } = useParams()
 
     useEffect(() => {
-        console.log('state:', state)
         state === 'login' ? setIsSignup(false) : setIsSignup(true)
     }, [])
 
@@ -48,7 +47,6 @@ export function LoginSignup({ onLogin, onSignup }) {
         ev.preventDefault()
         try {
             const user = await signup(credentials)
-            console.log('user:', user)
             showSuccessMsg(`Welcome, ${user.fullname}`)
             clearState()
             navigate(-1)

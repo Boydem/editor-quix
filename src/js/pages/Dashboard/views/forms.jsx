@@ -10,8 +10,6 @@ import { useState } from 'react'
 
 export function Forms({ user, currSite }) {
     const [isMailOpen, setIsMailOpen] = useState(false)
-    // const currSite = utilService.loadFromStorage('wapDB').at(-1)
-    console.log(currSite)
     const [subscriberEmail, setSubscriberEmail] = useState(null)
 
     function onMailToSubscriber(sub) {
@@ -24,12 +22,9 @@ export function Forms({ user, currSite }) {
             return acc
         }, [])
         allSubs = allSubs.join(', ')
-        console.log(allSubs)
         setSubscriberEmail(allSubs)
         setIsMailOpen(true)
     }
-    console.log('currSite:', currSite)
-    console.log('isMailOpen', isMailOpen)
     return (
         <>
             <div className='info-box table-box'>
