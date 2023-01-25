@@ -7,7 +7,7 @@ export function InteractiveChat() {
     return (
         <Popover.Root>
             <Popover.Trigger asChild>
-                <button className='tab'>
+                <button data-tooltip='Chat' data-tooltip-dir='bottom' className='tab'>
                     <FiMessageSquare />
                 </button>
             </Popover.Trigger>

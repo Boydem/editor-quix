@@ -88,9 +88,16 @@ export function LoginSignup({ onLogin, onSignup }) {
                 <div className='wrapper'>
                     {isSignup ? (
                         <div className='signup-section'>
-                            <h1>Sign Up</h1>
-                            <span>Already a member?</span>
-                            <button onClick={toggleSignup}>Log In</button>
+                            <div className='header'>
+                                <h2>Sign Up</h2>
+                                <p>
+                                    Already a member?{' '}
+                                    <a className='toggle-link' onClick={toggleSignup}>
+                                        Log In
+                                    </a>
+                                </p>
+                            </div>
+
                             <form onSubmit={onSignup}>
                                 <input
                                     type='text'
