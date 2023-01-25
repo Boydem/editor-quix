@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     background-color: $clr1;
+
     &.left {
         justify-self: start;
     }
@@ -122,7 +123,6 @@
     .icons-group {
         &.responsive-btns {
             display: inline-flex;
-            margin-inline-end: auto;
         }
     }
     .btn-icon {
