@@ -8,6 +8,7 @@ export const utilService = {
     loadFromStorage,
     getLeftRightPropertiesForDrag,
     formatTimeAgo,
+    capitalize,
 }
 
 export function makeId(length = 6) {
@@ -19,6 +20,10 @@ export function makeId(length = 6) {
     }
 
     return txt
+}
+
+function capitalize(string) {
+    return string[0].toUpperCase() + string.slice(1).toLowerCase()
 }
 
 function makeLorem(size = 100) {

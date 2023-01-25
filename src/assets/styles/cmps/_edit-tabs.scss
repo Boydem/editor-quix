@@ -483,4 +483,36 @@
             }
         }
     }
+
+    .edit-schedule {
+        .dropdown-content {
+            // position: relative;
+            z-index: 5;
+            .select-item {
+                width: 100%;
+            }
+        }
+        .multi-select-wrapper {
+            max-width: 100%;
+        }
+    }
+    .item-renderer {
+        // width: 100%;
+        // display: grid;
+        // grid-template-columns: 20px 1fr !important;
+        span {
+            // width: 100%;
+        }
+    }
+    .mini-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0.8rem;
+    }
+    .selection {
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+        display: flex;
+        flex-direction: column;
+    }
 }

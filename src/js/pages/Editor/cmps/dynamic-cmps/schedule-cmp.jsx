@@ -4,37 +4,61 @@ import { useSelector } from 'react-redux'
 import { ScheduleMeeting } from 'react-schedule-meeting'
 import useDidMountEffect from '../../../../hooks/use-did-mount-effect'
 import { saveWap } from '../../../../store/wap/wap.action'
+import * as Dialog from '@radix-ui/react-dialog'
+import { Cross2Icon } from '@radix-ui/react-icons'
 
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [availableTimeslots, setAvailableTimeslots] = useState(wap.schedule.data)
 
-    // useEffect(() => {
-    //     // wap.schedule.data = generateEmptyTimeslots()
-    //     // setAvailableTimeslots(wap.schedule.data)
-    // }, [wap.schedule.eventDuration])
-
     useDidMountEffect(() => {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
-    }, [wap.schedule.eventDuration])
+    }, [
+        wap.schedule.eventDuration,
+        wap.schedule.startHour,
+        wap.schedule.days,
+        wap.schedule.daysForward,
+        wap.schedule.endHour,
+    ])
+    // useDidMountEffect(() => {
+    //     wap.schedule.data = generateEmptyTimeslots()
+    //     setAvailableTimeslots(wap.schedule.data)
+    // }, [wap.schedule.days])
+    // useDidMountEffect(() => {
+    //     wap.schedule.data = generateEmptyTimeslots()
+    //     setAvailableTimeslots(wap.schedule.data)
+    // }, [wap.schedule.daysForward])
 
     useEffect(() => {
         generateTimeslots()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    function getDayName(timestamp) {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const date = new Date(timestamp)
+        const day = date.getDay()
+        return days[day]
+    }
+
     function generateEmptyTimeslots() {
         const start = new Date()
-        start.setHours(9, 0, 0, 0)
+        start.setHours(wap.schedule.startHour, 0, 0, 0)
         const end = new Date()
-        end.setDate(end.getDate() + 5)
-        end.setHours(17, 0, 0, 0)
+        end.setDate(end.getDate() + wap.schedule.daysForward)
+        end.setHours(wap.schedule.endHour, 0, 0, 0)
 
         const intervals = []
         let current = new Date(start)
         let id = 0
         while (current < end) {
+            // console.log('wap.schedule.days:', wap.schedule.days)
+            if (!wap.schedule.days.includes(getDayName(current).toLowerCase())) {
+                current.setDate(current.getDate() + 1)
+                current.setHours(wap.schedule.startHour, 0, 0, 0)
+                continue
+            }
             let endTime = new Date(current)
             endTime.setMinutes(endTime.getMinutes() + wap.schedule.eventDuration)
             intervals.push({
@@ -43,9 +67,9 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 endTime: endTime,
             })
             current = new Date(endTime)
-            if (current.getHours() >= 17) {
+            if (current.getHours() >= wap.schedule.endHour) {
                 current.setDate(current.getDate() + 1)
-                current.setHours(9, 0, 0, 0)
+                current.setHours(wap.schedule.startHour, 0, 0, 0)
             }
             id++
         }
@@ -75,11 +99,11 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
     function generateLastDay() {
         const start = new Date()
-        start.setHours(9, 0, 0, 0)
+        start.setHours(wap.schedule.startHour, 0, 0, 0)
         start.setDate(start.getDate() + 6)
         const end = new Date()
         end.setDate(end.getDate() + 6)
-        end.setHours(17, 0, 0, 0)
+        end.setHours(wap.schedule.endHour, 0, 0, 0)
 
         const intervals = []
         let current = new Date(start)
@@ -93,9 +117,9 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 endTime: endTime,
             })
             current = new Date(endTime)
-            if (current.getHours() >= 17) {
+            if (current.getHours() >= wap.schedule.endHour) {
                 current.setDate(current.getDate() + 1)
-                current.setHours(9, 0, 0, 0)
+                current.setHours(wap.schedule.startHour, 0, 0, 0)
             }
             id++
         }
@@ -135,10 +159,10 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         })
     }
 
-    const handleTimeslotClicked = selectedMeeting => {
+    async function handleTimeslotClicked(selectedMeeting) {
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
         availableTimeslots.splice(selectedMeetingIdx, 1)
-        setAvailableTimeslots([...availableTimeslots])
+        // setAvailableTimeslots([...availableTimeslots])
         wap.schedule.data = availableTimeslots
         saveWap(wap)
     }
@@ -157,7 +181,9 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 availableTimeslots={availableTimeslots}
                 onStartTimeSelect={handleTimeslotClicked}
                 startTimeListStyle={'scroll-list'}
+                startTimeFormatString='HH:mm'
             />
+            <div className='schedule-modal'></div>
         </div>
     )
 }
