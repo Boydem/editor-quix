@@ -3,10 +3,10 @@ import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
-const SelectUnit = ({ onUnitChange, unit, unitOpts }) => (
+const SelectUnit = ({ onUnitChange, unit, unitOpts, placeholder }) => (
     <Select.Root onValueChange={onUnitChange} value={unit}>
         <Select.Trigger className='SelectTrigger' aria-label='unit'>
-            <Select.Value placeholder='px' />
+            <Select.Value placeholder={placeholder} />
             <Select.Icon className='SelectIcon'>
                 <ChevronDownIcon />
             </Select.Icon>
@@ -23,9 +23,6 @@ const SelectUnit = ({ onUnitChange, unit, unitOpts }) => (
                                 {opt}
                             </SelectItem>
                         ))}
-                        {/* {<SelectItem value='px'>px</SelectItem>}
-                        <SelectItem value='%'>%</SelectItem>
-                        {unit === 'deg' && <SelectItem value='deg'>Deg</SelectItem>} */}
                     </Select.Group>
                 </Select.Viewport>
                 <Select.ScrollDownButton className='SelectScrollButton'>

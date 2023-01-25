@@ -154,6 +154,7 @@
         .col-right {
             flex: 1;
             min-height: 80vh;
+            position: relative;
         }
         .col-left {
             max-width: 300px;
@@ -205,7 +206,19 @@
             background-color: $clr1;
             place-items: start;
             margin-bottom: $spacing-m;
-
+            &.schedule-intro {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .choose-day {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5em;
+                }
+                .total-meetings {
+                    font-size: 1.125em;
+                }
+            }
             .chart-wrapper {
                 flex: 1;
                 width: 100%;
@@ -325,7 +338,115 @@
         }
     }
 }
+.kanban-board {
+    bottom: 0;
+    left: 0;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+    padding-bottom: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    .list {
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        position: relative;
+        white-space: normal;
+        width: 100% !important;
+        background-color: lighten($editor-lightgray, 3.5%);
+        border-radius: $spacing-xxs;
+    }
+    .list-wrapper {
+        background-color: lighten($editor-lightgray, 3.5%);
+        display: inline-flex;
+        height: 100%;
+        margin: 0 4px;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 272px;
+        border-radius: 12px;
+    }
+    .list-content {
+        .list-header {
+            flex: 0 0 auto;
+            min-height: 20px;
+            padding: 10px 8px;
+            position: relative;
+            font-weight: 700;
+            color: darken($editor-lightgray, 55%);
+        }
+        .list-items {
+            flex: 1 1 auto;
+            margin: 0 4px;
+            min-height: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0 4px;
+            z-index: 1;
+            li {
+                overflow: hidden;
+                padding: 6px 8px 2px;
+                position: relative;
+                z-index: 10;
+                background: $clr1;
+                margin-bottom: 0.5em;
+                cursor: pointer;
+                display: block;
+                margin-bottom: 8px;
+                max-width: 300px;
+                min-height: 20px;
+                position: relative;
+                z-index: 0;
+                border-radius: $spacing-xxs;
+                box-shadow: 0 1px 0 #091e4240;
+                transition: color 0.18s cubic-bezier(0.075, 0.82, 0.165, 1),
+                    background-color 0.18s cubic-bezier(0.165, 0.84, 0.44, 1);
+                &:hover {
+                    background-color: lighten($editor-lightgray, 10%);
+                }
+                span {
+                    word-wrap: break-word;
+                    clear: both;
+                    display: block;
+                    margin: 0 0 4px;
+                    overflow: hidden;
+                    text-decoration: none;
+                }
+            }
+        }
+        .add-item {
+            display: flex;
+            justify-content: space-between;
+            max-height: 38px;
+            min-height: 38px;
+            background-color: rgb(218 223 235);
+            input {
+                background-color: darken($editor-lightgray, 1%);
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: darken($editor-lightgray, 55%);
+                    opacity: 1; /* Firefox */
+                }
 
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: $editor-lightgray;
+                }
+
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: $editor-lightgray;
+                }
+            }
+        }
+    }
+}
 .interactives {
     display: flex;
     font-size: px-to-rem(20px);
