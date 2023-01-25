@@ -81,6 +81,10 @@
     position: absolute;
     top: $spacing-s;
     right: $spacing-s;
+    color: darken($editor-lightgray, 20%);
+    &:hover {
+        color: darken($editor-lightgray, 50%);
+    }
 }
 .btn-primary {
     background-color: $editor-active-clr;
