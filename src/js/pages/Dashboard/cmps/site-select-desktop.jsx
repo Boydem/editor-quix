@@ -27,11 +27,6 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                         <div className='item'>
                             <img src={explorerSVG} alt='explorerSVG' />
                             <span>{site.title}</span>
-                            <div className='actions flex'>
-                                <button className='tab'>
-                                    <BsThreeDotsVertical />
-                                </button>
-                            </div>
                         </div>
                     </article>
                 ))}
