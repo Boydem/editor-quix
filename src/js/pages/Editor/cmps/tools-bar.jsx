@@ -4,6 +4,7 @@ import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { FiRefreshCw } from 'react-icons/fi'
 
 import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
