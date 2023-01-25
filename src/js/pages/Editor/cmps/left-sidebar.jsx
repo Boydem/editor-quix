@@ -1,12 +1,9 @@
 import { DynamicModule } from './dynamic-module'
 import { AiOutlineClose } from 'react-icons/ai'
-import { saveCmp } from '../../../store/wap/wap.action'
 import { useEffect, useRef, useState } from 'react'
 import { wapService } from '../../../services/wap.service'
 
 import { AiOutlinePlus } from 'react-icons/ai'
-import { FiLayers } from 'react-icons/fi'
-import { IoColorFilterOutline } from 'react-icons/io5'
 
 export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     // const [theme, setTheme] = useState('')

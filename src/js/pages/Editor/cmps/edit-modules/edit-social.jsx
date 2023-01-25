@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { removeCmp, saveCmp, setClickedCmp } from '../../../../store/wap/wap.action'
+import { removeCmp, saveCmp } from '../../../../store/wap/wap.action'
 import { FiTrash } from 'react-icons/fi'
 import { BsLink45Deg } from 'react-icons/bs'
 import { makeId } from '../../../../services/util.service'

@@ -1,5 +1,4 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
-import { BsThreeDotsVertical } from 'react-icons/bs'
 import { utilService } from '../../../services/util.service'
 
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
@@ -39,10 +38,7 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <article key={idx} className='list-item-preview'>
                         <div className='item'>
                             <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
-                            <span className='user-name'>
-                                {/* {(idx === 0 && 'Kuki') || (idx === 1 && 'Muki') || (idx === 2 && 'Puki')} */}
-                                User
-                            </span>
+                            <span className='user-name'>User</span>
                             <div className='message-body'>
                                 <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
                                 <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>

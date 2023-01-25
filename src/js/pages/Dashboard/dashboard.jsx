@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 
 import { BsPencil } from 'react-icons/bs'
-import { BsThreeDots } from 'react-icons/bs'
 import { IoAnalyticsOutline } from 'react-icons/io5'
 import { GrAnalytics } from 'react-icons/gr'
 

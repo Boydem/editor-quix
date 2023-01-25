@@ -1,12 +1,8 @@
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
-import { Accordion } from './edit-accordion'
 import { EmptyRightSidebar } from './edit-modules/empty-right-sidebar'
 import { EditTabs } from './edit-tabs'
-import { removeCmp } from '../../../store/wap/wap.action'
-import { showErrorMsg } from '../../../services/event-bus.service'
 import { DeleteAlertDialog } from './ui-cmps/alert-dialog'
 
 export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {

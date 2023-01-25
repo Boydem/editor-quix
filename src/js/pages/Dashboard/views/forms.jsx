@@ -1,12 +1,6 @@
-import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
-import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
-import { BsTrash } from 'react-icons/bs'
-import { BsPencil } from 'react-icons/bs'
-import Chart from 'react-apexcharts'
-import { useSelector } from 'react-redux'
-import { makeId, utilService } from '../../../services/util.service'
-import ComposeMail from '../cmps/compose-mail'
 import { useState } from 'react'
+import ComposeMail from '../cmps/compose-mail'
+import { utilService } from '../../../services/util.service'
 
 export function Forms({ user, currSite }) {
     const [isMailOpen, setIsMailOpen] = useState(false)

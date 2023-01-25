@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { BiSend } from 'react-icons/bi'
 import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
 import { AiOutlineSend } from 'react-icons/ai'

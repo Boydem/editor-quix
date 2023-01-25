@@ -1,17 +1,14 @@
 import { GoDeviceDesktop } from 'react-icons/go'
-import { FiTrash } from 'react-icons/fi'
 import { AiOutlineMobile } from 'react-icons/ai'
 import { AiOutlineTablet } from 'react-icons/ai'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { AiOutlinePlus } from 'react-icons/ai'
-import { FiRefreshCw } from 'react-icons/fi'
 
 import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action'
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { InteractiveChat } from './ui-cmps/interactive-chat'
-import { useState } from 'react'
 
 export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsChanges, layout, onLayoutChange }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)

@@ -1,9 +1,7 @@
 import DynamicCmp from './dynamic-cmp'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
-import { useRef, useEffect, useState } from 'react'
-import { utilService } from '../../../services/util.service'
+import { useRef, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { TiBrush } from 'react-icons/ti'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 
 export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, layout, handleSidebarsChanges }) {

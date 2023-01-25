@@ -1,6 +1,6 @@
 import React from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { HamburgerMenuIcon, DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons'
+import { DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import { BsThreeDots } from 'react-icons/bs'
 
 const DropdownMenuDemo = () => {

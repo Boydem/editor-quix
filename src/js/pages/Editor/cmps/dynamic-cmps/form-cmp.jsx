@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { makeId } from '../../../../services/util.service'
 import { saveWap } from '../../../../store/wap/wap.action'
 import DynamicCmp from '../dynamic-cmp'
-import DynamicElement from './dynamic-element'
 
 export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)

@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react'
-
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 
 import {
@@ -13,7 +11,7 @@ import {
     Filler,
     Legend,
 } from 'chart.js'
-import { Bar, Line } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import { ScheduleCmp } from '../../Editor/cmps/dynamic-cmps/schedule-cmp'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend)
 
