@@ -12,15 +12,12 @@ export function EditVideo({ clickedCmp }) {
     }
 
     function validateUrl() {
-        // ^(https?\:\/\/)?(www\.youtube\.com|youtu\.be)\/.+$
         const regex = new RegExp('^(https?://)?(www.youtube.com|youtu.be)/.+$')
         return regex.test(videoUrl)
     }
 
     async function onSubmitVideoUrl(ev) {
         ev.preventDefault()
-        // const isUrlValid = validateUrl()
-        // console.log(isUrlValid)
         const embedUrl = videoUrl.replace('watch?v=', 'embed/')
         clickedCmp.content.url = embedUrl
         try {

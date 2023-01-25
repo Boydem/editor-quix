@@ -62,7 +62,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         if (!user) return
         const matches = user?.fullname.match(/\b(\w)/g)
         const shortName = matches.join('')
-        console.log('shortName:', shortName)
         return shortName
     }
     function onEditDomain() {

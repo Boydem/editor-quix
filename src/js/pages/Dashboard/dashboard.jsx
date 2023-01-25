@@ -49,7 +49,6 @@ export function Dashboard() {
     }
 
     async function onEditSite(ev) {
-        // console.log(currSite, 'currSite')
         if (!currSite?._id) {
             showErrorMsg('Failed Editing site, try again later ')
             return
@@ -81,7 +80,6 @@ export function Dashboard() {
     }
     let sortedEvents
     if (currSite) {
-        console.log('currSite:', currSite)
         const subscribersTimestamps = currSite?.subscribers.reduce((acc, sub) => {
             acc.push(sub.date)
             return acc
@@ -96,7 +94,7 @@ export function Dashboard() {
         }, [])
 
         const allTimestamps = { subscribersTimestamps, leadTimestamps, msgsTimestamps }
-        console.log(allTimestamps)
+
 
         sortedEvents = Object.entries(allTimestamps)
             .flatMap(([key, values]) => values.map(timestamp => ({ key, timestamp })))

@@ -12,7 +12,6 @@ export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
 
     function onSend(ev) {
         ev.preventDefault()
-        // console.log(formRef.current)
         emailjs.sendForm('service_ra3355j', 'template_2k87m98', formRef.current, 'BA6_vXLALxmOosQQV').then(
             result => {
                 console.log(result)
@@ -21,7 +20,6 @@ export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
                 console.log(error.text)
             }
         )
-        // console.log(msg)
     }
 
     function onClose() {

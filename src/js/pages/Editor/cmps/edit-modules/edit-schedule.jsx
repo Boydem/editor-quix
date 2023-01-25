@@ -11,7 +11,6 @@ export function EditSchedule({ clickedCmp }) {
     const [eventDuration, setEventDuration] = useState(wap.schedule?.eventDuration || 30)
 
     function handleEventDurationCommit(ev) {
-        console.log(ev)
         setEventDuration(ev[0])
         wap.schedule.eventDuration = ev[0]
         saveWap(wap)
@@ -20,7 +19,6 @@ export function EditSchedule({ clickedCmp }) {
     function handleEventDurationChange(ev) {
         setEventDuration(ev[0])
     }
-    console.log('eventDuration:', eventDuration)
 
     return (
         <div className='adjust inside-accordion'>

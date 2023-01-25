@@ -7,9 +7,6 @@ export function VideoCmp({ cmp, onSelectCmp, onHoverCmp }) {
     if (cmp.class) {
         classes += cmp.class?.join(' ')
     }
-    // console.log('cmp:', cmp)
-
-    // console.log()
 
     return (
         <div

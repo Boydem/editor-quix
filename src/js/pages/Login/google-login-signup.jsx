@@ -17,7 +17,6 @@ export function GoogleLoginSignup({ handleGoogleLogin }) {
     }, [])
 
     function onLogin({ profileObj }) {
-        console.log('profileObj:', profileObj)
         const user = {
             username: profileObj.email,
             password: profileObj.googleId,
@@ -27,7 +26,6 @@ export function GoogleLoginSignup({ handleGoogleLogin }) {
         handleGoogleLogin(user)
     }
     function onGoogleLoginFailure(err) {
-        console.log('failed:', err)
         showErrorMsg('Cannot login, try again later')
     }
 
