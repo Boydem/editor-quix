@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { ScheduleMeeting } from 'react-schedule-meeting'
 
-export function ReactSchedule() {
+export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     // this generates basic available timeslots for the next 6 days
     let [availableTimeslots, setAvailableTimeslots] = useState(() => {
         const start = new Date()
@@ -61,11 +61,18 @@ export function ReactSchedule() {
         return intervals
     }
 
-    function isSameDay(ts) {
-        var today = new Date().setHours(0, 0, 0, 0)
-        var thatDay = new Date(ts).setHours(0, 0, 0, 0)
-
-        return today === thatDay
+    function isYesterday(timestamp) {
+        const date = new Date(timestamp)
+        const today = new Date()
+        if (
+            date.getDate() === today.getDate() - 1 &&
+            date.getMonth() === today.getMonth() &&
+            date.getFullYear() === today.getFullYear()
+        ) {
+            return true
+        } else {
+            return false
+        }
     }
 
     function removeYesterdayMeetings(intervals) {
@@ -88,14 +95,12 @@ export function ReactSchedule() {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            if (isSameDay(availableTimeslots[0].startTime)) {
-                console.log('*** Same day ***')
-                availableTimeslots = removeYesterdayMeetings(availableTimeslots)
-                const newIntervals = generateLastDay()
-                setAvailableTimeslots([...availableTimeslots, ...newIntervals])
-            }
-        }, 5000)
+        if (isYesterday(availableTimeslots[0].startTime)) {
+            console.log('*** yesterday ***')
+            availableTimeslots = removeYesterdayMeetings(availableTimeslots)
+            const newIntervals = generateLastDay()
+            setAvailableTimeslots([...availableTimeslots, ...newIntervals])
+        }
     }, [])
 
     console.log(availableTimeslots)
@@ -114,6 +119,9 @@ export function ReactSchedule() {
             availableTimeslots={availableTimeslots}
             onStartTimeSelect={handleTimeslotClicked}
             startTimeListStyle={'scroll-list'}
+            onClick={e => onSelectCmp(e, cmp)}
+            onMouseOver={onHoverCmp}
+            onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
         />
     )
 }
