@@ -4,6 +4,7 @@ import { FaBars } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { QuixLogo } from '../../../cmps/quix-logo'
+import { UserTooltip } from '../../../cmps/user-tooltip'
 import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service'
 import { logout } from '../../../store/user/user.actions'
 export function HomeHeader() {
@@ -14,21 +15,6 @@ export function HomeHeader() {
         setIsMenuOpen(!isMenuOpen)
     }
 
-    async function onLogout() {
-        try {
-            await logout()
-            showSuccessMsg('Logged out')
-        } catch (err) {
-            showErrorMsg('Logout failed')
-        }
-    }
-
-    function getShortenName() {
-        if (!user) return
-        const matches = user?.fullname.match(/\b(\w)/g)
-        const shortName = matches.join('')
-        return shortName
-    }
     return (
         <header className='home-header flex justify-between full'>
             <div className='logo-container'>
@@ -41,52 +27,16 @@ export function HomeHeader() {
                 <FaBars />
             </div>
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                {user ? (
-                    <ul className='flex align-center'>
-                        <div className='user-area'>
-                            <div className='avatar'>
-                                {getShortenName()}
-                                {/* <img src={user.imgUrl} alt='userAvatar' /> */}
-                            </div>
-                            <div className='user-info'>
-                                <div className='user-fullname'>{user.fullname}</div>
-                                <div className='user-links'>
-                                    <>
-                                        <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
-                                            Dashboard
-                                        </Link>
-                                        <span className='btn-logout' onClick={onLogout}>
-                                            Logout
-                                        </span>
-                                    </>
-                                </div>
-                            </div>
-                        </div>
-                        <li>
-                            <Link className='nav-link btn-start-now link-underline' to='/create'>
-                                <span>Start Now</span>
-                            </Link>
-                        </li>
-                    </ul>
-                ) : (
-                    <ul className='flex align-center'>
-                        <li>
-                            <Link className='nav-link link-underline sign-in' to={'/auth/login'}>
-                                <span>Login</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className='nav-link link-underline sign-up' to={'/auth/signup'}>
-                                <span>Sign up</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className='nav-link btn-start-now link-underline' to='/create'>
-                                <span>Start Now</span>
-                            </Link>
-                        </li>
-                    </ul>
-                )}
+                <ul className='flex align-center'>
+                    <div className='user-area'>
+                        <UserTooltip user={user} />
+                    </div>
+                    <li>
+                        <Link className='nav-link btn-start-now link-underline' to='/create'>
+                            <span>Start Now</span>
+                        </Link>
+                    </li>
+                </ul>
             </nav>
         </header>
     )

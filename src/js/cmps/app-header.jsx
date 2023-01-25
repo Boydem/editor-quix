@@ -10,6 +10,7 @@ import { BiBell } from 'react-icons/bi'
 import { SiteSelect } from './site-select'
 import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
 import { QuixLogo } from './quix-logo'
+import { UserTooltip } from './user-tooltip'
 
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
@@ -30,15 +31,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
     }
 
-    async function onLogout() {
-        try {
-            await logout()
-            showSuccessMsg('Logged out')
-        } catch (err) {
-            showErrorMsg('Logout failed')
-        }
-    }
-
     async function publishWap() {
         if (!user) {
             showErrorMsg('You must login first')
@@ -56,12 +48,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
             showErrorMsg(`Couldn't Publish, try again later.`)
         }
     }
-    function getShortenName() {
-        if (!user) return
-        const matches = user?.fullname.match(/\b(\w)/g)
-        const shortName = matches.join('')
-        return shortName
-    }
+
     function onEditDomain() {
         if (!wap.url) return
         wap.url = wapUrlToEdit.publishUrl
@@ -85,11 +72,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                 {location === 'dashboard' && (
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                            <ul className='flex align-center'>
-                                <li>
-                                    <SiteSelect sites={user?.sites} onSiteChange={onSiteChange} currSite={currSite} />
-                                </li>
-                            </ul>
+                            <ul className='flex align-center'></ul>
                         </nav>
                         <ul className='icons-group'>
                             <li className='icon-container'>
@@ -111,32 +94,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='user-area'>
-                                {user && <div className='avatar'>{getShortenName()}</div>}
-                                <div className='user-info'>
-                                    {user && <div className='user-fullname'>{user.fullname}</div>}
-                                    <div className='user-links'>
-                                        {user ? (
-                                            <>
-                                                <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
-                                                    Dashboard
-                                                </Link>
-                                                <span className='btn-logout' onClick={onLogout}>
-                                                    Logout
-                                                </span>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Link className='nav-link link-underline sign-in' to='/auth/login'>
-                                                    <span>Login</span>
-                                                </Link>
-
-                                                <Link className='nav-link link-underline sign-up' to='/auth/login'>
-                                                    <span>Sign up</span>
-                                                </Link>
-                                            </>
-                                        )}
-                                    </div>
-                                </div>
+                                <UserTooltip user={user} />
                             </ul>
                         </nav>
                         <div className='site-link'>

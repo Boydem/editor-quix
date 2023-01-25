@@ -77,13 +77,13 @@ $tooltip-danger-bg-color: $dark-pink;
     top: 50%;
     left: 100%;
     bottom: auto;
-    -webkit-transform: translate(17px, -50%);
-    transform: translate(17px, -50%);
+    -webkit-transform: translate(7px, -50%);
+    transform: translate(7px, -50%);
 }
 
 [data-tooltip][data-tooltip-dir*='right']:hover:after {
-    -webkit-transform: translate(7px, -50%);
-    transform: translate(7px, -50%);
+    -webkit-transform: translate(17px, -50%);
+    transform: translate(17px, -50%);
 }
 
 [data-tooltip][data-tooltip-dir*='bottom']:after {
