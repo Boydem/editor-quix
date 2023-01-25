@@ -11,18 +11,7 @@ import { IoColorFilterOutline } from 'react-icons/io5'
 export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     // const [theme, setTheme] = useState('')
     const theme = useRef()
-    const menuItems = [
-        'Header',
-        'Hero',
-        'Section',
-        'Card',
-        'Form',
-        'Chat',
-        'Footer',
-        'Contact & Forms',
-        'Social',
-        'Galleries',
-    ]
+    const menuItems = ['Header', 'Hero', 'Section', 'Card', 'Form', 'Chat', 'Footer', 'Schedule', 'Social', 'Galleries']
 
     function handleSidebar(sidebarChanges) {
         handleSidebarsChanges('left', sidebarChanges)

@@ -1,10 +1,24 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { ScheduleMeeting } from 'react-schedule-meeting'
+import { saveWap } from '../../../../store/wap/wap.action'
 
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
-    // this generates basic available timeslots for the next 6 days
-    let [availableTimeslots, setAvailableTimeslots] = useState(() => {
+    const wap = useSelector(storeState => storeState.wapModule.wap)
+    let [availableTimeslots, setAvailableTimeslots] = useState(wap.schedule.data)
+
+    useEffect(() => {
+        wap.schedule.data = generateEmptyTimeslots()
+        setAvailableTimeslots(wap.schedule.data)
+    }, [wap.schedule.eventDuration])
+
+    useEffect(() => {
+        generateTimeslots()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    function generateEmptyTimeslots() {
         const start = new Date()
         start.setHours(9, 0, 0, 0)
         const end = new Date()
@@ -16,7 +30,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         let id = 0
         while (current < end) {
             let endTime = new Date(current)
-            endTime.setMinutes(endTime.getMinutes() + 30)
+            endTime.setMinutes(endTime.getMinutes() + wap.schedule.eventDuration)
             intervals.push({
                 id: id,
                 startTime: current,
@@ -30,7 +44,28 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
             id++
         }
         return intervals
-    })
+    }
+
+    function generateTimeslots() {
+        let savedTimeslots = wap.schedule.data
+        if (!savedTimeslots || !savedTimeslots.length) {
+            savedTimeslots = generateEmptyTimeslots()
+            setAvailableTimeslots(savedTimeslots)
+            wap.schedule = { ...wap.schedule, data: savedTimeslots }
+            saveWap(wap)
+            return
+        } else {
+            if (isYesterday(savedTimeslots[0].startTime)) {
+                console.log('*** yesterday ***')
+                savedTimeslots = removeYesterdayMeetings(savedTimeslots)
+                const newIntervals = generateLastDay()
+                setAvailableTimeslots([...savedTimeslots, ...newIntervals])
+            }
+        }
+        setAvailableTimeslots(savedTimeslots)
+    }
+
+    // this generates basic available timeslots for the next 6 days
 
     function generateLastDay() {
         const start = new Date()
@@ -94,34 +129,29 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         })
     }
 
-    useEffect(() => {
-        if (isYesterday(availableTimeslots[0].startTime)) {
-            console.log('*** yesterday ***')
-            availableTimeslots = removeYesterdayMeetings(availableTimeslots)
-            const newIntervals = generateLastDay()
-            setAvailableTimeslots([...availableTimeslots, ...newIntervals])
-        }
-    }, [])
-
-    console.log(availableTimeslots)
+    // console.log(availableTimeslots)
+    console.log('availableTimeslots:', availableTimeslots)
 
     const handleTimeslotClicked = selectedMeeting => {
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
         availableTimeslots.splice(selectedMeetingIdx, 1)
         setAvailableTimeslots([...availableTimeslots])
     }
-
+    if (!availableTimeslots) return
     return (
-        <ScheduleMeeting
-            borderRadius={10}
-            primaryColor='#3f5b85'
-            eventDurationInMinutes={30}
-            availableTimeslots={availableTimeslots}
-            onStartTimeSelect={handleTimeslotClicked}
-            startTimeListStyle={'scroll-list'}
+        <div
             onClick={e => onSelectCmp(e, cmp)}
             onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
-        />
+        >
+            <ScheduleMeeting
+                borderRadius={10}
+                primaryColor='#3f5b85'
+                eventDurationInMinutes={wap.schedule.eventDuration}
+                availableTimeslots={availableTimeslots}
+                onStartTimeSelect={handleTimeslotClicked}
+                startTimeListStyle={'scroll-list'}
+            />
+        </div>
     )
 }
