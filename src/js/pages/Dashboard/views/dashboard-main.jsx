@@ -14,7 +14,7 @@ import {
     Legend,
 } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
-import { ReactSchedule } from '../../../cmps/react-calendly'
+import { ReactSchedule } from '../../../cmps/schedule-cmp'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend)
 
 export function DashboardMain({ user, currSite }) {
