@@ -6,10 +6,10 @@ import { useEffect } from 'react'
 
 export function MessagesDashboard({ user, currSite }) {
     const [msgs, setMsgs] = useState(currSite.msgs)
-    const [currContact, setCurrContact] = useState({ contact: 'guest1', msgs: msgs['guest1'] })
+    const [currContact, setCurrContact] = useState({ from: 'guest1', msgs: msgs['guest1'] })
     const [msgTxt, setMsgTxt] = useState('')
     function onContact(keyName) {
-        setCurrContact({ contact: keyName, msgs: msgs[keyName] })
+        setCurrContact({ from: keyName, msgs: msgs[keyName] })
     }
 
     useEffect(() => {
@@ -28,23 +28,25 @@ export function MessagesDashboard({ user, currSite }) {
     return (
         // <section className='layout-wrapper'>
         <div className='messages-dashboard full'>
-            <div className='contacts'>
-                {/* <i className='fas fa-bars fa-2x'></i> */}
-                {/* <h2>Contacts</h2> */}
-                {Object.keys(msgs).map((keyName, idx) => {
-                    return (
-                        <div
-                            className={`contact ${currContact.contact === keyName ? 'active' : ''}`}
-                            key={keyName}
-                            onClick={() => onContact(keyName)}
-                        >
-                            <div className='pic guest'></div>
-                            <div className='name'>{keyName}</div>
-                            {/* {console.log(msgs[keyName].at(-1).txt)} */}
-                            <div className='message'>{msgs[keyName]?.at(-1).txt.substring(0, 25)}...</div>
+            <div className='last-messages info-box info-box-rows chat-contacts'>
+                <div className='list-item-preview header'>
+                    <h4>Contacts</h4>
+                </div>
+                {Object.keys(msgs).map((sender, idx) => (
+                    <article
+                        key={idx}
+                        className={`list-item-preview chat-item  ${currContact.from === sender ? 'active' : ''}`}
+                    >
+                        <div className={`item`} key={sender} onClick={() => onContact(sender)}>
+                            <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
+                            <span className='user-name'>{sender}</span>
+                            <div className='message-body'>
+                                <p>{msgs[sender]?.at(-1).txt.substring(0, 25)}...</p>
+                            </div>
+                            <div className='time-ago flex'>2 days ago</div>
                         </div>
-                    )
-                })}
+                    </article>
+                ))}
             </div>
 
             <div className='chat'>
@@ -52,7 +54,7 @@ export function MessagesDashboard({ user, currSite }) {
                     <div className='contact bar'>
                         <div className='pic bigger guest'></div>
                         <div className='wrapper'>
-                            <div className='name'>{currContact.contact}</div>
+                            <div className='name'>{currContact.from}</div>
                             <div className='seen'>{utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}</div>
                         </div>
                     </div>
