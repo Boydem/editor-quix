@@ -14,7 +14,7 @@ const DropdownMenuDemo = () => {
                 <button
                     data-tooltip='Site Actions'
                     data-tooltip-dir={['left', 'info']}
-                    className='site-actions-dropdown tab'
+                    className='site-actions-dropdown btn-icon'
                 >
                     <BsThreeDots />
                 </button>

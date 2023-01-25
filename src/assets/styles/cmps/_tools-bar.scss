@@ -1,49 +1,61 @@
 .tools-bar {
-    min-height: $toolbar-height;
-    max-height: $toolbar-height;
-    background-color: $clr1;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    margin: auto;
-    border-bottom: 1px solid $editor-lightgray;
-    padding-inline-start: $spacing-m - $spacing-s;
+    z-index: 99;
     position: sticky;
     top: $app-header-height + 1px;
-    z-index: 99;
+    border-bottom: 1px solid $editor-lightgray;
+    background-color: $clr1;
+    height: 100%;
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: $toolbar-height;
+    padding-inline-start: $spacing-m - $spacing-s;
     > * {
         height: 100%;
     }
-    .left-side {
+}
+
+.icons-group {
+    display: flex;
+    align-items: center;
+    background-color: $clr1;
+    &.left {
         justify-self: start;
     }
-
-    .tabs {
-        display: grid;
-        grid-auto-flow: column;
+    &.right {
         justify-self: end;
-        height: 100%;
-        .curr-width {
-            height: 100%;
-            input {
-                height: 100%;
-                font-size: 14px;
-                max-width: 70px;
-            }
-        }
+    }
+    &.center {
+        justify-self: center;
     }
 }
-.tab {
-    color: $clr15;
-    cursor: pointer;
+
+.icon-container {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
     font-size: px-to-rem(20px);
-    transition: background-color 0.2s;
+    &.b-r {
+        border-right: 1px solid $editor-lightgray;
+    }
+    &.b-l {
+        border-left: 1px solid $editor-lightgray;
+    }
+}
+
+.btn-icon {
+    cursor: pointer;
     display: flex;
     justify-content: center;
-    align-self: center;
-    padding: 0 $spacing-s;
+    align-items: center;
     background-color: transparent;
+    width: 1em;
+    height: 1em;
     position: relative;
     transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     &::before {
@@ -51,26 +63,30 @@
         position: absolute;
         inset: 0;
         margin: auto;
-        border-radius: $spacing-xxs;
-        width: 30px;
-        height: 30px;
-
+        border-radius: 3px;
+        width: 1em;
+        height: 1em;
         transform: scale(0.15);
         transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     }
     &:hover {
         transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
         &::before {
-            transform: scale(1);
+            transform: scale(1.5);
             color: lighten($clr2, 10%);
             background-color: $editor-lightgray;
         }
     }
-    &.trash {
+
+    &.small {
+        font-size: 1rem;
+        color: lighten($clr2, 30%);
+    }
+    &.alert {
         transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         background-color: transparent;
     }
-    &.trash:hover {
+    &.alert:hover {
         background-color: transparent;
         color: $error-red;
         transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -81,11 +97,19 @@
     &.active {
         color: $editor-active-clr;
         &::before {
-            transform: scale(1);
+            transform: scale(1.5);
             background-color: $editor-active-bg;
         }
     }
     > svg {
         z-index: 2;
+        width: 1em;
+        height: 1em;
+    }
+}
+@media (min-width: 960px) {
+    .icon-container {
+    }
+    .btn-icon {
     }
 }

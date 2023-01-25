@@ -79,16 +79,14 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                 >
                     <div className='module-header'>
                         <span className='module-name'>{leftSidebarState.activeMenuItem}</span>
-                        <div className='actions'>
-                            <span
-                                onClick={() => {
-                                    handleSidebar({ isSubMenuOpen: false })
-                                }}
-                                className='tab'
-                            >
-                                <AiOutlineClose />
-                            </span>
-                        </div>
+                        <span
+                            onClick={() => {
+                                handleSidebar({ isSubMenuOpen: false })
+                            }}
+                            className='btn-icon btn-close'
+                        >
+                            <AiOutlineClose />
+                        </span>
                     </div>
                     <div className='module-options'>
                         {leftSidebarState.activeMenuItem?.toLowerCase() === 'themes' ? (

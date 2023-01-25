@@ -74,7 +74,10 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
     }
 
     return (
-        <header className={`${theme} app-header full ${layout} ${location === 'auth' ? 'auth' : ''}`}>
+        <header
+            data-location={location}
+            className={`${theme} app-header full ${layout} ${location === 'auth' ? 'auth' : ''}`}
+        >
             <div className='layout-wrapper'>
                 <div className='logo-container'>
                     <Link to='/' className='logo'>
@@ -90,17 +93,20 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                 </li>
                             </ul>
                         </nav>
-                        <div className='interactives flex- align-center'>
-                            <InteractiveChat />
-
-                            <button
-                                data-tooltip='Notifications'
-                                data-tooltip-dir='bottom'
-                                className='tab notifications'
-                            >
-                                <BiBell />
-                            </button>
-                        </div>
+                        <ul className='icons-group'>
+                            <li className='icon-container'>
+                                <InteractiveChat />
+                            </li>
+                            <li className='icon-container'>
+                                <button
+                                    data-tooltip='Notifications'
+                                    data-tooltip-dir='bottom'
+                                    className='btn-icon notifications'
+                                >
+                                    <BiBell />
+                                </button>
+                            </li>
+                        </ul>
                     </>
                 )}
                 {location === 'editor' && (
@@ -140,7 +146,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                 </div>
                             </ul>
                         </nav>
-                        <div className='publish-link'>
+                        <div className='site-link'>
                             <label className='publish-url-prefix' htmlFor='publishUrl'>
                                 webix.co.il/
                                 <input
