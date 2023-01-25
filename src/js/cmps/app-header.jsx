@@ -98,7 +98,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                         </nav>
                         <div className='site-link'>
                             <label className='publish-url-prefix' htmlFor='publishUrl'>
-                                webix.co.il/
+                                quix.co.il/
                                 <input
                                     onChange={handleChange}
                                     value={wapUrlToEdit.publishUrl}

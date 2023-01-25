@@ -5,7 +5,7 @@ export function DarkHeader() {
         <header className='dark-header app-header full'>
             <div className='logo-container'>
                 <Link to='/' className='logo'>
-                    Webix.
+                    Quix.
                 </Link>
             </div>
         </header>

@@ -211,6 +211,15 @@
             grid-template-columns: minmax(30%, max-content) auto;
             grid-auto-rows: max-content;
         }
+        .slider {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            .slider-item {
+                width: 100%;
+                min-height: 40vh;
+                aspect-ratio: 9/16;
+            }
+        }
 
         .cta-container {
             margin: 0 $spacing-xl $spacing-l;
@@ -225,11 +234,11 @@
 .slider {
     overflow-x: auto;
     padding: 0rem 0rem $spacing-xxl;
-    // display: grid;
-    // grid-auto-flow: dense;
-    // grid-template-columns: 1fr;
-    // gap: 1.25em;
-    // justify-content: center;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr;
+    gap: 1.25em;
+    justify-content: center;
 
     &::-webkit-scrollbar {
         display: none;
@@ -237,12 +246,10 @@
 
     .slider-item {
         position: relative;
-        min-width: max-content;
         box-shadow: 0px 30px 50px -30px rgba($clr2, 0.5);
         border-radius: $spacing-s;
         overflow: hidden;
-        max-height: 220px;
-        // max-height: 270px;
+        max-height: 350px;
         .outer {
             background: #b4b4b4;
             opacity: 0.9;
@@ -294,7 +301,6 @@
         }
 
         .wap-img {
-            width: 420px;
             position: relative;
             transition: transform linear 3s;
         }

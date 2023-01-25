@@ -130,7 +130,7 @@ function formatTimeAgo(sentAt) {
     let output = ``
     if (difference < 60) {
         // Less than a minute has passed:
-        output = `${difference} Just now`
+        output = `Just now`
     } else if (difference < 3600) {
         // Less than an hour has passed:
         output = `${Math.floor(difference / 60)} minutes ago`

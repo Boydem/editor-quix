@@ -1,9 +1,3 @@
-import templateImg from '../../../../assets/imgs/home-assets/templates1.webp'
-import templateImg2 from '../../../../assets/imgs/home-assets/templates2.webp'
-import templateImg3 from '../../../../assets/imgs/home-assets/templates3.webp'
-import templateImg4 from '../../../../assets/imgs/home-assets/templates4.webp'
-import wapImg1 from '../../../../assets/imgs/home-assets/wap-1-home-thumbnail.jpg'
-
 export function WapsSection({ navigate }) {
     return (
         <section className='waps-section full main-layout'>
@@ -24,7 +18,7 @@ export function WapsSection({ navigate }) {
                     </button>
                 </div>
             </div>
-            <div className='slider flex space-inline-l'>
+            <div className='slider'>
                 <div className='slider-item'>
                     <div className='outer yosemite'>
                         <div className='dot red'></div>

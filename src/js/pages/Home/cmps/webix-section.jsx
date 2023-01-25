@@ -1,6 +1,6 @@
 import WebixSectionBg from '../../../../assets/imgs/home-assets/webix-section-bg.webp'
 
-export function WebixSection() {
+export function WebixSection({ navigate }) {
     return (
         <section className='webix-section full'>
             <img className='bg' src={WebixSectionBg} alt='WebixSectionBg' />
@@ -28,11 +28,11 @@ export function WebixSection() {
                 </svg>
             </div>
             <div className='text'>
-                <span className='text-xxl'>Webix</span>
+                <span className='text-xxl'>Quix</span>
                 <h3>
                     <span className='display-3'>The rest is up to you.</span>
                 </h3>
-                <button className='btn primary circled'>
+                <button className='btn primary circled' onClick={() => navigate('/create')}>
                     <span className='display-link'>Start Creating</span>
                 </button>
             </div>

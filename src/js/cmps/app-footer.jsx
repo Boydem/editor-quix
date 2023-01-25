@@ -78,7 +78,7 @@ export function AppFooter() {
                             </li>
                             <li>
                                 <a href='#' className='footer-link'>
-                                    Webix
+                                    Quix
                                 </a>
                             </li>
                             <li>
@@ -135,18 +135,18 @@ export function AppFooter() {
                     </nav>
                 </div>
                 <div className='footer-webix'>
-                    <span className='logo'>Webix</span>
+                    <span className='logo'>Quix</span>
                     <p>
-                        Webix is an advanced creation platform for designers and web professionals. The platform
-                        combines cutting edge responsive design with smooth drag and drop. Those that want to can add
-                        custom code and use a powerful CMS to build data driven sites and complex web applications.
-                        Webix offers an unparalleled range of integrated business solutions from a leading eCommerce
-                        infrastructure to professional marketing and SEO tools.
+                        Quix is an advanced creation platform for designers and web professionals. The platform combines
+                        cutting edge responsive design with smooth drag and drop. Those that want to can add custom code
+                        and use a powerful CMS to build data driven sites and complex web applications. Quix offers an
+                        unparalleled range of integrated business solutions from a leading eCommerce infrastructure to
+                        professional marketing and SEO tools.
                     </p>
                 </div>
             </div>
             <hr className='mb-3' />
-            <p>Webix was made for CodingAcademy's Final Project Ltd. © 2006-2023</p>
+            <p>Quix was made for CodingAcademy's Final Project Ltd. © 2006-2023</p>
         </section>
     )
 }
