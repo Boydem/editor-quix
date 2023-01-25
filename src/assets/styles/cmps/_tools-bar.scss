@@ -1,7 +1,7 @@
 .tools-bar {
     z-index: 99;
     position: sticky;
-    top: $app-header-height + 1px;
+    top: $app-header-height;
     border-bottom: 1px solid $editor-lightgray;
     background-color: $clr1;
     height: 100%;
