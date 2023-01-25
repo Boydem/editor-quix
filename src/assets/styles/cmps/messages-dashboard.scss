@@ -7,21 +7,18 @@ $background: #f7f7f7;
 
 .messages-dashboard {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    height: 100%;
+    grid-template-columns: minmax(150px, 1fr) 4fr;
     flex: 1;
-    // height: 74vh;
-    // height: 100%;
     .pic {
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
         background-size: cover;
         background-position: center;
         border-radius: 50%;
 
         &.bigger {
-            width: 4rem;
-            height: 4rem;
+            width: 3rem;
+            height: 3rem;
         }
     }
 
@@ -32,18 +29,15 @@ $background: #f7f7f7;
         height: 4.5rem;
         padding-left: 5rem;
         padding-right: 1rem;
-        &.active {
-            background: #ececec;
-        }
-
-        &.bar {
-            padding-left: 5rem;
-        }
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        &.active {
+            background: #darken($clr1, 10%);
+        }
+        &.bar {
+            padding-left: 5rem;
+        }
         .pic {
             position: absolute;
             left: 15px;
@@ -52,26 +46,22 @@ $background: #f7f7f7;
                 left: 0px;
             }
         }
-
         .name {
             font-weight: 500;
             margin-bottom: 0.125rem;
         }
-
         .message,
         .seen {
             font-size: 0.9rem;
             color: $text-3;
         }
-
         .message {
             // overflow: hidden;
             // max-width: 20ch;
             // text-overflow: ellipsis;
-            // // white-space: nowrap;
-            // // white-space:
+            // // $clr1-space: nowrap;
+            // // $clr1-space:
         }
-
         .badge {
             box-sizing: border-box;
             position: absolute;
@@ -85,28 +75,17 @@ $background: #f7f7f7;
             top: 0;
             left: 2.5rem;
             background: $text-1;
-            color: white;
+            color: $clr1;
         }
     }
 
     .contacts {
-        // transform: translate(-6rem, -50%);
-
-        // width: 24rem;
-        // height: 90vh;
         width: 100%;
-        // padding: 0.4rem;
-        // padding-bottom: 1rem;
-        // padding-right: 1rem;
-        // padding-left: 1rem;
         box-sizing: border-box;
         border-radius: 0.444rem 0 0 0.444rem;
-
         cursor: pointer;
-
-        background: white;
-        box-shadow: 0 0 8rem 0 rgba(black, 0.1), 2rem 2rem 4rem -3rem rgba(black, 0.5);
-
+        background: $clr1;
+        box-shadow: 0 0 8rem 0 rgba($clr2, 0.1), 2rem 2rem 4rem -3rem rgba($clr2, 0.5);
         transition: transform 500ms;
 
         h2 {
@@ -150,15 +129,15 @@ $background: #f7f7f7;
         border-top-right-radius: 0.444rem;
         border-bottom-right-radius: 0.444rem;
 
-        background: white;
-        // box-shadow: 0 0 8rem 0 rgba(black, 0.1), 0rem 2rem 4rem -3rem rgba(black, 0.5);
+        background: $clr1;
+        // box-shadow: 0 0 8rem 0 rgba($clr2, 0.1), 0rem 2rem 4rem -3rem rgba($clr2, 0.5);
 
         .chat-layout {
             height: 100%;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            box-shadow: inset 0 2rem 2rem -2rem rgba(black, 0.05), inset 0 -2rem 2rem -2rem rgba(black, 0.05);
+            box-shadow: inset 0 2rem 2rem -2rem rgba($clr2, 0.05), inset 0 -2rem 2rem -2rem rgba($clr2, 0.05);
         }
 
         .contact.bar {
@@ -195,20 +174,20 @@ $background: #f7f7f7;
                 width: fit-content;
                 max-width: 66%;
 
-                box-shadow: 0 0 2rem rgba(black, 0.075), 0rem 1rem 1rem -1rem rgba(black, 0.1);
+                box-shadow: 0 0 2rem rgba($clr2, 0.075), 0rem 1rem 1rem -1rem rgba($clr2, 0.1);
 
                 &.owner {
                     margin: 1rem 1rem 1rem auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
                     background: #333;
-                    color: white;
+                    color: $clr1;
                 }
 
                 &.parker {
                     margin: 1rem 1rem 1rem auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
                     background: $text-1;
-                    color: white;
+                    color: $clr1;
                 }
 
                 .typing {
@@ -256,12 +235,12 @@ $background: #f7f7f7;
             input {
                 border: none;
                 background-image: none;
-                background-color: white;
+                background-color: $clr1;
                 padding: 0.5rem 1rem;
                 margin-right: 1rem;
                 border-radius: 1.125rem;
                 flex-grow: 2;
-                box-shadow: 0 0 1rem rgba(black, 0.1), 0rem 1rem 1rem -1rem rgba(black, 0.2);
+                box-shadow: 0 0 1rem rgba($clr2, 0.1), 0rem 1rem 1rem -1rem rgba($clr2, 0.2);
 
                 font-family: Red hat Display, sans-serif;
                 font-weight: 400;
