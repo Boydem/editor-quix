@@ -47,7 +47,7 @@
     border-radius: 3px;
     position: relative;
     opacity: 0;
-    transform: translateX(calc(-100% - 16px));
+    transform: translateX(calc(100% - 16px));
     z-index: -1;
     transition: 0.25s all ease-out;
     color: $clr7;
