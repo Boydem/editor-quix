@@ -17,12 +17,7 @@ export function Editor() {
 
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
-    // console.log('clickedCmp:', clickedCmp)
-    // const [layout, setLayout] = useState({
-    //     layoutClass: 'desktopLayout',
-    //     width: wap.breakpoints?.desktopLayout || null,
-    // })
-    const [layout, setLayout] = useState({})
+    const [layout, setLayout] = useState({ layoutClass: 'desktopLayout', width: '' })
     const { wapId } = useParams()
     const editLayoutRef = useRef()
 
@@ -67,8 +62,8 @@ export function Editor() {
     }
 
     function onLayoutChange(layout) {
-        const deafultWidth = { tableLayout: 980, mobileLayout: 500 }
-        setLayout({ layoutClass: layout, width: wap.breakpoints[layout] || deafultWidth[layout] })
+        const deafultWidth = { desktopLayout: '', tabletLayout: 680, mobileLayout: 480 }
+        setLayout({ layoutClass: layout, width: deafultWidth[layout] })
     }
 
     function handleOnDragEnd(res) {

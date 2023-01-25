@@ -22,7 +22,7 @@ export const userService = {
 }
 
 window.userService = userService
-// _createUsersForTesting()
+_createUsersForTesting()
 
 function _createUsersForTesting() {
     if (!utilService.loadFromStorage(STORAGE_KEY_USER_DB)) {

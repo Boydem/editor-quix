@@ -88,7 +88,7 @@ export async function undoChange() {
         let wap = store.getState().wapModule.wap
         const oldUndoParentCmp = wapUndos.at(-1)
         let redoCmp
-        
+
         if (oldUndoParentCmp.owner) {
             console.log('WAP OWNER')
             wap = structuredClone(oldUndoParentCmp)
