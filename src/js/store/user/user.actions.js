@@ -101,3 +101,13 @@ export async function onGoogleLogin(credentials) {
         throw err
     }
 }
+
+export async function updateUser(user, boardsToUpdate) {
+    try {
+        const updatedUser = await userService.update(user._id, boardsToUpdate)
+        store.dispatch({ type: 'SET_USER', user: updatedUser })
+    } catch (err) {
+        console.log('Cannot update user', err)
+        throw err
+    }
+}

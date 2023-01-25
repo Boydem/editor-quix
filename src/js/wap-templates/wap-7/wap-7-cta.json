@@ -66,7 +66,7 @@
                                     "inputName": "Enter your email here *",
                                     "content": {
                                         "inputId": "email",
-                                        "placeholder": "winx@appsus.com"
+                                        "placeholder": "quix@appsus.com"
                                     },
                                     "cmps": []
                                 }

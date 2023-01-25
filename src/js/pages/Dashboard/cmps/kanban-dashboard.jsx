@@ -6,11 +6,11 @@ import { makeId, utilService } from '../../../services/util.service'
 import { SET_USER } from '../../../store/user/user.reducer'
 import { FiTrash } from 'react-icons/fi'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { updateUser } from '../../../store/user/user.actions'
 
 export function KanbanDashboard({ user, currSite }) {
     const [newItemText, setNewItemText] = useState({})
     const dispatch = useDispatch()
-    // const [boards,setBoards] = useState(user?.boards || null)
     const [boards, setBoards] = useState(user?.boards || [])
     useEffect(() => {}, [user.boards])
 
@@ -20,34 +20,31 @@ export function KanbanDashboard({ user, currSite }) {
         setNewItemText(prev => ({ ...prev, [field]: value }))
     }
 
-    function onSelectItem(ev, item, boardIdx) {
-        console.log(ev)
-        console.log(item)
+    function onSelectItem(ev, item = '', boardIdx) {
         document.addEventListener('mousedown', () => {
             updateItem(ev, item, boardIdx)
         })
     }
 
-    // console.log('newItemText:', newItemText)
     function updateItem(ev, itemToUpdate, boardIdx) {
-        // const boardIndex = user.boards.findIndex(board=>board._id === boardId)
-        console.log(boards[boardIdx])
-        // const itemToUpdateIdx = boards[boardIdx].items.findIndex(item => item._id === itemToUpdate._id)
-        // console.log(itemToUpdate, itemToUpdateIdx)
-        // boards[boardIdx].items[itemToUpdateIdx] = {ev.target.innerText}
-        itemToUpdate.txt = ev.target.innerText
-        console.log(boards[boardIdx])
+        if (!itemToUpdate) {
+            user.boards[boardIdx].title = ev.target.innerText
+            console.log('user.boards[boardIdx]', user.boards[boardIdx])
+        } else {
+            itemToUpdate.txt = ev.target.innerText
+        }
+        updateUser(user, boards)
     }
 
     function onDelete(boardIdx, itemId) {
         const removedItemIdx = boards[boardIdx].items.findIndex(item => item._id === itemId)
         boards[boardIdx].items.splice(removedItemIdx, 1)
         setBoards([...boards])
+        updateUser(user, boards)
     }
 
     function addNewItem(ev, boardId, idx) {
         ev.preventDefault()
-        // let board = boards.find(board => board._id === boardId)
         const board = boards[idx]
         boards[idx] = {
             ...board,
@@ -55,17 +52,18 @@ export function KanbanDashboard({ user, currSite }) {
         }
         console.log('board addNewItem:', board)
         setBoards([...boards])
-        // dispatch({ type: SET_USER, user })
+        updateUser(user, boards)
+        setNewItemText('')
     }
 
     function onAddBoard() {
         const boardToAdd = {
             _id: makeId(),
-            title: '',
+            title: 'Change me',
             items: [
                 {
                     _id: makeId(),
-                    txt: 'Click me to edit the text',
+                    txt: 'Edit your task here!',
                     createdAt: Date.now(),
                 },
             ],
@@ -73,6 +71,7 @@ export function KanbanDashboard({ user, currSite }) {
 
         user.boards = user.boards.length ? [...user.boards, boardToAdd] : [boardToAdd]
         setBoards(user.boards)
+        updateUser(user, boards)
     }
 
     console.log('boards:', boards)
@@ -83,10 +82,17 @@ export function KanbanDashboard({ user, currSite }) {
                 boards.map((board, idx) => (
                     <div key={board._id} className='list-wrapper'>
                         <div className='list-content list'>
-                            <div className='list-header'>{board.title}</div>
+                            <div
+                                className='list-header'
+                                onClick={ev => onSelectItem(ev, null, idx)}
+                                contentEditable={true}
+                                suppressContentEditableWarning={true}
+                            >
+                                {board.title}
+                            </div>
                             <ul className='list-items'>
                                 {board.items?.map(item => (
-                                    <li onClick={e => onSelectItem(e, item, idx)} key={item._id}>
+                                    <li onClick={ev => onSelectItem(ev, item, idx)} key={item._id}>
                                         <button className='btn-icon close' onClick={() => onDelete(idx, item._id)}>
                                             <FiTrash />
                                         </button>

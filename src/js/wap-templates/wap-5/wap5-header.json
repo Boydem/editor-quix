@@ -38,7 +38,7 @@
                 },
                 {
                     "id": "9YXTJS",
-                    "type": "label",
+                    "type": "div",
                     "name": "open-close-icon",
                     "cmps": [
                         {
