@@ -12,15 +12,21 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     useDidMountEffect(() => {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
-    }, [wap.schedule.eventDuration])
-    useDidMountEffect(() => {
-        wap.schedule.data = generateEmptyTimeslots()
-        setAvailableTimeslots(wap.schedule.data)
-    }, [wap.schedule.days])
-    useDidMountEffect(() => {
-        wap.schedule.data = generateEmptyTimeslots()
-        setAvailableTimeslots(wap.schedule.data)
-    }, [wap.schedule.daysForward])
+    }, [
+        wap.schedule.eventDuration,
+        wap.schedule.startHour,
+        wap.schedule.days,
+        wap.schedule.daysForward,
+        wap.schedule.endHour,
+    ])
+    // useDidMountEffect(() => {
+    //     wap.schedule.data = generateEmptyTimeslots()
+    //     setAvailableTimeslots(wap.schedule.data)
+    // }, [wap.schedule.days])
+    // useDidMountEffect(() => {
+    //     wap.schedule.data = generateEmptyTimeslots()
+    //     setAvailableTimeslots(wap.schedule.data)
+    // }, [wap.schedule.daysForward])
 
     useEffect(() => {
         generateTimeslots()
@@ -36,10 +42,10 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
     function generateEmptyTimeslots() {
         const start = new Date()
-        start.setHours(9, 0, 0, 0)
+        start.setHours(wap.schedule.startHour, 0, 0, 0)
         const end = new Date()
         end.setDate(end.getDate() + wap.schedule.daysForward)
-        end.setHours(17, 0, 0, 0)
+        end.setHours(wap.schedule.endHour, 0, 0, 0)
 
         const intervals = []
         let current = new Date(start)
@@ -48,7 +54,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
             // console.log('wap.schedule.days:', wap.schedule.days)
             if (!wap.schedule.days.includes(getDayName(current).toLowerCase())) {
                 current.setDate(current.getDate() + 1)
-                current.setHours(9, 0, 0, 0)
+                current.setHours(wap.schedule.startHour, 0, 0, 0)
                 continue
             }
             let endTime = new Date(current)
@@ -59,9 +65,9 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 endTime: endTime,
             })
             current = new Date(endTime)
-            if (current.getHours() >= 17) {
+            if (current.getHours() >= wap.schedule.endHour) {
                 current.setDate(current.getDate() + 1)
-                current.setHours(9, 0, 0, 0)
+                current.setHours(wap.schedule.startHour, 0, 0, 0)
             }
             id++
         }
@@ -91,11 +97,11 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
     function generateLastDay() {
         const start = new Date()
-        start.setHours(9, 0, 0, 0)
+        start.setHours(wap.schedule.startHour, 0, 0, 0)
         start.setDate(start.getDate() + 6)
         const end = new Date()
         end.setDate(end.getDate() + 6)
-        end.setHours(17, 0, 0, 0)
+        end.setHours(wap.schedule.endHour, 0, 0, 0)
 
         const intervals = []
         let current = new Date(start)
@@ -109,9 +115,9 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 endTime: endTime,
             })
             current = new Date(endTime)
-            if (current.getHours() >= 17) {
+            if (current.getHours() >= wap.schedule.endHour) {
                 current.setDate(current.getDate() + 1)
-                current.setHours(9, 0, 0, 0)
+                current.setHours(wap.schedule.startHour, 0, 0, 0)
             }
             id++
         }
@@ -174,6 +180,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 availableTimeslots={availableTimeslots}
                 onStartTimeSelect={handleTimeslotClicked}
                 startTimeListStyle={'scroll-list'}
+                startTimeFormatString='HH:mm'
             />
         </div>
     )
