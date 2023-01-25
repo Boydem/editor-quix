@@ -28,7 +28,7 @@ export function WebixSection({ navigate }) {
                 </svg>
             </div>
             <div className='text'>
-                <span className='text-xxl'>Quix</span>
+                <span className='text-xxl'>quix</span>
                 <h3>
                     <span className='display-3'>The rest is up to you.</span>
                 </h3>

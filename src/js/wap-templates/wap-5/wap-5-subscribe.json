@@ -1,0 +1,89 @@
+{
+    "id": "qDkjIm",
+    "type": "div",
+    "name": "form-2",
+    "cmps": [
+        {
+            "id": "e65q8R",
+            "type": "img",
+            "name": "",
+            "content": {
+                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674685383/img2_wxsmnq.jpg"
+            },
+            "cmps": []
+        },
+        {
+            "id": "aHf2NJ",
+            "type": "div",
+            "name": "wrapper",
+            "cmps": [
+                {
+                    "id": "K4Oivj",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Stay Tuned"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "jLmnei",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Subscribe to our newsletter and never miss our desings, latest news, etc."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "Ju5HVm",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Our newsletter is sent once a week, every Monday."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "vVStD9",
+                    "type": "form",
+                    "name": "form-2-inner-form",
+                    "cmps": [
+                        {
+                            "id": "AYXwuu",
+                            "type": "label",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "8Bc69y",
+                                    "type": "input",
+                                    "name": "",
+                                    "content": {
+                                        "placeholder": "Enter your email here"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "LJVYqu",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": ""
+                            },
+                            "cmps": [
+                                {
+                                    "id": "KZeDsd",
+                                    "type": "i",
+                                    "name": "fa-regular fa-paper-plane",
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

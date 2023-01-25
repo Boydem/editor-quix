@@ -20,6 +20,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
     const currSite = useSelector(storeState => storeState.userModule.currSite)
+
     useEffect(() => {
         if (wap?.url) setWapUrlToEdit({ publishUrl: wap.url })
     }, [])
