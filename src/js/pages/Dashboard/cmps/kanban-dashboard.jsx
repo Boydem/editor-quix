@@ -17,15 +17,17 @@ export function KanbanDashboard({ user, currSite }) {
         const field = ev.target.name
         setNewItemText(prev => ({ ...prev, [field]: value }))
     }
-    console.log('newItemText:', newItemText)
+    // console.log('newItemText:', newItemText)
     function updateItem() {
         // const boardIndex = user.boards.findIndex(board=>board._id === boardId)
     }
 
-    function addNewItem(ev, boardId) {
+    function addNewItem(ev, boardId, idx) {
         ev.preventDefault()
-        let board = boards.find(board => board._id === boardId)
-        board = { ...board, items: [...board.items, { txt: newItemText[boardId], _id: makeId() }] }
+        // let board = boards.find(board => board._id === boardId)
+        const board = boards[idx]
+        boards[idx] = { ...board, items: [...board.items, { txt: newItemText[boardId], _id: makeId() }] }
+        console.log('board addNewItem:', board)
         setBoards([...boards])
         // dispatch({ type: SET_USER, user })
     }
@@ -34,7 +36,7 @@ export function KanbanDashboard({ user, currSite }) {
     return (
         <section className='kanban-board info-box'>
             {user?.boards &&
-                boards.map(board => (
+                boards.map((board, idx) => (
                     <div key={board._id} className='list-wrapper'>
                         <div className='list-content list'>
                             <div className='list-header'>{board.title}</div>
@@ -45,7 +47,7 @@ export function KanbanDashboard({ user, currSite }) {
                                     </li>
                                 ))}
                             </ul>
-                            <form onSubmit={ev => addNewItem(ev, board._id)} className='add-item'>
+                            <form onSubmit={ev => addNewItem(ev, board._id, idx)} className='add-item'>
                                 <input
                                     onChange={handleChange}
                                     value={newItemText[board._id] || ''}
