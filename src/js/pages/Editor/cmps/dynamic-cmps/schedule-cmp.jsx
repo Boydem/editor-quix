@@ -2,13 +2,19 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { ScheduleMeeting } from 'react-schedule-meeting'
+import useDidMountEffect from '../../../../hooks/use-did-mount-effect'
 import { saveWap } from '../../../../store/wap/wap.action'
 
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [availableTimeslots, setAvailableTimeslots] = useState(wap.schedule.data)
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     // wap.schedule.data = generateEmptyTimeslots()
+    //     // setAvailableTimeslots(wap.schedule.data)
+    // }, [wap.schedule.eventDuration])
+
+    useDidMountEffect(() => {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
     }, [wap.schedule.eventDuration])
@@ -129,17 +135,17 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         })
     }
 
-    // console.log(availableTimeslots)
-    console.log('availableTimeslots:', availableTimeslots)
-
     const handleTimeslotClicked = selectedMeeting => {
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
         availableTimeslots.splice(selectedMeetingIdx, 1)
         setAvailableTimeslots([...availableTimeslots])
+        wap.schedule.data = availableTimeslots
+        saveWap(wap)
     }
     if (!availableTimeslots) return
     return (
         <div
+            className={`schedule-meeting ${cmp.name}`}
             onClick={e => onSelectCmp(e, cmp)}
             onMouseOver={onHoverCmp}
             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}

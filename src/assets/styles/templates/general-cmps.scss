@@ -507,6 +507,13 @@
     }
 }
 
+.schedule-meeting {
+    > * {
+        max-width: 1000px;
+        margin: 0 auto !important;
+    }
+}
+
 .fa-facebook {
     color: #1778f2;
 }
