@@ -37,8 +37,8 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
 
     return (
         <section className='tools-bar full'>
-            <ul className='icons-group'>
-                <li className='icon-container b-r b-l'>
+            <ul className='icons-group b-r b-l'>
+                <li className='icon-container'>
                     <button
                         className={`${leftSidebarState.isOpen ? 'active' : ''} btn-icon`}
                         data-tooltip='Add'
@@ -48,6 +48,8 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
                         <AiOutlinePlus />
                     </button>
                 </li>
+            </ul>
+            <ul className='icons-group responsive-btns b-r'>
                 <li className='icon-container'>
                     <button
                         className={`${layout.layoutClass === 'desktopLayout' ? 'active' : ''} btn-icon`}
@@ -68,7 +70,7 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
                         <AiOutlineTablet />
                     </button>
                 </li>
-                <li className='icon-container b-r'>
+                <li className='icon-container '>
                     <button
                         onClick={() => onLayoutChange('mobileLayout')}
                         data-tooltip='Mobile'

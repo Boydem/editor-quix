@@ -8,9 +8,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: $toolbar-height;
-    padding-inline-start: $spacing-m - $spacing-s;
+
     > * {
         height: 100%;
     }
@@ -28,6 +27,15 @@
     }
     &.center {
         justify-self: center;
+    }
+    &.responsive-btns {
+        display: none;
+    }
+    &.b-r {
+        border-right: 1px solid $editor-lightgray;
+    }
+    &.b-l {
+        border-left: 1px solid $editor-lightgray;
     }
 }
 
@@ -109,6 +117,13 @@
 }
 @media (min-width: 960px) {
     .icon-container {
+        width: 2.5em;
+    }
+    .icons-group {
+        &.responsive-btns {
+            display: inline-flex;
+            margin-inline-end: auto;
+        }
     }
     .btn-icon {
     }
