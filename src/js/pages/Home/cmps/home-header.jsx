@@ -15,21 +15,6 @@ export function HomeHeader() {
         setIsMenuOpen(!isMenuOpen)
     }
 
-    async function onLogout() {
-        try {
-            await logout()
-            showSuccessMsg('Logged out')
-        } catch (err) {
-            showErrorMsg('Logout failed')
-        }
-    }
-
-    function getShortenName() {
-        if (!user) return
-        const matches = user?.fullname.match(/\b(\w)/g)
-        const shortName = matches.join('')
-        return shortName
-    }
     return (
         <header className='home-header flex justify-between full'>
             <div className='logo-container'>
@@ -44,7 +29,7 @@ export function HomeHeader() {
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
                     <div className='user-area'>
-                        <UserTooltip />
+                        <UserTooltip user={user} />
                     </div>
                     <li>
                         <Link className='nav-link btn-start-now link-underline' to='/create'>
