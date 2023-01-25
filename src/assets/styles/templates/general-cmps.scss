@@ -237,6 +237,7 @@
         display: none !important;
     }
     .open-chat {
+        z-index: 4;
         position: fixed;
         bottom: 2%;
         right: 1.5%;
@@ -503,6 +504,13 @@
 
     a {
         text-decoration: none;
+    }
+}
+
+.schedule-meeting {
+    > * {
+        max-width: 1000px;
+        margin: 0 auto !important;
     }
 }
 

@@ -114,6 +114,7 @@ function getUserSites(userWaps) {
             msgs: wap.msgs,
             title: wap.title,
             thumbnail: wap.thumbnail,
+            schedule: wap.schedule,
         })
         return acc
     }, [])
@@ -154,6 +155,7 @@ function getBlankWap() {
         msgs: [],
         leads: [],
         subscribers: [],
+        schedule: { eventDuration: 30, daysForward: 6 },
         breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
     }
 }
@@ -167,6 +169,7 @@ function _createWaps() {
                 name: 'wap-1',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps1(),
                 pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
@@ -205,6 +208,7 @@ function _createWaps() {
                 name: 'wap-2',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps2(),
                 pallete: ['#a3eee9', '#0b1321', '#8b95a6', '#eef'],
@@ -246,6 +250,7 @@ function _createWaps() {
                 name: 'wap-3',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps3(),
                 pallete: ['#dcdcdc', '#303030', '#5783de'],
@@ -288,6 +293,7 @@ function _createWaps() {
                 name: 'wap-4',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps4(),
                 themeClass: 'wap4-primary',
@@ -328,6 +334,7 @@ function _createWaps() {
                 name: 'wap-5',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps5(),
                 themeClass: 'wap5-primary',
@@ -369,6 +376,7 @@ function _createWaps() {
                 name: 'wap-6',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps6(),
                 themeClass: 'wap6-primary',
@@ -408,6 +416,7 @@ function _createWaps() {
                 name: 'wap-7',
                 owner: 'admin',
                 leads: [],
+                schedule: { eventDuration: 30, daysForward: 6 },
                 subscribers: [],
                 cmps: getDemoCmps7(),
                 themeClass: 'wap7-primary',

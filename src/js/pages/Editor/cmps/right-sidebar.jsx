@@ -57,6 +57,9 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
         case 'subscribe':
             cmpTitle = 'Subscribe'
             break
+        case 'schedule':
+            cmpTitle = 'Schedule'
+            break
 
         case 'map':
             cmpTitle = 'Map'
@@ -79,18 +82,19 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                 <div className='module-content'>
                     <div className='module-header'>
                         <span className='module-name'>{cmpTitle}</span>
-                        <div className='actions flex align-center'>
-                            <DeleteAlertDialog />
-
-                            <span
+                        <ul className='icons-group'>
+                            <li className='icon-container'>
+                                <DeleteAlertDialog />
+                            </li>
+                            <button
                                 onClick={() => {
                                     handleSidebar({ isOpen: !rightSidebarState.isOpen })
                                 }}
-                                className='tab'
+                                className='btn-icon small'
                             >
                                 <AiOutlineClose />
-                            </span>
-                        </div>
+                            </button>
+                        </ul>
                     </div>
                     <EditTabs context={rightSidebarState.context} />
                 </div>

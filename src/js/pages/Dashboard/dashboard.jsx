@@ -19,6 +19,7 @@ import { MessagesDashboard } from './views/messages-dashboard'
 import { SiteSelectDesktop } from './cmps/site-select-desktop'
 import { useDispatch } from 'react-redux'
 import { SET_CURR_SITE } from '../../store/user/user.reducer'
+import DropdownMenuDemo from './cmps/site-actions-dropdown'
 
 export function Dashboard() {
     const [currView, setCurrView] = useState('dashboard')
@@ -39,6 +40,7 @@ export function Dashboard() {
     async function onSiteChange(siteId) {
         try {
             let currSite = user?.sites.find(site => site._id === siteId)
+
             await setCurrSite(currSite)
             showSuccessMsg(`Currently viewing site: ${currSite.title}`)
         } catch (err) {
@@ -65,7 +67,6 @@ export function Dashboard() {
         if (!userId) return
         try {
             const user = await setUser(userId)
-
             if (!user.sites || !user.sites.length) navigate('/create')
             dispatch({ type: SET_CURR_SITE, currSite: user.sites[0] })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
@@ -127,7 +128,6 @@ export function Dashboard() {
                     </ul>
                 </nav>
             </aside>
-
             <main className='dashboard-main'>
                 <div className='main-header layout-wrapper'>
                     <div className='titles'>
@@ -135,13 +135,7 @@ export function Dashboard() {
                         <h6>Welcome to your Dashboard</h6>
                     </div>
                     <div className='actions'>
-                        <button
-                            data-tooltip='Site Actions'
-                            data-tooltip-dir={['left', 'info']}
-                            className='site-actions-dropdown tab'
-                        >
-                            <BsThreeDots />
-                        </button>
+                        <DropdownMenuDemo />
                         <button onClick={onEditSite} className='site-actions-edit flex align-center'>
                             <BsPencil /> <span>Edit Site</span>
                         </button>

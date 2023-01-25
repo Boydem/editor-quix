@@ -37,80 +37,79 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
 
     return (
         <section className='tools-bar full'>
-            <div className='left-side'>
-                <div className='tabs responsive tabs-views flex align-center'>
+            <ul className='icons-group b-r b-l'>
+                <li className='icon-container'>
                     <button
-                        className={`${leftSidebarState.isOpen ? 'active' : ''} tab`}
+                        className={`${leftSidebarState.isOpen ? 'active' : ''} btn-icon`}
                         data-tooltip='Add'
                         data-tooltip-dir='bottom'
                         onClick={openLeftSidebar}
                     >
                         <AiOutlinePlus />
                     </button>
-                    <div className='responsive-btns flex align-center interactives'>
-                        <button
-                            onClick={() => onLayoutChange('desktopLayout')}
-                            data-tooltip='Desktop'
-                            data-tooltip-dir='bottom'
-                            className={`tab  ${layout.layoutClass === 'desktopLayout' ? 'active' : ''}`}
-                        >
-                            <GoDeviceDesktop />
-                        </button>
-                        <button
-                            onClick={() => onLayoutChange('tabletLayout')}
-                            data-tooltip='Tablet'
-                            data-tooltip-dir='bottom'
-                            className={`tab  ${layout.layoutClass === 'tabletLayout' ? 'active' : ''}`}
-                        >
-                            <AiOutlineTablet />
-                        </button>
-                        <button
-                            onClick={() => onLayoutChange('mobileLayout')}
-                            data-tooltip='Mobile'
-                            data-tooltip-dir='bottom'
-                            className={`tab  ${layout.layoutClass === 'mobileLayout' ? 'active' : ''}`}
-                        >
-                            <AiOutlineMobile />
-                        </button>
-                    </div>
-
-                    <div className={`save-msg flex align-center ${isSaving ? 'shown' : ''}`}>
-                        <FiRefreshCw className='refresh-icon' />
-                        Saving...
-                    </div>
-                </div>
-            </div>
-
-            <div className='tabs tabs-views'>
-                <div className='responsive-btns flex align-center interactives'>
-                    <div className='btns-undo-redo flex align-center'>
-                        <button className='tab' data-tooltip='Undo' data-tooltip-dir='bottom' onClick={onUndo}>
-                            <GrUndo />
-                        </button>
-                        <button className='tab' data-tooltip='Redo' data-tooltip-dir='bottom' onClick={onRedo}>
-                            <GrRedo />
-                        </button>
-                    </div>
-                    <div className='flex align-center interactives'>
-                        <InteractiveChat />
-                    </div>
-                    <div className='flex align-center'>
-                        <button
-                            data-tooltip='Edit'
-                            data-tooltip-dir='bottom'
-                            onClick={() =>
-                                handleSidebarsChanges('right', {
-                                    isOpen: !rightSidebarState.isOpen,
-                                    isSubMenuOpen: true,
-                                })
-                            }
-                            className={`${rightSidebarState.isOpen ? 'active' : ''} tab`}
-                        >
-                            <TiBrush />
-                        </button>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ul>
+            <ul className='icons-group responsive-btns b-r'>
+                <li className='icon-container'>
+                    <button
+                        className={`${layout.layoutClass === 'desktopLayout' ? 'active' : ''} btn-icon`}
+                        data-tooltip='Desktop'
+                        data-tooltip-dir='bottom'
+                        onClick={() => onLayoutChange('desktopLayout')}
+                    >
+                        <GoDeviceDesktop />
+                    </button>
+                </li>
+                <li className='icon-container'>
+                    <button
+                        onClick={() => onLayoutChange('tabletLayout')}
+                        data-tooltip='Tablet'
+                        data-tooltip-dir='bottom'
+                        className={`btn-icon  ${layout.layoutClass === 'tabletLayout' ? 'active' : ''}`}
+                    >
+                        <AiOutlineTablet />
+                    </button>
+                </li>
+                <li className='icon-container '>
+                    <button
+                        onClick={() => onLayoutChange('mobileLayout')}
+                        data-tooltip='Mobile'
+                        data-tooltip-dir='bottom'
+                        className={`btn-icon  ${layout.layoutClass === 'mobileLayout' ? 'active' : ''}`}
+                    >
+                        <AiOutlineMobile />
+                    </button>
+                </li>
+            </ul>
+            <ul className='icons-group'>
+                <li className='icon-container b-l'>
+                    <button className='btn-icon' data-tooltip='Undo' data-tooltip-dir='bottom' onClick={onUndo}>
+                        <GrUndo />
+                    </button>
+                </li>
+                <li className='icon-container b-r'>
+                    <button className='btn-icon' data-tooltip='Redo' data-tooltip-dir='bottom' onClick={onRedo}>
+                        <GrRedo />
+                    </button>
+                </li>
+                <li className='icon-container b-r'>
+                    <InteractiveChat />
+                </li>
+                <li className='icon-container'>
+                    <button
+                        data-tooltip='Edit'
+                        data-tooltip-dir='bottom'
+                        onClick={() =>
+                            handleSidebarsChanges('right', {
+                                isOpen: !rightSidebarState.isOpen,
+                            })
+                        }
+                        className={`${rightSidebarState.isOpen ? 'active' : ''} btn-icon`}
+                    >
+                        <TiBrush />
+                    </button>
+                </li>
+            </ul>
         </section>
     )
 }

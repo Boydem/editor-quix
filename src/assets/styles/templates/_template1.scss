@@ -94,13 +94,13 @@
         margin: 0 auto;
 
         .full {
-            max-width: 100vw;
+            max-width: 100dvw;
         }
     }
 
     .layout-container-grid {
         display: grid;
-        grid-template-columns: calc((100vw - var(--container-width)) / 2) 600px 1fr;
+        grid-template-columns: calc((100dvw - var(--container-width)) / 2) 600px 1fr;
 
         .full-bleed {
             width: 100%;

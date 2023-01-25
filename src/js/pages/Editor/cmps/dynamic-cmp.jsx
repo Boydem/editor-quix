@@ -5,6 +5,7 @@ import { DynamicElement } from './dynamic-cmps/dynamic-element'
 import { FormCmp } from './dynamic-cmps/form-cmp'
 import { ImgCmp } from './dynamic-cmps/img-cmp'
 import { MapCmp } from './dynamic-cmps/map-cmp'
+import { ScheduleCmp } from './dynamic-cmps/schedule-cmp'
 import { SocialCmp } from './dynamic-cmps/social-cmp'
 import { SubscribeCmp } from './dynamic-cmps/subscribe-cmp'
 import { VideoCmp } from './dynamic-cmps/video-cmp'
@@ -29,6 +30,8 @@ export default function DynamicCmp(props) {
             return <SubscribeCmp {...basicProps} />
         case 'chat':
             return <ChatCmp {...basicProps} />
+        case 'schedule':
+            return <ScheduleCmp {...basicProps} />
         case 'social':
             return <SocialCmp {...basicProps} />
         case 'div':

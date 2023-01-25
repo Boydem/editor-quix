@@ -1,7 +1,8 @@
 .editor-preview {
-    $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 1px);
-    max-height: $editor-max-height;
-    padding: $spacing-m $spacing-l;
+    $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 10px);
+    min-height: 100%;
+    // max-height: $editor-max-height;
+    padding: 15px 10px;
     background-color: darken($editor-hover-bg, 5%);
     box-shadow: inset 0px 0px 20px -10px rgba($editor-outline, 50%);
     overflow-y: auto;
@@ -76,4 +77,9 @@
 .mobile-layout::-webkit-scrollbar,
 .tablet-layout::-webkit-scrollbar {
     display: none;
+}
+@media (min-width: 960px) {
+    .editor-layout .editor-preview {
+        padding: $spacing-m $spacing-l;
+    }
 }
