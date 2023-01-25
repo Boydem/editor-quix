@@ -52,6 +52,9 @@
         display: grid;
         place-items: start;
     }
+    .disabled {
+        pointer-events: none;
+    }
 
     @media (min-width: $break-wide) {
         .wrapper {
@@ -303,7 +306,6 @@
             width: 420px;
             position: relative;
             transition: transform linear 3s;
-            aspect-ratio: 3/7;
         }
 
         &:hover {
