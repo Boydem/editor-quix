@@ -108,6 +108,7 @@
             .titles {
                 h2 {
                     font-weight: 600;
+                    color: darken($clr9, 43%);
                 }
                 h6 {
                     color: lighten($clr2, 55%);
@@ -232,10 +233,13 @@
                 .level {
                     margin-bottom: 1rem;
                 }
+                h4 {
+                    font-weight: 600;
+                }
                 h3 {
-                    font-weight: 500;
-                    line-height: 1.25;
-                    margin-bottom: $spacing-xs;
+                    font-weight: 400;
+                    color: darken($clr9, 35%);
+                    margin-bottom: $spacing-xxs;
                 }
                 p {
                     color: rgba($clr7, 90%);
@@ -250,6 +254,15 @@
                 p {
                     color: $clr1;
                 }
+                h4 {
+                    color: $clr1;
+                    font-weight: 600;
+                }
+                h3 {
+                    color: $clr1;
+                    font-weight: 200;
+                    margin-bottom: $spacing-xxs;
+                }
             }
         }
         .info-box-rows.info-box {
@@ -261,7 +274,12 @@
                 padding: $spacing-s $spacing-m;
                 width: 100%;
                 border-bottom: 1px solid $editor-lightgray;
-
+                h4 {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: darken($clr9, 25%);
+                    font-size: 1rem;
+                }
                 &:not(.header) {
                     transition: background-color 0.5s, color 0.5s;
                     grid-column: 1/-1;
