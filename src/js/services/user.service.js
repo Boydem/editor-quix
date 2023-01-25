@@ -125,18 +125,22 @@ function getDemoKanbans() {
                 {
                     _id: makeId(),
                     txt: 'Add hamburger menu to my site',
+                    createdAt: utilService.randomPastTime(),
                 },
                 {
                     _id: makeId(),
                     txt: 'Take pictures of my products',
+                    createdAt: utilService.randomPastTime(),
                 },
                 {
                     _id: makeId(),
                     txt: 'Get 3D Modelist for designing my website',
+                    createdAt: utilService.randomPastTime(),
                 },
                 {
                     _id: makeId(),
                     txt: 'Send sales data to Sara',
+                    createdAt: utilService.randomPastTime(),
                 },
             ],
         },
@@ -147,14 +151,17 @@ function getDemoKanbans() {
                 {
                     _id: makeId(),
                     txt: 'improve chats',
+                    createdAt: utilService.randomPastTime(),
                 },
                 {
                     _id: makeId(),
                     txt: 'FINISH FRONT END - all flow should be working with perfect logic set and ready to be user friendly',
+                    createdAt: utilService.randomPastTime(),
                 },
                 {
                     _id: makeId(),
                     txt: 'TODAY WE CLEAN ALL COMMENTED UNUSED CODE AT 23:00 !!',
+                    createdAt: utilService.randomPastTime(),
                 },
             ],
         },
