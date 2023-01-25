@@ -20,6 +20,7 @@ import { useDispatch } from 'react-redux'
 import { SET_CURR_SITE } from '../../store/user/user.reducer'
 import DropdownMenuDemo from './cmps/site-actions-dropdown'
 import { ScheduleDashboard } from './views/schedule-dashboard'
+import { KanbanDashboard } from './cmps/kanban-dashboard'
 
 export function Dashboard() {
     const [currView, setCurrView] = useState('home')
@@ -29,7 +30,7 @@ export function Dashboard() {
     const { userId } = useParams()
     const dispatch = useDispatch()
 
-    const menuItems = ['Home', 'Messages', 'Forms', 'Schedule']
+    const menuItems = ['Home', 'Messages', 'Forms', 'Schedule', 'Kanban']
 
     useEffect(() => {
         if (!userId) navigate('/auth/login')
@@ -150,6 +151,7 @@ export function Dashboard() {
                         {currView === 'forms' && <Forms user={user} currSite={currSite} />}
                         {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                         {currView === 'schedule' && <ScheduleDashboard user={user} currSite={currSite} />}
+                        {currView === 'kanban' && <KanbanDashboard user={user} currSite={currSite} />}
                     </div>
                 </div>
             </main>

@@ -1,16 +1,28 @@
+import { useState } from 'react'
 import SelectUnit from '../../Editor/cmps/ui-cmps/select'
 
 export function ScheduleDashboard({ user, currSite }) {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday']
+    const [dayToPreview, setDayToPreview] = useState('Sunday')
 
     function onDayChange(selectedDay) {
-        console.log('selectedDay:', selectedDay)
+        setDayToPreview(selectedDay)
     }
     return (
         <section className='schedule-dashboard'>
-            <div className='info-box'>
-                <span>Choose day:</span>
-                <SelectUnit unit={'Days'} onUnitChange={onDayChange} unitOpts={days} />
+            <div className='info-box schedule-intro'>
+                <div className='choose-day'>
+                    <span>Choose day:</span>
+                    <SelectUnit
+                        unit={dayToPreview}
+                        onUnitChange={onDayChange}
+                        unitOpts={days}
+                        placeholder={'Select day'}
+                    />
+                </div>
+                <div className='total-meeting'>
+                    <h4>Total meetings: 20</h4>
+                </div>
             </div>
             <div className='info-box table-box'>
                 <div className='header'>
