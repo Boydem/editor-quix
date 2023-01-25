@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { userService } from '../../../services/user.service'
 import { makeId } from '../../../services/util.service'
 import { SET_USER } from '../../../store/user/user.reducer'
+import { FiTrash } from 'react-icons/fi'
 
 export function KanbanDashboard({ user, currSite }) {
     const [newItemText, setNewItemText] = useState({})
@@ -20,6 +21,10 @@ export function KanbanDashboard({ user, currSite }) {
     // console.log('newItemText:', newItemText)
     function updateItem() {
         // const boardIndex = user.boards.findIndex(board=>board._id === boardId)
+    }
+
+    function onDelete() {
+        console.log('DELETING')
     }
 
     function addNewItem(ev, boardId, idx) {
@@ -43,6 +48,9 @@ export function KanbanDashboard({ user, currSite }) {
                             <ul className='list-items'>
                                 {board.items?.map(item => (
                                     <li key={item._id}>
+                                        <button className='btn-icon close' onClick={onDelete}>
+                                            <FiTrash />
+                                        </button>
                                         <span>{item.txt}</span>
                                     </li>
                                 ))}

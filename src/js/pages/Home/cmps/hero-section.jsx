@@ -7,7 +7,7 @@ import heroBottom from '../../../../assets/imgs/home-assets/hero-bottom.jpg'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { Brands } from './brands'
 
-export function HeroSection() {
+export function HeroSection({ navigate }) {
     return (
         <section className='hero full main-layout'>
             <section className='hero-top full main-layout'>
@@ -24,8 +24,8 @@ export function HeroSection() {
                                 powered by smooth drag & drop
                             </span>
                         </p>
-                        <button className='btn primary circled mt-5'>
-                            <a href='#'>
+                        <button className='btn primary circled mt-5' onClick={() => navigate('/create')}>
+                            <a className='disabled' href='#'>
                                 <span className='display-link'>Start Creating</span>
                             </a>
                         </button>
@@ -53,11 +53,11 @@ export function HeroSection() {
                                 grid layouts, custom interactions and full breakpoint control.
                             </span>
                         </p>
-                        <button className='btn primary circled'>
+                        <button className='btn primary circled' onClick={() => navigate('/create')}>
                             <span className='display-link'>Start Creating</span>
                         </button>
                         <div>
-                            <a className='link-underline' href='#'>
+                            <a className='link-underline' href='#waps-section'>
                                 <span className='display-link'>See all design features</span>
                                 <span>
                                     <AiOutlineArrowRight />
