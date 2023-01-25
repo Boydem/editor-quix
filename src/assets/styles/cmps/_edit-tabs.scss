@@ -492,13 +492,16 @@
                 width: 100%;
             }
         }
+        .multi-select-wrapper {
+            max-width: 100%;
+        }
     }
     .item-renderer {
         // width: 100%;
-        display: grid;
-        grid-template-columns: 20px 1fr !important;
+        // display: grid;
+        // grid-template-columns: 20px 1fr !important;
         span {
-            width: 100%;
+            // width: 100%;
         }
     }
 }

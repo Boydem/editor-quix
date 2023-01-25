@@ -34,6 +34,7 @@ export function EditSchedule({ clickedCmp }) {
 
     // const eventDuration =
     const [eventDuration, setEventDuration] = useState(wap.schedule?.eventDuration || 30)
+    const [daysForward, setDaysForward] = useState(wap.schedule?.daysForward || 6)
 
     const options = [
         { label: 'Sunday', value: 'sunday' },
@@ -53,6 +54,15 @@ export function EditSchedule({ clickedCmp }) {
 
     function handleEventDurationChange(ev) {
         setEventDuration(ev[0])
+    }
+
+    function handleDaysForwardChange(ev) {
+        setDaysForward(ev[0])
+    }
+    function handleDaysForwardCommit(ev) {
+        setDaysForward(ev[0])
+        wap.schedule.daysForward = ev[0]
+        saveWap(wap)
     }
 
     return (
@@ -81,14 +91,38 @@ export function EditSchedule({ clickedCmp }) {
                             <span>{eventDuration || '30'}Min</span>
                         </div>
                     </form>
-                    <MultiSelect
-                        options={options}
-                        value={selected}
-                        onChange={handleMultiSelectChange}
-                        labelledBy='Select'
-                        hasSelectAll={false}
-                        disableSearch={true}
-                    />
+                    <form className='slider-form adjust-inputs'>
+                        <label htmlFor=''>Days Forward</label>
+                        <div className='wrapper'>
+                            <Slider.Root
+                                value={[daysForward]}
+                                className='SliderRoot slider-input'
+                                defaultValue={[6]}
+                                max={28}
+                                min={1}
+                                step={1}
+                                aria-label='Volume'
+                                onValueChange={handleDaysForwardChange}
+                                onValueCommit={handleDaysForwardCommit}
+                            >
+                                <Slider.Track className='SliderTrack' value={50}>
+                                    <Slider.Range className='SliderRange' />
+                                </Slider.Track>
+                                <Slider.Thumb className='SliderThumb' />
+                            </Slider.Root>
+                            <span>{daysForward || '6'}Days</span>
+                        </div>
+                    </form>
+                    <div className='multi-select-wrapper'>
+                        <MultiSelect
+                            options={options}
+                            value={selected}
+                            onChange={handleMultiSelectChange}
+                            labelledBy='Select'
+                            hasSelectAll={false}
+                            disableSearch={true}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

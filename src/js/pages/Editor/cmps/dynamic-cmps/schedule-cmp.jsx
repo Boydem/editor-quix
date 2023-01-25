@@ -17,6 +17,10 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
     }, [wap.schedule.days])
+    useDidMountEffect(() => {
+        wap.schedule.data = generateEmptyTimeslots()
+        setAvailableTimeslots(wap.schedule.data)
+    }, [wap.schedule.daysForward])
 
     useEffect(() => {
         generateTimeslots()
