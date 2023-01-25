@@ -163,7 +163,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-
+    margin-top: $spacing-xxl;
     img {
         max-width: 106px;
         margin-bottom: 1rem;
@@ -280,6 +280,7 @@
         .module-content .TabsRoot {
             max-height: calc(100vh - $app-header-height - $toolbar-height);
         }
+
         &.open {
             margin: 0;
             // left: 300px;
@@ -304,6 +305,7 @@
             transform: translateX(0%);
         }
         .module-menu {
+            flex: unset;
             min-height: calc(100vh - $app-header-height + $toolbar-height);
             .menu-wrapper {
                 flex-direction: column;
@@ -313,8 +315,9 @@
                     padding: $spacing-s 0;
                     border-bottom: 1px solid $editor-lightgray;
                     flex-direction: column;
-                    flex: auto;
+                    flex: unset;
                     &.themes {
+                        flex: 1;
                     }
                     & li {
                         padding: $spacing-xs $spacing-m;
