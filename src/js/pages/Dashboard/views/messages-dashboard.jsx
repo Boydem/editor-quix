@@ -41,7 +41,7 @@ export function MessagesDashboard({ user, currSite }) {
                             <div className='pic guest'></div>
                             <div className='name'>{keyName}</div>
                             {/* {console.log(msgs[keyName].at(-1).txt)} */}
-                            <div className='message'>{msgs[keyName].at(-1).txt.substring(0, 25)}...</div>
+                            <div className='message'>{msgs[keyName]?.at(-1).txt.substring(0, 25)}...</div>
                         </div>
                     )
                 })}
@@ -53,12 +53,12 @@ export function MessagesDashboard({ user, currSite }) {
                         <div className='pic bigger guest'></div>
                         <div className='wrapper'>
                             <div className='name'>{currContact.contact}</div>
-                            <div className='seen'>{utilService.formatTimeAgo(currContact.msgs.at(-1).date)}</div>
+                            <div className='seen'>{utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}</div>
                         </div>
                     </div>
                     <div className='messages' id='chat'>
                         <div className='time'>Today at 11:41</div>
-                        {currContact.msgs.map((msg, idx) => {
+                        {currContact.msgs?.map((msg, idx) => {
                             return (
                                 <p className={`${msg.by} message`} key={idx}>
                                     {msg.txt}
