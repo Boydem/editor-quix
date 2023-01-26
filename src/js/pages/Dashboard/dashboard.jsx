@@ -18,7 +18,7 @@ import { MessagesDashboard } from './views/messages-dashboard'
 import { SiteSelectDesktop } from './cmps/site-select-desktop'
 import { useDispatch } from 'react-redux'
 import { SET_CURR_SITE } from '../../store/user/user.reducer'
-import DropdownMenuDemo from './cmps/site-actions-dropdown'
+import { SiteActionsDropdown } from './cmps/site-actions-dropdown'
 import { ScheduleDashboard } from './views/schedule-dashboard'
 import { KanbanDashboard } from './cmps/kanban-dashboard'
 import { LeadsDashboard } from './views/leads-dashboard'
@@ -132,7 +132,7 @@ export function Dashboard() {
                         <h6>Welcome to your Dashboard</h6>
                     </div>
                     <div className='actions'>
-                        <DropdownMenuDemo />
+                        <SiteActionsDropdown />
                         <button onClick={onEditSite} className='site-actions-edit flex align-center'>
                             <BsPencil /> <span>Edit Site</span>
                         </button>

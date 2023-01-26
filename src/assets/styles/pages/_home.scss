@@ -214,10 +214,11 @@
         .slider {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
+            pad: $spacing-m;
             .slider-item {
                 width: 100%;
                 min-height: 40vh;
-                aspect-ratio: 9/16;
+                aspect-ratio: 16 / 9;
             }
         }
 
@@ -249,7 +250,7 @@
         box-shadow: 0px 30px 50px -30px rgba($clr2, 0.5);
         border-radius: $spacing-s;
         overflow: hidden;
-        max-height: 350px;
+
         .outer {
             background: #b4b4b4;
             opacity: 0.9;
@@ -302,7 +303,7 @@
 
         .wap-img {
             position: relative;
-            transition: transform linear 3s;
+            transition: transform linear 10s;
         }
 
         &:hover {

@@ -10,15 +10,28 @@ import { redoChange, removeCmp, undoChange } from '../../../store/wap/wap.action
 import { useSelector } from 'react-redux'
 import { TiBrush } from 'react-icons/ti'
 import { InteractiveChat } from './ui-cmps/interactive-chat'
+import { useState } from 'react'
+import { showSuccessMsg } from '../../../services/event-bus.service'
 
 export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsChanges, layout, onLayoutChange }) {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const isSaving = useSelector(storeState => storeState.wapModule.isSaving)
-
+    const wap = useSelector(storeState => storeState.wapModule.wap)
+    const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '' })
+    function handleChange(ev) {
+        const value = ev.target.value
+        const field = ev.target.name
+        setWapUrlToEdit(prev => ({ ...prev, [field]: value }))
+    }
     function openLeftSidebar() {
         handleSidebarsChanges('left', { isOpen: !leftSidebarState.isOpen })
     }
 
+    function onEditDomain() {
+        if (!wap.url) return
+        wap.url = wapUrlToEdit.publishUrl
+        showSuccessMsg('Your site URL has been updated!')
+    }
     function onRemoveCmp() {
         if (clickedCmp) {
             removeCmp(clickedCmp)
@@ -82,6 +95,22 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
             <div className={`save-msg flex align-center ${isSaving ? 'shown' : ''}`}>
                 <FiRefreshCw className='refresh-icon' />
                 Saving...
+            </div>
+            <div className='site-link'>
+                <label className='publish-url-prefix' htmlFor='publishUrl'>
+                    quix.co.il/
+                    <input
+                        onChange={handleChange}
+                        value={wapUrlToEdit.publishUrl}
+                        type='text'
+                        name='publishUrl'
+                        id='publishUrl'
+                        placeholder='MySite'
+                    />
+                    <button onClick={onEditDomain} className='btn-publish'>
+                        {wap.url && 'Edit your domain'}
+                    </button>
+                </label>
             </div>
             <ul className='icons-group'>
                 <li className='icon-container b-l'>

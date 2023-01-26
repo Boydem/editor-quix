@@ -1,5 +1,5 @@
 import { DynamicModule } from './dynamic-module'
-import { AiOutlineClose } from 'react-icons/ai'
+import { GrClose } from 'react-icons/gr'
 import { useEffect, useRef, useState } from 'react'
 import { wapService } from '../../../services/wap.service'
 
@@ -71,7 +71,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                             }}
                             className='btn-icon btn-close'
                         >
-                            <AiOutlineClose />
+                            <GrClose />
                         </span>
                     </div>
                     <div className='module-options'>

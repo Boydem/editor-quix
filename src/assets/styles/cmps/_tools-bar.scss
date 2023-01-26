@@ -1,5 +1,5 @@
 .tools-bar {
-    z-index: 99;
+    z-index: 50;
     position: sticky;
     top: $app-header-height;
     border-bottom: 1px solid $editor-lightgray;
@@ -12,6 +12,45 @@
 
     > * {
         height: 100%;
+    }
+}
+
+.site-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .publish-url-prefix {
+        padding: 2px $spacing-s;
+        display: grid;
+        grid-template-columns: auto minmax(auto, 80px) auto;
+        gap: 2px;
+        background-color: darken($clr1, 5%);
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25em;
+        color: rgba($clr2, 75%);
+        margin-inline-end: 1em;
+
+        .btn-publish {
+            cursor: pointer;
+            color: lighten($editor-active-clr, 1%);
+            background: transparent;
+            padding: 0;
+            font-weight: 600;
+            margin-inline-start: 0.5em;
+            color: lighten($editor-active-clr, 10%);
+            align-self: bottom;
+            border-radius: 0.1em;
+        }
+        input {
+            color: rgba($clr2, 50%);
+            padding: 0;
+            background-color: transparent;
+            transition: all 0.3s;
+            &:focus {
+                color: $editor-active-clr;
+            }
+        }
     }
 }
 

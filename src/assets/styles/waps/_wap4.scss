@@ -111,15 +111,14 @@
     color: var(--clr2);
     padding: 3rem 10%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
+    grid-template-columns: 2fr 3fr;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
     background: var(--clr3);
 
     > * {
-        padding: 10rem 6rem;
+        padding: 5rem 6rem;
     }
     h2 {
         background: var(--clr1);
@@ -133,8 +132,13 @@
     .form {
         background: var(--clr3);
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        grid-template-columns: auto 1fr;
+        gap: 2rem;
+        label {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+        }
 
         input {
             color: var(--clr2);

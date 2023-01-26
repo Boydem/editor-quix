@@ -4,11 +4,6 @@
 @import '@radix-ui/colors/slate.css';
 @import '@radix-ui/colors/violet.css';
 
-/* reset */
-button {
-    all: unset;
-}
-
 .ToastViewport {
     --viewport-padding: 25px;
     position: fixed;

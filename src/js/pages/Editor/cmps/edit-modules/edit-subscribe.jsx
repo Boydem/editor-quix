@@ -55,7 +55,7 @@ export function EditSubscribe({ clickedCmp }) {
                     {inputsArr.map((input, idx) => {
                         return (
                             <div key={idx} className='input-option'>
-                                <button className='btn btn-edit' onClick={() => onDisableLabel(idx)}>
+                                <button className='btn-app btn-edit' onClick={() => onDisableLabel(idx)}>
                                     <GiSightDisabled />
                                 </button>
                                 <input

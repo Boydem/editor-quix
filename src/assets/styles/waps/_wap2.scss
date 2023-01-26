@@ -300,24 +300,24 @@
 }
 
 .wap-2-cta {
-    padding: 5rem 10%;
+    padding: 6rem 10%;
     background: #0b1321;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    gap: 20px;
     h2 {
         text-align: left;
         margin: 0;
         color: #a3eee9;
         font-weight: 500;
         font-size: 2.5rem;
-        line-height: 3rem;
     }
     p {
         color: #8b95a6;
         line-height: 1.9rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1em;
     }
     input {
         color: #eef;
@@ -326,17 +326,25 @@
         background: transparent;
         padding: 1rem 3rem;
         border-radius: 35px;
-        margin-bottom: 1.5rem;
+        margin: 0;
     }
     label {
         color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
     }
     button {
         border: none;
         font: inherit;
         background: #a3eee9;
-        padding: 1rem 3rem;
+        padding: 0.75rem 3rem;
+        margin: 0;
         border-radius: 35px;
+        text-align: center;
+        width: 357px;
+        max-width: 100%;
     }
 }
 

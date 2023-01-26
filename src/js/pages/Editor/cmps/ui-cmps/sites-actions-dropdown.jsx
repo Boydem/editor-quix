@@ -3,7 +3,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import { BsThreeDots } from 'react-icons/bs'
 
-export function SiteActionsDropdown() {
+export function SitesActionsDropdown() {
     const [bookmarksChecked, setBookmarksChecked] = React.useState(true)
     const [urlsChecked, setUrlsChecked] = React.useState(false)
     const [person, setPerson] = React.useState('pedro')
@@ -11,17 +11,13 @@ export function SiteActionsDropdown() {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-                <button
-                    data-tooltip='Site Actions'
-                    data-tooltip-dir={['left', 'info']}
-                    className='site-actions-dropdown btn-icon'
-                >
-                    <BsThreeDots />
+                <button data-tooltip='Sites Actions' data-tooltip-dir={['bottom']} className='sites-actions-dropdown'>
+                    <span>Sites</span>
                 </button>
             </DropdownMenu.Trigger>
 
             <DropdownMenu.Portal>
-                <DropdownMenu.Content className='DropdownMenuContent' sideOffset={5} align={'end'}>
+                <DropdownMenu.Content className='DropdownMenuContent' sideOffset={5} align={'start'}>
                     <DropdownMenu.Item className='DropdownMenuItem'>Preview</DropdownMenu.Item>
                     <DropdownMenu.Item className='DropdownMenuItem'>Publish</DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />

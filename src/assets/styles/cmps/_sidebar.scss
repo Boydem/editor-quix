@@ -125,14 +125,13 @@
             cursor: pointer;
             text-transform: uppercase;
             font-weight: 800;
-            padding: 3px 9px;
+            padding: 5px 9px;
             display: flex;
             align-items: center;
             border-radius: 7px;
             font-size: px-to-rem(12.44px);
             transition: background-color 0.3s, color 0.3s;
             border-radius: 0;
-
             &:not(:last-of-type) {
                 margin-inline-end: 1em;
             }
@@ -140,9 +139,60 @@
                 top: 0;
                 transform: translateY(-100%);
                 background-color: $editor-active-clr;
-                color: $clr1;
+                color: $clr1 !important;
                 position: absolute;
                 border-radius: 0;
+                // -webkit-background-clip: text;
+                // -webkit-text-fill-color: transparent;
+                width: max-content;
+                font-weight: 900;
+                position: relative;
+                &::before,
+                &::after {
+                    content: '';
+                    width: 100%;
+                    position: absolute;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: #03001e; /* fallback for old browsers */
+                    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    &:hover {
+                        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+                }
+                &::after {
+                    z-index: -1;
+                    background: -webkit-linear-gradient(
+                        225deg,
+                        transparent 15%,
+                        #ec38bc 50%,
+                        #7303c0,
+                        #03001e
+                    ); /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(
+                        225deg,
+                        transparent 15%,
+                        #ec38bc 50%,
+                        #7303c0,
+                        #03001e
+                    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    transform: translateX(0%);
+                }
+                &::before {
+                    transform: translateX(-100%);
+                    z-index: -2;
+                    background: -webkit-linear-gradient(45deg, #ab48ff, #11e8b9 50%, transparent 85%);
+                    background: linear-gradient(45deg, #ab48ff, #11e8bb 50%, transparent 85%);
+                }
+                &:hover::before {
+                    transition: all 1s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    transform: translateX(0%);
+                }
+                &:hover::after {
+                    transition: all 1s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    transform: translateX(-100%);
+                }
             }
             &:hover:not(.active) {
                 background-color: $editor-hover-bg;
@@ -345,6 +395,8 @@
                         letter-spacing: 0.025rem;
                         border-radius: 0;
                         margin-inline-start: 0em;
+                        margin-inline-end: 0em;
+                        width: 100%;
                         &.themes {
                             top: unset;
                             transform: translateY(0%);
