@@ -16,9 +16,9 @@ export function KanbanDashboard({ user, currSite }) {
     }, [currSite])
 
     function handleChange(ev) {
-        // const value = ev.target.value
-        // const field = ev.target.name
-        // setNewItemText(prev => ({ ...prev, [field]: value }))
+        const value = ev.target.value
+        const field = ev.target.name
+        setNewItemText(prev => ({ ...prev, [field]: value }))
     }
 
     function onDragEnd(result) {
@@ -70,22 +70,43 @@ export function KanbanDashboard({ user, currSite }) {
     }
 
     function onDelete(boardIdx, itemId) {
-        // const removedItemIdx = boards[boardIdx].items.findIndex(item => item.id === itemId)
-        // boards[boardIdx].items.splice(removedItemIdx, 1)
-        // setBoards([...boards])
-        // updateUser(user, boards)
+        const removedItemIdx = boards[boardIdx].items.findIndex(item => item.id === itemId)
+        boards[boardIdx].items.splice(removedItemIdx, 1)
+        setBoards([...boards])
+        try {
+            updateCurrSite(currSite)
+        } catch (err) {
+            showErrorMsg('Failed to update. Please try again later.')
+            console.log('err:', err)
+        }
     }
 
     function addNewItem(ev, boardId, idx) {
-        // ev.preventDefault()
-        // const board = boards[idx]
-        // boards[idx] = {
-        //     ...board,
-        //     items: [...board.items, { txt: newItemText[boardId], id: makeId(), createdAt: Date.now() }],
-        // }
-        // setBoards([...boards])
-        // updateUser(user, boards)
-        // setNewItemText('')
+        ev.preventDefault()
+        const board = boards[idx]
+        console.log('board:', board)
+        boards[idx] = {
+            ...board,
+            items: [
+                ...board.items,
+                {
+                    data: { '': newItemText[boardId], date: Date.now() },
+                    id: makeId(),
+                    status: board.title.toLowerCase(),
+                },
+            ],
+        }
+
+        setBoards([...boards])
+        setNewItemText('')
+
+        currSite.leadsBoards = boards
+        try {
+            updateCurrSite(currSite)
+        } catch (err) {
+            showErrorMsg('Failed to update. Please try again later.')
+            console.log('err:', err)
+        }
     }
 
     function onAddBoard() {
@@ -93,16 +114,13 @@ export function KanbanDashboard({ user, currSite }) {
         //     id: makeId(),
         //     title: 'Change me',
         //     items: [
-        //         {
-        //             id: makeId(),
-        //             txt: 'Edit your task here!',
-        //             createdAt: Date.now(),
-        //         },
+        // {
+        //     id: makeId(),
+        //     txt: 'Edit your task here!',
+        //     createdAt: Date.now(),
+        // },
         //     ],
         // }
-        // user.boards = user.boards.length ? [...user.boards, boardToAdd] : [boardToAdd]
-        // setBoards(user.boards)
-        // updateUser(user, boards)
     }
     if (!boards || !boards.length) return <div>Loading..</div>
     return (
@@ -148,7 +166,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                                         return <div key={keyName}></div>
                                                                     return (
                                                                         <div key={keyName} className='line'>
-                                                                            <span>{keyName}</span>
+                                                                            {keyName && <span>{keyName}</span>}
                                                                             {item.data[keyName]}
                                                                         </div>
                                                                     )
