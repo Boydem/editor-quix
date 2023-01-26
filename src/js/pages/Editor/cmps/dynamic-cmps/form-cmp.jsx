@@ -19,12 +19,23 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
     }, {})
     const [inputsValues, setInputsValues] = useState(inputsMap)
 
+    function cleanInputsValues() {
+        return cmp.cmps.reduce((acc, innerCmp) => {
+            if (innerCmp.type !== 'label') return acc
+            // It is label
+            acc.push(innerCmp.cmps[0].inputName)
+            return acc
+        }, [])
+    }
+
     function onSubmit(ev) {
         ev.preventDefault()
+        const labels = cleanInputsValues()
         if (!wap.leads) wap.leads = []
 
         let leadData
         for (const key of Object.keys(inputsValues)) {
+            if (!labels.includes(key)) continue
             leadData = { ...leadData, [key]: inputsValues[key] }
             console.log(`The value for ${key} is: ${inputsValues[key]}`)
         }
