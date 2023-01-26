@@ -232,6 +232,7 @@
 }
 
 .chat-1 {
+    transition: left 0.5s ease;
     z-index: 4;
     position: fixed;
     bottom: 2%;
@@ -352,6 +353,7 @@
     }
 
     .chat {
+        transition: left 0.5s ease;
         bottom: 9%;
         right: 15%;
         position: fixed;
