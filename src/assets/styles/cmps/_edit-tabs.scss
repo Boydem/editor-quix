@@ -72,11 +72,18 @@
 }
 
 .tabs-inner-content {
+    button {
+        cursor: pointer;
+    }
     // COMMON CLASS
     button.btn-edit {
         background: #e4e8f1;
         padding: 0.4em 0.6em;
         border-radius: 0.3em;
+
+        &:hover {
+            background: darken(#e4e8f1, 5%);
+        }
     }
     input.input-edit {
         margin-bottom: 0.2em;
@@ -522,5 +529,25 @@
         margin-bottom: 0.6rem;
         display: flex;
         flex-direction: column;
+    }
+
+    .edit-chat {
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+
+            textarea {
+                width: 100%;
+                resize: none;
+                border: none;
+                outline: none;
+                border: 1px solid #dcdcdc;
+                border-radius: 3px;
+
+                &:focus {
+                    border: 1px solid #3762a6;
+                }
+            }
+        }
     }
 }

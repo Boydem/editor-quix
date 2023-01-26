@@ -163,6 +163,7 @@ function getBlankWap() {
             startHour: 8,
             endHour: 17,
         },
+        chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
         breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
     }
 }
@@ -216,6 +217,7 @@ function _createWaps() {
                         { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
                     ],
                 },
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
                 // categories: ['Schedule', 'Gallery', 'Form', 'Cards', 'Map'],
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
                 title: 'Restaurant',
@@ -268,6 +270,7 @@ function _createWaps() {
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
                 title: 'Gaming Startup',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
             {
                 _id: utilService.makeId(),
@@ -317,6 +320,7 @@ function _createWaps() {
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674479603/wap-7-thumbnail_f7fyrx.jpg',
                 title: 'Music Podcast',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
             {
                 _id: utilService.makeId(),
@@ -365,6 +369,7 @@ function _createWaps() {
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
                 title: 'Movie Blog',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
             {
                 _id: utilService.makeId(),
@@ -412,6 +417,7 @@ function _createWaps() {
 
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-thumbnail_fcovpe.jpg',
                 title: 'Cafe & Bakery',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
 
             {
@@ -463,6 +469,7 @@ function _createWaps() {
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
                 title: 'Fintech Webinar',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
             {
                 _id: utilService.makeId(),
@@ -509,6 +516,7 @@ function _createWaps() {
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
                 title: 'Tech Company',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
         ]
         localStorage.setItem(STORAGE_KEY, JSON.stringify(waps))

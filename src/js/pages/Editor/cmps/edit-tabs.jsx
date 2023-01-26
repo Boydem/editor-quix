@@ -28,6 +28,7 @@ import { LineHeightSlider } from './edit-modules/line-height-slider'
 import { EditSubscribe } from './edit-modules/edit-subscribe'
 import { EditSocial } from './edit-modules/edit-social'
 import { EditSchedule } from './edit-modules/edit-schedule'
+import { EditChat } from './edit-modules/edit-chat'
 
 export function EditTabs({ context }) {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
@@ -183,6 +184,7 @@ export function EditTabs({ context }) {
                     {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
                     {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
                     {context === 'schedule' && <EditSchedule clickedCmp={clickedCmp} />}
+                    {context === 'chat' && <EditChat clickedCmp={clickedCmp} />}
                 </div>
                 <div className='expanded-content adjust inside-accordion TabsContent tabs-inner-content'>
                     <TextToolbar elClickedNode={elClickedNode} handleTextStyleChange={handleTextStyleChange} />
