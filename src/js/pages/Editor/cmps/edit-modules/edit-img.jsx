@@ -39,7 +39,9 @@ export function EditImg({ clickedCmp }) {
                         onChange={handleChange}
                         className='input-edit'
                     />
-                    <button className='btn-edit'>Browse</button>
+                    <button className='btn-edit' onClick={onImgUrlInput}>
+                        Add
+                    </button>
                 </div>
 
                 <img src={clickedCmp.content?.imgUrl} alt='' />
