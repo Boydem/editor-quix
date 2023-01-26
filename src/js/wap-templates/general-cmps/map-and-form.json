@@ -150,7 +150,7 @@
                 },
                 {
                     "id": "mwg261",
-                    "type": "pre",
+                    "type": "p",
                     "name": "",
                     "content": {
                         "txt": "Thanks for submitting!"
@@ -196,7 +196,6 @@
                             },
                             "cmps": []
                         },
-
                         {
                             "id": "7gUyDL",
                             "type": "p",

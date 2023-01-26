@@ -28,9 +28,6 @@ export function HomeHeader() {
             </div>
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul className='flex align-center'>
-                    <div className='user-area'>
-                        <UserTooltip user={user} />
-                    </div>
                     <li>
                         <Link className='nav-link btn-start-now link-underline' to='/create'>
                             <span>Start Now</span>

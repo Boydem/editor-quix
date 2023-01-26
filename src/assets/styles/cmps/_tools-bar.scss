@@ -14,7 +14,29 @@
         height: 100%;
     }
 }
-
+.curr-site-name {
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 1em;
+    padding: 2px 0.667em;
+    display: flex;
+    gap: 2px;
+    background-color: #edeef1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    color: rgba(15, 15, 15, 0.75);
+    margin-inline-end: 1em;
+    pre.prefix {
+        font: inherit;
+        font-weight: 600;
+        color: $clr7;
+    }
+    span.name {
+        color: $clr2;
+    }
+}
 .site-link {
     display: flex;
     align-items: center;

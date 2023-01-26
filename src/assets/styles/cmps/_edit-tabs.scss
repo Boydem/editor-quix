@@ -102,6 +102,9 @@
         gap: 0 0.75em;
         grid-auto-flow: dense;
         padding: 1em $spacing-m;
+        &.gap-y {
+            gap: $spacing-s 1em;
+        }
         .param-box {
             width: 100%;
         }
@@ -171,7 +174,7 @@
                 gap: 1em;
 
                 button {
-                    background: #e4e8f1;
+                    background: $editor-lightgray;
                     padding: 0.4em 0.6em;
                     border-radius: 0.3em;
                 }
@@ -182,8 +185,8 @@
                 padding: 0.4em 0.6em;
                 border-radius: 0.3em;
                 cursor: pointer;
-                background: #e4e8f1;
-                color: black;
+                background: $editor-lightgray;
+                color: $clr2;
                 text-align: center;
                 display: inline-flex;
                 justify-content: center;

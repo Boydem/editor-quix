@@ -52,7 +52,7 @@ export function EditSizes() {
     }
 
     return (
-        <div className='adjust-inputs'>
+        <div className='adjust-inputs gap-y'>
             {propOptions.map(opt => (
                 <div key={opt.name} className='param-box'>
                     <label htmlFor={opt.name}>{opt.title}</label>
