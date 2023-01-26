@@ -13,7 +13,9 @@
         .logo {
             position: relative;
             top: $spacing-s;
-            font-size: px-to-rem(38px);
+        }
+        .logo-container {
+            max-width: 120px;
         }
     }
     &.dark {
@@ -22,7 +24,7 @@
         & a {
             fill: $clr1 !important;
             .logo-container {
-                max-width: 120px;
+                max-width: 90px;
             }
         }
     }
@@ -55,7 +57,7 @@
     }
     .logo-container {
         border-inline-end: 1px solid $editor-lightgray;
-        padding-inline-end: $spacing-m;
+        padding-inline-end: 1em;
         display: flex;
         justify-content: center;
         align-items: center;
