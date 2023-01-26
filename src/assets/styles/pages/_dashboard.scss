@@ -122,6 +122,7 @@
                 border-radius: $spacing-xs;
                 box-shadow: 0px 3px 6px -1px rgba($clr7, 30%);
                 > * {
+                    width: max-content;
                     color: $editor-active-clr;
                     background-color: $editor-active-bg;
                     // padding: 0 1em;

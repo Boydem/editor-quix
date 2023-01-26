@@ -64,7 +64,42 @@ button {
     padding: 0.5em 1em;
     font-size: 14px;
     width: max-content;
-
+    &.primary {
+        background-color: $editor-active-clr;
+        color: $clr2;
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover {
+            background-color: darken($editor-active-clr, 10%);
+        }
+    }
+    &.secondary {
+        position: relative;
+        background-color: $clr2;
+        color: $clr1;
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        &::before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            border-radius: 3px;
+            width: 100%;
+            opacity: 0;
+            height: 100%;
+            transform: scale(0.15);
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        }
+        &:hover {
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+            &::before {
+                transform: scale(1);
+                opacity: 1;
+                background-color: $editor-lightgray;
+            }
+        }
+    }
     &.circled {
         border-radius: 33em;
     }
@@ -73,6 +108,7 @@ button {
         border-radius: $spacing-xxs;
     }
     &.primary {
+        background-color: $clr1;
         padding: 14px 32px;
     }
     &.btn-template {
