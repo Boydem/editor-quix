@@ -3,7 +3,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import { BsThreeDots } from 'react-icons/bs'
 
-const DropdownMenuDemo = () => {
+export function SiteActionsDropdown() {
     const [bookmarksChecked, setBookmarksChecked] = React.useState(true)
     const [urlsChecked, setUrlsChecked] = React.useState(false)
     const [person, setPerson] = React.useState('pedro')
@@ -98,5 +98,3 @@ const DropdownMenuDemo = () => {
         </DropdownMenu.Root>
     )
 }
-
-export default DropdownMenuDemo

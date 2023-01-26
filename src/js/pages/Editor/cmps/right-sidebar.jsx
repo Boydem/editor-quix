@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { AiOutlineClose } from 'react-icons/ai'
+import { GrClose } from 'react-icons/gr'
 
 import { EmptyRightSidebar } from './edit-modules/empty-right-sidebar'
 import { EditTabs } from './edit-tabs'
@@ -88,7 +88,7 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                                 }}
                                 className='btn-icon small'
                             >
-                                <AiOutlineClose />
+                                <GrClose />
                             </button>
                         </ul>
                     </div>

@@ -37,7 +37,7 @@
         width: 100%;
         display: grid;
         align-items: center;
-        grid-template-columns: auto 1fr auto auto;
+        grid-template-columns: auto auto 1fr auto;
         margin: auto;
         z-index: 9999;
         border-bottom: 1px solid $editor-lightgray;
@@ -70,44 +70,13 @@
         }
     }
 
-    .site-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .publish-url-prefix {
-            padding: 2px $spacing-s;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 2px;
-            background-color: darken($clr1, 5%);
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.25em;
-            color: rgba($clr2, 75%);
-            .btn-publish {
-                cursor: pointer;
-                color: lighten($editor-active-clr, 1%);
-                background: transparent;
-                padding: 0;
-                font-weight: 500;
-                text-transform: uppercase;
-                font-size: px-to-rem(12px);
-                border-radius: 0.1em;
-                padding-left: 0.5em;
-            }
-            input {
-                color: rgba($clr2, 50%);
-                padding: 0;
-                background-color: transparent;
-                transition: all 0.3s;
-                &:focus {
-                    color: $editor-active-clr;
-                }
-            }
+    .sites-actions {
+        padding: 0 $spacing-m;
+        .sites-actions-dropdown {
+            cursor: pointer;
         }
     }
-
-    .nav-actions {
+    .user-actions {
         .nav-link {
             font-weight: 400;
             margin-inline-start: $spacing-s;
@@ -150,7 +119,7 @@
                     &::before {
                         transform: scale(1);
                         color: lighten($clr2, 10%);
-                        background-color: darken($clr1, 15%);
+                        background-color: darken($clr1, 3%);
                     }
                 }
             }
@@ -168,21 +137,18 @@
 .app-header[data-location='editor'] {
     .user-area,
     .site-link,
-    .nav-actions ul li {
+    .user-actions ul li {
         display: none;
     }
 }
 .user-area {
-    margin: 0 1em;
     display: grid;
     grid-template-columns: auto 1fr;
     place-items: center start;
     .avatar {
         cursor: default;
-        width: 36px;
-        height: 36px;
-        line-height: 36px;
-        font-size: 15px;
+        width: 30px;
+        height: 30px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -190,13 +156,14 @@
         overflow: hidden;
         color: $clr1;
         text-transform: uppercase;
-        background-color: $clr19;
+        background-color: scale-color($color: #820abf, $saturation: -20%, $lightness: -5%);
         box-shadow: inset 0px 0px 0px 0px rgba($clr19, 50%);
         transition: 1s ease-out box-shadow;
+        box-shadow: 0px 0px 0px 2px scale-color($color: $editor-active-clr, $saturation: -20%, $lightness: 35%);
 
         &:hover {
             transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) box-shadow;
-            box-shadow: inset 0px 0px 0px 5px lighten($clr19, 15%);
+            box-shadow: 0px 0px 0px 2.5px lighten($editor-active-clr, 5%);
         }
     }
     .user-info {
@@ -240,11 +207,14 @@
 .interactives > * {
     height: 100%;
 }
+div[data-radix-popper-content-wrapper] {
+    z-index: 99 !important;
+}
 @media (min-width: 960px) {
     .app-header[data-location='editor'] {
         .user-area,
         .site-link,
-        .nav-actions ul li {
+        .user-actions ul li {
             display: flex;
         }
     }

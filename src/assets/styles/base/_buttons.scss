@@ -6,30 +6,63 @@ button {
 }
 
 button {
-    background-color: $clr1;
-    color: $clr2;
     cursor: pointer;
     outline: none;
     border: none;
-    padding: 0.22em 0.88em;
-}
-
-.btn {
     display: inline-flex;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 2px $spacing-m;
     align-items: center;
-    justify-content: center;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.app-btn {
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    width: max-content;
     &.primary {
-        background-color: $clr1;
-        color: $clr2;
-    }
-
-    &.secondary {
-        background-color: $clr2;
+        background-color: $editor-active-clr;
         color: $clr1;
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover {
+            background-color: darken($editor-active-clr, 10%);
+        }
     }
+    &.secondary {
+        position: relative;
+        background-color: transparent;
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        &::before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            border-radius: 3px;
+            width: 100%;
+            opacity: 0;
+            height: 100%;
+            transform: scale(0.15);
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        }
+        &:hover {
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+            &::before {
+                transform: scale(1);
+                opacity: 1;
+                background-color: $editor-lightgray;
+            }
+        }
+    }
+}
+.btn {
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    width: max-content;
 
     &.circled {
         border-radius: 33em;
@@ -38,7 +71,9 @@ button {
     &.rounded {
         border-radius: $spacing-xxs;
     }
-
+    &.primary {
+        padding: 14px 32px;
+    }
     &.btn-template {
         background-color: transparent;
         color: $clr1;
@@ -55,19 +90,6 @@ button {
             color: $clr2;
         }
         &:nth-of-type(even):hover {
-        }
-    }
-
-    @media (min-width: $break-narrow) {
-        & {
-            font-size: px-to-rem(20px);
-            padding: 0.66em 1.8em;
-        }
-    }
-
-    @media (min-width: $break-wide) {
-        & {
-            padding: 0.8em 3em;
         }
     }
 }

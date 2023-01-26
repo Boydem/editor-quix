@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { AiOutlineClose } from 'react-icons/ai'
+import { GrClose } from 'react-icons/gr'
 import emailjs from 'emailjs-com'
 
 export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
@@ -25,13 +25,12 @@ export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
     function onClose() {
         setIsMailOpen(false)
     }
-    
 
     return (
         <form className='compose-mail full' onSubmit={onSend} ref={formRef}>
             <div className='close-btn-wrapper'>
                 <button onClick={onClose}>
-                    <AiOutlineClose fontSize={'1rem'} />
+                    <GrClose fontSize={'1rem'} />
                 </button>
             </div>
             <div className='to'>
