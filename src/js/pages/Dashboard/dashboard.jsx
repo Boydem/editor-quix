@@ -11,7 +11,7 @@ import { IoAnalyticsOutline } from 'react-icons/io5'
 import { GrAnalytics } from 'react-icons/gr'
 
 import { DashboardMain } from './views/dashboard-main'
-import { Forms } from './views/forms'
+import { SubscriptionsDashboard } from './views/subscriptions-dashboard'
 
 import { setCurrSite, setUser } from '../../store/user/user.actions'
 import { MessagesDashboard } from './views/messages-dashboard'
@@ -21,6 +21,7 @@ import { SET_CURR_SITE } from '../../store/user/user.reducer'
 import DropdownMenuDemo from './cmps/site-actions-dropdown'
 import { ScheduleDashboard } from './views/schedule-dashboard'
 import { KanbanDashboard } from './cmps/kanban-dashboard'
+import { LeadsDashboard } from './views/leads-dashboard'
 
 export function Dashboard() {
     const [currView, setCurrView] = useState('home')
@@ -30,7 +31,7 @@ export function Dashboard() {
     const { userId } = useParams()
     const dispatch = useDispatch()
 
-    const menuItems = ['Home', 'Messages', 'Forms', 'Schedule', 'Kanban']
+    const menuItems = ['Home', 'Messages', 'Subscriptions', 'Leads', 'Schedule', 'Kanban']
 
     useEffect(() => {
         if (!userId) navigate('/auth/login')
@@ -148,7 +149,8 @@ export function Dashboard() {
                     </div>
                     <div className='col col-right'>
                         {currView === 'home' && <DashboardMain user={user} currSite={currSite} />}
-                        {currView === 'forms' && <Forms user={user} currSite={currSite} />}
+                        {currView === 'subscriptions' && <SubscriptionsDashboard user={user} currSite={currSite} />}
+                        {currView === 'leads' && <LeadsDashboard user={user} currSite={currSite} />}
                         {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                         {currView === 'schedule' && <ScheduleDashboard user={user} currSite={currSite} />}
                         {currView === 'kanban' && <KanbanDashboard user={user} currSite={currSite} />}

@@ -31,7 +31,7 @@ export function ScheduleDashboard({ user, currSite }) {
 
     return (
         <section className='schedule-dashboard'>
-            <div className='info-box schedule-intro'>
+            {/* <div className='info-box schedule-intro'>
                 <div className='choose-day'>
                     <span>Choose day:</span>
                     <SelectUnit
@@ -44,13 +44,17 @@ export function ScheduleDashboard({ user, currSite }) {
                 <div className='total-meeting'>
                     <h4>Total meetings: 20</h4>
                 </div>
-            </div>
+            </div> */}
             <div className='info-box table-box'>
                 <div className='header'>
                     <div className='text-wrapper'>
-                        <h3>Scheduled meetings:</h3>
+                        <h3>Scheduled meetings</h3>
                     </div>
-                    <button className='btn-send-msg'>Download CSV</button>
+                    {/* <div className='text-wrapper'>
+                        <h3>Total meetings: 20</h3>
+                    </div> */}
+                    <h3 className='total-meetings'>Total meetings 20</h3>
+                    {/* <button className='btn-send-msg'>Download CSV</button> */}
                 </div>
 
                 <div className='calendar-container'>
