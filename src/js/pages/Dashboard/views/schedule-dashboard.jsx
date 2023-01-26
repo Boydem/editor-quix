@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import SelectUnit from '../../Editor/cmps/ui-cmps/select'
+import { Calendar, momentLocalizer, Views } from 'react-big-calendar'
+import moment from 'moment'
+
+const localizer = momentLocalizer(moment)
 
 export function ScheduleDashboard({ user, currSite }) {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday']
@@ -8,6 +12,23 @@ export function ScheduleDashboard({ user, currSite }) {
     function onDayChange(selectedDay) {
         setDayToPreview(selectedDay)
     }
+    const events = currSite.schedule.meetings.reduce((acc, meeting) => {
+        acc.push({
+            start: moment(meeting.datetime.startTime).toDate(),
+            end: moment(meeting.datetime.endTime).toDate(),
+            title: `${meeting.fullname}, ${meeting.phoneNumber}`,
+        })
+        return acc
+    }, [])
+
+    // const events = [
+    //     {
+    //         start: moment().toDate(),
+    //         end: moment().add(1, 'days').toDate(),
+    //         title: 'Some title',
+    //     },
+    // ]
+
     return (
         <section className='schedule-dashboard'>
             <div className='info-box schedule-intro'>
@@ -31,35 +52,15 @@ export function ScheduleDashboard({ user, currSite }) {
                     </div>
                     <button className='btn-send-msg'>Download CSV</button>
                 </div>
-                <div className='user-forms leads-table'>
-                    <ul className='table-row table-header container'>
-                        {currSite.leads && currSite.leads.length > 0 && (
-                            <>
-                                {Object.keys(currSite.leads?.at(-1).data).map((key, keyIndex) => {
-                                    return (
-                                        <li className='col' key={key}>
-                                            {key}
-                                        </li>
-                                    )
-                                })}
-                            </>
-                        )}
-                    </ul>
 
-                    {currSite.leads?.map(lead => {
-                        return (
-                            <ul className='table-row container' key={lead.id}>
-                                {Object.keys(lead.data).map((key, keyIndex) => {
-                                    return (
-                                        <li className='col' key={key}>
-                                            {key === 'date' && '7:30'}
-                                            {key !== 'date' && lead.data[key]}
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        )
-                    })}
+                <div className='calendar-container'>
+                    <Calendar
+                        localizer={localizer}
+                        defaultDate={moment().toDate()}
+                        defaultView='week'
+                        events={events}
+                        style={{ height: '100%', width: '100%' }}
+                    />
                 </div>
             </div>
         </section>

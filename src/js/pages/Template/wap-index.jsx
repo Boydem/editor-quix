@@ -51,7 +51,8 @@ export function WapIndex() {
             <section className='wap-index full main-layout'>
                 <div className='intro full main-layout'>
                     <div className='wrapper'>
-                        <h1>Choose how you want to start</h1>
+                        <h1>Kickstart your website with our templates</h1>
+                        {/* <h1>Select the perfect starting point for your website</h1> */}
                     </div>
                 </div>
                 <div className='templates'>
@@ -62,8 +63,8 @@ export function WapIndex() {
                             </div>
                         </div>
                         <div className='text-container'>
-                            <div className='template-title text-bold'>Blank</div>
-                            <p className='template-categories text-muted'>Sticky / Lightbox / Transparent Video</p>
+                            <div className='template-title text-bold'>Blank Canvas</div>
+                            <p className='template-categories text-muted'>Start from scratch</p>
                         </div>
                     </article>
                     {waps.map(wap => (

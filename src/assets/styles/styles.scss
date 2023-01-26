@@ -43,6 +43,7 @@
 @import './pages/_dashboard.scss';
 @import './cmps/compose-mail.scss';
 @import './cmps/messages-dashboard.scss';
+@import './cmps/schedule-dashboard.scss';
 
 // USER
 @import './cmps/_loginsignup.scss';
@@ -72,3 +73,5 @@
 @import './waps/_wap5.scss';
 @import './waps/_wap6.scss';
 @import './waps/_wap7.scss';
+
+@import '../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';

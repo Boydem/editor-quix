@@ -162,7 +162,9 @@ function getBlankWap() {
             days: ['sunday', 'monday', 'tuesday', 'wednesday'],
             startHour: 8,
             endHour: 17,
+            meetings: [],
         },
+        chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
         breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
     }
 }
@@ -173,7 +175,7 @@ function _createWaps() {
         waps = [
             {
                 _id: utilService.makeId(),
-                name: 'wap-1',
+                name: 'wap-5',
                 owner: 'admin',
                 leads: [],
                 schedule: {
@@ -183,12 +185,16 @@ function _createWaps() {
                     days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
                     startHour: 8,
                     endHour: 17,
+                    meetings: [],
                 },
                 subscribers: [],
-                cmps: getDemoCmps1(),
-                pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
-                themeClass: 'wap1-primary',
-                breakpoints: { mobileLayout: 800, tabletLayout: 1350 },
+                cmps: getDemoCmps5(),
+                themeClass: 'wap5-primary',
+                breakpoints: {
+                    mobileLayout: 680,
+                    tabletLayout: 880,
+                    desktopLayout: 1300,
+                },
                 msgs: {
                     guest1: [
                         { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
@@ -213,9 +219,10 @@ function _createWaps() {
                         { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
                     ],
                 },
-                thumbnail:
-                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
-                title: 'Tech Company',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
+                // categories: ['Schedule', 'Gallery', 'Form', 'Cards', 'Map'],
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
+                title: 'Restaurant',
             },
             {
                 _id: utilService.makeId(),
@@ -229,6 +236,7 @@ function _createWaps() {
                     days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
                     startHour: 8,
                     endHour: 17,
+                    meetings: [],
                 },
                 subscribers: [],
                 cmps: getDemoCmps2(),
@@ -261,11 +269,163 @@ function _createWaps() {
                         { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
                     ],
                 },
-
+                // categories: ['Sticky', 'Gallery', 'Form', 'Cards'],
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
                 title: 'Gaming Startup',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-7',
+                owner: 'admin',
+                leads: [],
+                schedule: {
+                    eventDuration: 30,
+                    daysForward: 6,
+                    data: [],
+                    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
+                    startHour: 8,
+                    endHour: 17,
+                    meetings: [],
+                },
+                subscribers: [],
+                cmps: getDemoCmps7(),
+                themeClass: 'wap7-primary',
+                breakpoints: {
+                    mobileLayout: 700,
+                    tabletLayout: 1230,
+                    desktopLayout: 1400,
+                },
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674479603/wap-7-thumbnail_f7fyrx.jpg',
+                title: 'Music Podcast',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
+            },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-4',
+                owner: 'admin',
+                leads: [],
+                schedule: {
+                    eventDuration: 30,
+                    daysForward: 6,
+                    data: [],
+                    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
+                    startHour: 8,
+                    endHour: 17,
+                    meetings: [],
+                },
+                subscribers: [],
+                cmps: getDemoCmps4(),
+                themeClass: 'wap4-primary',
+                breakpoints: {
+                    mobileLayout: 750,
+                    tabletLayout: 1400,
+                },
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
+                title: 'Movie Blog',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
+            },
+            {
+                _id: utilService.makeId(),
+                name: 'wap-6',
+                owner: 'admin',
+                leads: [],
+                schedule: {
+                    eventDuration: 30,
+                    daysForward: 6,
+                    data: [],
+                    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
+                    startHour: 8,
+                    endHour: 17,
+                    meetings: [],
+                },
+                subscribers: [],
+                cmps: getDemoCmps6(),
+                themeClass: 'wap6-primary',
+                breakpoints: {
+                    tabletLayout: 800,
+                },
+                msgs: {
+                    guest1: [
+                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
+                        {
+                            by: 'owner',
+                            txt: "Uh, what is this guy's problem, Mr. Stark?",
+                            date: new Date().getTime() - HOUR,
+                        },
+                        {
+                            by: 'customer',
+                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                            date: new Date().getTime() - HOUR - HOUR,
+                        },
+                    ],
+                    guest2: [
+                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
+                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
+                        { by: 'owner', txt: 'NOOO!' },
+                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
+                    ],
+                },
+
+                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-thumbnail_fcovpe.jpg',
+                title: 'Cafe & Bakery',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
+            },
+
             {
                 _id: utilService.makeId(),
                 name: 'wap-3',
@@ -278,6 +438,7 @@ function _createWaps() {
                     days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
                     startHour: 8,
                     endHour: 17,
+                    meetings: [],
                 },
                 subscribers: [],
                 cmps: getDemoCmps3(),
@@ -315,10 +476,11 @@ function _createWaps() {
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060492/wap-3-index-thumbnail_dheye8.jpg',
                 title: 'Fintech Webinar',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
             {
                 _id: utilService.makeId(),
-                name: 'wap-4',
+                name: 'wap-1',
                 owner: 'admin',
                 leads: [],
                 schedule: {
@@ -328,14 +490,13 @@ function _createWaps() {
                     days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
                     startHour: 8,
                     endHour: 17,
+                    meetings: [],
                 },
                 subscribers: [],
-                cmps: getDemoCmps4(),
-                themeClass: 'wap4-primary',
-                breakpoints: {
-                    mobileLayout: 750,
-                    tabletLayout: 1400,
-                },
+                cmps: getDemoCmps1(),
+                pallete: ['#ffbf23', '#ffd7ef', '#ffffff', '#101010'],
+                themeClass: 'wap1-primary',
+                breakpoints: { mobileLayout: 800, tabletLayout: 1350 },
                 msgs: {
                     guest1: [
                         { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
@@ -360,154 +521,10 @@ function _createWaps() {
                         { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
                     ],
                 },
-
-                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg',
-                title: 'Movie Blog',
-            },
-            {
-                _id: utilService.makeId(),
-                name: 'wap-5',
-                owner: 'admin',
-                leads: [],
-                schedule: {
-                    eventDuration: 30,
-                    daysForward: 6,
-                    data: [],
-                    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
-                    startHour: 8,
-                    endHour: 17,
-                },
-                subscribers: [],
-                cmps: getDemoCmps5(),
-                themeClass: 'wap5-primary',
-                breakpoints: {
-                    mobileLayout: 680,
-                    tabletLayout: 880,
-                    desktopLayout: 1300,
-                },
-                msgs: {
-                    guest1: [
-                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
-                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
-                        {
-                            by: 'owner',
-                            txt: "Uh, what is this guy's problem, Mr. Stark?",
-                            date: new Date().getTime() - HOUR,
-                        },
-                        {
-                            by: 'customer',
-                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                            date: new Date().getTime() - HOUR - HOUR,
-                        },
-                    ],
-                    guest2: [
-                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
-                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: 'NOOO!' },
-                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
-                    ],
-                },
-
-                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
-                title: 'Restaurant Webflow',
-            },
-            {
-                _id: utilService.makeId(),
-                name: 'wap-6',
-                owner: 'admin',
-                leads: [],
-                schedule: {
-                    eventDuration: 30,
-                    daysForward: 6,
-                    data: [],
-                    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
-                    startHour: 8,
-                    endHour: 17,
-                },
-                subscribers: [],
-                cmps: getDemoCmps6(),
-                themeClass: 'wap6-primary',
-                breakpoints: {
-                    tabletLayout: 800,
-                },
-                msgs: {
-                    guest1: [
-                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
-                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
-                        {
-                            by: 'owner',
-                            txt: "Uh, what is this guy's problem, Mr. Stark?",
-                            date: new Date().getTime() - HOUR,
-                        },
-                        {
-                            by: 'customer',
-                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                            date: new Date().getTime() - HOUR - HOUR,
-                        },
-                    ],
-                    guest2: [
-                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
-                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: 'NOOO!' },
-                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
-                    ],
-                },
-
-                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-thumbnail_fcovpe.jpg',
-                title: 'Cafe & Bakery',
-            },
-            {
-                _id: utilService.makeId(),
-                name: 'wap-7',
-                owner: 'admin',
-                leads: [],
-                schedule: {
-                    eventDuration: 30,
-                    daysForward: 6,
-                    data: [],
-                    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday'],
-                    startHour: 8,
-                    endHour: 17,
-                },
-                subscribers: [],
-                cmps: getDemoCmps7(),
-                themeClass: 'wap7-primary',
-                breakpoints: {
-                    mobileLayout: 700,
-                    tabletLayout: 1230,
-                    desktopLayout: 1400,
-                },
-                msgs: {
-                    guest1: [
-                        { by: 'customer', txt: "Hey, man! What's up, Mr Stark?", date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: "Kid, where'd you come from?", date: new Date().getTime() - HOUR },
-                        { by: 'customer', txt: 'Field trip!', date: new Date().getTime() - HOUR },
-                        {
-                            by: 'owner',
-                            txt: "Uh, what is this guy's problem, Mr. Stark?",
-                            date: new Date().getTime() - HOUR,
-                        },
-                        {
-                            by: 'customer',
-                            txt: "Uh, he's from space, he came here to steal a necklace from a wizard.",
-                            date: new Date().getTime() - HOUR - HOUR,
-                        },
-                    ],
-                    guest2: [
-                        { by: 'customer', txt: 'hahaha', date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: 'Yes this is lit', date: new Date().getTime() - HOUR },
-                        { by: 'customer', txt: 'help me please!', date: new Date().getTime() - HOUR },
-                        { by: 'owner', txt: 'NOOO!' },
-                        { by: 'customer', txt: 'I love Wix!', date: new Date().getTime() - HOUR },
-                    ],
-                },
-
-                thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674479603/wap-7-thumbnail_f7fyrx.jpg',
-                title: 'Music Podcast',
+                thumbnail:
+                    'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg',
+                title: 'Tech Company',
+                chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
             },
         ]
         localStorage.setItem(STORAGE_KEY, JSON.stringify(waps))

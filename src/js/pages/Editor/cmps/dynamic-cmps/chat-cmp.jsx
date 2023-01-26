@@ -31,7 +31,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         let currGuest
         if (!msgs) {
             currGuest = `guest${utilService.makeId()}`
-            wap.msgs = { ...wap.msgs, [currGuest]: [] }
+            wap.msgs = { [currGuest]: [], ...wap.msgs }
             msgs = wap.msgs[currGuest]
         }
         msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
@@ -75,6 +75,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
                     return <DynamicCmp cmp={c} key={c.id} />
                 })}
                 <div className='messages flex-end'>
+                    <p className={`owner message`}>{wap.chatStartingMsg}</p>
                     {msgs?.map((msg, idx) => {
                         return (
                             <p className={`${msg.by} message`} key={idx}>
