@@ -50,7 +50,7 @@ export function Preview() {
                 <div className='site-owner-link'>
                     <p>Your site is on air!</p>
                     <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
-                        Go to dashboard
+                        Admin panel
                     </Link>
                 </div>
             )}

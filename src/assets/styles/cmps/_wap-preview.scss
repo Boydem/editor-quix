@@ -1,33 +1,36 @@
 .site-owner-link {
-    background-color: #fbfcfc;
+    animation: slideIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: $clr1;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    flex-direction: column;
+    position: relative;
     p {
-        color: #0c6aff;
-        font-size: 1.1rem;
-        opacity: 0.7;
-        transition: opacity 0.5s;
-        &:hover {
-            opacity: 1;
-        }
+        margin: $spacing-xs 0 $spacing-xxs;
+        color: $editor-active-clr;
     }
 
     .btn-dashboard {
-        background: #004cc4;
-        transition: background-color 0.5s, color 0.5s;
-        padding: 0.567em 0.7em;
-        border-bottom: 1px solid rgba(218, 218, 230, 0.918);
-        color: #fbfcfc;
-        font-weight: 600;
-        transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.165, 0.84, 0.44, 1),
-            box-shadow 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        color: $editor-active-bg;
+        background-color: $editor-active-clr;
+        padding: 3px 10px;
+        border-radius: 3px;
+        margin-bottom: $spacing-xs;
+        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
         &:hover {
-            color: #2b7dff;
-            background-color: #fbfcfc;
-            box-shadow: inset 0px 0px 0px 1px #2b7dff;
+            color: $editor-active-clr;
+            background-color: $editor-active-bg;
+            box-shadow: inset 0px 0px 0px 1px $editor-active-clr;
+        }
+    }
+    @keyframes slideIn {
+        from {
+            margin-top: -70px;
+        }
+        to {
+            margin: 0;
         }
     }
 }
