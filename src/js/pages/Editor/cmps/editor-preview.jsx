@@ -11,6 +11,7 @@ export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState
 
     useEffect(() => {
         setEditorWrapperLayout()
+        console.log('test')
     }, [layout])
 
     function setEditorWrapperLayout() {
