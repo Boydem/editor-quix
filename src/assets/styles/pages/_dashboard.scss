@@ -230,11 +230,17 @@
                 }
 
                 canvas {
-                    background: #fbfcfc;
-                    box-shadow: 0 0 0 0 black;
+                    background: $clr1;
+                    box-shadow: 0 0 0 0 $clr2;
                 }
             }
-
+            &.chat-contacts {
+                border-right: 1px solid $editor-lightgray;
+                height: 100%;
+                margin: 0;
+                border-radius: $spacing-s 0 0 $spacing-s;
+                min-width: 280px;
+            }
             &:not(.last-messages, .chart-wrapper) {
                 box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
             }

@@ -22,7 +22,7 @@ export function UserTooltip({ user }) {
         }
     }
     return (
-        <HoverCard.Root>
+        <HoverCard.Root openDelay={200}>
             <HoverCard.Trigger asChild>
                 <div className='avatar'>{user ? getShortenName() : <AiOutlineUser size={'70%'} fill={'#eee'} />}</div>
             </HoverCard.Trigger>

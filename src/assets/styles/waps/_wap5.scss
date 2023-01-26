@@ -546,7 +546,8 @@
     background: white;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    margin: 0 auto;
+    margin: 0rem auto;
+    margin-bottom: 10rem;
     max-width: 700px;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -573,6 +574,7 @@
     p {
         margin-bottom: 1.3rem;
         font-size: 0.85rem;
+        max-width: 90%;
 
         &:last-of-type {
             margin-bottom: 2.5rem;
@@ -585,11 +587,13 @@
         grid-template-columns: 9fr 1fr;
         gap: 0;
         input {
+            position: relative;
+            z-index: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding-left: 0.9rem;
-            width: 107%;
+            width: 115%;
             height: 33px;
             border-top-left-radius: 15px;
             border-bottom-left-radius: 15px;
@@ -600,6 +604,9 @@
             outline: none;
         }
         button {
+            position: relative;
+            left: -20px;
+            z-index: 2;
             color: white;
             background: #ff7629;
             outline: none;

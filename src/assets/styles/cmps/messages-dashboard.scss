@@ -7,7 +7,7 @@ $background: #f7f7f7;
 
 .messages-dashboard {
     display: grid;
-    grid-template-columns: minmax(150px, 1fr) 4fr;
+    grid-template-columns: minmax(max-content, 1fr) 4fr;
     flex: 1;
     .pic {
         width: 2rem;
@@ -22,142 +22,51 @@ $background: #f7f7f7;
         }
     }
 
-    .contact {
-        position: relative;
-        margin-bottom: 1rem;
-        padding-left: 4rem;
-        height: 4.5rem;
-        padding-left: 5rem;
-        padding-right: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        &.active {
-            background: darken($clr1, 10%);
-        }
-        &.bar {
-            padding-left: 5rem;
-        }
-        .pic {
-            position: absolute;
-            left: 15px;
-
-            &.bigger {
-                left: 0px;
-            }
-        }
-        .name {
-            font-weight: 500;
-            margin-bottom: 0.125rem;
-        }
-        .message,
-        .seen {
-            font-size: 0.9rem;
-            color: $text-3;
-        }
-        .message {
-            // overflow: hidden;
-            // max-width: 20ch;
-            // text-overflow: ellipsis;
-            // // $clr1-space: nowrap;
-            // // $clr1-space:
-        }
-        .badge {
-            box-sizing: border-box;
-            position: absolute;
-            width: 1.5rem;
-            height: 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-            padding-top: 0.125rem;
-            border-radius: 1rem;
-
-            top: 0;
-            left: 2.5rem;
-            background: $text-1;
-            color: $clr1;
-        }
-    }
-
-    .contacts {
-        width: 100%;
-        box-sizing: border-box;
-        border-radius: 0.444rem 0 0 0.444rem;
-        cursor: pointer;
-        background: $clr1;
-        box-shadow: 0 0 8rem 0 rgba($clr2, 0.1), 2rem 2rem 4rem -3rem rgba($clr2, 0.5);
-        transition: transform 500ms;
-
-        h2 {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-size: 2rem;
-        }
-        .contact:first-of-type {
-            margin-top: 5.5rem;
-        }
-
-        .fa-bars {
-            position: absolute;
-            left: 2.25rem;
-
-            color: $text-3;
-            transition: color 200ms;
-
-            &:hover {
-                color: $text-2;
-            }
-        }
-
-        .contact:last-child {
-            margin: 0;
-        }
-    }
-
     .chat {
         position: relative;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
         width: 100%;
-        // height: 90vh;
         z-index: 2;
         box-sizing: border-box;
-        // border-radius: 1rem;
-        border-top-right-radius: 0.444rem;
-        border-bottom-right-radius: 0.444rem;
-
+        border-radius: 0 $spacing-s $spacing-s 0;
         background: $clr1;
-        // box-shadow: 0 0 8rem 0 rgba($clr2, 0.1), 0rem 2rem 4rem -3rem rgba($clr2, 0.5);
 
         .chat-layout {
             height: 100%;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            box-shadow: inset 0 2rem 2rem -2rem rgba($clr2, 0.05), inset 0 -2rem 2rem -2rem rgba($clr2, 0.05);
         }
 
         .contact.bar {
-            flex-basis: 3.5rem;
+            display: flex;
+            gap: 1em;
             flex-shrink: 0;
-            margin: 1rem;
+            padding: $spacing-s $spacing-m;
             box-sizing: border-box;
+            border-bottom: 1px solid $editor-lightgray;
+            .name {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+            .seen {
+                color: lighten($clr2, 60%);
+            }
         }
 
         .messages {
-            padding: 1rem;
-            background: $background;
+            padding: 1em;
+            box-shadow: inset 3px 3px 20px -10px rgba($clr7, 90%);
+            background: lighten($editor-lightgray, 2%);
             flex-grow: 2;
             overflow-y: auto;
             // height: 85%;
-
             .time {
                 font-size: 0.8rem;
                 background: $time-bg;
-                padding: 0.25rem 1rem;
+                padding: 0.25rem 1em;
                 border-radius: 2rem;
                 color: $text-3;
                 width: fit-content;
@@ -166,25 +75,23 @@ $background: #f7f7f7;
 
             .message {
                 box-sizing: border-box;
-                padding: 0.5rem 1rem;
-                margin: 1rem;
-                background: #fff;
+                padding: 0.5em 1em;
+                margin: $spacing-m 1em;
+                background: $clr1;
                 border-radius: 1.125rem 1.125rem 1.125rem 0;
                 min-height: 2.25rem;
                 width: fit-content;
-                max-width: 66%;
-
-                box-shadow: 0 0 2rem rgba($clr2, 0.075), 0rem 1rem 1rem -1rem rgba($clr2, 0.1);
+                box-shadow: 0 0 2rem rgba($clr2, 0.075), 0rem 1em 1em -1em rgba($clr2, 0.1);
 
                 &.owner {
-                    margin: 1rem 1rem 1rem auto;
+                    margin: 1em 1em 1em auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
-                    background: #333;
+                    background: darken($clr7, 5%);
                     color: $clr1;
                 }
 
                 &.parker {
-                    margin: 1rem 1rem 1rem auto;
+                    margin: 1em 1em 1em auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
                     background: $text-1;
                     color: $clr1;
@@ -218,11 +125,9 @@ $background: #f7f7f7;
             flex-shrink: 0;
             display: flex;
             align-items: center;
-            padding: 0 0.5rem 0 1.5rem;
-
+            padding: 0 $spacing-s 0 $spacing-m;
+            border-top: 1px solid $editor-lightgray;
             i {
-                font-size: 1.5rem;
-                margin-right: 1rem;
                 color: $text-2;
                 cursor: pointer;
                 transition: color 200ms;
@@ -233,19 +138,14 @@ $background: #f7f7f7;
             }
 
             input {
-                border: none;
                 background-image: none;
-                background-color: $clr1;
-                padding: 0.5rem 1rem;
-                margin-right: 1rem;
+                background-color: darken($clr1, 7%);
+                padding: 0.5em 1em;
+                margin-right: 1em;
                 border-radius: 1.125rem;
                 flex-grow: 2;
-                box-shadow: 0 0 1rem rgba($clr2, 0.1), 0rem 1rem 1rem -1rem rgba($clr2, 0.2);
-
-                font-family: Red hat Display, sans-serif;
                 font-weight: 400;
-                letter-spacing: 0.025em;
-
+                letter-spacing: 0.015rem;
                 &:placeholder {
                     color: $text-3;
                 }

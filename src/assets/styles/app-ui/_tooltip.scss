@@ -56,7 +56,7 @@ $tooltip-danger-bg-color: $dark-pink;
 }
 
 [data-tooltip]:after {
-    background: $tooltip-base-bg-color;
+    background: darken($editor-lightgray, 65%);
 }
 
 [data-tooltip] {

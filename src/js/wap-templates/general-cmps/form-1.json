@@ -3,6 +3,7 @@
     "type": "div",
     "name": "form-1",
     "category": "form",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/contact-1_unwtyh.png",
     "cmps": [
         {
             "id": "vNWfDD",

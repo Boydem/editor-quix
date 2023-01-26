@@ -2,7 +2,6 @@ import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import { utilService } from '../../../services/util.service'
 
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
-
     return (
         <>
             <div className='info-box info-box-2'>
@@ -38,7 +37,7 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <article key={idx} className='list-item-preview'>
                         <div className='item'>
                             <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
-                            <span className='user-name'>User</span>
+                            <span className='user-name'>{user.fullname}</span>
                             <div className='message-body'>
                                 <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
                                 <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>
