@@ -92,16 +92,21 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
                     </button>
                 </li>
             </ul>
+            {/* {wap.owner !== 'guest' && (
+                <div className='curr-site-name'>
+                    <pre className='prefix'>Currently editing </pre> <span className='name'>{wap.title}</span>
+                </div>
+            )} */}
             <div className={`save-msg flex align-center ${isSaving ? 'shown' : ''}`}>
                 <FiRefreshCw className='refresh-icon' />
                 Saving...
             </div>
             <div className='site-link'>
                 <label className='publish-url-prefix' htmlFor='publishUrl'>
-                    quix.co.il/
+                    quix.io/
                     <input
                         onChange={handleChange}
-                        value={wapUrlToEdit.publishUrl}
+                        value={wap?.url || wapUrlToEdit.publishUrl}
                         type='text'
                         name='publishUrl'
                         id='publishUrl'

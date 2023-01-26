@@ -377,12 +377,11 @@
         }
 
         .messages {
-            padding: 1rem;
-            background: #f7f7f7;
-            // flex-grow: 1;
+            padding: 0.5em;
+            box-shadow: inset 3px 3px 20px -10px rgba($clr7, 90%);
+            background: lighten($editor-lightgray, 2%);
+            flex-grow: 2;
             overflow-y: auto;
-            height: 0;
-            padding: 0;
             &.flex-end {
                 width: 100%;
                 height: 100%;
@@ -443,18 +442,14 @@
             }
         }
         input {
-            border: none;
             background-image: none;
-            background-color: white;
-            padding: 0.5rem 1rem;
-            margin-right: 1rem;
+            background-color: darken($clr1, 7%);
+            padding: 0.5em 1em;
+            margin-right: 1em;
             border-radius: 1.125rem;
             flex-grow: 2;
-            box-shadow: 0 0 1rem rgba(black, 0.1), 0rem 1rem 1rem -1rem rgba(black, 0.2);
-
-            font-family: Red hat Display, sans-serif;
             font-weight: 400;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.015rem;
 
             &:placeholder {
                 color: #999;
