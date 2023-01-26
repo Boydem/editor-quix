@@ -14,7 +14,7 @@ export function SiteActionsDropdown() {
                 <button
                     data-tooltip='Site Actions'
                     data-tooltip-dir={['left', 'info']}
-                    className='site-actions-dropdown btn-icon'
+                    className='site-actions-dropdown'
                 >
                     <BsThreeDots />
                 </button>

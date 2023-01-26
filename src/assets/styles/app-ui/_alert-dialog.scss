@@ -63,7 +63,7 @@
     background-color: var(--mauve3);
 }
 .Button.violet:focus {
-    box-shadow: 0 0 0 2px black;
+    box-shadow: 0 0 0 2px $clr2;
 }
 .Button.red {
     background-color: var(--red4);

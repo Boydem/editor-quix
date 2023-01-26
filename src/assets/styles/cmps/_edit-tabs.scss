@@ -56,7 +56,7 @@
 }
 .TabsTrigger:focus {
     // position: relative;
-    // box-shadow: 0 0 0 2px black;
+    // box-shadow: 0 0 0 2px $clr2;
 }
 
 .TabsContent {
@@ -68,7 +68,7 @@
     outline: none;
 }
 .TabsContent:focus {
-    // box-shadow: 0 0 0 2px black;
+    // box-shadow: 0 0 0 2px $clr2;
 }
 
 .tabs-inner-content {
@@ -88,7 +88,7 @@
     input.input-edit {
         margin-bottom: 0.2em;
         width: 95.2%;
-        box-shadow: 0 1px 0 0 black;
+        box-shadow: 0 1px 0 0 $clr2;
         border-radius: 0px;
         background: none;
     }
@@ -201,7 +201,7 @@
             img {
                 margin-left: auto;
                 margin-right: auto;
-                // border: 1px solid black;
+                // border: 1px solid $clr2;
                 // border-radius: 10px;
             }
             .file-input {
@@ -305,7 +305,7 @@
                 border-radius: 0.3em;
                 cursor: pointer;
                 background: #e4e8f1;
-                color: black;
+                color: $clr2;
                 text-align: center;
                 display: inline-flex;
                 justify-content: center;
@@ -318,7 +318,7 @@
                 align-items: center;
             }
             img {
-                border: 1px solid black;
+                border: 1px solid $clr2;
                 border-radius: 10px;
             }
             .file-input {
@@ -329,7 +329,7 @@
         }
         input {
             width: 95.2%;
-            box-shadow: 0 1px 0 0 black;
+            box-shadow: 0 1px 0 0 $clr2;
             border-radius: 0px;
             background: none;
         }
@@ -360,7 +360,7 @@
                 border-radius: 0.3em;
                 cursor: pointer;
                 background: #e4e8f1;
-                color: black;
+                color: $clr2;
                 text-align: center;
                 display: inline-flex;
                 justify-content: center;
@@ -373,7 +373,7 @@
                 align-items: center;
             }
             img {
-                border: 1px solid black;
+                border: 1px solid $clr2;
                 border-radius: 10px;
             }
             .file-input {
@@ -487,9 +487,9 @@
                     background: #e4e8f1;
                     padding: 0em 0.3em;
                     border-radius: 0.3em;
-                    color: black;
+                    color: $clr2;
                     &:focus {
-                        color: black;
+                        color: $clr2;
                     }
                 }
             }

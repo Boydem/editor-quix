@@ -138,7 +138,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                                 ref={provided.innerRef}
                                                             >
                                                                 <button
-                                                                    className='btn-icon close'
+                                                                    className='close'
                                                                     onClick={() => onDelete(idx, item.id)}
                                                                 >
                                                                     <FiTrash />
