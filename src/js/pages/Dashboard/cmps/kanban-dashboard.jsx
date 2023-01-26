@@ -2,54 +2,17 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { makeId, utilService } from '../../../services/util.service'
 import { FiTrash } from 'react-icons/fi'
-import { updateUser } from '../../../store/user/user.actions'
+import { setCurrSite, updateUser } from '../../../store/user/user.actions'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
+import { useSelector } from 'react-redux'
+import { updateCurrSite } from '../../../store/wap/wap.action'
+import { showErrorMsg } from '../../../services/event-bus.service'
 
 export function KanbanDashboard({ user, currSite }) {
-    console.log('currSite:', currSite)
     const [newItemText, setNewItemText] = useState({})
     const [boards, setBoards] = useState(currSite.leadsBoards)
-    useEffect(() => {}, [user.boards])
-
     useEffect(() => {
-        // const formattedBoards = currSite.leads.reduce((acc, lead) => {
-        //     const index = acc.findIndex(board => board.title.toLowerCase() === lead.status)
-        //     console.log('index:', index)
-        //     if (index > -1) {
-        //         acc[index].items.push({ id: makeId(), data: lead.data, createdAt: lead.data.date })
-        //     } else {
-        //         const boardNew = {
-        //             id: makeId(),
-        //             title: utilService.capitalize(lead.status),
-        //             items: [{ id: makeId(), data: lead.data, createdAt: lead.data.date }],
-        //         }
-        //         acc.push(boardNew)
-        //     }
-        //     return acc
-        // }, [])
-        // console.log('formattedBoards:', formattedBoards)
-        // if (!formattedBoards[0]) {
-        //     formattedBoards[0] = {
-        //         id: makeId(),
-        //         title: 'New',
-        //         items: [],
-        //     }
-        // }
-        // if (!formattedBoards[1]) {
-        //     formattedBoards[1] = {
-        //         id: makeId(),
-        //         title: 'In Progress',
-        //         items: [],
-        //     }
-        // }
-        // if (!formattedBoards[2]) {
-        //     formattedBoards[2] = {
-        //         id: makeId(),
-        //         title: 'Done',
-        //         items: [],
-        //     }
-        // }
-        // setBoards(formattedBoards)
+        setBoards(currSite.leadsBoards)
     }, [currSite])
 
     function handleChange(ev) {
@@ -63,32 +26,33 @@ export function KanbanDashboard({ user, currSite }) {
         if (!result.destination) {
             return
         }
+        let newBoard
         // check if the item was moved within the same list
         if (result.destination.droppableId === result.source.droppableId) {
-            const newBoard = [...boards]
+            newBoard = [...boards]
             const sourceList = newBoard[result.source.droppableId]
             const destList = newBoard[result.destination.droppableId]
             const [removed] = sourceList.items.splice(result.source.index, 1)
             destList.items.splice(result.destination.index, 0, removed)
-            console.log('sourceList:', sourceList)
-            console.log('destList:', destList)
             setBoards(newBoard)
         }
         // if the item was moved to a different list
         else {
-            const newBoard = [...boards]
+            newBoard = [...boards]
             const sourceList = newBoard[result.source.droppableId]
             const destList = newBoard[result.destination.droppableId]
             const [removed] = sourceList.items.splice(result.source.index, 1)
             destList.items.splice(result.destination.index, 0, removed)
-            console.log('result.source:', result.source)
-            // console.log('destList:', destList)
-            updateLeads()
             setBoards(newBoard)
         }
+        currSite.leadsBoards = newBoard
+        try {
+            updateCurrSite(currSite)
+        } catch (err) {
+            showErrorMsg('Failed to update. Please try again later.')
+            console.log('err:', err)
+        }
     }
-
-    function updateLeads() {}
 
     function onSelectItem(ev, item = '', boardIdx) {
         // document.addEventListener('mousedown', () => {
@@ -99,9 +63,7 @@ export function KanbanDashboard({ user, currSite }) {
     function updateItem(ev, itemToUpdate, boardIdx) {
         // if (!itemToUpdate) {
         //     user.boards[boardIdx].title = ev.target.innerText
-        //     console.log('user.boards[boardIdx]', user.boards[boardIdx])
         // } else {
-        //     console.log('ev.target:', ev.target)
         //     itemToUpdate.txt = ev.target.innerText
         // }
         // updateUser(user, boards)
@@ -121,7 +83,6 @@ export function KanbanDashboard({ user, currSite }) {
         //     ...board,
         //     items: [...board.items, { txt: newItemText[boardId], id: makeId(), createdAt: Date.now() }],
         // }
-        // console.log('board addNewItem:', board)
         // setBoards([...boards])
         // updateUser(user, boards)
         // setNewItemText('')
@@ -139,17 +100,10 @@ export function KanbanDashboard({ user, currSite }) {
         //         },
         //     ],
         // }
-        // console.log('boardToAdd:', boardToAdd)
         // user.boards = user.boards.length ? [...user.boards, boardToAdd] : [boardToAdd]
-        // console.log('user.boards:', user.boards)
         // setBoards(user.boards)
         // updateUser(user, boards)
     }
-    // console.log('user:', user)
-    // console.log('currSite:', currSite)
-    // console.log('boards[0]:', boards[0])
-    // console.log('boards:', boards)
-    console.log('boards:', boards)
     if (!boards || !boards.length) return <div>Loading..</div>
     return (
         <DragDropContext onDragEnd={onDragEnd}>
@@ -206,7 +160,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                                 >
                                                                     {item.txt}
                                                                 </span>
-                                                                <small>
+                                                                <small className='time'>
                                                                     {utilService.formatTimeAgo(item.data.date)}
                                                                 </small>
                                                             </li>

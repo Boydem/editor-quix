@@ -84,16 +84,17 @@ export function Dashboard() {
             acc.push(sub.date)
             return acc
         }, [])
-        // const leadTimestamps = currSite?.LeadsBoards.reduce((acc, lead) => {
-        //     acc.push(lead.data.date)
-        //     return acc
-        // }, [])
+        const leadTimestamps = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
+            console.log('lead.data:', lead.data.date)
+            acc.push(lead.data.date)
+            return acc
+        }, [])
         const msgsTimestamps = Object.keys(currSite?.msgs).reduce((acc, key) => {
             acc.push(currSite?.msgs[key].at(-1).date)
             return acc
         }, [])
 
-        const allTimestamps = { subscribersTimestamps, msgsTimestamps }
+        const allTimestamps = { subscribersTimestamps, leadTimestamps, msgsTimestamps }
 
         sortedEvents = Object.entries(allTimestamps)
             .flatMap(([key, values]) => values.map(timestamp => ({ key, timestamp })))

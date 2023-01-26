@@ -232,14 +232,14 @@
 }
 
 .chat-1 {
+    z-index: 4;
+    position: fixed;
+    bottom: 2%;
+    right: 1.5%;
     .hidden {
         display: none !important;
     }
     .open-chat {
-        z-index: 4;
-        position: fixed;
-        bottom: 2%;
-        right: 1.5%;
         outline: none;
         border: none;
         width: 50px;

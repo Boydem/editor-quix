@@ -413,6 +413,7 @@
             flex: 0 0 auto;
             min-height: 20px;
             padding: 10px 8px;
+            padding-left: 16px;
             position: relative;
             font-weight: 700;
             color: darken($editor-lightgray, 55%);
@@ -451,9 +452,19 @@
                         pointer-events: all;
                     }
                 }
+                .time {
+                    color: $clr9;
+                    padding-top: 0.5rem;
+                    margin-left: auto;
+                    display: block;
+                    text-align: right;
+                }
                 .line {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    // display: grid;
+                    // grid-template-columns: 1fr 1fr;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
                 span {
                     // word-wrap: break-word;

@@ -173,6 +173,13 @@ export async function setIsEditing(mode) {
     store.dispatch({ type: SET_IS_EDITING, mode })
 }
 
-export async function setCurrWatched(wapId) {
-    console.log('wapId:', wapId)
+export async function updateCurrSite(currSite) {
+    try {
+        let wap = await wapService.get(currSite._id)
+        wap = { ...wap, ...currSite }
+        await wapService.save(wap)
+    } catch (err) {
+        console.error(err)
+        throw err
+    }
 }
