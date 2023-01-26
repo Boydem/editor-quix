@@ -184,12 +184,11 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     }
 
     async function handleTimeslotClicked(selectedMeeting) {
-        
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
         availableTimeslots.splice(selectedMeetingIdx, 1)
         // setAvailableTimeslots([...availableTimeslots])
         wap.schedule.data = availableTimeslots
-        setIsModalOpen(true)
+        // setIsModalOpen(true)
         saveWap(wap)
     }
     if (!availableTimeslots) return
@@ -209,7 +208,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                 startTimeListStyle={'scroll-list'}
                 startTimeFormatString='HH:mm'
             />
-            <div className={`${isModalOpen ? 'open' : ''} schedule-modal`}>
+            {/* <div className={`${isModalOpen ? 'open' : ''} schedule-modal`}>
                 <form className='send-meeting-form'>
                     <h3>Finalize your booking</h3>
                     <p>Fill up these fields so we let you know in any case of changes !</p>
@@ -232,7 +231,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                     </select>
                     <button type='submit'>Send</button>
                 </form>
-            </div>
+            </div> */}
         </div>
     )
 }

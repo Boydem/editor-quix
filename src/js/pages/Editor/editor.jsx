@@ -47,8 +47,10 @@ export function Editor() {
     function handleSidebarsChanges(side, stateChanges) {
         if (side === 'right') {
             setRightSidebarState(prevState => ({ ...prevState, ...stateChanges }))
+            setLeftSidebarState(prevState => ({ ...prevState, isOpen: false }))
             return
         }
+        setRightSidebarState(prevState => ({ ...prevState, isOpen: false }))
         setLeftSidebarState(prevState => ({ ...prevState, ...stateChanges }))
     }
 
