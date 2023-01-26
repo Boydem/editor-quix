@@ -260,6 +260,10 @@
                 transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
             }
             button {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
                 margin-top: 0;
                 background-color: transparent;
@@ -619,6 +623,19 @@
 }
 
 .section-3 {
+    .layout-container-grid {
+        display: grid;
+        grid-template-columns: calc((100% - var(--container-width)) / 2) 600px 1fr;
+
+        // .full-bleed {
+        //     width: 100%;
+        //     grid-column: 1 / 4;
+        // }
+        // .half-bleed {
+        //     grid-column: 2 / 4;
+        // }
+    }
+
     background: var(--clr1);
 
     color: white;
@@ -635,6 +652,10 @@
     .content {
         padding: 10rem 0;
         grid-column: 2;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // height: 100%;
     }
     h2 {
         font-weight: 600;
@@ -1297,7 +1318,7 @@
             // flex-direction: column;
             .side {
                 .form {
-                    left: -26.5%;
+                    left: -10.5%;
                 }
             }
         }
