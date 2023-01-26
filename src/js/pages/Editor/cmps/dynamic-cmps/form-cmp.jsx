@@ -42,7 +42,6 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
         leadData = { ...leadData, date: new Date().getTime() }
         let lead = { id: makeId(), data: leadData, status: 'new' }
         // lead = { ...lead, id: makeId(), createdAt: new Date().getTime() }
-        console.log('wap.leadsBoards:', wap.leadsBoards)
         wap.leadsBoards[0].items.push(lead)
         try {
             saveWap(wap)

@@ -85,7 +85,6 @@ export function Dashboard() {
             return acc
         }, [])
         const leadTimestamps = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
-            console.log('lead.data:', lead.data.date)
             acc.push(lead.data.date)
             return acc
         }, [])
