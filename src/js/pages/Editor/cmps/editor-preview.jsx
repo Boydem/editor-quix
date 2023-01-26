@@ -4,15 +4,28 @@ import { useRef, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { setClickedCmp, setElClickedNode } from '../../../store/wap/wap.action'
 
-export function EditorPreview({ wapCmps, setRightSidebarState, rightSidebarState, layout, handleSidebarsChanges }) {
+export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSidebarsChanges, leftSidebarState }) {
     const elClickedNode = useSelector(storeState => storeState.wapModule.elClickedNode)
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     const editorWrapper = useRef()
 
     useEffect(() => {
         setEditorWrapperLayout()
-        console.log('test')
+        document.querySelector('.chat-1')
     }, [layout])
+
+    useEffect(() => {
+        const elChat = document.querySelector('.chat-1')
+        const elChatCmp = document.querySelector('.chat')
+        if (elChat && elChatCmp) {
+            setTimeout(() => {
+                const rect = editorWrapper.current.getBoundingClientRect()
+                console.log(rect.right)
+                elChat.style.left = `${rect.right - 75}px`
+                elChatCmp.style.left = `${rect.right - 400}px`
+            }, 500)
+        }
+    }, [rightSidebarState, leftSidebarState])
 
     function setEditorWrapperLayout() {
         editorWrapper.current.style.maxWidth = layout.layoutClass === 'desktopLayout' ? '100%' : `${layout.width}px`
