@@ -185,38 +185,75 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
     async function handleTimeslotClicked(selectedMeeting) {
         const selectedMeetingIdx = selectedMeeting.availableTimeslot.id
+        setMeetingInputs(prev => ({ ...prev, datetime: availableTimeslots[selectedMeetingIdx] }))
+
         availableTimeslots.splice(selectedMeetingIdx, 1)
         // setAvailableTimeslots([...availableTimeslots])
         wap.schedule.data = availableTimeslots
-        // setIsModalOpen(true)
+        setIsModalOpen(true)
         saveWap(wap)
+    }
+
+    const [meetingInputs, setMeetingInputs] = useState({ fullname: '', phoneNumber: '', datetime: '' })
+
+    function handleChange(ev) {
+        const value = ev.target.value
+        const field = ev.target.name
+        setMeetingInputs(prev => ({ ...prev, [field]: value }))
+    }
+
+    function onFinalizeBooking(ev) {
+        ev.preventDefault()
+        wap.schedule.meetings.push(meetingInputs)
+        saveWap(wap)
+        setIsModalOpen(false)
+        console.log(meetingInputs)
     }
     if (!availableTimeslots) return
     return (
-        <div
-            className={`schedule-meeting ${cmp.name}`}
-            onClick={e => onSelectCmp(e, cmp)}
-            onMouseOver={onHoverCmp}
-            onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
-        >
-            <ScheduleMeeting
-                borderRadius={10}
-                primaryColor='#3f5b85'
-                eventDurationInMinutes={wap.schedule.eventDuration}
-                availableTimeslots={availableTimeslots}
-                onStartTimeSelect={handleTimeslotClicked}
-                startTimeListStyle={'scroll-list'}
-                startTimeFormatString='HH:mm'
-            />
-            {/* <div className={`${isModalOpen ? 'open' : ''} schedule-modal`}>
-                <form className='send-meeting-form'>
-                    <h3>Finalize your booking</h3>
-                    <p>Fill up these fields so we let you know in any case of changes !</p>
-                    <label htmlFor='fullName'>Full name</label>
-                    <input type='text' id='fullName' name='fullName' placeholder='Fullname' />
-                    <label htmlFor='phoneNumber'>Phone number</label>
-                    <input type='tel' name='phoneNumber' id='phoneNumber' placeholder='Phone Number' />
-                    <select
+        <>
+            <div
+                className={`schedule-meeting ${cmp.name}`}
+                onClick={e => onSelectCmp(e, cmp)}
+                onMouseOver={onHoverCmp}
+                onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
+            >
+                <ScheduleMeeting
+                    borderRadius={10}
+                    primaryColor='#3f5b85'
+                    eventDurationInMinutes={wap.schedule.eventDuration}
+                    availableTimeslots={availableTimeslots}
+                    onStartTimeSelect={handleTimeslotClicked}
+                    startTimeListStyle={'scroll-list'}
+                    startTimeFormatString='HH:mm'
+                />
+            </div>
+            {isModalOpen && (
+                <>
+                    <div className='black-overlay'></div>
+                    <div className='schedule-modal'>
+                        <form className='send-meeting-form' onSubmit={onFinalizeBooking}>
+                            <h3>Finalize your booking</h3>
+                            <p>Fill up these fields so we let you know in any case of changes !</p>
+                            <label htmlFor='fullName'>Full name</label>
+                            <input
+                                type='text'
+                                id='fullName'
+                                name='fullname'
+                                placeholder='Fullname'
+                                onChange={handleChange}
+                                value={meetingInputs.fullname}
+                            />
+                            <label htmlFor='phoneNumber'>Phone number</label>
+                            <input
+                                type='tel'
+                                name='phoneNumber'
+                                id='phoneNumber'
+                                placeholder='Phone Number'
+                                onChange={handleChange}
+                                value={meetingInputs.phoneNumber}
+                            />
+                            {/* <select
                         type='select'
                         id='serviceSelect'
                         name='serviceSelect'
@@ -228,10 +265,12 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
                                 {service.label}
                             </option>
                         ))}
-                    </select>
-                    <button type='submit'>Send</button>
-                </form>
-            </div> */}
-        </div>
+                    </select> */}
+                            <button type='submit'>Send</button>
+                        </form>
+                    </div>
+                </>
+            )}
+        </>
     )
 }

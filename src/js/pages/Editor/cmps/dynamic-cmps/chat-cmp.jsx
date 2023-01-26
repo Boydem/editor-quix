@@ -31,7 +31,7 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         let currGuest
         if (!msgs) {
             currGuest = `guest${utilService.makeId()}`
-            wap.msgs = { ...wap.msgs, [currGuest]: [] }
+            wap.msgs = { [currGuest]: [], ...wap.msgs }
             msgs = wap.msgs[currGuest]
         }
         msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
