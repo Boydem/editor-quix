@@ -67,6 +67,7 @@ $background: #f7f7f7;
                 font-size: 0.8rem;
                 background: linear-gradient(200deg, #34446757, lighten($clr7, 1%));
                 padding: 0.25rem 1em;
+                opacity: 0.55;
                 border-radius: 2rem;
                 color: $clr1;
                 width: fit-content;
@@ -86,7 +87,7 @@ $background: #f7f7f7;
                 &.owner {
                     margin: 1em 1em 1em auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
-                    background: linear-gradient(200deg, #344467, darken($clr7, 1%));
+                    background: darken($clr7, 5%);
                     color: $clr1;
                 }
 

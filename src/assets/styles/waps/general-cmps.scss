@@ -356,11 +356,9 @@
     }
 
     .chat {
-        bottom: 9%;
-        right: 15%;
-        position: fixed;
-        // bottom: 130%;
-        // right: 70px;
+        position: absolute;
+        bottom: 130%;
+        right: 1%;
 
         display: flex;
         flex-direction: column;
@@ -423,7 +421,7 @@
                 &.customer {
                     margin: 1em 0 1em auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
-                    background: linear-gradient(200deg, #344467, darken($clr7, 1%));
+                    background: darken($clr7, 5%);
                     color: $clr1;
                 }
 
