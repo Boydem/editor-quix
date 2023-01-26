@@ -45,6 +45,7 @@ export function DashboardMain({ user, currSite }) {
         const oneDay = 24 * 60 * 60 * 1000 // milliseconds in one day
         const week = new Array(7).fill(0) // create an array of 7 places filled with 0
         for (let timestamp of timestamps) {
+            console.log('timestamp:', timestamp)
             const date = new Date(timestamp)
             const diffDays = Math.round(Math.abs((today.getTime() - date.getTime()) / oneDay))
             if (diffDays < 7) {
@@ -58,10 +59,22 @@ export function DashboardMain({ user, currSite }) {
         acc.push(sub.date)
         return acc
     }, [])
-    const leadTimestamps = currSite.leads?.reduce((acc, lead) => {
+    const leadTimestamps1 = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
+        console.log('lead.data:', lead.data.date)
         acc.push(lead.data.date)
         return acc
     }, [])
+    const leadTimestamps2 = currSite?.leadsBoards[1].items.reduce((acc, lead) => {
+        console.log('lead.data:', lead.data.date)
+        acc.push(lead.data.date)
+        return acc
+    }, [])
+    const leadTimestamps3 = currSite?.leadsBoards[2].items.reduce((acc, lead) => {
+        console.log('lead.data:', lead.data.date)
+        acc.push(lead.data.date)
+        return acc
+    }, [])
+    const leadTimestamps = [...leadTimestamps1, ...leadTimestamps2, ...leadTimestamps3]
 
     let organizedLeadsTimestamps = [0, 0, 0, 0, 0, 0, 0]
     organizedLeadsTimestamps = organizeTimestamps(leadTimestamps)
