@@ -13,7 +13,7 @@ import { GrAnalytics } from 'react-icons/gr'
 import { DashboardMain } from './views/dashboard-main'
 import { SubscriptionsDashboard } from './views/subscriptions-dashboard'
 
-import { setCurrSite, setUser } from '../../store/user/user.actions'
+import { setCurrSite, setUser, setUserSites } from '../../store/user/user.actions'
 import { MessagesDashboard } from './views/messages-dashboard'
 import { SiteSelectDesktop } from './cmps/site-select-desktop'
 import { useDispatch } from 'react-redux'
@@ -35,7 +35,7 @@ export function Dashboard() {
 
     useEffect(() => {
         if (!userId) navigate('/auth/login')
-        loadUser()
+        loadUserSites()
     }, [])
 
     async function onSiteChange(siteId) {
@@ -62,10 +62,10 @@ export function Dashboard() {
         setCurrView(view.toLowerCase())
     }
 
-    async function loadUser() {
+    async function loadUserSites() {
         if (!userId) return
         try {
-            const user = await setUser(userId)
+            await setUserSites(user)
             if (!user.sites || !user.sites.length) navigate('/create')
             dispatch({ type: SET_CURR_SITE, currSite: user.sites[0] })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
@@ -84,16 +84,16 @@ export function Dashboard() {
             acc.push(sub.date)
             return acc
         }, [])
-        const leadTimestamps = currSite?.leads.reduce((acc, lead) => {
-            acc.push(lead.data.date)
-            return acc
-        }, [])
+        // const leadTimestamps = currSite?.LeadsBoards.reduce((acc, lead) => {
+        //     acc.push(lead.data.date)
+        //     return acc
+        // }, [])
         const msgsTimestamps = Object.keys(currSite?.msgs).reduce((acc, key) => {
             acc.push(currSite?.msgs[key].at(-1).date)
             return acc
         }, [])
 
-        const allTimestamps = { subscribersTimestamps, leadTimestamps, msgsTimestamps }
+        const allTimestamps = { subscribersTimestamps, msgsTimestamps }
 
         sortedEvents = Object.entries(allTimestamps)
             .flatMap(([key, values]) => values.map(timestamp => ({ key, timestamp })))

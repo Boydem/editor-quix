@@ -75,6 +75,7 @@ export function DashboardMain({ user, currSite }) {
         labels,
         datasets: [
             {
+                lineTension: 0.4,
                 pointRadius: 3,
                 fill: true,
                 label: 'Subscribers',
@@ -89,6 +90,7 @@ export function DashboardMain({ user, currSite }) {
         labels,
         datasets: [
             {
+                lineTension: 0.4,
                 pointRadius: 3,
                 fill: true,
                 label: 'Leads',

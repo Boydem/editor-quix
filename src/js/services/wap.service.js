@@ -109,7 +109,7 @@ function getUserSites(userWaps) {
     const sites = userWaps.reduce((acc, wap) => {
         acc.push({
             _id: wap._id,
-            leads: wap.leads,
+            leadsBoards: wap.leadsBoards,
             subscribers: wap.subscribers,
             msgs: wap.msgs,
             title: wap.title,
@@ -153,7 +153,23 @@ function getBlankWap() {
         title: 'blank-template',
         cmps: [],
         msgs: [],
-        leads: [],
+        leadsBoards: [
+            {
+                id: makeId(),
+                title: 'New',
+                items: [],
+            },
+            {
+                id: makeId(),
+                title: 'In Progress',
+                items: [],
+            },
+            {
+                id: makeId(),
+                title: 'Done',
+                items: [],
+            },
+        ],
         subscribers: [],
         schedule: {
             eventDuration: 30,
@@ -169,6 +185,58 @@ function getBlankWap() {
     }
 }
 
+function _getDemoKanbans() {
+    return [
+        {
+            _id: makeId(),
+            title: 'Frontend',
+            items: [
+                {
+                    id: makeId(),
+                    txt: 'Add hamburger menu to my site',
+                    createdAt: utilService.randomPastTime(),
+                },
+                {
+                    id: makeId(),
+                    txt: 'Take pictures of my products',
+                    createdAt: utilService.randomPastTime(),
+                },
+                {
+                    id: makeId(),
+                    txt: 'Get 3D Modelist for designing my website',
+                    createdAt: utilService.randomPastTime(),
+                },
+                {
+                    _id: makeId(),
+                    txt: 'Send sales data to Sara',
+                    createdAt: utilService.randomPastTime(),
+                },
+            ],
+        },
+        {
+            id: makeId(),
+            title: 'Clients',
+            items: [
+                {
+                    id: makeId(),
+                    txt: 'improve chats',
+                    createdAt: utilService.randomPastTime(),
+                },
+                {
+                    id: makeId(),
+                    txt: 'FINISH FRONT END - all flow should be working with perfect logic set and ready to be user friendly',
+                    createdAt: utilService.randomPastTime(),
+                },
+                {
+                    id: makeId(),
+                    txt: 'TODAY WE CLEAN ALL COMMENTED UNUSED CODE AT 23:00 !!',
+                    createdAt: utilService.randomPastTime(),
+                },
+            ],
+        },
+    ]
+}
+
 function _createWaps() {
     let waps = JSON.parse(localStorage.getItem(STORAGE_KEY))
     if (!waps || !waps.length) {
@@ -177,7 +245,23 @@ function _createWaps() {
                 _id: utilService.makeId(),
                 name: 'wap-5',
                 owner: 'admin',
-                leads: [],
+                leadsBoards: [
+                    {
+                        id: makeId(),
+                        title: 'New',
+                        items: [],
+                    },
+                    {
+                        id: makeId(),
+                        title: 'In Progress',
+                        items: [],
+                    },
+                    {
+                        id: makeId(),
+                        title: 'Done',
+                        items: [],
+                    },
+                ],
                 schedule: {
                     eventDuration: 30,
                     daysForward: 6,

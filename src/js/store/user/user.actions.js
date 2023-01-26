@@ -32,6 +32,19 @@ export async function setUser(userId) {
         store.dispatch({ type: 'LOADING_DONE' })
     }
 }
+export async function setUserSites(user) {
+    try {
+        store.dispatch({ type: 'LOADING_START' })
+        user.sites = await wapService.query({ owner: user._id })
+        store.dispatch({ type: SET_USER, user })
+        return user
+    } catch (err) {
+        console.error('UserActions: err in loadUser', err)
+        throw err
+    } finally {
+        store.dispatch({ type: 'LOADING_DONE' })
+    }
+}
 
 export async function removeUser(userId) {
     try {

@@ -19,7 +19,6 @@ export const userService = {
     remove,
     update,
     onGoogleLoginSignup,
-    getDemoKanbans,
 }
 
 window.userService = userService
@@ -34,7 +33,6 @@ function _createUsersForTesting() {
                 password: '1',
                 username: '1',
                 _id: 'I6ju1',
-                boards: getDemoKanbans(),
             },
         ])
     }
@@ -116,57 +114,7 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-function getDemoKanbans() {
-    return [
-        {
-            _id: makeId(),
-            title: 'Frontend',
-            items: [
-                {
-                    _id: makeId(),
-                    txt: 'Add hamburger menu to my site',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    _id: makeId(),
-                    txt: 'Take pictures of my products',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    _id: makeId(),
-                    txt: 'Get 3D Modelist for designing my website',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    _id: makeId(),
-                    txt: 'Send sales data to Sara',
-                    createdAt: utilService.randomPastTime(),
-                },
-            ],
-        },
-        {
-            _id: makeId(),
-            title: 'Clients',
-            items: [
-                {
-                    _id: makeId(),
-                    txt: 'improve chats',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    _id: makeId(),
-                    txt: 'FINISH FRONT END - all flow should be working with perfect logic set and ready to be user friendly',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    _id: makeId(),
-                    txt: 'TODAY WE CLEAN ALL COMMENTED UNUSED CODE AT 23:00 !!',
-                    createdAt: utilService.randomPastTime(),
-                },
-            ],
-        },
-    ]
-}
+
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})
 //     await userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 10000, isAdmin: true})
