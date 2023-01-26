@@ -115,11 +115,6 @@ export function Dashboard() {
                                 key={menuItem}
                             >
                                 <span>{menuItem}</span>
-                                <span>
-                                    {/* {menuItem === 'Home' && <IoAnalyticsOutline size={'1.4rem'} />}
-                                    {menuItem === 'Messages' && <GrAnalytics size={'1.4rem'} />}
-                                    {menuItem === 'Forms' && <GrAnalytics size={'1.4rem'} />} */}
-                                </span>
                             </li>
                         ))}
                     </ul>
@@ -129,7 +124,6 @@ export function Dashboard() {
                 <div className='main-header layout-wrapper'>
                     <div className='titles'>
                         <h2>Hello, {user.fullname}</h2>
-                        <h6>Welcome to your Dashboard</h6>
                     </div>
                     <div className='actions'>
                         <SiteActionsDropdown />

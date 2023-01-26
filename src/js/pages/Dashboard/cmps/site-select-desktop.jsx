@@ -1,4 +1,5 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
+import quixIcon from '../../../../assets/imgs/quix-icon-darkblue.png'
 import { utilService } from '../../../services/util.service'
 
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
@@ -23,7 +24,7 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                         onClick={() => onChangeSite(site._id)}
                     >
                         <div className='item'>
-                            <img src={explorerSVG} alt='explorerSVG' />
+                            <img src={quixIcon} className='thumbnail' alt='imgUrl' />
                             <span>{site.title}</span>
                         </div>
                     </article>

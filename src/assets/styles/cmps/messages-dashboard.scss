@@ -65,10 +65,10 @@ $background: #f7f7f7;
             // height: 85%;
             .time {
                 font-size: 0.8rem;
-                background: $time-bg;
+                background: linear-gradient(200deg, #34446757, lighten($clr7, 1%));
                 padding: 0.25rem 1em;
                 border-radius: 2rem;
-                color: $text-3;
+                color: $clr1;
                 width: fit-content;
                 margin: 0 auto;
             }
@@ -86,7 +86,7 @@ $background: #f7f7f7;
                 &.owner {
                     margin: 1em 1em 1em auto;
                     border-radius: 1.125rem 1.125rem 0 1.125rem;
-                    background: darken($clr7, 5%);
+                    background: linear-gradient(200deg, #344467, darken($clr7, 1%));
                     color: $clr1;
                 }
 

@@ -8,7 +8,7 @@
         font-weight: 700;
     }
     display: grid;
-    grid-template-columns: 106px 1fr $spacing-m;
+    grid-template-columns: auto 1fr $spacing-m;
     min-height: calc(100vh - 1px - $app-header-height);
     place-content: baseline;
     grid-auto-flow: dense;
@@ -39,39 +39,44 @@
         pointer-events: all;
         z-index: 2;
         border-right: 1px solid $editor-lightgray;
+        background-color: #131720;
+        color: #c3d0d2;
         .dashboard-nav {
             .menu-items {
-                padding: $spacing-s 0;
-                // margin-bottom: $spacing-s;
-                border-bottom: 1px solid $editor-lightgray;
-                & > * {
+                margin-top: $spacing-m;
+
+                .menu-item {
                     cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-width: 228px;
+                    width: 100%;
+                    min-height: 32px;
+                    border: 0;
+                    text-align: start;
                     text-transform: uppercase;
                     font-weight: 600;
                     letter-spacing: 0.05rem;
                     font-size: px-to-rem(12.44px);
-                    padding: $spacing-xs $spacing-m;
+                    padding: $spacing-s $spacing-m;
                     transition: background-color 0.3s, color 0.3s;
+                    span {
+                    }
                     &:hover:not(.active) {
-                        background-color: $editor-hover-bg;
+                        color: $clr1;
+                        background-color: #2b2e36;
                     }
                     &.active {
-                        background-color: $editor-active-bg;
-                        color: $editor-active-clr;
+                        background-color: #42454c;
+                        color: $clr1;
                     }
-                }
-                .menu-item {
-                    display: flex;
-                    align-items: start;
-                    flex-wrap: wrap;
-                    flex-direction: column;
-                    padding: $spacing-s $spacing-m;
                 }
             }
         }
     }
     .dashboard-main {
-        background-color: #eaecf1;
+        background-color: #dadae4;
         box-shadow: inset 0px 0px 20px -10px rgba($editor-outline, 50%);
         max-height: calc(100vh - $app-header-height - 1px);
         overflow: auto;
@@ -117,22 +122,20 @@
                 display: flex;
                 align-items: center;
                 gap: 1em;
-                background-color: $clr1;
-                padding: 0.75em;
-                border-radius: $spacing-xs;
-                box-shadow: 0px 3px 6px -1px rgba($clr7, 30%);
+
                 > * {
                     width: max-content;
                     color: $editor-active-clr;
-                    background-color: $editor-active-bg;
+                    background-color: $clr1;
                     // padding: 0 1em;
                     height: 100%;
                     border-radius: 4px;
                     cursor: pointer;
                 }
                 button.site-actions-dropdown {
-                    padding: $spacing-xs;
-                    border-radius: 3px;
+                    padding: 4px 4px;
+
+                    border-radius: 33px;
                 }
                 button.site-actions-edit {
                     padding: 4px 26px;
@@ -223,8 +226,7 @@
                 flex: 1;
                 width: 100%;
                 padding: $spacing-s 0;
-                margin-top: 1rem;
-                box-shadow: 0px 0px 25px -10px rgba($editor-outline, 15%);
+                padding-inline-start: 1em;
                 > * {
                     width: 100%;
                     margin: auto;
@@ -293,6 +295,7 @@
                 padding: $spacing-s $spacing-m;
                 width: 100%;
                 border-bottom: 1px solid $editor-lightgray;
+
                 h4 {
                     font-weight: 700;
                     text-transform: uppercase;
@@ -313,7 +316,6 @@
                 &.active {
                     background: lighten($editor-active-bg, 1%);
                     color: darken($editor-active-clr, 1%);
-
                     svg {
                         fill: white;
                         color: darken($editor-active-clr, 1%);
@@ -329,18 +331,19 @@
                     }
                 }
                 > .item {
-                    cursor: pointer;
-                    color: $clr18;
-
-                    img {
-                        max-width: 50px;
-                        border-radius: 5px;
-                        margin-inline-end: $spacing-xs;
-                    }
                     display: grid;
                     grid-template-columns: auto 1fr auto;
                     align-items: center;
                     width: 100%;
+                    cursor: pointer;
+                    color: $clr18;
+                    .thumbnail {
+                        max-width: 100%;
+                        max-width: 2em;
+                        border-radius: 555px;
+                        margin-inline-end: 1em;
+                        object-fit: cover;
+                    }
                     .actions {
                         justify-self: end;
                     }
@@ -354,7 +357,7 @@
         center center/cover;
     bottom: 0;
     left: 0;
-    margin-bottom: 8px;
+    margin: 0 !important;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0;
@@ -417,6 +420,7 @@
             position: relative;
             font-weight: 700;
             color: darken($editor-lightgray, 55%);
+            border-bottom: 1px solid rgb(68 68 100 / 17%);
         }
         .list-items {
             flex: 1 1 auto;
@@ -500,6 +504,8 @@
             background-color: rgb(218 223 235);
             input {
                 background-color: darken($editor-lightgray, 1%);
+                padding: 10px 8px;
+                padding-left: 16px;
                 &::placeholder {
                     /* Chrome, Firefox, Opera, Safari 10.1+ */
                     color: darken($editor-lightgray, 55%);
