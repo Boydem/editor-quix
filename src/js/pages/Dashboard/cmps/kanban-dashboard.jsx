@@ -9,47 +9,8 @@ export function KanbanDashboard({ user, currSite }) {
     console.log('currSite:', currSite)
     const [newItemText, setNewItemText] = useState({})
     const [boards, setBoards] = useState(currSite.leadsBoards)
-    useEffect(() => {}, [user.boards])
-
     useEffect(() => {
-        // const formattedBoards = currSite.leads.reduce((acc, lead) => {
-        //     const index = acc.findIndex(board => board.title.toLowerCase() === lead.status)
-        //     console.log('index:', index)
-        //     if (index > -1) {
-        //         acc[index].items.push({ id: makeId(), data: lead.data, createdAt: lead.data.date })
-        //     } else {
-        //         const boardNew = {
-        //             id: makeId(),
-        //             title: utilService.capitalize(lead.status),
-        //             items: [{ id: makeId(), data: lead.data, createdAt: lead.data.date }],
-        //         }
-        //         acc.push(boardNew)
-        //     }
-        //     return acc
-        // }, [])
-        // console.log('formattedBoards:', formattedBoards)
-        // if (!formattedBoards[0]) {
-        //     formattedBoards[0] = {
-        //         id: makeId(),
-        //         title: 'New',
-        //         items: [],
-        //     }
-        // }
-        // if (!formattedBoards[1]) {
-        //     formattedBoards[1] = {
-        //         id: makeId(),
-        //         title: 'In Progress',
-        //         items: [],
-        //     }
-        // }
-        // if (!formattedBoards[2]) {
-        //     formattedBoards[2] = {
-        //         id: makeId(),
-        //         title: 'Done',
-        //         items: [],
-        //     }
-        // }
-        // setBoards(formattedBoards)
+        setBoards(currSite.leadsBoards)
     }, [currSite])
 
     function handleChange(ev) {
@@ -206,7 +167,7 @@ export function KanbanDashboard({ user, currSite }) {
                                                                 >
                                                                     {item.txt}
                                                                 </span>
-                                                                <small>
+                                                                <small className='time'>
                                                                     {utilService.formatTimeAgo(item.data.date)}
                                                                 </small>
                                                             </li>
