@@ -356,9 +356,11 @@
     }
 
     .chat {
-        position: absolute;
-        bottom: 130%;
-        right: 1%;
+        bottom: 9%;
+        right: 15%;
+        position: fixed;
+        // bottom: 130%;
+        // right: 70px;
 
         display: flex;
         flex-direction: column;
