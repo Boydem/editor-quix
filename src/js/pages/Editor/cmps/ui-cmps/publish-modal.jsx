@@ -20,11 +20,11 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
             return
         }
         try {
-            const isUrlFree = await wapService.isWapUrlFree(wapUrlToEdit.publishUrl)
-            if (!isUrlFree) {
-                showErrorMsg(`URL is already taken!`)
-                return
-            }
+            // const isUrlFree = await wapService.isWapUrlFree(wapUrlToEdit.publishUrl)
+            // if (!isUrlFree) {
+            //     showErrorMsg(`URL is already taken!`)
+            //     return
+            // }
             wap.owner = user._id
             wap.title = wapUrlToEdit.title
             wap.url = wapUrlToEdit.publishUrl
