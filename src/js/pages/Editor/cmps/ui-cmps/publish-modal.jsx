@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
+import { wapService } from '../../../../services/wap.service'
 import { saveWap } from '../../../../store/wap/wap.action'
 import { PublishLoginSignup } from './publish-login'
 
@@ -19,6 +20,11 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
             return
         }
         try {
+            const isUrlFree = await wapService.isWapUrlFree(wapUrlToEdit.publishUrl)
+            if (!isUrlFree) {
+                showErrorMsg(`URL is already taken!`)
+                return
+            }
             wap.owner = user._id
             wap.title = wapUrlToEdit.title
             wap.url = wapUrlToEdit.publishUrl
@@ -106,7 +112,7 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
                         <h5 className='secondary-title'>Choose where next</h5>
                         <div className='where-next-btns'>
                             <button className='app-btn primary'>
-                                <Link to={`/dashboard/${user._id}`}>Admin Panel</Link>
+                                <Link to={`/dashboard/${user?._id}`}>Admin Panel</Link>
                             </button>
                             <button className='app-btn secondary'>
                                 <Link to={`/${wap.url}`}>Preview</Link>

@@ -30,6 +30,7 @@ export const wapService = {
     removeCmp,
     saveCmp,
     getBlankWap,
+    isWapUrlFree,
 }
 
 let gCmpsMap
@@ -51,6 +52,15 @@ async function getWapByUrl(wapUrl) {
         throw err
     }
     // return gCmpsMap[activeModule].find(cmp => cmp.url === cmpUrl)
+}
+async function isWapUrlFree(wapUrl) {
+    console.log('wapUrl:', wapUrl)
+    const waps = await query()
+    console.log('waps:', waps)
+    const isFoundIndex = waps.findIndex(wap => wap.url === wapUrl)
+    console.log('isFoundIndex:', isFoundIndex)
+
+    return isFoundIndex === -1
 }
 
 function _createMap() {
@@ -92,7 +102,9 @@ async function query(filterBy = { owner: 'guest', url: '' }) {
         const waps = await storageService.query(STORAGE_KEY)
 
         let filteredWaps = waps
-        if (filterBy.owner !== 'guest') {
+        if (filterBy.owner === 'all') {
+            return waps
+        } else if (filterBy.owner !== 'guest') {
             filteredWaps = waps.filter(wap => wap.owner === filterBy.owner)
             const userSites = getUserSites(filteredWaps)
             return userSites
