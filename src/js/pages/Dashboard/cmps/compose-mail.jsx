@@ -43,13 +43,14 @@ export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
             </div>
             <div className='mail-container'>
                 <textarea id='' rows='14' value={msg} onChange={handleChange} name='message'></textarea>
-            </div>
-            <div className='actions'>
-                <div className='btns'></div>
-                <div className='send'>
-                    <button type='submit'>Send now</button>
+                <div className='actions'>
+                    <div className='btns'></div>
+                    <div className='send'>
+                        <button type='submit'>Send now</button>
+                    </div>
                 </div>
             </div>
+
             <input
                 type='text'
                 hidden={true}

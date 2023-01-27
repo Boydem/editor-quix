@@ -105,7 +105,7 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
                     </div>
                 ) : (
                     <div className='content-container'>
-                        <h4>Congratulations</h4>
+                        <h4>Congratulations!</h4>
                         <p>Your site is published and live online</p>
 
                         <div className='seperator'></div>

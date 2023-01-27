@@ -34,7 +34,7 @@
 
         position: relative;
         .content-container {
-            min-width: 380px;
+            width: 440px;
             min-height: 30vh;
             // max-width: 320px;
             margin: 0 auto;
@@ -47,7 +47,7 @@
                 display: flex;
                 gap: $spacing-m;
                 button.app-btn.secondary {
-                    box-shadow: inset 0px 0px 0px 1px $editor-active-clr;
+                    // box-shadow: inset 0px 0px 0px 1px $editor-active-clr;
                     color: $editor-active-clr;
                 }
             }
@@ -65,7 +65,6 @@
             font-size: 16px;
         }
         button {
-            margin-top: 1em;
             align-self: center;
             &.app-btn.primary > * {
                 color: $clr1;
