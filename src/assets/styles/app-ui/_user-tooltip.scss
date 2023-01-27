@@ -5,13 +5,17 @@
 .HoverCardContent {
     $clrdarken: darken($clr1, 8%);
     z-index: 99999;
-    border-radius: 6px;
-    padding: $spacing-s $spacing-l 0 $spacing-s;
-    background: linear-gradient(184deg, white, $clrdarken);
+    background-color: $clr1;
     box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
     animation-duration: 400ms;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
+    border-radius: 6px;
+    padding: $spacing-m;
+    width: 300px;
+    will-change: transform, opacity;
+
+    max-width: 300px;
     &.guest {
         padding: 1em $spacing-m;
         .login-signup-guest {
@@ -33,70 +37,93 @@
             }
         }
     }
-}
-.HoverCardContent[data-side='top'] {
-    animation-name: slideDownAndFade;
-}
-.HoverCardContent[data-side='right'] {
-    animation-name: slideLeftAndFade;
-}
-.HoverCardContent[data-side='bottom'] {
-    animation-name: slideUpAndFade;
-}
-.HoverCardContent[data-side='left'] {
-    animation-name: slideRightAndFade;
-}
-.HoverCardArrow {
-    fill: white;
-}
-.user-img {
-    display: block;
-    border-radius: 100%;
-}
-.user-img.normal {
-    width: 45px;
-    height: 45px;
-}
-.user-img.large {
-    width: 60px;
-    height: 60px;
-}
-.card-container {
-    display: flex;
 
-    gap: 1em;
-    img {
+    .HoverCardContent[data-side='top'] {
+        animation-name: slideDownAndFade;
     }
-    .text-container {
-        .text {
-            font-weight: 600;
-            font-size: 1rem;
-            border-bottom: 1px solid lighten($clr2, 80%);
-            padding-bottom: $spacing-xxs;
-            margin-bottom: $spacing-xs;
+    .HoverCardContent[data-side='right'] {
+        animation-name: slideLeftAndFade;
+    }
+    .HoverCardContent[data-side='bottom'] {
+        animation-name: slideUpAndFade;
+    }
+    .HoverCardContent[data-side='left'] {
+        animation-name: slideRightAndFade;
+    }
+
+    .HoverCardArrow {
+        fill: $clr1;
+    }
+
+    .ImageTrigger {
+        cursor: pointer;
+        border-radius: 100%;
+        display: inline-block;
+    }
+    .ImageTrigger:focus {
+        box-shadow: 0 0 0 2px $clr1;
+    }
+
+    .Image {
+        display: block;
+        border-radius: 100%;
+    }
+    .Image.normal {
+        width: 45px;
+        height: 45px;
+    }
+    .Image.large {
+        width: 60px;
+        height: 60px;
+    }
+
+    .Text {
+        margin: 0;
+        color: var(--mauve12);
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    .Text.faded {
+        color: var(--mauve10);
+    }
+    .Text.bold {
+        font-weight: 500;
+    }
+    .logout-icon {
+        position: absolute;
+        top: $spacing-s;
+        right: $spacing-s;
+        color: darken($editor-lightgray, 20%);
+        &:hover {
+            color: darken($editor-lightgray, 50%);
         }
     }
-}
-.logout-icon {
-    position: absolute;
-    top: $spacing-s;
-    right: $spacing-s;
-    color: darken($editor-lightgray, 20%);
-    &:hover {
-        color: darken($editor-lightgray, 50%);
-    }
-}
-.btn-primary {
-    background-color: $editor-active-clr;
-    color: $editor-active-bg;
-    padding: 2px 6px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
-        background-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    border: 1px solid darken($editor-active-clr, 6%);
-    &:hover {
+    .btn-primary {
+        background-color: $editor-active-clr;
         color: $editor-active-bg;
-        background-color: darken($editor-active-clr, 6%);
+        padding: 2px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        border: 1px solid darken($editor-active-clr, 6%);
+        &:hover {
+            color: $editor-active-bg;
+            background-color: darken($editor-active-clr, 6%);
+        }
+    }
+    .user-img {
+        display: block;
+        border-radius: 100%;
+    }
+    .user-img.normal {
+        width: 45px;
+        height: 45px;
+    }
+    .user-img.large {
+        width: 60px;
+        height: 60px;
+    }
+    .card-container {
     }
 }

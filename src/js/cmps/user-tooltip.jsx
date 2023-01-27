@@ -29,11 +29,10 @@ export function UserTooltip({ user }) {
             </HoverCard.Trigger>
             <HoverCard.Portal>
                 <HoverCard.Content className={`${!user ? 'guest' : ''} card-container HoverCardContent`} sideOffset={5}>
-                    {user && <img className='user-img normal' src={user.imgUrl} alt='userImg' />}
                     <div>
                         {user ? (
                             <>
-                                <div className='text-container'>
+                                {/* <div className='text-container'>
                                     <div className='text'>Hi, {user.fullname}</div>
                                 </div>
                                 <div>
@@ -50,6 +49,34 @@ export function UserTooltip({ user }) {
                                     >
                                         <FiLogOut />
                                     </button>
+                                </div> */}
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+                                    {user && <img className='user-img normal' src={user.imgUrl} alt='userImg' />}
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
+                                        <div>
+                                            <div className='Text bold'>{user.fullname}</div>
+                                            <div className='Text faded'>@{user.username}</div>
+                                        </div>
+                                        <div className='Text'>
+                                            Components, icons, colors, and templates for building high-quality,
+                                            accessible UI. Free and open-source.
+                                        </div>
+                                        <div style={{ display: 'flex', gap: 15 }}>
+                                            <Link className='btn-primary' to={`/dashboard/${user._id}`}>
+                                                Admin panel
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className='icon-container'>
+                                        <button
+                                            data-tooltip={'Logout'}
+                                            data-tooltip-dir={'left'}
+                                            className='logout-icon btn-icon'
+                                            onClick={onLogout}
+                                        >
+                                            <FiLogOut />
+                                        </button>
+                                    </div>
                                 </div>
                             </>
                         ) : (

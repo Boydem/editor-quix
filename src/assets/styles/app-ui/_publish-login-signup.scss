@@ -48,8 +48,6 @@ fieldset {
     margin-top: 1em;
     margin-bottom: 1em;
     color: darken($color: $editor-lightgray, $amount: 30%);
-    font-size: 13px;
-    line-height: 1;
 }
 
 .Fieldset {
@@ -76,6 +74,7 @@ fieldset {
     box-shadow: inset 0 0 0 1px lighten($editor-active-clr, 30%);
     padding: $spacing-s 1em;
     transition: box-shadow 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background: white;
 }
 .Input:focus {
     box-shadow: inset 0 0 0 2px $editor-active-clr;
