@@ -20,6 +20,15 @@
     }
     &.dark {
         background-color: $clr2;
+        .layout-wrapper {
+            grid-template-columns: auto 1fr;
+        }
+        .user-area {
+            margin-inline-start: auto;
+            .avatar {
+                box-shadow: 0px 0px 0px 0px $editor-active-clr;
+            }
+        }
         & *,
         & a {
             fill: $clr1 !important;
@@ -87,6 +96,14 @@
             &.publish {
                 background-color: $editor-active-clr;
                 color: $clr1;
+                display: inline-flex;
+                align-items: center;
+                box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+                padding: $spacing-xxs 1em;
+                border-radius: 4px;
+                border: 1px solid transparent;
+                font-size: 14px;
+                font-weight: 600;
                 &:hover {
                     background-color: darken($editor-active-clr, 10%);
                 }

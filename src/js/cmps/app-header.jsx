@@ -58,6 +58,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                         </ul>
                     </>
                 )}
+                {location === 'index' && (
+                    <div className='user-area'>
+                        <UserTooltip user={user} />
+                    </div>
+                )}
                 {location === 'editor' && (
                     <>
                         <div className='sites-actions'>

@@ -49,7 +49,7 @@ export function WapIndex() {
     if (!waps) return <></>
     return (
         <>
-            <AppHeader location={''} theme={'dark'} layout={'main-layout'} />
+            <AppHeader location={'index'} theme={'dark'} layout={'main-layout'} />
             <section className='wap-index full main-layout'>
                 <div className='intro full main-layout'>
                     <div className='wrapper'>
