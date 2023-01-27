@@ -133,6 +133,7 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                     </div>
                 </div>
                 <div className='menu-wrapper'>
+                    <div className='scroll-indicator-wrapper'></div>
                     <ul className={`menu-items`}>
                         {menuItems.map(menuItem => (
                             <li

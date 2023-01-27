@@ -68,7 +68,7 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
             {provided => {
                 return (
                     <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
-                        <div className='wrapper templates-css-reset' ref={editorWrapper}>
+                        <div className='editor-wrapper templates-css-reset' ref={editorWrapper}>
                             {wapCmps.map((cmp, idx) => {
                                 return (
                                     <Draggable key={idx} draggableId={idx.toString()} index={idx}>

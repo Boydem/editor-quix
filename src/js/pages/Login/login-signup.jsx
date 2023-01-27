@@ -5,7 +5,7 @@ import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { AppHeader } from '../../cmps/app-header'
 import { GoogleLoginSignup } from './google-login-signup'
 
-export function LoginSignup({ onLogin, onSignup }) {
+export function LoginSignup() {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignup, setIsSignup] = useState(false)
     const navigate = useNavigate()
@@ -30,6 +30,10 @@ export function LoginSignup({ onLogin, onSignup }) {
     }
 
     async function onLogin(ev) {
+        if (!credentials.username || !credentials.password) {
+            showErrorMsg('Please fill all forms!')
+            return
+        }
         ev.preventDefault()
         try {
             const user = await login(credentials)
@@ -44,6 +48,10 @@ export function LoginSignup({ onLogin, onSignup }) {
     }
 
     async function onSignup(ev) {
+        if (!credentials.username || !credentials.password || !credentials.fullname) {
+            showErrorMsg('Please fill all forms!')
+            return
+        }
         ev.preventDefault()
         try {
             const user = await signup(credentials)

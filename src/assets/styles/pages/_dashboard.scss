@@ -248,9 +248,8 @@
                 box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
             }
             .text-wrapper {
-                min-width: 280px;
                 place-self: start;
-                margin-inline-end: 1rem;
+
                 .level {
                     margin-bottom: 1rem;
                 }
@@ -271,6 +270,20 @@
             // border: 1px solid $editor-active-bg;
             background-color: darken($editor-active-clr, 15%);
             color: $clr1;
+            .free-domain {
+                h5 {
+                    text-align: start;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    color: rgba($clr1, 50%);
+                    margin-bottom: 0;
+                }
+                .link-preview-container {
+                    color: $clr2;
+                    align-items: stretch;
+                    justify-items: flex-start;
+                }
+            }
             .text-wrapper {
                 p {
                     color: $clr1;
@@ -281,8 +294,11 @@
                 }
                 h3 {
                     color: $clr1;
-                    font-weight: 200;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    font-size: 1rem;
                     margin-bottom: $spacing-xxs;
+                    border-bottom: 1px solid #ffffff2e;
                 }
             }
         }
@@ -352,6 +368,9 @@
         }
     }
     .kanban-board {
+        // $border: 1px solid black;
+        display: flex;
+        flex-direction: column;
         // background: url('../../imgs/home-assets/webix-section-bg.webp') center center/cover;
         background-color: darken($editor-lightgray, 11%) !important;
         bottom: 0;
@@ -363,6 +382,116 @@
         position: absolute;
         right: 0;
         top: 0;
+        // padding: 0 0 $spacing-m 0 !important;
+        padding: 0 !important;
+
+        .leads-table {
+            // border: $border;
+            .col {
+            }
+        }
+        .lists-container {
+            max-height: 100%;
+            overflow: hidden;
+            flex: 1;
+            padding: $spacing-m;
+            padding-top: calc($spacing-m);
+            padding-bottom: calc($spacing-m);
+        }
+        .leads-table {
+            background: lighten(#bcbcd1, 5);
+        }
+        .table-box {
+            background: transparent !important;
+            width: 95%;
+            margin: $spacing-m;
+            max-height: 100%;
+            overflow-y: auto;
+            padding: 0;
+            border-radius: 6px;
+            &::-webkit-scrollbar-thumb {
+                border: 3px solid transparent;
+                border-radius: 100px;
+                background-color: $clr9;
+                background-clip: content-box;
+            }
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: $clr12;
+            }
+
+            .table-row.container {
+                background-color: rgba(255, 255, 255, 0.589);
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+                height: 100%;
+                white-space: nowrap;
+                .col:last-child {
+                    align-self: flex-end;
+                    text-align: right;
+                }
+                .col:nth-child(2n) {
+                    background: lighten(#bcbcd1, 10);
+                }
+            }
+        }
+        .inner-nav {
+            width: 100%;
+            position: sticky;
+            left: 0;
+            padding: $spacing-s $spacing-m;
+            padding-bottom: calc($spacing-m / 2);
+            border-bottom: 1px solid $clr11;
+            font-weight: 700;
+            color: rgba(37, 37, 54, 0.918);
+            border-bottom: 1px solid rgba(68, 68, 100, 0.17);
+            background-color: #ffffffc2;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            h4 {
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #2e2f38;
+                font-size: 1rem;
+                line-height: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .btns {
+                button {
+                    // font-weight: 700;
+                    color: rgba(37, 37, 54, 0.918);
+                    background-color: #e9e9f0;
+                    // padding: 0.3rem 1rem;
+                    font-size: 1.5rem;
+                    padding: 0.2rem;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.active {
+                        background: darken(#e9e9f0, 15);
+                    }
+
+                    &:nth-child(1) {
+                        border-top-left-radius: 4px;
+                        border-bottom-left-radius: 4px;
+                        border-right: 1px solid rgba(68, 68, 100, 0.17);
+                    }
+                    &:nth-child(2) {
+                        border-left: 1px solid rgba(68, 68, 100, 0.17);
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                    }
+                }
+            }
+        }
         -webkit-user-select: none;
         user-select: none;
         white-space: nowrap;
@@ -379,6 +508,7 @@
             border-radius: 0 0 0.444em 0.444em;
             background-color: $clr12;
         }
+
         .add-board {
             cursor: pointer;
             padding: 0.2rem;
@@ -593,7 +723,7 @@
     .leads-table {
         grid-column: 1/-1;
         width: 100%;
-        border: 1px solid $editor-lightgray;
+        border: 1px solid darken($editor-lightgray, 20%);
         border-radius: 3px;
 
         .container {
@@ -610,7 +740,7 @@
             }
         }
         .table-header {
-            border-bottom: 1px solid $editor-lightgray;
+            border-bottom: 1px solid darken($editor-lightgray, 20%);
             > *:nth-child(2n) {
                 background-color: lighten($editor-lightgray, 5%);
             }
@@ -623,7 +753,7 @@
             align-items: center;
             .col {
                 &:not(:last-child) {
-                    border-inline-end: 1px solid $editor-lightgray;
+                    border-inline-end: 1px solid darken($editor-lightgray, 20%);
                 }
                 &:last-child {
                     width: 100%;

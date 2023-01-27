@@ -1,0 +1,50 @@
+{
+    "id": "awe6864",
+    "type": "div",
+    "name": "wap-schedule-2",
+    "category": "schedule",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689963/reschedule_yxkdyg.png",
+    "cmps": [
+        {
+            "id": "awe6814",
+            "type": "div",
+            "name": "layout-container",
+            "cmps": [
+                {
+                    "id": "awe6814",
+                    "type": "div",
+                    "name": "text-container",
+                    "cmps": [
+                        {
+                            "id": "awe6884",
+                            "type": "h2",
+                            "content": {
+                                "txt": "Schedule Title"
+                            }
+                        },
+                        {
+                            "id": "awe6851",
+                            "type": "p",
+                            "content": {
+                                "txt": "Schedule Text"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "awe6814",
+                    "type": "div",
+                    "name": "calander-app-container",
+                    "cmps": [
+                        {
+                            "id": "awe6856",
+                            "type": "schedule",
+                            "name": "schedule",
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

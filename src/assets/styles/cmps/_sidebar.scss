@@ -3,50 +3,7 @@
     width: 100dvw;
     position: fixed;
     z-index: 50;
-    .indicator {
-        z-index: -5;
-        pointer-events: all;
-        position: absolute;
-        inset: 0;
-        right: 0;
-        left: unset;
-        margin: auto;
-        cursor: pointer;
-        height: max-content;
-        padding: $spacing-xs $spacing-xxs;
-        color: $editor-active-bg;
-        font-size: px-to-rem(20px);
-        line-height: 1;
-        animation: show 1200ms ease-in;
-        transform: translate(100%, -90px);
-        border-radius: 0 55rem 55rem 0;
-        background-color: $clr7;
-        opacity: 1;
-        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
-            transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-        &::before {
-            z-index: -2;
-            content: '';
-            position: absolute;
-            inset: 0;
-            left: 0;
-            right: unset;
-            margin: auto;
-            border-radius: 0 0.55rem 0.55rem 0;
-            width: 10px;
-            height: $spacing-xxl;
-            background-color: $clr7;
-        }
-    }
-    &.open .indicator {
-        transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
-            transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-        transform: translate(-15%, -90px);
 
-        opacity: 0;
-
-        z-index: 1;
-    }
     .module-menu {
         z-index: 2;
         width: 100%;
@@ -97,24 +54,32 @@
         display: flex;
         flex-direction: column;
         position: relative;
+        .scroll-indicator-wrapper {
+            position: absolute;
+            bottom: 0;
+            height: 56px;
+            width: 15%;
+            z-index: 99;
+            right: 0;
+            pointer-events: none;
+            background-color: red;
+            background: linear-gradient(to right, transparent, white 80%);
+        }
     }
     .menu-items {
-        padding: 0 1em;
+        padding-right: 4em;
         display: flex;
         flex-direction: row;
-        box-shadow: 0px -5px 10px -5px rgba(0, 0, 0, 0.205);
+
         overflow-x: auto;
         &::-webkit-scrollbar-thumb {
-            border: 6px solid transparent;
-            border-radius: 100px;
-            background-color: $clr9;
-            background-clip: content-box;
+            display: none;
         }
         &::-webkit-scrollbar {
-            width: $scroll-bar-width;
+            display: none;
         }
         &::-webkit-scrollbar-track {
-            background-color: $clr12;
+            display: none;
         }
         flex: 1;
         &.themes {
@@ -125,7 +90,7 @@
             cursor: pointer;
             text-transform: uppercase;
             font-weight: 800;
-            padding: 5px 9px;
+            padding: $spacing-m $spacing-m;
             display: flex;
             align-items: center;
             border-radius: 7px;
@@ -142,11 +107,15 @@
                 color: $clr1 !important;
                 position: absolute;
                 border-radius: 0;
+                padding: $spacing-s $spacing-m;
+                border-radius: 0 4px 0 0;
                 // -webkit-background-clip: text;
                 // -webkit-text-fill-color: transparent;
                 width: max-content;
                 font-weight: 900;
-                position: relative;
+                &:hover {
+                    background-color: $editor-active-clr !important;
+                }
                 &::before,
                 &::after {
                     content: '';
@@ -211,7 +180,7 @@
     z-index: 50;
     overflow: hidden;
     position: fixed;
-    bottom: 60px;
+    bottom: 55px;
     width: 100dvw;
     transform: translateY(100%);
     &.open {
@@ -220,7 +189,7 @@
     .module-content {
         min-height: 0;
         .TabsRoot {
-            max-height: 30vh;
+            max-height: 40vh;
             overflow-y: auto;
         }
     }
@@ -337,6 +306,17 @@
     }
 }
 
+@media (min-width: 560px) {
+    .right-sidebar {
+        max-width: max-content;
+        box-shadow: 0px 0px 20px -10px;
+        border-radius: 1rem 0 0 0;
+        right: 0;
+        > * {
+            max-width: 330px;
+        }
+    }
+}
 @media (min-width: 960px) {
     .right-sidebar {
         position: relative;
@@ -347,6 +327,9 @@
         opacity: 0;
         transition: 0.6s margin cubic-bezier(0.075, 0.82, 0.165, 1),
             0.5s opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+        max-width: max-content;
+        box-shadow: none;
+        border-radius: 0px;
         transform: translateY(0%);
         .module-content .TabsRoot {
             max-height: calc(100vh - $app-header-height - $toolbar-height - 50px);
@@ -368,6 +351,56 @@
         max-width: $modules-menu-width;
         left: 0;
         transform: translateX(-100%);
+        .indicator {
+            z-index: -5;
+            pointer-events: all;
+            position: absolute;
+            inset: 0;
+            right: 0;
+            left: unset;
+            margin: auto;
+            cursor: pointer;
+            height: max-content;
+            padding: $spacing-xs $spacing-xxs;
+            color: $editor-active-bg;
+            font-size: px-to-rem(20px);
+            line-height: 1;
+            animation: show 1200ms ease-in;
+            transform: translate(100%, -90px);
+            border-radius: 0 55rem 55rem 0;
+            background-color: $clr7;
+            opacity: 1;
+            transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+                transform 0.6s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            &::before {
+                z-index: -2;
+                content: '';
+                position: absolute;
+                inset: 0;
+                left: 0;
+                right: unset;
+                margin: auto;
+                border-radius: 0 0.55rem 0.55rem 0;
+                width: 10px;
+                height: $spacing-xxl;
+                background-color: $clr7;
+            }
+        }
+        &.open .indicator {
+            transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transform: translate(-15%, -90px);
+
+            opacity: 0;
+
+            z-index: 1;
+        }
+        .scroll-indicator-wrapper {
+            display: none;
+            .scroll-indicator {
+                display: none;
+            }
+        }
         &.dragging {
             transform: translateX(calc(-100% - $modules-content-width)) !important;
         }
@@ -398,11 +431,15 @@
                         margin-inline-end: 0em;
                         width: 100%;
                         &.themes {
+                            position: relative;
                             top: unset;
                             transform: translateY(0%);
                             background-color: inherit;
                             color: inherit;
-                            position: unset;
+                            background-color: transparent;
+                            &:hover {
+                                background-color: transparent !important;
+                            }
                         }
                     }
                 }
@@ -420,7 +457,7 @@
             width: $modules-content-width;
             transform: translateX(-$modules-menu-width);
             height: calc(100vh - $app-header-height - $toolbar-height - 1px);
-
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.192);
             .quick-add {
                 > div {
                     height: 100%;

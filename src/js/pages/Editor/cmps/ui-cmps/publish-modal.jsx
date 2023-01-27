@@ -2,18 +2,29 @@ import { useState } from 'react'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
+import { wapService } from '../../../../services/wap.service'
 import { saveWap } from '../../../../store/wap/wap.action'
+import { PublishLoginSignup } from './publish-login'
 
-export function PublishModal({ user, wap, publishWap, closeModal, isPublishing }) {
+export function PublishModal({ user, wap, closeModal, isPublishing }) {
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '', title: '' })
     // const navigate = useNavigate()
-    const [isPublished, setIsPublished] = useState(false)
+    const [isPublished, setIsPublished] = useState(wap.url ? true : false)
 
     function handleFocus(ev) {
         ev.target.select()
     }
     async function publishWap() {
+        if (!wapUrlToEdit.publishUrl || !wapUrlToEdit.title) {
+            showErrorMsg(`Please fill all forms!`)
+            return
+        }
         try {
+            const isUrlFree = await wapService.isWapUrlFree(wapUrlToEdit.publishUrl)
+            if (!isUrlFree) {
+                showErrorMsg(`URL is already taken!`)
+                return
+            }
             wap.owner = user._id
             wap.title = wapUrlToEdit.title
             wap.url = wapUrlToEdit.publishUrl
@@ -39,50 +50,58 @@ export function PublishModal({ user, wap, publishWap, closeModal, isPublishing }
                 </div>
                 {!isPublished ? (
                     <div className='content-container'>
-                        <h4>Choose a domain before you publish</h4>
-                        <p>The domain you select will be your site's address</p>
-                        <div className='free-domain'>
-                            <h5>Get a free quix domain</h5>
-                            <div className='link-preview-container'>
-                                <div className='dots'>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                        <h4> {!user ? 'Oops u must sign in first' : 'Choose a domain before you publish'}</h4>
+                        <p>{!user ? 'or signup' : "The domain you select will be your site's address"}</p>
+                        {!user ? (
+                            <PublishLoginSignup />
+                        ) : (
+                            <>
+                                <div className='free-domain'>
+                                    <h5>Get a free quix domain</h5>
+                                    <div className='link-preview-container'>
+                                        <div className='dots'>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <div className='link-preview'>
+                                            <span>http://www.quix.io/</span>
+                                            <input
+                                                type='text'
+                                                value={wapUrlToEdit.publishUrl || ''}
+                                                placeholder={'BeautifulSite'}
+                                                autoFocus={isPublishing ? true : false}
+                                                onFocus={handleFocus}
+                                                onChange={handleChange}
+                                                name='publishUrl'
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='link-preview'>
-                                    <span>http://www.quix.io/</span>
-                                    <input
-                                        type='text'
-                                        value={wapUrlToEdit.publishUrl || 'my-site'}
-                                        autoFocus={isPublishing ? true : false}
-                                        onFocus={handleFocus}
-                                        onChange={handleChange}
-                                        name='publishUrl'
-                                    />
+                                <div className='free-domain'>
+                                    <h5>Enter your site name</h5>
+                                    <div className='link-preview-container'>
+                                        <div className='site-img'>
+                                            <img src={wap.thumbnail} alt='imgUrl' />
+                                        </div>
+                                        <div className='link-preview site-name'>
+                                            <span className='bold'>Enter your site name</span>
+                                            <input
+                                                type='text'
+                                                value={wapUrlToEdit.title || ''}
+                                                placeholder={'My beautiful site'}
+                                                onChange={handleChange}
+                                                name='title'
+                                                id='title'
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className='free-domain'>
-                            <h5>Enter your site name</h5>
-                            <div className='link-preview-container'>
-                                <div className='site-img'>
-                                    <img src={wap.thumbnail} alt='imgUrl' />
-                                </div>
-                                <div className='link-preview site-name'>
-                                    <span className='bold'>Enter your site name</span>
-                                    <input
-                                        type='text'
-                                        value={wapUrlToEdit.title || 'My Site'}
-                                        onChange={handleChange}
-                                        name='title'
-                                        id='title'
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <button className='app-btn primary' onClick={publishWap}>
-                            Save & Continue
-                        </button>
+                                <button className='app-btn primary' onClick={publishWap}>
+                                    Save & Continue
+                                </button>
+                            </>
+                        )}
                     </div>
                 ) : (
                     <div className='content-container'>
@@ -93,7 +112,7 @@ export function PublishModal({ user, wap, publishWap, closeModal, isPublishing }
                         <h5 className='secondary-title'>Choose where next</h5>
                         <div className='where-next-btns'>
                             <button className='app-btn primary'>
-                                <Link to={`/dashboard/${user._id}`}>Admin Panel</Link>
+                                <Link to={`/dashboard/${user?._id}`}>Admin Panel</Link>
                             </button>
                             <button className='app-btn secondary'>
                                 <Link to={`/${wap.url}`}>Preview</Link>
