@@ -21,6 +21,7 @@ export function Editor() {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const [layout, setLayout] = useState({ layoutClass: 'desktopLayout', width: '' })
+    const cursorRef = useRef()
     const { wapId } = useParams()
     const editLayoutRef = useRef()
     const dispatch = useDispatch()
@@ -42,9 +43,9 @@ export function Editor() {
             dispatch({ type: SET_WAP, wap })
         })
         socketService.on('mouse-move', mousePos => {
-            const elMousePos = document.querySelector('.mouse-pos')
-            elMousePos.style.left = `${mousePos.mouseX + 10}px`
-            elMousePos.style.top = `${mousePos.mouseY - 10}px`
+            cursorRef.current.style.left = `${mousePos.mouseX + 10}px`
+            cursorRef.current.style.top = `${mousePos.mouseY - 10}px`
+            cursorRef.current.style.display = 'block'
             // console.log(mousePos)
         })
 
@@ -136,6 +137,7 @@ export function Editor() {
                         className='mouse-pos'
                         src='https://res.cloudinary.com/yaronshapira-com/image/upload/v1674850725/cursor-removebg-preview_kyyd5r.png'
                         alt=''
+                        ref={cursorRef}
                     />
                 </div>
             </DragDropContext>

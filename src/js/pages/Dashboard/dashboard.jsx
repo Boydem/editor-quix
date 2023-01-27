@@ -30,8 +30,9 @@ export function Dashboard() {
     const navigate = useNavigate()
     const { userId } = useParams()
     const dispatch = useDispatch()
+    console.log('currSite:', currSite)
 
-    const menuItems = ['Home', 'Messages', 'Subscriptions', 'Leads', 'Schedule', 'Kanban']
+    const menuItems = ['Home', 'Messages', 'Subscriptions', 'Leads', 'Schedule']
 
     useEffect(() => {
         if (!userId) navigate('/auth/login')
@@ -146,10 +147,10 @@ export function Dashboard() {
                     <div className='col col-right'>
                         {currView === 'home' && <DashboardMain user={user} currSite={currSite} />}
                         {currView === 'subscriptions' && <SubscriptionsDashboard user={user} currSite={currSite} />}
-                        {currView === 'leads' && <LeadsDashboard user={user} currSite={currSite} />}
+                        {currView === 'leads' && <KanbanDashboard user={user} currSite={currSite} />}
                         {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                         {currView === 'schedule' && <ScheduleDashboard user={user} currSite={currSite} />}
-                        {currView === 'kanban' && <KanbanDashboard user={user} currSite={currSite} />}
+                        {/* {currView === 'kanban' && <KanbanDashboard user={user} currSite={currSite} />} */}
                     </div>
                 </div>
             </main>

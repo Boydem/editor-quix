@@ -89,7 +89,7 @@ export function EditSocial({ clickedCmp }) {
                             </div>
                         )
                     })}
-                    <div className='selection'>
+                    <div className='selection-row'>
                         <Select.Root onValueChange={onSelectSection}>
                             <Select.Trigger className='SelectTrigger' aria-label='href'>
                                 <Select.Value placeholder={'Select Social Link'} />

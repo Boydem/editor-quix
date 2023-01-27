@@ -24,7 +24,7 @@ export function EditChat({ clickedCmp }) {
                     <p>Set chat starting message</p>
                     <textarea
                         type='text'
-                        placeholder='Enter image link..'
+                        placeholder='Enter your first message'
                         value={txt}
                         onChange={handleChange}
                         className='input-edit'

@@ -16,7 +16,7 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                         <h5>Your free quix domain</h5>
                         <div className='link-preview-container'>
                             <div className='link-preview'>
-                                <span>http://www.quix.io/</span>
+                                <span>http://www.editorquix.com/</span>
                                 <input
                                     type='text'
                                     value={currSite?.url || 'my-site'}
