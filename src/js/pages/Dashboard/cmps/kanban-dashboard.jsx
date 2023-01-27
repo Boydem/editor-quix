@@ -14,7 +14,8 @@ import { BsKanbanFill } from 'react-icons/bs'
 export function KanbanDashboard({ user, currSite }) {
     const [newItemText, setNewItemText] = useState({})
     const [boards, setBoards] = useState(currSite.leadsBoards)
-    const [view, setView] = useState('board')
+    const [leadsList, setLeadsList] = useState()
+    const [view, setView] = useState('list')
     useEffect(() => {
         setBoards(currSite.leadsBoards)
     }, [currSite])
@@ -24,6 +25,17 @@ export function KanbanDashboard({ user, currSite }) {
         const field = ev.target.name
         setNewItemText(prev => ({ ...prev, [field]: value }))
     }
+
+    useEffect(() => {
+        console.log('boards:', boards)
+        const leadsListFormatted = currSite.leadsBoards.reduce((acc, board) => {
+            board.items.forEach(item => {
+                acc.push(item)
+            })
+            return acc
+        }, [])
+        setLeadsList(leadsListFormatted)
+    }, [view])
 
     function onDragEnd(result) {
         // check if the draggable was dropped in a droppable
@@ -140,7 +152,7 @@ export function KanbanDashboard({ user, currSite }) {
         <DragDropContext onDragEnd={onDragEnd}>
             <section className='info-box kanban-board'>
                 <div className='inner-nav'>
-                    <div></div>
+                    <h4>My Leads</h4>
                     <div className='btns'>
                         <button className={view === 'board' ? 'active' : ''} onClick={() => setView('board')}>
                             <BsKanbanFill />
@@ -241,6 +253,48 @@ export function KanbanDashboard({ user, currSite }) {
                             <button className='' onClick={onAddBoard}>
                                 Add a new board
                             </button>
+                        </div>
+                    </div>
+                )}
+                {view === 'list' && (
+                    <div className='table-box'>
+                        {/* <div className='header'>
+                            <div className='text-wrapper'>
+                                <h3>My leads</h3>
+                            </div>
+                            <button className='btn-send-msg'>Download CSV</button>
+                        </div> */}
+                        <div className='user-forms leads-table'>
+                            <ul className='table-row table-header container'>
+                                <li className='col'>Status</li>
+                                {leadsList && leadsList.length > 0 && (
+                                    <>
+                                        {Object.keys(leadsList?.at(-1).data).map((key, keyIndex) => {
+                                            return (
+                                                <li className='col' key={key}>
+                                                    {key}
+                                                </li>
+                                            )
+                                        })}
+                                    </>
+                                )}
+                            </ul>
+
+                            {leadsList?.map(lead => {
+                                return (
+                                    <ul className='table-row container' key={lead.id}>
+                                        <li className='col'>{lead.status}</li>
+                                        {Object.keys(lead.data).map((key, keyIndex) => {
+                                            return (
+                                                <li className='col' key={key}>
+                                                    {key === 'date' && utilService.formatTimeAgo(lead.data[key])}
+                                                    {key !== 'date' && lead.data[key]}
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                )
+                            })}
                         </div>
                     </div>
                 )}

@@ -352,6 +352,7 @@
         }
     }
     .kanban-board {
+        // $border: 1px solid black;
         display: flex;
         flex-direction: column;
         // background: url('../../imgs/home-assets/webix-section-bg.webp') center center/cover;
@@ -367,14 +368,35 @@
         top: 0;
         // padding: 0 0 $spacing-m 0 !important;
         padding: 0 !important;
-        > * {
-            // padding: $spacing-m;
+
+        .leads-table {
+            // border: $border;
+            .col {
+            }
         }
         .lists-container {
             flex: 1;
             padding: $spacing-m;
             padding-top: calc($spacing-m);
             padding-bottom: calc($spacing-m);
+        }
+        .leads-table {
+            background: lighten(#bcbcd1, 5);
+        }
+        .table-box {
+            background: transparent !important;
+            width: 95%;
+            margin: $spacing-m;
+
+            .table-row.container {
+                .col:last-child {
+                    align-self: flex-end;
+                    text-align: right;
+                }
+                .col:nth-child(2n) {
+                    background: lighten(#bcbcd1, 10);
+                }
+            }
         }
         .inner-nav {
             width: 100%;
@@ -390,6 +412,18 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+
+            h4 {
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #2e2f38;
+                font-size: 1rem;
+                line-height: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             .btns {
                 button {
                     // font-weight: 700;
@@ -650,7 +684,7 @@
     .leads-table {
         grid-column: 1/-1;
         width: 100%;
-        border: 1px solid $editor-lightgray;
+        border: 1px solid darken($editor-lightgray, 20%);
         border-radius: 3px;
 
         .container {
@@ -667,7 +701,7 @@
             }
         }
         .table-header {
-            border-bottom: 1px solid $editor-lightgray;
+            border-bottom: 1px solid darken($editor-lightgray, 20%);
             > *:nth-child(2n) {
                 background-color: lighten($editor-lightgray, 5%);
             }
@@ -680,7 +714,7 @@
             align-items: center;
             .col {
                 &:not(:last-child) {
-                    border-inline-end: 1px solid $editor-lightgray;
+                    border-inline-end: 1px solid darken($editor-lightgray, 20%);
                 }
                 &:last-child {
                     width: 100%;
