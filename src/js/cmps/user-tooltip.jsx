@@ -5,6 +5,7 @@ import { AiOutlineUser } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/user/user.actions'
+import { PublishLoginSignup } from '../pages/Editor/cmps/ui-cmps/publish-login'
 
 export function UserTooltip({ user }) {
     function getShortenName() {
@@ -30,11 +31,11 @@ export function UserTooltip({ user }) {
                 <HoverCard.Content className={`${!user ? 'guest' : ''} card-container HoverCardContent`} sideOffset={5}>
                     {user && <img className='user-img normal' src={user.imgUrl} alt='userImg' />}
                     <div>
-                        <div className='text-container'>
-                            <div className='text'>{user ? `Hi, ${user.fullname}` : 'Hello there !'}</div>
-                        </div>
                         {user ? (
                             <>
+                                <div className='text-container'>
+                                    <div className='text'>Hi, {user.fullname}</div>
+                                </div>
                                 <div>
                                     <Link className='btn-primary' to={`/dashboard/${user._id}`}>
                                         Admin panel
@@ -52,15 +53,7 @@ export function UserTooltip({ user }) {
                                 </div>
                             </>
                         ) : (
-                            <div className='login-signup-guest'>
-                                <Link className='btn-primary sign-in' to='/auth/login'>
-                                    <span>Login</span>
-                                </Link>
-
-                                <Link className='btn-secondary sign-up' to='/auth/login'>
-                                    <span>Sign up</span>
-                                </Link>
-                            </div>
+                            <PublishLoginSignup />
                         )}
                     </div>
 

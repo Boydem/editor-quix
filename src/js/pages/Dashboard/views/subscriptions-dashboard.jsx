@@ -32,10 +32,6 @@ export function SubscriptionsDashboard({ user, currSite }) {
                     </button>
                 </div>
                 <div className='leads-table'>
-                    <ul className='table-header container'>
-                        <li>Email</li>
-                        <li>Actions</li>
-                    </ul>
                     {currSite.subscribers?.map((sub, idx) => {
                         return (
                             <ul className='table-row container' key={idx}>
