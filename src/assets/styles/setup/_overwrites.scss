@@ -128,6 +128,65 @@
         background-color: $editor-active-bg;
     }
 }
+.schedule-meeting.schedule {
+    padding: 5rem;
+    @media (max-width: 1120px) {
+        & {
+            padding: 0;
+        }
+    }
+}
+.wap-schedule-2 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
+
+    .calander-app-container {
+        z-index: 1;
+    }
+    .contact-details {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 2;
+        background: #ff7629;
+        color: white;
+        padding: 5rem;
+        position: relative;
+        height: 100%;
+        > div {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+.mobile-open-close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wap-schedule-2-gradient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(500% 50%, rgba(28, 62, 114, 0.5), white 70%);
+    .layout-container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        justify-content: center;
+        .text-container {
+            color: white;
+            padding: 1em;
+        }
+        .calander-app-container {
+        }
+    }
+}
 .rmsc .dropdown-heading .dropdown-heading-value {
     display: -webkit-box;
     -webkit-line-clamp: 1;

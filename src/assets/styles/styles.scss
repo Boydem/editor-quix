@@ -62,9 +62,6 @@
 @import './cmps/_edit-tabs.scss';
 @import './app-ui/_dropdown-menu.scss';
 
-// UI Overwrites
-@import './setup/_overwrites.scss';
-
 // Templates
 @import './waps/general-cmps.scss';
 @import './waps/_wap1.scss';
@@ -76,3 +73,6 @@
 @import './waps/_wap7.scss';
 
 @import '../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
+
+// UI Overwrites
+@import './setup/_overwrites.scss';

@@ -436,6 +436,10 @@
                             transform: translateY(0%);
                             background-color: inherit;
                             color: inherit;
+                            background-color: transparent;
+                            &:hover {
+                                background-color: transparent !important;
+                            }
                         }
                     }
                 }
