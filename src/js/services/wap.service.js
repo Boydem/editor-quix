@@ -127,6 +127,7 @@ function getUserSites(userWaps) {
             title: wap.title,
             thumbnail: wap.thumbnail,
             schedule: wap.schedule,
+            url: wap.url,
         })
         return acc
     }, [])
