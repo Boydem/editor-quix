@@ -90,7 +90,7 @@ export function KanbanDashboard({ user, currSite }) {
             items: [
                 ...board.items,
                 {
-                    data: { '': newItemText[boardId], date: Date.now() },
+                    data: { '': newItemText[boardId], 'date': Date.now() },
                     id: makeId(),
                     status: board.title.toLowerCase(),
                 },

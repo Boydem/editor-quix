@@ -236,6 +236,7 @@
     position: fixed;
     bottom: 2%;
     right: 1.5%;
+    transition: left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     .hidden {
         display: none !important;
     }
@@ -356,9 +357,10 @@
     }
 
     .chat {
-        position: absolute;
-        bottom: 130%;
-        right: 1%;
+        position: fixed;
+        bottom: 9%;
+        right: 15%;
+        transition: left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
         display: flex;
         flex-direction: column;

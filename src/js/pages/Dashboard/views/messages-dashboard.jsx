@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { utilService } from '../../../services/util.service'
 import { saveWap } from '../../../store/wap/wap.action'
 import { AiOutlineSend } from 'react-icons/ai'
+import { AiOutlineUser } from 'react-icons/ai'
 import { useEffect } from 'react'
 
 export function MessagesDashboard({ user, currSite }) {
@@ -52,7 +53,10 @@ export function MessagesDashboard({ user, currSite }) {
             <div className='chat'>
                 <div className='chat-layout'>
                     <div className='contact bar'>
-                        <div className='pic bigger guest'></div>
+                        <div className='pic bigger guest'>
+                            {' '}
+                            <AiOutlineUser size={'70%'} fill={'#eee'} />
+                        </div>
                         <div className='wrapper'>
                             <div className='name'>{currContact.from}</div>
                             <div className='seen'>{utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}</div>
