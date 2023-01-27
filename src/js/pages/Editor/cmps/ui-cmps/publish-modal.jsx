@@ -8,12 +8,16 @@ import { PublishLoginSignup } from './publish-login'
 export function PublishModal({ user, wap, closeModal, isPublishing }) {
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '', title: '' })
     // const navigate = useNavigate()
-    const [isPublished, setIsPublished] = useState(false)
+    const [isPublished, setIsPublished] = useState(wap.url ? true : false)
 
     function handleFocus(ev) {
         ev.target.select()
     }
     async function publishWap() {
+        if (!wapUrlToEdit.publishUrl || !wapUrlToEdit.title) {
+            showErrorMsg(`Please fill all forms!`)
+            return
+        }
         try {
             wap.owner = user._id
             wap.title = wapUrlToEdit.title
@@ -58,7 +62,8 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
                                             <span>http://www.quix.io/</span>
                                             <input
                                                 type='text'
-                                                value={wapUrlToEdit.publishUrl || 'my-site'}
+                                                value={wapUrlToEdit.publishUrl || ''}
+                                                placeholder={'BeautifulSite'}
                                                 autoFocus={isPublishing ? true : false}
                                                 onFocus={handleFocus}
                                                 onChange={handleChange}
@@ -77,7 +82,8 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
                                             <span className='bold'>Enter your site name</span>
                                             <input
                                                 type='text'
-                                                value={wapUrlToEdit.title || 'My Site'}
+                                                value={wapUrlToEdit.title || ''}
+                                                placeholder={'My beautiful site'}
                                                 onChange={handleChange}
                                                 name='title'
                                                 id='title'

@@ -16,6 +16,10 @@ export function PublishLoginSignup() {
     }
 
     async function onLogin(ev) {
+        if (!credentials.username || !credentials.password) {
+            showErrorMsg('Please fill all forms!')
+            return
+        }
         ev.preventDefault()
         try {
             const user = await login(credentials)
@@ -28,6 +32,10 @@ export function PublishLoginSignup() {
         }
     }
     async function onSignup(ev) {
+        if (!credentials.username || !credentials.password || !credentials.fullname) {
+            showErrorMsg('Please fill all forms!')
+            return
+        }
         ev.preventDefault()
         try {
             const user = await signup(credentials)
