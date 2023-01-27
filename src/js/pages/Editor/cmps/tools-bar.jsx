@@ -101,22 +101,25 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
                 <FiRefreshCw className='refresh-icon' />
                 Saving...
             </div>
-            <div className='site-link'>
-                <label className='publish-url-prefix' htmlFor='publishUrl'>
-                    quix.io/
-                    <input
-                        onChange={handleChange}
-                        value={wap?.url || wapUrlToEdit.publishUrl}
-                        type='text'
-                        name='publishUrl'
-                        id='publishUrl'
-                        placeholder='MySite'
-                    />
-                    <button onClick={onEditDomain} className='btn-publish'>
-                        {wap.url && 'Edit your domain'}
-                    </button>
-                </label>
-            </div>
+            {wap.url && (
+                <div className='site-link'>
+                    <label className='publish-url-prefix' htmlFor='publishUrl'>
+                        quix.io/
+                        <input
+                            onChange={handleChange}
+                            value={wap?.url || wapUrlToEdit.publishUrl}
+                            type='text'
+                            name='publishUrl'
+                            id='publishUrl'
+                            placeholder='MySite'
+                        />
+                        <button onClick={onEditDomain} className='btn-publish'>
+                            {wap.url && 'Edit your domain'}
+                        </button>
+                    </label>
+                </div>
+            )}
+
             <ul className='icons-group'>
                 <li className='icon-container b-l'>
                     <button className='btn-icon' data-tooltip='Undo' data-tooltip-dir='bottom' onClick={onUndo}>

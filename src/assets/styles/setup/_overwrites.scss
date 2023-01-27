@@ -51,6 +51,7 @@
     outline: none;
     box-shadow: 0 0 0 2px $editor-active-clr;
 }
+// schedule cmp
 .go695645437 {
     button.go2556357651.go2905247309.rsm-next-available-date-button {
         display: flex;
@@ -66,7 +67,10 @@
             transition: background-color 0.15s ease-in-out;
         }
         transition: background-color 0.15s ease-in-out;
-        background-color: $editor-active-clr;
+
+        background-color: white;
+        color: $editor-active-clr;
+        box-shadow: inset 0px 0px 0px 2px $editor-active-clr;
     }
     .go4247048326 .react-calendar__tile {
         border-radius: 6px !important;
@@ -98,9 +102,37 @@
         border-radius: 6px;
         color: $editor-active-clr;
     }
+    .go4247048326 .active-day-tile:hover {
+        opacity: 1 !important;
+    }
     .go4247048326 .react-calendar__tile--active:enabled.day-tile::after,
     .go4247048326 .react-calendar__tile--active:enabled:focus.day-tile::after {
         background-color: $editor-active-clr;
         border: none;
     }
+    button.go2556357651.rsm-confirm-button:hover {
+        background-color: $editor-active-clr;
+        color: white;
+    }
+    .go2556357651:hover {
+        opacity: 1;
+        background-color: $editor-active-clr;
+        color: white;
+    }
+    button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day.day-tile.active-day-tile {
+        color: $editor-active-clr !important;
+        background-color: $editor-active-bg;
+        box-shadow: inset 0px 0px 0px 2px $editor-active-clr;
+    }
+    .go4247048326 .react-calendar__tile--now.day-tile::after {
+        background-color: $editor-active-bg;
+    }
+}
+.rmsc .dropdown-heading .dropdown-heading-value {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap !important;
 }
