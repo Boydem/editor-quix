@@ -11,6 +11,9 @@ import { useSelector } from 'react-redux'
 import { saveWap, setIsEditing, setWapNull } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
+import { socketService } from '../../services/socket.service'
+import { useDispatch } from 'react-redux'
+import { SET_WAP } from '../../store/wap/wap.reducer'
 
 export function Editor() {
     // wap states
@@ -20,6 +23,7 @@ export function Editor() {
     const [layout, setLayout] = useState({ layoutClass: 'desktopLayout', width: '' })
     const { wapId } = useParams()
     const editLayoutRef = useRef()
+    const dispatch = useDispatch()
 
     // sidebars states
     const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false })
@@ -33,10 +37,28 @@ export function Editor() {
     useEffect(() => {
         loadWap()
         setIsEditing(true)
+        socketService.emit('set-wap-room', wapId)
+        socketService.on('updated-wap', wap => {
+            dispatch({ type: SET_WAP, wap })
+        })
+        socketService.on('mouse-move', mousePos => {
+            const elMousePos = document.querySelector('.mouse-pos')
+            elMousePos.style.left = `${mousePos.mouseX + 10}px`
+            elMousePos.style.top = `${mousePos.mouseY - 10}px`
+            // console.log(mousePos)
+        })
+
+        document.addEventListener('mousemove', emitMouseMovement)
+        function emitMouseMovement(ev) {
+            // console.log('ev.layerY', ev.layerY)
+            // console.log('ev.layerX:', ev.layerX)
+            socketService.emit('update-mouse-pos', { mouseX: ev.clientX, mouseY: ev.clientY })
+        }
 
         return () => {
             setIsEditing(false)
             setWapNull()
+            document.removeEventListener('mousemove', emitMouseMovement)
         }
     }, [])
 
@@ -109,6 +131,11 @@ export function Editor() {
                         handleSidebarsChanges={handleSidebarsChanges}
                         wap={wap}
                         editLayoutRef={editLayoutRef}
+                    />
+                    <img
+                        className='mouse-pos'
+                        src='https://res.cloudinary.com/yaronshapira-com/image/upload/v1674850725/cursor-removebg-preview_kyyd5r.png'
+                        alt=''
                     />
                 </div>
             </DragDropContext>

@@ -9,6 +9,7 @@ import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { httpService } from './http.service'
 
 import { makeId, utilService } from './util.service'
+import { socketService } from './socket.service'
 
 export const wapService = {
     getCmpById,
@@ -88,6 +89,7 @@ function remove(wapId) {
 }
 
 async function save(wap) {
+    socketService.emit('update-wap', wap)
     let savedWap
     if (wap._id) {
         savedWap = httpService.put(`wap/${wap._id}`, wap)

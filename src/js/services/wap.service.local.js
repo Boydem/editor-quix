@@ -135,40 +135,6 @@ function getCmpsByCategory(category) {
     return gCmpsMap[category]
 }
 
-async function query(filterBy = { owner: 'guest', url: '' }) {
-    try {
-        const waps = await storageService.query(STORAGE_KEY)
-
-        let filteredWaps = waps
-        if (filterBy.owner !== 'guest') {
-            filteredWaps = waps.filter(wap => wap.owner === filterBy.owner)
-            const userSites = getUserSites(filteredWaps)
-            return userSites
-        } else if (filterBy.url) {
-            filteredWaps = waps.filter(wap => wap.url === filterBy.url)
-        }
-        return filteredWaps
-    } catch (err) {
-        throw err
-    }
-}
-
-function getUserSites(userWaps) {
-    const sites = userWaps.reduce((acc, wap) => {
-        acc.push({
-            _id: wap._id,
-            leadsBoards: wap.leadsBoards,
-            subscribers: wap.subscribers,
-            msgs: wap.msgs,
-            title: wap.title,
-            thumbnail: wap.thumbnail,
-            schedule: wap.schedule,
-        })
-        return acc
-    }, [])
-    return sites
-}
-
 async function get(wapId) {
     return await storageService.get(STORAGE_KEY, wapId)
 }
