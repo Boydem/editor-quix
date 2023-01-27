@@ -15,7 +15,7 @@ export function KanbanDashboard({ user, currSite }) {
     const [newItemText, setNewItemText] = useState({})
     const [boards, setBoards] = useState(currSite.leadsBoards)
     const [leadsList, setLeadsList] = useState()
-    const [view, setView] = useState('list')
+    const [view, setView] = useState('board')
     useEffect(() => {
         setBoards(currSite.leadsBoards)
     }, [currSite])
