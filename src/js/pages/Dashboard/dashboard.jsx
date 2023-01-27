@@ -67,6 +67,7 @@ export function Dashboard() {
         try {
             await setUserSites(user)
             if (!user.sites || !user.sites.length) navigate('/create')
+            console.log(user.sites)
             dispatch({ type: SET_CURR_SITE, currSite: user.sites[0] })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
@@ -84,6 +85,7 @@ export function Dashboard() {
             acc.push(sub.date)
             return acc
         }, [])
+        console.log(currSite)
         const leadTimestamps = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
             acc.push(lead.data.date)
             return acc

@@ -25,15 +25,17 @@ export function WapIndex() {
 
     async function onEdit(wapId) {
         let wap
+        console.log(wapId)
         try {
             if (wapId === 'blank') {
                 wap = wapService.getBlankWap()
             } else {
-                wap = await wapService.get(wapId)
+                // wap = await wapService.get(wapId)
+                wap = await wapService.getWapToEdit(wapId)
             }
-            wap._id = null
-            wap.owner = 'guest'
-            wap = await wapService.save(wap)
+            // wap._id = null
+            // wap.owner = 'guest'
+            // wap = await wapService.save(wap)
             navigate(`/edit/${wap._id}`)
             showSuccessMsg('Start working on your site!')
         } catch (err) {
