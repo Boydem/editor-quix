@@ -3,6 +3,7 @@ import quixIcon from '../../../../assets/imgs/quix-icon-darkblue.png'
 import { utilService } from '../../../services/util.service'
 
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
+    function handleChange() {}
     return (
         <>
             <div className='info-box info-box-2'>
@@ -10,6 +11,21 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <h3>Currently viewing</h3>
                     <div className='flex align-center'>
                         <img src={explorerSVG} alt='explorerSVG' /> <h4>{currSite?.title}</h4>
+                    </div>
+                    <div className='free-domain'>
+                        <h5>Your free quix domain</h5>
+                        <div className='link-preview-container'>
+                            <div className='link-preview'>
+                                <span>http://www.quix.io/</span>
+                                <input
+                                    type='text'
+                                    value={currSite?.url || 'my-site'}
+                                    onChange={handleChange}
+                                    disabled={true}
+                                    name='publishUrl'
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

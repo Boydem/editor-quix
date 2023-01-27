@@ -3,6 +3,7 @@
     width: 100dvw;
     position: fixed;
     z-index: 50;
+
     .indicator {
         z-index: -5;
         pointer-events: all;
@@ -97,24 +98,32 @@
         display: flex;
         flex-direction: column;
         position: relative;
+        .scroll-indicator {
+            // position: static;
+            bottom: -50px;
+            right: 0;
+            height: 30px;
+            width: 30%;
+            position: relative;
+            background: linear-gradient(to right, transparent, $clr1);
+            background-color: red;
+            padding: 0;
+            z-index: 99;
+        }
     }
     .menu-items {
-        padding: 0 1em;
         display: flex;
         flex-direction: row;
         box-shadow: 0px -5px 10px -5px rgba(0, 0, 0, 0.205);
         overflow-x: auto;
         &::-webkit-scrollbar-thumb {
-            border: 6px solid transparent;
-            border-radius: 100px;
-            background-color: $clr9;
-            background-clip: content-box;
+            display: none;
         }
         &::-webkit-scrollbar {
-            width: $scroll-bar-width;
+            display: none;
         }
         &::-webkit-scrollbar-track {
-            background-color: $clr12;
+            display: none;
         }
         flex: 1;
         &.themes {
@@ -125,7 +134,7 @@
             cursor: pointer;
             text-transform: uppercase;
             font-weight: 800;
-            padding: 5px 9px;
+            padding: $spacing-s $spacing-m;
             display: flex;
             align-items: center;
             border-radius: 7px;
@@ -146,7 +155,7 @@
                 // -webkit-text-fill-color: transparent;
                 width: max-content;
                 font-weight: 900;
-                position: relative;
+
                 &::before,
                 &::after {
                     content: '';
@@ -368,6 +377,9 @@
         max-width: $modules-menu-width;
         left: 0;
         transform: translateX(-100%);
+        .scroll-indicator {
+            display: none;
+        }
         &.dragging {
             transform: translateX(calc(-100% - $modules-content-width)) !important;
         }
@@ -398,11 +410,11 @@
                         margin-inline-end: 0em;
                         width: 100%;
                         &.themes {
+                            position: relative;
                             top: unset;
                             transform: translateY(0%);
                             background-color: inherit;
                             color: inherit;
-                            position: unset;
                         }
                     }
                 }

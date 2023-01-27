@@ -248,9 +248,8 @@
                 box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
             }
             .text-wrapper {
-                min-width: 280px;
                 place-self: start;
-                margin-inline-end: 1rem;
+
                 .level {
                     margin-bottom: 1rem;
                 }
@@ -271,6 +270,20 @@
             // border: 1px solid $editor-active-bg;
             background-color: darken($editor-active-clr, 15%);
             color: $clr1;
+            .free-domain {
+                h5 {
+                    text-align: start;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    color: rgba($clr1, 50%);
+                    margin-bottom: 0;
+                }
+                .link-preview-container {
+                    color: $clr2;
+                    align-items: stretch;
+                    justify-items: flex-start;
+                }
+            }
             .text-wrapper {
                 p {
                     color: $clr1;
@@ -281,8 +294,11 @@
                 }
                 h3 {
                     color: $clr1;
-                    font-weight: 200;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    font-size: 1rem;
                     margin-bottom: $spacing-xxs;
+                    border-bottom: 1px solid #ffffff2e;
                 }
             }
         }

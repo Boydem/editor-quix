@@ -3,8 +3,9 @@ import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { saveWap } from '../../../../store/wap/wap.action'
+import { PublishLoginSignup } from './publish-login'
 
-export function PublishModal({ user, wap, publishWap, closeModal, isPublishing }) {
+export function PublishModal({ user, wap, closeModal, isPublishing }) {
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '', title: '' })
     // const navigate = useNavigate()
     const [isPublished, setIsPublished] = useState(false)
@@ -39,50 +40,56 @@ export function PublishModal({ user, wap, publishWap, closeModal, isPublishing }
                 </div>
                 {!isPublished ? (
                     <div className='content-container'>
-                        <h4>Choose a domain before you publish</h4>
-                        <p>The domain you select will be your site's address</p>
-                        <div className='free-domain'>
-                            <h5>Get a free quix domain</h5>
-                            <div className='link-preview-container'>
-                                <div className='dots'>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                        <h4> {!user ? 'Oops u must sign in first' : 'Choose a domain before you publish'}</h4>
+                        <p>{!user ? 'or signup' : "The domain you select will be your site's address"}</p>
+                        {!user ? (
+                            <PublishLoginSignup />
+                        ) : (
+                            <>
+                                <div className='free-domain'>
+                                    <h5>Get a free quix domain</h5>
+                                    <div className='link-preview-container'>
+                                        <div className='dots'>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <div className='link-preview'>
+                                            <span>http://www.quix.io/</span>
+                                            <input
+                                                type='text'
+                                                value={wapUrlToEdit.publishUrl || 'my-site'}
+                                                autoFocus={isPublishing ? true : false}
+                                                onFocus={handleFocus}
+                                                onChange={handleChange}
+                                                name='publishUrl'
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='link-preview'>
-                                    <span>http://www.quix.io/</span>
-                                    <input
-                                        type='text'
-                                        value={wapUrlToEdit.publishUrl || 'my-site'}
-                                        autoFocus={isPublishing ? true : false}
-                                        onFocus={handleFocus}
-                                        onChange={handleChange}
-                                        name='publishUrl'
-                                    />
+                                <div className='free-domain'>
+                                    <h5>Enter your site name</h5>
+                                    <div className='link-preview-container'>
+                                        <div className='site-img'>
+                                            <img src={wap.thumbnail} alt='imgUrl' />
+                                        </div>
+                                        <div className='link-preview site-name'>
+                                            <span className='bold'>Enter your site name</span>
+                                            <input
+                                                type='text'
+                                                value={wapUrlToEdit.title || 'My Site'}
+                                                onChange={handleChange}
+                                                name='title'
+                                                id='title'
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className='free-domain'>
-                            <h5>Enter your site name</h5>
-                            <div className='link-preview-container'>
-                                <div className='site-img'>
-                                    <img src={wap.thumbnail} alt='imgUrl' />
-                                </div>
-                                <div className='link-preview site-name'>
-                                    <span className='bold'>Enter your site name</span>
-                                    <input
-                                        type='text'
-                                        value={wapUrlToEdit.title || 'My Site'}
-                                        onChange={handleChange}
-                                        name='title'
-                                        id='title'
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <button className='app-btn primary' onClick={publishWap}>
-                            Save & Continue
-                        </button>
+                                <button className='app-btn primary' onClick={publishWap}>
+                                    Save & Continue
+                                </button>
+                            </>
+                        )}
                     </div>
                 ) : (
                     <div className='content-container'>

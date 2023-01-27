@@ -51,3 +51,56 @@
     outline: none;
     box-shadow: 0 0 0 2px $editor-active-clr;
 }
+.go695645437 {
+    button.go2556357651.go2905247309.rsm-next-available-date-button {
+        display: flex;
+    }
+    button {
+        display: inline-block;
+    }
+    .go695645437 .go2556357651 {
+        display: flex;
+    }
+    .go2556357651 {
+        &:hover {
+            transition: background-color 0.15s ease-in-out;
+        }
+        transition: background-color 0.15s ease-in-out;
+        background-color: $editor-active-clr;
+    }
+    .go4247048326 .react-calendar__tile {
+        border-radius: 6px !important;
+    }
+    .go4247048326 .active-day-tile::after {
+        border-radius: 6px !important;
+    }
+    .go4247048326 .react-calendar__tile:disabled.day-tile {
+        color: lighten($clr2, 60%);
+        &:hover {
+            color: lighten($clr2, 60%);
+        }
+        &::after {
+            background-color: #eee;
+            border-radius: 6px;
+        }
+    }
+    .go4247048326 .react-calendar__tile--active:enabled.day-tile,
+    .go4247048326 .react-calendar__tile--active:enabled:focus.day-tile {
+        color: $clr1;
+    }
+    .go4247048326 .react-calendar__tile:hover.day-tile {
+        transition: all 0.2s;
+        &:hover {
+            transition: all 0.2s;
+            border-radius: 6px;
+        }
+        background-color: $editor-active-bg;
+        border-radius: 6px;
+        color: $editor-active-clr;
+    }
+    .go4247048326 .react-calendar__tile--active:enabled.day-tile::after,
+    .go4247048326 .react-calendar__tile--active:enabled:focus.day-tile::after {
+        background-color: $editor-active-clr;
+        border: none;
+    }
+}
