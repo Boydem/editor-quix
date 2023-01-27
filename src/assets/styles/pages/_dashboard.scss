@@ -391,6 +391,8 @@
             }
         }
         .lists-container {
+            max-height: 100%;
+            overflow: hidden;
             flex: 1;
             padding: $spacing-m;
             padding-top: calc($spacing-m);
@@ -403,7 +405,9 @@
             background: transparent !important;
             width: 95%;
             margin: $spacing-m;
-
+            max-height: 100%;
+            overflow-y: auto;
+            padding: 0;
             .table-row.container {
                 .col:last-child {
                     align-self: flex-end;
@@ -424,7 +428,7 @@
             font-weight: 700;
             color: rgba(37, 37, 54, 0.918);
             border-bottom: 1px solid rgba(68, 68, 100, 0.17);
-            background-color: rgba(255, 255, 255, 0.219);
+            background-color: #ffffffc2;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
