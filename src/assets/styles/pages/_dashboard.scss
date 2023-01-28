@@ -306,7 +306,7 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            color: #28bf9a;
+            color: #004cc4;
             border-radius: 6px;
             .icon {
                 fill: $clr1;
@@ -319,13 +319,13 @@
                 color: $clr1;
                 padding: 1.125em;
                 border-radius: 66px;
-                background: #3ccfab;
-                background-image: linear-gradient(60deg, #28bf9a, rgba(255, 255, 255, 0.274));
+                background: #004cc4;
+                background-image: linear-gradient(60deg, #004cc4, rgba(255, 255, 255, 0.274));
             }
             h3 {
                 font-size: px-to-rem(14px);
                 font-weight: 700;
-                color: #3ccfab;
+                color: #004cc4;
             }
             h4 {
                 font-size: 1rem;
@@ -336,8 +336,8 @@
                 padding: 0 1.25em;
                 border-radius: 66px;
 
-                background-color: #3ccfab;
-                background-image: linear-gradient(200deg, #28bf9a, rgba(255, 255, 255, 0.219));
+                background-color: #004cc4;
+                background-image: linear-gradient(200deg, #004cc4, rgba(255, 255, 255, 0.219));
             }
         }
         .info-box-2 {
