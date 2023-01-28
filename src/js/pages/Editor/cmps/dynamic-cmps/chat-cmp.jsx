@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
 import DynamicElement from './dynamic-element'
@@ -6,11 +6,23 @@ import { BsChatFill } from 'react-icons/bs'
 import { AiOutlineSend } from 'react-icons/ai'
 import { makeId, utilService } from '../../../../services/util.service'
 import { saveCmp, saveWap } from '../../../../store/wap/wap.action'
+import { socketService, SOCKET_EMIT_GUEST_MSG, SOCKET_EVENT_OWNER_ADD_MSG } from '../../../../services/socket.service'
 
 export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [msgs, setMsgs] = useState(null)
     const chatRef = useRef()
+    const guestId = useRef()
+
+    // Here we listen to .on(owner-send-msg) - adding msg to guest chat
+    useEffect(() => {
+        socketService.on(SOCKET_EVENT_OWNER_ADD_MSG, ownerMsg => {
+            console.log('socketsssssss')
+            console.log(ownerMsg)
+            setMsgs(prevMsgs => [...prevMsgs, ownerMsg])
+        })
+        guestId.current = socketService.getSocketId()
+    }, [])
 
     const [msg, setMsg] = useState('')
 
@@ -28,17 +40,25 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     }
 
     function onSend() {
+        socketService.emit(SOCKET_EMIT_GUEST_MSG, { guestMsg: msg, to: wap.owner })
         let currGuest
         if (!msgs) {
-            currGuest = `guest${utilService.makeId()}`
+            currGuest = `guest${socketService.getSocketId()}`
+            console.log(currGuest)
             wap.msgs = { [currGuest]: [], ...wap.msgs }
             msgs = wap.msgs[currGuest]
         }
+        // Here emit to guest-send-msg sending {guestId, content, time}
         msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
         setMsg('')
         // saveCmp(cmp)
+        console.log(wap)
         saveWap(wap)
         setMsgs(msgs)
+        // socketService.emit('private message', {
+        //     content,
+        //     to: this.selectedUser.userID,
+        // })
     }
     // const msgs = wap.msgs.guest1
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)

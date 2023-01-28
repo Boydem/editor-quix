@@ -33,7 +33,8 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
             // navigate(`/${wapUrlToEdit.publishUrl}`)
             showSuccessMsg('Your site has been published!')
         } catch (err) {
-            showErrorMsg(`Couldn't Publish, try again later.`)
+            console.log(err)
+            showErrorMsg(`Url is already taken.`)
         }
     }
     function handleChange(ev) {

@@ -4,6 +4,12 @@ import { saveWap } from '../../../store/wap/wap.action'
 import { AiOutlineSend } from 'react-icons/ai'
 import { AiOutlineUser } from 'react-icons/ai'
 import { useEffect } from 'react'
+import {
+    socketService,
+    SOCKET_EMIT_OWNER_MSG,
+    SOCKET_EVENT_GUEST_ADD_MSG,
+    SOCKET_EVENT_UPDATE_WAP,
+} from '../../../services/socket.service'
 
 export function MessagesDashboard({ user, currSite }) {
     const [msgs, setMsgs] = useState(currSite.msgs)
@@ -15,6 +21,10 @@ export function MessagesDashboard({ user, currSite }) {
 
     useEffect(() => {
         setMsgs(currSite.msgs)
+        socketService.on(SOCKET_EVENT_GUEST_ADD_MSG, guestMsg => {
+            console.log(guestMsg)
+            setMsgs(prevMsgs => [...prevMsgs, guestMsg])
+        })
     }, [currSite])
 
     function handleChange(ev) {
@@ -22,6 +32,7 @@ export function MessagesDashboard({ user, currSite }) {
     }
 
     function onSend() {
+        socketService.emit(SOCKET_EMIT_OWNER_MSG, { ownerMsg: msgTxt, to: currContact.from.slice(5) })
         currContact.msgs.push({ by: 'owner', txt: `${msgTxt}`, date: new Date().getTime() })
         setMsgs(prev => ({ ...prev }))
         saveWap(currSite)

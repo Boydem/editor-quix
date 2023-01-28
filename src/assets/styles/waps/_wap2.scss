@@ -80,10 +80,12 @@
                 font-weight: 500;
                 font-size: 5rem;
                 line-height: 5rem;
+                padding-bottom: 1.3rem;
             }
             p {
                 color: #8b95a6;
                 line-height: 1.9rem;
+                padding-bottom: 1.3rem;
             }
             button {
                 font: inherit;
@@ -107,6 +109,9 @@
                 display: flex;
                 flex-direction: column;
                 max-width: 400px;
+                h2 {
+                    padding-bottom: 0.4rem;
+                }
 
                 img {
                     width: 25%;
@@ -141,6 +146,10 @@
                     margin-top: 0.5rem;
                     font-size: 2rem;
                     font-weight: 500;
+                    padding: 1rem 0;
+                }
+                p {
+                    padding-bottom: 1rem;
                 }
                 button {
                     font: inherit;
@@ -168,6 +177,7 @@
         font-weight: 400;
         color: #64dee9;
         font-size: 2rem;
+        padding-bottom: 1rem;
     }
     .cards {
         display: grid;
@@ -183,6 +193,9 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            > p {
+                padding: 1rem 0;
+            }
             .image {
                 width: 100%;
                 aspect-ratio: 1/0.75;
@@ -245,6 +258,7 @@
         p {
             color: #8b95a6;
             line-height: 1.9rem;
+            padding-bottom: 1rem;
         }
         button {
             border: none;
@@ -273,6 +287,7 @@
             font-weight: 500;
             font-size: 3.5rem;
             line-height: 4rem;
+            padding-bottom: 0.5rem;
         }
         p {
             color: #8b95a6;
@@ -324,14 +339,18 @@
         border: 3px solid #8b95a6;
         font: inherit;
         background: transparent;
-        padding: 1rem 3rem;
+        padding: 1rem 1.3rem;
+        padding-right: 3rem;
         border-radius: 35px;
         margin: 0;
     }
     label {
         color: white;
         display: flex;
-        align-items: center;
+        // align-items: center;
+        flex-direction: column;
+        text-align: left;
+        justify-content: flex-start;
         gap: 10px;
         margin: 0;
     }
@@ -343,7 +362,6 @@
         margin: 0;
         border-radius: 35px;
         text-align: center;
-        width: 357px;
         max-width: 100%;
     }
 }
