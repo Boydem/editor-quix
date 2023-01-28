@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux'
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
     const user = useSelector(storeState => storeState.userModule.user)
-    console.log('user:', user)
+
     const navigate = useNavigate()
     useEffect(() => {
         getWaps()
