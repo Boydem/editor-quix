@@ -186,7 +186,7 @@
                     'avatar name time-ago'
                     'avatar body body';
                 line-height: 1;
-                gap: $spacing-xs $spacing-s;
+
                 *:not(:last-child) {
                     margin-inline-end: $spacing-s;
                 }
@@ -211,6 +211,17 @@
                 .user-avatar {
                     grid-area: avatar;
                     place-self: start;
+                    background-color: $editor-active-bg;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 55px;
+                    height: 2em;
+                    width: 2em;
+                    margin-bottom: -0.5em;
+                    svg {
+                        color: #004cc4;
+                    }
                 }
                 .message-body {
                     grid-area: body;
@@ -433,7 +444,6 @@
                     transition: background-color 0.5s, color 0.5s;
                     grid-column: 1/-1;
                     &:hover {
-                        background-color: darken($clr1, 5%);
                         color: $editor-active-clr;
                     }
                 }
@@ -442,16 +452,11 @@
                 }
                 &.active {
                     background: lighten($editor-active-bg, 1%);
-                    color: darken($editor-active-clr, 1%);
+                    background: #f3f7ff;
                     svg {
-                        fill: white;
-                        color: darken($editor-active-clr, 1%);
+                        // fill: white;
+                        // color: darken($editor-active-clr, 1%);
                     }
-
-                    &:hover {
-                        background-color: darken($editor-active-bg, 6%);
-                    }
-
                     .item {
                         color: white;
                         color: darken($editor-active-clr, 1%);

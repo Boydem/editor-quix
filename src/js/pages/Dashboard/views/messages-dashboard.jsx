@@ -66,7 +66,9 @@ export function MessagesDashboard({ user, currSite }) {
                         className={`list-item-preview chat-item  ${currContact.from === sender ? 'active' : ''}`}
                     >
                         <div className={`item`} key={sender} onClick={() => onContact(sender)}>
-                            <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
+                            <div className='user-avatar'>
+                                <AiOutlineUser size={'70%'} />
+                            </div>
                             <span className='user-name'>{sender}</span>
                             <div className='message-body'>
                                 <p>{msgs[sender]?.at(-1).txt}</p>
