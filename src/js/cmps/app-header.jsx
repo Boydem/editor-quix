@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+
 import { BiBell } from 'react-icons/bi'
 import { SiteSelect } from './site-select'
 import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
@@ -10,6 +11,10 @@ import { QuixLogo } from './quix-logo'
 import { UserTooltip } from './user-tooltip'
 import { SitesActionsDropdown } from '../pages/Editor/cmps/ui-cmps/sites-actions-dropdown'
 import { PublishModal } from '../pages/Editor/cmps/ui-cmps/publish-modal'
+import { GrUndo } from 'react-icons/gr'
+import { GrRedo } from 'react-icons/gr'
+import { TiBrush } from 'react-icons/ti'
+import { redoChange, undoChange } from '../store/wap/wap.action'
 
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
@@ -25,7 +30,13 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
     }
+    function onUndo() {
+        undoChange()
+    }
 
+    function onRedo() {
+        redoChange()
+    }
     return (
         <header
             data-location={location}
@@ -66,12 +77,12 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                 {location === 'editor' && (
                     <>
                         <div className='sites-actions'>
-                            <SitesActionsDropdown />
-                        </div>
-                        <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <div className='user-area'>
                                 <UserTooltip user={user} />
                             </div>
+                            <SitesActionsDropdown />
+                        </div>
+                        <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
                                 <li>
                                     <Link className='nav-link' to='/edit'>
@@ -96,6 +107,31 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                 </li>
                             </ul>
                         </nav>
+                        <ul className='icons-group mobile-only'>
+                            <li className='icon-container b-l'>
+                                <button
+                                    className='btn-icon'
+                                    data-tooltip='Undo'
+                                    data-tooltip-dir='bottom'
+                                    onClick={onUndo}
+                                >
+                                    <GrUndo />
+                                </button>
+                            </li>
+                            <li className='icon-container b-r'>
+                                <button
+                                    className='btn-icon'
+                                    data-tooltip='Redo'
+                                    data-tooltip-dir='bottom'
+                                    onClick={onRedo}
+                                >
+                                    <GrRedo />
+                                </button>
+                            </li>
+                            <li className='icon-container b-r'>
+                                <InteractiveChat />
+                            </li>
+                        </ul>
                     </>
                 )}
             </div>

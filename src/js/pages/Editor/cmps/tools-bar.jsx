@@ -48,7 +48,7 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
 
     return (
         <section className='tools-bar full'>
-            <ul className='icons-group b-r b-l'>
+            <ul className='icons-group b-r b-l add-icon'>
                 <li className='icon-container'>
                     <button
                         className={`${leftSidebarState.isOpen ? 'active' : ''} btn-icon`}
@@ -134,7 +134,7 @@ export function ToolsBar({ rightSidebarState, leftSidebarState, handleSidebarsCh
                 <li className='icon-container b-r'>
                     <InteractiveChat />
                 </li>
-                <li className='icon-container'>
+                <li className='icon-container edit-icon'>
                     <button
                         data-tooltip='Edit'
                         data-tooltip-dir='bottom'
