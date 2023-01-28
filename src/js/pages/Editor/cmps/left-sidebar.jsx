@@ -31,6 +31,8 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
 
     function handleThemeChange(selectedTheme) {
         const root = document.getElementById('root')
+        console.log(selectedTheme)
+        console.log(wap.palette)
         root.classList.replace(theme.current, selectedTheme)
         theme.current = selectedTheme
         wap.themeClass = selectedTheme
@@ -78,6 +80,20 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                         {leftSidebarState.activeMenuItem?.toLowerCase() === 'themes' ? (
                             <div>
                                 <p className='themes-intro'>Give your design a sense of meaning</p>
+                                <div
+                                    className='theme-container'
+                                    onClick={() => handleThemeChange(`${wap.name}-primary`)}
+                                >
+                                    <div className='theme-header'>
+                                        <h5>Site Theme</h5>
+                                    </div>
+                                    <div className='theme-colors-container'>
+                                        {wap.palette.map((clr, idx) => (
+                                            <div key={idx} style={{ backgroundColor: clr, height: '15px' }}></div>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 <div className='theme-container' onClick={() => handleThemeChange('theme-1')}>
                                     <div className='theme-header'>
                                         <h5>Buisness</h5>
@@ -96,10 +112,10 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                                         <p className='theme-desc'>Netural & serene</p>
                                     </div>
                                     <div className='theme-colors-container'>
-                                        <div style={{ backgroundColor: '#055345', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#f3ceac', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#f9efe6', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#ff7629', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#fe863047', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#dcdcdc', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#161515', height: '15px' }}></div>
                                     </div>
                                 </div>
                                 <div className='theme-container' onClick={() => handleThemeChange('theme-3')}>
