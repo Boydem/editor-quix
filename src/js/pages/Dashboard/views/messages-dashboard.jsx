@@ -69,7 +69,7 @@ export function MessagesDashboard({ user, currSite }) {
                             <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
                             <span className='user-name'>{sender}</span>
                             <div className='message-body'>
-                                <p>{msgs[sender]?.at(-1).txt.substring(0, 25)}...</p>
+                                <p>{msgs[sender]?.at(-1).txt}</p>
                             </div>
                             <div className='time-ago flex'>2 days ago</div>
                         </div>
@@ -81,7 +81,6 @@ export function MessagesDashboard({ user, currSite }) {
                 <div className='chat-layout'>
                     <div className='contact bar'>
                         <div className='pic bigger guest'>
-                            {' '}
                             <AiOutlineUser size={'70%'} fill={'#eee'} />
                         </div>
                         <div className='wrapper'>
