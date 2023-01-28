@@ -48,14 +48,14 @@ export function Preview() {
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
         <div className='full templates-css-reset' ref={containerRef}>
-            {isUserSite && (
+            {/* {isUserSite && (
                 <div className='site-owner-link'>
                     <p>Your site is on air!</p>
                     <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
                         Admin panel
                     </Link>
                 </div>
-            )}
+            )} */}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
             })}

@@ -69,12 +69,15 @@ $modules-content-width: 300px;
 $logo-container-width: 120px;
 
 // LAYOUT
-$layoutPadding: 2em;
+$layoutPadding: 5%;
+@media (min-width: $break-wide) {
+    $layoutPadding: 20%;
+}
 
-$padded-break-mobile: calc($break-mobile + $layoutPadding * 5);
-$padded-break-narrow: calc($break-narrow + $layoutPadding * 8);
-$padded-break-normal: calc($break-wide + $layoutPadding);
-$padded-break-wide: calc($break-xwide + $layoutPadding * 8);
+$padded-break-mobile: calc($break-mobile - $layoutPadding);
+$padded-break-narrow: calc($break-narrow - $layoutPadding);
+$padded-break-normal: calc($break-wide - $layoutPadding);
+$padded-break-wide: calc($break-xwide - $layoutPadding);
 
 // @media (min-width: $break-narrow) {
 //     $layoutPadding: $base-font-size * 3.375;
