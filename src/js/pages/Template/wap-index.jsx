@@ -5,9 +5,12 @@ import { wapService } from '../../services/wap.service'
 
 import { HiPlus } from 'react-icons/hi'
 import { AppHeader } from '../../cmps/app-header'
+import { useSelector } from 'react-redux'
 
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
+    const user = useSelector(storeState => storeState.userModule.user)
+    console.log('user:', user)
     const navigate = useNavigate()
     useEffect(() => {
         getWaps()

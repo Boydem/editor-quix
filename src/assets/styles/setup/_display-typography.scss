@@ -12,8 +12,8 @@ $maxViewportSize: 750;
 }
 
 span {
-    @include display-text('text-xxl', 80, 120);
-    @include display-text('display-1', 28, 64);
+    @include display-text('text-xxl', 80, 68);
+    @include display-text('display-1', 28, 48);
     @include display-text('display-2', 24, 48);
     @include display-text('display-3', 24, 32);
     @include display-text('display-4', 14, 35);
@@ -24,13 +24,13 @@ span {
 
     @media (min-width: $break-narrow) {
         $maxViewportSize: 1000;
-        @include display-text('text-xxl', 80, 120, $maxViewportSize);
-        @include display-text('display-1', 10, 83, $maxViewportSize);
-        @include display-text('display-2', 24, 68, $maxViewportSize);
-        @include display-text('display-3', 48, 48, $maxViewportSize);
+        @include display-text('text-xxl', 80, 90, $maxViewportSize);
+        @include display-text('display-1', 10, 48, $maxViewportSize);
+        @include display-text('display-2', 24, 42, $maxViewportSize);
+        @include display-text('display-3', 48, 42, $maxViewportSize);
         @include display-text('display-4', 32, 32, $maxViewportSize);
-        @include display-text('display-5', 4, 40, $maxViewportSize);
-        @include display-text('display-6', 10, 32, $maxViewportSize);
+        @include display-text('display-5', 4, 28, $maxViewportSize);
+        @include display-text('display-6', 10, 24, $maxViewportSize);
         @include display-text('display-link', 20, 20, $maxViewportSize);
         @include display-text('display-p', 10, 24, $maxViewportSize);
     }
@@ -48,7 +48,16 @@ span {
         @include display-text('display-p', 10, 24, $maxViewportSize);
     }
 }
-
+.main-layout {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font: unset;
+    }
+}
 span {
     &.text-xxl,
     &.display-1,
@@ -62,6 +71,7 @@ span {
         font-family: $font-family-display;
         letter-spacing: -0.02em;
         font-weight: 400;
+        line-height: 1.5 !important;
     }
 
     &.display-1,

@@ -11,6 +11,12 @@ export function UserTooltip({ user }) {
     function getShortenName() {
         if (!user) return
         const matches = user?.fullname.match(/\b(\w)/g)
+        if (!matches)
+            return (
+                <div className='avatar'>
+                    <AiOutlineUser size={'70%'} fill={'#eee'} />
+                </div>
+            )
         const shortName = matches.join('')
         return shortName
     }
