@@ -283,7 +283,7 @@ export function KanbanDashboard({ user, currSite }) {
                             {leadsList?.map(lead => {
                                 return (
                                     <ul className='table-row container' key={lead.id}>
-                                        <li className='col'>{lead.status}</li>
+                                        <li className='col'>{utilService.capitalize(lead.status)}</li>
                                         {Object.keys(lead.data).map((key, keyIndex) => {
                                             return (
                                                 <li className='col' key={key}>
