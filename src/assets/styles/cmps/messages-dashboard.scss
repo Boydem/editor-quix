@@ -7,7 +7,7 @@ $background: #f7f7f7;
 
 .messages-dashboard {
     display: grid;
-    grid-template-columns: minmax(max-content, 1fr) 4fr;
+    grid-template-columns: minmax(auto, 1fr) 4fr;
     flex: 1;
     background-color: darken($editor-lightgray, 11%) !important;
     overflow: hidden;

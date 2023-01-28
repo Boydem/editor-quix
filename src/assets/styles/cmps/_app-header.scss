@@ -35,7 +35,7 @@
             grid-template-columns: auto 1fr;
         }
         .user-area {
-            margin-inline-start: 1em;
+            margin-inline-start: auto;
             .avatar {
                 box-shadow: 0px 0px 0px 0px $editor-active-clr;
             }
