@@ -91,7 +91,8 @@
                 color: #161412;
                 background: #fffffe;
                 border: 1px solid #f7f7f7;
-                box-shadow: 0 4px 8px 0 rgba(254, 134, 48, 0.08), inset 0 0px 0px 2px #ff782936;
+                border: 2px solid var(--clr1);
+                // box-shadow: 0 4px 8px 0 var(--clr1), inset 0 0px 0px 2px var(--clr1);
                 &:hover {
                     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     box-shadow: 0 4px 8px 0 rgba(254, 134, 48, 0.08), inset 0 0px 0px 3px var(--clr1);
@@ -931,6 +932,7 @@
                 box-shadow: inset 0 0px 0px 2px var(--clr1), 0 4px 8px 0 rgba(22, 20, 18, 0.04);
             }
         }
+
         .add-note {
             grid-column: 1/3;
             input {
@@ -938,6 +940,12 @@
                 border-radius: 30px;
             }
         }
+    }
+    button {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 .section-6 {
