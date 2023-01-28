@@ -27,6 +27,7 @@ export function MessagesDashboard({ user, currSite }) {
             // console.log('guest:', guest)
             console.log(currSite.msgs)
             if (!currSite.msgs[guest]) {
+                currSite.msgs = { [guest]: guestMsg[1], ...currSite.msgs }
                 currSite.msgs[guest] = [guestMsg[1]]
             } else {
                 currSite.msgs[guest] = [...currSite.msgs[guest], guestMsg[1]]
