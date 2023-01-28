@@ -8,7 +8,7 @@ export function DiscoverSection({ navigate }) {
                     <span className='display-1'>Discover extraordinary projects brought to life on quix.</span>
                 </h1>
                 <button className='btn primary circled' onClick={() => navigate('/create')}>
-                    <span className='display-link'>Start Creating</span>
+                    <span className='display-link'>Start Demo</span>
                 </button>
 
                 <div></div>

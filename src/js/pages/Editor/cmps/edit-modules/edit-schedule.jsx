@@ -98,7 +98,7 @@ export function EditSchedule({ clickedCmp }) {
                                 value={[eventDuration]}
                                 className='SliderRoot slider-input'
                                 defaultValue={[30]}
-                                max={60}
+                                max={180}
                                 min={10}
                                 step={5}
                                 aria-label='Volume'

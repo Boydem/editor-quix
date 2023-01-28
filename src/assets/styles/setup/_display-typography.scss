@@ -38,12 +38,12 @@ span {
     @media (min-width: $break-wide) {
         $maxViewportSize: 1920;
         @include display-text('text-xxl', 80, 120, $maxViewportSize);
-        @include display-text('display-1', 10, 90, $maxViewportSize);
+        @include display-text('display-1', 10, 82, $maxViewportSize);
         @include display-text('display-2', 10, 72, $maxViewportSize);
         @include display-text('display-3', 10, 64, $maxViewportSize);
         @include display-text('display-4', 20, 40, $maxViewportSize);
         @include display-text('display-5', 4, 40, $maxViewportSize);
-        @include display-text('display-6', 9, 32, $maxViewportSize);
+        @include display-text('display-6', 9, 28, $maxViewportSize);
         @include display-text('display-link', 13, 20, $maxViewportSize);
         @include display-text('display-p', 10, 24, $maxViewportSize);
     }

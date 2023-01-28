@@ -1,7 +1,7 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import quixIcon from '../../../../assets/imgs/quix-icon-darkblue.png'
 import { utilService } from '../../../services/util.service'
-
+import { AiOutlineUser } from 'react-icons/ai'
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
     function handleChange() {}
     return (
@@ -15,6 +15,11 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <div className='free-domain'>
                         <h5>Your free quix domain</h5>
                         <div className='link-preview-container'>
+                            <div className='dots'>
+                                <span className='dot red'></span>
+                                <span className='dot yellow'></span>
+                                <span className='dot green'></span>
+                            </div>
                             <div className='link-preview'>
                                 <span>http://www.editorquix.com/</span>
                                 <input
@@ -53,7 +58,9 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                 {sortedEvents?.map((event, idx) => (
                     <article key={idx} className='list-item-preview'>
                         <div className='item'>
-                            <img className='user-avatar' src={user.imgUrl} alt='explorerSVG' />
+                            <div className='user-avatar'>
+                                <AiOutlineUser size={'70%'} />
+                            </div>
                             <span className='user-name'>{user.fullname}</span>
                             <div className='message-body'>
                                 <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>

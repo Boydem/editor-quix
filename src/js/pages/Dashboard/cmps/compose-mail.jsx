@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { GrClose } from 'react-icons/gr'
 import emailjs from 'emailjs-com'
+import { showSuccessMsg } from '../../../services/event-bus.service'
 
 export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
     const [msg, setMsg] = useState('')
@@ -15,6 +16,8 @@ export default function ComposeMail({ subscriberEmail, setIsMailOpen }) {
         emailjs.sendForm('service_ra3355j', 'template_2k87m98', formRef.current, 'BA6_vXLALxmOosQQV').then(
             result => {
                 console.log(result)
+                showSuccessMsg('Mail sent successfully')
+                setIsMailOpen(false)
             },
             error => {
                 console.log(error.text)

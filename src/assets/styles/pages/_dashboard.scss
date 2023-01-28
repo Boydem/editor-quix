@@ -186,7 +186,7 @@
                     'avatar name time-ago'
                     'avatar body body';
                 line-height: 1;
-                gap: $spacing-xs $spacing-s;
+
                 *:not(:last-child) {
                     margin-inline-end: $spacing-s;
                 }
@@ -211,6 +211,17 @@
                 .user-avatar {
                     grid-area: avatar;
                     place-self: start;
+                    background-color: $editor-active-bg;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 55px;
+                    height: 2em;
+                    width: 2em;
+                    margin-bottom: -0.5em;
+                    svg {
+                        color: #004cc4;
+                    }
                 }
                 .message-body {
                     grid-area: body;
@@ -226,12 +237,23 @@
             }
         }
         .info-box {
+            &.mb-1 {
+                margin-bottom: 0;
+            }
             padding: $spacing-m;
             border-radius: $spacing-xs;
             background-color: $clr1;
-            place-items: start;
             margin-bottom: $spacing-m;
             flex-direction: column;
+            .link-preview {
+                margin-top: $spacing-s;
+                gap: 0px;
+                input {
+                    padding: 0;
+                    box-shadow: none;
+                    border: 0px;
+                }
+            }
             img[alt='diamonds'] {
                 display: none;
             }
@@ -271,9 +293,10 @@
                 max-width: 100%;
                 min-width: 240px;
             }
-            &:not(.last-messages, .chart-wrapper) {
-                box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
-            }
+
+            // &:not(.last-messages, .chart-wrapper) {
+            //     box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
+            // }
             .text-wrapper {
                 place-self: start;
 
@@ -293,6 +316,86 @@
                 }
             }
         }
+        .data-list {
+            // display: grid;
+            // grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+            // grid-auto-flow: dense;
+            // grid-template-rows: auto;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .mini-info-box {
+            position: relative;
+            padding: 2rem;
+            background: #fbfcfc;
+            grid-row: 2;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            // color: #004cc4;
+            border-radius: 6px;
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                fill: $clr1;
+                margin: $spacing-s auto;
+                width: max-content;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $clr1;
+                padding: 1.125em;
+                border-radius: 66px;
+                background: #004cc4;
+                background-image: linear-gradient(60deg, #004cc4, rgba(255, 255, 255, 0.274));
+            }
+            h3 {
+                font-size: px-to-rem(14px);
+                font-weight: 600;
+                position: absolute;
+                top: $spacing-s;
+                left: 1.5em;
+                color: rgba(120, 124, 149, 0.9);
+            }
+            h2 {
+                color: #3f4558;
+                margin: 0;
+                padding: 0;
+                line-height: 2rem;
+                margin-top: 0.7rem;
+            }
+            h4 {
+                font-size: 1rem;
+                // letter-spacing: 2px;
+                // width: 80px;
+                margin: auto;
+                font-weight: 400;
+                color: $clr1;
+                padding: 0 1.25em;
+                border-radius: 66px;
+                font-weight: 600;
+                color: #28bf9a;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                // background-image: linear-gradient(200deg, #004cc4, rgba(255, 255, 255, 0.219));
+                .yaron-icon {
+                    margin-top: -3.6px;
+                }
+            }
+            p {
+                font-size: 0.7rem;
+                color: #d3d4d5;
+            }
+        }
         .info-box-2 {
             // border: 1px solid $editor-active-bg;
             background-color: darken($editor-active-clr, 15%);
@@ -306,9 +409,58 @@
                     margin-bottom: 0;
                 }
                 .link-preview-container {
+                    margin-top: $spacing-xs;
+                    background: linear-gradient(to bottom, #f6f6f6 0%, #dadada 100%);
                     color: $clr2;
                     align-items: stretch;
                     justify-items: flex-start;
+                    position: relative;
+                    background: #f6f6f6;
+                    background: -moz-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                    background: -webkit-gradient(
+                        linear,
+                        left top,
+                        left bottom,
+                        color-stop(0%, #f6f6f6),
+                        color-stop(100%, #dadada)
+                    );
+                    background: -webkit-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                    background: -o-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                    background: -ms-linear-gradient(top, #f6f6f6 0%, #dadada 100%);
+                    background: linear-gradient(to bottom, #f6f6f6 0%, #dadada 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
+                    border: 1px solid #d8d8d8;
+                    border-bottom: 1px solid #b4b4b4;
+
+                    .dots {
+                        position: absolute;
+                        top: -5px;
+                        left: 0;
+                        z-index: 2;
+                        margin: 0 !important;
+                        display: block;
+                        .dot {
+                            display: inline-block;
+                            width: 6px;
+                            height: 6px;
+                            background: #f9f9f9;
+                            border-radius: 50%;
+                            margin: 0 4px 0 0;
+                            &.red {
+                                background: #ff6057;
+                                border: 1px solid #e14640;
+                                margin-left: 6px;
+                            }
+                            &.yellow {
+                                background: #ffbd2e;
+                                border: 1px solid #dfa123;
+                            }
+                            &.green {
+                                background: #27c93f;
+                                border: 1px solid #1dad2b;
+                            }
+                        }
+                    }
                 }
             }
             .text-wrapper {
@@ -349,7 +501,6 @@
                     transition: background-color 0.5s, color 0.5s;
                     grid-column: 1/-1;
                     &:hover {
-                        background-color: darken($clr1, 5%);
                         color: $editor-active-clr;
                     }
                 }
@@ -358,16 +509,11 @@
                 }
                 &.active {
                     background: lighten($editor-active-bg, 1%);
-                    color: darken($editor-active-clr, 1%);
+                    background: #f3f7ff;
                     svg {
-                        fill: white;
-                        color: darken($editor-active-clr, 1%);
+                        // fill: white;
+                        // color: darken($editor-active-clr, 1%);
                     }
-
-                    &:hover {
-                        background-color: darken($editor-active-bg, 6%);
-                    }
-
                     .item {
                         color: white;
                         color: darken($editor-active-clr, 1%);
@@ -414,7 +560,6 @@
 
         .lists-container {
             max-height: 100%;
-            overflow: hidden;
             flex: 1;
             padding: $spacing-m;
             padding-top: calc($spacing-m);
