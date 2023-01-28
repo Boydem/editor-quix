@@ -80,7 +80,8 @@ async function login(userCred) {
     try {
         const user = await httpService.post('auth/login', userCred)
         socketService.login(user._id)
-        return saveLocalUser(user)
+        saveLocalUser(user)
+        return user
     } catch (err) {
         console.log('Failed to login', err)
         throw err

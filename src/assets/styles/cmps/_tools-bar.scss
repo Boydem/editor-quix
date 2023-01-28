@@ -9,7 +9,17 @@
     display: flex;
     align-items: center;
     height: $toolbar-height;
-
+    // mobile hidden
+    display: none;
+    .logo-container {
+        max-width: 100%;
+        max-height: 70%;
+        // height: 80%;
+        .quix-logo {
+            width: 85px;
+            height: 80%;
+        }
+    }
     > * {
         height: 100%;
     }
@@ -178,14 +188,10 @@
     }
 }
 @media (min-width: 960px) {
-    .icon-container {
-        width: 2.5em;
-    }
-    .icons-group {
-        &.responsive-btns {
-            display: inline-flex;
+    .tools-bar {
+        display: flex;
+        .icon-container {
+            width: 2.5em;
         }
-    }
-    .btn-icon {
     }
 }

@@ -3,7 +3,18 @@
     position: sticky;
     top: 0;
     z-index: 99;
+    .icons-group.mobile-only {
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+        .icon-container {
+            height: 100%;
+            width: max-content;
+            padding: 0 0.5em;
+        }
+    }
     .logo-container {
+        min-width: 85px;
         max-width: 85px;
         .quix-logo {
             width: 100%;
@@ -24,7 +35,7 @@
             grid-template-columns: auto 1fr;
         }
         .user-area {
-            margin-inline-start: auto;
+            margin-inline-start: 1em;
             .avatar {
                 box-shadow: 0px 0px 0px 0px $editor-active-clr;
             }
@@ -44,14 +55,17 @@
     }
     .layout-wrapper {
         width: 100%;
-        display: grid;
+        display: flex;
         align-items: center;
-        grid-template-columns: auto auto 1fr auto;
+        // grid-template-columns: auto auto 1fr auto;
         margin: auto;
         z-index: 9999;
         border-bottom: 1px solid $editor-lightgray;
-        padding: 0 $spacing-m;
+        padding: 0 1em;
         min-height: $app-header-height;
+        @media (min-width: 960px) {
+            padding: 0 $spacing-m;
+        }
     }
     &.main-layout {
         .layout-wrapper {
@@ -81,6 +95,10 @@
 
     .sites-actions {
         padding: 0 $spacing-m;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 1em;
         .sites-actions-dropdown {
             cursor: pointer;
         }
@@ -152,16 +170,12 @@
     }
 }
 .app-header[data-location='editor'] {
-    .user-area,
     .site-link,
     .user-actions ul li {
         display: none;
     }
 }
 .user-area {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    place-items: center start;
     .avatar {
         cursor: default;
         width: 30px;
@@ -221,6 +235,8 @@
         }
     }
 }
+.app-header[data-location='editor'] {
+}
 .interactives > * {
     height: 100%;
 }
@@ -229,6 +245,9 @@ div[data-radix-popper-content-wrapper] {
 }
 @media (min-width: 960px) {
     .app-header[data-location='editor'] {
+        .icons-group.mobile-only {
+            display: none;
+        }
         .user-area,
         .site-link,
         .user-actions ul li {
