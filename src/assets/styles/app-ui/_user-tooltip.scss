@@ -11,11 +11,38 @@
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
     border-radius: 6px;
-    padding: $spacing-m;
+    padding: $spacing-m $spacing-m 0 $spacing-m;
     width: 300px;
     will-change: transform, opacity;
-
+    .br-b {
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid rgba($clr2, 10%);
+        margin-top: 1em;
+    }
     max-width: 300px;
+    .avatar {
+        cursor: default;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 55px;
+        overflow: hidden;
+        color: $clr1;
+        text-transform: uppercase;
+        background-color: scale-color($color: #820abf, $saturation: -20%, $lightness: -5%);
+        transition: 1s ease-out box-shadow;
+        &:hover {
+            transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) box-shadow;
+            box-shadow: 0px 0px 0px 2.5px lighten($editor-active-clr, 5%);
+        }
+    }
+    .bold-link {
+        font-weight: 600;
+        color: $editor-active-clr;
+        margin: $spacing-s 0;
+    }
     &.guest {
         padding: 1em $spacing-m;
         .login-signup-guest {
@@ -78,7 +105,6 @@
     }
 
     .Text {
-        margin: 0;
         color: var(--mauve12);
         font-size: 15px;
         line-height: 1.5;

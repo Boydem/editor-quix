@@ -33,7 +33,8 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
             // navigate(`/${wapUrlToEdit.publishUrl}`)
             showSuccessMsg('Your site has been published!')
         } catch (err) {
-            showErrorMsg(`Couldn't Publish, try again later.`)
+            console.log(err)
+            showErrorMsg(`Url is already taken.`)
         }
     }
     function handleChange(ev) {
@@ -50,8 +51,10 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
                 </div>
                 {!isPublished ? (
                     <div className='content-container'>
-                        <h4> {!user ? 'Oops u must sign in first' : 'Choose a domain before you publish'}</h4>
-                        <p>{!user ? 'or signup' : "The domain you select will be your site's address"}</p>
+                        <div className='flex column justify-center align-center'>
+                            <h4> {!user ? 'Oops u must sign in first' : 'Choose a domain before you publish'}</h4>
+                            <p>{!user ? 'or signup' : "The domain you select will be your site's address"}</p>
+                        </div>
                         {!user ? (
                             <PublishLoginSignup />
                         ) : (

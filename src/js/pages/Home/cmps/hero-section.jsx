@@ -59,14 +59,14 @@ export function HeroSection({ navigate }) {
                         <div>
                             <a className='link-underline' href='#waps-section'>
                                 <span className='display-link'>See all design features</span>
-                                <span>
+                                <span className='arrow'>
                                     <AiOutlineArrowRight />
                                 </span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className='brands-wrapper full main-layout'>
+                <div className='brands-wrapper'>
                     <h3>
                         <span className='display-4'>Trusted by game-changing brands.</span>
                     </h3>

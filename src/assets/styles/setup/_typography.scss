@@ -34,40 +34,42 @@ body {
 }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    letter-spacing: -0.01rem;
-}
-h1 {
-    font-size: px-to-rem(48.38px);
-    letter-spacing: -0.05rem;
-}
+main:not(.main-layout) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: -0.01rem;
+    }
+    h1 {
+        font-size: px-to-rem(48.38px);
+        letter-spacing: -0.05rem;
+    }
 
-h2 {
-    font-size: px-to-rem(36px);
-    letter-spacing: -0.01rem;
-}
+    h2 {
+        font-size: px-to-rem(36px);
+        letter-spacing: -0.01rem;
+    }
 
-h3 {
-    font-size: px-to-rem(25.23px);
-}
+    h3 {
+        font-size: px-to-rem(25.23px);
+    }
 
-h4 {
-    font-size: px-to-rem(22.43px);
-}
+    h4 {
+        font-size: px-to-rem(22.43px);
+    }
 
-h5 {
-    font-size: px-to-rem(19.93px);
-}
+    h5 {
+        font-size: px-to-rem(19.93px);
+    }
 
-h6 {
-    font-size: px-to-rem(15.75px);
-}
+    h6 {
+        font-size: px-to-rem(15.75px);
+    }
 
-small {
-    font-size: px-to-rem(12.44px);
+    small {
+        font-size: px-to-rem(12.44px);
+    }
 }

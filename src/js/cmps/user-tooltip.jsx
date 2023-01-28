@@ -11,6 +11,12 @@ export function UserTooltip({ user }) {
     function getShortenName() {
         if (!user) return
         const matches = user?.fullname.match(/\b(\w)/g)
+        if (!matches)
+            return (
+                <div className='avatar'>
+                    <AiOutlineUser size={'70%'} fill={'#eee'} />
+                </div>
+            )
         const shortName = matches.join('')
         return shortName
     }
@@ -50,19 +56,31 @@ export function UserTooltip({ user }) {
                                         <FiLogOut />
                                     </button>
                                 </div> */}
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-                                    {user && <img className='user-img normal' src={user.imgUrl} alt='userImg' />}
-                                    <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
+                                <div className='flex column' style={{ gap: 10 }}>
+                                    {user.imgUrl ? (
+                                        <img className='user-img normal' src={user.imgUrl} alt='userImg' />
+                                    ) : (
+                                        <div className='avatar'>
+                                            <AiOutlineUser size={'70%'} fill={'#eee'} />
+                                        </div>
+                                    )}
+                                    <div className='flex column'>
                                         <div>
                                             <div className='Text bold'>{user.fullname}</div>
                                             <div className='Text faded'>@{user.username}</div>
                                         </div>
-                                        <div className='Text'>
-                                            Components, icons, colors, and templates for building high-quality,
-                                            accessible UI. Free and open-source.
+                                        <div className='flex br-b' style={{ gap: 15 }}>
+                                            <div className='flex' style={{ gap: 5 }}>
+                                                <div className='Text bold'>0</div>{' '}
+                                                <div className='Text faded'>Sites</div>
+                                            </div>
+                                            <div className='flex' style={{ gap: 5 }}>
+                                                <div className='Text bold'>2,900</div>{' '}
+                                                <div className='Text faded'>Subscribers</div>
+                                            </div>
                                         </div>
-                                        <div style={{ display: 'flex', gap: 15 }}>
-                                            <Link className='btn-primary' to={`/dashboard/${user._id}`}>
+                                        <div className='flex'>
+                                            <Link className='bold-link' to={`/dashboard/${user._id}`}>
                                                 Admin panel
                                             </Link>
                                         </div>

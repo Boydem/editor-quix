@@ -9,11 +9,6 @@ import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.servic
 import { logout } from '../../../store/user/user.actions'
 export function HomeHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
-    const [isMenuOpen, setIsMenuOpen] = useState()
-
-    function toggleMenu() {
-        setIsMenuOpen(!isMenuOpen)
-    }
 
     return (
         <header className='home-header flex justify-between full'>
@@ -23,10 +18,7 @@ export function HomeHeader() {
                 </Link>
             </div>
 
-            <div onClick={toggleMenu} className='btn-mobile-menu'>
-                <FaBars />
-            </div>
-            <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
+            <nav className={`main-nav`}>
                 <ul className='flex align-center'>
                     <li>
                         <Link className='nav-link btn-start-now link-underline' to='/create'>

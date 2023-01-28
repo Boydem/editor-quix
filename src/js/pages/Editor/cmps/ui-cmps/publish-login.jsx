@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import * as Tabs from '@radix-ui/react-tabs'
-import { login, signup } from '../../../../store/user/user.actions'
+import { login, onGoogleLogin, signup } from '../../../../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
+import { GoogleLoginSignup } from '../../../Login/google-login-signup'
+import { useNavigate } from 'react-router'
 
 export function PublishLoginSignup() {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
-
+    const navigate = useNavigate()
     function clearState() {
         setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
     }
@@ -46,6 +48,18 @@ export function PublishLoginSignup() {
             showErrorMsg(err.txt)
         }
     }
+    async function handleGoogleLogin(credentials) {
+        try {
+            const user = await onGoogleLogin(credentials)
+            showSuccessMsg(`Welcome, ${user.fullname}`)
+        } catch (err) {
+            console.error('Failed to login', err)
+            showErrorMsg('Cannot login. Please try again later.')
+        } finally {
+            clearState()
+            navigate(-1)
+        }
+    }
 
     return (
         <Tabs.Root className='TabsRoot' defaultValue='tab1'>
@@ -58,7 +72,6 @@ export function PublishLoginSignup() {
                 </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content className='TabsContent' value='tab1'>
-                <p className='Text'>Make changes to your account here. Click save when you're done.</p>
                 <fieldset className='Fieldset'>
                     <label className='Label' htmlFor='name'>
                         Username
@@ -85,14 +98,14 @@ export function PublishLoginSignup() {
                         onChange={handleChange}
                     />
                 </fieldset>
-                <div style={{ display: 'flex', marginTop: 20, justifyContent: 'flex-end' }}>
-                    <button className='Button green' onClick={onLogin}>
+                <div className='login-btns flex justify-between align-center'>
+                    <GoogleLoginSignup handleGoogleLogin={handleGoogleLogin} />
+                    <button className='login-btn' onClick={onLogin}>
                         Login
                     </button>
                 </div>
             </Tabs.Content>
             <Tabs.Content className='TabsContent' value='tab2'>
-                <p className='Text'>Change your password here. After saving, you'll be logged out.</p>
                 <fieldset className='Fieldset'>
                     <label className='Label' htmlFor='username'>
                         Username
@@ -132,8 +145,8 @@ export function PublishLoginSignup() {
                         value={credentials.fullname}
                     />
                 </fieldset>
-                <div style={{ display: 'flex', marginTop: 20, justifyContent: 'flex-end' }}>
-                    <button className='Button green' onClick={onSignup}>
+                <div className='login-btns flex justify-end align-center'>
+                    <button className='login-btn' onClick={onSignup}>
                         Sign Up
                     </button>
                 </div>

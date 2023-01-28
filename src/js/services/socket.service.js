@@ -2,8 +2,12 @@ import io from 'socket.io-client'
 import { userService } from './user.service'
 
 export const SOCKET_EMIT_SET_ROOM = 'set-wap-room'
-export const SOCKET_EMIT_SEND_MSG = 'chat-send-msg'
-export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
+
+export const SOCKET_EMIT_OWNER_MSG = 'owner-msg'
+export const SOCKET_EVENT_OWNER_ADD_MSG = 'owner-add-msg'
+export const SOCKET_EMIT_GUEST_MSG = 'guest-msg'
+export const SOCKET_EVENT_GUEST_ADD_MSG = 'guest-add-msg'
+
 export const SOCKET_EMIT_USER_WATCH = 'user-watch'
 
 export const SOCKET_EMIT_SEND_LEAD = 'send-lead'
@@ -59,6 +63,9 @@ function createSocketService() {
         },
         logout() {
             socket.emit(SOCKET_EMIT_LOGOUT)
+        },
+        getSocketId() {
+            return socket.id
         },
         terminate() {
             socket = null

@@ -42,7 +42,10 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap: 1em;
+            gap: 2em;
+            .TabsRoot {
+                width: 75%;
+            }
             .where-next-btns {
                 display: flex;
                 gap: $spacing-m;
