@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { showErrorMsg } from '../../services/event-bus.service'
+import { socketService } from '../../services/socket.service'
 import { wapService } from '../../services/wap.service'
 import { setWap, setWapNull } from '../../store/wap/wap.action'
 import DynamicCmp from '../Editor/cmps/dynamic-cmp'
@@ -17,6 +18,7 @@ export function Preview() {
 
     useEffect(() => {
         loadWap()
+        socketService.emit('set-wap-room', wapUrl)
 
         return () => {
             const root = document.getElementById('root')

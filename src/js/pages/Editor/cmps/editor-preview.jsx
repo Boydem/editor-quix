@@ -67,7 +67,7 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
         <Droppable droppableId='editor-preview'>
             {provided => {
                 return (
-                    <div {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
+                    <main {...provided.droppableProps} ref={provided.innerRef} className='editor-preview full'>
                         <div className='editor-wrapper templates-css-reset' ref={editorWrapper}>
                             {wapCmps.map((cmp, idx) => {
                                 return (
@@ -92,7 +92,7 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
                             })}
                             {provided.placeholder}
                         </div>
-                    </div>
+                    </main>
                 )
             }}
         </Droppable>

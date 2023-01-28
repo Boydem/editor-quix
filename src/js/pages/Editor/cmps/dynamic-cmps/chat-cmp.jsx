@@ -55,6 +55,10 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         console.log(wap)
         saveWap(wap)
         setMsgs(msgs)
+        // socketService.emit('private message', {
+        //     content,
+        //     to: this.selectedUser.userID,
+        // })
     }
     // const msgs = wap.msgs.guest1
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)

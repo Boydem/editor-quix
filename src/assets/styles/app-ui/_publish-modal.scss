@@ -42,9 +42,9 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap: 2em;
+            gap: 1.5em;
             .TabsRoot {
-                width: 75%;
+                width: 100%;
             }
             .where-next-btns {
                 display: flex;
@@ -53,6 +53,9 @@
                     // box-shadow: inset 0px 0px 0px 1px $editor-active-clr;
                     color: $editor-active-clr;
                 }
+            }
+            .intro-text {
+                gap: $spacing-s;
             }
         }
         .close-btn {
@@ -63,10 +66,14 @@
         }
         h4 {
             font-weight: 800;
+            text-align: center;
+            font-size: px-to-rem(24px);
         }
         p {
-            font-size: 16px;
+            font-size: px-to-rem(16px);
+            color: darken($clr9, 10%);
         }
+
         button {
             align-self: center;
             &.app-btn.primary > * {
@@ -78,10 +85,9 @@
         }
 
         h5.secondary-title {
-            marign: $spacing-m 0;
             font-size: 1.125em;
             color: lighten($clr2, 25%);
-            font-weight: 400;
+            font-weight: 600;
         }
         .bold {
             margin: 0 !important;

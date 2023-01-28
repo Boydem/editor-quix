@@ -23,7 +23,7 @@ span {
     @include display-text('display-p', 14, 24);
 
     @media (min-width: $break-narrow) {
-        $maxViewportSize: 1000;
+        $maxViewportSize: $break-narrow;
         @include display-text('text-xxl', 80, 90, $maxViewportSize);
         @include display-text('display-1', 10, 48, $maxViewportSize);
         @include display-text('display-2', 24, 42, $maxViewportSize);
@@ -48,7 +48,7 @@ span {
         @include display-text('display-p', 10, 24, $maxViewportSize);
     }
 }
-.main-layout {
+.home {
     h1,
     h2,
     h3,
