@@ -15,6 +15,11 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <div className='free-domain'>
                         <h5>Your free quix domain</h5>
                         <div className='link-preview-container'>
+                            <div className='dots'>
+                                <span className='dot red'></span>
+                                <span className='dot yellow'></span>
+                                <span className='dot green'></span>
+                            </div>
                             <div className='link-preview'>
                                 <span>http://www.editorquix.com/</span>
                                 <input
