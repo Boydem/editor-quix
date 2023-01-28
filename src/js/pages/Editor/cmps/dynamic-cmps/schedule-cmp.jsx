@@ -6,6 +6,7 @@ import useDidMountEffect from '../../../../hooks/use-did-mount-effect'
 import { saveWap } from '../../../../store/wap/wap.action'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Cross2Icon } from '@radix-ui/react-icons'
+import { socketService, SOCKET_EMIT_SEND_SCHEDULE } from '../../../../services/socket.service'
 
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -205,6 +206,7 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     function onFinalizeBooking(ev) {
         ev.preventDefault()
         wap.schedule.meetings.push(meetingInputs)
+        socketService.emit(SOCKET_EMIT_SEND_SCHEDULE, { data: meetingInputs, to: wap.owner })
         saveWap(wap)
         setIsModalOpen(false)
         console.log(meetingInputs)
