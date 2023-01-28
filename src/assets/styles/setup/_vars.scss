@@ -53,8 +53,9 @@ $spacing-xxl: 7.594 * $spacing-unit;
 $spacing-xxxl: 11.391 * $spacing-unit;
 
 // Define breakpoints
-$break-narrow: 640px;
-$break-wide: 1024px;
+$break-mobile: 540px;
+$break-narrow: 840px;
+$break-wide: 1230px;
 $break-xwide: 1920px;
 
 // fixed sizes
@@ -68,11 +69,12 @@ $modules-content-width: 300px;
 $logo-container-width: 120px;
 
 // LAYOUT
-$layoutPadding: $base-font-size * 5.063;
+$layoutPadding: 2em;
 
-$padded-break-narrow: $break-narrow + $layoutPadding * 0.667;
-$padded-break-normal: $break-wide + $layoutPadding * 1;
-$padded-break-wide: $break-xwide + $layoutPadding * 1.5;
+$padded-break-mobile: calc($break-mobile + $layoutPadding * 5);
+$padded-break-narrow: calc($break-narrow + $layoutPadding * 8);
+$padded-break-normal: calc($break-wide + $layoutPadding);
+$padded-break-wide: calc($break-xwide + $layoutPadding * 8);
 
 // @media (min-width: $break-narrow) {
 //     $layoutPadding: $base-font-size * 3.375;

@@ -17,6 +17,10 @@
         grid-column: -1/2;
     }
 
+    @include for-mobile-layout {
+        @include layoutGTC($padded-break-mobile);
+    }
+
     @include for-narrow-layout {
         @include layoutGTC($padded-break-narrow);
     }

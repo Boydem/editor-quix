@@ -1,38 +1,36 @@
 .compose-mail {
     position: fixed;
-    bottom: 1%;
-    right: 5%;
+    bottom: 0%;
+    right: 0%;
+    border-radius: $spacing-s 0 0 0;
+    width: 500px;
+    background-color: $clr1;
+    box-shadow: 0px 0px 50px -20px rgb(0 0 0 / 20%);
+    display: flex;
+    flex-direction: column;
     .weight-700 {
         font-weight: 700;
     }
-
     .close-btn-wrapper {
         position: absolute;
-        top: 2%;
-        right: 2%;
+        top: 3%;
+        right: 3%;
         cursor: pointer;
-        // padding: 2rem;
     }
 
-    width: 500px;
-    height: 500px;
-    padding: 2rem;
-    background-color: #fbfcfc;
-    border-radius: 7px;
-    outline: 1px solid rgb(231, 231, 231);
-    box-shadow: 0px 0px 1000px 2px rgb(0 0 0 / 20%);
-
     .to {
-        padding: 0.8rem 0;
+        padding: $spacing-s $spacing-m;
         display: grid;
         grid-template-columns: 50px 1fr;
         border-bottom: 1px solid rgb(231, 231, 231);
+        pointer-events: none;
     }
     .title {
-        padding: 0.8rem 0;
+        padding: $spacing-s $spacing-m;
         display: grid;
         grid-template-columns: 50px 1fr;
-
+        align-items: center;
+        justify-content: center;
         border-bottom: 1px solid rgb(231, 231, 231);
     }
     input {
@@ -40,6 +38,7 @@
         background: transparent;
     }
     textarea {
+        padding: 0 $spacing-m;
         width: 100%;
         height: 100%;
         border: none;
@@ -50,28 +49,27 @@
         outline: none;
     }
     .mail-container {
-        padding: 0.8rem 0;
+        background-color: $clr1;
+        padding: $spacing-s 0;
+        flex: 1;
     }
     .actions {
         display: flex;
         justify-content: space-between;
         .send {
             align-self: flex-end;
-
+            padding: 0 $spacing-m 0 0;
             button {
                 cursor: pointer;
                 padding: 2px 8px;
                 border-radius: 3px;
-                color: #fbfcfc;
-                box-shadow: inset 0px 0px 0px 2px #2b7dff;
-                background-color: #2b7dff;
+                color: $clr1;
+                background-color: $editor-active-clr;
                 transition: background-color 0.45s cubic-bezier(0.075, 0.82, 0.165, 1),
                     color 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
             }
             button:hover {
-                color: #2b7dff;
-                background-color: #fbfcfc;
-                box-shadow: inset 0px 0px 0px 1px #2b7dff;
+                background-color: darken($editor-active-clr, 15%);
             }
         }
     }

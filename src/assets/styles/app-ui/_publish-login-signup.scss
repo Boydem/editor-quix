@@ -12,6 +12,28 @@ fieldset {
 .TabsRoot {
     display: flex;
     flex-direction: column;
+    .login-btns {
+        margin-bottom: 1em;
+        .login-btn {
+            background-color: $editor-active-clr;
+            color: $clr1;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+            padding: $spacing-xs 1em;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        button {
+            > * {
+                margin: 0 !important;
+                padding: $spacing-xs !important;
+            }
+        }
+    }
 }
 
 .TabsList {
@@ -42,60 +64,59 @@ fieldset {
 .TabsContent {
     flex-grow: 1;
     outline: none;
-}
+    .Text {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        color: darken($color: $editor-lightgray, $amount: 30%);
+    }
 
-.Text {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: darken($color: $editor-lightgray, $amount: 30%);
-    font-size: 13px;
-    line-height: 1;
-}
+    .Fieldset {
+        margin-top: $spacing-m;
+        margin-bottom: $spacing-m;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 
-.Fieldset {
-    margin-bottom: $spacing-m;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
+    .Label {
+        font-size: 13px;
+        line-height: 1;
+        margin-bottom: 10px;
+        color: var(--violet12);
+        display: block;
+    }
 
-.Label {
-    font-size: 13px;
-    line-height: 1;
-    margin-bottom: 10px;
-    color: var(--violet12);
-    display: block;
-}
+    .Input {
+        flex: 1 0 auto;
+        border-radius: 4px;
+        padding: 0 10px;
+        color: $editor-active-clr;
+        box-shadow: inset 0 0 0 1px lighten($editor-active-clr, 30%);
+        padding: $spacing-s 1em;
+        transition: box-shadow 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        background: white;
+    }
+    .Input:focus {
+        box-shadow: inset 0 0 0 2px $editor-active-clr;
+    }
 
-.Input {
-    flex: 1 0 auto;
-    border-radius: 4px;
-    padding: 0 10px;
-    color: $editor-active-clr;
-    box-shadow: inset 0 0 0 1px lighten($editor-active-clr, 30%);
-    padding: $spacing-s 1em;
-    transition: box-shadow 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.Input:focus {
-    box-shadow: inset 0 0 0 2px $editor-active-clr;
-}
-
-.Button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    padding: 0 15px;
-    font-weight: 500;
-}
-.Button.green {
-    background-color: var(--green4);
-    color: var(--green11);
-}
-.Button.green:hover {
-    background-color: var(--green5);
-}
-.Button.green:focus {
-    box-shadow: 0 0 0 2px var(--green7);
+    .Button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        padding: 0 15px;
+        font-weight: 500;
+    }
+    .Button.green {
+        background-color: var(--green4);
+        color: var(--green11);
+    }
+    .Button.green:hover {
+        background-color: var(--green5);
+    }
+    .Button.green:focus {
+        box-shadow: 0 0 0 2px var(--green7);
+    }
 }

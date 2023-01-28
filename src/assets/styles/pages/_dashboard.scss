@@ -175,12 +175,15 @@
                 grid-template-areas:
                     'avatar name time-ago'
                     'avatar body body';
+                line-height: 1;
                 *:not(:last-child) {
                     margin-inline-end: $spacing-s;
                 }
                 .user-name {
                     grid-area: name;
                     place-self: start;
+                    color: $clr2;
+                    font-weight: 600;
                 }
                 .time-ago {
                     color: $clr9;
@@ -199,7 +202,7 @@
                     overflow: hidden;
                     grid-area: body;
                     font-size: px-to-rem(12.44px);
-                    color: $clr18;
+                    color: darken($clr9, 10%);
                 }
             }
         }
@@ -257,12 +260,12 @@
                     font-weight: 600;
                 }
                 h3 {
-                    font-weight: 400;
+                    font-weight: 700;
                     color: darken($clr9, 35%);
-                    margin-bottom: $spacing-xxs;
                 }
                 p {
                     color: rgba($clr7, 90%);
+                    margin-top: 1em;
                 }
             }
         }
@@ -308,7 +311,7 @@
                 margin-top: 1rem;
             }
             .list-item-preview {
-                padding: $spacing-s $spacing-m;
+                padding: 1em $spacing-m;
                 width: 100%;
                 border-bottom: 1px solid $editor-lightgray;
 
@@ -385,11 +388,6 @@
         // padding: 0 0 $spacing-m 0 !important;
         padding: 0 !important;
 
-        .leads-table {
-            // border: $border;
-            .col {
-            }
-        }
         .lists-container {
             max-height: 100%;
             overflow: hidden;
@@ -719,13 +717,20 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $editor-lightgray;
+        margin-bottom: 1rem;
+        line-height: 1;
+        h3 {
+            margin-bottom: 0;
+        }
     }
     .leads-table {
         grid-column: 1/-1;
         width: 100%;
         border: 1px solid darken($editor-lightgray, 20%);
         border-radius: 3px;
-
+        margin-top: 1em;
         .container {
             grid-column: 1/-1;
             display: grid;
@@ -772,17 +777,14 @@
     }
     button.btn-send-msg {
         cursor: pointer;
-        padding: 2px 8px;
+        padding: 0.66em 0.88em;
         border-radius: 3px;
         color: $clr1;
-        box-shadow: inset 0px 0px 0px 2px lighten($editor-active-clr, 5%);
-        background-color: lighten($editor-active-clr, 5%);
+        background-color: $editor-active-clr;
         transition: background-color 0.45s cubic-bezier(0.075, 0.82, 0.165, 1),
             color 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
         &:hover {
-            color: lighten($editor-active-clr, 5%);
-            background-color: $clr1;
-            box-shadow: inset 0px 0px 0px 1px lighten($editor-active-clr, 5%);
+            background-color: darken($editor-active-clr, 15%);
         }
     }
 }
