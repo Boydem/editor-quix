@@ -60,6 +60,7 @@ function createSocketService() {
         },
         login(userId) {
             socket.emit(SOCKET_EMIT_LOGIN, userId)
+            // socket.id = userId
         },
         logout() {
             socket.emit(SOCKET_EMIT_LOGOUT)

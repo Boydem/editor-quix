@@ -20,6 +20,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
     const [isMenuOpen, setIsMenuOpen] = useState()
     const [isPublishing, setIsPublishing] = useState(false)
     const { wapId } = useParams()
+    const navigate = useNavigate()
     const wap = useSelector(storeState => storeState.wapModule.wap)
     const user = useSelector(storeState => storeState.userModule.user)
 
@@ -36,6 +37,14 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
 
     function onRedo() {
         redoChange()
+    }
+
+    function onPreview() {
+        if (wap.url) {
+            navigate(`/${wap.url}`)
+        } else {
+            navigate(`/preview/${wap._id}`)
+        }
     }
     return (
         <header
@@ -90,9 +99,9 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className='nav-link preview' to={`/preview/${wapId}`}>
+                                    <button className='nav-link preview' onClick={onPreview}>
                                         <span>Preview</span>
-                                    </Link>
+                                    </button>
                                 </li>
                                 <li>
                                     <button className='nav-link publish' onClick={() => setIsPublishing(true)}>

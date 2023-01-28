@@ -40,7 +40,10 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     }
 
     function onSend() {
-        socketService.emit(SOCKET_EMIT_GUEST_MSG, { guestMsg: msg, to: wap.owner })
+        socketService.emit(SOCKET_EMIT_GUEST_MSG, {
+            guestMsg: [`guest${socketService.getSocketId()}`, msg],
+            to: wap.owner,
+        })
         let currGuest
         if (!msgs) {
             currGuest = `guest${socketService.getSocketId()}`

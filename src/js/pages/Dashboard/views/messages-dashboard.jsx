@@ -21,9 +21,25 @@ export function MessagesDashboard({ user, currSite }) {
 
     useEffect(() => {
         setMsgs(currSite.msgs)
-        socketService.on(SOCKET_EVENT_GUEST_ADD_MSG, guestMsg => {
-            console.log(guestMsg)
-            setMsgs(prevMsgs => [...prevMsgs, guestMsg])
+        console.log(socketService.getSocketId())
+        socketService.on('guest-add-msg', guestMsg => {
+            const guest = guestMsg[0]
+            // console.log('guest:', guest)
+            console.log(currSite.msgs)
+            if (!currSite.msgs[guest]) {
+                currSite.msgs = { [guest]: guestMsg[1], ...currSite.msgs }
+                currSite.msgs[guest] = [guestMsg[1]]
+            } else {
+                currSite.msgs[guest] = [...currSite.msgs[guest], guestMsg[1]]
+            }
+            // if (!msgs[guest]) {
+            //     msgs[guest] = [guestMsg[1]]
+            //     console.log('msgs:', msgs)
+            // }
+            // } else {
+            //     msgs[guestMsg] = [...msgs[guest], guestMsg[1]]
+            // }
+            setMsgs({ ...currSite.msgs })
         })
     }, [currSite])
 
