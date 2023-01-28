@@ -6,6 +6,7 @@ import { BsChatFill } from 'react-icons/bs'
 import { AiOutlineSend } from 'react-icons/ai'
 import { makeId, utilService } from '../../../../services/util.service'
 import { saveCmp, saveWap } from '../../../../store/wap/wap.action'
+import { socketService } from '../../../../services/socket.service'
 
 export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -39,6 +40,10 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         // saveCmp(cmp)
         saveWap(wap)
         setMsgs(msgs)
+        // socketService.emit('private message', {
+        //     content,
+        //     to: this.selectedUser.userID,
+        // })
     }
     // const msgs = wap.msgs.guest1
     const chatInputCmp = cmp?.cmps[1]?.cmps.at(-1)
