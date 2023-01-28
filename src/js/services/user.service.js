@@ -1,4 +1,5 @@
 import { httpService } from './http.service'
+import { socketService } from './socket.service'
 // import { store } from '../store/store'
 // import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
 // import { showSuccessMsg } from '../services/event-bus.service'
@@ -78,7 +79,7 @@ function remove(userId) {
 async function login(userCred) {
     try {
         const user = await httpService.post('auth/login', userCred)
-        // socketService.login(user._id)
+        socketService.login(user._id)
         return saveLocalUser(user)
     } catch (err) {
         console.log('Failed to login', err)
@@ -94,6 +95,7 @@ async function signup(userCred) {
     // if (isUsernameTaken) throw new Error('Username already taken')
     try {
         const user = await httpService.post('auth/signup', userCred)
+        socketService.login(user._id)
         return saveLocalUser(user)
     } catch (err) {
         console.log('Cannot signup', err)
@@ -102,7 +104,7 @@ async function signup(userCred) {
 }
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    // socketService.logout()
+    socketService.logout()
     return await httpService.post('auth/logout')
 }
 
