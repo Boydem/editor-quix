@@ -32,19 +32,21 @@ export function SubscriptionsDashboard({ user, currSite }) {
                     </button>
                 </div>
                 <div className='leads-table'>
-                    {currSite.subscribers?.map((sub, idx) => {
-                        return (
-                            <ul className='table-row container' key={idx}>
-                                <li className='lead'>{sub.email}</li>
-                                <li className='actions'>
-                                    <span className='time-ago'>{utilService.formatTimeAgo(sub.date)}</span>{' '}
-                                    <button className='btn-send-msg' onClick={() => onMailToSubscriber(sub)}>
-                                        Message
-                                    </button>
-                                </li>
-                            </ul>
-                        )
-                    })}
+                    {currSite.subscribers
+                        ?.sort((subA, subB) => subB.date - subA.date)
+                        .map((sub, idx) => {
+                            return (
+                                <ul className='table-row container' key={idx}>
+                                    <li className='lead'>{sub.email}</li>
+                                    <li className='actions'>
+                                        <span className='time-ago'>{utilService.formatTimeAgo(sub.date)}</span>{' '}
+                                        <button className='btn-send-msg' onClick={() => onMailToSubscriber(sub)}>
+                                            Message
+                                        </button>
+                                    </li>
+                                </ul>
+                            )
+                        })}
                 </div>
             </div>
             {isMailOpen && <ComposeMail subscriberEmail={subscriberEmail} setIsMailOpen={setIsMailOpen} />}

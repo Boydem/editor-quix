@@ -2,6 +2,11 @@ import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
 import { SiGooglemessages } from 'react-icons/si'
 import { FaCalendarCheck } from 'react-icons/fa'
 import { FaUsers } from 'react-icons/fa'
+import { BsArrowUp } from 'react-icons/bs'
+import { AiOutlineArrowUp } from 'react-icons/ai'
+import { FiArrowUp } from 'react-icons/fi'
+import { HiArrowNarrowUp, HiArrowUp, HiOutlineArrowUp } from 'react-icons/hi'
+import { FaLongArrowAltUp } from 'react-icons/fa'
 
 import { FaUserCheck } from 'react-icons/fa'
 
@@ -93,7 +98,8 @@ export function DashboardMain({ user, currSite }) {
                 pointRadius: 3,
                 fill: true,
                 label: 'Subscribers',
-                data: organizedSubscribersTimestamps,
+                // data: organizedSubscribersTimestamps,
+                data: [7, 15, 17, 14, 13, 21, 24],
 
                 borderColor: '#23cc93',
                 backgroundColor: 'rgba(35, 204, 147,0.4)',
@@ -108,7 +114,8 @@ export function DashboardMain({ user, currSite }) {
                 pointRadius: 3,
                 fill: true,
                 label: 'Leads',
-                data: organizedLeadsTimestamps,
+                // data: organizedLeadsTimestamps,
+                data: [12, 15, 16, 14, 13, 18, 17],
                 borderColor: '#24a0fe',
                 backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
@@ -121,7 +128,7 @@ export function DashboardMain({ user, currSite }) {
                 lineTension: 0.4,
                 fill: true,
                 label: 'Visitors',
-                data: [50, 42, 15, 32, 64, 15, 16],
+                data: [40, 51, 35, 32, 45, 38, 48],
                 borderColor: '#24a0fe',
                 backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
@@ -131,7 +138,7 @@ export function DashboardMain({ user, currSite }) {
     if (!currSite) return <div>Loading....</div>
     return (
         <>
-            <div className='info-box  flex justify-between'>
+            <div className='info-box  flex justify-between mb-1'>
                 <div className='text-wrapper'>
                     <h3>Welcome to your Partner Dashboard</h3>
                     <p>
@@ -143,44 +150,72 @@ export function DashboardMain({ user, currSite }) {
                     <img src={diamondSVG} alt='diamonds' />
                 </div>
             </div>
-            <div className='info-box data-list '>
+            <div className='data-list '>
                 {/* <div className='intro-full-w'>
                     <h3>Overview</h3>
                 </div> */}
                 <div className='mini-info-box'>
                     <div className='data-wrapper'>
                         <h3>Messages</h3>
-                        <div className='icon'>
+                        {/* <div className='icon'>
                             <SiGooglemessages size={'1.5rem'} />
-                        </div>
-                        <h4>2</h4>
+                        </div> */}
+                        <h2>375</h2>
+                        <h4>
+                            <div className='yaron-icon'>
+                                <HiOutlineArrowUp size={'0.85rem'} />
+                            </div>
+                            8.7%
+                        </h4>
+                        <p>vs previous 30 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
                     <div className='data-wrapper'>
                         <h3>Appointments</h3>
-                        <div className='icon'>
+                        {/* <div className='icon'>
                             <FaCalendarCheck size={'1.5rem'} />
-                        </div>
-                        <h4>6</h4>
+                        </div> */}
+                        <h2>230</h2>
+                        <h4>
+                            <div className='yaron-icon'>
+                                <HiOutlineArrowUp size={'0.85rem'} />
+                            </div>
+                            25%
+                        </h4>
+                        <p>vs previous 30 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
                     <div className='data-wrapper'>
                         <h3>Leads</h3>
-                        <div className='icon'>
+                        {/* <div className='icon'>
                             <FaUsers size={'1.5rem'} />
-                        </div>
-                        <h4>48</h4>
+                        </div> */}
+                        <h2>328</h2>
+                        <h4>
+                            <div className='yaron-icon'>
+                                <HiOutlineArrowUp size={'0.85rem'} />
+                            </div>
+                            32%
+                        </h4>
+                        <p>vs previous 30 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
                     <div className='data-wrapper'>
                         <h3>Subscribers</h3>
-                        <div className='icon'>
+                        {/* <div className='icon'>
                             <FaUserCheck size={'1.5rem'} />
-                        </div>
-                        <h4>102</h4>
+                        </div> */}
+                        <h2>465</h2>
+                        <h4>
+                            <div className='yaron-icon'>
+                                <HiOutlineArrowUp size={'0.85rem'} />
+                            </div>
+                            21%
+                        </h4>
+                        <p>vs previous 30 days</p>
                     </div>
                 </div>
             </div>

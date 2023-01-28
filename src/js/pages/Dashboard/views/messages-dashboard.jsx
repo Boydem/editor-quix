@@ -73,7 +73,7 @@ export function MessagesDashboard({ user, currSite }) {
                             <div className='message-body'>
                                 <p>{msgs[sender]?.at(-1).txt}</p>
                             </div>
-                            <div className='time-ago flex'>2 days ago</div>
+                            <div className='time-ago flex'>{utilService.formatTimeAgo(msgs[sender]?.at(-1).date)}</div>
                         </div>
                     </article>
                 ))}
