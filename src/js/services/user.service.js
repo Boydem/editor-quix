@@ -1,5 +1,11 @@
+import { showSuccessMsg } from './event-bus.service'
 import { httpService } from './http.service'
-import { socketService } from './socket.service'
+import {
+    socketService,
+    SOCKET_EVENT_ADD_LEAD,
+    SOCKET_EVENT_ADD_SCHEDULE,
+    SOCKET_EVENT_ADD_SUBSCRIBE,
+} from './socket.service'
 // import { store } from '../store/store'
 // import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
 // import { showSuccessMsg } from '../services/event-bus.service'
@@ -80,6 +86,15 @@ async function login(userCred) {
     try {
         const user = await httpService.post('auth/login', userCred)
         socketService.login(user._id)
+        socketService.on(SOCKET_EVENT_ADD_SUBSCRIBE, email => {
+            showSuccessMsg(`New subscription!, ${email}`)
+        })
+        socketService.on(SOCKET_EVENT_ADD_SCHEDULE, ({ fullname, datetime }) => {
+            showSuccessMsg(`New resevation by ${fullname}`)
+        })
+        socketService.on(SOCKET_EVENT_ADD_LEAD, data => {
+            showSuccessMsg(`New lead from ${data.Name}`)
+        })
         saveLocalUser(user)
         return user
     } catch (err) {

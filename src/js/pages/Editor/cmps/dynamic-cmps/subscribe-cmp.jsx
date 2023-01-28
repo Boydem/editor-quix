@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { socketService, SOCKET_EMIT_SEND_SUBSCRIBE } from '../../../../services/socket.service'
 import { saveWap } from '../../../../store/wap/wap.action'
 import DynamicCmp from '../dynamic-cmp'
 
@@ -12,6 +13,7 @@ export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
         if (!wap.subscribers) wap.subscribers = []
         wap.subscribers.push({ email: subscriber, date: new Date().getTime() })
         console.log(`A new subscriber: ${subscriber}`)
+        socketService.emit(SOCKET_EMIT_SEND_SUBSCRIBE, { email: subscriber, to: wap.owner })
         saveWap(wap)
     }
 

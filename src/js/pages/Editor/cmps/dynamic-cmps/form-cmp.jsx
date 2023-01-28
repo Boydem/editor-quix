@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { socketService, SOCKET_EMIT_SEND_LEAD } from '../../../../services/socket.service'
 import { makeId } from '../../../../services/util.service'
 import { saveWap } from '../../../../store/wap/wap.action'
 import DynamicCmp from '../dynamic-cmp'
@@ -43,6 +44,8 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
         let lead = { id: makeId(), data: leadData, status: 'new' }
         // lead = { ...lead, id: makeId(), createdAt: new Date().getTime() }
         wap.leadsBoards[0].items.push(lead)
+        console.log(leadData)
+        socketService.emit(SOCKET_EMIT_SEND_LEAD, { data: leadData, to: wap.owner })
         try {
             saveWap(wap)
         } catch (err) {

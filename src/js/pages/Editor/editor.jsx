@@ -106,7 +106,7 @@ export function Editor() {
     function handleOnDragStart() {
         handleSidebarsChanges('left', { isDragging: true })
     }
-    if (Object.keys(wap).length === 0) return
+    if (Object.keys(wap).length === 0 || !wap.cmps || !wap) return
     return (
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
