@@ -1,4 +1,9 @@
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
+import { SiGooglemessages } from 'react-icons/si'
+import { FaCalendarCheck } from 'react-icons/fa'
+import { FaUsers } from 'react-icons/fa'
+
+import { FaUserCheck } from 'react-icons/fa'
 
 import {
     Chart as ChartJS,
@@ -136,6 +141,47 @@ export function DashboardMain({ user, currSite }) {
                 </div>
                 <div className='img-wrapper'>
                     <img src={diamondSVG} alt='diamonds' />
+                </div>
+            </div>
+            <div className='info-box data-list '>
+                {/* <div className='intro-full-w'>
+                    <h3>Overview</h3>
+                </div> */}
+                <div className='mini-info-box'>
+                    <div className='data-wrapper'>
+                        <h3>Messages</h3>
+                        <div className='icon'>
+                            <SiGooglemessages size={'1.5rem'} />
+                        </div>
+                        <h4>2</h4>
+                    </div>
+                </div>
+                <div className='mini-info-box'>
+                    <div className='data-wrapper'>
+                        <h3>Appointments</h3>
+                        <div className='icon'>
+                            <FaCalendarCheck size={'1.5rem'} />
+                        </div>
+                        <h4>6</h4>
+                    </div>
+                </div>
+                <div className='mini-info-box'>
+                    <div className='data-wrapper'>
+                        <h3>Leads</h3>
+                        <div className='icon'>
+                            <FaUsers size={'1.5rem'} />
+                        </div>
+                        <h4>48</h4>
+                    </div>
+                </div>
+                <div className='mini-info-box'>
+                    <div className='data-wrapper'>
+                        <h3>Subscribers</h3>
+                        <div className='icon'>
+                            <FaUserCheck size={'1.5rem'} />
+                        </div>
+                        <h4>102</h4>
+                    </div>
                 </div>
             </div>
 

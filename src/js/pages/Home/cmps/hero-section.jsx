@@ -14,19 +14,19 @@ export function HeroSection({ navigate }) {
                 <div className='wrapper'>
                     <div className='hero-title'>
                         <h1>
-                            <span className='display-1'>The new standard in website design.</span>
+                            <span className='display-1'>Websites that provide business solutions quickly</span>
                         </h1>
                     </div>
                     <div className='hero-cta'>
                         <p className='hero-par'>
                             <span className='display-6'>
-                                Experience a seamless design process from concept to production with responsive CSS
-                                powered by smooth drag & drop
+                                Discover the platform that gives you the freedom to create, design, manage and develop
+                                your web presence exactly the way you want.
                             </span>
                         </p>
                         <button className='btn primary circled mt-5' onClick={() => navigate('/create')}>
                             <a className='disabled' href='#'>
-                                <span className='display-link'>Start Creating</span>
+                                <span className='display-link'>Start Demo</span>
                             </a>
                         </button>
                     </div>
@@ -54,7 +54,7 @@ export function HeroSection({ navigate }) {
                             </span>
                         </p>
                         <button className='btn primary circled' onClick={() => navigate('/create')}>
-                            <span className='display-link'>Start Creating</span>
+                            <span className='display-link'>Start Demo</span>
                         </button>
                         <div>
                             <a className='link-underline' href='#waps-section'>

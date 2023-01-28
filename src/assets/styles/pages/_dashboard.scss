@@ -229,7 +229,6 @@
             padding: $spacing-m;
             border-radius: $spacing-xs;
             background-color: $clr1;
-            place-items: start;
             margin-bottom: $spacing-m;
             flex-direction: column;
             img[alt='diamonds'] {
@@ -271,9 +270,10 @@
                 max-width: 100%;
                 min-width: 240px;
             }
-            &:not(.last-messages, .chart-wrapper) {
-                box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
-            }
+
+            // &:not(.last-messages, .chart-wrapper) {
+            //     box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
+            // }
             .text-wrapper {
                 place-self: start;
 
@@ -291,6 +291,53 @@
                     color: rgba($clr7, 90%);
                     margin-top: 1em;
                 }
+            }
+            &.data-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+                grid-auto-flow: dense;
+                grid-template-rows: auto;
+            }
+        }
+
+        .mini-info-box {
+            grid-row: 2;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #28bf9a;
+            border-radius: 6px;
+            .icon {
+                fill: $clr1;
+                margin: $spacing-s auto;
+                width: max-content;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $clr1;
+                padding: 1.125em;
+                border-radius: 66px;
+                background: #3ccfab;
+                background-image: linear-gradient(60deg, #28bf9a, rgba(255, 255, 255, 0.274));
+            }
+            h3 {
+                font-size: px-to-rem(14px);
+                font-weight: 700;
+                color: #3ccfab;
+            }
+            h4 {
+                font-size: 1rem;
+                width: 80px;
+                margin: auto;
+                font-weight: 400;
+                color: $clr1;
+                padding: 0 1.25em;
+                border-radius: 66px;
+
+                background-color: #3ccfab;
+                background-image: linear-gradient(200deg, #28bf9a, rgba(255, 255, 255, 0.219));
             }
         }
         .info-box-2 {

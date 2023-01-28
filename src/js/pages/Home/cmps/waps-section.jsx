@@ -14,7 +14,7 @@ export function WapsSection({ navigate }) {
                         </span>
                     </p>
                     <button className='btn circled secondary' onClick={() => navigate('/create')}>
-                        <span className='display-link'>Start Creating</span>
+                        <span className='display-link'>Start Demo</span>
                     </button>
                 </div>
             </div>

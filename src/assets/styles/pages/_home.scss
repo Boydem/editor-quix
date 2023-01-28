@@ -1,7 +1,7 @@
 .home {
     .hero-top {
         @include dotsImgBg('../../imgs/home-assets/bg-hero.webp', 1);
-        padding-bottom: $spacing-xl;
+        padding-bottom: $spacing-xxl;
         color: white;
         overflow: hidden;
 
@@ -257,6 +257,7 @@
 
             h1 {
                 margin-bottom: $spacing-l;
+                max-width: 85%;
             }
 
             a {

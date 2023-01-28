@@ -33,7 +33,7 @@ export function WebixSection({ navigate }) {
                     <span className='display-3'>The rest is up to you.</span>
                 </h3>
                 <button className='btn primary circled' onClick={() => navigate('/create')}>
-                    <span className='display-link'>Start Creating</span>
+                    <span className='display-link'>Start Demo</span>
                 </button>
             </div>
             <div className='sides-svg sides-left-svg'>

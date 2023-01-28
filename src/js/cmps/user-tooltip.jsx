@@ -10,15 +10,15 @@ import { PublishLoginSignup } from '../pages/Editor/cmps/ui-cmps/publish-login'
 export function UserTooltip({ user }) {
     function getShortenName() {
         if (!user) return
-        const matches = user?.fullname.match(/\b(\w)/g)
-        if (!matches)
-            return (
-                <div className='avatar'>
-                    <AiOutlineUser size={'70%'} fill={'#eee'} />
-                </div>
-            )
-        const shortName = matches.join('')
-        return shortName
+        // const matches = user?.fullname.match(/\b(\w)/g)
+        // if (!matches)
+        //     return (
+        //         <div className='avatar'>
+        //             <AiOutlineUser size={'70%'} fill={'#eee'} />
+        //         </div>
+        //     )
+        // const shortName = matches.join('')
+        return user?.fullname[0]
     }
     async function onLogout() {
         try {
