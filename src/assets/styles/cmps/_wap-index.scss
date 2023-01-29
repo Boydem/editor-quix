@@ -4,18 +4,15 @@
     .intro {
         background: inherit;
         background: #f7f7f7;
-        // background-color: $clr1;
-        border-bottom: 1px solid $clr2;
         position: sticky;
         top: $app-header-height + 1px;
-        // border-bottom: 1px solid rgba($clr18, 0.25);
         z-index: 1;
 
         .wrapper {
             padding: $spacing-m 0;
             display: flex;
             align-items: center;
-            // background-color: $clr1;
+
             h1 {
                 font-size: 1.5rem;
                 line-height: 1.125;
