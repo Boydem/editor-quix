@@ -1,3 +1,4 @@
+import { now } from 'moment'
 import { useState } from 'react'
 import { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
@@ -19,6 +20,8 @@ export function Preview() {
     useEffect(() => {
         loadWap()
         socketService.emit('set-wap-room', wapUrl)
+        if (!wap.visitors) wap.visitors = []
+        wap.visitors.push(Date.now())
 
         return () => {
             const root = document.getElementById('root')

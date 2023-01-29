@@ -69,6 +69,7 @@ export function DashboardMain({ user, currSite }) {
         acc.push(sub.date)
         return acc
     }, [])
+
     const leadTimestamps1 = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
         acc.push(lead.data.date)
         return acc
@@ -136,6 +137,65 @@ export function DashboardMain({ user, currSite }) {
         ],
     }
 
+    function countNewMsgsPercent(msgs) {
+        let thisWeek = 0
+        let lastWeek = 0
+        let today = new Date()
+
+        for (let msgId in msgs) {
+            let msgDate = new Date(msgs[msgId][0].date)
+            let dayDiff = (today - msgDate) / (1000 * 60 * 60 * 24)
+
+            if (dayDiff <= 7) {
+                thisWeek++
+            } else if (dayDiff <= 14) {
+                lastWeek++
+            }
+        }
+        if (lastWeek === 0) return thisWeek * 100
+        return ((thisWeek - lastWeek) / lastWeek) * 100
+    }
+    function countTimestampsPercent(timestamps) {
+        let thisWeek = 0
+        let lastWeek = 0
+        let today = new Date()
+        if (!timestamps) return 0
+
+        // for (let i = 0; i < subs.length; i++) {
+        timestamps.forEach(msgDate => {
+            let dayDiff = (today - msgDate) / (1000 * 60 * 60 * 24)
+
+            if (dayDiff <= 7) {
+                thisWeek++
+            } else if (dayDiff <= 14) {
+                lastWeek++
+            }
+        })
+
+        // }
+        if (lastWeek === 0) return thisWeek * 100
+        return ((thisWeek - lastWeek) / lastWeek) * 100
+    }
+    function countNewAppointmentsPercent(timestamps) {
+        const scheduleTimestamps = timestamps?.meetings.reduce((acc, meeting) => {
+            const meetingTime = meeting.datetime?.startTime
+            if (!meetingTime) return acc
+            const meetingTimestamp = new Date(meetingTime)
+            acc.push(meetingTimestamp.getTime())
+            return acc
+        }, [])
+        return countTimestampsPercent(scheduleTimestamps)
+    }
+
+    const messagesPercent = countNewMsgsPercent(currSite?.msgs)
+    const subscribersPercent = countTimestampsPercent(subscribersTimestamps)
+    const leadsPercent = countTimestampsPercent(leadTimestamps)
+    const appointmentsPercent = countNewAppointmentsPercent(currSite?.schedule)
+    // countNewAppointmentsPercent(currSite?.schedule)
+    // console.log(countTimestampsPercent(subscribersTimestamps))
+    // console.log(countTimestampsPercent(leadTimestamps))
+    // console.log(countTimestampsPercent(currSite?.visitors))
+
     if (!currSite) return <Loader />
     return (
         <>
@@ -161,14 +221,14 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <SiGooglemessages size={'1.5rem'} />
                         </div> */}
-                        <h2>375</h2>
+                        <h2>{currSite.demoData?.messages || Object.keys(currSite.msgs).length}</h2>
                         <h4>
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            8.7%
+                            {currSite.demoData?.messagesPercent || messagesPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
@@ -177,14 +237,14 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <FaCalendarCheck size={'1.5rem'} />
                         </div> */}
-                        <h2>230</h2>
+                        <h2>{currSite.demoData?.appointments || currSite.schedule?.meetings?.length}</h2>
                         <h4>
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            25%
+                            {currSite.demoData?.appointmentsPercent || appointmentsPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
@@ -193,14 +253,19 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <FaUsers size={'1.5rem'} />
                         </div> */}
-                        <h2>328</h2>
+                        <h2>
+                            {currSite.demoData?.leads ||
+                                currSite.leadsBoards[0]?.items?.length +
+                                    currSite.leadsBoards[1]?.items?.length +
+                                    currSite.leadsBoards[2]?.items?.length}
+                        </h2>
                         <h4>
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            32%
+                            {currSite.demoData?.leadsPercent || leadsPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
@@ -209,14 +274,14 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <FaUserCheck size={'1.5rem'} />
                         </div> */}
-                        <h2>465</h2>
+                        <h2>{currSite.demoData?.subscribers || currSite.subscribers.length}</h2>
                         <h4>
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            21%
+                            {currSite.demoData?.subscribersPercent || subscribersPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
             </div>
