@@ -137,7 +137,7 @@ export function Editor() {
                     />
                     <img
                         className='mouse-pos'
-                        src='https://res.cloudinary.com/yaronshapira-com/image/upload/v1674850725/cursor-removebg-preview_kyyd5r.png'
+                        src='https://res.cloudinary.com/yaronshapira-com/image/upload/v1675000878/cursor_1_yyfvrd.png'
                         alt=''
                         ref={cursorRef}
                     />
