@@ -24,7 +24,6 @@ export function Editor() {
     const [layout, setLayout] = useState({ layoutClass: 'desktopLayout', width: '' })
     const cursorRef = useRef()
     const { wapId } = useParams()
-    const editLayoutRef = useRef()
     const dispatch = useDispatch()
 
     // sidebars states
@@ -120,7 +119,7 @@ export function Editor() {
                     layout={layout}
                     onLayoutChange={onLayoutChange}
                 />
-                <div className='editor-layout full' ref={editLayoutRef}>
+                <div className='editor-layout full'>
                     <EditorPreview
                         wapCmps={wap.cmps}
                         leftSidebarState={leftSidebarState}
@@ -133,7 +132,6 @@ export function Editor() {
                         leftSidebarState={leftSidebarState}
                         handleSidebarsChanges={handleSidebarsChanges}
                         wap={wap}
-                        editLayoutRef={editLayoutRef}
                     />
                     <img
                         className='mouse-pos'

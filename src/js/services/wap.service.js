@@ -25,6 +25,7 @@ export const wapService = {
     saveCmp,
     getBlankWap,
     getWapToEdit,
+    getWapCopy,
 }
 
 let gCmpsMap
@@ -79,6 +80,10 @@ async function query(filterBy = { owner: '' }) {
 
 async function getWapToEdit(wapId) {
     return httpService.get(`wap/edit/${wapId}`)
+}
+
+async function getWapCopy(wapId) {
+    return httpService.get(`wap/copy/${wapId}`)
 }
 
 async function get(wapId) {
