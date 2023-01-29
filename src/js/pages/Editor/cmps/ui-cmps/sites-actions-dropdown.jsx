@@ -3,7 +3,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import { BsThreeDots } from 'react-icons/bs'
 
-export function SitesActionsDropdown() {
+export function SitesActionsDropdown({ onDuplicateWap }) {
     const [bookmarksChecked, setBookmarksChecked] = React.useState(true)
     const [urlsChecked, setUrlsChecked] = React.useState(false)
     const [person, setPerson] = React.useState('pedro')
@@ -25,7 +25,9 @@ export function SitesActionsDropdown() {
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
                     <DropdownMenu.Item className='DropdownMenuItem'>Rename Site</DropdownMenu.Item>
                     <DropdownMenu.Item className='DropdownMenuItem'>Create New Site</DropdownMenu.Item>
-                    <DropdownMenu.Item className='DropdownMenuItem'>Duplicate Site</DropdownMenu.Item>
+                    <DropdownMenu.Item className='DropdownMenuItem' onClick={onDuplicateWap}>
+                        Duplicate Site
+                    </DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
                     <DropdownMenu.Item className='DropdownMenuItem'>Dashboard</DropdownMenu.Item>
 

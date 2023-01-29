@@ -15,6 +15,7 @@ import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { TiBrush } from 'react-icons/ti'
 import { redoChange, undoChange } from '../store/wap/wap.action'
+import { wapService } from '../services/wap.service'
 
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
@@ -37,6 +38,17 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
 
     function onRedo() {
         redoChange()
+    }
+
+    async function onDuplicateWap() {
+        try {
+            const duplicatedWap = await wapService.getWapCopy(wap._id)
+            console.log(duplicatedWap)
+            showSuccessMsg('Your sites has been duplicated successfully!')
+        } catch (err) {
+            console.log(err)
+            showErrorMsg('Cannot duplicate wap, please try again later')
+        }
     }
 
     function onPreview() {
@@ -89,7 +101,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <div className='user-area'>
                                 <UserTooltip user={user} />
                             </div>
-                            <SitesActionsDropdown />
+                            <SitesActionsDropdown onDuplicateWap={onDuplicateWap} />
                         </div>
                         <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
