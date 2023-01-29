@@ -359,11 +359,10 @@
             h3 {
                 font-size: px-to-rem(14px);
                 font-weight: 600;
-                // color: #004cc4;
                 position: absolute;
-                top: 3%;
-                left: 3%;
-                color: #6c6d70;
+                top: $spacing-s;
+                left: 1.5em;
+                color: rgba(120, 124, 149, 0.9);
             }
             h2 {
                 color: #3f4558;
