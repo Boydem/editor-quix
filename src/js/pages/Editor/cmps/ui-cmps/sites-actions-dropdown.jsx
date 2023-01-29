@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { Link, useParams } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { saveWap } from '../../../../store/wap/wap.action'
-export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicateWap }) {
+export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicateWap, setIsRenaming }) {
     // const [isRenaming, setIsRenaming] = useState()
     const navigate = useNavigate()
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -28,7 +28,10 @@ export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicat
         navigator.clipboard.writeText(`http://localhost:3000/edit/${wapId}`)
         showSuccessMsg('Url copied to clipboard')
     }
-    function renameSite() {}
+    function renameSite() {
+        setIsRenaming(true)
+        setIsPublishing(true)
+    }
     function onCreateNewSite() {
         showSuccessMsg('Your site has been saved. Ready for new site')
         navigate('/create')
@@ -55,7 +58,9 @@ export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicat
                         Invite People to Collaborate
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
-                    <DropdownMenu.Item className='DropdownMenuItem'>Rename Site</DropdownMenu.Item>
+                    <DropdownMenu.Item className='DropdownMenuItem' onClick={renameSite}>
+                        Rename Site
+                    </DropdownMenu.Item>
                     <DropdownMenu.Item onClick={onCreateNewSite} className='DropdownMenuItem'>
                         Create New Site
                     </DropdownMenu.Item>

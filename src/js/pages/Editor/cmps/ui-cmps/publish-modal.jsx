@@ -5,7 +5,7 @@ import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.ser
 import { saveWap } from '../../../../store/wap/wap.action'
 import { PublishLoginSignup } from './publish-login'
 
-export function PublishModal({ wap, user, closeModal, isPublishing }) {
+export function PublishModal({ wap, user, closeModal, isPublishing, isRenaming, setIsRenaming }) {
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '', title: '' })
     const [isPublished, setIsPublished] = useState(wap.url ? true : false)
     function handleFocus(ev) {
@@ -26,6 +26,7 @@ export function PublishModal({ wap, user, closeModal, isPublishing }) {
             wap.title = wapUrlToEdit.title
             wap.url = wapUrlToEdit.publishUrl
             await saveWap(wap)
+            setIsRenaming(false)
             setIsPublished(true)
             // navigate(`/${wapUrlToEdit.publishUrl}`)
             showSuccessMsg('Your site has been published!')
@@ -46,7 +47,7 @@ export function PublishModal({ wap, user, closeModal, isPublishing }) {
                 <div onClick={closeModal} className='close-btn'>
                     <GrClose />
                 </div>
-                {!isPublished ? (
+                {!isPublished || isRenaming ? (
                     <div className='content-container'>
                         <div className='intro-text flex column justify-center align-center'>
                             <h4> {!user ? 'You must be a signed up user' : 'Choose a domain before you publish'}</h4>

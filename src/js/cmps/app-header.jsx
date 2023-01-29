@@ -18,6 +18,7 @@ import { wapService } from '../services/wap.service'
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const [isPublishing, setIsPublishing] = useState(false)
+    const [isRenaming, setIsRenaming] = useState(false)
     const { wapId } = useParams()
     const navigate = useNavigate()
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -107,6 +108,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <SitesActionsDropdown
                                 setIsPublishing={setIsPublishing}
                                 isPublishing={isPublishing}
+                                setIsRenaming={setIsRenaming}
                                 onDuplicateWap={onDuplicateWap}
                             />
                         </div>
@@ -131,6 +133,8 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                         wap={wap}
                                         closeModal={closeModal}
                                         isPublishing={isPublishing}
+                                        isRenaming={isRenaming}
+                                        setIsRenaming={setIsRenaming}
                                     />
                                 </li>
                             </ul>
