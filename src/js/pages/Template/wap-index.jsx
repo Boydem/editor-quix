@@ -32,7 +32,7 @@ export function WapIndex() {
         console.log(wapId)
         try {
             if (wapId === 'blank') {
-                wap = wapService.getBlankWap()
+                wap = await wapService.getBlankWap()
             } else {
                 // wap = await wapService.get(wapId)
                 wap = await wapService.getWapToEdit(wapId)

@@ -99,7 +99,7 @@ async function save(wap) {
     if (wap._id) {
         savedWap = httpService.put(`wap/${wap._id}`, wap)
     } else {
-        savedWap = httpService.post('', wap)
+        savedWap = httpService.post('wap', wap)
     }
     return savedWap
 }
@@ -109,14 +109,14 @@ function getEditedWap() {
 }
 
 function getBlankWap() {
-    return {
-        _id: makeId(),
+    const wap = {
         owner: 'guest',
         title: 'blank-template',
         cmps: [],
         msgs: [],
         leads: [],
         subscribers: [],
+        palette: ['#fefefe', '#fefefe', '#fefefe', '#fefefe'],
         schedule: {
             eventDuration: 30,
             daysForward: 6,
@@ -127,6 +127,7 @@ function getBlankWap() {
         },
         breakpoints: { mobileLayout: 800, tabletLayout: 1050 },
     }
+    return save(wap)
 }
 
 function saveCmp(cmp, index, parentCmp) {
