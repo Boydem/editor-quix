@@ -54,7 +54,7 @@ export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
                                     style={cmp.style}
                                     name={innerCmp.cmps[0].inputName}
                                     onClick={e => onSelectCmp(e, cmp)}
-                                    placeholder={cmp.content?.placeholder}
+                                    placeholder={innerCmp.cmps[0]?.content?.placeholder}
                                     onMouseOver={onHoverCmp}
                                     onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                                     onChange={handleChange}

@@ -608,6 +608,7 @@
         input:focus {
             outline: none;
         }
+
         button {
             position: relative;
             left: -20px;
@@ -896,6 +897,9 @@
     }
 
     .form {
+        input::placeholder {
+            font-size: 0.9rem;
+        }
         background: white;
         border-radius: 10px;
         padding: 3rem 3rem;

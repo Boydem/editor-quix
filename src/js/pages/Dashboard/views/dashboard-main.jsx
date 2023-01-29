@@ -69,15 +69,16 @@ export function DashboardMain({ user, currSite }) {
         acc.push(sub.date)
         return acc
     }, [])
-    const leadTimestamps1 = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
+
+    const leadTimestamps1 = currSite?.leadsBoards[0].items?.reduce((acc, lead) => {
         acc.push(lead.data.date)
         return acc
     }, [])
-    const leadTimestamps2 = currSite?.leadsBoards[1].items.reduce((acc, lead) => {
+    const leadTimestamps2 = currSite?.leadsBoards[1].items?.reduce((acc, lead) => {
         acc.push(lead.data.date)
         return acc
     }, [])
-    const leadTimestamps3 = currSite?.leadsBoards[2].items.reduce((acc, lead) => {
+    const leadTimestamps3 = currSite?.leadsBoards[2].items?.reduce((acc, lead) => {
         acc.push(lead.data.date)
         return acc
     }, [])
@@ -91,6 +92,10 @@ export function DashboardMain({ user, currSite }) {
     organizedSubscribersTimestamps = organizeTimestamps(subscribersTimestamps)
     organizedSubscribersTimestamps.reverse()
 
+    let organizedVisitorsTimestamps = [0, 0, 0, 0, 0, 0, 0]
+    organizedVisitorsTimestamps = organizeTimestamps(currSite?.visitors)
+    organizedVisitorsTimestamps.reverse()
+
     const subData = {
         labels,
         datasets: [
@@ -99,8 +104,8 @@ export function DashboardMain({ user, currSite }) {
                 pointRadius: 3,
                 fill: true,
                 label: 'Subscribers',
-                // data: organizedSubscribersTimestamps,
-                data: [7, 15, 17, 14, 13, 21, 24],
+                data: currSite.demoData?.subsData || organizedSubscribersTimestamps,
+                // data: [7, 15, 17, 14, 13, 21, 24],
 
                 borderColor: '#23cc93',
                 backgroundColor: 'rgba(35, 204, 147,0.4)',
@@ -115,8 +120,8 @@ export function DashboardMain({ user, currSite }) {
                 pointRadius: 3,
                 fill: true,
                 label: 'Leads',
-                // data: organizedLeadsTimestamps,
-                data: [12, 15, 16, 14, 13, 18, 17],
+                data: currSite.demoData?.leadData || organizedLeadsTimestamps,
+                // data: [12, 15, 16, 14, 13, 18, 17],
                 borderColor: '#24a0fe',
                 backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
@@ -129,12 +134,81 @@ export function DashboardMain({ user, currSite }) {
                 lineTension: 0.4,
                 fill: true,
                 label: 'Visitors',
-                data: [40, 51, 35, 32, 45, 38, 48],
+                data: currSite.demoData?.visitorsData || organizedVisitorsTimestamps,
                 borderColor: '#24a0fe',
                 backgroundColor: 'rgba(36, 160, 254, 0.4)',
             },
         ],
     }
+
+    function generateTimestamps() {
+        const date = new Date()
+        const oneWeekAgo = new Date(date.getTime() - 14 * 24 * 60 * 60 * 1000)
+        const timestamps = []
+        for (let i = 0; i < 1250; i++) {
+            const randomTimestamp = new Date(
+                oneWeekAgo.getTime() + Math.random() * (date.getTime() - oneWeekAgo.getTime())
+            )
+            timestamps.push(randomTimestamp.getTime())
+        }
+        return timestamps
+    }
+
+    function countNewMsgsPercent(msgs) {
+        let thisWeek = 0
+        let lastWeek = 0
+        let today = new Date()
+
+        for (let msgId in msgs) {
+            let msgDate = new Date(msgs[msgId][0].date)
+            let dayDiff = (today - msgDate) / (1000 * 60 * 60 * 24)
+
+            if (dayDiff <= 7) {
+                thisWeek++
+            } else if (dayDiff <= 14) {
+                lastWeek++
+            }
+        }
+        if (lastWeek === 0) return thisWeek * 100
+        return ((thisWeek - lastWeek) / lastWeek) * 100
+    }
+    function countTimestampsPercent(timestamps) {
+        let thisWeek = 0
+        let lastWeek = 0
+        let today = new Date()
+        if (!timestamps) return 0
+
+        // for (let i = 0; i < subs.length; i++) {
+        timestamps.forEach(msgDate => {
+            let dayDiff = (today - msgDate) / (1000 * 60 * 60 * 24)
+
+            if (dayDiff <= 7) {
+                thisWeek++
+            } else if (dayDiff <= 14) {
+                lastWeek++
+            }
+        })
+
+        // }
+        if (lastWeek === 0) return thisWeek * 100
+        return ((thisWeek - lastWeek) / lastWeek) * 100
+    }
+    function countNewAppointmentsPercent(timestamps) {
+        const scheduleTimestamps = timestamps?.meetings?.reduce((acc, meeting) => {
+            const meetingTime = meeting.datetime?.startTime
+            if (!meetingTime) return acc
+            const meetingTimestamp = new Date(meetingTime)
+            acc.push(meetingTimestamp.getTime())
+            return acc
+        }, [])
+        return countTimestampsPercent(scheduleTimestamps)
+    }
+
+    const messagesPercent = countNewMsgsPercent(currSite?.msgs)
+    const subscribersPercent = countTimestampsPercent(subscribersTimestamps)
+    const leadsPercent = countTimestampsPercent(leadTimestamps)
+    const appointmentsPercent = countNewAppointmentsPercent(currSite?.schedule)
+    // countNewAppointmentsPercent(currSite?.schedule)
 
     if (!currSite) return <Loader />
     return (
@@ -161,14 +235,19 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <SiGooglemessages size={'1.5rem'} />
                         </div> */}
-                        <h2>375</h2>
-                        <h4>
+                        <h2>{currSite.demoData?.messages || Object.keys(currSite.msgs).length}</h2>
+                        <h4
+                            className={`${
+                                currSite.demoData?.messagesPercent > 0 || messagesPercent > 0 ? 'success' : ''
+                            }`}
+                        >
                             <div className='yaron-icon'>
+                                {console.log('TEST', currSite.demoData?.messagesPercent)}
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            8.7%
+                            {currSite.demoData?.messagesPercent || messagesPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
@@ -177,14 +256,18 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <FaCalendarCheck size={'1.5rem'} />
                         </div> */}
-                        <h2>230</h2>
-                        <h4>
+                        <h2>{currSite.demoData?.appointments || currSite.schedule?.meetings?.length}</h2>
+                        <h4
+                            className={`${
+                                currSite.demoData?.appointmentsPercent > 0 || appointmentsPercent > 0 ? 'success' : ''
+                            }`}
+                        >
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            25%
+                            {currSite.demoData?.appointmentsPercent || appointmentsPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
@@ -193,14 +276,19 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <FaUsers size={'1.5rem'} />
                         </div> */}
-                        <h2>328</h2>
-                        <h4>
+                        <h2>
+                            {currSite.demoData?.leads ||
+                                currSite.leadsBoards[0]?.items?.length +
+                                    currSite.leadsBoards[1]?.items?.length +
+                                    currSite.leadsBoards[2]?.items?.length}
+                        </h2>
+                        <h4 className={`${currSite.demoData?.leadsPercent > 0 || leadsPercent > 0 ? 'success' : ''}`}>
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            32%
+                            {currSite.demoData?.leadsPercent || leadsPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
                 <div className='mini-info-box'>
@@ -209,14 +297,18 @@ export function DashboardMain({ user, currSite }) {
                         {/* <div className='icon'>
                             <FaUserCheck size={'1.5rem'} />
                         </div> */}
-                        <h2>465</h2>
-                        <h4>
+                        <h2>{currSite.demoData?.subscribers || currSite.subscribers.length}</h2>
+                        <h4
+                            className={`${
+                                currSite.demoData?.subscribersPercent > 0 || subscribersPercent > 0 ? 'success' : ''
+                            }`}
+                        >
                             <div className='yaron-icon'>
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
-                            21%
+                            {currSite.demoData?.subscribersPercent || subscribersPercent}%
                         </h4>
-                        <p>vs previous 30 days</p>
+                        <p>vs previous 7 days</p>
                     </div>
                 </div>
             </div>

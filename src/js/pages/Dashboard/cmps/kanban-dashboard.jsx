@@ -31,6 +31,8 @@ export function KanbanDashboard({ user, currSite }) {
         console.log('boards:', boards)
         const leadsListFormatted = currSite.leadsBoards.reduce((acc, board) => {
             board.items.forEach(item => {
+                // const newItem = structuredClone(item)
+                item.status = board.title
                 acc.push(item)
             })
             return acc
@@ -124,6 +126,10 @@ export function KanbanDashboard({ user, currSite }) {
             showErrorMsg('Failed to update. Please try again later.')
             console.log('err:', err)
         }
+    }
+
+    function onChangeStatus(lead) {
+        console.log(lead)
     }
 
     function onAddBoard() {
@@ -267,7 +273,6 @@ export function KanbanDashboard({ user, currSite }) {
                         </div> */}
                         <div className='user-forms leads-table'>
                             <ul className='table-row table-header container'>
-                                <li className='col'>Status</li>
                                 {leadsList && leadsList.length > 0 && (
                                     <>
                                         {Object.keys(leadsList?.at(-1).data).map((key, keyIndex) => {
@@ -279,12 +284,12 @@ export function KanbanDashboard({ user, currSite }) {
                                         })}
                                     </>
                                 )}
+                                <li className='col'>Status</li>
                             </ul>
 
                             {leadsList?.map(lead => {
                                 return (
                                     <ul className='table-row container' key={lead.id}>
-                                        <li className='col'>{utilService.capitalize(lead.status)}</li>
                                         {Object.keys(lead.data).map((key, keyIndex) => {
                                             return (
                                                 <li className='col' key={key}>
@@ -293,6 +298,9 @@ export function KanbanDashboard({ user, currSite }) {
                                                 </li>
                                             )
                                         })}
+                                        <li className='col cursor-pointer' onClick={() => onChangeStatus(lead)}>
+                                            {utilService.capitalize(lead.status)}
+                                        </li>
                                     </ul>
                                 )
                             })}

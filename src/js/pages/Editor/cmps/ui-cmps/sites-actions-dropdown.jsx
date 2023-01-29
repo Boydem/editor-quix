@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { Link, useParams } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { saveWap } from '../../../../store/wap/wap.action'
-export function SitesActionsDropdown({ isPublishing, setIsPublishing }) {
+export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicateWap }) {
     // const [isRenaming, setIsRenaming] = useState()
     const navigate = useNavigate()
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -60,7 +60,9 @@ export function SitesActionsDropdown({ isPublishing, setIsPublishing }) {
                     <DropdownMenu.Item onClick={onCreateNewSite} className='DropdownMenuItem'>
                         Create New Site
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item className='DropdownMenuItem'>Duplicate Site</DropdownMenu.Item>
+                    <DropdownMenu.Item className='DropdownMenuItem' onClick={onDuplicateWap}>
+                        Duplicate Site
+                    </DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
                     <DropdownMenu.Item className='DropdownMenuItem'>
                         <Link to={`/dashboard/${user?._id}`}>Dashboard</Link>

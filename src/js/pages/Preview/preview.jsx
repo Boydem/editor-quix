@@ -1,3 +1,4 @@
+import { now } from 'moment'
 import { useState } from 'react'
 import { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
@@ -6,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { socketService } from '../../services/socket.service'
 import { wapService } from '../../services/wap.service'
-import { setWap, setWapNull } from '../../store/wap/wap.action'
+import { saveWap, setWap, setWapNull } from '../../store/wap/wap.action'
 import DynamicCmp from '../Editor/cmps/dynamic-cmp'
 
 export function Preview() {
@@ -19,6 +20,10 @@ export function Preview() {
     useEffect(() => {
         loadWap()
         socketService.emit('set-wap-room', wapUrl)
+        if (!wap.visitors) wap.visitors = []
+        wap.visitors.push(Date.now())
+        console.log(wap)
+        saveWap(wap)
 
         return () => {
             const root = document.getElementById('root')
