@@ -14,6 +14,7 @@ import { RightSidebar } from './cmps/right-sidebar'
 import { socketService } from '../../services/socket.service'
 import { useDispatch } from 'react-redux'
 import { SET_WAP } from '../../store/wap/wap.reducer'
+import { Loader } from '../../cmps/loader'
 
 export function Editor() {
     // wap states
@@ -106,7 +107,8 @@ export function Editor() {
     function handleOnDragStart() {
         handleSidebarsChanges('left', { isDragging: true })
     }
-    if (Object.keys(wap).length === 0 || !wap.cmps || !wap) return
+
+    if (Object.keys(wap).length === 0 || !wap.cmps || !wap) return <Loader />
     return (
         <>
             <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>

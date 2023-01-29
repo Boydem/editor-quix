@@ -69,7 +69,8 @@ export function MessagesDashboard({ user, currSite }) {
                             <div className='user-avatar'>
                                 <AiOutlineUser size={'70%'} />
                             </div>
-                            <span className='user-name'>{sender}</span>
+                            {/* <span className='user-name'>{sender}</span> */}
+                            <span className='user-name'>Guest</span>
                             <div className='message-body'>
                                 <p>{msgs[sender]?.at(-1).txt}</p>
                             </div>
@@ -86,7 +87,8 @@ export function MessagesDashboard({ user, currSite }) {
                             <AiOutlineUser size={'70%'} fill={'#eee'} />
                         </div>
                         <div className='wrapper'>
-                            <div className='name'>{currContact.from}</div>
+                            {/* <div className='name'>{currContact.from}</div> */}
+                            <div className='name'>Guest</div>
                             <div className='seen'>{utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}</div>
                         </div>
                     </div>

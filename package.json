@@ -40,6 +40,7 @@
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
     "react-icons": "^4.7.1",
+    "react-lottie-player": "^1.5.4",
     "react-multi-select-component": "^4.3.4",
     "react-redux": "^8.0.5",
     "react-router": "^6.6.2",
@@ -47,7 +48,6 @@
     "react-schedule-meeting": "^4.2.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
-    "sass": "^1.57.1",
     "socket.io-client": "^4.5.4",
     "web-vitals": "^2.1.4"
   },
@@ -74,5 +74,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
   }
 }

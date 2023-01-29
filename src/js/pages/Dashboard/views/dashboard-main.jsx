@@ -23,6 +23,7 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import { ScheduleCmp } from '../../Editor/cmps/dynamic-cmps/schedule-cmp'
+import { Loader } from '../../../cmps/loader'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend)
 
 export function DashboardMain({ user, currSite }) {
@@ -135,7 +136,7 @@ export function DashboardMain({ user, currSite }) {
         ],
     }
 
-    if (!currSite) return <div>Loading....</div>
+    if (!currSite) return <Loader />
     return (
         <>
             <div className='info-box  flex justify-between mb-1'>

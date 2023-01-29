@@ -10,7 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <Provider store={store}>
         <Router>
-        <App />
+            <App />
         </Router>
+        <script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></script>
     </Provider>
 )

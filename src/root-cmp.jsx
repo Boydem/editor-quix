@@ -26,6 +26,7 @@ function App() {
                     <Route path='/auth/:state' element={<LoginSignup />} />
                 </Routes>
                 <UserMsg />
+                <script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></script>
             </main>
             <link
                 rel='stylesheet'
