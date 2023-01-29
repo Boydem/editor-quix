@@ -122,7 +122,7 @@ export function PublishModal({ user, wap, closeModal, isPublishing }) {
                                 <Link to={`/dashboard/${user?._id}`}>Admin Panel</Link>
                             </button>
                             <button className='app-btn secondary'>
-                                <Link to={`/${wap.url}`}>Preview</Link>
+                                <Link to={`/${wap.url}`}>View site</Link>
                             </button>
                         </div>
                     </div>
