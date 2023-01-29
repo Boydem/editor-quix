@@ -12,10 +12,8 @@
         font-weight: 700;
     }
     .close-btn-wrapper {
-        position: absolute;
-        top: 3%;
-        right: 3%;
-        cursor: pointer;
+        padding: 1em 1.5em 0;
+        text-align: end;
     }
 
     .to {
@@ -50,8 +48,10 @@
     }
     .mail-container {
         background-color: $clr1;
-        padding: $spacing-s 0;
+        padding: $spacing-s 0 1em;
         flex: 1;
+        display: flex;
+        flex-direction: column;
     }
     .actions {
         display: flex;
