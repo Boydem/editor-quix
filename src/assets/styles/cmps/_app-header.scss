@@ -36,6 +36,9 @@
         }
         .user-area {
             margin-inline-start: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             .avatar {
                 box-shadow: 0px 0px 0px 0px $editor-active-clr;
             }

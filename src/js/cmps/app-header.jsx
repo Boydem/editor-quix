@@ -80,7 +80,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                 )}
                 {location === 'index' && (
                     <div className='user-area'>
-                        <UserTooltip user={user} />
+                        <UserTooltip wapId={wapId} />
                     </div>
                 )}
                 {location === 'editor' && (
@@ -89,7 +89,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <div className='user-area'>
                                 <UserTooltip user={user} />
                             </div>
-                            <SitesActionsDropdown />
+                            <SitesActionsDropdown setIsPublishing={setIsPublishing} isPublishing={isPublishing} />
                         </div>
                         <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
