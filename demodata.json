@@ -1,0 +1,13 @@
+{
+    "messages": 375,
+    "messagesPercent": 8.7,
+    "appointments": 230,
+    "appointmentsPercent": 25,
+    "leads": 328,
+    "leadsPercent": 32,
+    "subscribers": 465,
+    "subscribersPercent": 21,
+    "leadData": [12, 15, 16, 14, 13, 18, 17],
+    "subsData": [7, 15, 17, 14, 13, 21, 24],
+    "visitorsData": [40, 51, 35, 32, 45, 38, 48]
+}
