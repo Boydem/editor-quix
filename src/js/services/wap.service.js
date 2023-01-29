@@ -62,9 +62,9 @@ function _createMap() {
     ]
     gCmpsMap = allFractions.reduce((acc, fraction) => {
         if (acc[fraction.category]) {
-            acc[fraction.category].push(fraction)
+            acc[fraction.category].push(structuredClone(fraction))
         } else {
-            acc[fraction.category] = [fraction]
+            acc[fraction.category] = [structuredClone(fraction)]
         }
         return acc
     }, {})

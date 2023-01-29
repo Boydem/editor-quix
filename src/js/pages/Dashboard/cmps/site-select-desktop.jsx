@@ -1,15 +1,8 @@
 import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import quixIcon from '../../../../assets/imgs/quix-icon-darkblue.png'
 import { utilService } from '../../../services/util.service'
-import { AiOutlineUser } from 'react-icons/ai'
 import { SiGooglemessages } from 'react-icons/si'
-import { FaCalendarCheck } from 'react-icons/fa'
 import { FaUsers } from 'react-icons/fa'
-import { BsArrowUp } from 'react-icons/bs'
-import { AiOutlineArrowUp } from 'react-icons/ai'
-import { FiArrowUp } from 'react-icons/fi'
-import { HiArrowNarrowUp, HiArrowUp, HiOutlineArrowUp } from 'react-icons/hi'
-import { FaLongArrowAltUp } from 'react-icons/fa'
 
 import { FaUserCheck } from 'react-icons/fa'
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
