@@ -38,6 +38,9 @@ export function Editor() {
     useEffect(() => {
         loadWap()
         setIsEditing(true)
+        setInterval(() => {
+            cursorRef.current.style.display = 'none'
+        }, 3500)
         socketService.emit('set-wap-room', wapId)
         socketService.on('updated-wap', wap => {
             dispatch({ type: SET_WAP, wap })
@@ -135,7 +138,7 @@ export function Editor() {
                     />
                     <img
                         className='mouse-pos'
-                        src='https://res.cloudinary.com/yaronshapira-com/image/upload/v1675000878/cursor_1_yyfvrd.png'
+                        src='https://res.cloudinary.com/yaronshapira-com/image/upload/v1675024210/output-onlinepngtools_3_so2o9a.png'
                         alt=''
                         ref={cursorRef}
                     />
