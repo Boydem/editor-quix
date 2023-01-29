@@ -3,7 +3,7 @@ import { wapService } from '../../../../services/wap.service'
 
 export function CmpFractions({ activeMenuItem }) {
     const assets = wapService.getCmpsByCategory(activeMenuItem.toLowerCase())
-
+    console.log('activeMenuItem:', activeMenuItem)
     return (
         <section className='quick-add'>
             <Droppable
@@ -15,7 +15,11 @@ export function CmpFractions({ activeMenuItem }) {
                         ref={provided.innerRef}
                         className='drag-and-drop-portal'
                     >
-                        <img src={assets[rubric.source.index].thumbnail} alt='' />
+                        <img
+                            src={assets[rubric.source.index].thumbnail}
+                            alt=''
+                            className={`${activeMenuItem.toLowerCase() === 'chat' ? 'chat' : ''}`}
+                        />
                     </div>
                 )}
             >

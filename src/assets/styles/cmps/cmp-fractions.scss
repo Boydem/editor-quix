@@ -4,5 +4,9 @@
     // transform: translate(0%) !important;
     img {
         width: 75%;
+
+        &.chat {
+            width: 25%;
+        }
     }
 }
