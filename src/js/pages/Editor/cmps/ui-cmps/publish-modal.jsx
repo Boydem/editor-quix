@@ -2,15 +2,12 @@ import { useState } from 'react'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
-import { wapService } from '../../../../services/wap.service'
 import { saveWap } from '../../../../store/wap/wap.action'
 import { PublishLoginSignup } from './publish-login'
 
-export function PublishModal({ user, wap, closeModal, isPublishing }) {
+export function PublishModal({ wap, user, closeModal, isPublishing }) {
     const [wapUrlToEdit, setWapUrlToEdit] = useState({ publishUrl: '', title: '' })
-    // const navigate = useNavigate()
     const [isPublished, setIsPublished] = useState(wap.url ? true : false)
-
     function handleFocus(ev) {
         ev.target.select()
     }

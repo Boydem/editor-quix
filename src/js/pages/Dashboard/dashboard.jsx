@@ -70,7 +70,7 @@ export function Dashboard() {
             await setUserSites(user)
             if (!user.sites || !user.sites.length) navigate('/create')
             console.log(user.sites)
-            dispatch({ type: SET_CURR_SITE, currSite: user.sites[0] })
+            dispatch({ type: SET_CURR_SITE, currSite: user.sites.at(-1) })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
             showErrorMsg(`Couldn't load user`)

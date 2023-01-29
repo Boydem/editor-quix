@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 import { BiBell } from 'react-icons/bi'
-import { SiteSelect } from './site-select'
 import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
 import { QuixLogo } from './quix-logo'
 import { UserTooltip } from './user-tooltip'
@@ -13,7 +12,6 @@ import { SitesActionsDropdown } from '../pages/Editor/cmps/ui-cmps/sites-actions
 import { PublishModal } from '../pages/Editor/cmps/ui-cmps/publish-modal'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
-import { TiBrush } from 'react-icons/ti'
 import { redoChange, undoChange } from '../store/wap/wap.action'
 import { wapService } from '../services/wap.service'
 
@@ -51,6 +49,10 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         }
     }
 
+    function onPublish() {
+        setIsPublishing(true)
+    }
+
     function onPreview() {
         if (wap.url) {
             navigate(`/${wap.url}`)
@@ -58,6 +60,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
             navigate(`/preview/${wap._id}`)
         }
     }
+
     return (
         <header
             data-location={location}
@@ -92,7 +95,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                 )}
                 {location === 'index' && (
                     <div className='user-area'>
-                        <UserTooltip user={user} />
+                        <UserTooltip wapId={wapId} user={user} />
                     </div>
                 )}
                 {location === 'editor' && (
@@ -101,7 +104,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <div className='user-area'>
                                 <UserTooltip user={user} />
                             </div>
-                            <SitesActionsDropdown onDuplicateWap={onDuplicateWap} />
+                            <SitesActionsDropdown
+                                setIsPublishing={setIsPublishing}
+                                isPublishing={isPublishing}
+                                onDuplicateWap={onDuplicateWap}
+                            />
                         </div>
                         <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
@@ -116,7 +123,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                     </button>
                                 </li>
                                 <li>
-                                    <button className='nav-link publish' onClick={() => setIsPublishing(true)}>
+                                    <button className='nav-link publish' onClick={onPublish}>
                                         <span>Publish</span>
                                     </button>
                                     <PublishModal

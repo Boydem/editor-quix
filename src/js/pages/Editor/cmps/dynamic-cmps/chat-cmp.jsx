@@ -10,6 +10,7 @@ import { socketService, SOCKET_EMIT_GUEST_MSG, SOCKET_EVENT_OWNER_ADD_MSG } from
 
 export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
+    const isEditing = useSelector(storeState => storeState.wapModule.isEditing)
     let [msgs, setMsgs] = useState(null)
     const chatRef = useRef()
     const guestId = useRef()
@@ -23,6 +24,13 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         })
         guestId.current = socketService.getSocketId()
     }, [])
+
+    // useEffect(() => {
+    //     if (!isEditing) {
+    //         const elChat = document.querySelector('.chat-1').classList.add('preview-chat')
+    //         console.log(elChat)
+    //     }
+    // }, [])
 
     const [msg, setMsg] = useState('')
 

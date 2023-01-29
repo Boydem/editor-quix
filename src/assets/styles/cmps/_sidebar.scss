@@ -43,6 +43,11 @@
             top: -60vh;
         }
     }
+    &.dragging {
+        .module-content {
+            top: 0;
+        }
+    }
 }
 
 .module-menu {
@@ -355,9 +360,10 @@
             z-index: -5;
             pointer-events: all;
             position: absolute;
-            inset: 0;
+            top: 0;
             right: 0;
             left: unset;
+            bottom: 0;
             margin: auto;
             cursor: pointer;
             height: max-content;
@@ -376,9 +382,10 @@
                 z-index: -2;
                 content: '';
                 position: absolute;
-                inset: 0;
-                left: 0;
+                top: 0;
                 right: unset;
+                left: 0;
+                bottom: 0;
                 margin: auto;
                 border-radius: 0 0.55rem 0.55rem 0;
                 width: 10px;
@@ -390,9 +397,7 @@
             transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
                 transform 0.6s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
             transform: translate(-15%, -90px);
-
             opacity: 0;
-
             z-index: 1;
         }
         .scroll-indicator-wrapper {
@@ -442,14 +447,6 @@
                             }
                         }
                     }
-                }
-            }
-        }
-        .right-sidebar {
-            .module-content {
-                .TabsRoot {
-                    max-height: unset !important;
-                    overflow-y: auto;
                 }
             }
         }
