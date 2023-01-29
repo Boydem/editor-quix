@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 import { BiBell } from 'react-icons/bi'
-import { SiteSelect } from './site-select'
 import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
 import { QuixLogo } from './quix-logo'
 import { UserTooltip } from './user-tooltip'
@@ -13,7 +12,6 @@ import { SitesActionsDropdown } from '../pages/Editor/cmps/ui-cmps/sites-actions
 import { PublishModal } from '../pages/Editor/cmps/ui-cmps/publish-modal'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
-import { TiBrush } from 'react-icons/ti'
 import { redoChange, undoChange } from '../store/wap/wap.action'
 
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
@@ -37,6 +35,10 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
 
     function onRedo() {
         redoChange()
+    }
+
+    function onPublish() {
+        setIsPublishing(true)
     }
 
     function onPreview() {
@@ -104,7 +106,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                     </button>
                                 </li>
                                 <li>
-                                    <button className='nav-link publish' onClick={() => setIsPublishing(true)}>
+                                    <button className='nav-link publish' onClick={onPublish}>
                                         <span>Publish</span>
                                     </button>
                                     <PublishModal
