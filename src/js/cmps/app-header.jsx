@@ -18,6 +18,7 @@ import { wapService } from '../services/wap.service'
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
     const [isMenuOpen, setIsMenuOpen] = useState()
     const [isPublishing, setIsPublishing] = useState(false)
+    const [isRenaming, setIsRenaming] = useState(false)
     const { wapId } = useParams()
     const navigate = useNavigate()
     const wap = useSelector(storeState => storeState.wapModule.wap)
@@ -59,6 +60,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         } else {
             navigate(`/preview/${wap._id}`)
         }
+    }
+
+    function onInvite() {
+        navigator.clipboard.writeText(`https://www.editorquix.com/edit/${wap._id}`)
+        showSuccessMsg('Invitation copied to clipboard!')
     }
 
     return (
@@ -107,15 +113,16 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <SitesActionsDropdown
                                 setIsPublishing={setIsPublishing}
                                 isPublishing={isPublishing}
+                                setIsRenaming={setIsRenaming}
                                 onDuplicateWap={onDuplicateWap}
                             />
                         </div>
                         <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
                                 <li>
-                                    <Link className='nav-link' to='/edit'>
+                                    <button className='nav-link' onClick={onInvite}>
                                         <span>Invite</span>
-                                    </Link>
+                                    </button>
                                 </li>
                                 <li>
                                     <button className='nav-link preview' onClick={onPreview}>
@@ -131,6 +138,8 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                         wap={wap}
                                         closeModal={closeModal}
                                         isPublishing={isPublishing}
+                                        isRenaming={isRenaming}
+                                        setIsRenaming={setIsRenaming}
                                     />
                                 </li>
                             </ul>

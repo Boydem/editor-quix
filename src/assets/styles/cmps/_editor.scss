@@ -12,6 +12,16 @@
     position: relative;
 
     outline: solid 2px $editor-outline !important;
+
+    &.no-click {
+        outline: unset !important;
+    }
+}
+
+.map.no-click {
+    * {
+        outline: unset !important;
+    }
 }
 .video-disabled {
     pointer-events: none;
@@ -75,4 +85,5 @@
 .mouse-pos {
     position: absolute;
     display: none;
+    width: 30px;
 }
