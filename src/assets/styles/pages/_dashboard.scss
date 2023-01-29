@@ -707,7 +707,7 @@
             &.add-btn {
                 flex: 0 0 auto;
                 height: 42px;
-                padding: 10px 8px px;
+                padding: 10px 8px;
                 padding-left: 16px;
                 position: relative;
                 font-weight: 700;
@@ -718,6 +718,7 @@
                     cursor: pointer;
                     text-align: center;
                     width: 100%;
+                    justify-content: center;
                     font-weight: 700;
                     color: darken($editor-lightgray, 55%);
                 }

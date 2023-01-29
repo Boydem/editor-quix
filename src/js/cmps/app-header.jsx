@@ -80,7 +80,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                 )}
                 {location === 'index' && (
                     <div className='user-area'>
-                        <UserTooltip wapId={wapId} />
+                        <UserTooltip wapId={wapId} user={user} />
                     </div>
                 )}
                 {location === 'editor' && (
