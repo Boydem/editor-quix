@@ -11,7 +11,6 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
 
     useEffect(() => {
         setEditorWrapperLayout()
-        document.querySelector('.chat-1')
     }, [layout])
 
     useEffect(() => {
