@@ -34,7 +34,6 @@ export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicat
         navigate('/create')
     }
 
-    function duplicateSite() {}
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
