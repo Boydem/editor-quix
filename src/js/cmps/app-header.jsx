@@ -61,6 +61,11 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         }
     }
 
+    function onInvite() {
+        navigator.clipboard.writeText(`https://www.editorquix.com/edit/${wap._id}`)
+        showSuccessMsg('Invitation copied to clipboard!')
+    }
+
     return (
         <header
             data-location={location}
@@ -113,9 +118,9 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                         <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'>
                                 <li>
-                                    <Link className='nav-link' to='/edit'>
+                                    <button className='nav-link' onClick={onInvite}>
                                         <span>Invite</span>
-                                    </Link>
+                                    </button>
                                 </li>
                                 <li>
                                     <button className='nav-link preview' onClick={onPreview}>
