@@ -16,7 +16,7 @@ export function MapCmp({ cmp, onSelectCmp, onHoverCmp }) {
     return (
         <div
             style={{ height: '100%', width: '100%', ...cmp.style }}
-            className={cmp.name}
+            className={`${cmp.name} no-click map`}
             // style={cmp.style}
             onClick={e => onSelectCmp(e, cmp)}
             onMouseOver={onHoverCmp}
