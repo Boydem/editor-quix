@@ -21,7 +21,6 @@ export function MessagesDashboard({ user, currSite }) {
     function onContact(keyName) {
         setCurrContact({ from: keyName, msgs: msgs[keyName] })
     }
-
     useEffect(() => {
         setMsgs(currSite.msgs)
         console.log(socketService.getSocketId())
