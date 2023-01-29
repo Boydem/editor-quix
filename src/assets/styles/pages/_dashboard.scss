@@ -201,6 +201,9 @@
                     -webkit-box-orient: vertical;
                     -webkit-line-clamp: 1;
                     max-width: 100px;
+                    &.no-clamp {
+                        max-width: 100%;
+                    }
                 }
                 .time-ago {
                     color: $clr9;

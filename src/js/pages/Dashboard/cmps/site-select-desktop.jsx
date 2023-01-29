@@ -2,6 +2,16 @@ import explorerSVG from '../../../../assets/imgs/dashboard-assets/explorer.svg'
 import quixIcon from '../../../../assets/imgs/quix-icon-darkblue.png'
 import { utilService } from '../../../services/util.service'
 import { AiOutlineUser } from 'react-icons/ai'
+import { SiGooglemessages } from 'react-icons/si'
+import { FaCalendarCheck } from 'react-icons/fa'
+import { FaUsers } from 'react-icons/fa'
+import { BsArrowUp } from 'react-icons/bs'
+import { AiOutlineArrowUp } from 'react-icons/ai'
+import { FiArrowUp } from 'react-icons/fi'
+import { HiArrowNarrowUp, HiArrowUp, HiOutlineArrowUp } from 'react-icons/hi'
+import { FaLongArrowAltUp } from 'react-icons/fa'
+
+import { FaUserCheck } from 'react-icons/fa'
 export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }) {
     function handleChange() {}
     return (
@@ -59,15 +69,24 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <article key={idx} className='list-item-preview'>
                         <div className='item'>
                             <div className='user-avatar'>
-                                <AiOutlineUser size={'70%'} />
+                                {/* <AiOutlineUser size={'70%'} /> */}
+                                {event['key'] === 'msgsTimestamps' && <SiGooglemessages size={'60%'} />}
+                                {event['key'] === 'subscribersTimestamps' && <FaUsers size={'60%'} />}
+                                {event['key'] === 'leadTimestamps' && <FaUserCheck size={'60%'} />}
                             </div>
-                            <span className='user-name'>{user.fullname}</span>
-                            <div className='message-body'>
+                            {/* <span className='user-name'>{user.fullname}</span> */}
+                            {/* <div className='message-body'>
+                                <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
+                                <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>
+                                <p>{event['key'] === 'leadTimestamps' && 'A user just left their information!'}</p>
+                            </div> */}
+                            <div className='user-name no-clamp'>
                                 <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
                                 <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>
                                 <p>{event['key'] === 'leadTimestamps' && 'A user just left their information!'}</p>
                             </div>
-                            <div className='time-ago flex'>{utilService.formatTimeAgo(event.timestamp)}</div>
+                            {/* <div className='time-ago flex'>{utilService.formatTimeAgo(event.timestamp)}</div> */}
+                            <div className='message-body'>{utilService.formatTimeAgo(event.timestamp)}</div>
                         </div>
                     </article>
                 ))}
