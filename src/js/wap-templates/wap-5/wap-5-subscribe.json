@@ -1,8 +1,8 @@
 {
     "id": "qDkjIm",
     "type": "div",
-    "name": "form-2",
-    "category": "subscribe",
+    "name": "form-2 layout-container",
+    "category": "form",
     "thumbnail": "",
     "cmps": [
         {
@@ -34,15 +34,6 @@
                     "name": "",
                     "content": {
                         "txt": "Subscribe to our newsletter and never miss our desings, latest news, etc."
-                    },
-                    "cmps": []
-                },
-                {
-                    "id": "Ju5HVm",
-                    "type": "p",
-                    "name": "",
-                    "content": {
-                        "txt": "Our newsletter is sent once a week, every Monday."
                     },
                     "cmps": []
                 },
@@ -84,6 +75,15 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "Ju5HVm",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Our newsletter is sent once a week, every Monday."
+                    },
+                    "cmps": []
                 }
             ]
         }

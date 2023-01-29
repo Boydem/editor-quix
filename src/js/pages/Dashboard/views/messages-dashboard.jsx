@@ -13,7 +13,10 @@ import {
 
 export function MessagesDashboard({ user, currSite }) {
     const [msgs, setMsgs] = useState(currSite.msgs)
-    const [currContact, setCurrContact] = useState({ from: 'guest1', msgs: msgs['guest1'] })
+    const [currContact, setCurrContact] = useState({
+        from: Object.keys(currSite.msgs)[0],
+        msgs: msgs[Object.keys(currSite.msgs)[0]],
+    })
     const [msgTxt, setMsgTxt] = useState('')
     function onContact(keyName) {
         setCurrContact({ from: keyName, msgs: msgs[keyName] })
@@ -69,8 +72,8 @@ export function MessagesDashboard({ user, currSite }) {
                             <div className='user-avatar'>
                                 <AiOutlineUser size={'70%'} />
                             </div>
-                            {/* <span className='user-name'>{sender}</span> */}
-                            <span className='user-name'>Guest</span>
+                            <span className='user-name'>{sender}</span>
+                            {/* <span className='user-name'>Guest</span> */}
                             <div className='message-body'>
                                 <p>{msgs[sender]?.at(-1).txt}</p>
                             </div>
@@ -87,13 +90,17 @@ export function MessagesDashboard({ user, currSite }) {
                             <AiOutlineUser size={'70%'} fill={'#eee'} />
                         </div>
                         <div className='wrapper'>
-                            {/* <div className='name'>{currContact.from}</div> */}
-                            <div className='name'>Guest</div>
-                            <div className='seen'>{utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}</div>
+                            <div className='name'>{currContact.from}</div>
+                            {/* <div className='name'>Guest</div> */}
+                            <div className='seen'>
+                                {currContact.msgs && utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}
+                            </div>
                         </div>
                     </div>
                     <div className='messages' id='chat'>
-                        <div className='time'>Today at 11:41</div>
+                        {currContact.msgs && (
+                            <div className='time'>{utilService.formatTimeAgo(currContact.msgs?.at(-1).date)}</div>
+                        )}
                         {currContact.msgs?.map((msg, idx) => {
                             return (
                                 <p className={`${msg.by} message`} key={idx}>

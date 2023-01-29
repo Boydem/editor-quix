@@ -72,7 +72,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                         <QuixLogo />
                     </Link>
                 </div>
-                {location === 'dashboard' && (
+                {/* {location === 'dashboard' && (
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'></ul>
@@ -92,7 +92,7 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             </li>
                         </ul>
                     </>
-                )}
+                )} */}
                 {location === 'index' && (
                     <div className='user-area'>
                         <UserTooltip wapId={wapId} user={user} />

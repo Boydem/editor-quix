@@ -59,6 +59,7 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
         setInputsValues(prev => ({ ...prev, [field]: value }))
     }
+    console.log(cmp)
 
     return (
         <form
@@ -77,7 +78,7 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
                             key={innerCmp.id}
                             style={cmp.style}
                             onClick={e => onSelectCmp(e, cmp)}
-                            placeholder={cmp.content?.placeholder}
+                            // placeholder={cmp.content?.placeholder}
                             // name={innerCmp.name}
                             onMouseOver={onHoverCmp}
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
@@ -91,7 +92,7 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
                                     style={cmp.style}
                                     name={innerCmp.cmps[0].inputName}
                                     onClick={e => onSelectCmp(e, cmp)}
-                                    placeholder={cmp.content?.placeholder}
+                                    placeholder={innerCmp.cmps[0]?.content?.placeholder}
                                     onMouseOver={onHoverCmp}
                                     onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                                     onChange={handleChange}
@@ -107,7 +108,7 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
                             style={cmp.style}
                             name={innerCmp.inputName}
                             onClick={e => onSelectCmp(e, cmp)}
-                            placeholder={cmp.content?.placeholder}
+                            placeholder={innerCmp.content?.placeholder}
                             onMouseOver={onHoverCmp}
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                             onChange={handleChange}
