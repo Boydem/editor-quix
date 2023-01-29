@@ -70,9 +70,6 @@ $logo-container-width: 120px;
 
 // LAYOUT
 $layoutPadding: 5%;
-@media (min-width: $break-wide) {
-    $layoutPadding: 20%;
-}
 
 $padded-break-mobile: calc($break-mobile - $layoutPadding);
 $padded-break-narrow: calc($break-narrow - $layoutPadding);
