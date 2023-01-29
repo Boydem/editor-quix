@@ -413,6 +413,8 @@
     }
 
     .chat {
+        &.preview-chat {
+        }
         position: fixed;
         bottom: 9%;
         right: 15%;
