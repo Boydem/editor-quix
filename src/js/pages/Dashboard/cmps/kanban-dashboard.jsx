@@ -128,6 +128,10 @@ export function KanbanDashboard({ user, currSite }) {
         }
     }
 
+    function onChangeStatus(lead) {
+        console.log(lead)
+    }
+
     function onAddBoard() {
         const boardToAdd = {
             id: makeId(),
@@ -294,7 +298,9 @@ export function KanbanDashboard({ user, currSite }) {
                                                 </li>
                                             )
                                         })}
-                                        <li className='col'>{utilService.capitalize(lead.status)}</li>
+                                        <li className='col cursor-pointer' onClick={() => onChangeStatus(lead)}>
+                                            {utilService.capitalize(lead.status)}
+                                        </li>
                                     </ul>
                                 )
                             })}
