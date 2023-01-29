@@ -547,79 +547,101 @@
 }
 
 .form-2 {
-    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
-    padding: 0rem;
-    background: white;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin: 0rem auto;
-    margin-bottom: 10rem;
-    max-width: 700px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0rem;
-    .wrapper {
-        padding: 4rem 3.5rem;
-    }
-    img {
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+    // background: linear-gradient(to right, #ff7629 50%, white 50%);
+    // background: #ff7629;
+    background: url('https://res.cloudinary.com/dsperrtyj/image/upload/v1675029054/front-view-woman-eating-meat-burgers_ejzfdk.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &::before {
+        content: '';
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.322);
+        pointer-events: none;
     }
-
-    h2 {
-        margin: 0;
-        color: #ff7629;
-        font-size: 2rem;
-        text-transform: uppercase;
-        margin-bottom: 1.3rem;
+    .form-2-wrapper {
+        padding: 0rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+    .container {
+        text-align: center;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 650px;
 
-    p {
-        margin-bottom: 1.3rem;
-        font-size: 0.85rem;
-        max-width: 90%;
-
-        &:last-of-type {
-            margin-bottom: 2.5rem;
+        p {
+            color: rgba(255, 255, 255, 0.781);
+            margin-top: 1rem;
+            font-size: 0.88rem;
+        }
+        .titles {
+            padding: 0 1rem;
+            h2 {
+                color: rgba(255, 255, 255, 0.952);
+                font-size: 4.125rem;
+            }
+            h5 {
+                font-size: 1rem;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.87);
+            }
+            margin-bottom: 1em;
         }
     }
-
     .form-2-inner-form {
+        display: flex;
         width: 100%;
-        display: grid;
-        grid-template-columns: 9fr 1fr;
-        gap: 0;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 50%;
+        text-align: center;
         input {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-left: 0.9rem;
-            width: 115%;
-            height: 33px;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            border: none;
+            text-align: center;
+            height: 100%;
+            border-radius: 55px;
+            padding: 8px 20px;
+            width: 100%;
+            max-width: 100%;
+            &:hover {
+                background-color: #fff;
+            }
         }
         input:focus {
             outline: none;
         }
 
         button {
-            position: relative;
-            left: -20px;
+            align-self: center;
+            height: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             z-index: 2;
             color: white;
             background: #ff7629;
             outline: none;
             border: none;
-            border-bottom-left-radius: 40px;
-            border-top-right-radius: 40px;
-            border-bottom-right-radius: 40px;
+            border-radius: 55px;
+            width: max-content;
+            margin-top: 1rem;
+            padding: 8px 40px;
+            font-weight: 500;
+            font-size: 1rem;
         }
     }
 }

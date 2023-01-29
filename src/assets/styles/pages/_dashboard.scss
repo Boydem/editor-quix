@@ -572,6 +572,7 @@
             padding-top: calc($spacing-m);
             padding-bottom: calc($spacing-m);
         }
+
         .leads-table {
             background: lighten(#bcbcd1, 5);
             grid-column: 1/-1;
@@ -579,7 +580,14 @@
             border: none;
             border-radius: 12px;
             overflow: hidden;
-            margin-top: 1em;
+
+            .table-row {
+                .col {
+                    padding: 0.5em 1em;
+                }
+                border-bottom: 0px solid #eee;
+                padding-bottom: 0px;
+            }
             .table-header {
                 font-weight: 600;
             }
@@ -624,8 +632,6 @@
             position: sticky;
             left: 0;
             padding: $spacing-s $spacing-m;
-            padding-bottom: calc($spacing-m / 2);
-            border-bottom: 1px solid $clr11;
             font-weight: 700;
             color: rgba(37, 37, 54, 0.918);
             border-bottom: 1px solid rgba(68, 68, 100, 0.17);
@@ -709,12 +715,18 @@
         .list-wrapper {
             background-color: rgba(255, 255, 255, 0.589);
             display: inline-flex;
-            margin: 0 4px;
+
             vertical-align: top;
             white-space: nowrap;
             width: 272px;
             border-radius: 12px;
             overflow: hidden;
+            &:not(:first-child) {
+                margin: 0 4px;
+            }
+            &:first-child {
+                margin-inline-end: 4px;
+            }
             &:not(.add-btn) {
                 height: 100%;
             }
@@ -944,9 +956,6 @@
             > :last-child {
                 justify-self: end;
             }
-            > * {
-                padding: 0.5em 1em;
-            }
         }
         .table-header {
             border-bottom: 1px solid darken($editor-lightgray, 20%);
@@ -961,6 +970,8 @@
             grid-auto-flow: dense;
             align-items: center;
             margin-bottom: 0.5em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5em;
             .col {
                 &:not(:last-child) {
                     border-inline-end: 1px solid darken($editor-lightgray, 20%);
