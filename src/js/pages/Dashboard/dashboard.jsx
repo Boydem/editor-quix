@@ -22,6 +22,7 @@ import { SiteActionsDropdown } from './cmps/site-actions-dropdown'
 import { ScheduleDashboard } from './views/schedule-dashboard'
 import { KanbanDashboard } from './cmps/kanban-dashboard'
 import { LeadsDashboard } from './views/leads-dashboard'
+import { Loader } from '../../cmps/loader'
 
 export function Dashboard() {
     const [currView, setCurrView] = useState('home')
@@ -32,7 +33,6 @@ export function Dashboard() {
     const dispatch = useDispatch()
     console.log('currSite:', currSite)
 
-   
     const menuItems = ['Home', 'Messages', 'Subscriptions', 'Leads', 'Schedule']
 
     useEffect(() => {
@@ -105,7 +105,7 @@ export function Dashboard() {
             .slice(0, 5)
     }
 
-    if (!user || !currSite) return <div>Loading...</div>
+    if (!user || !currSite) return <Loader />
     return (
         <div className='dashboard full'>
             <AppHeader location={'dashboard'} onSiteChange={onSiteChange} />

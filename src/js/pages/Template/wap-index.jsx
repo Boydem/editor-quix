@@ -6,6 +6,7 @@ import { wapService } from '../../services/wap.service'
 import { HiPlus } from 'react-icons/hi'
 import { AppHeader } from '../../cmps/app-header'
 import { useSelector } from 'react-redux'
+import { Loader } from '../../cmps/loader'
 
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
@@ -49,7 +50,7 @@ export function WapIndex() {
     function onPreview(wapId) {
         navigate(`/preview/${wapId}`)
     }
-    if (!waps) return <></>
+    if (!waps) return <Loader />
     return (
         <>
             <AppHeader location={'index'} theme={'dark'} layout={'main-layout'} />

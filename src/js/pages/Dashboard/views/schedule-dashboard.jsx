@@ -13,7 +13,6 @@ export function ScheduleDashboard({ user, currSite }) {
         setDayToPreview(selectedDay)
     }
     const events = currSite.schedule.meetings.reduce((acc, meeting) => {
-        console.log('meeting:', meeting)
         try {
             acc.push({
                 start: moment(meeting.datetime.startTime).toDate(),

@@ -10,6 +10,7 @@ import { showErrorMsg } from '../../../services/event-bus.service'
 import { CgViewCols, CgViewList } from 'react-icons/cg'
 import { AiOutlineUnorderedList } from 'react-icons/ai'
 import { BsKanbanFill } from 'react-icons/bs'
+import { Loader } from '../../../cmps/loader'
 
 export function KanbanDashboard({ user, currSite }) {
     const [newItemText, setNewItemText] = useState({})
@@ -147,7 +148,7 @@ export function KanbanDashboard({ user, currSite }) {
         //     console.log('err:', err)
         // }
     }
-    if (!boards || !boards.length) return <div>Loading..</div>
+    if (!boards || !boards.length) return <Loader />
     return (
         <DragDropContext onDragEnd={onDragEnd}>
             <section className='info-box kanban-board'>

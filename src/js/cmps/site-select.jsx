@@ -2,9 +2,10 @@ import React from 'react'
 import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
+import { Loader } from './loader'
 
 export function SiteSelect({ sites, onSiteChange, currSite }) {
-    if (!sites) return <div>Loading...</div>
+    if (!sites) return <Loader />
     return (
         <section className='site-select'>
             <Select.Root onValueChange={onSiteChange} value={currSite}>
