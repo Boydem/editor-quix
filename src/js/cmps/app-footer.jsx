@@ -5,11 +5,12 @@ export function AppFooter() {
                 <div className='footer-webix'>
                     <span className='logo'>quix</span>
                     <p>
-                        quix is an advanced creation platform for designers and web professionals. The platform combines
-                        cutting edge responsive design with smooth drag and drop. Those that want to can add custom code
-                        and use a powerful CMS to build data driven sites and complex web applications. quix offers an
-                        unparalleled range of integrated business solutions from a leading eCommerce infrastructure to
-                        professional marketing and SEO tools.
+                        Transform the way you create your website with Editor Quix, an innovative Wix clone built in
+                        just 12 days during a coding academy intensive sprint. With its smart components like chat,
+                        forms, maps, schedule, and more, you'll be able to create your website with ease. Take control
+                        with our user-friendly admin panel that features real-time statistics, live chat with visitors,
+                        email subscriber management, lead organization, and a calendar to manage meetings. Start
+                        building your website today and make a lasting impression
                     </p>
                 </div>
                 {/* <div className='footer-webix'>
