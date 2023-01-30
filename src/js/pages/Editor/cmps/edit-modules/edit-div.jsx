@@ -9,15 +9,18 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
     const [currImage, setCurrImage] = useState(
         window.getComputedStyle(elClickedNode).getPropertyValue('background').split(`"`)[1]
     )
+    console.log(window.getComputedStyle(elClickedNode).getPropertyValue('background').split(`"`)[1])
     useEffect(() => {
         setCurrImage(window.getComputedStyle(elClickedNode).getPropertyValue('background').split(`"`)[1])
-    }, [elClickedNode])
+        console.log('GOTIN')
+    }, [elClickedNode, clickedCmp])
 
     async function onImgUrlInput() {
         clickedCmp.style = {
             ...clickedCmp.style,
             background: `url(${imgUrl}) no-repeat center center/cover`,
         }
+        setCurrImage(imgUrl)
         saveCmp(clickedCmp)
     }
 
