@@ -115,6 +115,9 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                                 isPublishing={isPublishing}
                                 setIsRenaming={setIsRenaming}
                                 onDuplicateWap={onDuplicateWap}
+                                onPreview={onPreview}
+                                onInvite={onInvite}
+                                onPublish={onPublish}
                             />
                         </div>
                         <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>

@@ -5,36 +5,25 @@ import { useNavigate } from 'react-router'
 import { Link, useParams } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { saveWap } from '../../../../store/wap/wap.action'
-export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicateWap, setIsRenaming }) {
-    // const [isRenaming, setIsRenaming] = useState()
+export function SitesActionsDropdown({ onPublish, onDuplicateWap, setIsRenaming, onPreview, onInvite }) {
     const navigate = useNavigate()
-    const wap = useSelector(storeState => storeState.wapModule.wap)
     const user = useSelector(storeState => storeState.userModule.user)
-    // const [wapNameToEdit, setWapNameToEdit] = useState({ title: '' })
-    // function handleChange(ev) {
-    //     const value = ev.target.value
-    //     const field = ev.target.name
-    //     setWapNameToEdit(prev => ({ ...prev, [field]: value }))
-    // }
-    const { wapId } = useParams()
-    function navigatePreview() {
-        if (!wap?.url) {
-            navigate(`/preview/${wapId}`)
-        } else {
-            navigate(`/${wap?.url}`)
-        }
-    }
-    function copyUrl() {
-        navigator.clipboard.writeText(`http://localhost:3000/edit/${wapId}`)
-        showSuccessMsg('Url copied to clipboard')
-    }
+
     function renameSite() {
         setIsRenaming(true)
-        setIsPublishing(true)
+        onPublish()
     }
     function onCreateNewSite() {
         showSuccessMsg('Your site has been saved. Ready for new site')
         navigate('/create')
+    }
+
+    function onDashboard() {
+        if (user) {
+            navigate(`/dashboard/${user?._id}`)
+        } else {
+            showErrorMsg('You must sign in first!')
+        }
     }
 
     return (
@@ -47,14 +36,14 @@ export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicat
 
             <DropdownMenu.Portal>
                 <DropdownMenu.Content className='DropdownMenuContent' sideOffset={5} align={'start'}>
-                    <DropdownMenu.Item onClick={navigatePreview} className='DropdownMenuItem'>
+                    <DropdownMenu.Item onClick={onPreview} className='DropdownMenuItem'>
                         Preview
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item onClick={() => setIsPublishing(true)} className='DropdownMenuItem'>
+                    <DropdownMenu.Item onClick={onPublish} className='DropdownMenuItem'>
                         Publish
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
-                    <DropdownMenu.Item onClick={copyUrl} className='DropdownMenuItem'>
+                    <DropdownMenu.Item onClick={onInvite} className='DropdownMenuItem'>
                         Invite People to Collaborate
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
@@ -68,8 +57,8 @@ export function SitesActionsDropdown({ isPublishing, setIsPublishing, onDuplicat
                         Duplicate Site
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator className='DropdownMenuSeparator' />
-                    <DropdownMenu.Item className='DropdownMenuItem'>
-                        <Link to={`/dashboard/${user?._id}`}>Dashboard</Link>
+                    <DropdownMenu.Item className='DropdownMenuItem' onClick={onDashboard}>
+                        Dashboard
                     </DropdownMenu.Item>
 
                     <DropdownMenu.Arrow className='DropdownMenuArrow' />
