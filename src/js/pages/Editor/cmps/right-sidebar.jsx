@@ -92,7 +92,7 @@ export function RightSidebar({ rightSidebarState, handleSidebarsChanges }) {
                             </button>
                         </ul>
                     </div>
-                    <EditTabs context={rightSidebarState.context} />
+                    <EditTabs context={rightSidebarState.context} cmpTitle={cmpTitle}/>
                 </div>
             )}
         </div>

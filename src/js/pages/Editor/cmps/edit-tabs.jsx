@@ -30,7 +30,7 @@ import { EditSocial } from './edit-modules/edit-social'
 import { EditSchedule } from './edit-modules/edit-schedule'
 import { EditChat } from './edit-modules/edit-chat'
 
-export function EditTabs({ context }) {
+export function EditTabs({ context, cmpTitle }) {
     const [isTextPaletteOpen, setIsTextPaletteOpen] = useState(false)
     const [isBorderPaletteOpen, setIsBorderPaletteOpen] = useState(false)
     const [isBgPaletteOpen, setIsBgPaletteOpen] = useState(false)
@@ -174,18 +174,20 @@ export function EditTabs({ context }) {
     return (
         <>
             <Tabs.Root className='TabsRoot' defaultValue='tab1'>
-                <div className='expanded-content TabsContent tabs-inner-content'>
-                    {context === 'div' && <EditDiv clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
-                    {context === 'social' && <EditSocial clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
-                    {context === 'img' && <EditImg clickedCmp={clickedCmp} />}
-                    {context === 'form' && <EditForm clickedCmp={clickedCmp} />}
-                    {context === 'subscribe' && <EditSubscribe clickedCmp={clickedCmp} />}
-                    {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
-                    {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
-                    {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
-                    {context === 'schedule' && <EditSchedule clickedCmp={clickedCmp} />}
-                    {context === 'chat' && <EditChat clickedCmp={clickedCmp} />}
-                </div>
+                {cmpTitle !== 'Text' && cmpTitle !== 'Title' && (
+                    <div className='expanded-content TabsContent tabs-inner-content'>
+                        {context === 'div' && <EditDiv clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
+                        {context === 'social' && <EditSocial clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
+                        {context === 'img' && <EditImg clickedCmp={clickedCmp} />}
+                        {context === 'form' && <EditForm clickedCmp={clickedCmp} />}
+                        {context === 'subscribe' && <EditSubscribe clickedCmp={clickedCmp} />}
+                        {context === 'map' && <EditMap clickedCmp={clickedCmp} />}
+                        {context === 'video' && <EditVideo clickedCmp={clickedCmp} />}
+                        {context === 'a' && <EditAnchor clickedCmp={clickedCmp} />}
+                        {context === 'schedule' && <EditSchedule clickedCmp={clickedCmp} />}
+                        {context === 'chat' && <EditChat clickedCmp={clickedCmp} />}
+                    </div>
+                )}
                 <div className='expanded-content adjust inside-accordion TabsContent tabs-inner-content'>
                     <TextToolbar elClickedNode={elClickedNode} handleTextStyleChange={handleTextStyleChange} />
                     <TextColorPick
