@@ -45,9 +45,11 @@ export function Editor() {
             }
         }, 3500)
         socketService.emit('set-wap-room', wapId)
+        socketService.off('updated-wap')
         socketService.on('updated-wap', wap => {
             dispatch({ type: SET_WAP, wap })
         })
+        socketService.off('mouse-move')
         socketService.on('mouse-move', mousePos => {
             cursorRef.current.style.left = `${mousePos.mouseX + 10}px`
             cursorRef.current.style.top = `${mousePos.mouseY - 10}px`
@@ -59,7 +61,13 @@ export function Editor() {
             socketService.emit('update-mouse-pos', { mouseX: ev.clientX, mouseY: ev.clientY })
         }
 
+        // setInterval(() => {
+        //     console.log('cursorRef:', cursorRef)
+        // }, 1000)
+
         return () => {
+            socketService.off('mouse-move')
+            socketService.off('updated-wap')
             setIsEditing(false)
             setWapNull()
             clearInterval(cursorIntervalIdRef.current)
