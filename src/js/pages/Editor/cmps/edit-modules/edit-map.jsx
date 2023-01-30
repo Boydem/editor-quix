@@ -62,7 +62,13 @@ export function EditMap({ clickedCmp }) {
         <div className='inside-accordion adjust-inputs expanded-content edit-map full'>
             <label htmlFor=''>
                 Search your desired location
-                <input type='text' value={geoLocationValue} onChange={handleChange} className='input-edit' />
+                <input
+                    type='text'
+                    value={geoLocationValue}
+                    onChange={handleChange}
+                    className='input-edit'
+                    placeholder='Tel Aviv'
+                />
             </label>
             <div className='btns'>
                 <button onClick={onPanTo} className='btn-edit'>
@@ -80,6 +86,7 @@ export function EditMap({ clickedCmp }) {
                     value={zoom}
                     className='btn-edit input-edit'
                     onChange={handleMapChange}
+                    placeholder='10'
                 />
             </label>
 

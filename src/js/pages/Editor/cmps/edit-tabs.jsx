@@ -174,7 +174,7 @@ export function EditTabs({ context, cmpTitle }) {
     return (
         <>
             <Tabs.Root className='TabsRoot' defaultValue='tab1'>
-                {cmpTitle !== 'Text' && cmpTitle !== 'Title' && (
+                {cmpTitle !== 'Text' && cmpTitle !== 'Title' && cmpTitle !== 'Button' && (
                     <div className='expanded-content TabsContent tabs-inner-content'>
                         {context === 'div' && <EditDiv clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
                         {context === 'social' && <EditSocial clickedCmp={clickedCmp} elClickedNode={elClickedNode} />}
