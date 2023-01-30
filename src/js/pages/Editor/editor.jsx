@@ -23,10 +23,20 @@ export function Editor() {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const [layout, setLayout] = useState({ layoutClass: 'desktopLayout', width: '' })
     const cursorRef = useRef()
-    const cursorIntervalIdRef = useRef()
     const { wapId } = useParams()
     const dispatch = useDispatch()
+    let mousePosTimeOutIdRef = useRef()
 
+    function debounceRemoveMouseCursor() {
+        if (mousePosTimeOutIdRef.current) {
+            clearTimeout(mousePosTimeOutIdRef.current)
+        }
+        mousePosTimeOutIdRef.current = setTimeout(() => {
+            if (cursorRef.current) {
+                cursorRef.current.style.display = 'none'
+            }
+        }, 5000)
+    }
     // sidebars states
     const [rightSidebarState, setRightSidebarState] = useState({ isOpen: false })
     const [leftSidebarState, setLeftSidebarState] = useState({
@@ -39,11 +49,6 @@ export function Editor() {
     useEffect(() => {
         loadWap()
         setIsEditing(true)
-        cursorIntervalIdRef.current = setInterval(() => {
-            if (cursorRef.current) {
-                cursorRef.current.style.display = 'none'
-            }
-        }, 3500)
         socketService.emit('set-wap-room', wapId)
         socketService.off('updated-wap')
         socketService.on('updated-wap', wap => {
@@ -51,6 +56,7 @@ export function Editor() {
         })
         socketService.off('mouse-move')
         socketService.on('mouse-move', mousePos => {
+            debounceRemoveMouseCursor()
             cursorRef.current.style.left = `${mousePos.mouseX + 10}px`
             cursorRef.current.style.top = `${mousePos.mouseY - 10}px`
             cursorRef.current.style.display = 'block'
@@ -61,18 +67,20 @@ export function Editor() {
             socketService.emit('update-mouse-pos', { mouseX: ev.clientX, mouseY: ev.clientY })
         }
 
-        // setInterval(() => {
-        //     console.log('cursorRef:', cursorRef)
-        // }, 1000)
-
         return () => {
             socketService.off('mouse-move')
             socketService.off('updated-wap')
             setIsEditing(false)
             setWapNull()
-            clearInterval(cursorIntervalIdRef.current)
             setElClickedNode(null)
             document.removeEventListener('mousemove', emitMouseMovement)
+
+            if (mousePosTimeOutIdRef.current) {
+                clearTimeout(mousePosTimeOutIdRef.current)
+            }
+            if (cursorRef.current) {
+                cursorRef.current.style.display = 'none'
+            }
         }
     }, [])
 

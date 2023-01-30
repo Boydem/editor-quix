@@ -37,7 +37,9 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
     }
 
     function onSelectCmp(ev, cmp) {
-        handleSidebarsChanges('left', { isOpen: false })
+        if (leftSidebarState.isOpen) {
+            handleSidebarsChanges('left', { isOpen: false })
+        }
         ev.stopPropagation()
         if (!ev.target.type) ev.preventDefault()
 
