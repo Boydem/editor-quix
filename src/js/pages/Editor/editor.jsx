@@ -23,6 +23,7 @@ export function Editor() {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const [layout, setLayout] = useState({ layoutClass: 'desktopLayout', width: '' })
     const cursorRef = useRef()
+    const cursorIntervalIdRef = useRef()
     const { wapId } = useParams()
     const dispatch = useDispatch()
 
@@ -38,7 +39,7 @@ export function Editor() {
     useEffect(() => {
         loadWap()
         setIsEditing(true)
-        setInterval(() => {
+        cursorIntervalIdRef.current = setInterval(() => {
             if (cursorRef.current) {
                 cursorRef.current.style.display = 'none'
             }
@@ -61,6 +62,7 @@ export function Editor() {
         return () => {
             setIsEditing(false)
             setWapNull()
+            clearInterval(cursorIntervalIdRef.current)
             setElClickedNode(null)
             document.removeEventListener('mousemove', emitMouseMovement)
         }
