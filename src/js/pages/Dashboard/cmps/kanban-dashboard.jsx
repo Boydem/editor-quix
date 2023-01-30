@@ -28,7 +28,6 @@ export function KanbanDashboard({ user, currSite }) {
     }
 
     useEffect(() => {
-        console.log('boards:', boards)
         const leadsListFormatted = currSite.leadsBoards.reduce((acc, board) => {
             board.items.forEach(item => {
                 // const newItem = structuredClone(item)
@@ -103,7 +102,6 @@ export function KanbanDashboard({ user, currSite }) {
     function addNewItem(ev, boardId, idx) {
         ev.preventDefault()
         const board = boards[idx]
-        console.log('board:', board)
         boards[idx] = {
             ...board,
             items: [
@@ -144,7 +142,6 @@ export function KanbanDashboard({ user, currSite }) {
                 },
             ],
         }
-        console.log([...boards, boardToAdd])
         setBoards(prev => [...prev, boardToAdd])
         // currSite.leadsBoards = [...boards, boardToAdd]
         // try {

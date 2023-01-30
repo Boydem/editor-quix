@@ -9,7 +9,6 @@ const initialState = {
     users: [],
 }
 export function userReducer(state = initialState, action) {
-    // console.log('state.user:', state.user)
     var newState = state
     switch (action.type) {
         case 'SET_USER':
@@ -25,13 +24,11 @@ export function userReducer(state = initialState, action) {
             newState = { ...state, users: action.users }
             break
         case 'SET_CURR_SITE':
-            console.log('action.currSite', action.currSite)
             newState = { ...state, currSite: action.currSite }
             break
         default:
     }
     // For debug:
     // window.userState = newState
-    // console.log('State:', newState)
     return { ...newState }
 }

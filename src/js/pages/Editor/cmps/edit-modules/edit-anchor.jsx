@@ -20,7 +20,6 @@ export function EditAnchor({ clickedCmp }) {
     function onSelectSection(sectionId) {
         clickedCmp.content.href = sectionId
         saveCmp(clickedCmp)
-        console.log('clickedCmp:', clickedCmp)
     }
 
     return (

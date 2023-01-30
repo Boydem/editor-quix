@@ -38,13 +38,11 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
         for (const key of Object.keys(inputsValues)) {
             if (!labels.includes(key)) continue
             leadData = { ...leadData, [key]: inputsValues[key] }
-            console.log(`The value for ${key} is: ${inputsValues[key]}`)
         }
         leadData = { ...leadData, date: new Date().getTime() }
         let lead = { id: makeId(), data: leadData, status: 'new' }
         // lead = { ...lead, id: makeId(), createdAt: new Date().getTime() }
         wap.leadsBoards[0].items.push(lead)
-        console.log(leadData)
         socketService.emit(SOCKET_EMIT_SEND_LEAD, { data: leadData, to: wap.owner })
         try {
             saveWap(wap)
@@ -59,7 +57,6 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
 
         setInputsValues(prev => ({ ...prev, [field]: value }))
     }
-    console.log(cmp)
 
     return (
         <form

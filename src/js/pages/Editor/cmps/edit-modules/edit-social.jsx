@@ -27,7 +27,6 @@ export function EditSocial({ clickedCmp }) {
     function onDeleteLink(idx) {
         // const tempClickedCmp = clickedCmp
         removeCmp(clickedCmp.cmps[idx])
-        // console.log(clickedCmp)
     }
 
     function addLink() {

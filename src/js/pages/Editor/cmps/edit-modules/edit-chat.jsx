@@ -12,7 +12,6 @@ export function EditChat({ clickedCmp }) {
     }
 
     function onSetStartingMsg() {
-        console.log('txt:', txt)
         wap.chatStartingMsg = txt
         saveWap(wap)
     }

@@ -23,11 +23,8 @@ export function MessagesDashboard({ user, currSite }) {
     }
     useEffect(() => {
         setMsgs(currSite.msgs)
-        console.log(socketService.getSocketId())
         socketService.on('guest-add-msg', guestMsg => {
             const guest = guestMsg[0]
-            // console.log('guest:', guest)
-            console.log(currSite.msgs)
             if (!currSite.msgs[guest]) {
                 currSite.msgs = { [guest]: guestMsg[1], ...currSite.msgs }
                 currSite.msgs[guest] = [guestMsg[1]]

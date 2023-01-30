@@ -26,7 +26,6 @@ export function PublishLoginSignup() {
         try {
             const user = await login(credentials)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
-            console.log('credentials:', credentials)
             clearState()
         } catch (err) {
             console.error('Failed to login', err)

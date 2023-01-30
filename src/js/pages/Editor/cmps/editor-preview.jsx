@@ -19,7 +19,6 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
         if (elChat && elChatCmp) {
             setTimeout(() => {
                 const rect = editorWrapper.current.getBoundingClientRect()
-                console.log(rect.right)
                 elChat.style.left = `${rect.right - 75}px`
                 elChatCmp.style.left = `${rect.right - 400}px`
             }, 500)

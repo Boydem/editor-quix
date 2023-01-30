@@ -12,7 +12,6 @@ export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
         ev.preventDefault()
         if (!wap.subscribers) wap.subscribers = []
         wap.subscribers.push({ email: subscriber, date: new Date().getTime() })
-        console.log(`A new subscriber: ${subscriber}`)
         socketService.emit(SOCKET_EMIT_SEND_SUBSCRIBE, { email: subscriber, to: wap.owner })
         saveWap(wap)
     }

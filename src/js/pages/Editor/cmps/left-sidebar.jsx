@@ -24,7 +24,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
     }, [])
 
     function setThemeClass() {
-        console.log(wap.themeClass)
         const root = document.getElementById('root')
         theme.current = wap.themeClass
         root.classList.add(wap.themeClass)
@@ -32,8 +31,6 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
 
     function handleThemeChange(selectedTheme) {
         const root = document.getElementById('root')
-        console.log(selectedTheme)
-        console.log(wap.palette)
         root.classList.replace(theme.current, selectedTheme)
         theme.current = selectedTheme
         wap.themeClass = selectedTheme

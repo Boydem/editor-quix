@@ -1,5 +1,4 @@
 export function Loader() {
-    console.log('LOADER')
 
     return (
         <div className='loader-wrapper'>

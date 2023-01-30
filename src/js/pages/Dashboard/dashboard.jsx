@@ -31,7 +31,6 @@ export function Dashboard() {
     const navigate = useNavigate()
     const { userId } = useParams()
     const dispatch = useDispatch()
-    console.log('currSite:', currSite)
 
     const menuItems = ['Home', 'Messages', 'Subscriptions', 'Leads', 'Schedule']
 
@@ -69,7 +68,6 @@ export function Dashboard() {
         try {
             await setUserSites(user)
             if (!user.sites || !user.sites.length) navigate('/create')
-            console.log(user.sites)
             dispatch({ type: SET_CURR_SITE, currSite: user.sites.at(-1) })
             showSuccessMsg(`Welcome back, ${user.fullname}`)
         } catch (err) {
@@ -87,7 +85,6 @@ export function Dashboard() {
             acc.push(sub.date)
             return acc
         }, [])
-        console.log(currSite)
         const leadTimestamps = currSite?.leadsBoards[0].items.reduce((acc, lead) => {
             acc.push(lead.data.date)
             return acc

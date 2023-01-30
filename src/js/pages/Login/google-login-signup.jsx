@@ -24,7 +24,6 @@ export function GoogleLoginSignup({ handleGoogleLogin }) {
             imgUrl: profileObj.imageUrl,
         }
         handleGoogleLogin(user)
-        console.log(user)
     }
     function onGoogleLoginFailure(err) {
         showErrorMsg('Cannot login, try again later')

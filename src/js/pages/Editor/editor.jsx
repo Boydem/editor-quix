@@ -52,13 +52,10 @@ export function Editor() {
             cursorRef.current.style.top = `${mousePos.mouseY - 10}px`
             cursorRef.current.style.display = 'block'
 
-            // console.log(mousePos)
         })
 
         document.addEventListener('mousemove', emitMouseMovement)
         function emitMouseMovement(ev) {
-            // console.log('ev.layerY', ev.layerY)
-            // console.log('ev.layerX:', ev.layerX)
             socketService.emit('update-mouse-pos', { mouseX: ev.clientX, mouseY: ev.clientY })
         }
 

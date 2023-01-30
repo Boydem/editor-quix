@@ -113,11 +113,8 @@ function getUserSites(userWaps) {
 }
 
 async function isWapUrlFree(wapUrl) {
-    console.log('wapUrl:', wapUrl)
     const waps = await query()
-    console.log('waps:', waps)
     const isFoundIndex = waps.findIndex(wap => wap.url === wapUrl)
-    console.log('isFoundIndex:', isFoundIndex)
 
     return isFoundIndex === -1
 }

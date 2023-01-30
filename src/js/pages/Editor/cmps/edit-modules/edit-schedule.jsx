@@ -24,11 +24,9 @@ export function EditSchedule({ clickedCmp }) {
         //     }
         // })
         const newScheduleDays = newSelected.reduce((acc, day) => {
-            console.log('acc:', acc)
             acc.push(day.value)
             return acc
         }, [])
-        console.log('newScheduleDays:', newScheduleDays)
         wap.schedule.days = newScheduleDays
         setSelected(newSelected)
         saveWap(wap)
@@ -69,10 +67,8 @@ export function EditSchedule({ clickedCmp }) {
 
     function onSelectHour(hour, num) {
         if (num === 0) {
-            // console.log('wap.schedule.startHour:', wap.schedule.startHour)
             wap.schedule.startHour = hour
         } else {
-            // console.log('wap.schedule.endHour:', wap.schedule.endHour)
             wap.schedule.endHour = hour
         }
         saveWap(wap)

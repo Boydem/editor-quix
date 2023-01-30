@@ -42,7 +42,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
     async function onDuplicateWap() {
         try {
             const duplicatedWap = await wapService.getWapCopy(wap._id)
-            console.log(duplicatedWap)
             showSuccessMsg('Your sites has been duplicated successfully!')
         } catch (err) {
             console.log(err)

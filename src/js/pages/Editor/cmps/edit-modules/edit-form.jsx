@@ -33,7 +33,6 @@ export function EditForm({ clickedCmp }) {
         saveCmp(clickedCmp)
 
         setInputsValues(prev => ({ ...prev, [field]: value }))
-        console.log('inputsValues:', inputsValues)
     }
 
     function onDisableLabel(idx) {

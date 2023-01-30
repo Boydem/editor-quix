@@ -22,7 +22,6 @@ export function Preview() {
         socketService.emit('set-wap-room', wapUrl)
         if (!wap.visitors) wap.visitors = []
         wap.visitors.push(Date.now())
-        console.log(wap)
         saveWap(wap)
 
         return () => {
@@ -47,7 +46,6 @@ export function Preview() {
         } catch (err) {
             showErrorMsg('Failed to load your demo. Please try again later.')
         }
-        console.log(wap)
     }
 
     if (!wap || !wap.cmps) return <div>Loader...</div>

@@ -58,7 +58,6 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         const { value } = ev.target
         setSelectedService(value)
     }
-    console.log('selectedService:', selectedService)
 
     function getDayName(timestamp) {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -78,7 +77,6 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         let current = new Date(start)
         let id = 0
         while (current < end) {
-            // console.log('wap.schedule.days:', wap.schedule.days)
             if (!wap.schedule.days.includes(getDayName(current).toLowerCase())) {
                 current.setDate(current.getDate() + 1)
                 current.setHours(wap.schedule.startHour, 0, 0, 0)
@@ -111,7 +109,6 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
             return
         } else {
             if (isYesterday(savedTimeslots[0].startTime)) {
-                console.log('*** yesterday ***')
                 savedTimeslots = removeYesterdayMeetings(savedTimeslots)
                 const newIntervals = generateLastDay()
                 setAvailableTimeslots([...savedTimeslots, ...newIntervals])
@@ -209,7 +206,6 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         socketService.emit(SOCKET_EMIT_SEND_SCHEDULE, { data: meetingInputs, to: wap.owner })
         saveWap(wap)
         setIsModalOpen(false)
-        console.log(meetingInputs)
     }
     if (!availableTimeslots) return
     return (

@@ -11,7 +11,6 @@ import { Loader } from '../../cmps/loader'
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
     const user = useSelector(storeState => storeState.userModule.user)
-    console.log('user:', user)
     const navigate = useNavigate()
     useEffect(() => {
         getWaps()
@@ -29,7 +28,6 @@ export function WapIndex() {
 
     async function onEdit(wapId) {
         let wap
-        console.log(wapId)
         try {
             if (wapId === 'blank') {
                 wap = await wapService.getBlankWap()

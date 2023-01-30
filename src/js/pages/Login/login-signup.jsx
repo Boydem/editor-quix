@@ -38,7 +38,6 @@ export function LoginSignup() {
         try {
             const user = await login(credentials)
             showSuccessMsg(`Welcome back, ${user.fullname}`)
-            console.log('credentials:', credentials)
             clearState()
             navigate(-1)
         } catch (err) {

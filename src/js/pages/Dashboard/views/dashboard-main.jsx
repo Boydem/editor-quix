@@ -242,7 +242,6 @@ export function DashboardMain({ user, currSite }) {
                             }`}
                         >
                             <div className='yaron-icon'>
-                                {console.log('TEST', currSite.demoData?.messagesPercent)}
                                 <HiOutlineArrowUp size={'0.85rem'} />
                             </div>
                             {currSite.demoData?.messagesPercent || messagesPercent}%

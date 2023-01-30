@@ -18,8 +18,6 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
     // Here we listen to .on(owner-send-msg) - adding msg to guest chat
     useEffect(() => {
         socketService.on(SOCKET_EVENT_OWNER_ADD_MSG, ownerMsg => {
-            console.log('socketsssssss')
-            console.log(ownerMsg)
             setMsgs(prevMsgs => [...prevMsgs, ownerMsg])
         })
         guestId.current = socketService.getSocketId()
@@ -55,7 +53,6 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         let currGuest
         if (!msgs) {
             currGuest = `guest${socketService.getSocketId()}`
-            console.log(currGuest)
             wap.msgs = { [currGuest]: [], ...wap.msgs }
             msgs = wap.msgs[currGuest]
         }
@@ -63,7 +60,6 @@ export function ChatCmp({ cmp, onSelectCmp, onHoverCmp }) {
         msgs.push({ by: 'customer', txt: `${msg}`, date: new Date().getTime() })
         setMsg('')
         // saveCmp(cmp)
-        console.log(wap)
         saveWap(wap)
         setMsgs(msgs)
         // socketService.emit('private message', {
