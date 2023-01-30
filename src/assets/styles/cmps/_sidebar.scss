@@ -270,9 +270,10 @@
         }
     }
     .theme-header {
-        padding: $spacing-s 1em;
+        padding: $spacing-s;
         h5 {
             color: $clr11;
+            font-size: 16px;
         }
         .theme-desc {
             color: #858585;
