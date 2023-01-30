@@ -73,6 +73,21 @@
             gap: $spacing-xl;
             align-items: end;
 
+            .editor-and-img {
+                position: relative;
+                .editor-outline {
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 100%;
+                    position: absolute;
+                    min-width: 100%;
+                }
+                .inner-img {
+                    aspect-ratio: 16/9;
+                }
+            }
+
             & :nth-child(2) {
                 justify-self: end;
             }

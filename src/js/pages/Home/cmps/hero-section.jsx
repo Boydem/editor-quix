@@ -1,3 +1,4 @@
+import heroImg5 from '../../../../assets/imgs/heroImg.png'
 import heroImg from '../../../../assets/imgs/home-assets/hero-img.webp'
 import heroImg2 from '../../../../assets/imgs/home-assets/hero-img2.webp'
 import heroImg3 from '../../../../assets/imgs/home-assets/hero-img3.webp'
@@ -33,7 +34,7 @@ export function HeroSection({ navigate }) {
                 </div>
                 <div className='hero-imgs full'>
                     <img src={heroImg2} alt='heroImg2' />
-                    <img src={heroImg} alt='heroImg' />
+                    <img className='inner-img' src={heroImg5} alt='heroImg' />
                     <img src={heroImg3} alt='heroImg3' />
                     <img src={heroImg4} alt='heroImg4' />
                 </div>
