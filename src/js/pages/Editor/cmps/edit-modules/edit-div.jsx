@@ -5,12 +5,26 @@ import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
 export function EditDiv({ clickedCmp, elClickedNode }) {
+    const [imgUrl, setImgUrl] = useState('')
     const [currImage, setCurrImage] = useState(
         window.getComputedStyle(elClickedNode).getPropertyValue('background').split(`"`)[1]
     )
     useEffect(() => {
         setCurrImage(window.getComputedStyle(elClickedNode).getPropertyValue('background').split(`"`)[1])
     }, [elClickedNode])
+
+    async function onImgUrlInput() {
+        clickedCmp.style = {
+            ...clickedCmp.style,
+            background: `url(${imgUrl}) no-repeat center center/cover`,
+        }
+        saveCmp(clickedCmp)
+    }
+
+    function handleChange({ target }) {
+        const { value } = target
+        setImgUrl(value)
+    }
 
     const expandedRef = useRef()
 
@@ -35,8 +49,16 @@ export function EditDiv({ clickedCmp, elClickedNode }) {
             <div className='expanded-content edit-div' ref={expandedRef}>
                 <div className='wrapper'>
                     <div className='link'>
-                        <input type='text' placeholder='Enter image link...' className='input-edit' />
-                        <button className='btn-edit'>Browse</button>
+                        <input
+                            type='text'
+                            placeholder='Enter image link...'
+                            className='input-edit'
+                            onChange={handleChange}
+                            value={imgUrl}
+                        />
+                        <button className='btn-edit' onClick={onImgUrlInput}>
+                            Add
+                        </button>
                     </div>
                     <div className='img-container'>{currImage && <img src={currImage} alt='' />}</div>
 

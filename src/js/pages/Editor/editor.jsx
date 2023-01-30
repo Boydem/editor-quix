@@ -39,7 +39,9 @@ export function Editor() {
         loadWap()
         setIsEditing(true)
         setInterval(() => {
-            cursorRef.current.style.display = 'none'
+            if (cursorRef.current) {
+                cursorRef.current.style.display = 'none'
+            }
         }, 3500)
         socketService.emit('set-wap-room', wapId)
         socketService.on('updated-wap', wap => {
@@ -49,6 +51,7 @@ export function Editor() {
             cursorRef.current.style.left = `${mousePos.mouseX + 10}px`
             cursorRef.current.style.top = `${mousePos.mouseY - 10}px`
             cursorRef.current.style.display = 'block'
+
             // console.log(mousePos)
         })
 
