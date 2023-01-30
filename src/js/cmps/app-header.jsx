@@ -68,17 +68,18 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
     }
 
     return (
-        <header
-            data-location={location}
-            className={`${theme} app-header full ${layout} ${location === 'auth' ? 'auth' : ''}`}
-        >
-            <div className='layout-wrapper'>
-                <div className='logo-container'>
-                    <Link to='/' className='logo'>
-                        <QuixLogo />
-                    </Link>
-                </div>
-                {/* {location === 'dashboard' && (
+        <>
+            <header
+                data-location={location}
+                className={`${theme} app-header full ${layout} ${location === 'auth' ? 'auth' : ''}`}
+            >
+                <div className='layout-wrapper'>
+                    <div className='logo-container'>
+                        <Link to='/' className='logo'>
+                            <QuixLogo />
+                        </Link>
+                    </div>
+                    {/* {location === 'dashboard' && (
                     <>
                         <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                             <ul className='flex align-center'></ul>
@@ -99,79 +100,80 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                         </ul>
                     </>
                 )} */}
-                {location === 'index' && (
-                    <div className='user-area'>
-                        <UserTooltip wapId={wapId} user={user} />
-                    </div>
-                )}
-                {location === 'editor' && (
-                    <>
-                        <div className='sites-actions'>
-                            <div className='user-area'>
-                                <UserTooltip user={user} />
-                            </div>
-                            <SitesActionsDropdown
-                                setIsPublishing={setIsPublishing}
-                                isPublishing={isPublishing}
-                                setIsRenaming={setIsRenaming}
-                                onDuplicateWap={onDuplicateWap}
-                            />
+                    {location === 'index' && (
+                        <div className='user-area'>
+                            <UserTooltip wapId={wapId} user={user} />
                         </div>
-                        <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
-                            <ul className='flex align-center'>
-                                <li>
-                                    <button className='nav-link' onClick={onInvite}>
-                                        <span>Invite</span>
+                    )}
+                    {location === 'editor' && (
+                        <>
+                            <div className='sites-actions'>
+                                <div className='user-area'>
+                                    <UserTooltip user={user} />
+                                </div>
+                                <SitesActionsDropdown
+                                    setIsPublishing={setIsPublishing}
+                                    isPublishing={isPublishing}
+                                    setIsRenaming={setIsRenaming}
+                                    onDuplicateWap={onDuplicateWap}
+                                />
+                            </div>
+                            <nav className={`user-actions flex align-center justify-end ${isMenuOpen ? 'open' : ''}`}>
+                                <ul className='flex align-center'>
+                                    <li>
+                                        <button className='nav-link' onClick={onInvite}>
+                                            <span>Invite</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className='nav-link preview' onClick={onPreview}>
+                                            <span>Preview</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className='nav-link publish' onClick={onPublish}>
+                                            <span>Publish</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <ul className='icons-group mobile-only'>
+                                <li className='icon-container b-l'>
+                                    <button
+                                        className='btn-icon'
+                                        data-tooltip='Undo'
+                                        data-tooltip-dir='bottom'
+                                        onClick={onUndo}
+                                    >
+                                        <GrUndo />
                                     </button>
                                 </li>
-                                <li>
-                                    <button className='nav-link preview' onClick={onPreview}>
-                                        <span>Preview</span>
+                                <li className='icon-container b-r'>
+                                    <button
+                                        className='btn-icon'
+                                        data-tooltip='Redo'
+                                        data-tooltip-dir='bottom'
+                                        onClick={onRedo}
+                                    >
+                                        <GrRedo />
                                     </button>
                                 </li>
-                                <li>
-                                    <button className='nav-link publish' onClick={onPublish}>
-                                        <span>Publish</span>
-                                    </button>
-                                    <PublishModal
-                                        user={user}
-                                        wap={wap}
-                                        closeModal={closeModal}
-                                        isPublishing={isPublishing}
-                                        isRenaming={isRenaming}
-                                        setIsRenaming={setIsRenaming}
-                                    />
+                                <li className='icon-container b-r'>
+                                    <InteractiveChat />
                                 </li>
                             </ul>
-                        </nav>
-                        <ul className='icons-group mobile-only'>
-                            <li className='icon-container b-l'>
-                                <button
-                                    className='btn-icon'
-                                    data-tooltip='Undo'
-                                    data-tooltip-dir='bottom'
-                                    onClick={onUndo}
-                                >
-                                    <GrUndo />
-                                </button>
-                            </li>
-                            <li className='icon-container b-r'>
-                                <button
-                                    className='btn-icon'
-                                    data-tooltip='Redo'
-                                    data-tooltip-dir='bottom'
-                                    onClick={onRedo}
-                                >
-                                    <GrRedo />
-                                </button>
-                            </li>
-                            <li className='icon-container b-r'>
-                                <InteractiveChat />
-                            </li>
-                        </ul>
-                    </>
-                )}
-            </div>
-        </header>
+                        </>
+                    )}
+                </div>
+            </header>
+            <PublishModal
+                user={user}
+                wap={wap}
+                closeModal={closeModal}
+                isPublishing={isPublishing}
+                isRenaming={isRenaming}
+                setIsRenaming={setIsRenaming}
+            />
+        </>
     )
 }

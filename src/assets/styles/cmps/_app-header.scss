@@ -179,6 +179,9 @@
     }
 }
 .user-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .avatar {
         cursor: default;
         width: 30px;
