@@ -6,7 +6,7 @@ export function LineHeightSlider({ elClickedNode, handleLineHeightSliderChange, 
 
     useEffect(() => {
         setClickedCmpLineHeight(
-            elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('line-height'))]
+            elClickedNode && [parseInt(window.getComputedStyle(elClickedNode).getPropertyValue('line-height')) || [16]]
         )
     }, [elClickedNode])
 
@@ -23,7 +23,7 @@ export function LineHeightSlider({ elClickedNode, handleLineHeightSliderChange, 
                     // value={fontSliderValue}
                     value={clickedCmpLineHeight}
                     className='SliderRoot slider-input'
-                    // defaultValue={[16]}
+                    defaultValue={[16]}
                     max={72}
                     min={8}
                     step={1}

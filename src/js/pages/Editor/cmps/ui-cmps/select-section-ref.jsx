@@ -19,7 +19,7 @@ const SelectSectionRef = ({ onSelectSection, wap, clickedCmp }) => (
                 <Select.Viewport className='SelectViewport'>
                     <Select.Group>
                         {wap.cmps.map(cmp => (
-                            <SelectItem key={cmp.cmpId} value={`#${cmp.cmpId}`}>
+                            <SelectItem key={cmp.id} value={`#${cmp.cmpId}`}>
                                 {cmp.cmpId}
                             </SelectItem>
                         ))}
