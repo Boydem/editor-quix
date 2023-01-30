@@ -8,7 +8,7 @@ import { DragDropContext } from 'react-beautiful-dnd'
 import { wapService } from '../../services/wap.service'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { saveWap, setIsEditing, setWapNull } from '../../store/wap/wap.action'
+import { saveWap, setElClickedNode, setIsEditing, setWapNull } from '../../store/wap/wap.action'
 import { LeftSidebar } from './cmps/left-sidebar'
 import { RightSidebar } from './cmps/right-sidebar'
 import { socketService } from '../../services/socket.service'
@@ -51,7 +51,6 @@ export function Editor() {
             cursorRef.current.style.left = `${mousePos.mouseX + 10}px`
             cursorRef.current.style.top = `${mousePos.mouseY - 10}px`
             cursorRef.current.style.display = 'block'
-
         })
 
         document.addEventListener('mousemove', emitMouseMovement)
@@ -62,6 +61,7 @@ export function Editor() {
         return () => {
             setIsEditing(false)
             setWapNull()
+            setElClickedNode(null)
             document.removeEventListener('mousemove', emitMouseMovement)
         }
     }, [])
