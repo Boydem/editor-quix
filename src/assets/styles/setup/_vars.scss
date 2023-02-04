@@ -53,8 +53,8 @@ $spacing-xxl: 7.594 * $spacing-unit;
 $spacing-xxxl: 11.391 * $spacing-unit;
 
 // Define breakpoints
-$break-mobile: 540px;
-$break-narrow: 840px;
+$break-mobile: 640px;
+$break-narrow: 960px;
 $break-wide: 1230px;
 $break-xwide: 1920px;
 
@@ -69,10 +69,10 @@ $modules-content-width: 300px;
 $logo-container-width: 120px;
 
 // LAYOUT
-$layoutPadding: 5%;
+$layoutPadding: 5vw;
 
-$padded-break-mobile: calc($break-mobile - $layoutPadding);
-$padded-break-narrow: calc($break-narrow - $layoutPadding);
+$padded-break-mobile: calc($break-mobile + $layoutPadding);
+$padded-break-narrow: calc($break-narrow + $layoutPadding);
 $padded-break-normal: calc($break-wide - $layoutPadding);
 $padded-break-wide: calc($break-xwide - $layoutPadding);
 

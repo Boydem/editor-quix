@@ -321,7 +321,7 @@
         }
         @media (min-width: $break-mobile) {
             & {
-                grid-template-columns: repeat(auto-fit, minmax(40%, 0.5fr));
+                grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
                 gap: $spacing-xxl;
             }
         }
