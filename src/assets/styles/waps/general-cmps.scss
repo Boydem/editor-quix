@@ -114,7 +114,6 @@
             padding: 5px 10px;
             &:focus-visible {
                 outline: none;
-                // box-shadow: 0px 0px 2px $clr2;
             }
         }
         h1 {
@@ -240,7 +239,6 @@
             &:focus-visible {
                 outline: none;
                 outline: 1px solid $clr2;
-                // box-shadow: 0px 0px 2px $clr2;
             }
         }
         h1 {
@@ -334,7 +332,6 @@
         .pic {
             position: absolute;
             left: 0;
-            // max-width: 50px;
         }
 
         .name {
@@ -413,8 +410,7 @@
     }
 
     .chat {
-        &.preview-chat {
-        }
+        
         position: fixed;
         bottom: 9%;
         right: 15%;
@@ -422,7 +418,6 @@
 
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
 
         width: 24rem;
         height: 38rem;
@@ -543,17 +538,7 @@
                     color: lighten($clr2, 10%);
                 }
             }
-            // i {
-            //     font-size: 1.5rem;
-            //     margin-right: 1rem;
-            //     color: #666;
-            //     cursor: pointer;
-            //     transition: color 200ms;
-
-            //     &:hover {
-            //         color: #333;
-            //     }
-            // }
+           
         }
     }
 
@@ -602,8 +587,6 @@
     color: #0072b1;
 }
 .fa-square-instagram {
-    // background-image: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-    // color: $clr2;
     color: rgb(244, 115, 115);
 }
 

@@ -44,9 +44,7 @@
     box-shadow: 0 0 0 2px $clr9;
     transition: box-shadow 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.SliderThumb:hover {
-    // background-color: var(--violet3);
-}
+
 .SliderThumb:focus {
     outline: none;
     box-shadow: 0 0 0 2px $editor-active-clr;
@@ -182,8 +180,6 @@
         .text-container {
             color: white;
             padding: 1em;
-        }
-        .calander-app-container {
         }
     }
 }

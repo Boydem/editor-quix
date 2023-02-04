@@ -10,7 +10,6 @@
     padding-left: $layoutPadding;
     position: sticky;
     top: 0;
-    // border-bottom: 1px solid $clr2;
     font-size: px-to-rem(16px);
 
     & .btn-mobile-menu {
@@ -30,32 +29,7 @@
         max-width: 90px;
     }
 
-    // & .main-nav {
-    //     position: fixed;
-    //     bottom: 0;
-    //     right: 0;
-    //     transform: translateX(100%);
-    //     background-color: $clr1;
-    //     min-height: calc(100vh - $home-header-height);
-    //     min-width: 50%;
-    //     padding: 2em 1.85em 0 2em;
-    //     transition: transform 0.5s;
-
-    //     &.open {
-    //         transform: translateX(0%);
-    //     }
-
-    //     & ul {
-    //         display: flex;
-    //         flex-direction: column;
-    //         gap: 1rem;
-    //     }
-
-    //     & .nav-link:not(.btn-start-now) {
-    //         font-weight: 400;
-    //         @include linkUnderline($clr2, 1px);
-    //     }
-    // }
+    
     & .main-nav {
         position: static;
         transform: unset;

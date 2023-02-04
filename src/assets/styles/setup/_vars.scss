@@ -76,14 +76,6 @@ $padded-break-narrow: calc($break-narrow + $layoutPadding);
 $padded-break-normal: calc($break-wide - $layoutPadding);
 $padded-break-wide: calc($break-xwide - $layoutPadding);
 
-// @media (min-width: $break-narrow) {
-//     $layoutPadding: $base-font-size * 3.375;
-// }
-
-// @media (min-width: $break-wide) {
-//     $layoutPadding: $base-font-size * 5.063;
-// }
-
 :root {
     --container-width: 1300px;
 }

@@ -13,23 +13,17 @@
 }
 
 .TabsTrigger[data-state='active'] {
-    //   color: var(--violet11);
     color: $editor-active-clr;
     box-shadow: inset 0 -2px 0 0 currentColor, 0 1px 0 0 currentColor;
 }
-.TabsTrigger:focus {
-    // position: relative;
-    // box-shadow: 0 0 0 2px $clr2;
-}
+
 
 .TabsContent {
     padding-top: $spacing-xs;
     flex-grow: 1;
     outline: none;
 }
-.TabsContent:focus {
-    // box-shadow: 0 0 0 2px $clr2;
-}
+
 
 .tabs-inner-content {
     button {
@@ -115,8 +109,7 @@
                         background-color: $editor-active-clr;
                         color: $clr1;
                     }
-                    &.active {
-                    }
+                    
                 }
             }
         }
@@ -161,12 +154,9 @@
             img {
                 margin-left: auto;
                 margin-right: auto;
-                // border: 1px solid $clr2;
-                // border-radius: 10px;
             }
             .file-input {
                 all: unset;
-                // visibility: hidden;
                 display: none;
             }
         }
@@ -199,8 +189,7 @@
             padding-top: 1em;
             padding-bottom: 1em;
         }
-        input {
-        }
+       
         .btns {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -284,7 +273,6 @@
             }
             .file-input {
                 all: unset;
-                // visibility: hidden;
                 display: none;
             }
         }
@@ -339,7 +327,6 @@
             }
             .file-input {
                 all: unset;
-                // visibility: hidden;
                 display: none;
             }
         }
@@ -422,9 +409,6 @@
         }
         .input-option {
             margin-bottom: 0.75em;
-            // display: flex;
-            // justify-content: space-between;
-            // align-items: center;
             gap: 1em;
             .first-line {
                 display: flex;
@@ -459,7 +443,6 @@
 
     .edit-schedule {
         .dropdown-content {
-            // position: relative;
             z-index: 5;
             .select-item {
                 width: 100%;
@@ -474,14 +457,7 @@
             }
         }
     }
-    .item-renderer {
-        // width: 100%;
-        // display: grid;
-        // grid-template-columns: 20px 1fr !important;
-        span {
-            // width: 100%;
-        }
-    }
+    
     .mini-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;

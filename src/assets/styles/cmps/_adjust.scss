@@ -6,7 +6,6 @@
         cursor: pointer;
         flex: 0 0 auto;
         color: $clr2;
-        // height: 25px;
         padding: $spacing-xxs;
         border: 1px solid $editor-lightgray;
         border-radius: 4px;
@@ -25,7 +24,6 @@
     .ToolbarLink:focus,
     .ToolbarButton:focus {
         position: relative;
-        // box-shadow: 0 0 0 2px var(--violet7);
     }
 
     .ToolbarToggleItem {
@@ -65,13 +63,11 @@
         cursor: pointer;
         margin-inline-start: auto;
         justify-self: end;
-        // max-width: 100%;
         width: 22px;
         height: 22px;
         background-color: #000;
         border-radius: 4px;
         border: 1px solid $editor-lightgray;
-        // box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.09);
     }
 
     .block-picker {
@@ -93,10 +89,7 @@
         opacity: 1;
     }
     .palette {
-        // padding-top: $spacing-s;
         z-index: 3;
         height: 0;
-        &.open {
-        }
     }
 }

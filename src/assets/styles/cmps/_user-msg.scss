@@ -79,7 +79,6 @@
 .ToastTitle {
     grid-area: title;
     font-weight: 500;
-    // color: var(--slate12);
     font-size: 15px;
     color: $clr7;
 }
@@ -123,8 +122,7 @@
 .Button.error:hover {
     background-color: var(--mauve3);
 }
-.Button.error:focus {
-}
+
 .Button.success {
     background-color: var(--green2);
     color: var(--green11);

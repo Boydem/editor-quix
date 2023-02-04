@@ -7,7 +7,6 @@
     width: 300px;
     z-index: 2;
     border-radius: 0.5rem;
-    // overflow: hidden;
     .PopoverArrow {
         fill: $clr1;
     }
@@ -68,7 +67,6 @@
                 margin-bottom: $spacing-xs;
                 border-radius: 0.25em;
                 grid-area: body;
-                // font-size: px-to-rem(12.44px);
             }
         }
 

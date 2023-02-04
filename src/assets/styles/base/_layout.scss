@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: $layoutPadding 1fr $layoutPadding;
     place-content: baseline;
-    // min-height: 100vh;
     > * {
         grid-column: 2 / -2;
     }
@@ -43,8 +42,7 @@
         height: calc(100vh - $app-header-height - $toolbar-height);
     }
 
-    > *.full {
-    }
+    
     .side-start {
         grid-column: 1/-2;
     }
@@ -53,13 +51,7 @@
         grid-column: -1/2;
     }
 
-    // @include for-narrow-layout {
-    //     @include layoutGTC($padded-break-narrow);
-    // }
 
-    // @include for-wide-layout {
-    //     @include layoutGTC($padded-break-wide);
-    // }
 }
 @media (min-width: 960px) {
     .editor-layout .editor-preview {

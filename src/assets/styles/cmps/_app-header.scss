@@ -60,7 +60,6 @@
         width: 100%;
         display: flex;
         align-items: center;
-        // grid-template-columns: auto auto 1fr auto;
         margin: auto;
         z-index: 9999;
         border-bottom: 1px solid $editor-lightgray;
@@ -213,8 +212,7 @@
         display: grid;
         place-items: center start;
         margin-inline-start: 0.5em;
-        .user-fullname {
-        }
+        
         .user-links {
             cursor: pointer;
             & > * {
@@ -241,8 +239,7 @@
         }
     }
 }
-.app-header[data-location='editor'] {
-}
+
 .interactives > * {
     height: 100%;
 }

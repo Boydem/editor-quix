@@ -30,7 +30,6 @@
     position: absolute;
     z-index: 1;
 
-    // padding: 1rem 1rem 2rem 1rem;
     padding: 1rem 1rem 0.7rem 1rem;
 
     .mini-wrapper {
@@ -46,7 +45,6 @@
     }
 }
 .hover {
-    // background: rgba(192, 250, 241, 255);
     background: rgba(7, 57, 110, 0.2);
     outline: solid 2px $editor-outline;
 }

@@ -1,7 +1,6 @@
 .editor-preview {
     $editor-max-height: calc(100vh - $app-header-height - $toolbar-height - 10px);
     min-height: 100%;
-    // max-height: $editor-max-height;
     padding: 15px 10px;
     background-color: darken($editor-hover-bg, 5%);
     box-shadow: inset 0px 0px 20px -10px rgba($editor-outline, 50%);
@@ -56,7 +55,6 @@
 .mobile-layout {
     overflow-y: auto !important;
     box-sizing: border-box;
-    // top: calc(116px + 2rem);
     height: calc(100vh - $app-header-height - $toolbar-height - 3.1em) !important;
     border: 6px solid #f7f7f7;
     border-radius: 40px !important;
@@ -65,7 +63,6 @@
 .tablet-layout {
     overflow-y: auto !important;
     box-sizing: border-box;
-    // top: calc(116px + 2rem);
     height: calc(100vh - $app-header-height - $toolbar-height - 3.1em) !important;
     border: 6px solid #f7f7f7;
     border-radius: 40px !important;

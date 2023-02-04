@@ -70,8 +70,7 @@
                     font-size: px-to-rem(12.44px);
                     padding: $spacing-s $spacing-m;
                     transition: background-color 0.3s, color 0.3s;
-                    span {
-                    }
+                    
                     &:hover:not(.active) {
                         color: $clr1;
                         background-color: #2b2e36;
@@ -108,9 +107,6 @@
             display: flex;
             margin: 0 auto;
             gap: $spacing-m;
-            // &:not(.main-header, .col-left) {
-            //     height: 100%;
-            // }
         }
         .main-header {
             width: 100%;
@@ -136,7 +132,6 @@
                     width: max-content;
                     color: $editor-active-clr;
                     background-color: $clr1;
-                    // padding: 0 1em;
                     height: 100%;
                     border-radius: 4px;
                     cursor: pointer;
@@ -297,9 +292,6 @@
                 min-width: 240px;
             }
 
-            // &:not(.last-messages, .chart-wrapper) {
-            //     box-shadow: 5px 5px 15px -10px rgba($editor-outline, 25%);
-            // }
             .text-wrapper {
                 place-self: start;
 
@@ -319,10 +311,6 @@
             }
         }
         .data-list {
-            // display: grid;
-            // grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
-            // grid-auto-flow: dense;
-            // grid-template-rows: auto;
             gap: 1rem;
             margin-bottom: 1rem;
             display: grid;
@@ -338,7 +326,6 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            // color: #004cc4;
             border-radius: 6px;
             .icon {
                 display: flex;
@@ -375,15 +362,12 @@
             }
             h4 {
                 font-size: 1rem;
-                // letter-spacing: 2px;
-                // width: 80px;
                 margin: auto;
                 font-weight: 400;
                 color: $clr1;
                 padding: 0 1.25em;
                 border-radius: 66px;
                 font-weight: 600;
-                // color: #28bf9a;
                 color: #cecece;
                 display: flex;
                 justify-content: center;
@@ -393,7 +377,6 @@
                 &.success {
                     color: #28bf9a;
                 }
-                // background-image: linear-gradient(200deg, #004cc4, rgba(255, 255, 255, 0.219));
                 .yaron-icon {
                     margin-top: -3.6px;
                 }
@@ -404,7 +387,6 @@
             }
         }
         .info-box-2 {
-            // border: 1px solid $editor-active-bg;
             background-color: darken($editor-active-clr, 15%);
             color: $clr1;
             .free-domain {
@@ -517,10 +499,7 @@
                 &.active {
                     background: lighten($editor-active-bg, 1%);
                     background: #f3f7ff;
-                    svg {
-                        // fill: white;
-                        // color: darken($editor-active-clr, 1%);
-                    }
+                    
                     .item {
                         color: white;
                         color: darken($editor-active-clr, 1%);
@@ -548,10 +527,8 @@
         }
     }
     .kanban-board {
-        // $border: 1px solid black;
         display: flex;
         flex-direction: column !important;
-        // background: url('../../imgs/home-assets/webix-section-bg.webp') center center/cover;
         background-color: darken($editor-lightgray, 11%) !important;
         bottom: 0;
         left: 0;
@@ -652,10 +629,8 @@
             }
             .btns {
                 button {
-                    // font-weight: 700;
                     color: rgba(37, 37, 54, 0.918);
                     background-color: #e9e9f0;
-                    // padding: 0.3rem 1rem;
                     font-size: 1.5rem;
                     padding: 0.2rem;
                     display: inline-flex;
@@ -829,7 +804,6 @@
                     }
                     .close {
                         cursor: pointer;
-                        // box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
                         opacity: 0;
                         pointer-events: none;
                         position: absolute;
@@ -946,9 +920,7 @@
     .leads-table {
         grid-column: 1/-1;
         width: 100%;
-        // border: 1px solid darken($editor-lightgray, 20%);
         border-radius: 3px;
-        // margin-top: 1em;
         .container {
             grid-column: 1/-1;
             display: grid;

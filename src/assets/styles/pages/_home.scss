@@ -40,11 +40,7 @@
                 margin-bottom: $home-header-height * 5;
                 grid-template-columns: minmax(30%, max-content) auto;
                 grid-auto-rows: max-content;
-                // max-width: 60%;
                 gap: $spacing-l;
-                // margin-left: auto;
-                // margin-right: auto;
-                // text-align: center;
             }
         }
     }
@@ -173,7 +169,6 @@
 
                 & > * {
                     flex-shrink: 1;
-                    // max-width: 100%;
                 }
                 @media (min-width: $break-narrow) {
                     & {
@@ -228,17 +223,9 @@
                 gap: $spacing-l;
                 display: grid;
                 padding-bottom: $spacing-xl;
-                // grid-template-columns: 1fr minmax(50%, max-content);
                 grid-template-columns: minmax(30%, max-content) auto;
                 grid-auto-rows: max-content;
             }
-            // .slider {
-            //     grid-template-columns: 1fr 1fr;
-            //     grid-template-rows: 1fr 1fr;
-            //     pad: $spacing-m;
-            //     .slider-item {
-            //     }
-            // }
 
             .cta-container {
                 margin: 0 $spacing-xl;
@@ -292,17 +279,6 @@
                 font-weight: 600;
             }
 
-            // @media (min-width: $break-narrow) {
-            //     & {
-            //         padding: $spacing-xl $spacing-m * 1.5;
-            //     }
-            // }
-
-            // @media (min-width: $break-wide) {
-            //     & {
-            //         padding: $spacing-xl $spacing-l * 1.5;
-            //     }
-            // }
         }
     }
 
@@ -422,8 +398,6 @@
             }
         }
 
-        // @media (min-width: $break-wide) {
-        // }
     }
 
     .webix-section {
