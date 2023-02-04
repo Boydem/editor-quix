@@ -110,10 +110,10 @@ export function LeftSidebar({ leftSidebarState, handleSidebarsChanges, wap }) {
                                         <p className='theme-desc'>Netural & serene</p>
                                     </div>
                                     <div className='theme-colors-container'>
-                                        <div style={{ backgroundColor: '#ff7629', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#fe863047', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#dcdcdc', height: '15px' }}></div>
-                                        <div style={{ backgroundColor: '#161515', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#055345', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#f3ceac', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#f9efe6', height: '15px' }}></div>
+                                        <div style={{ backgroundColor: '#101010', height: '15px' }}></div>
                                     </div>
                                 </div>
                                 <div className='theme-container' onClick={() => handleThemeChange('theme-3')}>
