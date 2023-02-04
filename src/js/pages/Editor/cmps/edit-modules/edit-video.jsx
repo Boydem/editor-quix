@@ -1,5 +1,4 @@
-import { useRef, useState } from 'react'
-import { BsChevronDown } from 'react-icons/bs'
+import {  useState } from 'react'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { saveCmp } from '../../../../store/wap/wap.action'
 
@@ -11,10 +10,7 @@ export function EditVideo({ clickedCmp }) {
         setVideoUrl(value)
     }
 
-    function validateUrl() {
-        const regex = new RegExp('^(https?://)?(www.youtube.com|youtu.be)/.+$')
-        return regex.test(videoUrl)
-    }
+    
 
     async function onSubmitVideoUrl(ev) {
         ev.preventDefault()

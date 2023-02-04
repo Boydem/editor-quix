@@ -2,9 +2,7 @@ import React from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import { Link, useParams } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
-import { saveWap } from '../../../../store/wap/wap.action'
 export function SitesActionsDropdown({ onPublish, onDuplicateWap, setIsRenaming, onPreview, onInvite }) {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)

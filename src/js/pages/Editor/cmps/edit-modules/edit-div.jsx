@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { BsChevronDown } from 'react-icons/bs'
 import { showErrorMsg, showSuccessMsg } from '../../../../services/event-bus.service'
 import { uploadService } from '../../../../services/upload.service'
 import { saveCmp } from '../../../../store/wap/wap.action'

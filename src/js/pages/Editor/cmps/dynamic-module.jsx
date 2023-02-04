@@ -6,11 +6,4 @@ export function DynamicModule({ activeMenuItem, addMenuItems }) {
         return <CmpFractions activeMenuItem={activeMenuItem} />
     }
 
-    // switch (activeModule) {
-    //     case 'Quick add':
-    //         return <QuickAdd />
-
-    //     default:
-    //         return <QuickAdd activeModule={activeModule} />
-    // }
 }

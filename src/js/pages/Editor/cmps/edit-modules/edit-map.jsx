@@ -1,5 +1,4 @@
-import { useRef, useState } from 'react'
-import { BsChevronDown } from 'react-icons/bs'
+import { useState } from 'react'
 import { locationService } from '../../../../services/location.service'
 import { makeId } from '../../../../services/util.service'
 import { saveCmp } from '../../../../store/wap/wap.action'

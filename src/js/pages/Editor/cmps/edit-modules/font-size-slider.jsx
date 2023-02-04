@@ -20,7 +20,6 @@ export function FontSizeSlider({ elClickedNode, handleFontSliderChange, handleFo
             <label htmlFor=''>Font Size</label>
             <div className='wrapper'>
                 <Slider.Root
-                    // value={fontSliderValue}
                     value={clickedCmpFontSize}
                     className='SliderRoot slider-input'
                     defaultValue={[16]}

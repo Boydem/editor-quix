@@ -6,7 +6,6 @@ import { saveWap } from '../../../../store/wap/wap.action'
 import DynamicCmp from '../dynamic-cmp'
 
 export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
-    const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
     const wap = useSelector(storeState => storeState.wapModule.wap)
 
     const inputsMap = cmp.cmps.reduce((acc, c) => {
@@ -41,7 +40,6 @@ export function FormCmp({ cmp, onSelectCmp, onHoverCmp }) {
         }
         leadData = { ...leadData, date: new Date().getTime() }
         let lead = { id: makeId(), data: leadData, status: 'new' }
-        // lead = { ...lead, id: makeId(), createdAt: new Date().getTime() }
         wap.leadsBoards[0].items.push(lead)
         socketService.emit(SOCKET_EMIT_SEND_LEAD, { data: leadData, to: wap.owner })
         try {

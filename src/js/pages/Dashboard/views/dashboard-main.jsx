@@ -1,14 +1,5 @@
 import diamondSVG from '../../../../assets/imgs/dashboard-assets/diamonds.svg'
-import { SiGooglemessages } from 'react-icons/si'
-import { FaCalendarCheck } from 'react-icons/fa'
-import { FaUsers } from 'react-icons/fa'
-import { BsArrowUp } from 'react-icons/bs'
-import { AiOutlineArrowUp } from 'react-icons/ai'
-import { FiArrowUp } from 'react-icons/fi'
-import { HiArrowNarrowUp, HiArrowUp, HiOutlineArrowUp } from 'react-icons/hi'
-import { FaLongArrowAltUp } from 'react-icons/fa'
-
-import { FaUserCheck } from 'react-icons/fa'
+import { HiOutlineArrowUp } from 'react-icons/hi'
 
 import {
     Chart as ChartJS,
@@ -22,7 +13,6 @@ import {
     Legend,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import { ScheduleCmp } from '../../Editor/cmps/dynamic-cmps/schedule-cmp'
 import { Loader } from '../../../cmps/loader'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Title, Tooltip, Legend)
 
@@ -141,18 +131,18 @@ export function DashboardMain({ user, currSite }) {
         ],
     }
 
-    function generateTimestamps() {
-        const date = new Date()
-        const oneWeekAgo = new Date(date.getTime() - 14 * 24 * 60 * 60 * 1000)
-        const timestamps = []
-        for (let i = 0; i < 1250; i++) {
-            const randomTimestamp = new Date(
-                oneWeekAgo.getTime() + Math.random() * (date.getTime() - oneWeekAgo.getTime())
-            )
-            timestamps.push(randomTimestamp.getTime())
-        }
-        return timestamps
-    }
+    // function generateTimestamps() {
+    //     const date = new Date()
+    //     const oneWeekAgo = new Date(date.getTime() - 14 * 24 * 60 * 60 * 1000)
+    //     const timestamps = []
+    //     for (let i = 0; i < 1250; i++) {
+    //         const randomTimestamp = new Date(
+    //             oneWeekAgo.getTime() + Math.random() * (date.getTime() - oneWeekAgo.getTime())
+    //         )
+    //         timestamps.push(randomTimestamp.getTime())
+    //     }
+    //     return timestamps
+    // }
 
     function countNewMsgsPercent(msgs) {
         let thisWeek = 0

@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import ComposeMail from '../cmps/compose-mail'
 import { utilService } from '../../../services/util.service'
 
 export function LeadsDashboard({ user, currSite }) {

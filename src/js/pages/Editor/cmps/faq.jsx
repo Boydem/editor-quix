@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 
 export  function Faq() {

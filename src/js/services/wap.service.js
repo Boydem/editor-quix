@@ -8,7 +8,7 @@ import { getDemoCmps7 } from '../wap-templates/wap-7/wap-7'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { httpService } from './http.service'
 
-import { makeId, utilService } from './util.service'
+import { utilService } from './util.service'
 import { socketService } from './socket.service'
 
 export const wapService = {
@@ -39,12 +39,7 @@ function getCmpById(activeModule, cmpId) {
 async function getWapByUrl(wapUrl) {
     return httpService.get(`wap/url/${wapUrl}`)
 }
-async function isWapUrlFree(wapUrl) {
-    const waps = await query()
-    const isFoundIndex = waps.findIndex(wap => wap.url === wapUrl)
 
-    return isFoundIndex === -1
-}
 
 function _createMap() {
     const allFractions = [

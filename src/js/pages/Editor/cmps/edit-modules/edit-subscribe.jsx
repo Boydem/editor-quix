@@ -14,6 +14,7 @@ export function EditSubscribe({ clickedCmp }) {
         return acc
     }, [])
 
+    // eslint-disable-next-line no-unused-vars
     const [inputsValues, setInputsValues] = useState(inputsArr)
 
     function handleChange(ev, idx) {

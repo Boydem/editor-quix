@@ -1,8 +1,5 @@
-// import { getWap1Template } from '../wap-templates/wap-template-1/wap-1-template'
 import { getDemoCmps1 } from '../wap-templates/wap-1/wap-1'
-// import { getWap2Template } from '../wap-templates/wap-template-2/wap-2-template'
 import { getDemoCmps2 } from '../wap-templates/wap-2/wap-2'
-// import { getWap3Template } from '../wap-templates/wap-template-3/wap-template-3'
 import { getDemoCmps3 } from '../wap-templates/wap-3/wap-3'
 import { getDemoGeneralCmps } from '../wap-templates/general-cmps/general-cmps'
 import { getDemoCmps4 } from '../wap-templates/wap-4/wap-4'
@@ -51,7 +48,6 @@ async function getWapByUrl(wapUrl) {
     } catch (err) {
         throw err
     }
-    // return gCmpsMap[activeModule].find(cmp => cmp.url === cmpUrl)
 }
 
 function _createMap() {
@@ -119,14 +115,6 @@ async function isWapUrlFree(wapUrl) {
     return isFoundIndex === -1
 }
 
-// function updateCmp(cmp, parentCmp) {
-//     let foundCmp = parentCmp?.cmps?.find(c => c.id === cmp.id)
-//     if (foundCmp) {
-//         foundCmp = cmp
-//     } else {
-//         return parentCmp?.cmps?.forEach(c => updateCmp(cmp, c))
-//     }
-// }
 
 function getCmpsByCategory(category) {
     return gCmpsMap[category]
@@ -143,12 +131,8 @@ async function save(wap) {
     let savedWap
     if (wap._id) {
         savedWap = await storageService.put(STORAGE_KEY, wap)
-        // savedCar = await httpService.put(`car/${car._id}`, car)
     } else {
-        // Later, owner is set by the backend
-        // car.owner = userService.getLoggedinUser()
         savedWap = await storageService.post(STORAGE_KEY, wap)
-        // savedCar = await httpService.post('car', car)
     }
     return savedWap
 }
@@ -196,57 +180,6 @@ function getBlankWap() {
     }
 }
 
-function _getDemoKanbans() {
-    return [
-        {
-            _id: makeId(),
-            title: 'Frontend',
-            items: [
-                {
-                    id: makeId(),
-                    txt: 'Add hamburger menu to my site',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    id: makeId(),
-                    txt: 'Take pictures of my products',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    id: makeId(),
-                    txt: 'Get 3D Modelist for designing my website',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    _id: makeId(),
-                    txt: 'Send sales data to Sara',
-                    createdAt: utilService.randomPastTime(),
-                },
-            ],
-        },
-        {
-            id: makeId(),
-            title: 'Clients',
-            items: [
-                {
-                    id: makeId(),
-                    txt: 'improve chats',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    id: makeId(),
-                    txt: 'FINISH FRONT END - all flow should be working with perfect logic set and ready to be user friendly',
-                    createdAt: utilService.randomPastTime(),
-                },
-                {
-                    id: makeId(),
-                    txt: 'TODAY WE CLEAN ALL COMMENTED UNUSED CODE AT 23:00 !!',
-                    createdAt: utilService.randomPastTime(),
-                },
-            ],
-        },
-    ]
-}
 
 function _createWaps() {
     let waps = JSON.parse(localStorage.getItem(STORAGE_KEY))
@@ -316,7 +249,6 @@ function _createWaps() {
                 },
 
                 chatStartingMsg: 'Hi there! Thanks for reaching out, How can I assist you today?',
-                // categories: ['Schedule', 'Gallery', 'Form', 'Cards', 'Map'],
                 thumbnail: 'https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg',
                 title: 'Restaurant',
             },
@@ -382,7 +314,6 @@ function _createWaps() {
                         items: [],
                     },
                 ],
-                // categories: ['Sticky', 'Gallery', 'Form', 'Cards'],
                 thumbnail:
                     'https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg',
                 title: 'Gaming Startup',

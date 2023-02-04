@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux'
-import DynamicCmp from '../dynamic-cmp'
 
 export function VideoCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const isEditing = useSelector(storeState => storeState.wapModule.isEditing)

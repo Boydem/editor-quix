@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { saveCmp, saveWap } from '../../../../store/wap/wap.action'
+import {  saveWap } from '../../../../store/wap/wap.action'
 import * as Slider from '@radix-ui/react-slider'
 import { MultiSelect } from 'react-multi-select-component'
 import { utilService } from '../../../../services/util.service'
 import * as Select from '@radix-ui/react-select'
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
+import {  ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import classNames from 'classnames'
 
 export function EditSchedule({ clickedCmp }) {
@@ -18,11 +18,6 @@ export function EditSchedule({ clickedCmp }) {
     })
 
     function handleMultiSelectChange(newSelected) {
-        // newSelected.forEach(day => {
-        //     if (!wap.schedule.days.includes(day.value)) {
-        //         wap.schedule.days.push(day.value)
-        //     }
-        // })
         const newScheduleDays = newSelected.reduce((acc, day) => {
             acc.push(day.value)
             return acc

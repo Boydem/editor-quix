@@ -55,7 +55,6 @@ export async function setWap(wap) {
 }
 
 export async function saveCmp(newCmp) {
-    // wapService.saveCmp
     try {
         store.dispatch({ type: SET_IS_SAVING, isSaving: true })
         let newUndoParentCmp

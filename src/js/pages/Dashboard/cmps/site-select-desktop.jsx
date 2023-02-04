@@ -62,23 +62,15 @@ export function SiteSelectDesktop({ user, currSite, onChangeSite, sortedEvents }
                     <article key={idx} className='list-item-preview'>
                         <div className='item'>
                             <div className='user-avatar'>
-                                {/* <AiOutlineUser size={'70%'} /> */}
                                 {event['key'] === 'msgsTimestamps' && <SiGooglemessages size={'60%'} />}
                                 {event['key'] === 'subscribersTimestamps' && <FaUsers size={'60%'} />}
                                 {event['key'] === 'leadTimestamps' && <FaUserCheck size={'60%'} />}
                             </div>
-                            {/* <span className='user-name'>{user.fullname}</span> */}
-                            {/* <div className='message-body'>
-                                <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
-                                <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>
-                                <p>{event['key'] === 'leadTimestamps' && 'A user just left their information!'}</p>
-                            </div> */}
                             <div className='user-name no-clamp'>
                                 <p>{event['key'] === 'msgsTimestamps' && 'A user just sent a message!'}</p>
                                 <p>{event['key'] === 'subscribersTimestamps' && 'A user just subscribed!'}</p>
                                 <p>{event['key'] === 'leadTimestamps' && 'A user just left their information!'}</p>
                             </div>
-                            {/* <div className='time-ago flex'>{utilService.formatTimeAgo(event.timestamp)}</div> */}
                             <div className='message-body'>{utilService.formatTimeAgo(event.timestamp)}</div>
                         </div>
                     </article>

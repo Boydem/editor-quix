@@ -20,7 +20,6 @@ export function LineHeightSlider({ elClickedNode, handleLineHeightSliderChange, 
             <label htmlFor=''>Line Height</label>
             <div className='wrapper'>
                 <Slider.Root
-                    // value={fontSliderValue}
                     value={clickedCmpLineHeight}
                     className='SliderRoot slider-input'
                     defaultValue={[16]}

@@ -11,6 +11,7 @@ export function EditorPreview({ wapCmps, rightSidebarState, layout, handleSideba
 
     useEffect(() => {
         setEditorWrapperLayout()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [layout])
 
     useEffect(() => {

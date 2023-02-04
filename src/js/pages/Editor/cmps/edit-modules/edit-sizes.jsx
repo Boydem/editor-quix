@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { BsChevronDown } from 'react-icons/bs'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { saveCmp } from '../../../../store/wap/wap.action'
 import SelectUnit from '../ui-cmps/select'
@@ -32,6 +31,7 @@ export function EditSizes() {
         return () => {
             setUnit('px')
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [elClickedNode])
 
     function handleChange(ev) {

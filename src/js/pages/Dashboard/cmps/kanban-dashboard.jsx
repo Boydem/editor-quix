@@ -2,12 +2,9 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { makeId, utilService } from '../../../services/util.service'
 import { FiTrash } from 'react-icons/fi'
-import { setCurrSite, updateUser } from '../../../store/user/user.actions'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-import { useSelector } from 'react-redux'
 import { updateCurrSite } from '../../../store/wap/wap.action'
 import { showErrorMsg } from '../../../services/event-bus.service'
-import { CgViewCols, CgViewList } from 'react-icons/cg'
 import { AiOutlineUnorderedList } from 'react-icons/ai'
 import { BsKanbanFill } from 'react-icons/bs'
 import { Loader } from '../../../cmps/loader'
@@ -37,6 +34,7 @@ export function KanbanDashboard({ user, currSite }) {
             return acc
         }, [])
         setLeadsList(leadsListFormatted)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [view])
 
     function onDragEnd(result) {
@@ -73,19 +71,8 @@ export function KanbanDashboard({ user, currSite }) {
     }
 
     function onSelectItem(ev, item = '', boardIdx) {
-        // document.addEventListener('mousedown', () => {
-        //     updateItem(ev, item, boardIdx)
-        // })
     }
 
-    function updateItem(ev, itemToUpdate, boardIdx) {
-        // if (!itemToUpdate) {
-        //     user.boards[boardIdx].title = ev.target.innerText
-        // } else {
-        //     itemToUpdate.txt = ev.target.innerText
-        // }
-        // updateUser(user, boards)
-    }
 
     function onDelete(boardIdx, itemId) {
         const removedItemIdx = boards[boardIdx].items.findIndex(item => item.id === itemId)
@@ -143,13 +130,7 @@ export function KanbanDashboard({ user, currSite }) {
             ],
         }
         setBoards(prev => [...prev, boardToAdd])
-        // currSite.leadsBoards = [...boards, boardToAdd]
-        // try {
-        //     updateCurrSite(currSite)
-        // } catch (err) {
-        //     showErrorMsg('Failed to update. Please try again later.')
-        //     console.log('err:', err)
-        // }
+
     }
     if (!boards || !boards.length) return <Loader />
     return (
@@ -262,12 +243,6 @@ export function KanbanDashboard({ user, currSite }) {
                 )}
                 {view === 'list' && (
                     <div className='table-box'>
-                        {/* <div className='header'>
-                            <div className='text-wrapper'>
-                                <h3>My leads</h3>
-                            </div>
-                            <button className='btn-send-msg'>Download CSV</button>
-                        </div> */}
                         <div className='user-forms leads-table'>
                             <ul className='table-row table-header container'>
                                 {leadsList && leadsList.length > 0 && (

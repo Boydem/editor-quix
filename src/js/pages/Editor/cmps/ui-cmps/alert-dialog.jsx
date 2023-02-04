@@ -7,6 +7,7 @@ import { FiTrash } from 'react-icons/fi'
 
 export function DeleteAlertDialog() {
     const clickedCmp = useSelector(storeState => storeState.wapModule.clickedCmp)
+    // eslint-disable-next-line no-unused-vars
     const [open, setOpen] = React.useState(false)
 
     async function onRemoveCmp(userAns) {

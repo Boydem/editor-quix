@@ -4,33 +4,13 @@ import { useSelector } from 'react-redux'
 import { ScheduleMeeting } from 'react-schedule-meeting'
 import useDidMountEffect from '../../../../hooks/use-did-mount-effect'
 import { saveWap } from '../../../../store/wap/wap.action'
-import * as Dialog from '@radix-ui/react-dialog'
-import { Cross2Icon } from '@radix-ui/react-icons'
 import { socketService, SOCKET_EMIT_SEND_SCHEDULE } from '../../../../services/socket.service'
 
 export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
     const wap = useSelector(storeState => storeState.wapModule.wap)
     let [availableTimeslots, setAvailableTimeslots] = useState(wap.schedule.data)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const services = [
-        {
-            label: 'Family dinner table(2 hours)',
-            value: 'family',
-        },
-        {
-            label: 'Birthday party(4 hours)',
-            value: 'birthday',
-        },
-        {
-            label: 'Romantic evening',
-            value: 'romantic',
-        },
-        {
-            label: 'Dine&Wine with your friends',
-            value: 'dineWine',
-        },
-    ]
-    const [selectedService, setSelectedService] = useState('family')
+    
     useDidMountEffect(() => {
         wap.schedule.data = generateEmptyTimeslots()
         setAvailableTimeslots(wap.schedule.data)
@@ -41,23 +21,12 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         wap.schedule.daysForward,
         wap.schedule.endHour,
     ])
-    // useDidMountEffect(() => {
-    //     wap.schedule.data = generateEmptyTimeslots()
-    //     setAvailableTimeslots(wap.schedule.data)
-    // }, [wap.schedule.days])
-    // useDidMountEffect(() => {
-    //     wap.schedule.data = generateEmptyTimeslots()
-    //     setAvailableTimeslots(wap.schedule.data)
-    // }, [wap.schedule.daysForward])
     useEffect(() => {
         generateTimeslots()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    function handleServiceChange(ev) {
-        const { value } = ev.target
-        setSelectedService(value)
-    }
+   
 
     function getDayName(timestamp) {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -167,12 +136,6 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         today.setHours(0, 0, 0, 0)
         const yesterday = new Date(today)
         yesterday.setDate(yesterday.getDate() - 1)
-        // const today = new Date()
-        // today.setHours(9, 0, 0, 0)
-        // today.setDate(today.getDate())
-        // const yesterday = new Date()
-        // yesterday.setDate(yesterday.getDate() - 1)
-        // yesterday.setHours(17, 0, 0, 0)
 
         return intervals.filter(interval => {
             const start = new Date(interval.startTime)
@@ -186,7 +149,6 @@ export function ScheduleCmp({ cmp, onSelectCmp, onHoverCmp }) {
         setMeetingInputs(prev => ({ ...prev, datetime: availableTimeslots[selectedMeetingIdx] }))
 
         availableTimeslots.splice(selectedMeetingIdx, 1)
-        // setAvailableTimeslots([...availableTimeslots])
         wap.schedule.data = availableTimeslots
         setIsModalOpen(true)
         saveWap(wap)

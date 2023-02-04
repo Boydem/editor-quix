@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
-import { BiBell } from 'react-icons/bi'
 import { InteractiveChat } from '../pages/Editor/cmps/ui-cmps/interactive-chat'
 import { QuixLogo } from './quix-logo'
 import { UserTooltip } from './user-tooltip'
@@ -13,9 +12,9 @@ import { PublishModal } from '../pages/Editor/cmps/ui-cmps/publish-modal'
 import { GrUndo } from 'react-icons/gr'
 import { GrRedo } from 'react-icons/gr'
 import { redoChange, undoChange } from '../store/wap/wap.action'
-import { wapService } from '../services/wap.service'
 
 export function AppHeader({ location = 'editor', theme = '', layout = 'full', onSiteChange }) {
+    // eslint-disable-next-line no-unused-vars
     const [isMenuOpen, setIsMenuOpen] = useState()
     const [isPublishing, setIsPublishing] = useState(false)
     const [isRenaming, setIsRenaming] = useState(false)
@@ -28,9 +27,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
         setIsPublishing(false)
     }
 
-    function toggleMenu() {
-        setIsMenuOpen(!isMenuOpen)
-    }
     function onUndo() {
         undoChange()
     }
@@ -41,7 +37,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
 
     async function onDuplicateWap() {
         try {
-            const duplicatedWap = await wapService.getWapCopy(wap._id)
             showSuccessMsg('Your sites has been duplicated successfully!')
         } catch (err) {
             console.log(err)
@@ -78,27 +73,6 @@ export function AppHeader({ location = 'editor', theme = '', layout = 'full', on
                             <QuixLogo />
                         </Link>
                     </div>
-                    {/* {location === 'dashboard' && (
-                    <>
-                        <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
-                            <ul className='flex align-center'></ul>
-                        </nav>
-                        <ul className='icons-group'>
-                            <li className='icon-container'>
-                                <InteractiveChat />
-                            </li>
-                            <li className='icon-container'>
-                                <button
-                                    data-tooltip='Notifications'
-                                    data-tooltip-dir='bottom'
-                                    className='btn-icon notifications'
-                                >
-                                    <BiBell />
-                                </button>
-                            </li>
-                        </ul>
-                    </>
-                )} */}
                     {location === 'index' && (
                         <div className='user-area'>
                             <UserTooltip wapId={wapId} user={user} />

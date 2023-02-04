@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
-import { login, logout, signup, onGoogleLogin } from '../../store/user/user.actions'
+import { login, signup, onGoogleLogin } from '../../store/user/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { AppHeader } from '../../cmps/app-header'
 import { GoogleLoginSignup } from './google-login-signup'
@@ -13,6 +14,7 @@ export function LoginSignup() {
 
     useEffect(() => {
         state === 'login' ? setIsSignup(false) : setIsSignup(true)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     function clearState() {
@@ -73,16 +75,6 @@ export function LoginSignup() {
         } finally {
             clearState()
             navigate(-1)
-        }
-    }
-
-    async function onLogout() {
-        try {
-            await logout()
-            showSuccessMsg('Come back soon')
-        } catch (err) {
-            console.error('Failed to logout', err)
-            showErrorMsg('Cannot logout, try again later')
         }
     }
 

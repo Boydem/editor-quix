@@ -1,7 +1,5 @@
-import { useRef, useState } from 'react'
-import { BsChevronDown } from 'react-icons/bs'
+import { useState } from 'react'
 import { saveCmp } from '../../../../store/wap/wap.action'
-import { RiDeleteBack2Fill } from 'react-icons/ri'
 import { GiSightDisabled } from 'react-icons/gi'
 
 export function EditForm({ clickedCmp }) {
@@ -16,6 +14,7 @@ export function EditForm({ clickedCmp }) {
         return acc
     }, [])
 
+    // eslint-disable-next-line no-unused-vars
     const [inputsValues, setInputsValues] = useState(inputsArr)
 
     function handleChange(ev, idx) {

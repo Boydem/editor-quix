@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AppHeader } from '../../cmps/app-header'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -7,13 +7,11 @@ import { useNavigate } from 'react-router'
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 
 import { BsPencil } from 'react-icons/bs'
-import { IoAnalyticsOutline } from 'react-icons/io5'
-import { GrAnalytics } from 'react-icons/gr'
 
 import { DashboardMain } from './views/dashboard-main'
 import { SubscriptionsDashboard } from './views/subscriptions-dashboard'
 
-import { setCurrSite, setUser, setUserSites } from '../../store/user/user.actions'
+import { setCurrSite, setUserSites } from '../../store/user/user.actions'
 import { MessagesDashboard } from './views/messages-dashboard'
 import { SiteSelectDesktop } from './cmps/site-select-desktop'
 import { useDispatch } from 'react-redux'
@@ -21,7 +19,6 @@ import { SET_CURR_SITE } from '../../store/user/user.reducer'
 import { SiteActionsDropdown } from './cmps/site-actions-dropdown'
 import { ScheduleDashboard } from './views/schedule-dashboard'
 import { KanbanDashboard } from './cmps/kanban-dashboard'
-import { LeadsDashboard } from './views/leads-dashboard'
 import { Loader } from '../../cmps/loader'
 
 export function Dashboard() {
@@ -37,6 +34,7 @@ export function Dashboard() {
     useEffect(() => {
         if (!userId) navigate('/auth/login')
         loadUserSites()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     async function onSiteChange(siteId) {
@@ -148,7 +146,6 @@ export function Dashboard() {
                         {currView === 'leads' && <KanbanDashboard user={user} currSite={currSite} />}
                         {currView === 'messages' && <MessagesDashboard user={user} currSite={currSite} />}
                         {currView === 'schedule' && <ScheduleDashboard user={user} currSite={currSite} />}
-                        {/* {currView === 'kanban' && <KanbanDashboard user={user} currSite={currSite} />} */}
                     </div>
                 </div>
             </main>

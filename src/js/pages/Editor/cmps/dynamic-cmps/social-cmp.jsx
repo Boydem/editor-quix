@@ -1,17 +1,7 @@
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
 import DynamicCmp from '../dynamic-cmp'
-import DynamicElement from './dynamic-element'
 
 export function SocialCmp({ cmp, onSelectCmp, onHoverCmp }) {
-    const renderIcon = (icon, index) => {
-        const Icon = icon
-        return (
-            <div key={index}>
-                <Icon fontSize={'2rem'} />
-            </div>
-        )
-    }
+    
 
     return (
         <div
@@ -37,8 +27,6 @@ export function SocialCmp({ cmp, onSelectCmp, onHoverCmp }) {
                             <i className={`${innerCmp?.content?.iconImg} fa-3x`} style={innerCmp.style}></i>
                         </a>
                     )
-                } else {
-                    /* CHANGED I HAVE TO CHECK!!! */
                 }
                 return <DynamicCmp cmp={innerCmp} onSelectCmp={onSelectCmp} onHoverCmp={onHoverCmp} key={innerCmp.id} />
             })}

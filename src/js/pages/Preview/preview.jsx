@@ -1,9 +1,7 @@
-import { now } from 'moment'
 import { useState } from 'react'
 import { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
-import { Link } from 'react-router-dom'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { socketService } from '../../services/socket.service'
 import { wapService } from '../../services/wap.service'
@@ -15,6 +13,7 @@ export function Preview() {
     const { wapId, wapUrl } = useParams()
     const containerRef = useRef()
     const user = useSelector(storeState => storeState.userModule.user)
+    // eslint-disable-next-line no-unused-vars
     const [isUserSite, setIsUserSite] = useState(false)
 
     useEffect(() => {
@@ -29,6 +28,7 @@ export function Preview() {
             root.classList.remove(wap.themeClass)
             setWapNull()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     async function loadWap() {
@@ -51,14 +51,6 @@ export function Preview() {
     if (!wap || !wap.cmps) return <div>Loader...</div>
     return (
         <div className='full templates-css-reset' ref={containerRef}>
-            {/* {isUserSite && (
-                <div className='site-owner-link'>
-                    <p>Your site is on air!</p>
-                    <Link className='btn-dashboard' to={`/dashboard/${user._id}`}>
-                        Admin panel
-                    </Link>
-                </div>
-            )} */}
             {wap.cmps.map(cmp => {
                 return <DynamicCmp cmp={cmp} key={cmp.id} />
             })}

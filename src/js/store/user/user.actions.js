@@ -3,7 +3,6 @@ import { wapService } from '../../services/wap.service.js'
 import { userService } from '../../services/user.service.js'
 import { SET_CURR_SITE, SET_USER } from './user.reducer.js'
 
-// import { showErrorMsg } from '../services/event-bus.service.js'
 
 export async function loadUsers() {
     try {
@@ -20,7 +19,6 @@ export async function loadUsers() {
 export async function setUser(userId) {
     try {
         store.dispatch({ type: 'LOADING_START' })
-        // Will become one request with backend
         const user = await userService.getById(userId)
         user.sites = await wapService.query({ owner: user._id })
         store.dispatch({ type: SET_USER, user })

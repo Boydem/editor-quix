@@ -5,12 +5,10 @@ import { wapService } from '../../services/wap.service'
 
 import { HiPlus } from 'react-icons/hi'
 import { AppHeader } from '../../cmps/app-header'
-import { useSelector } from 'react-redux'
 import { Loader } from '../../cmps/loader'
 
 export function WapIndex() {
     const [waps, setWaps] = useState(null)
-    const user = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
     useEffect(() => {
         getWaps()
@@ -32,12 +30,8 @@ export function WapIndex() {
             if (wapId === 'blank') {
                 wap = await wapService.getBlankWap()
             } else {
-                // wap = await wapService.get(wapId)
                 wap = await wapService.getWapToEdit(wapId)
             }
-            // wap._id = null
-            // wap.owner = 'guest'
-            // wap = await wapService.save(wap)
             navigate(`/edit/${wap._id}`)
             showSuccessMsg('Start working on your site!')
         } catch (err) {
@@ -56,7 +50,6 @@ export function WapIndex() {
                 <div className='intro full main-layout'>
                     <div className='wrapper'>
                         <h1>Kickstart your website with our templates</h1>
-                        {/* <h1>Select the perfect starting point for your website</h1> */}
                     </div>
                 </div>
                 <div className='templates'>

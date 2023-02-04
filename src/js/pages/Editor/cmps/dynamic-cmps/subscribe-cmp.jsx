@@ -40,7 +40,6 @@ export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
                             style={cmp.style}
                             onClick={e => onSelectCmp(e, cmp)}
                             placeholder={cmp.content?.placeholder}
-                            // name={innerCmp.name}
                             onMouseOver={onHoverCmp}
                             onMouseOut={ev => ev.currentTarget.classList.remove('hover')}
                             onChange={handleChange}
@@ -75,8 +74,6 @@ export function SubscribeCmp({ cmp, onSelectCmp, onHoverCmp }) {
                             onChange={handleChange}
                         ></input>
                     )
-                } else {
-                    /* CHANGED I HAVE TO CHECK!!! */
                 }
                 return <DynamicCmp cmp={innerCmp} onSelectCmp={onSelectCmp} onHoverCmp={onHoverCmp} key={innerCmp.id} />
             })}

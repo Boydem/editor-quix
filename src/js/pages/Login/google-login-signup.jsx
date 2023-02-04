@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { GoogleLogin } from 'react-google-login'
 import { gapi } from 'gapi-script'
 import { showErrorMsg } from '../../services/event-bus.service'

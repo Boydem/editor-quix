@@ -13,10 +13,6 @@ export function AppFooter() {
                         building your website today and make a lasting impression
                     </p>
                 </div>
-                {/* <div className='footer-webix'>
-                    <span className='logo'>Created by</span>
-                    <p></p>
-                </div> */}
             </div>
             <hr className='mb-3' />
             <p>quix was made for CodingAcademy's Final Project Ltd. © 2006-2023</p>

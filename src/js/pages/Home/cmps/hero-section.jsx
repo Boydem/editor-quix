@@ -1,9 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import heroImg5 from '../../../../assets/imgs/heroImg.png'
-import heroImg from '../../../../assets/imgs/home-assets/hero-img.webp'
 import heroImg2 from '../../../../assets/imgs/home-assets/hero-img2.webp'
 import heroImg3 from '../../../../assets/imgs/home-assets/hero-img3.webp'
 import heroImg4 from '../../../../assets/imgs/home-assets/hero-img4.webp'
-import topBarImg from '../../../../assets/imgs/home-assets/top-bar-img.webp'
 import heroBottom from '../../../../assets/imgs/home-assets/hero-bottom.jpg'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { Brands } from './brands'

@@ -1,7 +1,6 @@
 import { FiMessageSquare } from 'react-icons/fi'
 import * as Popover from '@radix-ui/react-popover'
-import { useState } from 'react'
-import { MixerHorizontalIcon, Cross2Icon } from '@radix-ui/react-icons'
+import {  Cross2Icon } from '@radix-ui/react-icons'
 import noamAvatar from '../../../../../assets/imgs/dashboard-assets/noam-tn.jpg'
 export function InteractiveChat() {
     return (
