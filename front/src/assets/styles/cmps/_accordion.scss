@@ -1,0 +1,195 @@
+// .inside-accordion {
+//     .header {
+//         font-size: px-to-rem(12px);
+//         cursor: pointer;
+//         display: grid;
+//         grid-template-columns: auto 1fr;
+//         justify-items: end;
+//         align-items: center;
+//         padding: $spacing-xxs $spacing-m;
+//         border-bottom: 1px solid $editor-lightgray;
+//         background-color: $editor-hover-bg;
+//         width: 100%;
+//         font-weight: 400;
+//         button {
+//             background: transparent;
+//             color: $editor-active-clr;
+//             padding: 0;
+//         }
+//     }
+//     .expanded-content {
+//         display: grid;
+//         grid-template-columns: $spacing-s 1fr 1fr $spacing-s;
+//         grid-auto-flow: dense;
+//         row-gap: $spacing-s;
+//         padding: $spacing-s 0;
+
+//         > * {
+//             grid-column: 2/4;
+//         }
+//         .full {
+//             grid-column: 1/-1;
+//         }
+//         .grid-2-col:nth-child(1n) {
+//             grid-column: 2/3;
+//         }
+//         .grid-2-col:nth-child(2n) {
+//             grid-column: 3/4;
+//         }
+//     }
+//     .hidden {
+//         display: none;
+//     }
+// }
+
+// .inputs {
+//     .option-body {
+//     }
+//     .hidden {
+//         display: none;
+//     }
+// }
+
+// .option-body {
+//     display: grid;
+//     // gap: $spacing-s;
+//     .param-box:nth-of-type(2n) {
+//         margin-inline-start: $spacing-s;
+//     }
+//     .param-box {
+//         font-size: px-to-rem(11px);
+//         display: grid;
+//         grid-template-columns: auto 1fr;
+//         place-items: center;
+
+//         label {
+//             text-transform: capitalize;
+//             padding-inline-end: $spacing-xs;
+//         }
+//         .input-wrapper {
+//             display: grid;
+//             grid-auto-flow: column;
+//             grid-template-columns: auto 1fr;
+//             align-items: center;
+//             position: relative;
+//             width: 100%;
+//             background-color: $editor-hover-bg;
+//             border-radius: $spacing-xxs;
+//             padding: $spacing-xxs $spacing-xxs;
+//             input {
+//                 padding: 0;
+//             }
+//             .unit {
+//                 cursor: pointer;
+//                 z-index: 2;
+//                 background-color: $editor-lightgray;
+//                 color: $clr7;
+//                 border-radius: $spacing-xxs;
+//                 // height: min-content;
+//                 transition: background-color 0.3s, color 0.3s;
+//                 &:hover {
+//                     background-color: $editor-active-clr;
+//                     color: $clr1;
+//                 }
+//                 &.active {
+//                 }
+//             }
+//         }
+//     }
+//     &.open {
+//     }
+// }
+
+// .edit-img {
+//     .wrapper {
+//         display: grid;
+//         grid-template-columns: 1fr auto;
+//         align-items: center;
+//         gap: 0.5rem;
+
+//         label {
+//             color: white;
+//             background: #003dff;
+//             padding: 0.3rem 0.6rem;
+//             border-radius: 10px;
+//             cursor: pointer;
+//         }
+
+//         img {
+//             border: 1px solid black;
+//         }
+//     }
+// }
+
+// .edit-form {
+//     .heading {
+//         font-size: 1.1rem;
+//         margin-bottom: 1rem;
+//     }
+//     .input-option {
+//         margin-bottom: 0.75rem;
+//         display: flex;
+//         justify-content: space-between;
+//         gap: 1rem;
+
+//         .btn {
+//             cursor: pointer;
+//             padding: 0.1rem 0.7rem;
+//             background: #f4f5f8;
+//             border-radius: 5px;
+//         }
+//     }
+// }
+
+// .edit-map {
+//     .btns {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         gap: 1rem;
+//         align-items: center;
+//         align-content: center;
+
+//         button {
+//             border-radius: 5px;
+//             background: #f4f5f8;
+//         }
+//     }
+//     .markers {
+//         .marker {
+//             gap: 1rem;
+//             display: flex;
+//             align-items: center;
+//             margin-bottom: 0.5rem;
+//             button {
+//                 padding: 0.4rem;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 font-size: 1rem;
+//                 background: #f4f5f8;
+//                 border-radius: 5px;
+//             }
+//         }
+//     }
+// }
+
+// .edit-div {
+//     .wrapper {
+//         display: grid;
+//         grid-template-columns: 1fr auto;
+//         align-items: center;
+//         gap: 0.5rem;
+
+//         label {
+//             color: white;
+//             background: #003dff;
+//             padding: 0.3rem 0.6rem;
+//             border-radius: 10px;
+//             cursor: pointer;
+//         }
+
+//         img {
+//             border: 1px solid black;
+//         }
+//     }
+// }

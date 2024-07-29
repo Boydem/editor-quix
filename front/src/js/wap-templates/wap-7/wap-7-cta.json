@@ -1,0 +1,89 @@
+{
+    "id": "ELOVxs",
+    "type": "div",
+    "name": "wap-7-cta",
+    "category": "form",
+    "cmpId": "Subscribe-Section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-cta-edited_blfz61.jpg",
+    "cmps": [
+        {
+            "id": "s10O4o",
+            "type": "div",
+            "name": "subscribe-cta",
+            "cmps": [
+                {
+                    "id": "tGjWbO",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "SUBSCRIBE"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "3u1d1p",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "New episodes and blog posts - weekly."
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "FEcr5c",
+            "type": "div",
+            "name": "subscribe-container",
+            "cmps": [
+                {
+                    "id": "zIzUMA",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "I'm a paragraph. Click here to add you own text and edit me. Let your users get to know you."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "XDyRiD",
+                    "type": "form",
+                    "name": "form",
+                    "cmps": [
+                        {
+                            "id": "MNYWYR",
+                            "type": "label",
+                            "name": "",
+                            "content": {
+                                "txt": "Enter your email here *",
+                                "htmlFor": "email"
+                            },
+                            "cmps": [
+                                {
+                                    "id": "WrdMPD",
+                                    "type": "input",
+                                    "name": "",
+                                    "inputName": "Enter your email here *",
+                                    "content": {
+                                        "inputId": "email",
+                                        "placeholder": "quix@appsus.com"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "4pn1D0",
+                    "type": "button",
+                    "name": "btn-subscribe link",
+                    "content": {
+                        "txt": "SUBSCRIBE"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+// Typography
+
+// Header
+.wap-3-header {
+    background: var(--clr1);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 4%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--clr2);
+    a {
+        color: inherit;
+    }
+    .app-nav {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .logo-container {
+        font-size: 32px;
+    }
+    .navigation-links {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        div {
+            padding: 0.5em;
+        }
+    }
+    .user-container {
+        margin-inline-start: 2em;
+
+        > * {
+            padding: 0.5em;
+        }
+
+        button {
+            background: none;
+            padding: 0.8rem 2rem;
+            border-radius: 100px;
+            color: inherit;
+            background: none;
+            color: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+// Hero
+.wap-3-hero {
+    background: var(--clr1);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding: 0 10%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--clr2);
+
+    .teaser-container {
+        display: grid;
+        justify-items: center;
+        .teaser {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+            justify-content: center;
+            margin: 1.75em;
+
+            & .teaser-date {
+                font-weight: 400;
+            }
+        }
+    }
+    h1 {
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: 0.5em;
+        font-size: 4em;
+        max-width: 1100px;
+    }
+    button {
+        border: 3px solid var(--clr2);
+        background: none;
+        color: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        padding: 1rem 2.5rem;
+        border-radius: 35px;
+        font-size: 1.3rem;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    .hero-img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// About
+.wap-3-about {
+    margin: 0;
+    padding: 0 10%;
+    padding-top: 10rem;
+    background: var(--clr1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--clr2);
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+
+    .about-us-desc {
+        justify-self: end;
+        width: 600px;
+        padding-left: 3em;
+
+        p {
+            font-weight: 400;
+            line-height: 1.5em;
+        }
+    }
+    .about-img-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            border: 4px var(--clr2) solid;
+            position: relative;
+            position: relative;
+            z-index: 2;
+        }
+        &::before {
+            content: '';
+            color: var(--clr2);
+            z-index: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #5d9942;
+            top: 8%;
+            left: 6%;
+            border: 4px var(--clr2) solid;
+        }
+        &::after {
+            content: '';
+            color: var(--clr2);
+            z-index: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f3ba49;
+            top: 3%;
+            left: 3%;
+            border: 4px var(--clr2) solid;
+        }
+    }
+}
+
+.wap-3-team {
+    margin: 0;
+    background: var(--clr1);
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    color: var(--clr2);
+
+    h2 {
+        padding-top: 15rem;
+        padding-bottom: 10rem;
+        margin: 0;
+        font-size: 5rem;
+    }
+
+    .team-cards-container {
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+    }
+
+    .team-card {
+        display: grid;
+
+        & .name {
+            font-size: 2em;
+        }
+
+        & a {
+            text-decoration: underline;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.card-img-container {
+    & img {
+        border-radius: 50%;
+        border: 4px var(--clr2) solid;
+    }
+
+    padding-bottom: 1em;
+}
+
+.wap-3-services {
+    padding: 0 10%;
+    padding-top: 10rem;
+    background: var(--clr1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'Syne', sans-serif;
+    color: var(--clr2);
+
+    h2 {
+        padding-top: 2em;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .services-container {
+        display: grid;
+        grid-template-columns: 0.15fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 5px;
+        align-items: center;
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            font-size: 2em;
+            font-weight: 400;
+        }
+
+        button {
+            grid-area: 4/2/5/3;
+            width: 264px;
+            height: 64px;
+            padding: 1rem 3rem;
+            border: 3px var(--clr2) solid;
+            border-radius: 5em;
+            font: inherit;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Footer
+.wap-3-footer {
+    background: var(--clr2);
+    color: var(--clr3);
+    padding-block: 1.2em;
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+}
+
+.mobile-layout {
+    .wap-3-hero {
+        .teaser-container {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+    .wap-3-about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wap-3-team {
+        h2 {
+            padding-bottom: 3rem;
+            font-size: 3rem;
+        }
+    }
+
+    .wap-3-services {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.tablet-layout {
+    .wap-3-team {
+        .team-cards-container {
+            .team-card {
+                img {
+                    width: 75%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .wap-3-hero {
+        .teaser-container {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+    .wap-3-about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wap-3-team {
+        h2 {
+            padding-bottom: 3rem;
+            font-size: 3rem;
+        }
+    }
+
+    .wap-3-services {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1050x) {
+    .wap-3-team {
+        .team-cards-container {
+            .team-card {
+                img {
+                    width: 75%;
+                }
+            }
+        }
+    }
+}

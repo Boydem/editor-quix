@@ -1,0 +1,1458 @@
+{
+    "name": "wap6",
+    "owner": "admin",
+    "chatStartingMsg": "Hi there! Thanks for reaching out, How can I assist you today?",
+    "palette": ["#ffc098", "#414581", "#fff9f5", "#303030"],
+    "leadsBoards": [
+        {
+            "id": "bQ0F7kc3",
+            "title": "New",
+            "items": [
+                {
+                    "id": "0RxBZq",
+                    "data": {
+                        "First Name": "Abner",
+                        "Last Name": "SkilesSkiles",
+                        "Email": "kgrady@gmail.com",
+                        "date": 1674559639000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "2mx2CB",
+                    "data": {
+                        "First Name": "Kelsi ",
+                        "Last Name": "Daugherty",
+                        "Email": "providenci82@gmailvn.net",
+                        "date": 1674584839000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "kfxJdG",
+                    "data": {
+                        "First Name": "Sabrina ",
+                        "Last Name": "Runolfsson ",
+                        "Email": "jarrell93@maill.dev",
+                        "date": 1674584839000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "q5zCQJ",
+                    "data": {
+                        "First Name": "Dudley ",
+                        "Last Name": "Rippin",
+                        "Email": "dock20@udinnews.com",
+                        "date": 1674602839000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "Aouspc",
+                    "data": {
+                        "First Name": "Matteo ",
+                        "Last Name": "Bruen",
+                        "Email": "qbogisich@luddo.me",
+                        "date": 1674689239000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "OVzG9w",
+                    "data": {
+                        "First Name": "Elias ",
+                        "Last Name": "Mills ",
+                        "Email": "xkutch@easygbd.com",
+                        "date": 1674718039000.0
+                    },
+                    "status": "new"
+                }
+            ]
+        },
+        {
+            "id": "XRlLtwvl",
+            "title": "In Progress",
+            "items": [
+                {
+                    "id": "cviPhs",
+                    "data": {
+                        "First Name": "Conner ",
+                        "Last Name": "Rutherford",
+                        "Email": "abdul97@indmeds.com",
+                        "date": 1674286039000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "lodSem",
+                    "data": {
+                        "First Name": "Orie ",
+                        "Last Name": "Heidenreich",
+                        "Email": "kassandrai@gmail.com",
+                        "date": 1674286039000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "h4E8xB",
+                    "data": {
+                        "First Name": "Deontae ",
+                        "Last Name": "Abernathy",
+                        "Email": "tyrese@packiu.com",
+                        "date": 1674372439000.0
+                    },
+                    "status": "new"
+                }
+            ]
+        },
+        {
+            "id": "AReH7qzk",
+            "title": "Done",
+            "items": [
+                {
+                    "id": "Yp5bSC",
+                    "data": {
+                        "First Name": "Eleanore",
+                        "Last Name": "Stoltenberg ",
+                        "Email": "cpredovic@gmail.com",
+                        "date": 1674113239000.0
+                    },
+                    "status": "new"
+                },
+                {
+                    "id": "MbTUyy",
+                    "data": {
+                        "First Name": "Jeanie ",
+                        "Last Name": "Bergnaum",
+                        "Email": "morissette.elia@bora.com",
+                        "date": 1674631639000.0
+                    },
+                    "status": "new"
+                }
+            ]
+        }
+    ],
+    "schedule": {
+        "eventDuration": 90,
+        "daysForward": 6,
+        "data": [
+            {
+                "id": 0,
+                "startTime": "2023-01-29T06:00:00.000Z",
+                "endTime": "2023-01-29T07:30:00.000Z"
+            },
+            {
+                "id": 1,
+                "startTime": "2023-01-29T07:30:00.000Z",
+                "endTime": "2023-01-29T09:00:00.000Z"
+            },
+            {
+                "id": 2,
+                "startTime": "2023-01-29T09:00:00.000Z",
+                "endTime": "2023-01-29T10:30:00.000Z"
+            },
+            {
+                "id": 3,
+                "startTime": "2023-01-29T10:30:00.000Z",
+                "endTime": "2023-01-29T12:00:00.000Z"
+            },
+            {
+                "id": 4,
+                "startTime": "2023-01-29T12:00:00.000Z",
+                "endTime": "2023-01-29T13:30:00.000Z"
+            },
+            {
+                "id": 5,
+                "startTime": "2023-01-29T13:30:00.000Z",
+                "endTime": "2023-01-29T15:00:00.000Z"
+            },
+            {
+                "id": 6,
+                "startTime": "2023-01-30T06:00:00.000Z",
+                "endTime": "2023-01-30T07:30:00.000Z"
+            },
+            {
+                "id": 7,
+                "startTime": "2023-01-30T07:30:00.000Z",
+                "endTime": "2023-01-30T09:00:00.000Z"
+            },
+            {
+                "id": 8,
+                "startTime": "2023-01-30T09:00:00.000Z",
+                "endTime": "2023-01-30T10:30:00.000Z"
+            },
+            {
+                "id": 9,
+                "startTime": "2023-01-30T10:30:00.000Z",
+                "endTime": "2023-01-30T12:00:00.000Z"
+            },
+            {
+                "id": 10,
+                "startTime": "2023-01-30T12:00:00.000Z",
+                "endTime": "2023-01-30T13:30:00.000Z"
+            },
+            {
+                "id": 11,
+                "startTime": "2023-01-30T13:30:00.000Z",
+                "endTime": "2023-01-30T15:00:00.000Z"
+            },
+            {
+                "id": 12,
+                "startTime": "2023-01-31T06:00:00.000Z",
+                "endTime": "2023-01-31T07:30:00.000Z"
+            },
+            {
+                "id": 13,
+                "startTime": "2023-01-31T07:30:00.000Z",
+                "endTime": "2023-01-31T09:00:00.000Z"
+            },
+            {
+                "id": 14,
+                "startTime": "2023-01-31T09:00:00.000Z",
+                "endTime": "2023-01-31T10:30:00.000Z"
+            },
+            {
+                "id": 15,
+                "startTime": "2023-01-31T10:30:00.000Z",
+                "endTime": "2023-01-31T12:00:00.000Z"
+            },
+            {
+                "id": 16,
+                "startTime": "2023-01-31T12:00:00.000Z",
+                "endTime": "2023-01-31T13:30:00.000Z"
+            },
+            {
+                "id": 17,
+                "startTime": "2023-01-31T13:30:00.000Z",
+                "endTime": "2023-01-31T15:00:00.000Z"
+            },
+            {
+                "id": 19,
+                "startTime": "2023-02-01T07:30:00.000Z",
+                "endTime": "2023-02-01T09:00:00.000Z"
+            },
+            {
+                "id": 20,
+                "startTime": "2023-02-01T09:00:00.000Z",
+                "endTime": "2023-02-01T10:30:00.000Z"
+            },
+            {
+                "id": 21,
+                "startTime": "2023-02-01T10:30:00.000Z",
+                "endTime": "2023-02-01T12:00:00.000Z"
+            },
+            {
+                "id": 22,
+                "startTime": "2023-02-01T12:00:00.000Z",
+                "endTime": "2023-02-01T13:30:00.000Z"
+            },
+            {
+                "id": 23,
+                "startTime": "2023-02-01T13:30:00.000Z",
+                "endTime": "2023-02-01T15:00:00.000Z"
+            },
+            {
+                "id": 26,
+                "startTime": "2023-02-02T09:00:00.000Z",
+                "endTime": "2023-02-02T10:30:00.000Z"
+            },
+            {
+                "id": 27,
+                "startTime": "2023-02-02T10:30:00.000Z",
+                "endTime": "2023-02-02T12:00:00.000Z"
+            },
+            {
+                "id": 28,
+                "startTime": "2023-02-02T12:00:00.000Z",
+                "endTime": "2023-02-02T13:30:00.000Z"
+            },
+            {
+                "id": 29,
+                "startTime": "2023-02-02T13:30:00.000Z",
+                "endTime": "2023-02-02T15:00:00.000Z"
+            }
+        ],
+        "days": ["sunday", "monday", "tuesday", "wednesday", "thursday"],
+        "startHour": 8,
+        "endHour": 17,
+        "meetings": [
+            {
+                "fullname": "Bruce K. Shuler",
+                "phoneNumber": "325-357-6054",
+                "datetime": {
+                    "id": 3,
+                    "startTime": "2023-01-30T06:00:00.000Z",
+                    "endTime": "2023-01-30T09:00:00.000Z"
+                }
+            },
+            {
+                "fullname": "Danielle M. Gates",
+                "phoneNumber": "925-465-4213",
+                "datetime": {
+                    "id": 5,
+                    "startTime": "2023-01-30T12:00:00.000Z",
+                    "endTime": "2023-01-30T15:00:00.000Z"
+                }
+            },
+            {
+                "fullname": "Sandy S. Pinkham",
+                "phoneNumber": "405-388-2890",
+                "datetime": {
+                    "id": 6,
+                    "startTime": "2023-01-31T06:00:00.000Z",
+                    "endTime": "2023-01-31T09:00:00.000Z"
+                }
+            },
+            {
+                "fullname": "Elizabeth R. Scott",
+                "phoneNumber": "219-776-4655",
+                "datetime": {
+                    "id": 10,
+                    "startTime": "2023-02-01T09:00:00.000Z",
+                    "endTime": "2023-02-01T12:00:00.000Z"
+                }
+            },
+            {
+                "fullname": "Marvin E. Morris",
+                "phoneNumber": "203-605-6990",
+                "datetime": {
+                    "id": 13,
+                    "startTime": "2023-02-02T09:00:00.000Z",
+                    "endTime": "2023-02-02T12:00:00.000Z"
+                }
+            },
+            {
+                "fullname": "Guy K. Shelton",
+                "phoneNumber": "910-876-6948"
+            },
+            {
+                "fullname": "Audrey R. Braman",
+                "phoneNumber": "540-568-8843"
+            },
+            {
+                "fullname": "John B. Carpenter",
+                "phoneNumber": "262-385-4376"
+            },
+            {
+                "fullname": "John G. Barrett",
+                "phoneNumber": " 623-349-7050",
+                "datetime": {
+                    "id": 24,
+                    "startTime": "2023-02-02T06:00:00.000Z",
+                    "endTime": "2023-02-02T07:30:00.000Z"
+                }
+            },
+            {
+                "fullname": "Sonja G. Polley",
+                "phoneNumber": "404-260-3953"
+            },
+            {
+                "fullname": "Addie K. Price",
+                "phoneNumber": " 213-402-0180",
+                "datetime": {
+                    "id": 18,
+                    "startTime": "2023-02-01T06:00:00.000Z",
+                    "endTime": "2023-02-01T07:30:00.000Z"
+                }
+            },
+            {
+                "fullname": "Benita S. Moss",
+                "phoneNumber": "512-880-0496",
+                "datetime": {
+                    "id": 25,
+                    "startTime": "2023-02-02T07:30:00.000Z",
+                    "endTime": "2023-02-02T09:00:00.000Z"
+                }
+            }
+        ]
+    },
+    "subscribers": [
+        {
+            "email": " RebeccaCBoll@dayrep.com",
+            "date": 1674372439000.0
+        },
+        {
+            "email": " TabithaDMock@jourrapide.com",
+            "date": 1674458839000.0
+        },
+        {
+            "email": "JenniferGStevens@jourrapide.com",
+            "date": 1674545239000.0
+        },
+        {
+            "email": " RoyJReid@armyspy.com",
+            "date": 1674923574457.0
+        },
+        {
+            "email": "WallaceVRadcliffe@teleworm.us",
+            "date": 1674631639000.0
+        },
+        {
+            "email": "KennethRWashington@teleworm.us",
+            "date": 1674718039000.0
+        },
+        {
+            "email": "CharlesHPeterson@jourrapide.com",
+            "date": 1674804439000.0
+        },
+        {
+            "email": " MicheleJMosher@teleworm.us",
+            "date": 1674890839000.0
+        },
+        {
+            "email": "RichardTWu@armyspy.com",
+            "date": 1674890839000.0
+        }
+    ],
+    "cmps": [
+        {
+            "id": "uogfLx",
+            "type": "div",
+            "name": "wap-6-cta",
+            "cmps": [
+                {
+                    "id": "YGn9wU",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "Join the Club & Get Rewards in Every Order!"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "CD8Mto",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "Sign Up Now",
+                        "href": ""
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "FDyTn2",
+            "type": "div",
+            "name": "wap-6-header",
+            "category": "header",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674564208/wap-6-header-edited_lqljwr.jpg",
+            "cmps": [
+                {
+                    "id": "vJeHsi",
+                    "type": "div",
+                    "name": "nav",
+                    "cmps": [
+                        {
+                            "id": "gpB8I6",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "About",
+                                "href": ""
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "h8QTgm",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Menu",
+                                "href": ""
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "hMubqt",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Contact Us",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "mREUtq",
+                    "type": "div",
+                    "name": "logo",
+                    "cmps": [
+                        {
+                            "id": "o2sGln",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994996/donut_jzbb69.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "VWUTEw",
+                            "type": "div",
+                            "name": "label",
+                            "cmps": [
+                                {
+                                    "id": "AdQN2P",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994993/label_tts609.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "7gXN1K",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Sugar & Cream"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6mWSpm",
+                            "type": "span",
+                            "name": "sub-heading",
+                            "content": {
+                                "txt": "Donut Shop"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "c4nI9w",
+                    "type": "div",
+                    "name": "login",
+                    "cmps": [
+                        {
+                            "id": "NPMlnA",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/user_nsmerg.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "ImWlMb",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Log in"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "a1opSe",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Order Online"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "IGqobl",
+            "type": "div",
+            "name": "wap-6-hero",
+            "category": "hero",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674564273/wap-6-hero_koqlkv.jpg",
+            "cmps": [
+                {
+                    "id": "9oSgyu",
+                    "type": "h1",
+                    "name": "",
+                    "content": {
+                        "txt": "The Best Donuts in Town"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "sWErVL",
+                    "type": "div",
+                    "name": "image",
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "sBSVcm",
+            "type": "div",
+            "name": "wap-6-section-1",
+            "category": "card",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-section-1-edited_l3aoqh.jpg",
+            "cmps": [
+                {
+                    "id": "eUzSHY",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Our Top Flavors"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "hh4OP8",
+                    "type": "div",
+                    "name": "flavors-container",
+                    "cmps": [
+                        {
+                            "id": "16Jg9B",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "YI2tUC",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994997/donut1_yznqea.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "JeKMPf",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Chocolate Crunch"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "BEq0l9",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "N78ZTn",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994994/donut2_mlcda9.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "G0fdiD",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Caramel Glaze"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "R7aPGo",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "lMjkLm",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994994/donut3_hhzoi6.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "ZkjPUc",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Strawberry Sprinkles"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "U0bCiD",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "kbjAej",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/donut4_o1a2fz.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "OLlX6R",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Cookies & Cream"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "7QTKSa",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Order Online"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "u7Dbr5",
+            "type": "div",
+            "name": "wap-6-cta-2",
+            "category": "section",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-cta-edited_i81jxy.jpg",
+            "cmps": [
+                {
+                    "id": "S6qPZN",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Come Get Your Favorites!"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "3EINs1",
+                    "type": "div",
+                    "name": "grid",
+                    "cmps": [
+                        {
+                            "id": "emD5AX",
+                            "type": "div",
+                            "name": "visit",
+                            "cmps": [
+                                {
+                                    "id": "Ltjzz5",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/visit_j5atx4.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "TSh0M5",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Visit Our Store"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "FyUO63",
+                            "type": "div",
+                            "name": "order",
+                            "cmps": [
+                                {
+                                    "id": "cWlhG5",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994993/order_nua1cf.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "0Carl8",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Order Online & Pickup in Store"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ZMmo77",
+                            "type": "div",
+                            "name": "visit",
+                            "cmps": [
+                                {
+                                    "id": "W2zFwj",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673994995/delivery_lrh0o1.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "nKPNQx",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Get Sugar & Cream at Your Door"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2O36xk",
+            "type": "div",
+            "name": "wap-6-section-2",
+            "category": "form",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674563730/wap-6-form-edited_bjmwks.jpg",
+            "cmps": [
+                {
+                    "id": "RioIyK",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "615W1N",
+                            "type": "div",
+                            "name": "adress",
+                            "cmps": [
+                                {
+                                    "id": "iPne9s",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Address"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "qukEky",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "500 Terry Francois Street,  San Francisco, CA 94158"
+                                    },
+                                    "cmps": [
+                                        {
+                                            "id": "qBbNtq",
+                                            "type": "br",
+                                            "name": "",
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "oaTG9y",
+                            "type": "div",
+                            "name": "contact",
+                            "cmps": [
+                                {
+                                    "id": "KcST5k",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Contact"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "5QJazd",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Info@mysite.com 123-456-7890"
+                                    },
+                                    "cmps": [
+                                        {
+                                            "id": "Jop8Pq",
+                                            "type": "br",
+                                            "name": "",
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "mXRrMQ",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "hUHYcw",
+                            "type": "div",
+                            "name": "opening-hours",
+                            "cmps": [
+                                {
+                                    "id": "iIwXG7",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Opening Hours"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "UEt14W",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Sun - Thu: 10am - 10pm  Fri - Sat: 10am - 11pm"
+                                    },
+                                    "cmps": [
+                                        {
+                                            "id": "0WARXd",
+                                            "type": "br",
+                                            "name": "",
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Hlrjnw",
+                            "type": "div",
+                            "name": "follow",
+                            "cmps": [
+                                {
+                                    "id": "kF3XLy",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Follow Us"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "sIn5yp",
+                                    "type": "div",
+                                    "name": "social-links",
+                                    "cmps": [
+                                        {
+                                            "id": "AXCtc4",
+                                            "type": "div",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "JlSOIp",
+                                                    "type": "a",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "Instagram",
+                                                        "href": "about:blank#"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "F0ceDB",
+                                            "type": "div",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "CJvqqM",
+                                                    "type": "a",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "Facebook",
+                                                        "href": "about:blank#"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "QlgPWS",
+                                            "type": "div",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "F52E2W",
+                                                    "type": "a",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "TikTok",
+                                                        "href": "about:blank#"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "X8mP1y",
+                    "type": "div",
+                    "name": "subscribe",
+                    "cmps": [
+                        {
+                            "id": "0LJr9q",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Subscribe to our newsletter for some sweet stuff"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "z8aOyC",
+                            "type": "label",
+                            "name": "",
+                            "content": {
+                                "txt": "Enter your mail *",
+                                "htmlFor": "email"
+                            },
+                            "cmps": [
+                                {
+                                    "id": "6vKU4Q",
+                                    "type": "input",
+                                    "name": "",
+                                    "inputName": "Enter your mail *",
+                                    "content": {
+                                        "inputId": "email",
+                                        "placeholder": "quix@appsus.com"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Eq2vPd",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Subscribe"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "rdCvE1",
+            "type": "div",
+            "name": "footer",
+            "cmps": [
+                {
+                    "id": "zO2Pm7",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "© 2035 by Sugar & Cream. Power and secured by"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "KNhMqz",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "quix",
+                        "href": ""
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ],
+    "demoData": {
+        "messages": 375,
+        "messagesPercent": 8.7,
+        "appointments": 230,
+        "appointmentsPercent": 25,
+        "leads": 328,
+        "leadsPercent": 32,
+        "subscribers": 465,
+        "subscribersPercent": 21,
+        "leadData": [12, 15, 16, 14, 13, 18, 17],
+        "subsData": [7, 15, 17, 14, 13, 21, 24],
+        "visitorsData": [40, 51, 35, 32, 45, 38, 48]
+    },
+    "visitors": [
+        1674865738067, 1674281560600, 1673916612361, 1674635421614, 1675003761742, 1674733108010, 1674059854992,
+        1674049808127, 1674581240324, 1674507661038, 1674815203063, 1674247482547, 1674312859771, 1673838931126,
+        1674824417851, 1675004616937, 1675008191936, 1673960975207, 1674558065522, 1674411162547, 1674972567279,
+        1674428460493, 1674390592448, 1674083492063, 1674955916411, 1674140166939, 1674125010174, 1674532655430,
+        1674164185455, 1674831005476, 1674543771529, 1674014491122, 1674470945448, 1674519992121, 1674321472222,
+        1674157531712, 1674484283749, 1674165534407, 1674573798301, 1673842257964, 1674445927216, 1674373634317,
+        1674097812851, 1674295798307, 1674151697046, 1674121188620, 1674182997608, 1674027526663, 1674482594243,
+        1674926016252, 1674179929678, 1674890463534, 1674761379113, 1674512069803, 1674678009785, 1674486327438,
+        1674702331639, 1674173994762, 1674129537301, 1674301726503, 1674475628977, 1673879456533, 1674535908254,
+        1674305328292, 1674629171972, 1674857265945, 1674328855562, 1673924709381, 1674198899608, 1674094745186,
+        1674907453414, 1674851722914, 1675008656643, 1674916842819, 1674859169137, 1674673447532, 1674913191535,
+        1673846586780, 1674804210067, 1674509381793, 1674943731600, 1674145155045, 1674460331639, 1674576975633,
+        1673870195456, 1674264665566, 1674475203635, 1674374716882, 1674226794461, 1674996001934, 1674802124606,
+        1673934846984, 1674227911383, 1674580673459, 1674444555821, 1674089068590, 1674206246341, 1673901011104,
+        1674313132773, 1674962904537, 1674695953082, 1674865372122, 1674138222977, 1674735705959, 1674773661246,
+        1673880492885, 1674272215493, 1674073544664, 1674264768151, 1674173165019, 1674603497399, 1674107450283,
+        1674920351921, 1674596795981, 1674979627790, 1674554537424, 1674841669557, 1673987860506, 1673874874429,
+        1673815848008, 1674822651909, 1674319158353, 1674259549515, 1674335160998, 1674180602379, 1674006992184,
+        1674967552830, 1674798225212, 1674706492692, 1674160537679, 1674117585220, 1674590724435, 1674034962337,
+        1674560233641, 1674287867232, 1674871319249, 1674371780687, 1674458339888, 1674996453871, 1674405538603,
+        1673982917519, 1674245707630, 1674708571294, 1674967391981, 1673874527541, 1674154928263, 1674970680305,
+        1674845905538, 1674554269062, 1674074889747, 1674873828846, 1674049210171, 1673860378003, 1674985463099,
+        1673866692200, 1674280157039, 1674128819996, 1674551229857, 1674136292416, 1673851314010, 1674907416516,
+        1674628255455, 1674709718543, 1674765101156, 1674261821349, 1674665235676, 1674855464211, 1674723687155,
+        1674394462847, 1674402406634, 1674971723742, 1674217726173, 1674740733483, 1674267353105, 1674626358525,
+        1674898535732, 1674408791618, 1674107818342, 1674467845540, 1674291833432, 1674218072511, 1674377509906,
+        1673909699425, 1674131443055, 1674068697549, 1674055057639, 1674880499570, 1673880814392, 1673950580696,
+        1674109528236, 1674090162639, 1674580921612, 1674433752349, 1674284076086, 1675006647785, 1674898793743,
+        1674086963770, 1673907295048, 1674102027727, 1674232137449, 1674279115525, 1674490203710, 1674747286565,
+        1674796681665, 1674845441863, 1674605355088, 1674922951706, 1674381776358, 1674072495409, 1674282899144,
+        1674556618881, 1674740636992, 1674142962399, 1674414565816, 1674176704220, 1674046092094, 1674609120638,
+        1674868016065, 1674014221619, 1674576332240, 1674210220647, 1674063301512, 1674131716159, 1675003563792,
+        1674754079654, 1673965512458, 1674492224998, 1674918331648, 1674089374015, 1673868529235, 1674251527135,
+        1674187076995, 1674318887361, 1674798576742, 1674457497477, 1674162812209, 1674362985723, 1675010224361,
+        1673961443919, 1673918831553, 1674937501209, 1674422828570, 1673950484013, 1674877008103, 1674506753411,
+        1673847914984, 1673937123586, 1673963704121, 1673973139541, 1673970539557, 1674038377808, 1674822293571,
+        1674903664463, 1674039916207, 1674751228853, 1673964593754, 1674576069783, 1674643838509, 1674870541142,
+        1674754955952, 1674574748845, 1674564807174, 1674018419409, 1674606719971, 1674063867114, 1674120836352,
+        1674299831879, 1673916767599, 1674782900351, 1674470386706, 1674967594089, 1673845958100, 1674674400049,
+        1674715501717, 1674648379747, 1674237432268, 1674785678770, 1674824572658, 1674560172574, 1673996458156,
+        1674535141862, 1674652319632, 1674429166867, 1674527150200, 1674656180274, 1674203190339, 1673912981711,
+        1674125403982, 1674245320039, 1674084491103, 1674242990584, 1674491399836, 1674927789544, 1674098758838,
+        1674295184111, 1674294484406, 1674221779002, 1674817646744, 1674651051898, 1673856230157, 1673904710901,
+        1674030121599, 1673994539884, 1674186215899, 1674721214355, 1674132480784, 1673960327556, 1673985993299,
+        1674892002045, 1674149513552, 1674882695580, 1674071951345, 1673913687812, 1674582679312, 1674401611402,
+        1674159382877, 1673999028268, 1674485736265, 1674028896427, 1674095479435, 1674784732373, 1674491115976,
+        1674525117200, 1674614679347, 1674554733943, 1674778373509, 1675008304240, 1674096582899, 1674900148048,
+        1674699749400, 1674499143832, 1674382749835, 1674101825385, 1674033454574, 1673947198755, 1674789669647,
+        1674830632014, 1674885679220, 1674380878746, 1674655244230, 1673977759972, 1673902342755, 1674235311044,
+        1674650578180, 1674569286825, 1674191876725, 1674438414818, 1674738870141, 1674203515155, 1674602607526,
+        1673825745564, 1674758012870, 1674683701841, 1674797280814, 1674343206189, 1674507083157, 1674199652102,
+        1674942094044, 1674158794176, 1674147804605, 1674629249882, 1674450008425, 1674605288313, 1674123428121,
+        1673969476207, 1673957224843, 1674884952616, 1674380182637, 1674081877633, 1674562427816, 1675001554117,
+        1674296880787, 1674748451833, 1674702904892, 1674374141177, 1674441931718, 1674263743842, 1674815059196,
+        1674519279494, 1674234480289, 1674670618982, 1673935308948, 1674577845086, 1674020424794, 1674077019402,
+        1674587200730, 1674041664092, 1674342252450, 1674446837327, 1674037394911, 1673936049494, 1673884643286,
+        1674290363135, 1674750744008, 1674463966225, 1674377044002, 1674007325242, 1674435876166, 1674618178739,
+        1674671854614, 1674494905313, 1673954162817, 1674760593115, 1674138058388, 1674544370665, 1674798699611,
+        1674606014819, 1673999780999, 1674942660477, 1674088519892, 1673814410760, 1674907619284, 1673931638161,
+        1674890962568, 1674188752788, 1674263666729, 1674930553735, 1674703374259, 1674385700918, 1674363633018,
+        1674064914119, 1674274177906, 1673897748357, 1674687668855, 1674731842821, 1674452717647, 1673923529236,
+        1674238636249, 1673881624854, 1674872638428, 1674973235209, 1674488087168, 1674300577795, 1674953176601,
+        1674763714350, 1673897282306, 1674164342341, 1674270707135, 1674876847514, 1675009832542, 1673875237675,
+        1674492104004, 1674927685768, 1674708708710, 1674331197171, 1674136157013, 1674175952221, 1674141307206,
+        1674544981985, 1674540903081, 1674274234323, 1673964565639, 1674604445540, 1674595782021, 1674487137366,
+        1674896681470, 1674268741145, 1673973444403, 1674601516355, 1674932948753, 1674451384105, 1674578054415,
+        1674546427849, 1674081061106, 1674348370226, 1674585740494, 1674363283333, 1673960497173, 1673928930221,
+        1674775945686, 1674402655503, 1673891531997, 1674106194415, 1674691488470, 1674916126858, 1674483870350,
+        1673998091604, 1674289092881, 1674512961382, 1674022079623, 1674117598236, 1674149398428, 1674347765418,
+        1674799035569, 1674809043973, 1673992636377, 1674605877751, 1674987013738, 1673840498262, 1674218277259,
+        1674316565935, 1674431430603, 1673931323816, 1674825971784, 1674164861153, 1674100888378, 1674363892616,
+        1674827562159, 1674250747254, 1674759831882, 1674936045511, 1674651914671, 1674785560014, 1674446649897,
+        1674047768578, 1674354323625, 1674358736209, 1673958789636, 1673812255977, 1674039594654, 1674822137281,
+        1674912285339, 1673834622856, 1673975986924, 1674908192454, 1674181457349, 1674662056443, 1674931992976,
+        1674405015332, 1673839279414, 1674710000030, 1674221913692, 1674342150747, 1674159981694, 1674566261069,
+        1674176759462, 1674331469306, 1674371686866, 1674844117861, 1674494230863, 1674870377731, 1674824678696,
+        1674796726135, 1674322688936, 1674243881663, 1674200345205, 1674927271703, 1675002371543, 1674302553911,
+        1674856325240, 1674808981671, 1674647843040, 1674181160536, 1673816544864, 1673805237401, 1673895900032,
+        1674899161802, 1674127730680, 1673823125918, 1674973557586, 1674213704815, 1673880968240, 1674900386844,
+        1674387484378, 1674794984589, 1674848318807, 1674439428236, 1674970311738, 1674515809972, 1674264085640,
+        1674763914625, 1674744851424, 1675009319560, 1673935787850, 1674904860851, 1674072911430, 1674821523316,
+        1674373641904, 1674782664105, 1673831841390, 1674029872254, 1674582708156, 1674059446138, 1674306644955,
+        1674576318767, 1674904582278, 1673959715268, 1674607110486, 1674326885530, 1674090250106, 1674004895637,
+        1673808737282, 1674384417022, 1673889932836, 1673995003594, 1674494351962, 1674699020683, 1674539105313,
+        1674091204556, 1674386642471, 1674939087638, 1673860338014, 1674028324727, 1674320331756, 1674840210998,
+        1674361961366, 1674673878033, 1673871656820, 1674820514863, 1674963266415, 1674592486770, 1674801053384,
+        1674445863171, 1674361902452, 1674418610715, 1674733297432, 1674902291523, 1674231330821, 1673989608473,
+        1674165490947, 1673866408628, 1674614962444, 1674821329433, 1674451806764, 1674804767722, 1673945925392,
+        1674283189632, 1673888716115, 1674902350490, 1674088875173, 1673810868455, 1674485255478, 1674484766703,
+        1674415800491, 1674036362951, 1674334881873, 1673849359072, 1674694730396, 1674405834745, 1674085216672,
+        1673992255592, 1674068222245, 1674208013074, 1674966892564, 1674851029399, 1674921757793, 1674012472629,
+        1674631332464, 1674231806578, 1674487029475, 1674453456549, 1674174838878, 1674640771941, 1674120730706,
+        1673915960349, 1674309337414, 1673971965827, 1674462170935, 1674498224515, 1674703349238, 1674734880082,
+        1674167857631, 1673913226362, 1674375716957, 1674776971157, 1674340872914, 1674482855272, 1674355538145,
+        1674915864273, 1674773486627, 1674163511895, 1674226873359, 1674246209037, 1674590059687, 1674209727474,
+        1674067714476, 1674428129270, 1674420133963, 1674596282589, 1673842277037, 1674418147227, 1674142861417,
+        1673960686638, 1674622156631, 1673861230436, 1674035886159, 1674564347020, 1674287688717, 1674797184989,
+        1674927107098, 1674822001883, 1674859210248, 1674600676804, 1674679790443, 1674349330360, 1674554605416,
+        1674771512273, 1674319627352, 1674850104671, 1673942038084, 1674418863314, 1674103200403, 1674120776597,
+        1673900892275, 1673819766258, 1674831926561, 1674010951921, 1674909717802, 1673805693557, 1674223769673,
+        1674907700588, 1674160107663, 1674734512310, 1674854133615, 1674777993821, 1674397625063, 1673915621164,
+        1673935115222, 1674406592732, 1674330924180, 1674406627769, 1674650227734, 1674488251211, 1674711255417,
+        1674771181127, 1674936337565, 1673848918250, 1674600324488, 1674539624636, 1673902120785, 1674855633970,
+        1674631999939, 1674612208012, 1674873136222, 1674562173604, 1674825775437, 1674055608036, 1674137842383,
+        1674987925927, 1674340452155, 1674732075969, 1674207577691, 1673851050677, 1674968461131, 1673974262931,
+        1673989452652, 1674306767729, 1674431115686, 1674452146408, 1674886635091, 1673899789477, 1674415998462,
+        1674437643605, 1674591229544, 1673912418231, 1674397335283, 1674521091724, 1674019628863, 1674669083238,
+        1674586898576, 1674036556463, 1674221458088, 1674425335914, 1674937257285, 1674687831073, 1674813208797,
+        1674488426673, 1674013905976, 1674118239476, 1674235957876, 1674887343102, 1674911553441, 1674664641535,
+        1673970232327, 1674251947805, 1674595535112, 1674151259494, 1673894823024, 1674575206584, 1674686429385,
+        1674894312940, 1674899271494, 1674270495482, 1674821359126, 1674233808745, 1674416604893, 1674348233827,
+        1674124441752, 1674779769754, 1674711306038, 1674987498591, 1674462708342, 1674770121019, 1675002694175,
+        1674913100303, 1674317313913, 1674448868938, 1674017969461, 1674080253987, 1674081993930, 1674315170150,
+        1674538481536, 1673863184932, 1674704074180, 1674992569709, 1674349247278, 1674962974033, 1674704440445,
+        1674097001268, 1674158840158, 1674727326370, 1673853441858, 1674299597779, 1674505052128, 1674559015498,
+        1674542501832, 1674150950017, 1674699671781, 1674484238714, 1674935179945, 1674101389542, 1674401735538,
+        1674299649622, 1674575989959, 1674817961553, 1674230430856, 1674282145256, 1674013822871, 1674692708368,
+        1674302015412, 1673862579147, 1673965268796, 1673865435703, 1674901884041, 1673982851928, 1674605542939,
+        1674859919029, 1674907640737, 1673809171905, 1674468649156, 1674270914876, 1674695720666, 1674124431610,
+        1674266816214, 1673845990073, 1674730804939, 1674482461773, 1674217557787, 1674792439361, 1674305484894,
+        1673827086478, 1674213090535, 1673826658663, 1674957772922, 1674381017789, 1674329932236, 1674671459376,
+        1673975756385, 1673898669518, 1674140155539, 1674149673835, 1674042919395, 1673895924306, 1674637286173,
+        1674116969097, 1674708655725, 1674283397548, 1673899670276, 1674472744827, 1674739573714, 1674749366055,
+        1674430464319, 1673907879263, 1674806225501, 1674795923419, 1674675952381, 1674737995394, 1674869450254,
+        1674049495697, 1673808536813, 1674033627402, 1674750800002, 1673822736348, 1674479902880, 1674030590602,
+        1674135401340, 1674361114109, 1674900637191, 1674671274738, 1674015952693, 1674955215579, 1674855517126,
+        1674105348600, 1674755032194, 1674713378272, 1674476044100, 1674895849440, 1674332882652, 1674306205594,
+        1674531148284, 1674226028490, 1674991952542, 1674879807049, 1674846118859, 1674745795983, 1674196144195,
+        1674198124648, 1674585664607, 1674205205784, 1674411345560, 1674008707810, 1674185810809, 1674199376033,
+        1674740095903, 1674740765009, 1674097485775, 1674935526062, 1674261050135, 1674167207821, 1674467280053,
+        1674335538820, 1674765218727, 1673880221447, 1674521419520, 1674218083779, 1673994291847, 1674846235927,
+        1673902601926, 1673935103740, 1674890659156, 1674375109805, 1674868508640, 1674687715767, 1674685534339,
+        1673915773067, 1674647110296, 1674393171644, 1673930199218, 1673884540940, 1674931231602, 1674595186229,
+        1674208253425, 1674808485748, 1674270354815, 1674691714440, 1674839915458, 1674992354472, 1674145354934,
+        1674694005854, 1675000153782, 1674759624852, 1674718012670, 1674000340451, 1674656095733, 1673955800261,
+        1674407186020, 1673943807015, 1674236111734, 1674303647160, 1674859992081, 1674629416344, 1674402822539,
+        1674725860530, 1674929462385, 1673835492923, 1674360616868, 1674149493031, 1673895481015, 1674768480340,
+        1674075168826, 1674906133243, 1674324037069, 1674996054655, 1674616809348, 1674012300370, 1674530735395,
+        1674943984456, 1674766489726, 1674233962581, 1674252858060, 1674459874015, 1674704712282, 1674229180573,
+        1674235527385, 1674100771807, 1674989347563, 1674241733973, 1674024998381, 1673913298859, 1674304610406,
+        1674439876460, 1674163065640, 1674457499647, 1674924609893, 1674657000482, 1673960521329, 1674233033820,
+        1674907070870, 1674238070589, 1674037395880, 1674982767481, 1673908485968, 1673874310758, 1674208285319,
+        1674701669824, 1673914868080, 1674690795775, 1674246103293, 1674595189677, 1674812763026, 1674920223529,
+        1674230667222, 1674829220678, 1674085108056, 1674760400568, 1674919230526, 1674001165238, 1674060132266,
+        1673908548862, 1673808412848, 1674134181928, 1674886104555, 1674298267744, 1673940853357, 1674650899561,
+        1674105029227, 1674369029433, 1674395451427, 1673934352950, 1674423603979, 1673981091440, 1674007655840,
+        1674012804426, 1674385488419, 1674483446415, 1674140160471, 1674641853543, 1674310941642, 1674206094882,
+        1674536922039, 1674702906668, 1674407706196, 1673896007236, 1673888224241, 1673936421442, 1674079515501,
+        1674250170981, 1674747153536, 1674853853005, 1674015562177, 1674359398979, 1674950240437, 1674219066038,
+        1674260935658, 1674780509620, 1674881062131, 1673805615747, 1674021011267, 1674710400582, 1673923145912,
+        1674742219090, 1674897633363, 1674347828554, 1674078839293, 1674449252166, 1674148084206, 1674749220925,
+        1673934596141, 1674550406437, 1674600658138, 1674876479820, 1674593818474, 1674993930977, 1674677429396,
+        1674879115255, 1674699757360, 1674056029681, 1673895067669, 1674899028532, 1674525368338, 1674575257036,
+        1674280886206, 1674444390541, 1673952115668, 1674745555234, 1674018960109, 1673855812631, 1673864820569,
+        1674639104788, 1673900312213, 1674211165863, 1674487692980, 1674475355964, 1674554129739, 1673944577277,
+        1674194467999, 1674754540802, 1673948618281, 1674946363953, 1675008884538, 1673865341525, 1674251720536,
+        1674273818435, 1673846527493, 1674988151597, 1674310755051, 1674646699608, 1674332368458, 1674609342637,
+        1674503517359, 1674639978447, 1674494064534, 1674696039381, 1674026305869, 1674540999949, 1674565509591,
+        1674590077995, 1674637947619, 1673868102307, 1674491340602, 1674584487911, 1673872176425, 1674361299525,
+        1674665646157, 1674249403882, 1674600731833, 1674744983041, 1673807345124, 1674822764701, 1673931178301,
+        1674658477427, 1674183732810, 1674510454915, 1674577600147, 1674724055617, 1674846676747, 1674506442544,
+        1674236618128, 1674967400942, 1674940437979, 1674441161317, 1674852936986, 1674044177238, 1674627353939,
+        1674740297429, 1674779837912, 1674807169922, 1674813016756, 1674392821918, 1674719348130, 1673828863179,
+        1674409059026, 1674519488714, 1673914858566, 1674780496692, 1674480636701, 1673853560789, 1674033188137,
+        1674364099289, 1674175149863, 1674693239954, 1674599352905, 1674465334995, 1673823553958, 1674693402849,
+        1674113600558, 1673959775606, 1673902127461, 1674811100839, 1674112109796, 1674564512404, 1674866714478,
+        1673825538109, 1674540117388, 1674354352336, 1674900528202, 1674515571204, 1674573180765, 1674097347422,
+        1673874970552, 1674872731310, 1673953632455, 1674969995571, 1674642310491, 1674639495017, 1674916055456,
+        1674979497567, 1673898176441, 1673939752046, 1674396049586, 1674098776447, 1674123823306, 1674252081091,
+        1674113345676, 1674356325291, 1674531182196, 1674019020354, 1673964714552, 1673862278955, 1674974426816,
+        1674878950792, 1674218292486, 1674953111891, 1673922034709, 1674401873518, 1674209931297, 1674542613591,
+        1674860280782, 1674458147450, 1674932132801, 1674816593366, 1674870080279, 1673811052936, 1674448582472,
+        1673896729522, 1674329452940, 1674249517726, 1673872564314, 1674610504359, 1674432979174, 1674332867984,
+        1674322149672, 1673859239756, 1673847324063, 1674306296785, 1674944968778, 1674836314640, 1673883399165,
+        1674266141532, 1674377570577, 1674615881662, 1675004893942, 1674612931602, 1674882536301, 1674432614945,
+        1673920571831, 1674448737435, 1674584843639, 1673834064089, 1673912733802, 1674944592327, 1674165956334,
+        1674011801465, 1674395103903, 1674734986883, 1673893424569, 1673843191481, 1674747114203, 1674740508053,
+        1674742730502, 1674459130973, 1674974975604, 1674831947017, 1674862704807, 1674953598769, 1673807246874,
+        1674890199053, 1674291493395, 1674777001681, 1674498211961
+    ],
+    "themeClass": "wap6-primary",
+    "breakpoints": { "tabletLayout": 800 },
+    "msgs": {
+        "Itay": [
+            {
+                "by": "customer",
+                "txt": "Hello, I was wondering if you have any gluten-free options on your menu?",
+                "date": 1674934039000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Yes, we do have several gluten-free options available.",
+                "date": 1674934039000.0
+            },
+            {
+                "by": "customer",
+                "txt": "I was also wondering if you have any vegetarian options as well.",
+                "date": 1674934039000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Yes, we have several vegetarian options available as well.",
+                "date": 1674934039000.0
+            },
+            {
+                "by": "customer",
+                "txt": "Thank you for your help!",
+                "date": 1674934039000.0
+            },
+            {
+                "by": "owner",
+                "txt": "You're welcome, we look forward to serving you soon. Have a great day!",
+                "date": 1674934039000.0
+            }
+        ],
+        "Roti": [
+            {
+                "by": "customer",
+                "txt": " Hi there! I was wondering if you have any vegetarian options on your menu?",
+                "date": 1674890839000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Thank you very much!Yes, we have several vegetarian options available. Our menu is available on our website, would you like me to send you a link?",
+                "date": 1674890839000.0
+            },
+            {
+                "by": "customer",
+                "txt": "That would be great, thank you!",
+                "date": 1674890839000.0
+            },
+            {
+                "by": "owner",
+                "txt": " Is there anything else I can help you with?",
+                "date": 1674890839000.0
+            },
+            {
+                "by": "customer",
+                "txt": "No, that's all. Thank you for your help",
+                "date": 1674890839000.0
+            },
+            {
+                "by": "owner",
+                "txt": " You're welcome, we look forward to serving you soon. Have a great day!",
+                "date": 1674890839000.0
+            }
+        ],
+        "Vlad": [
+            {
+                "by": "customer",
+                "txt": "I just left 5/5 review!",
+                "date": 1674804439000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Thank you very much!",
+                "date": 1674804439000.0
+            }
+        ],
+        "Roni": [
+            {
+                "by": "customer",
+                "txt": "Your hamburgers are AMAZING!!!",
+                "date": 1674718039000.0
+            }
+        ],
+        "Itzik": [
+            {
+                "by": "customer",
+                "txt": "I just want to say I had a great night yesterday! Thank you and I will come again!",
+                "date": 1674718039000.0
+            }
+        ],
+        "Aviv": [
+            {
+                "by": "customer",
+                "txt": "Are you open on friday night?",
+                "date": 1674631639000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Yes we are!",
+                "date": 1674631639000.0
+            }
+        ],
+        "Betty": [
+            {
+                "by": "customer",
+                "txt": "Hello, can I please get some help?",
+                "date": 1674545239000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Sure, I am working on it!",
+                "date": 1674545239000.0
+            }
+        ],
+        "Ron": [
+            {
+                "by": "customer",
+                "txt": "Hey, man! What's up, Mr Stark?",
+                "date": 1674458839000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Kid, where'd you come from?",
+                "date": 1674458839000.0
+            },
+            {
+                "by": "customer",
+                "txt": "Field trip!",
+                "date": 1674458839000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Uh, what is this guy's problem, Mr. Stark?",
+                "date": 1674458839000.0
+            },
+            {
+                "by": "customer",
+                "txt": "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                "date": 1674458839000.0
+            }
+        ],
+        "Harel": [
+            {
+                "by": "customer",
+                "txt": "hahaha",
+                "date": 1674372439000.0
+            },
+            {
+                "by": "owner",
+                "txt": "Yes this is lit",
+                "date": 1674372439000.0
+            },
+            {
+                "by": "customer",
+                "txt": "help me please!",
+                "date": 1674372439000.0
+            },
+            {
+                "by": "owner",
+                "txt": "NOOO!",
+                "date": 1674372439000.0
+            },
+            {
+                "by": "customer",
+                "txt": "I love it!",
+                "date": 1674372439000.0
+            }
+        ]
+    },
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674563731/wap-6-thumbnail_fcovpe.jpg",
+    "title": "Cafe & Bakery"
+}

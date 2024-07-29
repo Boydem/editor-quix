@@ -1,0 +1,124 @@
+{
+    "id": "FPPJtN",
+    "type": "div",
+    "name": "wap-3-header",
+    "category": "header",
+    "cmpId": "Header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053653/wap-3-header_px4jjq.jpg",
+    "cmps": [
+        {
+            "id": "4f0kow",
+            "type": "div",
+            "name": "logo-container",
+            "cmps": [
+                {
+                    "id": "HKTEEF",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "Finclvr",
+                        "href": ""
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "ZF2AIW",
+            "type": "div",
+            "name": "app-nav",
+            "cmps": [
+                {
+                    "id": "22IgKx",
+                    "type": "div",
+                    "name": "navigation-links",
+                    "cmps": [
+                        {
+                            "id": "sUiF4g",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "97V0DJ",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "About",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "IOIRTx",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "9IdVYq",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Speakers",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "uypLZb",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "XnPVIj",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Topics",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "blom4K",
+                    "type": "div",
+                    "name": "user-container",
+                    "cmps": [
+                        {
+                            "id": "E0cb7y",
+                            "type": "i",
+                            "name": "fa-solid fa-user",
+                            "cmps": []
+                        },
+                        {
+                            "id": "ZNxZUy",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Log In",
+                                "href": ""
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Z4d2Gb",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Register"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

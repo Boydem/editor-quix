@@ -1,0 +1,60 @@
+{
+    "id": "xBq3f7",
+    "type": "div",
+    "name": "wap-3-about",
+    "category": "section",
+    "cmpId": "About",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-about_knyfwg.jpg",
+    "cmps": [
+        {
+            "id": "PIH355",
+            "type": "div",
+            "name": "about-us-desc",
+            "cmps": [
+                {
+                    "id": "VhTnHx",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "About the Webinar"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "m0LSzP",
+                    "type": "p",
+                    "name": "sub-heading",
+                    "content": {
+                        "txt": "Fintech services are revolutionizing the banking industry and the way we handle our finances."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "mrG6uP",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you."
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "r1yFoE",
+            "type": "div",
+            "name": "about-img-container",
+            "cmps": [
+                {
+                    "id": "FnzbsT",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990130/about_fognsi.webp"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

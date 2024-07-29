@@ -1,0 +1,99 @@
+{
+    "id": "4i6a5i",
+    "type": "div",
+    "name": "wap-7-hero",
+    "category": "hero",
+    "cmpId": "Hero",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-hero_tjygar.jpg",
+    "cmps": [
+        {
+            "id": "IERTKB",
+            "type": "div",
+            "name": "intro-wrapper",
+            "cmps": [
+                {
+                    "id": "HO0WqQ",
+                    "type": "div",
+                    "name": "intro-title",
+                    "cmps": [
+                        {
+                            "id": "LpQi4w",
+                            "type": "h1",
+                            "name": "",
+                            "content": {
+                                "txt": "THE POP SHOW"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "OT1cYM",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/gif_ztzry8.gif"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "QkBTXD",
+                    "type": "div",
+                    "name": "intro-cta",
+                    "cmps": [
+                        {
+                            "id": "WIx612",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "A Music Podcast for Pop Lovers"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "KXbhHe",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text”\n            or double click me to add your own content and make changes to the font.\n        "
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "dg88jz",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "LISTEN",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "l71IWl",
+            "type": "div",
+            "name": "hero-img-wrapper",
+            "cmps": [
+                {
+                    "id": "jCTLZg",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996219/hero_je9okw.jpg"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "rBCidN",
+            "type": "div",
+            "name": "strip",
+            "cmps": []
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "id": "qDkj7Im",
+    "type": "div",
+    "name": "form-2",
+    "category": "form",
+    "thumbnail": "https://res.cloudinary.com/dsperrtyj/image/upload/v1675029714/awd_kfyf5q.jpg",
+    "cmps": [
+        {
+            "id": "se6fs34",
+            "type": "div",
+            "name": "form-2-wrapper",
+            "cmps": [
+                {
+                    "id": "aHf2NJ",
+                    "type": "div",
+                    "name": "container layout-container",
+                    "cmps": [
+                        {
+                            "id": "aHf22NJ",
+                            "type": "div",
+                            "name": "titles",
+                            "cmps": [
+                                {
+                                    "id": "K4Oivj",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Stay Tuned"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "jLmnei",
+                                    "type": "h5",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Subscribe to our newsletter and never miss our desings, latest news, etc."
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "vVStD9",
+                            "type": "subscribe",
+                            "name": "form-2-inner-form",
+                            "cmps": [
+                                {
+                                    "id": "AYXwuu",
+                                    "type": "label",
+                                    "name": "",
+                                    "cmps": [
+                                        {
+                                            "id": "8Bc69y",
+                                            "type": "input",
+                                            "name": "",
+                                            "content": {
+                                                "placeholder": "Enter your email here"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "LJVYqu",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Send"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Ju5HVm",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Our newsletter is sent once a week, every Monday."
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

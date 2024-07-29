@@ -1,0 +1,78 @@
+{
+    "id": "6x72Gi",
+    "type": "div",
+    "name": "gallery-1",
+    "category": "section",
+    "cmpId": "Platforms",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-gallery-1_ifvxzh.png",
+    "cmps": [
+        {
+            "id": "JgbClU",
+            "type": "div",
+            "name": "layout-container",
+            "cmps": [
+                {
+                    "id": "OSsIwU",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Order from your favorite app today!"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "AmWzUX",
+                    "type": "div",
+                    "name": "logos",
+                    "cmps": [
+                        {
+                            "id": "8wGFR4",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo1_b9oukv.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Pn0yt0",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo2_xtuqse.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "KH5uR1",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo3_teuxoe.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "qQRayJ",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo4_f1wxhl.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "1H82JS",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674498403/logo5_vupfbh.svg"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

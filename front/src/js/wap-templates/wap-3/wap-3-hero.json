@@ -1,0 +1,76 @@
+{
+    "id": "yP3TMn",
+    "type": "div",
+    "name": "wap-3-hero",
+    "category": "hero",
+    "cmpId": "Hero",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-hero_m1wnor.jpg",
+    "cmps": [
+        {
+            "id": "ilS8E2",
+            "type": "div",
+            "name": "teaser-container",
+            "cmps": [
+                {
+                    "id": "Oiqehc",
+                    "type": "div",
+                    "name": "teaser",
+                    "cmps": [
+                        {
+                            "id": "V4LNbR",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "LIVE WEBINAR"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Z60btk",
+                            "type": "span",
+                            "name": "teaser-date",
+                            "content": {
+                                "txt": "5 NOV 2035 | 6PM"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "W2BLvX",
+                    "type": "h1",
+                    "name": "",
+                    "content": {
+                        "txt": "The Tools You Need for Smarter Finances"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "NVKi8J",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Register Now"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "lZCn1P",
+            "type": "div",
+            "name": "hero-img-container",
+            "cmps": [
+                {
+                    "id": "IO6oHH",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990129/hero_stmvaq.png"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "ojMzoi",
+    "type": "div",
+    "name": "wap-2-footer",
+    "category": "footer",
+    "cmpId": "Footer",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-footer_utt0fj.jpg",
+    "cmps": [
+        {
+            "id": "ObOU7d",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© 2023 by Gigaplay. Created on quix."
+            },
+            "cmps": []
+        }
+    ]
+}

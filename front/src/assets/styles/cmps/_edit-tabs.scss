@@ -1,0 +1,492 @@
+.TabsTrigger {
+    cursor: pointer;
+    font-family: inherit;
+    color: #595d70;
+    padding: 0 $spacing-s;
+    height: 45px;
+    font-weight: 600;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 -1px 0 0 $editor-lightgray;
+}
+
+.TabsTrigger[data-state='active'] {
+    color: $editor-active-clr;
+    box-shadow: inset 0 -2px 0 0 currentColor, 0 1px 0 0 currentColor;
+}
+
+
+.TabsContent {
+    padding-top: $spacing-xs;
+    flex-grow: 1;
+    outline: none;
+}
+
+
+.tabs-inner-content {
+    button {
+        cursor: pointer;
+    }
+    // COMMON CLASS
+    button.btn-edit {
+        background: #e4e8f1;
+        padding: 0.4em 0.6em;
+        border-radius: 0.3em;
+
+        &:hover {
+            background: darken(#e4e8f1, 5%);
+        }
+    }
+    input.input-edit {
+        margin-bottom: 0.2em;
+        width: 95.2%;
+        box-shadow: 0 1px 0 0 $clr2;
+        border-radius: 0px;
+        background: none;
+    }
+
+    margin-top: 1em;
+    .adjust-inputs {
+        align-items: center;
+        border-bottom: 1px solid $editor-lightgray;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 0.75em;
+        grid-auto-flow: dense;
+        padding: 1em $spacing-m;
+        &.gap-y {
+            gap: $spacing-s 1em;
+        }
+        .param-box {
+            width: 100%;
+        }
+        &.full {
+            grid-template-columns: 1fr;
+            > * {
+                width: 100%;
+            }
+        }
+        &:first-child {
+            padding: 0 $spacing-m 1em;
+        }
+        > *:nth-of-type(2n) {
+            margin-inline-start: $spacing-s;
+            justify-self: end;
+        }
+        > * {
+            font-size: px-to-rem(12.44px);
+
+            label {
+                display: inline-flex;
+                align-items: center;
+                text-transform: capitalize;
+                padding-inline-end: $spacing-s;
+            }
+            .input-wrapper {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                background-color: $editor-hover-bg;
+                border-radius: $spacing-xxs;
+                padding: $spacing-xxs $spacing-xxs;
+                input {
+                    padding: 0;
+                }
+                .unit {
+                    cursor: pointer;
+                    z-index: 2;
+                    background-color: $editor-lightgray;
+                    color: $clr7;
+                    border-radius: $spacing-xxs;
+                    // height: min-content;
+                    transition: background-color 0.3s, color 0.3s;
+                    &:hover {
+                        background-color: $editor-active-clr;
+                        color: $clr1;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .edit-img {
+        .wrapper {
+            > * {
+                margin-bottom: 1em;
+            }
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
+
+                button {
+                    background: $editor-lightgray;
+                    padding: 0.4em 0.6em;
+                    border-radius: 0.3em;
+                }
+            }
+            label {
+                color: $clr1;
+                background: $editor-active-clr;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
+                cursor: pointer;
+                background: $editor-lightgray;
+                color: $clr2;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .img-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .file-input {
+                all: unset;
+                display: none;
+            }
+        }
+    }
+
+    .edit-form {
+        .heading {
+            font-size: 1.1rem;
+            margin-bottom: 1em;
+        }
+        .input-option {
+            margin-bottom: 0.75em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+
+            .btn {
+                cursor: pointer;
+                padding: 0.1em 0.1em;
+                background: transparent;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .edit-map {
+        label {
+            display: inline;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+       
+        .btns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            align-items: center;
+            align-content: center;
+
+            button {
+                border-radius: 5px;
+                background: #e4e8f1;
+                padding: 0.2rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .markers {
+            h6 {
+                font-weight: 400;
+                margin-bottom: 1em;
+                font-size: 0.7775rem;
+            }
+            .marker {
+                gap: 1rem;
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.5em;
+                button {
+                    padding: 0.4em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1rem;
+                    background: #f4f5f8;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    .edit-div {
+        .wrapper {
+            > * {
+                margin-bottom: 1em;
+            }
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
+
+                button {
+                    background: #e4e8f1;
+                    padding: 0.4em 0.6em;
+                    border-radius: 0.3em;
+                }
+            }
+            label {
+                color: $clr1;
+                background: $editor-active-clr;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
+                cursor: pointer;
+                background: #e4e8f1;
+                color: $clr2;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .img-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                border: 1px solid $clr2;
+                border-radius: 10px;
+            }
+            .file-input {
+                all: unset;
+                display: none;
+            }
+        }
+        input {
+            width: 95.2%;
+            box-shadow: 0 1px 0 0 $clr2;
+            border-radius: 0px;
+            background: none;
+        }
+    }
+
+    .edit-video {
+        .wrapper {
+            > * {
+                margin-bottom: 1em;
+            }
+
+            .link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
+
+                button {
+                    background: #e4e8f1;
+                    padding: 0.4em 0.6em;
+                    border-radius: 0.3em;
+                }
+            }
+            label {
+                color: $clr1;
+                background: $editor-active-clr;
+                padding: 0.4em 0.6em;
+                border-radius: 0.3em;
+                cursor: pointer;
+                background: #e4e8f1;
+                color: $clr2;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .img-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                border: 1px solid $clr2;
+                border-radius: 10px;
+            }
+            .file-input {
+                all: unset;
+                display: none;
+            }
+        }
+    }
+
+    .edit-anchor {
+        .btn-edit {
+            cursor: pointer;
+            transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+            &:hover {
+                background-color: $editor-active-clr;
+                color: $clr1;
+            }
+        }
+        .or {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            margin-bottom: 0.8em;
+            margin-top: 0.5em;
+        }
+        .mini-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+        }
+        .heading {
+            font-size: 1.1rem;
+            margin-bottom: 0.5em;
+        }
+        input {
+            margin-bottom: 0.2em;
+            width: 95.2%;
+            box-shadow: 0 1px 0 0 $clr2;
+            border-radius: 0px;
+            background: none;
+            transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            &:focus {
+                box-shadow: 0 2px 0 0 $editor-active-clr;
+            }
+        }
+
+        .select-wrapper {
+            button {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .slider-form {
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                font-weight: bold;
+                padding-inline-start: 0.4em;
+                justify-self: end;
+            }
+        }
+        .slider-input {
+            width: 100%;
+        }
+    }
+    .edit-social {
+        .selection-row {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                background: #e4e8f1;
+                padding: 0.2rem 0.4rem;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+        .input-option {
+            margin-bottom: 0.75em;
+            gap: 1em;
+            .first-line {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.25rem;
+            }
+            .second-line {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+            }
+            button {
+                cursor: pointer;
+                background: transparent;
+                border-radius: 5px;
+                font-size: 1rem;
+
+                &.add {
+                    background: #e4e8f1;
+                    padding: 0em 0.3em;
+                    border-radius: 0.3em;
+                    color: $clr2;
+                    &:focus {
+                        color: $clr2;
+                    }
+                }
+            }
+        }
+    }
+
+    .edit-schedule {
+        .dropdown-content {
+            z-index: 5;
+            .select-item {
+                width: 100%;
+            }
+        }
+        .multi-select-wrapper {
+            width: 100%;
+            margin: auto;
+            .rmsc .dropdown-heading {
+                width: unset;
+                height: unset;
+            }
+        }
+    }
+    
+    .mini-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0.8rem;
+    }
+    .selection {
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edit-chat {
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+
+            textarea {
+                width: 100%;
+                resize: none;
+                border: none;
+                outline: none;
+                border: 1px solid #dcdcdc;
+                border-radius: 3px;
+
+                &:focus {
+                    border: 1px solid #3762a6;
+                }
+            }
+        }
+    }
+}

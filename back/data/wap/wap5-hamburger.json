@@ -1,0 +1,2000 @@
+{
+    "name": "wap5",
+    "owner": "admin",
+    "chatStartingMsg": "Hi there! Thanks for reaching out, How can I assist you today?",
+    "palette": ["#055345", "#f3ceac", "#f9efe6", "#101010"],
+    "leadsBoards": [
+        {
+            "id": "bQ0F7kc3",
+            "title": "New",
+            "items": []
+        },
+        {
+            "id": "XRlLtwvl",
+            "title": "In Progress",
+            "items": []
+        },
+        {
+            "id": "AReH7qzk",
+            "title": "Done",
+            "items": []
+        }
+    ],
+    "schedule": {
+        "eventDuration": 30,
+        "daysForward": 6,
+        "data": [],
+        "days": ["sunday", "monday", "tuesday", "wednesday", "thursday"],
+        "startHour": 8,
+        "endHour": 17,
+        "meetings": []
+    },
+    "subscribers": [],
+    "cmps": [
+        {
+            "id": "CFctTZ",
+            "type": "div",
+            "name": "wap-5-header",
+            "category": "header",
+            "cmpId": "Header",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689965/hamburger-header_ijekbx.png",
+            "cmps": [
+                {
+                    "id": "H6i7mG",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "iGooZQ",
+                            "type": "div",
+                            "name": "logo",
+                            "cmps": [
+                                {
+                                    "id": "sE1gY7",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674912367/wap-5-icecream-hamubrger_vtwefm.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "rVYw6g",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Restaurante X"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "9YXTJS",
+                            "type": "label",
+                            "htmlFor": "hamburger",
+                            "name": "open-close-icon",
+                            "cmps": []
+                        },
+                        {
+                            "id": "hxQUNq",
+                            "htmlId": "hamburger",
+                            "type": "input",
+                            "name": "mobile-open-close-btn",
+                            "inputType": "checkbox",
+                            "inputName": "",
+                            "content": {},
+                            "cmps": []
+                        },
+                        {
+                            "id": "4kQEVt",
+                            "type": "div",
+                            "name": "nav-menu",
+                            "cmps": [
+                                {
+                                    "id": "e3vrbc",
+                                    "type": "div",
+                                    "name": "nav-links",
+                                    "cmps": [
+                                        {
+                                            "id": "9TzudN",
+                                            "type": "div",
+                                            "name": "link-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "gBTlvP",
+                                                    "type": "a",
+                                                    "name": "nav-link",
+                                                    "content": {
+                                                        "txt": "Home",
+                                                        "href": ""
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "qiieju",
+                                            "type": "div",
+                                            "name": "link-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "w0on5L",
+                                                    "type": "a",
+                                                    "name": "nav-link",
+                                                    "content": {
+                                                        "txt": "About",
+                                                        "href": ""
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "2w1DYV",
+                                            "type": "div",
+                                            "name": "link-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "hQypQf",
+                                                    "type": "a",
+                                                    "name": "nav-link",
+                                                    "content": {
+                                                        "txt": "Menu",
+                                                        "href": ""
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "kZs9oY",
+                                    "type": "div",
+                                    "name": "header-cta",
+                                    "cmps": [
+                                        {
+                                            "id": "vf7bOf",
+                                            "type": "div",
+                                            "name": "btn-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "YkjNIX",
+                                                    "type": "button",
+                                                    "name": "secondary",
+                                                    "content": {
+                                                        "txt": "Order online"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "kMFxJV",
+                                            "type": "div",
+                                            "name": "btn-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "rZdwjY",
+                                                    "type": "button",
+                                                    "name": "primary",
+                                                    "content": {
+                                                        "txt": "Reservate"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "H1j8xN",
+            "type": "div",
+            "name": "wap-5-hero full",
+            "category": "hero",
+            "cmpId": "Hero",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674912364/wap-5-icecream-hero_uldddi.jpg",
+            "cmps": [
+                {
+                    "id": "sS563P",
+                    "type": "div",
+                    "name": "gray",
+                    "cmps": []
+                },
+                {
+                    "id": "MKmalr",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "yXyk3m",
+                            "type": "div",
+                            "name": "grid",
+                            "cmps": [
+                                {
+                                    "id": "zIfNAP",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "qRkth0",
+                                            "type": "h1",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                The best place to eat\n                burgers in Netanya\n            "
+                                            },
+                                            "cmps": [
+                                                {
+                                                    "id": "GlpEZ9",
+                                                    "type": "span",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "burgers in Netanya"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "xgVfUI",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n                elementum eget non vivamus volutpat odio cras vestibulum purus aliquam.\n            "
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "VA5ULf",
+                                            "type": "button",
+                                            "name": "primary",
+                                            "content": {
+                                                "txt": "Reservate"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "UWH012",
+                                            "type": "button",
+                                            "name": "secondary",
+                                            "content": {
+                                                "txt": "Order online"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "h0Nija",
+                                    "type": "div",
+                                    "name": "side full",
+                                    "cmps": [
+                                        {
+                                            "id": "O5Cw2V",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/hero_i03sjk.jpg"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "b6QTeB",
+                    "type": "div",
+                    "name": "orange",
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "6x72Gi",
+            "type": "div",
+            "name": "gallery-1",
+            "category": "section",
+            "cmpId": "Platforms",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-gallery-1_ifvxzh.png",
+            "cmps": [
+                {
+                    "id": "JgbClU",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "OSsIwU",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Order from your favorite app today!"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "AmWzUX",
+                            "type": "div",
+                            "name": "logos",
+                            "cmps": [
+                                {
+                                    "id": "8wGFR4",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo1_b9oukv.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Pn0yt0",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo2_xtuqse.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "KH5uR1",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo3_teuxoe.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "qQRayJ",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/logo4_f1wxhl.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "1H82JS",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674498403/logo5_vupfbh.svg"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "alxfTg",
+            "type": "div",
+            "name": "gallery-2",
+            "category": "card",
+            "cmpId": "Menu-Cards",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-gallery-2_mpu2pn.png",
+            "cmps": [
+                {
+                    "id": "pG4dMJ",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "QgQVqm",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Browse our menu"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "NpZwNS",
+                            "type": "div",
+                            "name": "cards",
+                            "cmps": [
+                                {
+                                    "id": "gSInzC",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "hamnWn",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992843/menu1_iyoob9.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "KHXbZ9",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Breakfast"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "DCxdQ8",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "oWVOs3",
+                                            "type": "button",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Explore menu ❯"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "YgdC83",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "DrX83h",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992844/menu2_t1dsw1.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "Z43abV",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Main Dishes"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "UB60LD",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "i76SAr",
+                                            "type": "button",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Explore menu ❯"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "oTFIlv",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "lKTykc",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992839/menu3_bfsxdo.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "pfYmTe",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Drinks"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "wdi9Az",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "jhxDNu",
+                                            "type": "button",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Explore menu ❯"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "uub0wY",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "olfz60",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992839/menu4_ww1dvq.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "5i4Bsb",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Desserts"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "EsO1Ax",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "G8dcBN",
+                                            "type": "button",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Explore menu ❯"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "TbONhH",
+                            "type": "div",
+                            "name": "btns",
+                            "cmps": [
+                                {
+                                    "id": "57C9Gq",
+                                    "type": "button",
+                                    "name": "primary",
+                                    "content": {
+                                        "txt": "Order online"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Ri2CQx",
+                                    "type": "button",
+                                    "name": "secondary",
+                                    "content": {
+                                        "txt": "Book a table"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "hvznN9",
+            "type": "div",
+            "name": "section-2",
+            "category": "section",
+            "cmpId": "About",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689965/hamburger-section-2_wuy8ea.png",
+            "cmps": [
+                {
+                    "id": "mgEnUf",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "xXhWad",
+                            "type": "div",
+                            "name": "content-grid",
+                            "cmps": [
+                                {
+                                    "id": "gwXsi9",
+                                    "type": "div",
+                                    "name": "side",
+                                    "cmps": [
+                                        {
+                                            "id": "SD20qj",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992840/section-2_dmkgzl.jpg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "4WLL1D",
+                                            "type": "div",
+                                            "name": "card",
+                                            "cmps": [
+                                                {
+                                                    "id": "yAMnKs",
+                                                    "type": "h3",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "Come and visit us"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "L4CxD1",
+                                                    "type": "p",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "\n                    \n                    837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles\n                "
+                                                    },
+                                                    "cmps": [
+                                                        {
+                                                            "id": "wZlbAc",
+                                                            "type": "img",
+                                                            "name": "",
+                                                            "content": {
+                                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499249/nav_cai4rg.svg"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "rAq4IR",
+                                                    "type": "p",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "\n                    \n                    (414) 857 - 0107\n                "
+                                                    },
+                                                    "cmps": [
+                                                        {
+                                                            "id": "dE5MRj",
+                                                            "type": "img",
+                                                            "name": "",
+                                                            "content": {
+                                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499249/phone_pqdfbb.svg"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "qRCgfF",
+                                                    "type": "p",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "\n                    \n                    losangeles @restaurantex.com\n                "
+                                                    },
+                                                    "cmps": [
+                                                        {
+                                                            "id": "Vvmq3P",
+                                                            "type": "img",
+                                                            "name": "",
+                                                            "content": {
+                                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499249/email_bdtklk.svg"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "KPTTKX",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "IYuZ5i",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "About us"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "F79lUs",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n                elementum eget non vivamus volutpat odio cras vestibulum purus aliquam.\n            "
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "xZOtf6",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Lorem ipsum dolor sit amet consectetur adipiscing elit enim bibendum sed et aliquet aliquet\n                risus tempor semper odio egestas id pulvinar consectetur elit tortor non hac pellentesque\n                lacus donec accumsan quisque ultricies adipiscing mauris tortor cras est eu accumsan mauris.\n            "
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "QzNqbq",
+                                            "type": "div",
+                                            "name": "btns",
+                                            "cmps": [
+                                                {
+                                                    "id": "5atZ2c",
+                                                    "type": "button",
+                                                    "name": "primary",
+                                                    "content": {
+                                                        "txt": "Visit us"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "klj3l9",
+                                                    "type": "button",
+                                                    "name": "secondary",
+                                                    "content": {
+                                                        "txt": "Join our team"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "AfYGns",
+            "type": "div",
+            "name": "gallery-3",
+            "category": "card",
+            "cmpId": "Menu-Items",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689965/hamburger-gallery-3_bdqydx.png",
+            "cmps": [
+                {
+                    "id": "5IkqBI",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "oWsVtX",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Browse our menu"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "H2jLTB",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "\n        Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n        elementum.\n    "
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "YkvKfi",
+                            "type": "div",
+                            "name": "cards",
+                            "cmps": [
+                                {
+                                    "id": "qyyBxu",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "5i23wj",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "SOW77k",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992840/gallery3-1_taymau.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "NbXCEV",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "wZwUUz",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 10.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "GgpPL3",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Classic Burger"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "j7h11n",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "QwRhtO",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "pwPj6D",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "H4LVWd",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992841/gallery3-2_dj1ifj.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "BxwoJM",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "3JCLV0",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 6.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "LayTGM",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Chocolate Milkshake"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "CGq03k",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "kLThs6",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "Q8IkUs",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "XhnJYe",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992841/gallery3-3_tug28u.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "nWPN6Q",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "FTJHp5",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 5.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "iaiWuk",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Classic Fries"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "gnMWCs",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "2lqhQV",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "sAg7IA",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "lyYouE",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992841/gallery3-4_un93hy.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "GY41T5",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "4Nvhft",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 8.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "JR0PCq",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Pancakes"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "goWYAA",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "TmlCEp",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "n4k2gp",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "V9lt7i",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992841/gallery3-5_z89sbu.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "A6WDBb",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "LWvk7G",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 3.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "mahW1w",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Ice Cream"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "7OvhNo",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "g7Efqh",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "WrtBP9",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "cCCaPb",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/gallery3-6_ieakft.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "QvKIsJ",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "DPUsqW",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 9.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "KeDqAs",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Chicken Burger"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "Fqi4uo",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "slGOAK",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "qxsaAW",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "P7Hi6L",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992841/gallery3-7_frltgi.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "N4uXiR",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "S6A2dO",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 6.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "lnEJy7",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Egg toast"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "bworbm",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "8o8W65",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "LXux80",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "a3EZFX",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/gallery3-8_nttopv.jpg"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "d2KwLe",
+                                                    "type": "div",
+                                                    "name": "price",
+                                                    "cmps": [
+                                                        {
+                                                            "id": "inCcXT",
+                                                            "type": "p",
+                                                            "name": "",
+                                                            "content": {
+                                                                "txt": "$ 1.99 USD"
+                                                            },
+                                                            "cmps": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "Q7OHQu",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Regular Soda"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "w0gY7D",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Lorem ipsum dolor sit amet dolor consectetur adipiscing elit"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "qDkjIm",
+            "type": "div",
+            "name": "form-2",
+            "category": "subscribe",
+            "thumbnail": "",
+            "cmps": [
+                {
+                    "id": "e65q8R",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674685383/img2_wxsmnq.jpg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "aHf2NJ",
+                    "type": "div",
+                    "name": "wrapper",
+                    "cmps": [
+                        {
+                            "id": "K4Oivj",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Stay Tuned"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "jLmnei",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Subscribe to our newsletter and never miss our desings, latest news, etc."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Ju5HVm",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Our newsletter is sent once a week, every Monday."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "vVStD9",
+                            "type": "subscribe",
+                            "name": "form-2-inner-form",
+                            "cmps": [
+                                {
+                                    "id": "AYXwuu",
+                                    "type": "label",
+                                    "name": "",
+                                    "cmps": [
+                                        {
+                                            "id": "8Bc69y",
+                                            "type": "input",
+                                            "name": "",
+                                            "content": {
+                                                "placeholder": "Enter your email here"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "LJVYqu",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": ""
+                                    },
+                                    "cmps": [
+                                        {
+                                            "id": "KZeDsd",
+                                            "type": "i",
+                                            "name": "fa-regular fa-paper-plane",
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ZlbOYX",
+            "type": "div",
+            "name": "section-3",
+            "category": "section",
+            "cmpId": "Cta",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-section-3_haodxt.png",
+            "cmps": [
+                {
+                    "id": "VAF4cX",
+                    "type": "div",
+                    "name": "layout-container-grid",
+                    "cmps": [
+                        {
+                            "id": "LO4c2Z",
+                            "type": "div",
+                            "name": "content",
+                            "cmps": [
+                                {
+                                    "id": "Zj2zA3",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Taste the most delicious burger in Netanya, Israel"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "s0nsnu",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "\n            Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n            elementum.\n        "
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "8OIyNO",
+                                    "type": "div",
+                                    "name": "btns",
+                                    "cmps": [
+                                        {
+                                            "id": "IXvYDB",
+                                            "type": "button",
+                                            "name": "secondary",
+                                            "content": {
+                                                "txt": "Order online"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "YufhRJ",
+                                            "type": "button",
+                                            "name": "primary",
+                                            "content": {
+                                                "txt": "About us"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "qyTLV0",
+                            "type": "div",
+                            "name": "side half-bleed",
+                            "cmps": [
+                                {
+                                    "id": "VPmPzt",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992840/section-3_beqq9w.jpg"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "kH0MQY",
+            "type": "div",
+            "name": "section-4",
+            "category": "galleries",
+            "cmpId": "Gallery",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-gallery-4_w4udlf.png",
+            "cmps": [
+                {
+                    "id": "VojiAr",
+                    "type": "div",
+                    "name": "layout-container",
+                    "cmps": [
+                        {
+                            "id": "A2giRD",
+                            "type": "div",
+                            "name": "header",
+                            "cmps": [
+                                {
+                                    "id": "GJ2bJM",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Follow us on Instagram"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "3b3OGm",
+                                    "type": "button",
+                                    "name": "primary",
+                                    "content": {
+                                        "txt": "Follow us"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ghaOYO",
+                            "type": "div",
+                            "name": "images-gallery-section-4",
+                            "cmps": [
+                                {
+                                    "id": "rTEFc5",
+                                    "type": "div",
+                                    "name": "img-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "CAevkK",
+                                            "type": "span",
+                                            "name": "tags-big",
+                                            "content": {
+                                                "txt": "#Hamburger #Tasty #Delicious #CheeseBurger #AmericanStreeFood"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "chkLy7",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499934/section-4-1_pa07aa.jpg"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "LIQLp9",
+                                    "type": "div",
+                                    "name": "img-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "poDgNA",
+                                            "type": "span",
+                                            "name": "tags-big",
+                                            "content": {
+                                                "txt": "#Hamburger #Tasty #Delicious #CheeseBurger #AmericanStreeFood"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "0JrWtz",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499934/section-4-2_a8ycgi.jpg"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "aeXyRs",
+                                    "type": "div",
+                                    "name": "second-half",
+                                    "cmps": [
+                                        {
+                                            "id": "xKE8Hu",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "TcY2uO",
+                                                    "type": "span",
+                                                    "name": "tags-small",
+                                                    "content": {
+                                                        "txt": "#Hamburger #Tasty #Delicious #CheeseBurger #AmericanStreeFood"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "tyOg0D",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499934/section-4-3_ml1nyx.jpg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "8MljLW",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "YjD6vh",
+                                                    "type": "span",
+                                                    "name": "tags-small",
+                                                    "content": {
+                                                        "txt": "#Hamburger #Tasty #Delicious #CheeseBurger #AmericanStreeFood"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "J0TxOC",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499934/section-4-4_ll84id.jpg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "5Ehs9a",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "SclAOF",
+                                                    "type": "span",
+                                                    "name": "tags-small",
+                                                    "content": {
+                                                        "txt": "#Hamburger #Tasty #Delicious #CheeseBurger #AmericanStreeFood"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "fHXIRs",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499933/section-4-5_ooibnq.jpg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "LKQP8A",
+                                            "type": "div",
+                                            "name": "img-wrapper",
+                                            "cmps": [
+                                                {
+                                                    "id": "2frZpj",
+                                                    "type": "span",
+                                                    "name": "tags-small",
+                                                    "content": {
+                                                        "txt": "#Hamburger #Tasty #Delicious #CheeseBurger #AmericanStreeFood"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "jhZWJ3",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499934/section-4-6_whwdu4.jpg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "pqwtNm",
+            "type": "div",
+            "name": "section-5",
+            "category": "form",
+            "cmpId": "Form",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689963/hamburger-form_pgtr8i.png",
+            "cmps": [
+                {
+                    "id": "Q2Ygkd",
+                    "type": "div",
+                    "name": "layout-container-grid",
+                    "cmps": [
+                        {
+                            "id": "VsC6rW",
+                            "type": "div",
+                            "name": "content",
+                            "cmps": [
+                                {
+                                    "id": "6GndnO",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Book your table now"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "tWsMii",
+                                    "type": "p",
+                                    "name": "sub-heading",
+                                    "content": {
+                                        "txt": "\n            Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n            elementum.\n        "
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "poQ0cz",
+                                    "type": "div",
+                                    "name": "mini-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "Y2L6T8",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674495814/nav2_alsw3b.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "XhaVry",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "4yHxeq",
+                                    "type": "div",
+                                    "name": "mini-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "vyj5sx",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674495814/tel2_aea0es.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "67D70i",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "(414) 857 - 0107"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "r8q9Fy",
+                                    "type": "div",
+                                    "name": "mini-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "QN9EtO",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674495814/email2_bwssnf.svg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "YjLvc7",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "losangeles@restaurantex.com"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "K8RZOM",
+                            "type": "div",
+                            "name": "side half-bleed",
+                            "cmps": [
+                                {
+                                    "id": "iUufQY",
+                                    "type": "form",
+                                    "name": "form",
+                                    "cmps": [
+                                        {
+                                            "id": "tMfGKp",
+                                            "type": "label",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "1lDYhr",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Name",
+                                                    "content": {
+                                                        "placeholder": "Enter your Name"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "ZuqsPo",
+                                            "type": "label",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "4YWu7N",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Email Address",
+                                                    "content": {
+                                                        "placeholder": "Enter your Email Adress"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "hfFgUX",
+                                            "type": "label",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "6QqbOl",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Phone",
+                                                    "content": {
+                                                        "placeholder": "Enter your Phone"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "1Nlvgz",
+                                            "type": "label",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "piGpzi",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Location",
+                                                    "content": {
+                                                        "placeholder": "Enter your Location"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "xXCjiL",
+                                            "type": "label",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "GpXMjh",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Date",
+                                                    "content": {
+                                                        "placeholder": "Enter your Date"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "UuNfSB",
+                                            "type": "label",
+                                            "name": "",
+                                            "cmps": [
+                                                {
+                                                    "id": "kdFU53",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Schedule",
+                                                    "content": {
+                                                        "placeholder": "Enter your Schedule"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "YDSY5g",
+                                            "type": "label",
+                                            "name": "add-note",
+                                            "cmps": [
+                                                {
+                                                    "id": "w4gfYM",
+                                                    "type": "input",
+                                                    "name": "",
+                                                    "inputName": "Add a note",
+                                                    "content": {
+                                                        "placeholder": "Enter your notes"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "mWaVs1",
+                                            "type": "button",
+                                            "name": "primary",
+                                            "content": {
+                                                "txt": "Book a table"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "kB5TAt",
+            "type": "div",
+            "name": "section-6",
+            "cmpId": "Map",
+            "cmps": [
+                {
+                    "id": "zOp13Tv",
+                    "type": "map",
+                    "name": "map",
+                    "category": "map",
+                    "content": {
+                        "lat": 32.3215,
+                        "lng": 34.8532,
+                        "zoom": 10,
+                        "markers": [
+                            {
+                                "name": "Marker1",
+                                "id": "123445",
+                                "lat": 32.3215,
+                                "lng": 34.8532
+                            },
+                            {
+                                "name": "Marker2",
+                                "id": "123465",
+                                "lat": 32.3615,
+                                "lng": 34.8932
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "tXEFIG",
+            "type": "div",
+            "name": "wap-5-footer",
+            "category": "footer",
+            "cmpId": "Footer",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674690260/hamburger-footer_x9toyr.png",
+            "cmps": [
+                {
+                    "id": "Ht5D9i",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "© Copyright - Restaurante X | Designed by quix - Powered by quix"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ],
+    "themeClass": "wap5-primary",
+    "breakpoints": { "mobileLayout": 680, "tabletLayout": 880, "desktopLayout": 1300 },
+    "msgs": {
+        "guest1": [
+            { "by": "customer", "txt": "Hey, man! What's up, Mr Stark?", "date": 1674733305792 },
+            { "by": "owner", "txt": "Kid, where'd you come from?", "date": 1674133305792 },
+            { "by": "customer", "txt": "Field trip!", "date": 1674133305792 },
+            {
+                "by": "owner",
+                "txt": "Uh, what is this guy's problem, Mr. Stark?",
+                "date": 1674133305792
+            },
+            {
+                "by": "customer",
+                "txt": "Uh, he's from space, he came here to steal a necklace from a wizard.",
+                "date": 1674133305792
+            }
+        ],
+        "guest2": [
+            { "by": "customer", "txt": "hahaha", "date": 1674133305792 },
+            { "by": "owner", "txt": "Yes this is lit", "date": 1674133305792 },
+            { "by": "customer", "txt": "help me please!", "date": 1674133305792 },
+            { "by": "owner", "txt": "NOOO!" },
+            { "by": "customer", "txt": "I love Wix!", "date": 1674133305792 }
+        ]
+    },
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674500846/wap5-thumbnail_n4g3mz.jpg",
+    "title": "Restaurant Webflow"
+}

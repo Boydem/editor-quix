@@ -1,0 +1,141 @@
+{
+    "id": "zS62aCi",
+    "type": "div",
+    "name": "map-and-social layout-container",
+    "category": "social",
+    "thumbnail": "https://res.cloudinary.com/dsperrtyj/image/upload/v1674996815/map-social_g2yd7b.png",
+    "cmps": [
+        {
+            "id": "cIwd2asaa",
+            "type": "div",
+            "name": "social-map",
+            "cmps": [
+                {
+                    "id": "z8s52433",
+                    "type": "map",
+                    "name": "wap-5-map",
+                    "category": "map",
+                    "content": {
+                        "lat": 32.3215,
+                        "lng": 34.8532,
+                        "zoom": 10,
+                        "markers": [
+                            {
+                                "id": "1tsrewt",
+                                "lat": 32.3215,
+                                "lng": 34.8532
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "1Sgfdg2s",
+            "type": "div",
+            "name": "social",
+            "cmps": [
+                {
+                    "id": "zIN5h3dh",
+                    "type": "div",
+                    "name": "text-wrapper",
+                    "cmps": [
+                        {
+                            "id": "4535345",
+                            "type": "h1",
+                            "name": "",
+                            "content": {
+                                "txt": "Here you can find us"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "zINh3dh",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Type your address here"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "zI1Nh33dh",
+                    "type": "div",
+                    "name": "social-icons",
+                    "cmps": [
+                        {
+                            "id": "zINh33dh",
+                            "type": "p",
+                            "name": "follow-us-title",
+                            "content": {
+                                "txt": "Follow us"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Sgfdg23s",
+                            "type": "social",
+                            "name": "social-2",
+                            "category": "social",
+                            "cmpId": "Cta-1",
+                            "cmps": [
+                                {
+                                    "id": "gfsdsgsd",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "href": "",
+                                        "iconImg": "fa-brands fa-facebook"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "hsgf2456",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "href": "",
+                                        "iconImg": "fa-brands fa-square-twitter"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "3425dfg",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "iconImg": "fa-brands fa-linkedin",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "4sw5g2ff",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "iconImg": "fa-brands fa-square-instagram",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "23fds2aF",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "iconImg": "fa-brands fa-square-github",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

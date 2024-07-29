@@ -1,0 +1,210 @@
+{
+    "id": "g8sUdu",
+    "type": "div",
+    "name": "wap-7-section-4",
+    "category": "section",
+    "cmpId": "Link-Section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-section-4-edited_fb3za4.jpg",
+    "cmps": [
+        {
+            "id": "DWWIb3",
+            "type": "div",
+            "name": "logo",
+            "cmps": [
+                {
+                    "id": "ZOCXp9",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "THE POP SHOW"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "sUNc1t",
+                    "type": "div",
+                    "name": "logo-wrapper",
+                    "cmps": [
+                        {
+                            "id": "uZ1ibs",
+                            "type": "img",
+                            "name": {},
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674480268/wings-casset_gwzumn.svg"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ePl2Nv",
+            "type": "div",
+            "name": "wap-7-section-5",
+            "cmps": [
+                {
+                    "id": "sRxkhi",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Menu"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "VwYibY",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "Episodes",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "mhyyMG",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "The Pop Blog",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "WPArdV",
+            "type": "div",
+            "name": "wap-7-section-6",
+            "cmps": [
+                {
+                    "id": "x1jZ7p",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Contact Me"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "6liQXe",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "info@mysite.com",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "eNLM3R",
+                    "type": "div",
+                    "name": "social",
+                    "cmps": [
+                        {
+                            "id": "Il6YnX",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/faceboo_lxkl8r.png"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "TTHwOD",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996211/twitte_ktx9zq.png"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "YG5Qli",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996213/youtube-min_fhkska.png"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "7sOnRA",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/instagram_bnn66q.png"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "qeaMCS",
+            "type": "div",
+            "name": "wap-7-section-7",
+            "cmps": [
+                {
+                    "id": "Sk3kmX",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Listen Now"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "vIIBGz",
+                    "type": "div",
+                    "name": "links-wrapper",
+                    "cmps": [
+                        {
+                            "id": "bxo7dW",
+                            "type": "a",
+                            "name": "link apple",
+                            "content": {
+                                "txt": "APPLE PODCASTS",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "OHosAS",
+                            "type": "a",
+                            "name": "link spotify",
+                            "content": {
+                                "txt": "SPOTIFY",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "TwoFSy",
+                            "type": "a",
+                            "name": "link stitcher",
+                            "content": {
+                                "txt": "STITCHER",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "bNWJsC",
+                            "type": "a",
+                            "name": "link google",
+                            "content": {
+                                "txt": "GOOGLE PODCASTS",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

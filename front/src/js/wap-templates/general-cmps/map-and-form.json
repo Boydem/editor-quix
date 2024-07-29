@@ -1,0 +1,299 @@
+{
+    "id": "zS6aCi",
+    "type": "div",
+    "name": "form-and-map",
+    "category": "form",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674690943/fdsafasd_ppwhon.png",
+    "cmps": [
+        {
+            "id": "yxFLdX",
+            "type": "form",
+            "name": "",
+            "cmps": [
+                {
+                    "id": "zINhdh",
+                    "type": "h1",
+                    "name": "",
+                    "content": {
+                        "txt": "Contact Us"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "RSLAsV",
+                    "type": "label",
+                    "name": "",
+                    "content": {
+                        "htmlFor": "firstName",
+                        "txt": "First Name"
+                    },
+                    "cmps": [
+                        {
+                            "id": "NdVLEY",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "First Name",
+                            "content": {
+                                "inputId": "firstName",
+                                "inputName": "firstName",
+                                "type": "text",
+                                "placeholder": "e.g Kat"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ZDF07v",
+                    "type": "label",
+                    "name": "",
+                    "content": {
+                        "htmlFor": "lastName",
+                        "txt": ""
+                    },
+                    "cmps": [
+                        {
+                            "id": "9lo359",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "Last Name",
+                            "content": {
+                                "inputId": "lastName",
+                                "inputName": "lastName",
+                                "type": "text",
+                                "placeholder": "e.g Jones"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "KgUPbw",
+                    "type": "label",
+                    "name": "",
+                    "content": {
+                        "htmlFor": "email",
+                        "txt": "Email"
+                    },
+                    "cmps": [
+                        {
+                            "id": "it9TiH",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "Email Address",
+                            "content": {
+                                "inputId": "email",
+                                "inputName": "email",
+                                "type": "email",
+                                "placeholder": "e.g example@gmail.com"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "RDUJAL",
+                    "type": "label",
+                    "name": "",
+                    "content": {
+                        "htmlFor": "phone",
+                        "txt": "Phone"
+                    },
+                    "cmps": [
+                        {
+                            "id": "MrwlMn",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "Phone Number",
+                            "content": {
+                                "inputId": "phone",
+                                "inputName": "phone",
+                                "type": "tel",
+                                "placeholder": "e.g 123-456-7890"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "mIPait",
+                    "type": "label",
+                    "name": "",
+                    "content": {
+                        "htmlFor": "message",
+                        "txt": "Message"
+                    },
+                    "cmps": [
+                        {
+                            "id": "O5uWz8",
+                            "type": "input",
+                            "inputName": "Message",
+                            "content": {
+                                "inputId": "message",
+                                "inputName": "message",
+                                "type": "txt",
+                                "placeholder": "Type your message here..."
+                            },
+                            "name": "",
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "xlRFen",
+                    "type": "button",
+                    "name": "btn-submit",
+                    "content": {
+                        "txt": "Submit"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "mwg261",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Thanks for submitting!"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "2rGTQi",
+            "type": "div",
+            "name": "contact-details",
+            "cmps": [
+                {
+                    "id": "KsaQ8C",
+                    "type": "h4",
+                    "name": "",
+                    "content": {
+                        "txt": "Visit Us:\n"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "y9e2o7",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "bQEKEZ",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Street:\n"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Jx0HX6",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "City/Town:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "7gUyDL",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "State/Province/Region:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "9cByzc",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Zip/Postal Code:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "BsYSwL",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Phone Number:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "A3YQr0",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Country:"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "luPq6s",
+                    "type": "div",
+                    "name": "social",
+                    "cmps": [
+                        {
+                            "id": "E9BxFK",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/faceboo_lxkl8r.png"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "81k4gp",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674228943/whatsapp-121_1_dfeqlm.png"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "4qm955",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/instagram_bnn66q.png"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cIwdsaa",
+            "type": "div",
+            "name": "map",
+            "cmps": [
+                {
+                    "id": "z85433",
+                    "type": "map",
+                    "name": "wap-2-map",
+                    "category": "map",
+                    "content": {
+                        "lat": 32.3215,
+                        "lng": 34.8532,
+                        "zoom": 10,
+                        "markers": [
+                            {
+                                "id": "1trewt",
+                                "lat": 32.3215,
+                                "lng": 34.8532
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "id": "kB5TAt",
+    "type": "div",
+    "name": "section-6",
+    "cmpId": "Map",
+    "cmps": [
+        {
+            "id": "zOp13Tv",
+            "type": "map",
+            "name": "map",
+            "category": "map",
+            "content": {
+                "lat": 32.3215,
+                "lng": 34.8532,
+                "zoom": 10,
+                "markers": [
+                    {
+                        "name": "Marker1",
+                        "id": "123445",
+                        "lat": 32.3215,
+                        "lng": 34.8532
+                    },
+                    {
+                        "name": "Marker2",
+                        "id": "123465",
+                        "lat": 32.3615,
+                        "lng": 34.8932
+                    }
+                ]
+            }
+        }
+    ]
+}

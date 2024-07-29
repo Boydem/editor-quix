@@ -1,0 +1,71 @@
+{
+    "id": "bdoxES",
+    "type": "div",
+    "name": "wap-7-header",
+    "category": "header",
+    "cmpId": "Header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574342/wap-7-header_pjryol.jpg",
+    "cmps": [
+        {
+            "id": "FDyQBv",
+            "type": "div",
+            "name": "logo",
+            "cmps": [
+                {
+                    "id": "kHVEhR",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "THE POP SHOW",
+                        "href": "#"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "4PyH6y",
+            "type": "div",
+            "name": "nav",
+            "cmps": [
+                {
+                    "id": "AgZh0v",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "Episodes",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "RapdFh",
+                    "type": "a",
+                    "name": "",
+                    "content": {
+                        "txt": "The Pop Blog",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "1R1Spq",
+            "type": "div",
+            "name": "subscribe",
+            "cmps": [
+                {
+                    "id": "3kLzrv",
+                    "type": "a",
+                    "name": "link",
+                    "content": {
+                        "txt": "SUBSCRIBE",
+                        "href": ""
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

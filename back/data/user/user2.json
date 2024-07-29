@@ -1,0 +1,55 @@
+{
+    "fullname": "Muki Ben David",
+    "username": "2",
+    "password": "2",
+    "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+    "boards": [
+        {
+            "_id": "NaDpcvZRsUI",
+            "title": "Frontend",
+            "items": [
+                {
+                    "_id": "mowZCOeti8G",
+                    "txt": "Add hamburger menu to my site",
+                    "createdAt": 1674739504585
+                },
+                {
+                    "_id": "3MORYlAqkuG",
+                    "txt": "Take pictures of my products",
+                    "createdAt": 1671739504585
+                },
+                {
+                    "_id": "xoAs86a1QB",
+                    "txt": "Get 3D Modelist for designing my website",
+                    "createdAt": 1674739504585
+                },
+                {
+                    "_id": "TOOZsUGqsV",
+                    "txt": "Send sales data to Sara",
+                    "createdAt": 1674739504585
+                }
+            ]
+        },
+        {
+            "_id": "NaDp9tRsUI",
+            "title": "Clients",
+            "items": [
+                {
+                    "_id": "mowZCOzwi8G",
+                    "txt": "improve chats",
+                    "createdAt": 1674739504585
+                },
+                {
+                    "_id": "3MORYz2qRG",
+                    "txt": "FINISH FRONT END - all flow should be working with perfect logic set and ready to be user friendly",
+                    "createdAt": 1671739504585
+                },
+                {
+                    "_id": "xoAs86bpQB",
+                    "txt": "TODAY WE CLEAN ALL COMMENTED UNUSED CODE AT 23:00 !!",
+                    "createdAt": 1674739504585
+                }
+            ]
+        }
+    ]
+}

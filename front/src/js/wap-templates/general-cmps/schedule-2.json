@@ -1,0 +1,99 @@
+{
+    "id": "awe6864",
+    "type": "div",
+    "name": "wap-schedule-2",
+    "category": "schedule",
+    "thumbnail": "https://res.cloudinary.com/dsperrtyj/image/upload/v1674840080/schedule2_htdddf.png",
+    "cmps": [
+        {
+            "id": "2rGTQi",
+            "type": "div",
+            "name": "contact-details",
+            "cmps": [
+                {
+                    "id": "KsaQ8C",
+                    "type": "h4",
+                    "name": "",
+                    "content": {
+                        "txt": "Visit Us:\n"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "y9e2o7",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "bQEKEZ",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Street:\n"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Jx0HX6",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "City/Town:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "7gUyDL",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "State/Province/Region:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "9cByzc",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Zip/Postal Code:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "BsYSwL",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Phone Number:"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "A3YQr0",
+                            "type": "p",
+                            "name": "address-street contact-detail",
+                            "content": {
+                                "txt": "Country:"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "awe6814",
+            "type": "div",
+            "name": "calander-app-container",
+            "cmps": [
+                {
+                    "id": "awe6856",
+                    "type": "schedule",
+                    "name": "schedule",
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

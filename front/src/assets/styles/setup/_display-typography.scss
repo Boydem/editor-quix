@@ -1,0 +1,110 @@
+$minViewportSize: 320;
+$maxViewportSize: 750;
+
+@mixin display-text($class, $min-size, $max-size, $max-viewport: $maxViewportSize) {
+    &.#{$class} {
+        line-height: 1.5;
+        font-size: calc(
+            #{$min-size}px + (#{$max-size} - #{$min-size}) *
+                ((100vw - #{$minViewportSize} * 1px) / (#{$max-viewport} - #{$minViewportSize}))
+        );
+    }
+}
+
+span {
+    @include display-text('text-xxl', 80, 68);
+    @include display-text('display-1', 28, 38);
+    @include display-text('display-2', 24, 36);
+    @include display-text('display-3', 24, 32);
+    @include display-text('display-4', 14, 35);
+    @include display-text('display-5', 18, 28);
+    @include display-text('display-6', 14, 24);
+    @include display-text('display-link', 14, 20);
+    @include display-text('display-p', 14, 24);
+
+    @media (min-width: $break-narrow) {
+        $maxViewportSize: $break-narrow;
+        @include display-text('text-xxl', 80, 90, $maxViewportSize);
+        @include display-text('display-1', 10, 48, $maxViewportSize);
+        @include display-text('display-2', 24, 42, $maxViewportSize);
+        @include display-text('display-3', 48, 42, $maxViewportSize);
+        @include display-text('display-4', 32, 32, $maxViewportSize);
+        @include display-text('display-5', 4, 28, $maxViewportSize);
+        @include display-text('display-6', 10, 24, $maxViewportSize);
+        @include display-text('display-link', 20, 20, $maxViewportSize);
+        @include display-text('display-p', 10, 24, $maxViewportSize);
+    }
+
+    @media (min-width: $break-wide) {
+        $maxViewportSize: 1920;
+        @include display-text('text-xxl', 80, 120, $maxViewportSize);
+        @include display-text('display-1', 10, 82, $maxViewportSize);
+        @include display-text('display-2', 10, 72, $maxViewportSize);
+        @include display-text('display-3', 10, 64, $maxViewportSize);
+        @include display-text('display-4', 20, 40, $maxViewportSize);
+        @include display-text('display-5', 4, 40, $maxViewportSize);
+        @include display-text('display-6', 9, 28, $maxViewportSize);
+        @include display-text('display-link', 13, 20, $maxViewportSize);
+        @include display-text('display-p', 10, 24, $maxViewportSize);
+    }
+}
+.home {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font: unset;
+    }
+}
+span {
+    &.text-xxl,
+    &.display-1,
+    &.display-2,
+    &.display-3,
+    &.display-4,
+    &.display-5,
+    &.display-6,
+    &.display-link,
+    &.display-p {
+        font-family: $font-family-display;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        line-height: 1.5 !important;
+    }
+
+    &.display-1,
+    &.display-2,
+    &.display-3 {
+        font-weight: 400;
+        line-height: 1.25;
+    }
+
+    &.text-xxl {
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+    }
+
+    &.display-1 {
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
+
+    &.display-4 {
+        font-weight: 400;
+    }
+
+    &.display-5 {
+        font-weight: 500;
+    }
+
+    &.display-6 {
+        font-weight: 400;
+    }
+
+    &.display-link {
+        font-weight: 600;
+    }
+}

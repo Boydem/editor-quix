@@ -1,0 +1,82 @@
+$spacings: (
+  1,
+  2,
+  3,
+  4,
+  5,
+  10,
+  15,
+  auto
+);
+
+$sides: (
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right',
+  '': ('top',
+    'left',
+    'bottom',
+    'right',
+  ),
+  'x': ('left',
+    'right',
+  ),
+  'y': ('top',
+    'bottom',
+  ),
+);
+
+$breakpoints: (
+  '': '',
+  'sm': $break-narrow,
+
+  'lg': $break-wide,
+);
+
+@each $breakName,
+$breakValue in $breakpoints {
+  @each $space in $spacings {
+
+    @each $prefix,
+    $positions in $sides {
+      @if $breakName !='' {
+        $prefix: #{$prefix}-#{$breakName};
+      }
+
+      @else {
+        $prefix: #{$prefix};
+      }
+
+      @if $breakName !='' {
+        @media (min-width: $breakValue) {
+          .p#{$prefix}-#{$space} {
+            @each $pos in $positions {
+              padding-#{$pos}: if($space ==auto, $space, #{$space * 0.5}rem);
+            }
+          }
+
+          .m#{$prefix}-#{$space} {
+            @each $pos in $positions {
+              margin-#{$pos}: if($space ==auto, $space, #{$space * 0.5}rem);
+            }
+          }
+        }
+      }
+
+      @else {
+        .p#{$prefix}-#{$space} {
+          @each $pos in $positions {
+            padding-#{$pos}: if($space ==auto, $space, #{$space * 0.5}rem);
+          }
+        }
+
+        .m#{$prefix}-#{$space} {
+          @each $pos in $positions {
+            margin-#{$pos}: if($space ==auto, $space, #{$space * 0.5}rem);
+          }
+        }
+      }
+    }
+  }
+}

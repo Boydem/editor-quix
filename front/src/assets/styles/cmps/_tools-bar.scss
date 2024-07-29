@@ -1,0 +1,194 @@
+.tools-bar {
+    z-index: 98;
+    position: sticky;
+    top: $app-header-height;
+    border-bottom: 1px solid $editor-lightgray;
+    background-color: $clr1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: $toolbar-height;
+    // mobile hidden
+    display: none;
+    .logo-container {
+        max-width: 100%;
+        max-height: 70%;
+        .quix-logo {
+            width: 85px;
+            height: 80%;
+        }
+    }
+    > * {
+        height: 100%;
+    }
+}
+.curr-site-name {
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 1em;
+    padding: 2px 0.667em;
+    display: flex;
+    gap: 2px;
+    background-color: #edeef1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    color: rgba(15, 15, 15, 0.75);
+    margin-inline-end: 1em;
+    pre.prefix {
+        font: inherit;
+        font-weight: 600;
+        color: $clr7;
+    }
+    span.name {
+        color: $clr2;
+    }
+}
+.site-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .publish-url-prefix {
+        padding: 2px $spacing-s;
+        display: grid;
+        grid-template-columns: auto minmax(auto, 80px) auto;
+        gap: 2px;
+        background-color: darken($clr1, 5%);
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25em;
+        color: rgba($clr2, 75%);
+        margin-inline-end: 1em;
+
+        .btn-publish {
+            cursor: pointer;
+            color: lighten($editor-active-clr, 1%);
+            background: transparent;
+            padding: 0;
+            font-weight: 600;
+            margin-inline-start: 0.5em;
+            color: lighten($editor-active-clr, 10%);
+            align-self: bottom;
+            border-radius: 0.1em;
+        }
+        input {
+            color: rgba($clr2, 50%);
+            padding: 0;
+            background-color: transparent;
+            transition: all 0.3s;
+            &:focus {
+                color: $editor-active-clr;
+            }
+        }
+    }
+}
+
+.icons-group {
+    display: flex;
+    align-items: center;
+    background-color: $clr1;
+
+    &.left {
+        justify-self: start;
+    }
+    &.right {
+        justify-self: end;
+    }
+    &.center {
+        justify-self: center;
+    }
+
+    &.b-r {
+        border-right: 1px solid $editor-lightgray;
+    }
+    &.b-l {
+        border-left: 1px solid $editor-lightgray;
+    }
+}
+
+.icon-container {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    font-size: px-to-rem(20px);
+    &.b-r {
+        border-right: 1px solid $editor-lightgray;
+    }
+    &.b-l {
+        border-left: 1px solid $editor-lightgray;
+    }
+}
+
+.btn-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: 3px;
+        width: 1em;
+        height: 1em;
+        transform: scale(0.15);
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+    &:hover {
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        &::before {
+            transform: scale(1.5);
+            color: lighten($clr2, 10%);
+            background-color: $editor-lightgray;
+        }
+    }
+
+    &.small {
+        font-size: 1rem;
+        color: lighten($clr2, 30%);
+    }
+    &.alert {
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        background-color: transparent;
+    }
+    &.alert:hover {
+        background-color: transparent;
+        color: $error-red;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &::before {
+            background-color: $error-red-light;
+        }
+    }
+    &.active {
+        color: $editor-active-clr;
+        &::before {
+            transform: scale(1.5);
+            background-color: $editor-active-bg;
+        }
+    }
+    > svg {
+        z-index: 2;
+        width: 1em;
+        height: 1em;
+    }
+}
+@media (min-width: 960px) {
+    .tools-bar {
+        display: flex;
+        .icon-container {
+            width: 2.5em;
+        }
+    }
+}

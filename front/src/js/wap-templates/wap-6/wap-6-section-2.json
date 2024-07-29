@@ -1,0 +1,240 @@
+{
+    "id": "2O36xk",
+    "type": "div",
+    "name": "wap-6-section-2",
+    "category": "form",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674563730/wap-6-form-edited_bjmwks.jpg",
+    "cmps": [
+        {
+            "id": "RioIyK",
+            "type": "div",
+            "name": "",
+            "cmps": [
+                {
+                    "id": "615W1N",
+                    "type": "div",
+                    "name": "adress",
+                    "cmps": [
+                        {
+                            "id": "iPne9s",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Address"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "qukEky",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "500 Terry Francois Street,  San Francisco, CA 94158"
+                            },
+                            "cmps": [
+                                {
+                                    "id": "qBbNtq",
+                                    "type": "br",
+                                    "name": "",
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "oaTG9y",
+                    "type": "div",
+                    "name": "contact",
+                    "cmps": [
+                        {
+                            "id": "KcST5k",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Contact"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "5QJazd",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Info@mysite.com 123-456-7890"
+                            },
+                            "cmps": [
+                                {
+                                    "id": "Jop8Pq",
+                                    "type": "br",
+                                    "name": "",
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "mXRrMQ",
+            "type": "div",
+            "name": "",
+            "cmps": [
+                {
+                    "id": "hUHYcw",
+                    "type": "div",
+                    "name": "opening-hours",
+                    "cmps": [
+                        {
+                            "id": "iIwXG7",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Opening Hours"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "UEt14W",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Sun - Thu: 10am - 10pm  Fri - Sat: 10am - 11pm"
+                            },
+                            "cmps": [
+                                {
+                                    "id": "0WARXd",
+                                    "type": "br",
+                                    "name": "",
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "Hlrjnw",
+                    "type": "div",
+                    "name": "follow",
+                    "cmps": [
+                        {
+                            "id": "kF3XLy",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Follow Us"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "sIn5yp",
+                            "type": "div",
+                            "name": "social-links",
+                            "cmps": [
+                                {
+                                    "id": "AXCtc4",
+                                    "type": "div",
+                                    "name": "",
+                                    "cmps": [
+                                        {
+                                            "id": "JlSOIp",
+                                            "type": "a",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Instagram",
+                                                "href": "about:blank#"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "F0ceDB",
+                                    "type": "div",
+                                    "name": "",
+                                    "cmps": [
+                                        {
+                                            "id": "CJvqqM",
+                                            "type": "a",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Facebook",
+                                                "href": "about:blank#"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "QlgPWS",
+                                    "type": "div",
+                                    "name": "",
+                                    "cmps": [
+                                        {
+                                            "id": "F52E2W",
+                                            "type": "a",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "TikTok",
+                                                "href": "about:blank#"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "X8mP1y",
+            "type": "div",
+            "name": "subscribe",
+            "cmps": [
+                {
+                    "id": "0LJr9q",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "Subscribe to our newsletter for some sweet stuff"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "z8aOyC",
+                    "type": "label",
+                    "name": "",
+                    "content": {
+                        "txt": "Enter your mail *",
+                        "htmlFor": "email"
+                    },
+                    "cmps": [
+                        {
+                            "id": "6vKU4Q",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "Enter your mail *",
+                            "content": {
+                                "inputId": "email",
+                                "placeholder": "quix@appsus.com"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "Eq2vPd",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Subscribe"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+.app-footer {
+    border-top: 1px solid rgba($clr18, 0.25);
+    font-size: 14px;
+    padding: 4rem 0;
+    text-align: center;
+    & .logo {
+        font-size: #{fluid(28px, 32px, $break-narrow, $break-wide)};
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1;
+        display: block;
+    }
+
+    & .container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto 4rem;
+    }
+
+    @media (min-width: $break-narrow) {
+        .footer-webix {
+            margin: 0 auto;
+            max-width: 33%;
+        }
+    }
+}

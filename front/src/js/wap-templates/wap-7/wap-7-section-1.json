@@ -1,0 +1,162 @@
+{
+    "id": "VcUxpP",
+    "type": "div",
+    "name": "wap-7-section-1",
+    "category": "section",
+    "cmpId": "Platforms-Section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574419/wap-7-section-1_r9vxua.jpg",
+    "cmps": [
+        {
+            "id": "D9iLxb",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "AVALIABLE ON"
+            },
+            "cmps": []
+        },
+        {
+            "id": "XNlCsz",
+            "type": "div",
+            "name": "platforms",
+            "cmps": [
+                {
+                    "id": "hROlm1",
+                    "type": "a",
+                    "name": "link",
+                    "content": {
+                        "txt": "APPLE PODCASTS",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "nTmQlr",
+                    "type": "a",
+                    "name": "link",
+                    "content": {
+                        "txt": "SPOTIFY",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "ndUVKR",
+                    "type": "a",
+                    "name": "link",
+                    "content": {
+                        "txt": "STITCHER",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "h4qefp",
+                    "type": "a",
+                    "name": "link",
+                    "content": {
+                        "txt": "GOOGLE PODCASTS",
+                        "href": "about:blank#"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "HSqA0H",
+            "type": "div",
+            "name": "about",
+            "cmps": [
+                {
+                    "id": "9ZtLuB",
+                    "type": "div",
+                    "name": "wrapper",
+                    "cmps": [
+                        {
+                            "id": "jvDhuo",
+                            "type": "div",
+                            "name": "about-img",
+                            "cmps": [
+                                {
+                                    "id": "RMpEDa",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996213/man-min_hee8b9.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "u7Pmel",
+                                    "type": "div",
+                                    "name": "about-intro",
+                                    "cmps": [
+                                        {
+                                            "id": "wqYtql",
+                                            "type": "span",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "TIM RICKMAN"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "XKAkPf",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Making the best of pop out of popular."
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2An6BK",
+                            "type": "div",
+                            "name": "about-desc",
+                            "cmps": [
+                                {
+                                    "id": "BseZeI",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996213/casset_x4jaa7.png"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "9JB5lp",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit\n                Text” or double click me to add your own content and make changes to the font.\n            "
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ROna7w",
+                            "type": "div",
+                            "name": "planet",
+                            "cmps": [
+                                {
+                                    "id": "r8qrp1",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/planet_yzusve.svg"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

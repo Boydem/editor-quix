@@ -1,0 +1,36 @@
+// for type scale
+$minViewportSize: 320;
+$maxViewportSize: 750;
+
+body {
+    font-family: $font-family !important;
+    font-size: $base-font-size;
+    line-height: $base-font-ratio;
+    color: $clr2;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+    moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: “liga” on;
+
+    & .logo {
+        font-family: $font-family-display;
+        letter-spacing: -0.1rem;
+    }
+}
+
+// text helpers
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-xbold {
+    font-weight: 800;
+}
+
+.text-muted {
+    color: $clr18;
+}
+
+/* Headings */

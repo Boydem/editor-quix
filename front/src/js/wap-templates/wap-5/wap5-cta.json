@@ -1,0 +1,83 @@
+{
+    "id": "ZlbOYX",
+    "type": "div",
+    "name": "section-3",
+    "category": "section",
+    "cmpId": "Cta",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-section-3_haodxt.png",
+    "cmps": [
+        {
+            "id": "VAF4cX",
+            "type": "div",
+            "name": "layout-container-grid",
+            "cmps": [
+                {
+                    "id": "LO4c2Z",
+                    "type": "div",
+                    "name": "content",
+                    "cmps": [
+                        {
+                            "id": "Zj2zA3",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Taste the most delicious burger in Netanya, Israel"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "s0nsnu",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "\n            Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n            elementum.\n        "
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "8OIyNO",
+                            "type": "div",
+                            "name": "btns",
+                            "cmps": [
+                                {
+                                    "id": "IXvYDB",
+                                    "type": "button",
+                                    "name": "secondary",
+                                    "content": {
+                                        "txt": "Order online"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "YufhRJ",
+                                    "type": "button",
+                                    "name": "primary",
+                                    "content": {
+                                        "txt": "About us"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "qyTLV0",
+                    "type": "div",
+                    "name": "side half-bleed",
+                    "cmps": [
+                        {
+                            "id": "VPmPzt",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992840/section-3_beqq9w.jpg"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

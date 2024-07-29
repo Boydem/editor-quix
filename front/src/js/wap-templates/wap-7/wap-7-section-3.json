@@ -1,0 +1,35 @@
+{
+    "id": "iyVpgW",
+    "type": "div",
+    "name": "wap-7-section-3",
+    "category": "section",
+    "cmpId": "Image-Section",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-section-3-edited_novr4r.jpg",
+    "cmps": [
+        {
+            "id": "XMXsql",
+            "type": "img",
+            "name": "border-image",
+            "content": {
+                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996214/guitar-min_oimazj.png"
+            },
+            "cmps": []
+        },
+        {
+            "id": "vVm58f",
+            "type": "div",
+            "name": "ball-wrapper",
+            "cmps": [
+                {
+                    "id": "Rg3YD1",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/ball_v27sip.svg"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

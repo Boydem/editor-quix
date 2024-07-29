@@ -1,0 +1,237 @@
+{
+    "id": "9MSCHk",
+    "type": "div",
+    "name": "wap-2-cards",
+    "category": "card",
+    "cmpId": "Cards",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-cards_pwdxzl.jpg",
+    "cmps": [
+        {
+            "id": "on9fek",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "More Games"
+            },
+            "cmps": []
+        },
+        {
+            "id": "cWg4Hk",
+            "type": "div",
+            "name": "cards",
+            "cmps": [
+                {
+                    "id": "AMqaGM",
+                    "type": "div",
+                    "name": "card",
+                    "cmps": [
+                        {
+                            "id": "QsF5y2",
+                            "type": "div",
+                            "name": "image image-1",
+                            "cmps": [
+                                {
+                                    "id": "orNpEm",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/icon1_fwg7cx.webp"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "rjkZse",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "The Unknown"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Dgidjw",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "RPG"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "MoW9lk",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Oo2HaW",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Play Now"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "T6G35G",
+                    "type": "div",
+                    "name": "card",
+                    "cmps": [
+                        {
+                            "id": "2KhIgx",
+                            "type": "div",
+                            "name": "image image-2",
+                            "cmps": [
+                                {
+                                    "id": "08Av9R",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/icon2_i8o1qe.webp"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "oTq5yA",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Dragons Lair"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "GiMvki",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Adventure"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "zYzl9r",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Hx4Z5Z",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Play Now"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gkWpiT",
+                    "type": "div",
+                    "name": "card",
+                    "cmps": [
+                        {
+                            "id": "IIVzoU",
+                            "type": "div",
+                            "name": "image image-3",
+                            "cmps": [
+                                {
+                                    "id": "Lbn6DB",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/icon3_xdmbbb.webp"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "CJSbca",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Atactic"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "9efc3h",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Strategy"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "p6jzfH",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "1SCnwv",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Play Now"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sCh3Mm",
+            "type": "div",
+            "name": "about",
+            "cmps": [
+                {
+                    "id": "xvnZ8p",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "About us"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "JQjHyw",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "\n        I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or\n        double click me to add your own content and make changes to the font. I’m a great place for you to\n        tell a story and let your users know a little more about you.\n    "
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "5D7stf",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Learn More"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

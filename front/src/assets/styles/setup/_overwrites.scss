@@ -1,0 +1,193 @@
+.SliderRoot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    touch-action: none;
+    width: 200px;
+}
+.SliderRoot[data-orientation='horizontal'] {
+    height: 20px;
+}
+.SliderRoot[data-orientation='vertical'] {
+    flex-direction: column;
+    width: 20px;
+    height: 100px;
+}
+
+.SliderTrack {
+    background-color: $clr9;
+    position: relative;
+    flex-grow: 1;
+    border-radius: 9999px;
+}
+.SliderTrack[data-orientation='horizontal'] {
+    height: 3px;
+}
+.SliderTrack[data-orientation='vertical'] {
+    width: 3px;
+}
+
+.SliderRange {
+    position: absolute;
+    background-color: $editor-active-clr;
+    border-radius: 9999px;
+    height: 100%;
+}
+
+.SliderThumb {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $clr9;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px $clr9;
+    transition: box-shadow 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.SliderThumb:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $editor-active-clr;
+}
+// schedule cmp
+.go695645437 {
+    button.go2556357651.go2905247309.rsm-next-available-date-button {
+        display: flex;
+    }
+    button {
+        display: inline-block;
+    }
+    .go695645437 .go2556357651 {
+        display: flex;
+    }
+    .go2556357651 {
+        &:hover {
+            transition: background-color 0.15s ease-in-out;
+        }
+        transition: background-color 0.15s ease-in-out;
+
+        background-color: white;
+        color: $editor-active-clr;
+        box-shadow: inset 0px 0px 0px 2px $editor-active-clr;
+    }
+    .go4247048326 .react-calendar__tile {
+        border-radius: 6px !important;
+    }
+    .go4247048326 .active-day-tile::after {
+        border-radius: 6px !important;
+    }
+    .go4247048326 .react-calendar__tile:disabled.day-tile {
+        color: lighten($clr2, 60%);
+        &:hover {
+            color: lighten($clr2, 60%);
+        }
+        &::after {
+            background-color: #eee;
+            border-radius: 6px;
+        }
+    }
+    .go4247048326 .react-calendar__tile--active:enabled.day-tile,
+    .go4247048326 .react-calendar__tile--active:enabled:focus.day-tile {
+        color: $clr1;
+    }
+    .go4247048326 .react-calendar__tile:hover.day-tile {
+        transition: all 0.2s;
+        &:hover {
+            transition: all 0.2s;
+            border-radius: 6px;
+        }
+        background-color: $editor-active-bg;
+        border-radius: 6px;
+        color: $editor-active-clr;
+    }
+    .go4247048326 .active-day-tile:hover {
+        opacity: 1 !important;
+    }
+    .go4247048326 .react-calendar__tile--active:enabled.day-tile::after,
+    .go4247048326 .react-calendar__tile--active:enabled:focus.day-tile::after {
+        background-color: $editor-active-clr;
+        border: none;
+    }
+    button.go2556357651.rsm-confirm-button:hover {
+        background-color: $editor-active-clr;
+        color: white;
+    }
+    .go2556357651:hover {
+        opacity: 1;
+        background-color: $editor-active-clr;
+        color: white;
+    }
+    button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day.day-tile.active-day-tile {
+        color: $editor-active-clr !important;
+        background-color: $editor-active-bg;
+        box-shadow: inset 0px 0px 0px 2px $editor-active-clr;
+    }
+    .go4247048326 .react-calendar__tile--now.day-tile::after {
+        background-color: $editor-active-bg;
+    }
+}
+.schedule-meeting.schedule {
+    padding: 5rem;
+    @media (max-width: 1120px) {
+        & {
+            padding: 0;
+        }
+    }
+}
+.wap-schedule-2 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
+
+    .calander-app-container {
+        z-index: 1;
+    }
+    .contact-details {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 2;
+        background: #ff7629;
+        color: white;
+        padding: 5rem;
+        position: relative;
+        height: 100%;
+        > div {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+.mobile-open-close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wap-schedule-2-gradient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(500% 50%, rgba(28, 62, 114, 0.5), white 70%);
+    .layout-container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        justify-content: center;
+        .text-container {
+            color: white;
+            padding: 1em;
+        }
+    }
+}
+.rmsc .dropdown-heading .dropdown-heading-value {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap !important;
+}

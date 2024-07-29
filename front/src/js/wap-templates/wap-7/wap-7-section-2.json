@@ -1,0 +1,135 @@
+{
+    "id": "aKxDUQ",
+    "type": "div",
+    "name": "wap-7-section-2",
+    "category": "galleries",
+    "cmpId": "Social-Media",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574266/wap-7-section-2-edited_otymr1.jpg",
+    "cmps": [
+        {
+            "id": "XtYYoj",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "Follow Us"
+            },
+            "cmps": []
+        },
+        {
+            "id": "7iFnmw",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "@THEPOPSHOW"
+            },
+            "cmps": []
+        },
+        {
+            "id": "0WZG5X",
+            "type": "div",
+            "name": "gallery",
+            "cmps": [
+                {
+                    "id": "J8oNvA",
+                    "type": "div",
+                    "name": "gallery-wrapper",
+                    "cmps": [
+                        {
+                            "id": "vutfXg",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996217/gallery1_y0chbj.jpg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "qfvuol",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "dTBNLN",
+                    "type": "div",
+                    "name": "gallery-wrapper",
+                    "cmps": [
+                        {
+                            "id": "WscYn7",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996218/gallery2_ophjxr.jpg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "pe6Zor",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ypvTPv",
+                    "type": "div",
+                    "name": "gallery-wrapper",
+                    "cmps": [
+                        {
+                            "id": "QkgwaQ",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996221/gallery3_nsps56.jpg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "NkeKDy",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "px2Nt2",
+                    "type": "div",
+                    "name": "gallery-wrapper",
+                    "cmps": [
+                        {
+                            "id": "p9OrwQ",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996214/gallery4_bjatdw.jpg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "mnOUsr",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

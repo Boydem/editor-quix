@@ -1,0 +1,204 @@
+/* Media queries Breakpoint mixins */
+
+@mixin for-mobile-layout {
+    @media (min-width: $break-mobile) {
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (min-width: $break-narrow) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: $break-wide) {
+        @content;
+    }
+}
+
+@mixin layoutGTC($max) {
+    grid-template-columns: minmax($layoutPadding, 1fr) minmax(auto, $max) minmax($layoutPadding, 1fr);
+}
+
+/* Media  Mixins */
+
+//aspect ratio mixin
+@mixin aspect-ratio($width: 1, $height: 1) {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    > img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// Tooltip
+
+@mixin tooltip($size: 5px, $dir: left, $bgcolor: #000) {
+    background: $bgcolor;
+    position: relative;
+    &:after {
+        border-style: solid;
+        content: '';
+        display: block;
+        position: absolute;
+        @if (($dir == top) or ($dir == bottom)) {
+            border-color: $bgcolor transparent;
+            left: 50%;
+            margin-left: -$size;
+        } @else {
+            border-color: transparent $bgcolor;
+            margin-top: -$size;
+            top: 50%;
+        }
+        @if ($dir == top) {
+            border-width: 0 $size $size $size;
+            top: -$size;
+        }
+        @if ($dir == right) {
+            border-width: $size 0 $size $size;
+            right: -$size;
+        }
+        @if ($dir == bottom) {
+            border-width: $size $size 0 $size;
+            bottom: -$size;
+        }
+        @if ($dir == left) {
+            border-width: $size $size $size 0;
+            left: -$size;
+        }
+    }
+}
+
+
+// Type
+
+@mixin type($type: bold) {
+    @if $type ==bold {
+        font-variation-settings: 'wght' 430;
+    } @else if $type ==boldCondensed {
+        font-variation-settings: 'wght' 430, 'wdth' 80;
+        letter-spacing: em(6.72px);
+    } @else if $type ==condensed {
+        font-variation-settings: 'wdth' 80;
+        letter-spacing: em(6.72px);
+    } @else if $type ==light {
+        font-variation-settings: 'wght' 200;
+    }
+}
+
+// Bg-dots
+@mixin dotsClrBg($bgClr, $opacity: 1) {
+    position: relative;
+
+    &:before,
+    &:after {
+        pointer-events: none;
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &:before {
+        background-size: cover;
+        z-index: -2;
+        background: $bgClr;
+    }
+
+    &:after {
+        z-index: -1;
+        opacity: $opacity;
+        background-size: cover;
+        background-image: url(../../imgs/home-assets/bg-dots.webp);
+    }
+}
+
+@mixin dotsImgBg($bgURL, $opacity: 0.6) {
+    position: relative;
+
+    &:before,
+    &:after {
+        pointer-events: none;
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &:before {
+        background-size: cover;
+        z-index: -2;
+        background-image: url($bgURL);
+    }
+
+    &:after {
+        z-index: -1;
+        opacity: $opacity;
+        background-size: cover;
+        background-image: url(../../imgs/home-assets/bg-dots.webp);
+    }
+}
+
+@mixin linkUnderline($color: $clr2, $lineHeight: 2px, $lineClr: $clr2) {
+    display: flex;
+    align-items: center;
+    color: $color;
+    display: inline-block;
+    transition: color 0.3s background-color 0.3s;
+
+    & :first-child {
+        position: relative;
+    }
+
+    & :first-child::before {
+        content: '';
+        position: absolute;
+        bottom: -26%;
+        width: 0%;
+        height: $lineHeight;
+        background-color: $lineClr;
+        transition: width 0.5s;
+    }
+
+    &:hover *::before {
+        width: 100%;
+    }
+}

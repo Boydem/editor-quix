@@ -1,0 +1,860 @@
+{
+    "name": "wap7",
+    "owner": "admin",
+    "chatStartingMsg": "Hi there! Thanks for reaching out, How can I assist you today?",
+    "palette": ["#ffe2c1", "#c6bcff", "#000000", "#4a34c7"],
+    "leadsBoards": [
+        {
+            "id": "rrEXzIBV",
+            "title": "New",
+            "items": []
+        },
+        {
+            "id": "LHnXVSUK",
+            "title": "In Progress",
+            "items": []
+        },
+        {
+            "id": "YGJ2lJxC",
+            "title": "Done",
+            "items": []
+        }
+    ],
+    "schedule": {
+        "eventDuration": 30,
+        "daysForward": 6,
+        "data": [],
+        "days": ["sunday", "monday", "tuesday", "wednesday", "thursday"],
+        "startHour": 8,
+        "endHour": 17,
+        "meetings": []
+    },
+    "subscribers": [],
+    "cmps": [
+        {
+            "id": "bdoxES",
+            "type": "div",
+            "name": "wap-7-header",
+            "category": "header",
+            "cmpId": "Header",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574342/wap-7-header_pjryol.jpg",
+            "cmps": [
+                {
+                    "id": "FDyQBv",
+                    "type": "div",
+                    "name": "logo",
+                    "cmps": [
+                        {
+                            "id": "kHVEhR",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "THE POP SHOW",
+                                "href": "#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "4PyH6y",
+                    "type": "div",
+                    "name": "nav",
+                    "cmps": [
+                        {
+                            "id": "AgZh0v",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Episodes",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "RapdFh",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "The Pop Blog",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "1R1Spq",
+                    "type": "div",
+                    "name": "subscribe",
+                    "cmps": [
+                        {
+                            "id": "3kLzrv",
+                            "type": "a",
+                            "name": "link",
+                            "content": {
+                                "txt": "SUBSCRIBE",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4i6a5i",
+            "type": "div",
+            "name": "wap-7-hero",
+            "category": "hero",
+            "cmpId": "Hero",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-hero_tjygar.jpg",
+            "cmps": [
+                {
+                    "id": "IERTKB",
+                    "type": "div",
+                    "name": "intro-wrapper",
+                    "cmps": [
+                        {
+                            "id": "HO0WqQ",
+                            "type": "div",
+                            "name": "intro-title",
+                            "cmps": [
+                                {
+                                    "id": "LpQi4w",
+                                    "type": "h1",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "THE POP SHOW"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "OT1cYM",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/gif_ztzry8.gif"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "QkBTXD",
+                            "type": "div",
+                            "name": "intro-cta",
+                            "cmps": [
+                                {
+                                    "id": "WIx612",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "A Music Podcast for Pop Lovers"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "KXbhHe",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text”\n            or double click me to add your own content and make changes to the font.\n        "
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "dg88jz",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "LISTEN",
+                                        "href": "about:blank#"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "l71IWl",
+                    "type": "div",
+                    "name": "hero-img-wrapper",
+                    "cmps": [
+                        {
+                            "id": "jCTLZg",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996219/hero_je9okw.jpg"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "rBCidN",
+                    "type": "div",
+                    "name": "strip",
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "VcUxpP",
+            "type": "div",
+            "name": "wap-7-section-1",
+            "category": "section",
+            "cmpId": "Platforms-Section",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574419/wap-7-section-1_r9vxua.jpg",
+            "cmps": [
+                {
+                    "id": "D9iLxb",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "AVALIABLE ON"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "XNlCsz",
+                    "type": "div",
+                    "name": "platforms",
+                    "cmps": [
+                        {
+                            "id": "hROlm1",
+                            "type": "a",
+                            "name": "link",
+                            "content": {
+                                "txt": "APPLE PODCASTS",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "nTmQlr",
+                            "type": "a",
+                            "name": "link",
+                            "content": {
+                                "txt": "SPOTIFY",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "ndUVKR",
+                            "type": "a",
+                            "name": "link",
+                            "content": {
+                                "txt": "STITCHER",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "h4qefp",
+                            "type": "a",
+                            "name": "link",
+                            "content": {
+                                "txt": "GOOGLE PODCASTS",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "HSqA0H",
+                    "type": "div",
+                    "name": "about",
+                    "cmps": [
+                        {
+                            "id": "9ZtLuB",
+                            "type": "div",
+                            "name": "wrapper",
+                            "cmps": [
+                                {
+                                    "id": "jvDhuo",
+                                    "type": "div",
+                                    "name": "about-img",
+                                    "cmps": [
+                                        {
+                                            "id": "RMpEDa",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996213/man-min_hee8b9.jpg"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "u7Pmel",
+                                            "type": "div",
+                                            "name": "about-intro",
+                                            "cmps": [
+                                                {
+                                                    "id": "wqYtql",
+                                                    "type": "span",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "TIM RICKMAN"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "XKAkPf",
+                                                    "type": "p",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "Making the best of pop out of popular."
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "2An6BK",
+                                    "type": "div",
+                                    "name": "about-desc",
+                                    "cmps": [
+                                        {
+                                            "id": "BseZeI",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996213/casset_x4jaa7.png"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "9JB5lp",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit\n                Text” or double click me to add your own content and make changes to the font.\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "ROna7w",
+                                    "type": "div",
+                                    "name": "planet",
+                                    "cmps": [
+                                        {
+                                            "id": "r8qrp1",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/planet_yzusve.svg"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aKxDUQ",
+            "type": "div",
+            "name": "wap-7-section-2",
+            "category": "galleries",
+            "cmpId": "Social-Media",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574266/wap-7-section-2-edited_otymr1.jpg",
+            "cmps": [
+                {
+                    "id": "XtYYoj",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "Follow Us"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "7iFnmw",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "@THEPOPSHOW"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "0WZG5X",
+                    "type": "div",
+                    "name": "gallery",
+                    "cmps": [
+                        {
+                            "id": "J8oNvA",
+                            "type": "div",
+                            "name": "gallery-wrapper",
+                            "cmps": [
+                                {
+                                    "id": "vutfXg",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996217/gallery1_y0chbj.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "qfvuol",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "dTBNLN",
+                            "type": "div",
+                            "name": "gallery-wrapper",
+                            "cmps": [
+                                {
+                                    "id": "WscYn7",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996218/gallery2_ophjxr.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "pe6Zor",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ypvTPv",
+                            "type": "div",
+                            "name": "gallery-wrapper",
+                            "cmps": [
+                                {
+                                    "id": "QkgwaQ",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996221/gallery3_nsps56.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "NkeKDy",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "px2Nt2",
+                            "type": "div",
+                            "name": "gallery-wrapper",
+                            "cmps": [
+                                {
+                                    "id": "p9OrwQ",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996214/gallery4_bjatdw.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "mnOUsr",
+                                    "type": "span",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "@quix: #quix, #website, #freewebsite, #websitetemp, #quix.com"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ELOVxs",
+            "type": "div",
+            "name": "wap-7-cta",
+            "category": "form",
+            "cmpId": "Subscribe-Section",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-cta-edited_blfz61.jpg",
+            "cmps": [
+                {
+                    "id": "s10O4o",
+                    "type": "div",
+                    "name": "subscribe-cta",
+                    "cmps": [
+                        {
+                            "id": "tGjWbO",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "SUBSCRIBE"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "3u1d1p",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "New episodes and blog posts - weekly."
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "FEcr5c",
+                    "type": "div",
+                    "name": "subscribe-container",
+                    "cmps": [
+                        {
+                            "id": "zIzUMA",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add you own text and edit me. Let your users get to know you."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "XDyRiD",
+                            "type": "form",
+                            "name": "form",
+                            "cmps": [
+                                {
+                                    "id": "MNYWYR",
+                                    "type": "label",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Enter your email here *",
+                                        "htmlFor": "email"
+                                    },
+                                    "cmps": [
+                                        {
+                                            "id": "WrdMPD",
+                                            "type": "input",
+                                            "name": "",
+                                            "inputName": "Enter your email here *",
+                                            "content": {
+                                                "inputId": "email",
+                                                "placeholder": "quix@appsus.com"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4pn1D0",
+                            "type": "button",
+                            "name": "btn-subscribe link",
+                            "content": {
+                                "txt": "SUBSCRIBE"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "iyVpgW",
+            "type": "div",
+            "name": "wap-7-section-3",
+            "category": "section",
+            "cmpId": "Image-Section",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-section-3-edited_novr4r.jpg",
+            "cmps": [
+                {
+                    "id": "XMXsql",
+                    "type": "img",
+                    "name": "border-image",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996214/guitar-min_oimazj.png"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "vVm58f",
+                    "type": "div",
+                    "name": "ball-wrapper",
+                    "cmps": [
+                        {
+                            "id": "Rg3YD1",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/ball_v27sip.svg"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "g8sUdu",
+            "type": "div",
+            "name": "wap-7-section-4",
+            "category": "section",
+            "cmpId": "Link-Section",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574265/wap-7-section-4-edited_fb3za4.jpg",
+            "cmps": [
+                {
+                    "id": "DWWIb3",
+                    "type": "div",
+                    "name": "logo",
+                    "cmps": [
+                        {
+                            "id": "ZOCXp9",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "THE POP SHOW"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "sUNc1t",
+                            "type": "div",
+                            "name": "logo-wrapper",
+                            "cmps": [
+                                {
+                                    "id": "uZ1ibs",
+                                    "type": "img",
+                                    "name": {},
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674480268/wings-casset_gwzumn.svg"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ePl2Nv",
+                    "type": "div",
+                    "name": "wap-7-section-5",
+                    "cmps": [
+                        {
+                            "id": "sRxkhi",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Menu"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "VwYibY",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Episodes",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "mhyyMG",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "The Pop Blog",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "WPArdV",
+                    "type": "div",
+                    "name": "wap-7-section-6",
+                    "cmps": [
+                        {
+                            "id": "x1jZ7p",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Contact Me"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "6liQXe",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "info@mysite.com",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "eNLM3R",
+                            "type": "div",
+                            "name": "social",
+                            "cmps": [
+                                {
+                                    "id": "Il6YnX",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/faceboo_lxkl8r.png"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "TTHwOD",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996211/twitte_ktx9zq.png"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "YG5Qli",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996213/youtube-min_fhkska.png"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "7sOnRA",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673996212/instagram_bnn66q.png"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "qeaMCS",
+                    "type": "div",
+                    "name": "wap-7-section-7",
+                    "cmps": [
+                        {
+                            "id": "Sk3kmX",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Listen Now"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "vIIBGz",
+                            "type": "div",
+                            "name": "links-wrapper",
+                            "cmps": [
+                                {
+                                    "id": "bxo7dW",
+                                    "type": "a",
+                                    "name": "link apple",
+                                    "content": {
+                                        "txt": "APPLE PODCASTS",
+                                        "href": "about:blank#"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "OHosAS",
+                                    "type": "a",
+                                    "name": "link spotify",
+                                    "content": {
+                                        "txt": "SPOTIFY",
+                                        "href": "about:blank#"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "TwoFSy",
+                                    "type": "a",
+                                    "name": "link stitcher",
+                                    "content": {
+                                        "txt": "STITCHER",
+                                        "href": "about:blank#"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "bNWJsC",
+                                    "type": "a",
+                                    "name": "link google",
+                                    "content": {
+                                        "txt": "GOOGLE PODCASTS",
+                                        "href": "about:blank#"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "BuSXjE",
+            "type": "div",
+            "name": "wap-7-footer",
+            "category": "footer",
+            "cmpId": "Footer",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674574264/wap-7-footer-edited_ethwft.jpg",
+            "cmps": [
+                {
+                    "id": "iFRVIy",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "© 2035 by The Pop Show. Powered and secured by Wix"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ],
+    "themeClass": "wap7-primary",
+    "breakpoints": { "mobileLayout": 700, "tabletLayout": 1230, "desktopLayout": 1400 },
+    "msgs": {},
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674479603/wap-7-thumbnail_f7fyrx.jpg",
+    "title": "Music Podcast"
+}

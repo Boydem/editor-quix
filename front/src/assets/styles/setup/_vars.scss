@@ -1,0 +1,163 @@
+// COLOR PALETTE
+$clr1: lighten(rgb(120, 124, 149), 46%);
+$clr2: rgb(15, 15, 15);
+$clr3: rgb(0, 0, 238);
+$clr4: rgb(0, 116, 255);
+$clr5: rgb(0, 61, 255);
+$clr6: rgb(1, 57, 101);
+$clr7: rgb(120, 124, 149);
+$clr8: rgb(69, 69, 69);
+$clr9: rgb(151, 154, 170);
+$clr10: rgb(17, 109, 255);
+$clr11: rgb(52, 52, 52);
+$clr12: rgb(232, 234, 237);
+$clr13: rgb(233, 0, 255);
+$clr14: rgb(238, 240, 244);
+$clr15: darken(#787c95, 40%);
+$clr16: rgb(28, 44, 73);
+$clr17: rgb(56, 74, 211);
+$clr18: rgb(95, 97, 110);
+$clr19: rgb(95, 65, 114);
+$clr20: rgb(56, 56, 56);
+$clr21: rgb(7, 22, 141);
+$editor-lightgray: rgba(218, 218, 230, 0.918);
+$editor-dashboard-bg: rgb(236, 239, 243);
+$editor-bg: rgb(249, 249, 249);
+$editor-active-bg: rgb(220, 233, 255);
+$editor-active-clr: rgb(17, 109, 255);
+$editor-hover-bg: rgb(228, 232, 241);
+$editor-outline: $clr2;
+$login-gray: #b9b9bd;
+// $success-green:;
+// $success-green-light:;
+$error-red: darken(#ff0f0f, 15%);
+$error-red-light: #ffdbdb;
+
+// font
+$font-family-display: 'Montserrat', Arial, Helvetica, sans-serif;
+// $font-family: 'Lato', Arial, Helvetica, sans-serif;
+$font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+$base-font-size: 14px;
+$base-font-ratio: 1.5;
+
+// Define spacing variables
+$spacing-unit: 1em;
+$spacing-xxs: 0.296 * $spacing-unit;
+$spacing-xs: 0.444 * $spacing-unit;
+$spacing-s: 0.667 * $spacing-unit;
+$spacing-m: 1.5 * $spacing-unit;
+$spacing-l: 2.25 * $spacing-unit;
+$spacing-l: 3.375 * $spacing-unit;
+$spacing-xl: 5.063 * $spacing-unit;
+$spacing-xxl: 7.594 * $spacing-unit;
+$spacing-xxxl: 11.391 * $spacing-unit;
+
+// Define breakpoints
+$break-mobile: 640px;
+$break-narrow: 960px;
+$break-wide: 1230px;
+$break-xwide: 1920px;
+
+// fixed sizes
+$home-header-height: 72px;
+$app-header-height: 52px + 1px; // 1px for border-bottom addition
+$toolbar-height: 44px + 1px; // 1px for border-bottom addition
+$scroll-bar-width: $spacing-m;
+$right-sidebar-width: 260px;
+$modules-menu-width: 180px;
+$modules-content-width: 300px;
+$logo-container-width: 120px;
+
+// LAYOUT
+$layoutPadding: 5vw;
+
+$padded-break-mobile: calc($break-mobile + $layoutPadding);
+$padded-break-narrow: calc($break-narrow + $layoutPadding);
+$padded-break-normal: calc($break-wide - $layoutPadding);
+$padded-break-wide: calc($break-xwide - $layoutPadding);
+
+:root {
+    --container-width: 1300px;
+}
+
+#root.wap1-primary {
+    --clr1: #ffbf23;
+    --clr2: #ffd7ef;
+    --clr3: #eef;
+    --clr4: #101010;
+}
+
+#root.wap2-primary {
+    --clr1: #0b1321;
+    --clr2: #eef;
+}
+
+#root.wap3-primary {
+    --clr1: #dcdcdc;
+    --clr2: #303030;
+    --clr3: #5783de;
+}
+
+#root.wap4-primary {
+    --clr1: #eb0000;
+    --clr2: #ffffff;
+    --clr3: #000000;
+    --clr4: #161515;
+}
+
+#root.wap5-primary {
+    --clr1: #ff7629;
+    --clr2: #fe863047;
+}
+
+#root.wap6-primary {
+    --clr1: #ffc098;
+    --clr2: #414581;
+}
+
+#root.wap7-primary {
+    --clr1: #ffe2c1;
+    --clr2: #c6bcff;
+    --clr3: #000000;
+    --clr4: #4a34c7;
+}
+
+#root.theme-1 {
+    // --clr1: #263140;
+    // --clr2: #4c80fb;
+    // --clr3: #101010;
+    // --clr4: #f4f4f6;
+
+    --clr2: #556a87;
+    --clr1: #4c80fb;
+    --clr3: #101010;
+    --clr4: #f4f4f6;
+}
+#root.theme-2 {
+    --clr1: #055345;
+    --clr2: #f3ceac;
+    --clr3: #f9efe6;
+    --clr4: #101010;
+}
+
+#root.theme-3 {
+    --clr1: #3d405b;
+    --clr2: #e07a5f;
+    --clr3: #f4f1de;
+    // --clr4: #81b29a;
+    --clr4: #66c697;
+}
+
+#root.theme-4 {
+    // --clr1: #6d6875;
+    // --clr2: #b5838d;
+    // --clr3: #ffcdb2;
+    // --clr4: #101010;
+
+    --clr1: #a0a0a0;
+    // --clr2: #563c41;
+    --clr3: #ffcdb2;
+    --clr4: #101010;
+    --clr2: #a17171;
+    // --clr2: #735d78;
+}

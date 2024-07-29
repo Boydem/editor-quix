@@ -1,0 +1,751 @@
+{
+    "name": "wap1",
+    "owner": "admin",
+    "palette": ["#ffbf23", "#ffd7ef", "#eef", "#101010"],
+    "leadsBoards": [
+        {
+            "id": "g3Dlyxwl",
+            "title": "New",
+            "items": []
+        },
+        {
+            "id": "OQ6SIpwW",
+            "title": "In Progress",
+            "items": []
+        },
+        {
+            "id": "0ISgnthB",
+            "title": "Done",
+            "items": []
+        }
+    ],
+    "schedule": {
+        "eventDuration": 30,
+        "daysForward": 6,
+        "data": [],
+        "days": ["sunday", "monday", "tuesday", "wednesday", "thursday"],
+        "startHour": 8,
+        "endHour": 17,
+        "meetings": [],
+        "chatStartingMsg": "Hi there! Thanks for reaching out, How can I assist you today?"
+    },
+    "subscribers": [],
+    "cmps": [
+        {
+            "name": "wap-1-nav",
+            "type": "div",
+            "category": "header",
+            "id": "zalZe4",
+            "cmpId": "Header",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-header_p95k8i.jpg",
+            "cmps": [
+                {
+                    "id": "uV6sbG",
+                    "name": "logo-container",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "B5geGE",
+                            "name": "logo.png",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/logo_gbu6tf.svg"
+                            }
+                        },
+                        {
+                            "id": "zSWzsQ",
+                            "name": "about-logo",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "TxscjM",
+                                    "type": "p",
+                                    "content": {
+                                        "txt": "WeDu"
+                                    },
+                                    "style": { "fontSize": "1.5rem" }
+                                },
+                                {
+                                    "id": "6ILxNv",
+                                    "type": "p",
+                                    "content": {
+                                        "txt": "Communicate. Collaborate. Create."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "VXJ8wN",
+                    "type": "div",
+                    "name": "links",
+                    "cmps": [
+                        {
+                            "id": "9hujnP",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "EuyExl",
+                                    "type": "a",
+                                    "content": {
+                                        "txt": "Home",
+                                        "href": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "YxWLeK",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "2pxuEI",
+                                    "type": "a",
+                                    "content": {
+                                        "txt": "Product",
+                                        "href": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "C7FEi4",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "vD7Z66",
+                                    "type": "a",
+                                    "content": {
+                                        "txt": "Pricing Plans",
+                                        "href": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "vAkUU7",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "VCBsge",
+                                    "type": "a",
+                                    "content": {
+                                        "txt": "Log In",
+                                        "href": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ruUQae",
+                            "type": "button",
+                            "content": {
+                                "txt": "Get Started"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "BaKIfQxXeC",
+            "name": "wap-1-hero",
+            "type": "div",
+            "category": "hero",
+            "themePalette": "primary",
+            "cmpId": "Hero",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673995017/wapHero1_nadu0l.png",
+            "cmps": [
+                {
+                    "id": "QylpirhqFr",
+                    "name": "content",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "bMxXkIJFHu",
+                            "type": "p",
+                            "name": "header",
+                            "content": {
+                                "txt": "Communicate. Collaborate. Create."
+                            }
+                        },
+                        {
+                            "id": "2eMkb1Vklu",
+                            "type": "p",
+                            "name": "txt",
+                            "content": {
+                                "txt": "WeDu provides an effective and powerful way to manage your projects"
+                            }
+                        },
+                        {
+                            "id": "l5Gua8GVCT",
+                            "type": "button",
+                            "content": {
+                                "txt": "Get Started"
+                            }
+                        },
+                        {
+                            "id": "EsvdEdJrQu",
+                            "name": "icons",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "MB1dV3Jp2b",
+                                    "name": "icon",
+                                    "type": "div",
+                                    "cmps": [
+                                        {
+                                            "id": "c1SnTPQ26K",
+                                            "type": "img",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/speed-security_n3cafu.svg"
+                                            }
+                                        },
+                                        {
+                                            "id": "tkKHbEmASY",
+                                            "type": "p",
+                                            "name": "txt",
+                                            "content": {
+                                                "txt": "Speed & Security"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "nfO5f7FHWg",
+                                    "name": "icon",
+                                    "type": "div",
+                                    "cmps": [
+                                        {
+                                            "id": "oHE1MgkMKl",
+                                            "type": "img",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/flex-scale_zxqcyf.svg"
+                                            }
+                                        },
+                                        {
+                                            "id": "A7yhn2Cdso",
+                                            "type": "p",
+                                            "name": "txt",
+                                            "content": {
+                                                "txt": "Flexibility & Scalability"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "OJcPfFuhgi",
+                                    "name": "icon",
+                                    "type": "div",
+                                    "cmps": [
+                                        {
+                                            "id": "BvN05MdBOC",
+                                            "type": "img",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/better-collab_kzdfno.svg"
+                                            }
+                                        },
+                                        {
+                                            "id": "iV8ecY0GU9",
+                                            "type": "p",
+                                            "name": "txt",
+                                            "content": {
+                                                "txt": "Better Collaboration"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "hkAez4jV",
+                    "type": "img",
+                    "name": "hero-image",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673980989/hero-image_rvuthf.svg"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "LDQGG706UY",
+            "name": "wap-1-divider-1",
+            "type": "div",
+            "category": "divider",
+            "themePalette": "primary",
+            "cmpId": "Divider-1",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap1-divider-1_j6s7ro.jpg"
+        },
+        {
+            "id": "mW4y5KxQ",
+            "name": "wap-1-section-1",
+            "type": "div",
+            "category": "section",
+            "themePalette": "primary",
+            "cmpId": "Section-1",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-section-1_qtuqgo.jpg",
+            "cmps": [
+                {
+                    "id": "dWVicS7p",
+                    "name": "content",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "4MoVNIqF",
+                            "type": "h3",
+                            "name": "header",
+                            "content": {
+                                "txt": "With the Right Software, Great Things Can Happen"
+                            }
+                        },
+                        {
+                            "id": "MgrzfvsD",
+                            "type": "p",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click Edit Text or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you."
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "FgdNN07uKI",
+            "name": "wap-1-cards-1",
+            "type": "div",
+            "category": "card",
+            "themePalette": "primary",
+            "cmpId": "Cards-1",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053216/wap-1-cards-1_s7zmml.jpg",
+            "cmps": [
+                {
+                    "id": "rtilZuk755",
+                    "name": "heading",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "mYrkaFviSP",
+                            "type": "p",
+                            "name": "header",
+                            "content": {
+                                "txt": "What We Offer"
+                            }
+                        },
+                        {
+                            "id": "xL5wGAMxsR",
+                            "type": "p",
+                            "name": "txt",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click Edit Text or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "j4rh3PofiF",
+                    "name": "section-gallery",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "dZsBTcd0c1",
+                            "type": "div",
+                            "name": "item",
+                            "cmps": [
+                                {
+                                    "id": "9vND7Tu3Ym",
+                                    "type": "img",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983830/img1_xrpsr8.webp"
+                                    }
+                                },
+                                {
+                                    "id": "MT7FJLGrAm",
+                                    "type": "p",
+                                    "name": "mini-heading",
+                                    "content": {
+                                        "txt": "Workflows That Work"
+                                    }
+                                },
+                                {
+                                    "id": "sgwuh7LZYq",
+                                    "type": "p",
+                                    "name": "txt",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click Edit Text or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "r8lBTxs7PN",
+                            "type": "div",
+                            "name": "item",
+                            "cmps": [
+                                {
+                                    "id": "CPTz0hetEz",
+                                    "type": "img",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img2_jkmwc4.webp"
+                                    }
+                                },
+                                {
+                                    "id": "REbUKkagZI",
+                                    "type": "p",
+                                    "name": "mini-heading",
+                                    "content": {
+                                        "txt": "Comprehensive Customer Support"
+                                    }
+                                },
+                                {
+                                    "id": "duzmcUgVMi",
+                                    "type": "p",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click Edit Text or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "u0RjFib15j",
+                            "type": "div",
+                            "name": "item",
+                            "cmps": [
+                                {
+                                    "id": "9g5ikShqIO",
+                                    "type": "img",
+                                    "name": "mini-heading",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img3_zpvzbd.webp"
+                                    }
+                                },
+                                {
+                                    "id": "BiiqSZbvKu",
+                                    "type": "h4",
+                                    "name": "mini-heading",
+                                    "content": {
+                                        "txt": "All-In-One Solution"
+                                    }
+                                },
+                                {
+                                    "id": "ZBD9qUMRJc",
+                                    "type": "p",
+                                    "name": "txt",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click Edit Text or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "9VMlcOnSsT",
+                            "type": "div",
+                            "name": "item",
+                            "cmps": [
+                                {
+                                    "id": "ZaODJ28t3P",
+                                    "type": "img",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/img4_cr6btz.webp"
+                                    }
+                                },
+                                {
+                                    "id": "hvoxlMhrRZ",
+                                    "type": "p",
+                                    "name": "mini-heading",
+                                    "content": {
+                                        "txt": "Smart Automation Tools"
+                                    }
+                                },
+                                {
+                                    "id": "0gbXmQtrax",
+                                    "type": "p",
+                                    "name": "txt",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click Edit Text or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3coRjIf05f",
+            "name": "wap-1-section-2",
+            "type": "div",
+            "category": "section",
+            "themePalette": "primary",
+            "cmpId": "Section-2",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053216/wap-1-section-2_fodj8k.jpg",
+            "cmps": [
+                {
+                    "id": "DrafToJXDl",
+                    "type": "img",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/section-3_xbltzv.svg"
+                    }
+                },
+                {
+                    "id": "lWKgW7cQLL",
+                    "name": "content",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "z2d8K0WedF",
+                            "type": "h2",
+                            "name": "heading",
+                            "content": {
+                                "txt": "Built for Creatives, by Creatives"
+                            }
+                        },
+                        {
+                            "id": "kK5drYYAZO",
+                            "type": "p",
+                            "name": "txt",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or\n                        double click me to add your own content and make changes to the font. I’m a great place for you to\n                        tell a story and let your users know a little more about you."
+                            }
+                        },
+                        {
+                            "id": "X5vZiCTXl2",
+                            "name": "icons",
+                            "type": "div",
+                            "cmps": [
+                                {
+                                    "id": "0yEhM8SpE7",
+                                    "name": "icon",
+                                    "type": "div",
+                                    "cmps": [
+                                        {
+                                            "id": "L3SH8nSn1N",
+                                            "type": "img",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983827/speed-security_n3cafu.svg"
+                                            }
+                                        },
+                                        {
+                                            "id": "3Pfa38BAqn",
+                                            "type": "p",
+                                            "name": "txt",
+                                            "content": {
+                                                "txt": "Speed & Security"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "TetvVsTdvL",
+                                    "name": "icon",
+                                    "type": "div",
+                                    "cmps": [
+                                        {
+                                            "id": "50D2Yp26Gg",
+                                            "type": "img",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/flex-scale_zxqcyf.svg"
+                                            }
+                                        },
+                                        {
+                                            "id": "3vZnHEo7EU",
+                                            "type": "p",
+                                            "name": "txt",
+                                            "content": {
+                                                "txt": "Flexibility & Scalability"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "Nrkb7mqMq5",
+                                    "name": "icon",
+                                    "type": "div",
+                                    "cmps": [
+                                        {
+                                            "id": "IwspJE8aiF",
+                                            "type": "img",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/better-collab_kzdfno.svg"
+                                            }
+                                        },
+                                        {
+                                            "id": "2YRZ0HOmDp",
+                                            "type": "p",
+                                            "name": "txt",
+                                            "content": {
+                                                "txt": "Better Collaboration"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "uNSL0svBOD",
+            "name": "wap-1-divider-2",
+            "type": "div",
+            "category": "divider",
+            "themePalette": "primary",
+            "cmpId": "Divider-2",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-divider-2_cov7tc.jpg"
+        },
+        {
+            "id": "B8UgiKXYfi",
+            "name": "wap-1-cards-2",
+            "type": "div",
+            "category": "card",
+            "themePalette": "primary",
+            "cmpId": "Cards-2",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-section3_np61wk.jpg",
+            "cmps": [
+                {
+                    "id": "G2ox6QkYHF",
+                    "name": "content",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "DTNGiL3rmM",
+                            "type": "p",
+                            "name": "heading",
+                            "content": {
+                                "txt": "Trusted Among Industry Leaders"
+                            }
+                        },
+                        {
+                            "id": "bmXQwIFROk",
+                            "type": "p",
+                            "name": "txt",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or\n                        double click me to add your own content and make changes to the font. I’m a great place for you to\n                        tell a story and let your users know a little more about you."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "z6dDYbCHER",
+                    "name": "gallery",
+                    "type": "div",
+                    "cmps": [
+                        {
+                            "id": "H1ZVGNqVZ1",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/comp1_frdkd1.webp"
+                            }
+                        },
+                        {
+                            "id": "46fsv6vV3B",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/comp2_a763bi.webp"
+                            }
+                        },
+                        {
+                            "id": "rxI8WVpQTT",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp3_beuj1j.webp"
+                            }
+                        },
+                        {
+                            "id": "A10gix3ABO",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp4_iwfnzj.webp"
+                            }
+                        },
+                        {
+                            "id": "WZeKhzYfoi",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp5_hdasey.webp"
+                            }
+                        },
+                        {
+                            "id": "cBFk0L3AwE",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp8_pi6adk.webp"
+                            }
+                        },
+                        {
+                            "id": "ELjgkEqoQM",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp6_b4keda.webp"
+                            }
+                        },
+                        {
+                            "id": "0QXN7ZvPot",
+                            "type": "img",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983829/comp7_rajd2g.webp"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "qlVzdIzEaT",
+            "name": "wap-1-section-3",
+            "type": "div",
+            "category": "section",
+            "themePalette": "primary",
+            "cmpId": "Section-3",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053215/wap-1-section-4_fxqmn1.jpg",
+            "cmps": [
+                {
+                    "id": "2pRtWfyLIK",
+                    "type": "p",
+                    "name": "heading",
+                    "content": {
+                        "txt": "Get Ready to Maximize Your Productivity With Our Workflow Solutions"
+                    }
+                },
+                {
+                    "id": "Ikgfoj2mvW",
+                    "type": "button",
+                    "content": {
+                        "txt": "Get Started"
+                    }
+                },
+                {
+                    "id": "QjkZ3RHKKS",
+                    "type": "img",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673983828/section-4_dgefar.svg"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oSC1a7VtrS",
+            "name": "wap-1-footer",
+            "type": "div",
+            "category": "footer",
+            "themePalette": "primary",
+            "cmpId": "Footer",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053214/wap-1-footer_zk7vka.jpg",
+            "cmps": [
+                {
+                    "id": "BI0pq4is0O",
+                    "type": "p",
+                    "content": { "txt": "© 2035 by WeDu. Powered and secured by Webix" }
+                }
+            ]
+        }
+    ],
+    "themeClass": "wap1-primary",
+    "breakpoints": { "mobileLayout": 800, "tabletLayout": 1350 },
+    "msgs": {},
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674060298/wap-1-index-thumbnail_ygzwg7.jpg",
+    "title": "Tech Company"
+}

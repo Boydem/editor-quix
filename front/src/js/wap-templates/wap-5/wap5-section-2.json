@@ -1,0 +1,172 @@
+{
+    "id": "hvznN9",
+    "type": "div",
+    "name": "section-2",
+    "category": "section",
+    "cmpId": "About",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689965/hamburger-section-2_wuy8ea.png",
+    "cmps": [
+        {
+            "id": "mgEnUf",
+            "type": "div",
+            "name": "layout-container",
+            "cmps": [
+                {
+                    "id": "xXhWad",
+                    "type": "div",
+                    "name": "content-grid",
+                    "cmps": [
+                        {
+                            "id": "gwXsi9",
+                            "type": "div",
+                            "name": "side",
+                            "cmps": [
+                                {
+                                    "id": "SD20qj",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992840/section-2_dmkgzl.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "4WLL1D",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "yAMnKs",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Come and visit us"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "L4CxD1",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                    \n                    837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles\n                "
+                                            },
+                                            "cmps": [
+                                                {
+                                                    "id": "wZlbAc",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499249/nav_cai4rg.svg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "rAq4IR",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                    \n                    (414) 857 - 0107\n                "
+                                            },
+                                            "cmps": [
+                                                {
+                                                    "id": "dE5MRj",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499249/phone_pqdfbb.svg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "qRCgfF",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                    \n                    losangeles @restaurantex.com\n                "
+                                            },
+                                            "cmps": [
+                                                {
+                                                    "id": "Vvmq3P",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674499249/email_bdtklk.svg"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "KPTTKX",
+                            "type": "div",
+                            "name": "content",
+                            "cmps": [
+                                {
+                                    "id": "IYuZ5i",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "About us"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "F79lUs",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "\n                Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n                elementum eget non vivamus volutpat odio cras vestibulum purus aliquam.\n            "
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "xZOtf6",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "\n                Lorem ipsum dolor sit amet consectetur adipiscing elit enim bibendum sed et aliquet aliquet\n                risus tempor semper odio egestas id pulvinar consectetur elit tortor non hac pellentesque\n                lacus donec accumsan quisque ultricies adipiscing mauris tortor cras est eu accumsan mauris.\n            "
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "QzNqbq",
+                                    "type": "div",
+                                    "name": "btns",
+                                    "cmps": [
+                                        {
+                                            "id": "5atZ2c",
+                                            "type": "button",
+                                            "name": "primary",
+                                            "content": {
+                                                "txt": "Visit us"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "klj3l9",
+                                            "type": "button",
+                                            "name": "secondary",
+                                            "content": {
+                                                "txt": "Join our team"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

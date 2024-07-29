@@ -1,0 +1,127 @@
+{
+    "id": "aFDedz",
+    "type": "div",
+    "name": "wap-2-nav",
+    "category": "header",
+    "cmpId": "Header",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-header_peennt.jpg",
+    "cmps": [
+        {
+            "id": "ftPuy6",
+            "type": "div",
+            "name": "logo",
+            "cmps": [
+                {
+                    "id": "tiP6IP",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/logo_was6a4.png"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "2XRGDc",
+                    "type": "h1",
+                    "name": "",
+                    "content": {
+                        "txt": "Gigaplay"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "M3ebyN",
+            "type": "div",
+            "name": "links",
+            "cmps": [
+                {
+                    "id": "ZF4RNs",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "tjwGQ9",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Home",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "vZycc8",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "sq2tlq",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Games",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "aVjvUP",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "yBnwOE",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Company",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "7NH091",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "M9aQKq",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Careers",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "WO9LIY",
+                    "type": "div",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "2itLW1",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Contact",
+                                "href": ""
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

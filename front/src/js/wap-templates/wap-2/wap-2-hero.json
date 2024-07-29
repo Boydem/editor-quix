@@ -1,0 +1,164 @@
+{
+    "id": "vIcG22",
+    "type": "div",
+    "name": "wap-2-hero",
+    "category": "hero",
+    "cmpId": "Hero",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673995017/wapHero2_rq5wss.png",
+    "cmps": [
+        {
+            "id": "snIfWz",
+            "type": "div",
+            "name": "container",
+            "cmps": [
+                {
+                    "id": "T15WIt",
+                    "type": "div",
+                    "name": "content-1",
+                    "cmps": [
+                        {
+                            "id": "5VvU2B",
+                            "type": "div",
+                            "name": "",
+                            "cmps": []
+                        },
+                        {
+                            "id": "X2hLFX",
+                            "type": "div",
+                            "name": "content",
+                            "cmps": [
+                                {
+                                    "id": "Ryf5Ck",
+                                    "type": "h1",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Join the Game"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "mHxweP",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “EditText” or double click me to add your own content and make changes to the font. I’m a greatplace for you to tell a story and let your users know a little more about you."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "qyo2cw",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Explore"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "8GhCBc",
+                    "type": "div",
+                    "name": "content-2",
+                    "cmps": [
+                        {
+                            "id": "7VDAGY",
+                            "type": "div",
+                            "name": "side-content",
+                            "cmps": [
+                                {
+                                    "id": "mPMimf",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/game-icon_braih4.webp"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "9YhkRT",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Martian Quest Wins Mobile Game Awards"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "E3apn2",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you totell a story and let your users know a little more about you."
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "gC9T2u",
+                            "type": "div",
+                            "name": "content",
+                            "cmps": [
+                                {
+                                    "id": "xSs8sh",
+                                    "type": "h2",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Featured"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "ys2DEJ",
+                                    "type": "div",
+                                    "name": "card",
+                                    "cmps": [
+                                        {
+                                            "id": "5u2Zp4",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/game_cbva9k.webp"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "RAEJOq",
+                                            "type": "h1",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Martian Quest"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "8asxjW",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "skt7Y7",
+                                            "type": "button",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Play Now"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

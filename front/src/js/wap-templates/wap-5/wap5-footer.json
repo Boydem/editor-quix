@@ -1,0 +1,19 @@
+{
+    "id": "tXEFIG",
+    "type": "div",
+    "name": "wap-5-footer",
+    "category": "footer",
+    "cmpId": "Footer",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674690260/hamburger-footer_x9toyr.png",
+    "cmps": [
+        {
+            "id": "Ht5D9i",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© Copyright - Restaurante X | Designed by quix - Powered by quix"
+            },
+            "cmps": []
+        }
+    ]
+}

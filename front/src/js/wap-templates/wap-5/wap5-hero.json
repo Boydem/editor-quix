@@ -1,0 +1,105 @@
+{
+    "id": "H1j8xN",
+    "type": "div",
+    "name": "wap-5-hero full",
+    "category": "hero",
+    "cmpId": "Hero",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689965/hamburger-hero_mvet0o.png",
+    "cmps": [
+        {
+            "id": "sS563P",
+            "type": "div",
+            "name": "gray",
+            "cmps": []
+        },
+        {
+            "id": "MKmalr",
+            "type": "div",
+            "name": "layout-container",
+            "cmps": [
+                {
+                    "id": "yXyk3m",
+                    "type": "div",
+                    "name": "grid",
+                    "cmps": [
+                        {
+                            "id": "zIfNAP",
+                            "type": "div",
+                            "name": "content",
+                            "cmps": [
+                                {
+                                    "id": "qRkth0",
+                                    "type": "h1",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "\n                The best place to eat\n                burgers in Netanya\n            "
+                                    },
+                                    "cmps": [
+                                        {
+                                            "id": "GlpEZ9",
+                                            "type": "span",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "burgers in Netanya"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "xgVfUI",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "\n                Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae velit bibendum\n                elementum eget non vivamus volutpat odio cras vestibulum purus aliquam.\n            "
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "VA5ULf",
+                                    "type": "button",
+                                    "name": "primary",
+                                    "content": {
+                                        "txt": "Reservate"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "UWH012",
+                                    "type": "button",
+                                    "name": "secondary",
+                                    "content": {
+                                        "txt": "Order online"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "h0Nija",
+                            "type": "div",
+                            "name": "side full",
+                            "cmps": [
+                                {
+                                    "id": "O5Cw2V",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992842/hero_i03sjk.jpg"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "b6QTeB",
+            "type": "div",
+            "name": "orange",
+            "cmps": []
+        }
+    ]
+}

@@ -1,0 +1,241 @@
+// // Import the libraries
+// @import 'modularscale-sass';
+// @import 'sass-mq';
+
+// // Define base font-size, ratio and scale steps for applicative font 
+// $base-font-size-app: 14px;
+// $ratio-app: 1.125;
+// $steps-app: (
+//     1,
+//     2,
+//     3,
+//     4,
+//     5,
+//     6,
+//     7,
+//     8
+// );
+
+// // Define base font-size, ratio and scale steps for display font 
+// $base-font-size-dis: 16px;
+// $ratio-dis: 1.2;
+// $steps-dis: (
+//     1,
+//     2,
+//     3,
+//     4,
+//     5,
+//     6,
+//     7,
+//     8
+// );
+
+// // Create modular scale for applicative font
+// $ms-app: modular-scale($base-font-size-app, $ratio-app, $steps-app);
+
+// // Create modular scale for display font
+// $ms-dis: modular-scale($base-font-size-dis, $ratio-dis, $steps-dis);
+
+// // Define spacing variables
+// $spacing-unit: 1rem;
+// $spacing-s: 0.25 * $spacing-unit;
+// $spacing-m: 0.5 * $spacing-unit;
+// $spacing-l: 1 * $spacing-unit;
+// $spacing-xl: 2 * $spacing-unit;
+
+// // Define breakpoints
+// $breakpoints: (
+//     small: (min-width: 640px),
+//     medium: (min-width: 1024px),
+//     large: (min-width: 1300px)
+// );
+
+// // Define your type helpers classes
+// .type-1 {
+//     font-size: nth($ms-app, 1);
+// }
+
+// .type-2 {
+//     font-size: nth($ms-app, 1);
+// }
+
+// .type-3 {
+//     font-size: nth($ms-app, 2);
+// }
+
+// .type-4 {
+//     font-size: nth($ms-app, 3);
+// }
+
+// .type-5 {
+//     font-size: nth($ms-app, 4);
+// }
+
+// .type-6 {
+//     font-size: nth($ms-app, 5);
+// }
+
+// .type-7 {
+//     font-size: nth($ms-app, 6);
+// }
+
+// .type-8 {
+//     font-size: nth($ms-app, 7);
+// }
+
+// // Define typography styles
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p,
+// a {
+//     font-family: 'Roboto';
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     font-weight: normal;
+//     margin-bottom: $spacing-m;
+// }
+
+// h1 {
+//     font-size: nth($ms-app, 5); // 54px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 6); // 81px
+//     }
+// }
+
+// h2 {
+//     font-size: nth($ms-app, 4); // 36px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 5); // 54px
+//     }
+// }
+
+// h3 {
+//     font-size: nth($ms-app, 3); // 27px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 4); // 36px
+//     }
+// }
+
+// h4 {
+//     font-size: nth($ms-app, 2); // 18px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 3); // 27px
+//     }
+// }
+
+// h5 {
+//     font-size: nth($ms-app, 1); // 14px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 2); // 18px
+//     }
+// }
+
+// h6 {
+//     font-size: nth($ms-app, 1); // 12px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 1); // 14px
+//     }
+// }
+
+// p {
+//     font-size: nth($ms-app, 1); // 12px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 1); // 14px
+//     }
+// }
+
+// a {
+//     font-size: nth($ms-app, 1); // 12px
+
+//     @include mq(medium) {
+//         font-size: nth($ms-app, 1); // 14px
+//     }
+// }
+
+// //  Define display Typography styles
+// .display-1,
+// .display-2,
+// .display-3,
+// .display-4,
+// .display-5,
+// .display-6 {
+//     font-family: 'Montserrat';
+// }
+
+// .display-1 {
+//     font-size: nth($ms-dis, 7); // 48px
+//     margin-bottom: $spacing-m;
+
+//     @include mq(medium) {
+//         font-size: nth($ms-dis, 8); // 64px
+//         margin-bottom: $spacing-m;
+//     }
+// }
+
+// .display-2 {
+//     font-size: nth($ms-dis, 6); // 32px
+//     margin-bottom: $spacing-m;
+
+//     @include mq(medium) {
+//         font-size: nth($ms-dis, 7); // 48px
+//         margin-bottom: $spacing-m;
+//     }
+// }
+
+// .display-3 {
+//     font-size: nth($ms-dis, 5); // 24px
+//     margin-bottom: $spacing-m;
+
+//     @include mq(medium) {
+//         font-size: nth($ms-dis, 6); // 32px
+//         margin-bottom: $spacing-m;
+//     }
+// }
+
+// .display-4 {
+//     font-size: nth($ms-dis, 4); // 16px
+//     margin-bottom: $spacing-m;
+
+//     @include mq(medium) {
+//         font-size: nth($ms-dis, 5); // 24px
+//         margin-bottom: $spacing-m;
+//     }
+// }
+
+// .display-5 {
+//     font-size: nth($ms-dis, 3); // 12px
+//     margin-bottom: $spacing-m;
+
+//     @include mq(medium) {
+//         font-size: nth($ms-dis, 4); // 16px
+//         margin-bottom: $spacing-m;
+//     }
+// }
+
+// .display-6 {
+//     font-size: nth($ms-dis, 2); // 8px
+//     margin-bottom: $spacing-m;
+
+//     @include mq(medium) {
+//         font-size: nth($ms-dis, 3); // 12px
+//         margin-bottom: $spacing-m;
+//     }
+// }

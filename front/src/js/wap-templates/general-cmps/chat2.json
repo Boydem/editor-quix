@@ -1,0 +1,80 @@
+{
+    "id": "oo3z14",
+    "type": "chat",
+    "name": "chat-1",
+    "category": "chat",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689963/chat-cmp_hcvevc.png",
+    "cmps": [
+        {
+            "id": "GXTvqg",
+            "type": "button",
+            "name": "open-chat",
+            "content": {
+                "txt": ""
+            },
+            "cmps": []
+        },
+        {
+            "id": "4EfJqF",
+            "type": "div",
+            "name": "chat live-chat hidden",
+            "cmps": [
+                {
+                    "id": "Srfl0w",
+                    "type": "div",
+                    "name": "contact bar",
+                    "cmps": [
+                        {
+                            "id": "iQ8ahe",
+                            "type": "div",
+                            "name": "pic support",
+                            "cmps": []
+                        },
+                        {
+                            "id": "K3Pg5J",
+                            "type": "div",
+                            "name": "name",
+                            "cmps": [
+                                {
+                                    "id": "bfdsfsZ",
+                                    "type": "p",
+                                    "name": "name",
+                                    "content": {
+                                        "txt": "Support"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Sa0rKo",
+                            "type": "div",
+                            "name": "seen",
+                            "cmps": [
+                                {
+                                    "id": "gfdgfd",
+                                    "type": "p",
+                                    "name": "seen",
+                                    "content": {},
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "5gJnPg",
+                    "type": "div",
+                    "name": "messages",
+                    "cmps": []
+                },
+                {
+                    "id": "bJENya",
+                    "type": "input",
+                    "name": "",
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

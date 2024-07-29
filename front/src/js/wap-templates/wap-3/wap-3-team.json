@@ -1,0 +1,128 @@
+{
+    "id": "cIDPZM",
+    "type": "div",
+    "name": "wap-3-team",
+    "category": "section",
+    "cmpId": "Section-2",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-cards_ysw8nf.jpg",
+    "cmps": [
+        {
+            "id": "AmtSyH",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "Meet the Speakers"
+            },
+            "cmps": []
+        },
+        {
+            "id": "mpbgDU",
+            "type": "div",
+            "name": "team-cards-container",
+            "cmps": [
+                {
+                    "id": "7HasVE",
+                    "type": "div",
+                    "name": "team-card",
+                    "cmps": [
+                        {
+                            "id": "aPZhVB",
+                            "type": "div",
+                            "name": "card-img-container",
+                            "cmps": [
+                                {
+                                    "id": "F8BxxC",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990129/speakers1_ysc05g.webp"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "hZgqeu",
+                            "type": "span",
+                            "name": "name",
+                            "content": {
+                                "txt": "Tony Selby"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "wqWc8t",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "Marketing Manager at Finclvr"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "JDllGL",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Linkedin",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "tgtYad",
+                    "type": "div",
+                    "name": "team-card",
+                    "cmps": [
+                        {
+                            "id": "PSvJd8",
+                            "type": "div",
+                            "name": "card-img-container",
+                            "cmps": [
+                                {
+                                    "id": "a7YqE2",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990129/speaker2_dvtwua.webp"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "KAukzK",
+                            "type": "span",
+                            "name": "name",
+                            "content": {
+                                "txt": "Anne Berna"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "6vJ9lC",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "Marketing Analyst at Finclvr"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Ep9SbM",
+                            "type": "a",
+                            "name": "",
+                            "content": {
+                                "txt": "Linkedin",
+                                "href": "about:blank#"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

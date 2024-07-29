@@ -1,0 +1,694 @@
+{
+    "name": "wap4",
+    "owner": "admin",
+    "chatStartingMsg": "Hi there! Thanks for reaching out, How can I assist you today?",
+    "palette": ["#eb0000", "#ffffff", "#000000", "#161515"],
+    "leadsBoards": [
+        {
+            "id": "oAhtEwZW",
+            "title": "New",
+            "items": []
+        },
+        {
+            "id": "49WQXv4t",
+            "title": "In Progress",
+            "items": []
+        },
+        {
+            "id": "H2bK6u0c",
+            "title": "Done",
+            "items": []
+        }
+    ],
+    "schedule": {
+        "eventDuration": 30,
+        "daysForward": 6,
+        "data": [],
+        "days": ["sunday", "monday", "tuesday", "wednesday", "thursday"],
+        "startHour": 8,
+        "endHour": 17,
+        "meetings": []
+    },
+    "subscribers": [],
+    "cmps": [
+        {
+            "id": "0haZ9p",
+            "type": "div",
+            "name": "wap-4-nav",
+            "category": "header",
+            "cmpId": "Header",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674524329/wap4-header_tlug8u.jpg",
+            "cmps": [
+                {
+                    "id": "9aEfPK",
+                    "type": "div",
+                    "name": "logo",
+                    "cmps": [
+                        {
+                            "id": "1e9tM1",
+                            "type": "span",
+                            "name": "",
+                            "content": {
+                                "txt": "ONMYSCREEN"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "N2qcnf",
+                    "type": "input",
+                    "name": "",
+                    "content": {
+                        "placeholder": "Search..."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "JkfpUP",
+                    "type": "div",
+                    "name": "links",
+                    "cmps": [
+                        {
+                            "id": "1YL1ha",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "sPIpVm",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "My Blog",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "eSq1e2",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "8D5blD",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "About",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ddFvuN",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "VUG2DS",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Contact",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "xZSxeQ",
+            "type": "div",
+            "name": "wap-4-cards",
+            "category": "card",
+            "cmpId": "Cards",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674525172/wap-4-card_blco0n.jpg",
+            "cmps": [
+                {
+                    "id": "93IFaw",
+                    "type": "h1",
+                    "name": "",
+                    "content": {
+                        "txt": "Reviews"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "n8hx24",
+                    "type": "div",
+                    "name": "cards",
+                    "cmps": [
+                        {
+                            "id": "nAMUow",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "L0oWFh",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992162/1_hkrmkj.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Qwqd1b",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "g86BfP",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "MVsjwU",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "My Top 5 Movies of All Times"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "Ecav68",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "zPlolV",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "9M3CbN",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992207/2_hntjuv.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "5ZDePL",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "fydZMH",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 2 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "M2gPBi",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "New Movies to Stream from Home This Week"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "hAy9UN",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "OxmzP9",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "B6D1Yy",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992156/3_uiggvz.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "v2aBMP",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "iSBQnv",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "Fh8BR9",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "5 Top True Crime Shows Ever"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "0tq0SG",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "zyKc1d",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "uETPWL",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992162/4_jd8zcs.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Qy2vZy",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "hbCL0Y",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "0AdeYo",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "The Best Sci-Fi TV Show to Binge Watch Now"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "78gcT3",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6DYDkO",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "uLL4yx",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992175/5_i2jca0.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "mL8QGq",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "mdvNox",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "eTt7AL",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "I Fell in Love With This Character"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "eM8k6D",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "f1FsPB",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "uIX8Wl",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992160/6_q4nv5j.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "kjYMF7",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "BbJKm7",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "pqjVMh",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "This Historical Drama Knocks Down All the Rest"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "C0w2PQ",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ZwpQPh",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "CzpUOC",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992159/7_shs32d.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "0Vef4M",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "50a1IT",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "KgHK1U",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "This Thriller Is Not for Everyone"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "wQLozF",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4rgfRy",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "ANIJnf",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992196/8_vc3ng8.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "a20Any",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "NmyJE7",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "lHhulk",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Movies Critics Loved but Viewers Hated"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "q3JJ6z",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "lEdRa6",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "qC1iFA",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992162/9_y5m0rb.jpg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "gqAL8e",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "ZjH9EB",
+                                            "type": "p",
+                                            "name": "info",
+                                            "content": {
+                                                "txt": "Nov 29, 2022 · 1 min"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "Axg27k",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "This Is the Best Doco You’ll See This Year"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "cjXegf",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "\n                Create a blog post subtitle that summarizes your post in a few short, punchy sentences and\n                entices your audience to continue reading....\n            "
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "34XUwn",
+            "type": "div",
+            "name": "wap-4-cta",
+            "category": "form",
+            "cmpId": "Subscribe-Form",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674525601/wap-4-form_dodgau.jpg",
+            "cmps": [
+                {
+                    "id": "hOSzmV",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Never Miss A New Post"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "XDyRiD",
+                    "type": "form",
+                    "name": "form",
+                    "cmps": [
+                        {
+                            "id": "aUZA8r",
+                            "type": "label",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "DRX9um",
+                                    "type": "input",
+                                    "name": "",
+                                    "inputName": "First Name",
+                                    "content": {
+                                        "inputId": "first-name"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "IlKAja",
+                            "type": "label",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "qgPHlj",
+                                    "type": "input",
+                                    "name": "",
+                                    "inputName": "Last Name",
+                                    "content": {
+                                        "inputId": "last-name"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "smdI6n",
+                            "type": "label",
+                            "name": "email",
+                            "cmps": [
+                                {
+                                    "id": "3yzSl1",
+                                    "type": "input",
+                                    "inputName": "Email",
+                                    "name": "",
+                                    "content": {
+                                        "inputId": "email"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "U1mO5a",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Subscribe"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "themeClass": "wap4-primary",
+    "breakpoints": { "mobileLayout": 750, "tabletLayout": 1400 },
+    "msgs": {},
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674259751/wap4-thumbnail_lj6j7a.jpg",
+    "title": "Movie Blog"
+}

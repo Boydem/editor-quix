@@ -1,0 +1,163 @@
+{
+    "id": "CFctTZ",
+    "type": "div",
+    "name": "wap-5-header",
+    "category": "header",
+    "cmpId": "Header",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689965/hamburger-header_ijekbx.png",
+    "cmps": [
+        {
+            "id": "H6i7mG",
+            "type": "div",
+            "name": "layout-container",
+            "cmps": [
+                {
+                    "id": "iGooZQ",
+                    "type": "div",
+                    "name": "logo",
+                    "cmps": [
+                        {
+                            "id": "sE1gY7",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674505316/logo_iadvls.svg"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "rVYw6g",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Restaurante X"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "9YXTJS",
+                    "type": "label",
+                    "htmlFor": "hamburger",
+                    "name": "open-close-icon",
+                    "cmps": []
+                },
+                {
+                    "id": "hxQUNq",
+                    "htmlId": "hamburger",
+                    "type": "input",
+                    "name": "mobile-open-close-btn",
+                    "inputType": "checkbox",
+                    "inputName": "",
+                    "content": {},
+                    "cmps": []
+                },
+                {
+                    "id": "4kQEVt",
+                    "type": "div",
+                    "name": "nav-menu",
+                    "cmps": [
+                        {
+                            "id": "e3vrbc",
+                            "type": "div",
+                            "name": "nav-links",
+                            "cmps": [
+                                {
+                                    "id": "9TzudN",
+                                    "type": "div",
+                                    "name": "link-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "gBTlvP",
+                                            "type": "a",
+                                            "name": "nav-link",
+                                            "content": {
+                                                "txt": "Home",
+                                                "href": ""
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "qiieju",
+                                    "type": "div",
+                                    "name": "link-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "w0on5L",
+                                            "type": "a",
+                                            "name": "nav-link",
+                                            "content": {
+                                                "txt": "About",
+                                                "href": ""
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "2w1DYV",
+                                    "type": "div",
+                                    "name": "link-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "hQypQf",
+                                            "type": "a",
+                                            "name": "nav-link",
+                                            "content": {
+                                                "txt": "Menu",
+                                                "href": ""
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "kZs9oY",
+                            "type": "div",
+                            "name": "header-cta",
+                            "cmps": [
+                                {
+                                    "id": "vf7bOf",
+                                    "type": "div",
+                                    "name": "btn-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "YkjNIX",
+                                            "type": "button",
+                                            "name": "secondary",
+                                            "content": {
+                                                "txt": "Order online"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "kMFxJV",
+                                    "type": "div",
+                                    "name": "btn-wrapper",
+                                    "cmps": [
+                                        {
+                                            "id": "rZdwjY",
+                                            "type": "button",
+                                            "name": "primary",
+                                            "content": {
+                                                "txt": "Reservate"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

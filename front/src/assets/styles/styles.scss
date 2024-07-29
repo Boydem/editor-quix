@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap');
+/* Setup */
+@import './setup/_vars.scss';
+@import './setup/_functions.scss';
+@import './setup/_mixins.scss';
+@import './setup/_typography.scss';
+@import './setup/_display-typography.scss';
+@import './app-ui/_tooltip.scss';
+
+/* Base */
+@import './base/_base.scss';
+@import './base/_helpers.scss';
+@import './base/_spacing.scss';
+@import './base/_layout.scss';
+@import './base/_forms.scss';
+@import './base/_buttons.scss';
+@import './library/locomotive-scroll.scss';
+@import './cmps/loader.scss';
+
+//**// COMPONENTS //**//
+
+// App common
+@import './cmps/_home-header.scss';
+@import './cmps/_app-header.scss';
+@import './cmps/_app-footer.scss';
+
+// Editor
+@import './cmps/_editor.scss';
+@import './cmps/_tools-bar.scss';
+@import './cmps/_sidebar.scss';
+@import './cmps/cmp-fractions.scss';
+@import './cmps/_editor-preview.scss';
+@import './cmps/_adjust.scss';
+@import './cmps/schedule-modal.scss';
+
+// Home
+@import './pages/_home.scss';
+
+// Dashboard
+@import './pages/_dashboard.scss';
+@import './cmps/compose-mail.scss';
+@import './cmps/messages-dashboard.scss';
+@import './cmps/schedule-dashboard.scss';
+
+// USER
+@import './cmps/_loginsignup.scss';
+@import './cmps/_user-msg.scss';
+@import './cmps/_wap-index.scss';
+@import './cmps/_wap-preview';
+
+//**// UI //**//
+// App UI
+@import './app-ui/_interactive-chat.scss';
+@import './app-ui/_alert-dialog.scss';
+@import './app-ui/_user-tooltip.scss';
+@import './app-ui/_publish-login-signup.scss';
+@import './app-ui/_publish-modal.scss';
+@import './cmps/_select-unit.scss';
+@import './cmps/_edit-tabs.scss';
+@import './app-ui/_dropdown-menu.scss';
+
+// Templates
+@import './waps/general-cmps.scss';
+@import './waps/_wap1.scss';
+@import './waps/_wap2.scss';
+@import './waps/_wap3.scss';
+@import './waps/_wap4.scss';
+@import './waps/_wap5.scss';
+@import './waps/_wap6.scss';
+@import './waps/_wap7.scss';
+
+@import '../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
+
+// UI Overwrites
+@import './setup/_overwrites.scss';

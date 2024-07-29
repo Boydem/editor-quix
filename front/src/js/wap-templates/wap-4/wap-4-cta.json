@@ -1,0 +1,86 @@
+{
+    "id": "34XUwn",
+    "type": "div",
+    "name": "wap-4-cta",
+    "category": "form",
+    "cmpId": "Subscribe-Form",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674525601/wap-4-form_dodgau.jpg",
+    "cmps": [
+        {
+            "id": "hOSzmV",
+            "type": "h2",
+            "name": "",
+            "content": {
+                "txt": "Never Miss A New Post"
+            },
+            "cmps": []
+        },
+        {
+            "id": "XDyRiD",
+            "type": "form",
+            "name": "form",
+            "cmps": [
+                {
+                    "id": "aUZA8r",
+                    "type": "label",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "DRX9um",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "First Name",
+                            "content": {
+                                "inputId": "first-name"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "IlKAja",
+                    "type": "label",
+                    "name": "",
+                    "cmps": [
+                        {
+                            "id": "qgPHlj",
+                            "type": "input",
+                            "name": "",
+                            "inputName": "Last Name",
+                            "content": {
+                                "inputId": "last-name"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "smdI6n",
+                    "type": "label",
+                    "name": "email",
+                    "cmps": [
+                        {
+                            "id": "3yzSl1",
+                            "type": "input",
+                            "inputName": "Email",
+                            "name": "",
+                            "content": {
+                                "inputId": "email"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "U1mO5a",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Subscribe"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

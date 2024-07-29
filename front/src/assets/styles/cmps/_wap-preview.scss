@@ -1,0 +1,36 @@
+.site-owner-link {
+    animation: slideIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: $clr1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    p {
+        margin: $spacing-xs 0 $spacing-xxs;
+        color: $editor-active-clr;
+    }
+
+    .btn-dashboard {
+        color: $editor-active-bg;
+        background-color: $editor-active-clr;
+        padding: 3px 10px;
+        border-radius: 3px;
+        margin-bottom: $spacing-xs;
+        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover {
+            color: $editor-active-clr;
+            background-color: $editor-active-bg;
+            box-shadow: inset 0px 0px 0px 1px $editor-active-clr;
+        }
+    }
+    @keyframes slideIn {
+        from {
+            margin-top: -70px;
+        }
+        to {
+            margin: 0;
+        }
+    }
+}

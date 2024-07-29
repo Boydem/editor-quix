@@ -1,0 +1,131 @@
+/* for all buttons */
+a,
+button {
+    transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+        background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95), stroke 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+.app-btn {
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    width: max-content;
+    &.primary {
+        background-color: $editor-active-clr;
+        color: $clr1;
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover {
+            background-color: darken($editor-active-clr, 10%);
+        }
+    }
+    &.secondary {
+        position: relative;
+        background-color: transparent;
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        &::before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            border-radius: 3px;
+            width: 100%;
+            opacity: 0;
+            height: 100%;
+            transform: scale(0.15);
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        }
+        &:hover {
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+            &::before {
+                transform: scale(1);
+                opacity: 1;
+                background-color: $editor-lightgray;
+            }
+        }
+    }
+}
+.btn {
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    width: max-content;
+    &.primary {
+        background-color: $editor-active-clr;
+        color: $clr2;
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover:not(&.circled) {
+            background-color: darken($editor-active-clr, 10%);
+        }
+    }
+    &.secondary {
+        position: relative;
+        background-color: $clr2;
+        color: $clr1;
+        transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        &::before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            border-radius: 3px;
+            width: 100%;
+            opacity: 0;
+            height: 100%;
+            transform: scale(0.15);
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+        }
+        &:hover:not(&.circled) {
+            transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+            &::before {
+                transform: scale(1);
+                opacity: 1;
+                background-color: $editor-lightgray;
+            }
+        }
+    }
+    &.circled {
+        border-radius: 33em;
+        padding: 16px 32px;
+    }
+
+    &.rounded {
+        border-radius: $spacing-xxs;
+    }
+    &.primary {
+        background-color: $clr1;
+        padding: 14px 32px;
+    }
+    &.btn-template {
+        background-color: transparent;
+        color: $clr1;
+        border-radius: 6px;
+        padding: px-to-em(6px) px-to-em(32px);
+        transition: color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+            background-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:first-of-type {
+            border: 1px solid $clr1;
+            margin-bottom: $spacing-s;
+        }
+        &:nth-of-type(odd):hover {
+            background-color: $clr1;
+            color: $clr2;
+        }
+    }
+}

@@ -1,0 +1,230 @@
+{
+    "id": "alxfTg",
+    "type": "div",
+    "name": "gallery-2",
+    "category": "card",
+    "cmpId": "Menu-Cards",
+    "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1674689964/hamburger-gallery-2_mpu2pn.png",
+    "cmps": [
+        {
+            "id": "pG4dMJ",
+            "type": "div",
+            "name": "layout-container",
+            "cmps": [
+                {
+                    "id": "QgQVqm",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Browse our menu"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "NpZwNS",
+                    "type": "div",
+                    "name": "cards",
+                    "cmps": [
+                        {
+                            "id": "gSInzC",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "hamnWn",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992843/menu1_iyoob9.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "KHXbZ9",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Breakfast"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "DCxdQ8",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "oWVOs3",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Explore menu ❯"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "YgdC83",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "DrX83h",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992844/menu2_t1dsw1.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Z43abV",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Main Dishes"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "UB60LD",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "i76SAr",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Explore menu ❯"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "oTFIlv",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "lKTykc",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992839/menu3_bfsxdo.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "pfYmTe",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Drinks"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "wdi9Az",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "jhxDNu",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Explore menu ❯"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "uub0wY",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "olfz60",
+                                    "type": "img",
+                                    "name": "",
+                                    "content": {
+                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673992839/menu4_ww1dvq.svg"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "5i4Bsb",
+                                    "type": "h3",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Desserts"
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "EsO1Ax",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, cupiditate vero."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "G8dcBN",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Explore menu ❯"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TbONhH",
+                    "type": "div",
+                    "name": "btns",
+                    "cmps": [
+                        {
+                            "id": "57C9Gq",
+                            "type": "button",
+                            "name": "primary",
+                            "content": {
+                                "txt": "Order online"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "Ri2CQx",
+                            "type": "button",
+                            "name": "secondary",
+                            "content": {
+                                "txt": "Book a table"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

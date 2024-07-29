@@ -1,0 +1,96 @@
+{
+    "id": "lIfqLO",
+    "type": "div",
+    "name": "wap-3-services",
+    "category": "section",
+    "cmpId": "Section-1",
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053654/wap-3-section-2_dmoh3k.jpg",
+    "cmps": [
+        {
+            "id": "56xF1H",
+            "type": "div",
+            "name": "",
+            "cmps": [
+                {
+                    "id": "mBuBMJ",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "What You Will Learn"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "PkGxun",
+            "type": "div",
+            "name": "services-container",
+            "cmps": [
+                {
+                    "id": "ONLjp2",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990129/tools_iajeko.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "72ghFV",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "How to identify which and services will upgrade your business"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "9XTlbf",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990129/tips_llmplz.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "12Xy3W",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Tips and tricks to manage your finances more efficiently."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "1E0rKU",
+                    "type": "img",
+                    "name": "",
+                    "content": {
+                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673990129/lock_pbfjug.svg"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "mcYgKw",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "How to overcome hesitancy related to fraud, privacy and security."
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "aGyZXN",
+                    "type": "button",
+                    "name": "font_5",
+                    "content": {
+                        "txt": "Reserve my Spot"
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ]
+}

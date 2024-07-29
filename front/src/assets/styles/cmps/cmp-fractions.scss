@@ -1,0 +1,11 @@
+.drag-and-drop-portal {
+    height: 75% !important;
+    width: 75% !important;
+    img {
+        width: 75%;
+
+        &.chat {
+            width: 27%;
+        }
+    }
+}

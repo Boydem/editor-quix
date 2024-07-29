@@ -1,0 +1,146 @@
+.interactive-chat {
+    background-color: $clr1;
+    min-height: 50dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    z-index: 2;
+    border-radius: 0.5rem;
+    .PopoverArrow {
+        fill: $clr1;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 $spacing-m;
+        margin-top: $spacing-s;
+        margin-bottom: $spacing-s;
+        .title {
+            font-weight: 600;
+        }
+        .close {
+            cursor: pointer;
+        }
+    }
+    .chat-body {
+        border-top: 1px solid $editor-lightgray;
+        height: 100%;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0 1.5em;
+        .grid {
+            margin-top: 0.5em;
+            display: grid;
+            gap: 4px 0;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 1fr auto;
+            grid-auto-flow: row;
+            grid-template-areas:
+                'avatar name time-ago'
+                'avatar body body';
+            *:not(:last-child) {
+                margin-inline-end: $spacing-s;
+            }
+            .user-name {
+                grid-area: name;
+                place-self: start;
+            }
+            .time-ago {
+                color: $clr9;
+                font-size: 12px;
+                grid-area: time-ago;
+                place-self: center end;
+            }
+            .user-avatar {
+                max-width: 30px;
+                border-radius: 55px;
+                grid-area: avatar;
+                place-self: start;
+            }
+            .msg {
+                display: inline-flex;
+                align-items: center;
+                background-color: #eee;
+                padding: 2.5px 6px;
+                margin-bottom: $spacing-xs;
+                border-radius: 0.25em;
+                grid-area: body;
+            }
+        }
+
+        .msg-other {
+            align-self: flex-end;
+        }
+    }
+    .chat-input {
+        input {
+            border-top: 1px solid $editor-lightgray;
+            border-radius: 0;
+            background-color: $clr1;
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+    }
+}
+.PopoverContent[data-state='open'][data-side='top'] {
+    animation-name: slideDownAndFade;
+}
+.PopoverContent[data-state='open'][data-side='right'] {
+    animation-name: slideLeftAndFade;
+}
+.PopoverContent[data-state='open'][data-side='bottom'] {
+    animation-name: slideUpAndFade;
+}
+.PopoverContent[data-state='open'][data-side='left'] {
+    animation-name: slideRightAndFade;
+}
+.PopoverContent {
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+@keyframes slideUpAndFade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRightAndFade {
+    from {
+        opacity: 0;
+        transform: translateX(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDownAndFade {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeftAndFade {
+    from {
+        opacity: 0;
+        transform: translateX(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

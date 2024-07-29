@@ -1,0 +1,688 @@
+{
+    "name": "wap2",
+    "owner": "admin",
+    "chatStartingMsg": "Hi there! Thanks for reaching out, How can I assist you today?",
+    "palette": ["#a3eee9", "#8b95a6", "#0b1321", "#eef"],
+    "leadsBoards": [
+        {
+            "id": "IkTIapAb",
+            "title": "New",
+            "items": []
+        },
+        {
+            "id": "vuGgOIQ2",
+            "title": "In Progress",
+            "items": []
+        },
+        {
+            "id": "UN5sMnWf",
+            "title": "Done",
+            "items": []
+        }
+    ],
+    "schedule": {
+        "eventDuration": 30,
+        "daysForward": 6,
+        "data": [],
+        "days": ["sunday", "monday", "tuesday", "wednesday", "thursday"],
+        "startHour": 8,
+        "endHour": 17,
+        "meetings": []
+    },
+    "subscribers": [],
+    "cmps": [
+        {
+            "id": "aFDedz",
+            "type": "div",
+            "name": "wap-2-nav",
+            "category": "header",
+            "cmpId": "Header",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-header_peennt.jpg",
+            "cmps": [
+                {
+                    "id": "ftPuy6",
+                    "type": "div",
+                    "name": "logo",
+                    "cmps": [
+                        {
+                            "id": "tiP6IP",
+                            "type": "img",
+                            "name": "",
+                            "content": {
+                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/logo_was6a4.png"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "2XRGDc",
+                            "type": "h1",
+                            "name": "",
+                            "content": {
+                                "txt": "Gigaplay"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "M3ebyN",
+                    "type": "div",
+                    "name": "links",
+                    "cmps": [
+                        {
+                            "id": "ZF4RNs",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "tjwGQ9",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Home",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "vZycc8",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "sq2tlq",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Games",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "aVjvUP",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "yBnwOE",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Company",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7NH091",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "M9aQKq",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Careers",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "WO9LIY",
+                            "type": "div",
+                            "name": "",
+                            "cmps": [
+                                {
+                                    "id": "2itLW1",
+                                    "type": "a",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Contact",
+                                        "href": ""
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "vIcG22",
+            "type": "div",
+            "name": "wap-2-hero",
+            "category": "hero",
+            "cmpId": "Hero",
+            "thumbnail": "https://res.cloudinary.com/yaronshapira-com/image/upload/v1673995017/wapHero2_rq5wss.png",
+            "cmps": [
+                {
+                    "id": "snIfWz",
+                    "type": "div",
+                    "name": "container",
+                    "cmps": [
+                        {
+                            "id": "T15WIt",
+                            "type": "div",
+                            "name": "content-1",
+                            "cmps": [
+                                {
+                                    "id": "5VvU2B",
+                                    "type": "div",
+                                    "name": "",
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "X2hLFX",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "Ryf5Ck",
+                                            "type": "h1",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Join the Game"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "mHxweP",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “EditText” or double click me to add your own content and make changes to the font. I’m a greatplace for you to tell a story and let your users know a little more about you."
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "qyo2cw",
+                                            "type": "button",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Explore"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "8GhCBc",
+                            "type": "div",
+                            "name": "content-2",
+                            "cmps": [
+                                {
+                                    "id": "7VDAGY",
+                                    "type": "div",
+                                    "name": "side-content",
+                                    "cmps": [
+                                        {
+                                            "id": "mPMimf",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/game-icon_braih4.webp"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "9YhkRT",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Martian Quest Wins Mobile Game Awards"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "E3apn2",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you totell a story and let your users know a little more about you."
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "gC9T2u",
+                                    "type": "div",
+                                    "name": "content",
+                                    "cmps": [
+                                        {
+                                            "id": "xSs8sh",
+                                            "type": "h2",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Featured"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "ys2DEJ",
+                                            "type": "div",
+                                            "name": "card",
+                                            "cmps": [
+                                                {
+                                                    "id": "5u2Zp4",
+                                                    "type": "img",
+                                                    "name": "",
+                                                    "content": {
+                                                        "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/game_cbva9k.webp"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "RAEJOq",
+                                                    "type": "h1",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "Martian Quest"
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "8asxjW",
+                                                    "type": "p",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                                                    },
+                                                    "cmps": []
+                                                },
+                                                {
+                                                    "id": "skt7Y7",
+                                                    "type": "button",
+                                                    "name": "",
+                                                    "content": {
+                                                        "txt": "Play Now"
+                                                    },
+                                                    "cmps": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9MSCHk",
+            "type": "div",
+            "name": "wap-2-cards",
+            "category": "card",
+            "cmpId": "Cards",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-cards_pwdxzl.jpg",
+            "cmps": [
+                {
+                    "id": "on9fek",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "More Games"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "cWg4Hk",
+                    "type": "div",
+                    "name": "cards",
+                    "cmps": [
+                        {
+                            "id": "AMqaGM",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "QsF5y2",
+                                    "type": "div",
+                                    "name": "image image-1",
+                                    "cmps": [
+                                        {
+                                            "id": "orNpEm",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/icon1_fwg7cx.webp"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "rjkZse",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "The Unknown"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "Dgidjw",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "RPG"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "MoW9lk",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Oo2HaW",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Play Now"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T6G35G",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "2KhIgx",
+                                    "type": "div",
+                                    "name": "image image-2",
+                                    "cmps": [
+                                        {
+                                            "id": "08Av9R",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988465/icon2_i8o1qe.webp"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "oTq5yA",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Dragons Lair"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "GiMvki",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Adventure"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "zYzl9r",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "Hx4Z5Z",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Play Now"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "gkWpiT",
+                            "type": "div",
+                            "name": "card",
+                            "cmps": [
+                                {
+                                    "id": "IIVzoU",
+                                    "type": "div",
+                                    "name": "image image-3",
+                                    "cmps": [
+                                        {
+                                            "id": "Lbn6DB",
+                                            "type": "img",
+                                            "name": "",
+                                            "content": {
+                                                "imgUrl": "https://res.cloudinary.com/dotasvsuv/image/upload/v1673988464/icon3_xdmbbb.webp"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "CJSbca",
+                                            "type": "h3",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Atactic"
+                                            },
+                                            "cmps": []
+                                        },
+                                        {
+                                            "id": "9efc3h",
+                                            "type": "p",
+                                            "name": "",
+                                            "content": {
+                                                "txt": "Strategy"
+                                            },
+                                            "cmps": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "p6jzfH",
+                                    "type": "p",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                                    },
+                                    "cmps": []
+                                },
+                                {
+                                    "id": "1SCnwv",
+                                    "type": "button",
+                                    "name": "",
+                                    "content": {
+                                        "txt": "Play Now"
+                                    },
+                                    "cmps": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sCh3Mm",
+                    "type": "div",
+                    "name": "about",
+                    "cmps": [
+                        {
+                            "id": "xvnZ8p",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "About us"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "JQjHyw",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "\n        I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or\n        double click me to add your own content and make changes to the font. I’m a great place for you to\n        tell a story and let your users know a little more about you.\n    "
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "5D7stf",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Learn More"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nL9kEE",
+            "type": "div",
+            "name": "wap-2-section-1",
+            "category": "section",
+            "cmpId": "Section",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-1_rkvur1.jpg",
+            "cmps": [
+                {
+                    "id": "BXjC8Z",
+                    "type": "div",
+                    "name": "content",
+                    "cmps": [
+                        {
+                            "id": "hjwtLa",
+                            "type": "h2",
+                            "name": "",
+                            "content": {
+                                "txt": "Work with us"
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "1pa4LM",
+                            "type": "p",
+                            "name": "",
+                            "content": {
+                                "txt": "I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you."
+                            },
+                            "cmps": []
+                        },
+                        {
+                            "id": "CJKwkT",
+                            "type": "button",
+                            "name": "",
+                            "content": {
+                                "txt": "Open Positions"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SLjtqR",
+            "type": "subscribe",
+            "name": "wap-2-cta",
+            "category": "form",
+            "cmpId": "Cta-1",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-section-2_zuvdtv.jpg",
+            "cmps": [
+                {
+                    "id": "828h0t",
+                    "type": "h2",
+                    "name": "",
+                    "content": {
+                        "txt": "Subscribe"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "I9Skei",
+                    "type": "p",
+                    "name": "",
+                    "content": {
+                        "txt": "Be the first to know about new games, exclusive previews & special promotions"
+                    },
+                    "cmps": []
+                },
+                {
+                    "id": "n7CkNR",
+                    "type": "label",
+                    "name": "subscribe-input",
+                    "content": {
+                        "placeholder": "Email Address"
+                    },
+                    "cmps": [
+                        {
+                            "id": "n7CkNR",
+                            "type": "input",
+                            "name": "subscribe-input",
+                            "inputName": "Subscribe",
+                            "content": {
+                                "placeholder": "Email Address"
+                            },
+                            "cmps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "z1EOxc",
+                    "type": "button",
+                    "name": "",
+                    "content": {
+                        "txt": "Submit"
+                    },
+                    "cmps": []
+                }
+            ]
+        },
+        {
+            "id": "ojMzoi",
+            "type": "div",
+            "name": "wap-2-footer",
+            "category": "footer",
+            "cmpId": "Footer",
+            "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674053480/wap-2-footer_utt0fj.jpg",
+            "cmps": [
+                {
+                    "id": "ObOU7d",
+                    "type": "span",
+                    "name": "",
+                    "content": {
+                        "txt": "© 2023 by Gigaplay. Created on quix."
+                    },
+                    "cmps": []
+                }
+            ]
+        }
+    ],
+    "themeClass": "wap2-primary",
+    "breakpoints": { "tabletLayout": 1000 },
+    "msgs": {},
+    "thumbnail": "https://res.cloudinary.com/dotasvsuv/image/upload/v1674060311/wap-2-index-thumbnail_ausxyt.jpg",
+    "title": "Gaming Startup"
+}

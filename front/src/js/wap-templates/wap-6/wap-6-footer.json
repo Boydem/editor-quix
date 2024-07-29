@@ -1,0 +1,26 @@
+{
+    "id": "rdCvE1",
+    "type": "div",
+    "name": "footer",
+    "cmps": [
+        {
+            "id": "zO2Pm7",
+            "type": "span",
+            "name": "",
+            "content": {
+                "txt": "© 2035 by Sugar & Cream. Power and secured by"
+            },
+            "cmps": []
+        },
+        {
+            "id": "KNhMqz",
+            "type": "a",
+            "name": "",
+            "content": {
+                "txt": "quix",
+                "href": ""
+            },
+            "cmps": []
+        }
+    ]
+}
