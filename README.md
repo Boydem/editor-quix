@@ -5,4 +5,4 @@ Editor quix, a Wix clone created by a team of three during an intensive 12 days 
 
 ![image](https://github.com/user-attachments/assets/ac214095-0abd-4952-93a1-8510b1063ef2)
 
-🎉 The app is live on editorquix.com here(https://editorquix.com).
+🎉 The app is live on editorquix.com [here](https://editorquix.com).
